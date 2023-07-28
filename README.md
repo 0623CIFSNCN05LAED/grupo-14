@@ -10,7 +10,7 @@ Nuestro segmento objetivo esta conformado por:
 
 Dependiendo al cliente que estemos dirigiendonós, ofreceremos precios diferentes en base a la cantidad de productos adquiridos.
 
-Breve descripción de los integrantes:
+Breve descripción de los integrantes del grupo:
 
 - Chiara Bosio:
 - Matias Fabrizio:
@@ -19,3 +19,18 @@ Breve descripción de los integrantes:
 - Mauro Corminas:
 - Florencia Zevallos:
 - Manuel Marienhoff: Tengo 23 años, vivo con mis padres y soy estudiante. Las cosas que me gustan hacer son descubrir nueva música y jugar al fútbol los sábados.
+
+Sitios de referencia:
+
+- Por su funcionalidad
+  https://www.mayoristanet.com/gastronomicos/almacen
+
+- Por su estética
+  https://www.cif.com.ar/home.html
+
+- Por los clientes a los que apuntan
+  https://ayudin.clorox.com/
+  https://www.cdsurargentina.com.ar/
+
+- Por los productos que ofrecen
+  https://cleanmarket.com.ar/
