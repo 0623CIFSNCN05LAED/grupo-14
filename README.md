@@ -14,7 +14,7 @@ Breve descripción de los integrantes del grupo:
 
 - Chiara Bosio:
 - Matias Fabrizio:
-- Matias Benedetti:
+- Matias Benedetti: Soy de Mar del Plata, tengo 26 años y estoy estudiando Ingenieria Electrica. Me gustan mucho los deportes de contacto y el gimnasio.
 - Emanuel Caro:
 - Mauro Corminas:
 - Florencia Zevallos:
