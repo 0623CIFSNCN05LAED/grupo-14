@@ -13,7 +13,7 @@ Dependiendo al cliente que estemos dirigiendonós, ofreceremos precios diferente
 Breve descripción de los integrantes del grupo:
 
 - Chiara Bosio:
-- Matias Fabrizio:
+- Matias Fabrizio: soy matias de buenos aires, tengo 22 años trabajo en un restaurante. tengo como pasatiempo la pesca y la fotografia de animales salvajes.
 - Matias Benedetti: Soy de Mar del Plata, tengo 26 años y estoy estudiando Ingenieria Electrica. Me gustan mucho los deportes de contacto y el gimnasio.
 - Emanuel Caro:
 - Mauro Corminas:
