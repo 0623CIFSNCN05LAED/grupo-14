@@ -16,7 +16,7 @@ Breve descripción de los integrantes del grupo:
 - Matias Fabrizio: soy matias de buenos aires, tengo 22 años trabajo en un restaurante. tengo como pasatiempo la pesca y la fotografia de animales salvajes.
 - Matias Benedetti: Soy de Mar del Plata, tengo 26 años y estoy estudiando Ingenieria Electrica. Me gustan mucho los deportes de contacto y el gimnasio.
 - Emanuel Caro:
-- Mauro Corminas:
+- Mauro Corminas: Soy de Montevideo, Uruguay, tengo 35 años, vivo con mi novia, trabajo dando clases de baile, y como pasatiempo toco diferentes instrumentos relacionados con la música brasilera.
 - Florencia Zevallos:
 - Manuel Marienhoff: Tengo 23 años, vivo con mis padres y soy estudiante. Las cosas que me gustan hacer son descubrir nueva música y jugar al fútbol los sábados.
 
