@@ -12,7 +12,7 @@ Dependiendo al cliente que estemos dirigiendonós, ofreceremos precios diferente
 
 Breve descripción de los integrantes del grupo:
 
-- Chiara Bosio:
+- Chiara Bosio: Soy de Córdoba, tengo 18 años. Además de este curso realizo vóley, paddle y taekwondo, siendo este último mi pasatiempo favorito y el que más tiempo realicé, además me encanta viajar y sacar fotografías.
 - Matias Fabrizio: soy matias de buenos aires, tengo 22 años trabajo en un restaurante. tengo como pasatiempo la pesca y la fotografia de animales salvajes.
 - Matias Benedetti: Soy de Mar del Plata, tengo 26 años y estoy estudiando Ingenieria Electrica. Me gustan mucho los deportes de contacto y el gimnasio.
 - Emanuel Caro:
