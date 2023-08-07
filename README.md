@@ -1,7 +1,6 @@
 # grupo-14
 
-Nuestro sitio web va a ofrecer los productos comercializados por la empresa distribuidora Estrella Azul, que opera por venta al mayor y menor.
-Estrella Azul vende productos de limpieza, cosmética y bazar.
+Nuestro sitio web va a ofrecer los productos comercializados por una empresa distribuidora de elementos de limpieza, que opera por ventas al mayor y menor.
 
 Nuestro segmento objetivo esta conformado por:
 
