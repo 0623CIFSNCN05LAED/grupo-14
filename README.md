@@ -33,3 +33,6 @@ Sitios de referencia:
 
 - Por los productos que ofrecen
   https://cleanmarket.com.ar/
+
+Enlace al tablero de trabajo:
+https://trello.com/b/1rd5pqCC/proyecto-integrador-grupo-14
