@@ -3,7 +3,7 @@ const path = require("path");
 const app = express();
 const PORT = 3333;
 
-app.listen(PORT,`Servidor creado en el puerto ${PORT}`);
+app.listen(PORT,()=>console.log(`Servidor creado en el puerto ${PORT}`));
 
 app.use(express.static(path.join(__dirname,"../public")));
 
