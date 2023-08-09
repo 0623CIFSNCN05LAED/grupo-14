@@ -4,7 +4,9 @@
   "description": "Nuestro sitio web va a ofrecer los productos comercializados por una empresa distribuidora de elementos de limpieza, que opera por ventas al mayor y menor.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js" 
+    
   },
   "keywords": [],
   "author": "",
