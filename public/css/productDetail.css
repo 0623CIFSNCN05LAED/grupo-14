@@ -1,0 +1,45 @@
+.nav {
+  margin: 10px 5px;
+}
+
+.product {
+  margin: auto;
+  width: 90%;
+  text-align: center;
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  border: solid 1px red; /* borrar */
+}
+
+.details {
+  border: solid 1px red; /* borrar */
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.amount {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.amount p {
+  width: 100%;
+  text-align: left;
+}
+
+.cart {
+  height: 35px;
+  width: 100%;
+  background-color: #fff;
+}
+
+.desc {
+  border: solid 1px red; /* borrar */
+  text-align: left;
+}

@@ -12,70 +12,75 @@
       referrerpolicy="no-referrer"
     />
 
+    <link rel="stylesheet" href="/css/productDetail.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
     <title>Detalle de producto</title>
   </head>
   <body>
-    <div>
-      <a href="#">Home</a>
-      <a href="#">Productos</a>
-      <a href="#">Nombre de producto</a>
-    </div>
-    <section>
-      <img src="/img/producto.png" alt="producto" />
-      <div>
-        <h2>Nombre del producto</h2>
-        <h3>$XXXX.XX</h3>
-        <p>stock disponible</p>
-        <h4>Cantidad:</h4>
-        <select name="cantidad" id="cantidad">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-        </select>
-        <a href="#"><button>Agregar al carrito (icono)</button></a>
+    <main>
+      <div class="nav">
+        <a href="#">Home</a>
+        <span>/</span>
+        <a href="#">Productos</a>
+        <span>/</span>
+        <a href="#">Nombre de producto</a>
       </div>
-      <div>
-        <h3>Descripcion</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat fuga
-          nesciunt necessitatibus, impedit voluptatem ex quod vitae illum,
-          asperiores eius molestias nemo itaque architecto facere? Iure neque
-          distinctio illum vero?
-        </p>
-      </div>
-    </section>
-    <section>
-      <h3>
-        Productos relacionados
-      </h3>
-      <p>agregar flechita</p>
-      <div>
-        <img src="/img/prducto_relacionado.png" alt="producto1">
-        <h5>
-          nombre de producto
-        </h5>
-      </div>
-      <div>
-        <img src="/img/prducto_relacionado2.png" alt="producto2">
-        <h5>
-          nombre de producto2
-        </h5>
-      </div>
-      <div>
-        <img src="/img/prducto_relacionado3.png" alt="producto3">
-        <h5>
-          nombre de producto3
-        </h5>
-      </div>
-      <div>
-        <img src="/img/prducto_relacionado4.png" alt="producto4">
-        <h5>
-          nombre de producto4
-        </h5>
-      </div>
-      <p>agregar flechita</p>
-
-    </section>
+      <section class="product">
+        <div>
+          <img src="/img/foto1.png" alt="producto" />
+        </div>
+        <div class="details">
+          <h2>Nombre del producto</h2>
+          <h3>$XXXX.XX</h3>
+          <form action="">
+            <div class="amount">
+              <p>stock disponible</p>
+              <h4>Cantidad:</h4>
+              <select name="cantidad" id="cantidad">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+            <a href="#"
+              ><button type="submit" class="cart">
+                Agregar al carrito (icono)
+              </button></a
+            >
+          </form>
+        </div>
+        <div class="desc">
+          <h3>Descripcion</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+            fuga nesciunt necessitatibus, impedit voluptatem ex quod vitae
+            illum, asperiores eius molestias nemo itaque architecto facere? Iure
+            neque distinctio illum vero?
+          </p>
+        </div>
+      </section>
+      <section>
+        <h3>Productos relacionados</h3>
+        <p>agregar flechita</p>
+        <div>
+          <img src="/img/foto1.png" alt="producto1" />
+          <h5>nombre de producto</h5>
+        </div>
+        <div>
+          <img src="/img/foto2.png" alt="producto2" />
+          <h5>nombre de producto2</h5>
+        </div>
+        <div>
+          <img src="/img/foto3.png" alt="producto3" />
+          <h5>nombre de producto3</h5>
+        </div>
+        <div>
+          <img src="/img/foto4.png" alt="producto4" />
+          <h5>nombre de producto4</h5>
+        </div>
+        <p>agregar flechita</p>
+      </section>
+    </main>
   </body>
 </html>
