@@ -43,3 +43,23 @@
   border: solid 1px red; /* borrar */
   text-align: left;
 }
+
+@media (min-width: 1200px) {
+  main {
+    max-width: 1300px;
+  }
+  .product {
+    display: flex;
+    justify-content: space-around;
+  }
+  .product img {
+    margin: 20px;
+    width: 300px;
+  }
+  .data {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 40%;
+  }
+}
