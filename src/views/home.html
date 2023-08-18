@@ -4,47 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/homePage.css">
+
     <title>Document</title>
 </head>
 <body>
     <header></header>
     <main>
-        <div>
-            <ul>
+        <div class="banner">
+            <!-- se va a ver correctamente cuando apliquemos javascript -->
+            <div class="carouselContainerBanner">
                 <img src="/img/foto1.png" alt="Imagen 1">
                 <img src="/img/foto2.png" alt="Imagen 2">
                 <img src="/img/foto3.png" alt="Imagen 3">
                 <img src="/img/foto4.png" alt="Imagen 4">
-            </ul>
-            <nav>
-                <i class="fa-solid fa-chevron-left"></i>
+                <button id="leftArrow"><i class="fa-solid fa-chevron-left" ></i></button>
                 <ul>
                     <li><i class="fa-regular fa-circle"></i></li>
                     <li><i class="fa-regular fa-circle"></i></li>
                     <li><i class="fa-regular fa-circle"></i></li>
                     <li><i class="fa-regular fa-circle"></i></li>
                 </ul>
-                <i class="fa-solid fa-chevron-right"></i>
-            </nav>
+                <button id="rightArrow"><i class="fa-solid fa-chevron-right"></i></button>
+            </div> 
         </div>
-        <div>
-            <img src="/img/padreEHijaLimpiando.png">
-            <h2>Beneficios al consumidor final</h2>
-            <ol>
-                <li></li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-            </ol>
-        </div>
-        <section>
-            <h3>Nos acompañan</h3>
+        <section class="benefitsSection">
             <div>
-                <img src="/img/foto1.png" alt="Imagen 1">
-                <img src="/img/foto2.png" alt="Imagen 2">
-                <img src="/img/foto3.png" alt="Imagen 3">
-                <img src="/img/foto4.png" alt="Imagen 4">
+                <img src="/img/padreEHijaLimpiando.png" id="fotoLimpiar">
+            </div>
+            <div class="benefitsContainer">
+                <h2 class="benefitsTitle">Beneficios al consumidor final</h2>
+                <ol class="benefitsList">
+                    <li><i class="fa-solid fa-check"></i>Presentaciones minoristas y mayoristas con precios imbatibles</li>
+                    <li><i class="fa-solid fa-check"></i>Entregamos en 24/48 hrs a tu domicilio</li>
+                    <li><i class="fa-solid fa-check"></i>Elegís el rango de entrega de tu conveniencia</li>
+                    <li><i class="fa-solid fa-check"></i>Comprás y pagás online con todas las herramientas de Mercado Pago</li>
+                    <li><i class="fa-solid fa-check"></i>+ de 1000 marcas y productos con stocks en linea</li>
+                </ol>
+            </div>
+        </section>
+        <section class="allyBrands">
+            <h3>Nos acompañan</h3>
+            <div class="carouselContainerBrands">
+                <img src="/img/foto1.png" alt="logoMarca 1">
+                <img src="/img/foto2.png" alt="logoMarca 2">
+                <img src="/img/foto3.png" alt="logoMarca 3">
+                <img src="/img/foto4.png" alt="logoMarca 4">
             </div>
             <nav>
                 <i class="fa-solid fa-chevron-left"></i>
