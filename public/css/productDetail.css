@@ -44,9 +44,38 @@
   text-align: left;
 }
 
+/* PRODUCTOS RELACIONADOS  tarjetas*/
+
+.tarjeta{  display:flex;  flex-direction:column; margin: 10px;
+  justify-content:center;  width:46%;  border: 1px solid lightgray; 
+   box-shadow: 2px 2px 8px 4px #d3d3d3d1;  border-radius:15px;  
+  }
+.titulo{ text-align: center; padding:  10px 10px 0 10px;}
+.cuerpo{ text-align: center; padding: 10px;}
+.pie{ background: #6699ff;  border-radius:0 0 15px 15px;  padding: 10px;  text-align:center;}
+.pie a{  text-decoration: none;  color: white;}
+
+.otherProducts{
+  align-items: center;
+  display: flex;
+  margin: auto;
+  width: 90%;
+}
+
+/* ESCONDEMOS 2 CARD EN MOBILE */
+#card3, #card4{
+  display: none;
+}
+ 
 @media (min-width: 1200px) {
+  /* PRODUCTOS RELACIONADOS MOSTARMOS CARD 3 Y 4*/
+  #card3, #card4{
+    justify-content: center;
+    display: inline-block;
+  }
+
   main {
-    max-width: 1300px;
+    max-width: 2000px;
   }
   .product {
     display: flex;
