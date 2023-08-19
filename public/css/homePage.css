@@ -4,21 +4,22 @@ body{
     width: 98vw;
 }
 
+/* banner de fotos START*/
+/* se va a ver correctamente cuando apliquemos javascript */
 .banner{
     position: relative;
     overflow:hidden; 
 }
-/* se va a ver correctamente cuando apliquemos javascript */
 
 .carouselContainerBanner{
     display: flex;
     transition: transform 0.5s ease-in-out;
 }
 
-.carouselContainer img{
+.carouselContainerBanner img{
     width: 100%;
-    height: auto;
 }
+/* se va a ver correctamente cuando apliquemos javascript */
 
 nav {
     display: flex;
@@ -42,26 +43,55 @@ ul li {
 #leftArrow{
     position: absolute;
     top: 50%;
+    left: 0;
     transform: translateY(-50%);
     cursor: pointer;
-    background-color: transparent;  
+    width: 30px;
+    height: 60px;
+    background-color: transparent;
     border: red 1px solid;
-    border-bottom-right-radius: 50%;
-    border-top-right-radius: 50%;
-    padding: 10px 5px 10px 1px;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 10px 20px 10px 3px;
 }
 
 #leftArrow i{
-    font-size: 20px;
+    font-size: 15px;
+    padding-left:3px;
 }
 
 #rightArrow{
     position: absolute;
-    top:50%;
-    transform: translateY(-50%);
-    right: 1%;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%) scaleX(-1);
+    cursor: pointer;
+    width: 30px;
+    height: 60px;
+    background-color: transparent;
+    border: red 1px solid;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 10px 20px 10px 3px;
+    
 }
 
+#rightArrow i{
+    font-size: 15px;
+    padding-right: 3px;
+    transform: scaleX(-1);;
+}
+
+.carouselContainerBanner ul button{
+    border: 1px green solid;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: yellow;
+}
+
+/* beneficios START*/
 .benefitsSection{
     background-color: orange;
 }
@@ -95,18 +125,59 @@ ul li {
     font-size: 12px;
 }
 
+
+
+/* Nos acompañan START */
+
 .allyBrands h3{
     color: blue;
     text-align: center;
-    padding: 10px 25px;
+    padding: 10px 25px 0px;
+    font-size: 25px;
+    border: red solid 1px;
 }
 
 
 .allyBrands{
     position: relative;
     overflow:hidden;
+    border: red solid 1px;
 }
 
 .carouselContainerBrands{
     display: flex;
+    position: relative;
+    padding: 0px 20px;
+    justify-content: space-between;
 }
+
+.carouselContainerBrands img{
+    width: 50%;
+    height: 200px;
+}
+
+.carouselContainerBrands #rightArrow{
+    border-radius: 0px;
+
+}
+
+.carouselContainerBrands #leftArrow{
+   border-radius: 0px;
+}
+
+/* lo mas vendido START */
+
+
+
+.bestSellers h3{
+    color: blue;
+    text-align: center;
+    padding: 10px 25px 0px;
+    font-size: 25px;
+    border: red solid 1px;
+}
+
+.productCard{
+    border: red 1px solid;
+}
+
