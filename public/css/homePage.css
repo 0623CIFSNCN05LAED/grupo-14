@@ -110,3 +110,85 @@ ul li {
 .carouselContainerBrands{
     display: flex;
 }
+/* encontra el producto */
+/*        inicio        */
+.bk{
+    background-color: #185397;
+}
+.contenedor{
+    display: flex;
+    border: 3px solid red;
+}
+
+.contenedor-2{
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+   flex-grow: 1;
+}
+
+.contenedor-3{
+    padding-bottom: 10%;
+    padding-top: 10%;
+    margin-bottom: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border: 3px solid blue ; 
+}
+
+.contenedor-4{
+display: flex;
+flex-direction: column;
+justify-content: center;
+padding: 15%;
+height: 60%;
+width: 100%;
+border: 3px solid rgb(43, 255, 0) ; 
+}
+
+.contenedor-5{
+    display: flex;
+    justify-content: center;
+padding: 2%;
+    border: 3px solid rgb(255, 0, 191) ; 
+}
+
+.contenedor-6{
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+    border: 3px solid rgb(0, 0, 0) ; 
+}
+
+.pd-r{
+    padding-right: 2%;
+}
+
+.p-t{
+    padding: 1%;
+    margin-top: 3%;
+}
+
+
+.bl{
+    display: block;
+    text-align: center;
+}
+.img-r{
+    border: 3px solid blue ; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
