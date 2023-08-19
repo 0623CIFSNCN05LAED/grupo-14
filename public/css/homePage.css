@@ -40,7 +40,7 @@ ul li {
 }
 
 
-#leftArrow{
+.leftArrow{
     position: absolute;
     top: 50%;
     left: 0;
@@ -55,12 +55,12 @@ ul li {
     padding: 10px 20px 10px 3px;
 }
 
-#leftArrow i{
+.leftArrow i{
     font-size: 15px;
     padding-left:3px;
 }
 
-#rightArrow{
+.rightArrow{
     position: absolute;
     top: 50%;
     right: 0;
@@ -73,10 +73,9 @@ ul li {
     border-bottom-right-radius: 50px;
     border-top-right-radius: 50px;
     padding: 10px 20px 10px 3px;
-    
 }
 
-#rightArrow i{
+.rightArrow i{
     font-size: 15px;
     padding-right: 3px;
     transform: scaleX(-1);;
@@ -93,7 +92,7 @@ ul li {
 
 /* beneficios START*/
 .benefitsSection{
-    background-color: orange;
+    background-color: #FFA54A;
 }
 
 #fotoLimpiar{
@@ -129,24 +128,25 @@ ul li {
 
 /* Nos acompañan START */
 
-.allyBrands h3{
-    color: blue;
-    text-align: center;
-    padding: 10px 25px 0px;
-    font-size: 25px;
-    border: red solid 1px;
-}
-
-
 .allyBrands{
     position: relative;
     overflow:hidden;
-    border: red solid 1px;
+    margin: 10px 0;
 }
+
+.allyBrands h3{
+    color: blue;
+    text-align: center;
+    padding: 10px 25px;
+    font-size: 25px;
+    background-color: lightblue;
+}
+
+
+
 
 .carouselContainerBrands{
     display: flex;
-<<<<<<< HEAD
     position: relative;
     padding: 0px 20px;
     justify-content: space-between;
@@ -157,32 +157,129 @@ ul li {
     height: 200px;
 }
 
-.carouselContainerBrands #rightArrow{
+.carouselContainerBrands .rightArrow{
     border-radius: 0px;
 
 }
 
-.carouselContainerBrands #leftArrow{
+.carouselContainerBrands .leftArrow{
    border-radius: 0px;
 }
 
 /* lo mas vendido START */
 
-
+.bestSellers{
+    position:relative;
+    overflow:hidden; 
+    margin: 10px 0;
+}
 
 .bestSellers h3{
     color: blue;
     text-align: center;
-    padding: 10px 25px 0px;
+    padding: 10px 25px;
     font-size: 25px;
-    border: red solid 1px;
+    background-color: lightblue;
+}
+
+.carouselContainerBestSellers{
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;
+    padding: 0px 4%;
+
+}
+
+.carouselContainerBestSellers .leftArrow{
+    border-radius: 0px;
+    right: 0%;
+    display: none;
+}
+
+.carouselContainerBestSellers .rightArrow{
+    border-radius: 0px;
+    display: none;
 }
 
 .productCard{
     border: red 1px solid;
+    width: 48%;
+    
 }
-=======
+
+.productCard img{
+    width: 100%;
 }
+
+.productCard a{
+    text-decoration: none;
+    color: black;
+}
+
+/*Site Alert START */
+
+.SiteAlert{
+    background-color: orange;
+    padding: 15px;
+}
+
+.alertContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 8.5px;
+    align-items: center;
+    color: #fff;
+}
+
+.alertContainer i{
+    padding-right: 10px;
+    font-size: 12px;
+    color: #185397;
+}
+
+.alertContainer a{
+    color: #185397;
+    text-decoration: none;
+}
+
+/* Opportunities START */
+
+.opportunities{
+    position:relative;
+    overflow:hidden; 
+    margin: 10px 0;
+}
+
+.opportunities h3{
+    color: blue;
+    text-align: center;
+    padding: 10px 25px;
+    font-size: 25px;
+    background-color: lightblue;
+}
+
+.carouselContainerOpportunities{
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;
+    padding: 0px 4%;
+
+}
+
+.carouselContainerOpportunities .leftArrow{
+    border-radius: 0px;
+    right: 0%;
+    display: none;
+}
+
+.carouselContainerOpportunities .rightArrow{
+    border-radius: 0px;
+    display: none;
+}
+
+
+
 /* encontra el producto */
 /*        inicio        */
 .bk{
@@ -264,5 +361,4 @@ padding: 2%;
 
 
 
->>>>>>> e6def67e2169fb2e83a482849b7bf8154247e599
 
