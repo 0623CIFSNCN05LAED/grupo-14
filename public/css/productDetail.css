@@ -1,17 +1,28 @@
 .nav {
   margin: 10px 5px;
+  background-color: #e68c3a;
 }
 
 .product {
+  display: flex;
+  flex-direction: column;
   margin: auto;
   width: 90%;
   text-align: center;
+  align-items: center;
 }
 
 .product img {
   width: 100%;
+  padding: 10px;
   height: auto;
-  border: solid 1px red; /* borrar */
+  align-self: center;
+  border: solid 1px red;
+}
+
+.name {
+  background-color: #213e60;
+  color: #d8d1bd;
 }
 
 .details {
@@ -44,32 +55,63 @@
   text-align: left;
 }
 
+/* PRODUCTOS RELACIONADOS */
+
+.relatedProducts {
+  margin: auto;
+  margin-top: 40px;
+  width: 95%;
+  text-align: center;
+}
+
 /* PRODUCTOS RELACIONADOS  tarjetas*/
 
-.tarjeta{  display:flex;  flex-direction:column; margin: 10px;
-  justify-content:center;  width:46%;  border: 1px solid lightgray; 
-   box-shadow: 2px 2px 8px 4px #d3d3d3d1;  border-radius:15px;  
-  }
-.titulo{ text-align: center; padding:  10px 10px 0 10px;}
-.cuerpo{ text-align: center; padding: 10px;}
-.pie{ background: #6699ff;  border-radius:0 0 15px 15px;  padding: 10px;  text-align:center;}
-.pie a{  text-decoration: none;  color: white;}
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  justify-content: center;
+  width: 46%;
+  border: 1px solid lightgray;
+  box-shadow: 2px 2px 8px 4px #d3d3d3d1;
+  border-radius: 15px;
+}
+.cardTitle {
+  text-align: center;
+  padding: 10px 10px 0 10px;
+}
+.cardBody {
+  text-align: center;
+  padding: 10px;
+}
+.cardFooter {
+  background: #e68c3a;
+  border-radius: 0 0 15px 15px;
+  padding: 10px;
+  text-align: center;
+}
+.cardFooter a {
+  text-decoration: none;
+  color: black;
+}
 
-.otherProducts{
+.otherProducts {
   align-items: center;
   display: flex;
   margin: auto;
-  width: 90%;
+  width: auto;
 }
 
 /* ESCONDEMOS 2 CARD EN MOBILE */
-#card3, #card4{
+#card3,
+#card4 {
   display: none;
 }
- 
+
 @media (min-width: 1200px) {
   /* PRODUCTOS RELACIONADOS MOSTARMOS CARD 3 Y 4*/
-  #card3, #card4{
+  #card3,
+  #card4 {
     justify-content: center;
     display: inline-block;
   }
@@ -79,6 +121,8 @@
   }
   .product {
     display: flex;
+    flex-direction: row;
+    align-items: normal;
     justify-content: space-around;
   }
   .product img {
