@@ -1,0 +1,225 @@
+/* Main */
+
+body{
+    width: 98vw;
+}
+
+/* banner de fotos START*/
+/* se va a ver correctamente cuando apliquemos javascript */
+.banner{
+    position: relative;
+    overflow:hidden; 
+}
+
+.carouselContainerBanner{
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carouselContainerBanner img{
+    width: 100%;
+}
+/* se va a ver correctamente cuando apliquemos javascript */
+
+nav {
+    display: flex;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    position:absolute;
+    left:50%;
+    transform: translateX(-50%);
+    bottom: 5%;
+}
+
+ul li {
+    font-size: 12px;
+}
+
+
+.leftArrow{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 30px;
+    height: 60px;
+    background-color: transparent;
+    border: red 1px solid;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 10px 20px 10px 3px;
+}
+
+.leftArrow i{
+    font-size: 15px;
+    padding-left:3px;
+}
+
+.rightArrow{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%) scaleX(-1);
+    cursor: pointer;
+    width: 30px;
+    height: 60px;
+    background-color: transparent;
+    border: red 1px solid;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 10px 20px 10px 3px;
+}
+
+.rightArrow i{
+    font-size: 15px;
+    padding-right: 3px;
+    transform: scaleX(-1);;
+}
+
+.carouselContainerBanner ul button{
+    border: 1px green solid;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: yellow;
+}
+
+/* Offers */
+
+.offers{
+    position:relative;
+    overflow:hidden; 
+    margin: 10px 0;
+}
+
+.offers h3{
+    color: blue;
+    text-align: center;
+    padding: 10px 25px;
+    font-size: 25px;
+    background-color: lightblue;
+}
+
+.carouselContainerOffers{
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;
+    padding: 0px 4%;
+
+}
+
+.carouselContainerOffers .leftArrow{
+    border-radius: 0px;
+    right: 0%;
+    display: none;
+}
+
+.carouselContainerOffers .rightArrow{
+    border-radius: 0px;
+    display: none;
+}
+
+.productCard{
+    border: red 1px solid;
+    width: 48%;
+    
+}
+
+.productCard img{
+    width: 100%;
+}
+
+.productCard a{
+    text-decoration: none;
+    color: black;
+}
+
+/* New Mayorista */
+
+
+.newMayoristaQuestion{
+    background-color: lightblue;
+    width: 100%;    
+    padding: 20px;
+    margin: 0  auto;
+}
+
+.newMayoristaButtonContainer{
+    background-color: blue;
+    width: 100%;
+    margin: 0  auto;
+
+}
+
+.newMayoristaButton{
+    border: none;
+    background-color: transparent;
+    padding: 20px;
+}
+
+.newMayoristaButton a{
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+
+
+
+/* lo mas vendido START */
+
+.bestSellers{
+    position:relative;
+    overflow:hidden; 
+    margin: 10px 0;
+}
+
+.bestSellers h3{
+    color: blue;
+    text-align: center;
+    padding: 10px 25px;
+    font-size: 25px;
+    background-color: lightblue;
+}
+
+.carouselContainerBestSellers{
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;
+    padding: 0px 4%;
+
+}
+
+.carouselContainerBestSellers .leftArrow{
+    border-radius: 0px;
+    right: 0%;
+    display: none;
+}
+
+.carouselContainerBestSellers .rightArrow{
+    border-radius: 0px;
+    display: none;
+}
+
+.productCard{
+    border: red 1px solid;
+    width: 48%;
+    
+}
+
+.productCard img{
+    width: 100%;
+}
+
+.productCard a{
+    text-decoration: none;
+    color: black;
+}
