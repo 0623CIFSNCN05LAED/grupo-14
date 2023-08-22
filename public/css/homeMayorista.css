@@ -99,11 +99,11 @@ ul li {
 }
 
 .offers h3{
-    color: blue;
+    color: #243a76;
     text-align: center;
     padding: 10px 25px;
     font-size: 25px;
-    background-color: lightblue;
+    background-color: #55a4da;
 }
 
 .carouselContainerOffers{
@@ -144,14 +144,18 @@ ul li {
 
 
 .newMayoristaQuestion{
-    background-color: lightblue;
+    background-color: #55a4da;
     width: 100%;    
     padding: 20px;
     margin: 0  auto;
+    color: #fff;
 }
 
+
+
+
 .newMayoristaButtonContainer{
-    background-color: blue;
+    background-color: #243a76;
     width: 100%;
     margin: 0  auto;
 
@@ -160,7 +164,7 @@ ul li {
 .newMayoristaButton{
     border: none;
     background-color: transparent;
-    padding: 20px;
+    padding: 20px;    
 }
 
 .newMayoristaButton a{
@@ -169,7 +173,94 @@ ul li {
     cursor: pointer;
 }
 
+.hoverMayorista{
+    transition: color 400ms;
+}
 
+.newMayoristaButton a:hover .hoverMayorista{
+    color: orange;
+}
+
+.newMayoristaButton i{
+    padding-right: 7px;
+}
+
+
+/* benefits START */
+
+.benefitsSection{
+    background-color: #eee;
+    padding: 30px 20px;
+    border-bottom: 4px solid #55a4da;
+}
+
+.benefitsSection i{
+    font-size: 30px;
+    color: #55a4da;
+}
+
+.benefitsSection h2{
+    color: #243a76;
+    margin: 9px 0;
+}
+
+.benefitsList{
+    list-style: none;
+    text-align: left;
+}
+
+.benefitsList li{
+    margin-bottom: 5px;
+}
+
+.benefitsList i{
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+
+/* login START */
+
+.loginOutsideBox{
+    padding:30px 15px;
+}
+
+.loginBanner{
+    background-color: #243a76;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 30px 15px  ;
+}
+
+.loginBannerTitle{
+    padding: 0 50px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.loginBannerLine{
+    width: 70px;
+    height: 3px;
+    background-color: #ff8222;
+    margin: 15px auto;
+}
+
+.loginFormContainer{
+    border: solid 1px #dadada;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.loginFormTitle{
+    color: #243a76;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
 
 
 
@@ -179,15 +270,15 @@ ul li {
 .bestSellers{
     position:relative;
     overflow:hidden; 
-    margin: 10px 0;
+    margin-bottom: 10px;
 }
 
 .bestSellers h3{
-    color: blue;
+    color: #243a76;
     text-align: center;
     padding: 10px 25px;
     font-size: 25px;
-    background-color: lightblue;
+    background-color: #55a4da;
 }
 
 .carouselContainerBestSellers{
