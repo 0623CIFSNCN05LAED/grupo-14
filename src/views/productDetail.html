@@ -14,24 +14,25 @@
 
     <link rel="stylesheet" href="/css/productDetail.css" />
     <link rel="stylesheet" href="/css/styles.css" />
+
     <title>Detalle de producto</title>
   </head>
   <body>
     <main>
       <div class="nav">
-        <a href="#">Home</a>
+        <a href="/">Home</a>
         <span>/</span>
         <a href="#">Productos</a>
         <span>/</span>
-        <a href="#">Nombre de producto</a>
+        <a href="/productDetail">Nombre de producto</a>
       </div>
       <section class="product">
-        <div>
+        <div class="card">
           <img src="/img/foto1.png" alt="producto" />
         </div>
         <div class="data">
           <div class="details">
-            <h2>Nombre del producto</h2>
+            <h2 class="name">Nombre del producto</h2>
             <h3>$XXXX.XX</h3>
             <form action="">
               <div class="amount">
@@ -46,9 +47,9 @@
               </div>
               <a href="#"
                 ><button type="submit" class="cart">
-                  Agregar al carrito (icono)
-                </button></a
-              >
+                  Agregar al carrito
+                  <i class="fa-solid fa-cart-shopping"></i></button
+              ></a>
             </form>
           </div>
           <div class="desc">
@@ -69,60 +70,60 @@
           </div>
         </div>
       </section>
-      <section>
-        <h3>Productos relacionados</h3>
-      <div class ="otherProducts">
-         <i class="fa-solid fa-circle-arrow-left"></i>
-         <!-- TARJETA -->
-         <div class="tarjeta" id="card1">
-           <h4 class="titulo">Una tarjeta básica</h4>
-           <div class="cuerpo">
-              <img src="\img\foto1.png" alt="imagen">
-           </div>
-           <div class="pie">
-                 <a href="#">Más información</a>
-           </div>
-         </div>
-         <!-- TARJETA -->
-        
-         <!-- TARJETA -->
-         <div class="tarjeta" id="card2">
-           <h4 class="titulo">Una tarjeta básica</h4>
-           <div class="cuerpo">
-              <img src="\img\foto1.png" alt="imagen">
-           </div>
-           <div class="pie">
-                 <a href="#">Más información</a>
-           </div>
-         </div>
-         <!-- TARJETA -->
-        
-         <!-- TARJETA -->
-         <div class="tarjeta" id="card3">
-           <h4 class="titulo">Una tarjeta básica</h4>
-           <div class="cuerpo">
-              <img src="\img\foto1.png" alt="imagen">
-           </div>
-           <div class="pie">
-                 <a href="#">Más información</a>
-           </div>
-         </div>
-         <!-- TARJETA -->
-        
-         <!-- TARJETA -->
-         <div class="tarjeta" id="card4">
-           <h4 class="titulo">Una tarjeta básica</h4>
-           <div class="cuerpo">
-              <img src="\img\foto1.png" alt="imagen">
-           </div>
-           <div class="pie">
-                 <a href="#">Más información</a>
-           </div>
+      <section class="relatedProducts">
+        <h3 class="name">Productos relacionados</h3>
+        <div class="otherProducts">
+          <i class="fa-solid fa-circle-arrow-left"></i>
+          <!-- TARJETA -->
+          <div class="card" id="card1">
+            <h4 class="cardTitle">Una tarjeta básica</h4>
+            <div class="cardBody">
+              <img src="\img\foto1.png" alt="imagen" />
+            </div>
+            <div class="cardFooter">
+              <a href="#">Más información</a>
+            </div>
           </div>
-         <!-- TARJETA -->
-        
-        <i class="fa-solid fa-circle-arrow-right"></i>
-      </div>
+          <!-- TARJETA -->
+
+          <!-- TARJETA -->
+          <div class="card" id="card2">
+            <h4 class="cardTitle">Una tarjeta básica</h4>
+            <div class="cardBody">
+              <img src="\img\foto1.png" alt="imagen" />
+            </div>
+            <div class="cardFooter">
+              <a href="#">Más información</a>
+            </div>
+          </div>
+          <!-- TARJETA -->
+
+          <!-- TARJETA -->
+          <div class="card" id="card3">
+            <h4 class="cardTitle">Una tarjeta básica</h4>
+            <div class="cardBody">
+              <img src="\img\foto1.png" alt="imagen" />
+            </div>
+            <div class="cardFooter">
+              <a href="#">Más información</a>
+            </div>
+          </div>
+          <!-- TARJETA -->
+
+          <!-- TARJETA -->
+          <div class="card" id="card4">
+            <h4 class="cardTitle">Una tarjeta básica</h4>
+            <div class="cardBody">
+              <img src="\img\foto1.png" alt="imagen" />
+            </div>
+            <div class="cardFooter">
+              <a href="#">Más información</a>
+            </div>
+          </div>
+          <!-- TARJETA -->
+
+          <i class="fa-solid fa-circle-arrow-right"></i>
+        </div>
       </section>
     </main>
   </body>

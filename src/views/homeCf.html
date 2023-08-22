@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/homePage.css">
+    <link rel="stylesheet" href="/css/homeCf.css">
 
     <title>Document</title>
 </head>
@@ -19,14 +19,14 @@
                 <img src="/img/foto2.png" alt="Imagen 2">
                 <img src="/img/foto3.png" alt="Imagen 3">
                 <img src="/img/foto4.png" alt="Imagen 4">
-                <button id="leftArrow"><i class="fa-solid fa-chevron-left" ></i></button>
+                <button class="leftArrow"><i class="fa-solid fa-chevron-left" ></i></button>
                 <ul>
-                    <li><i class="fa-regular fa-circle"></i></li>
-                    <li><i class="fa-regular fa-circle"></i></li>
-                    <li><i class="fa-regular fa-circle"></i></li>
-                    <li><i class="fa-regular fa-circle"></i></li>
+                    <li><button></button></i></li>
+                    <li><button></button></i></li>
+                    <li><button></button></i></li>
+                    <li><button></button></i></li>
                 </ul>
-                <button id="rightArrow"><i class="fa-solid fa-chevron-right"></i></button>
+                <button class="rightArrow"><i class="fa-solid fa-chevron-right"></i></button>
             </div> 
         </div>
         <section class="benefitsSection">
@@ -34,7 +34,7 @@
                 <img src="/img/padreEHijaLimpiando.png" id="fotoLimpiar">
             </div>
             <div class="benefitsContainer">
-                <h2 class="benefitsTitle">Beneficios al consumidor final</h2>
+                <h2 class="benefitsTitle colorPrincipal">Beneficios al consumidor final</h2>
                 <ol class="benefitsList">
                     <li><i class="fa-solid fa-check"></i>Presentaciones minoristas y mayoristas con precios imbatibles</li>
                     <li><i class="fa-solid fa-check"></i>Entregamos en 24/48 hrs a tu domicilio</li>
@@ -47,46 +47,61 @@
         <section class="allyBrands">
             <h3>Nos acompañan</h3>
             <div class="carouselContainerBrands">
-                <img src="/img/foto1.png" alt="logoMarca 1">
-                <img src="/img/foto2.png" alt="logoMarca 2">
-                <img src="/img/foto3.png" alt="logoMarca 3">
-                <img src="/img/foto4.png" alt="logoMarca 4">
+                <img src="/img/logoAyudin.png" alt="logoMarca 1">
+                <img src="/img/logoClorox.png" alt="logoMarca 2">
+                <img src="/img/logoCif.jpg" alt="logoMarca 3">
+                <img src="/img/logoPoett.png" alt="logoMarca 4">
+                <button class="leftArrow"><i class="fa-solid fa-chevron-left" ></i></button>
+                <button class="rightArrow"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
-            <nav>
-                <i class="fa-solid fa-chevron-left"></i>
-                <i class="fa-solid fa-chevron-right"></i>
-            </nav>
         </section>
-        <section>
-            <h3>Lo mas vendido</h3>
-            <article>
-                <img src="/img/foto2.png">
-                <p>Descripcion del producto</p>
-            </article>
-
-           
-            <article>
-                <img src="/img/foto3.png">
-                <p>Descripcion del producto</p>
+        <section class="bestSellers">
+            <h3>Los más vendidos</h3>
+            <article class="carouselContainerBestSellers">
+                <div class="productCard">
+                    <a href="/productDetail">
+                        <img src="/img/foto3.png">
+                        <p>Precio</p>
+                        <p>Descripcion del producto</p>
+                    </a>
+                </div>
+                <div class="productCard">
+                    <a href="/productDetail">
+                        <img src="/img/foto3.png">
+                        <p>Precio</p>
+                        <p>Descripcion del producto</p>
+                    </a>
+                </div>
+                <button class="leftArrow"><i class="fa-solid fa-chevron-left" ></i></button>
+                <button class="rightArrow"><i class="fa-solid fa-chevron-right"></i></button>
+                <!-- estan con display none para despues agregar en version tablet y desktop -->
             </article>
         </section>
-            <p><i class="fa-solid fa-triangle-exclamation"></i>Estas visualizando los precios para consumidor final. Si sos mayorista, hacé click áca</p>
-        <section>
+        <div class="SiteAlert">
+            <p class="alertContainer"><i class="fa-solid fa-triangle-exclamation"></i>Estás visualizando los precios para consumidor final. Si sos mayorista, <a href="/HOMEMAYORISTA">&nbsp;hacé click acá</a></p>
+        </div>
+        <section class="opportunities">
             <h3>Mega Oportunidades</h3>
-            <article>
-                <img src="/img/foto3.png">
-                <p>Descripcion del producto</p>
-            </article>
-            <article>
-                <img src="/img/foto2.png">
-                <p>Descripcion del producto</p>
+            <article class="carouselContainerOpportunities">
+                <div class="productCard">
+                    <a href="/productDetail">
+                        <img src="/img/foto3.png">
+                        <p>Precio</p>
+                        <p>Descripcion del producto</p>
+                    </a>
+                </div>
+                <div class="productCard">
+                    <a href="/productDetail">
+                        <img src="/img/foto3.png">
+                        <p>Precio</p>
+                        <p>Descripcion del producto</p>
+                    </a>
+                </div>
+                <button class="leftArrow"><i class="fa-solid fa-chevron-left" ></i></button>
+                <button class="rightArrow"><i class="fa-solid fa-chevron-right"></i></button>
+                <!-- estan con display none para despues agregar en version tablet y desktop -->
             </article>
         </section>
-
-
-
-
-
          <section class="contenedor bk">
             <img width="50%"  class="img-r"  src="/img/encontra-productos.webp">
             <div class="contenedor-2">
@@ -127,9 +142,6 @@
             </div>
         </section>
         <section>
-
-
-
             <article>
                 <h3>nombre categoria 1</h3>
                 <img src="/img/foto1.png">
@@ -143,7 +155,7 @@
                 <img src="/img/foto3.png">
             </article>
         </section>
-       
+    
     </main>
 
 

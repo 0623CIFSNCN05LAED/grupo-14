@@ -1,0 +1,364 @@
+/* Main */
+
+body{
+    width: 98vw;
+}
+
+/* banner de fotos START*/
+/* se va a ver correctamente cuando apliquemos javascript */
+.banner{
+    position: relative;
+    overflow:hidden; 
+}
+
+.carouselContainerBanner{
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carouselContainerBanner img{
+    width: 100%;
+}
+/* se va a ver correctamente cuando apliquemos javascript */
+
+nav {
+    display: flex;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    position:absolute;
+    left:50%;
+    transform: translateX(-50%);
+    bottom: 5%;
+}
+
+ul li {
+    font-size: 12px;
+}
+
+
+.leftArrow{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 30px;
+    height: 60px;
+    background-color: transparent;
+    border: red 1px solid;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 10px 20px 10px 3px;
+}
+
+.leftArrow i{
+    font-size: 15px;
+    padding-left:3px;
+}
+
+.rightArrow{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%) scaleX(-1);
+    cursor: pointer;
+    width: 30px;
+    height: 60px;
+    background-color: transparent;
+    border: red 1px solid;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 10px 20px 10px 3px;
+}
+
+.rightArrow i{
+    font-size: 15px;
+    padding-right: 3px;
+    transform: scaleX(-1);;
+}
+
+.carouselContainerBanner ul button{
+    border: 1px green solid;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: yellow;
+}
+
+/* beneficios START*/
+.benefitsSection{
+    background-color: #FFA54A;
+}
+
+#fotoLimpiar{
+    width: 100%;
+    max-height: 100%;
+}
+
+.benefitsContainer{
+    padding: 5px 25px;
+}
+
+.benefitsTitle{
+    display: block;
+    text-align: left;
+}
+
+.benefitsList{
+    list-style: none;
+    text-align: left;
+}
+
+.benefitsList li{
+    margin-bottom: 5px;
+    display: block;
+}
+
+.benefitsList i{
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+
+
+/* Nos acompañan START */
+
+.allyBrands{
+    position: relative;
+    overflow:hidden;
+    margin: 10px 0;
+}
+
+.allyBrands h3{
+    color: blue;
+    text-align: center;
+    padding: 10px 25px;
+    font-size: 25px;
+    background-color: lightblue;
+}
+
+
+
+
+.carouselContainerBrands{
+    display: flex;
+    position: relative;
+    padding: 0px 20px;
+    justify-content: space-between;
+}
+
+.carouselContainerBrands img{
+    width: 50%;
+    height: 200px;
+}
+
+.carouselContainerBrands .rightArrow{
+    border-radius: 0px;
+
+}
+
+.carouselContainerBrands .leftArrow{
+   border-radius: 0px;
+}
+
+/* lo mas vendido START */
+
+.bestSellers{
+    position:relative;
+    overflow:hidden; 
+    margin: 10px 0;
+}
+
+.bestSellers h3{
+    color: blue;
+    text-align: center;
+    padding: 10px 25px;
+    font-size: 25px;
+    background-color: lightblue;
+}
+
+.carouselContainerBestSellers{
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;
+    padding: 0px 4%;
+
+}
+
+.carouselContainerBestSellers .leftArrow{
+    border-radius: 0px;
+    right: 0%;
+    display: none;
+}
+
+.carouselContainerBestSellers .rightArrow{
+    border-radius: 0px;
+    display: none;
+}
+
+.productCard{
+    border: red 1px solid;
+    width: 48%;
+    
+}
+
+.productCard img{
+    width: 100%;
+}
+
+.productCard a{
+    text-decoration: none;
+    color: black;
+}
+
+/*Site Alert START */
+
+.SiteAlert{
+    background-color: orange;
+    padding: 15px;
+}
+
+.alertContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 8.5px;
+    align-items: center;
+    color: #fff;
+}
+
+.alertContainer i{
+    padding-right: 10px;
+    font-size: 12px;
+    color: #185397;
+}
+
+.alertContainer a{
+    color: #185397;
+    text-decoration: none;
+}
+
+/* Opportunities START */
+
+.opportunities{
+    position:relative;
+    overflow:hidden; 
+    margin: 10px 0;
+}
+
+.opportunities h3{
+    color: blue;
+    text-align: center;
+    padding: 10px 25px;
+    font-size: 25px;
+    background-color: lightblue;
+}
+
+.carouselContainerOpportunities{
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;
+    padding: 0px 4%;
+
+}
+
+.carouselContainerOpportunities .leftArrow{
+    border-radius: 0px;
+    right: 0%;
+    display: none;
+}
+
+.carouselContainerOpportunities .rightArrow{
+    border-radius: 0px;
+    display: none;
+}
+
+
+
+/* encontra el producto */
+/*        inicio        */
+.bk{
+    background-color: #185397;
+}
+.contenedor{
+    display: flex;
+    border: 3px solid red;
+}
+
+.contenedor-2{
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+   flex-grow: 1;
+}
+
+.contenedor-3{
+    padding-bottom: 10%;
+    padding-top: 10%;
+    margin-bottom: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border: 3px solid blue ; 
+}
+
+.contenedor-4{
+display: flex;
+flex-direction: column;
+justify-content: center;
+padding: 15%;
+height: 60%;
+width: 100%;
+border: 3px solid rgb(43, 255, 0) ; 
+}
+
+.contenedor-5{
+    display: flex;
+    justify-content: center;
+padding: 2%;
+    border: 3px solid rgb(255, 0, 191) ; 
+}
+
+.contenedor-6{
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+    border: 3px solid rgb(0, 0, 0) ; 
+}
+
+.pd-r{
+    padding-right: 2%;
+}
+
+.p-t{
+    padding: 1%;
+    margin-top: 3%;
+}
+
+
+.bl{
+    display: block;
+    text-align: center;
+}
+.img-r{
+    border: 3px solid blue ; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
