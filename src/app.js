@@ -8,7 +8,14 @@ app.listen(PORT, () => console.log(`Servidor creado en el puerto ${PORT}`));
 app.use(express.static(path.join(__dirname, "../public")));
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "/views/home.html"));
+  res.sendFile(path.join(__dirname, "/views/homeMayorista.html"));
+});
+
+app.get("/mayorista", (req, res) => {
+  res.sendFile(path.join(__dirname, "/views/homeMayorista.html"));
+});
+app.get("/cf", (req, res) => {
+  res.sendFile(path.join(__dirname, "/views/homeCf.html"));
 });
 
 app.get("/register", (req, res) => {

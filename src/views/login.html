@@ -1,30 +1,49 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <link rel="stylesheet" href="/css/login.css" />
     <link rel="stylesheet" href="/css/styles.css" />
-    <title>Login</title>
+    <link rel="stylesheet" href="/css/header.css">
 
+    <title>Login</title>
 </head>
 <body>
-    <form action="">
-        <h3 class="title"><i class="fa-solid fa-user" id="userImage"></i></h3>
-        <label>
-            <i class="fa-solid fa-user"></i>
-            <input placeholder="usuario" type="text" id="username">
-        </label>
-        <label>
-            <i class="fa-solid fa-lock"></i>
-            <input placeholder="contraseña" type="password" id="password">
-        </label>
-        <p class="remember"><input type="checkbox" name="remember me" class="checkbox" id="">Recordarme
-        <a href="#" class="link">Olvidaste tu constraseña?</a></p>
-
-        <button id="button">Ingresar</button>
+    <form class="form-login">
+    <div>   
+        <h3><i class="fa-solid fa-user" id="userImage"></i></h3>
+            <p>
+            <label >
+                <i class="fa-solid fa-user"></i>
+                <input type="text" name="user" value="" placeholder="Usuario" id="username">
+            </label>
+            </p>
+            <p>
+            <label>
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" name="password" value="" placeholder="Constraseña" id="password">
+            </label>
+            </p>
+            <p>
+                <a href="create account" class="link">Crear Cuenta</a>
+            </p>
+            <p><input type="checkbox" name="remember me" id="checkbox"> recordame <a href="forgot-password" id="remember">olvidaste tu contraseña?</a>
+            </p>
+    </div> 
+            <p>
+                <input type="button" name="login" value="Ingresar" id="button">
+            </p>
+            
     </form>
 </body>
 </html>

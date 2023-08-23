@@ -1,21 +1,40 @@
 .nav {
+  padding: 5px;
   margin: 10px 5px;
+  color: white;
+  background-color: #243a76;
+  display: inline-block;
+}
+
+.nav a {
+  color: white;
 }
 
 .product {
+  display: flex;
+  flex-direction: column;
   margin: auto;
   width: 90%;
   text-align: center;
+  align-items: center;
 }
 
 .product img {
   width: 100%;
+  padding: 10px;
   height: auto;
-  border: solid 1px red; /* borrar */
+  align-self: center;
+}
+
+.name {
+  background-color: #213e60;
+  color: white;
+  display: inline-block;
+  padding: 5px;
+  margin-bottom: 5px;
 }
 
 .details {
-  border: solid 1px red; /* borrar */
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -40,36 +59,70 @@
 }
 
 .desc {
-  border: solid 1px red; /* borrar */
+  margin-top: 10px;
   text-align: left;
+}
+
+/* PRODUCTOS RELACIONADOS */
+
+.relatedProducts {
+  margin: auto;
+  margin-top: 40px;
+  width: 95%;
+  text-align: center;
 }
 
 /* PRODUCTOS RELACIONADOS  tarjetas*/
 
-.tarjeta{  display:flex;  flex-direction:column; margin: 10px;
-  justify-content:center;  width:46%;  border: 1px solid lightgray; 
-   box-shadow: 2px 2px 8px 4px #d3d3d3d1;  border-radius:15px;  
-  }
-.titulo{ text-align: center; padding:  10px 10px 0 10px;}
-.cuerpo{ text-align: center; padding: 10px;}
-.pie{ background: #6699ff;  border-radius:0 0 15px 15px;  padding: 10px;  text-align:center;}
-.pie a{  text-decoration: none;  color: white;}
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  justify-content: center;
+  width: 46%;
+  border: 1px solid lightgray;
+  box-shadow: 2px 2px 8px 4px #d3d3d3d1;
+  border-radius: 15px;
+}
+.cardTitle {
+  text-align: center;
+  padding: 10px 10px 0 10px;
+}
+.cardBody {
+  text-align: center;
+  padding: 10px;
+}
+.cardBody img {
+  width: 50%;
+}
+.cardFooter {
+  background: #e68c3a;
+  border-radius: 0 0 15px 15px;
+  padding: 10px;
+  text-align: center;
+}
+.cardFooter a {
+  text-decoration: none;
+  color: black;
+}
 
-.otherProducts{
+.otherProducts {
   align-items: center;
   display: flex;
   margin: auto;
-  width: 90%;
+  width: auto;
 }
 
 /* ESCONDEMOS 2 CARD EN MOBILE */
-#card3, #card4{
+#card3,
+#card4 {
   display: none;
 }
- 
+
 @media (min-width: 1200px) {
   /* PRODUCTOS RELACIONADOS MOSTARMOS CARD 3 Y 4*/
-  #card3, #card4{
+  #card3,
+  #card4 {
     justify-content: center;
     display: inline-block;
   }
@@ -79,6 +132,8 @@
   }
   .product {
     display: flex;
+    flex-direction: row;
+    align-items: normal;
     justify-content: space-around;
   }
   .product img {
@@ -90,5 +145,190 @@
     flex-direction: column;
     justify-content: space-around;
     width: 40%;
+  }
+}
+
+.txt-c {
+  text-align: center;
+}
+.b-color {
+  background-color: #025f9a;
+}
+
+.icon-color {
+  color: #ff8222;
+}
+
+.bk-color {
+  background-color: #243a76;
+}
+/* inicio newsletter */
+.title-nl {
+  margin-top: 15px;
+  color: #eee;
+}
+
+.mail-m {
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 3%;
+}
+.button-p {
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-bottom: 15px;
+}
+
+.box1-1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.box1-2 {
+  display: flex;
+}
+
+.box1-3 {
+  display: flex;
+}
+
+.shadow {
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+/* final newsletter */
+
+/* inicio Redes */
+.color-wp {
+  color: #25d366;
+}
+
+.color-fb {
+  color: #4267b2;
+}
+
+.color-ml {
+  color: #db4437;
+}
+
+.color-insta {
+  color: #c13584;
+}
+
+.icons {
+  width: 100%;
+  text-align: center;
+  margin: 10%;
+}
+.redes-m {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.box2-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 3%;
+  width: 100%;
+}
+
+/* Final Redes */
+
+/* inicio envio full-gratis-atencion cliente */
+.box3-1 {
+  display: flex;
+}
+
+.icons-margin {
+  margin: 4%;
+  color: #025f9a;
+}
+/* final envio full-gratis-atencion cliente */
+/* inicio afip img */
+
+.box4-1 {
+  display: flex;
+}
+
+.img-qr {
+  text-align: center;
+  width: 25%;
+  margin-top: 10px;
+}
+
+.shadow2 {
+  box-shadow: 0px 0px 10px rgb(66, 65, 65);
+}
+/* final afip img */
+
+/* Inicio PC */
+@media (min-width: 1280px) {
+  /* Inicio Newsletter */
+
+  .title-nl {
+    padding-top: 25px;
+    margin-top: 30px;
+  }
+
+  .mail-m {
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 1%;
+    padding: 7px;
+  }
+
+  .button-p {
+    margin-left: 45%;
+    margin-right: 45%;
+    margin-bottom: 15px;
+    padding: 3px;
+  }
+
+  /* Final Newsletter */
+
+  /* Inicio Redes  */
+
+  .icons {
+    width: 100%;
+    text-align: center;
+    margin: 20px;
+  }
+
+  /* Final Redes  */
+
+  /* Inicio ifo  */
+
+  .box5-1 {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* final ifo  */
+
+  /* Inicio afip  */
+
+  .img-qr {
+    width: 25%;
+  }
+
+  .box6-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .item-1 {
+    display: flex;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding-left: 10px;
+    order: 1;
+  }
+
+  .copy {
+    margin-right: 10px;
+    padding-right: 20px;
+    color: #eee;
   }
 }

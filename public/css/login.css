@@ -7,7 +7,7 @@ body {
     background: linear-gradient(to right, #213E60,#357ac9); /* PARA HACER GRADUACION DE COLOR DEL PRIMERO AL SEGUNDO */
 }
 
-form {
+.form-login {
     display: flex;
     flex-direction: column;
     background: #fff;
@@ -51,12 +51,13 @@ label input::placeholder {
     color: rgba(37, 37, 37, 0.5);
 }
 
-.checkbox{
+#checkbox{
     padding: 5px;
     margin: 5px;
 }
-.remember{
-    padding: 5px;
+#remember{
+    font-size: 10px;
+    padding: 10px;
 }
 
 
@@ -67,7 +68,7 @@ label input::placeholder {
     font-size: 12px;
 }
 
-button {
+#button {
     color: #fff;
     border: none;
     background: linear-gradient(to right, #E68C3A,#213E60);
