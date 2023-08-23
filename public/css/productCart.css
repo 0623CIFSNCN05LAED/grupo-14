@@ -182,6 +182,136 @@ table{
 
 
 
+
+.buttonReset{
+    height: 20px;
+    margin: 15px 0px;
+}
+
+.txt-c{
+    text-align: center;
+}
+.b-color{
+    background-color: #025f9a;
+}
+
+.icon-color{
+    color:#ff8222;
+}
+
+.bk-color{
+    background-color:#243a76 ;
+}
+/* inicio newsletter */
+.title-nl{
+    margin-top: 15px;
+    color: #eee;
+}
+
+
+.mail-m{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 3%;
+}
+.button-p{
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 15px;
+}
+
+.box1-1{
+    display: flex;
+    flex-direction: column;
+}
+
+.box1-2{
+    display: flex;
+    
+}
+
+.box1-3{
+    display: flex;
+    
+}
+
+.shadow{
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);  
+}
+/* final newsletter */
+
+/* inicio Redes */
+.color-wp{
+    color: #25D366;
+}
+
+.color-fb{
+    color:#4267B2 ;
+}
+
+.color-ml{
+    color: #DB4437;
+}
+
+.color-insta{
+    color: #C13584;
+}
+
+.icons{
+    width:100% ;
+    text-align: center;
+    margin: 10%;
+}
+.redes-m{
+margin-left:5% ;
+margin-right: 5%;
+}
+
+
+.box2-1{
+    display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   margin-bottom: 3%;
+  width: 100%;
+}
+
+
+
+/* Final Redes */
+
+/* inicio envio full-gratis-atencion cliente */
+.box3-1{
+    display: flex;
+    
+}
+
+.icons-margin{
+    margin: 4%;
+    color:#025f9a;
+}
+/* final envio full-gratis-atencion cliente */
+/* inicio afip img */
+
+.box4-1{
+    display: flex;
+}
+
+.img-qr{
+text-align: center;
+   width:25%;
+   margin-top: 10px;
+}
+
+.shadow2{
+    box-shadow: 0px 0px 10px rgb(66, 65, 65);  
+}
+/* final afip img */
+
+
+
+
+
 @media(min-width:760px){
     .productPrice{
         visibility: visible;
@@ -197,4 +327,82 @@ table{
         visibility: visible;
         display: table-cell;
     }
+}
+
+
+
+/* Inicio PC */
+@media (min-width:1280px){
+
+/* Inicio Newsletter */
+
+    .title-nl{
+        padding-top: 25px;
+        margin-top: 30px;
+        
+    }
+
+    .mail-m{
+        margin-left: 30%;
+        margin-right: 30%;
+        margin-bottom: 1%;
+        padding: 7px ;
+    }
+
+    .button-p{
+        margin-left: 45%;
+        margin-right: 45%;
+        margin-bottom: 15px;
+        padding: 3px;
+    }
+
+    /* Final Newsletter */
+
+    /* Inicio Redes  */
+
+    .icons{
+        width:100% ;
+        text-align: center;
+        margin: 20px;
+    }
+
+/* Final Redes  */
+
+/* Inicio ifo  */
+
+.box5-1{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* final ifo  */
+
+/* Inicio afip  */
+
+.img-qr{
+       width:25%;
+    }
+
+.box6-1{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.item-1{
+    display: flex;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding-left: 10px;
+    order: 1;
+}
+
+.copy{
+    margin-right: 10px;
+    padding-right: 20px;
+    color:#eee ;
+}
+
+
 }
