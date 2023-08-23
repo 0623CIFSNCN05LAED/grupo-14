@@ -1,0 +1,181 @@
+/* Header */
+
+header {
+  position: sticky;
+  top: 0px;
+}
+
+.topLeftHeader {
+  text-align: center;
+  background-color: #243a76;
+  padding: 3px 0;
+}
+
+.topLeftHeader p {
+  margin: 5px;
+  color: white;
+}
+
+.topRightHeader li {
+  background-color: #55a4da;
+  padding: 10px;
+  margin: 5px;
+  width: auto;
+}
+
+.topRightHeader ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.topRightHeader a {
+  text-decoration: none;
+  color: white;
+}
+
+.navList ul,
+.navMobile ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navList li,
+.navMobile li {
+  background-color: #55a4da;
+  padding: 10px;
+  margin: 0 5px 5px;
+  width: auto;
+}
+
+.navList a,
+.navMobile a {
+  text-decoration: none;
+  color: white;
+}
+
+.searchBar {
+  display: none;
+  border-radius: 8px;
+  width: auto;
+  margin-right: 5px;
+}
+
+/* Estilos para la navegación en dispositivos móviles */
+.navMobile {
+  display: flex;
+  justify-content: space-between;
+  font-size: 25px;
+  background-color: #55a4da;
+  padding: 5px;
+}
+
+.navRightMobile {
+  display: flex;
+  width: auto;
+  order: 1;
+  text-align: right;
+}
+
+.menuMobile {
+  background-color: #243a76;
+  padding: 5px;
+  width: 80vw;
+  position: fixed;
+  display: none;
+}
+
+.bottomLeftNav ul li {
+  display: none;
+}
+
+/* Estilos para pantallas de escritorio (más de 1280px) */
+@media (min-width: 1280px) {
+  header {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .topLeftHeader {
+    display: flex;
+    text-align: left;
+    align-items: center;
+    width: 40%;
+    justify-content: space-around;
+  }
+  .searchBar {
+    display: inline-block;
+    border-radius: 8px;
+    width: 500px;
+  }
+  .navMobile {
+    flex-direction: row;
+    width: 60%;
+    font-size: 25px;
+    background-color: #243a76;
+    padding: 5px;
+  }
+  .navRightMobile {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+  }
+  .topRightHeader li {
+    background-color: #243a76;
+  }
+  .navList li,
+  .navMobile li {
+    background-color: #243a76;
+  }
+  .navRightMobile i {
+    margin: 0 10px;
+  }
+  .navList {
+    margin-top: 5px;
+  }
+
+  /* HACER MENU DESPLEGABLE */
+
+  /*   .bottomLeftNav ul li {
+    display: inherit;
+  }
+
+  .bottomLeftNav li a {
+    display: block;
+  }
+
+  .bottomLeftNav li > ul {
+    float: left;
+  }
+
+  .bottomLeftNav li:hover > ul {
+    display: inline-block;
+    position: absolute;
+  }
+
+  .bottomLeftNav li ul {
+    display: none; 
+    position: relative;
+  } */
+
+  /**/
+  .menuMobile {
+    background-color: #55a4da;
+    display: flex;
+    position: inherit;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .noDesk {
+    display: none;
+  }
+  .topRightHeader {
+    order: 1;
+  }
+  .bottomRightNav {
+    display: flex;
+  }
+  .bottomLeftNav {
+    display: flex;
+  }
+}
