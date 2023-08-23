@@ -1,79 +1,345 @@
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 
-    background: linear-gradient(to right, #213E60,#357ac9); /* PARA HACER GRADUACION DE COLOR DEL PRIMERO AL SEGUNDO */
+  background: linear-gradient(
+    to right,
+    #213e60,
+    #357ac9
+  ); /* PARA HACER GRADUACION DE COLOR DEL PRIMERO AL SEGUNDO */
 }
 
 .form-login {
-    display: flex;
-    flex-direction: column;
-    background: #fff;
-    text-align: center;
-    padding: 20px 25px;
-    box-shadow: 0 5px 10px rgba(71, 3, 6, 0.7);
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  text-align: center;
+  padding: 20px 25px;
+  box-shadow: 0 5px 10px rgba(71, 3, 6, 0.7);
 }
 
-#userImage{
-    font-size: 50px;
-    color: #213E60;
-    margin-right: 10px;
+#userImage {
+  font-size: 50px;
+  color: #213e60;
+  margin-right: 10px;
 }
 .title {
-    color: #252525;
-    font-size: 35px;
-    font-weight: 800;
-    margin-bottom: 30px;
+  color: #252525;
+  font-size: 35px;
+  font-weight: 800;
+  margin-bottom: 30px;
 }
 
 label {
-    margin-bottom: 35px;
+  margin-bottom: 35px;
 }
 
-.fa-solid {
-    font-size: 20px;
-    color: #E68C3A;
-    margin-right: 10px;
+.iconLogin {
+  font-size: 20px;
+  color: #e68c3a;
+  margin-right: 10px;
 }
 
 label input {
-    outline: none;
-    border: none;
-    color: #252525;
-    border-bottom: solid 1px #213E60;
-    padding: 0 5px;
-    font-size: 18px;
+  outline: none;
+  border: none;
+  color: #252525;
+  border-bottom: solid 1px #213e60;
+  padding: 0 5px;
+  font-size: 18px;
 }
 
 label input::placeholder {
-    color: rgba(37, 37, 37, 0.5);
+  color: rgba(37, 37, 37, 0.5);
 }
 
-#checkbox{
-    padding: 5px;
-    margin: 5px;
+#checkbox {
+  padding: 5px;
+  margin: 5px;
 }
-#remember{
-    font-size: 10px;
-    padding: 10px;
+#remember {
+  font-size: 10px;
+  padding: 10px;
 }
-
 
 .link {
-    color: #252525;
-    margin-bottom: 15px;
-    padding: 5px;
-    font-size: 12px;
+  color: #252525;
+  margin-bottom: 15px;
+  padding: 5px;
+  font-size: 12px;
 }
 
 #button {
-    color: #fff;
-    border: none;
-    background: linear-gradient(to right, #E68C3A,#213E60);
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 20px;
+  color: #fff;
+  border: none;
+  background: linear-gradient(to right, #e68c3a, #213e60);
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 20px;
 }
 
+/*        inicio        */
+/*        footer      */
+
+.txt-c {
+  text-align: center;
+}
+.b-color {
+  background-color: #025f9a;
+}
+
+.icon-color {
+  color: #ff8222;
+}
+
+.bk-color {
+  background-color: #243a76;
+}
+/* inicio newsletter */
+.title-nl {
+  margin-top: 15px;
+  color: #eee;
+}
+
+.mail-m {
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 3%;
+}
+.button-p {
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-bottom: 15px;
+}
+
+.box1-1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.box1-2 {
+  display: flex;
+}
+
+.box1-3 {
+  display: flex;
+}
+
+.shadow {
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+/* final newsletter */
+
+/* inicio Redes */
+.color-wp {
+  color: #25d366;
+}
+
+.color-fb {
+  color: #4267b2;
+}
+
+.color-ml {
+  color: #db4437;
+}
+
+.color-insta {
+  color: #c13584;
+}
+
+.icons {
+  width: 100%;
+  text-align: center;
+  margin: 10%;
+}
+.redes-m {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.box2-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 3%;
+  width: 100%;
+}
+
+/* Final Redes */
+
+/* inicio envio full-gratis-atencion cliente */
+.box3-1 {
+  display: flex;
+}
+
+.icons-margin {
+  margin: 4%;
+  color: #025f9a;
+}
+/* final envio full-gratis-atencion cliente */
+/* inicio afip img */
+
+.box4-1 {
+  display: flex;
+}
+
+.img-qr {
+  text-align: center;
+  width: 25%;
+  margin-top: 10px;
+}
+
+.shadow2 {
+  box-shadow: 0px 0px 10px rgb(66, 65, 65);
+}
+/* final afip img */
+
+/*        inicio        */
+/*        desktop      */
+@media (min-width: 1280px) {
+  /* encontra el producto */
+  /*        inicio        */
+  .bk {
+    background-color: #185397;
+  }
+  .contenedor {
+    display: flex;
+    border: 3px solid red;
+  }
+
+  .contenedor-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+  }
+
+  .contenedor-3 {
+    padding-bottom: 10%;
+    padding-top: 10%;
+    margin-bottom: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border: 3px solid blue;
+  }
+
+  .contenedor-4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15%;
+    height: 60%;
+    width: 100%;
+    border: 3px solid rgb(43, 255, 0);
+  }
+
+  .contenedor-5 {
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+    border: 3px solid rgb(255, 0, 191);
+  }
+
+  .contenedor-6 {
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+    border: 3px solid rgb(0, 0, 0);
+  }
+
+  .pd-r {
+    padding-right: 2%;
+  }
+
+  .p-t {
+    padding: 1%;
+    margin-top: 3%;
+  }
+
+  .bl {
+    display: block;
+    text-align: center;
+  }
+  .img-r {
+    border: 3px solid blue;
+  }
+  /* encontra el producto */
+  /*        final         */
+
+  /*        footer        */
+  /*        inicio        */
+
+  /* Inicio Newsletter */
+
+  .title-nl {
+    padding-top: 25px;
+    margin-top: 30px;
+  }
+
+  .mail-m {
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 1%;
+    padding: 7px;
+  }
+
+  .button-p {
+    margin-left: 45%;
+    margin-right: 45%;
+    margin-bottom: 15px;
+    padding: 3px;
+  }
+
+  /* Final Newsletter */
+
+  /* Inicio Redes  */
+
+  .icons {
+    width: 100%;
+    text-align: center;
+    margin: 20px;
+  }
+
+  /* Final Redes  */
+
+  /* Inicio ifo  */
+
+  .box5-1 {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* final ifo  */
+
+  /* Inicio afip  */
+
+  .img-qr {
+    width: 25%;
+  }
+
+  .box6-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .item-1 {
+    display: flex;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding-left: 10px;
+    order: 1;
+  }
+
+  .copy {
+    margin-right: 10px;
+    padding-right: 20px;
+    color: #eee;
+  }
+}
