@@ -98,67 +98,52 @@
         </nav>
       </div>
     </header>
-
     <main>
-      <h1 class="title">Mi Carrito</h1>
-      <section class="productsSelection">
-        <article class="categories">
-          <p>Imagen</p>
-          <p>Nombre</p>
-          <p>Precio</p>
-          <p>Cantidad</p>
-          <p>Eliminar</p>
-        </article>
-        <article class="productLavandina">
-          <img src="/img/foto1.png" alt="foto producto 1" />
-          <p class="productName">Lavandina</p>
-          <p class="price">$500</p>
-          <nav class="quantityNumber">
-            <i class="fa-solid fa-circle-minus"></i>
-            <p>01</p>
-            <i class="fa-solid fa-circle-plus"></i>
-          </nav>
-          <button type="reset" class="buttonReset">Eliminar</button>
-        </article>
-        <article class="productJabonLiquido">
-          <img src="/img/foto2.png" alt="foto producto 2" />
-          <p class="productName">Jabon liquido</p>
-          <p class="price">$1000</p>
-          <nav class="quantityNumber">
-            <i class="fa-solid fa-circle-minus"></i>
-            <p>02</p>
-            <i class="fa-solid fa-circle-plus"></i>
-          </nav>
-          <button type="reset" class="buttonReset">Eliminar</button>
-        </article>
-        <article class="productEsponja">
-          <img src="/img/foto3.png" alt="foto producto 3" />
-          <p class="productName">Esponja</p>
-          <p class="price">$1500</p>
-          <nav class="quantityNumber">
-            <i class="fa-solid fa-circle-minus"></i>
-            <p>03</p>
-            <i class="fa-solid fa-circle-plus"></i>
-          </nav>
-          <button type="reset" class="buttonReset">Eliminar</button>
-        </article>
-      </section>
-      <section class="priceCalculator">
-        <article>
-          <p class="subtotal">Subtotal</p>
-          <p class="subtotalPrice">10</p>
-        </article>
-        <article>
-          <p class="shipping">Envio</p>
-          <p class="shippingPrice">5</p>
-        </article>
-        <article>
-          <p class="total">Total</p>
-          <p class="totalPrice">15</p>
-        </article>
-      </section>
-      <button type="submit">Realizar compra</button>
-    </main>
+      <div class="alertText">
+          <p>Todos los precios son finales, incluyen IVA</p>
+      </div>
+      <h1 class="title">Carrito de compras</h1>
+      <table>
+          <thead class="asd">
+              <tr>
+              <th class="productName">Producto</th>
+              <th class="productPrice">Precio</th>
+              <th class="productQuantity">Cantidad</th>
+              <th class="productTotal">Total</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr class="itemInfo">
+              <td class="product">
+                  <span class="productImage"><a href="productDetail"><img src="/img/foto1.png"></a></span>
+                  <h4 class="productTitle"><a href="productDetail">Lavandina</a></h4> 
+              </td>
+              <td class="price">
+                  <div class="mb5">Precio:</div>
+                  <div>$500</div>
+              </td>
+              <td class="quantity">
+                  <div class="mb5">Cantidad:</div>
+                  <span><i class="fa-solid fa-minus"></i></span>
+                  <input type="text" name="itemQuantity" placeholder="00">
+                  <span><i class="fa-solid fa-plus"></i></span>
+              
+              </td>
+              <td class="subtotal">
+                  <div class="mb5">Subtotal:</div>
+                  <div>$500</div>
+              </td>
+              <td class="borra">
+                  <button class="eraseArticleButton" type="submit">Eliminar artículo</button>
+              </td>
+              </tr>
+          </tbody>
+      </table>
+      <div>
+          <button class="emptyCart" type="submit">Vaciar carrito</button>
+      </div>
+  </main>
+    
 
     <footer>
       <section class="bk-color shadow">
@@ -171,7 +156,6 @@
             name="email"
             placeholder="Ingresa tu Mail"
           />
-
           <button class="button-p" type="submit">Suscribirme</button>
         </div>
       </section>
@@ -241,9 +225,10 @@
         <div class="txt-c">
           <img class="img-qr item-1" src="/img/qr-afip.jpg" alt="qr-afip" />
         </div>
-
         <p class="copy">Copyright © 1999-2020 MercadoLiebre S.R.L.</p>
       </section>
     </footer>
-  </body>
-</html>
+    </body>
+    </html>
+          
+  
