@@ -11,7 +11,88 @@
     <title>Document</title>
 </head>
 <body>
-    <header></header>
+    <header>
+      <div class="topLeftHeader">
+        <p>Estas en TIENDA CONSUMIDOR FINAL</p>
+        <a href="#"><button>Cambiar a TIENDA MAYORISTA</button></a>
+      </div>
+      <div class="navMobile">
+        <div class="navRightMobile">
+          <input
+            type="text"
+            placeholder="¿Qué Estás Buscando?"
+            class="searchBar"
+          />
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+        <div class="noDesk">
+          <i class="fa-solid fa-bars"></i>
+          <img src="/img/logo.png" alt="logo" />
+        </div>
+      </div>
+      <div class="menuMobile">
+        <nav class="topRightHeader">
+          <ul class="bottomRightNav">
+            <li>
+              <a href="/login">Iniciar sesión</a>
+            </li>
+            <li>
+              <a href="/register">Crear una cuenta</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="navList">
+          <ul class="bottomLeftNav">
+            <li>
+              <a href="/products">Productos</a>
+              <ul>
+                <li>
+                  <a href="#">Categoria 1</a>
+                  <ul>
+                    <li><a href="#">Subcategoria 1</a></li>
+                    <li><a href="#">Subcategoria 2</a></li>
+                    <li><a href="#">Subcategoria 3</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <a href="#">Categoria 2</a>
+                  <ul>
+                    <li><a href="#">Subcategoria 1</a></li>
+                    <li><a href="#">Subcategoria 2</a></li>
+                    <li><a href="#">Subcategoria 3</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <a href="#">Categoria 3</a>
+                  <ul>
+                    <li><a href="#">Subcategoria 1</a></li>
+                    <li><a href="#">Subcategoria 2</a></li>
+                    <li><a href="#">Subcategoria 3</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            </li>
+
+            <li>
+              <a href="#">Tutoriales</a>
+              <ul>
+                <li><a href="#">Tutorial 1</a></li>
+                <li><a href="#">Tutorial 2</a></li>
+                <li><a href="#">Tutorial 3</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
     <main>
         <div class="banner">
             <!-- se va a ver correctamente cuando apliquemos javascript -->
@@ -21,7 +102,7 @@
                 <img src="/img/foto3.png" alt="Imagen 3">
                 <img src="/img/foto4.png" alt="Imagen 4">
                 <button class="leftArrow"><i class="fa-solid fa-chevron-left" ></i></button>
-                <ul>
+                <ul class="bottomCar">
                     <li><button></button></i></li>
                     <li><button></button></i></li>
                     <li><button></button></i></li>
