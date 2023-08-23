@@ -1,0 +1,78 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+    background: linear-gradient(to right, #213E60,#357ac9); /* PARA HACER GRADUACION DE COLOR DEL PRIMERO AL SEGUNDO */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    text-align: center;
+    padding: 20px 25px;
+    box-shadow: 0 5px 10px rgba(71, 3, 6, 0.7);
+}
+
+#userImage{
+    font-size: 50px;
+    color: #213E60;
+    margin-right: 10px;
+}
+.title {
+    color: #252525;
+    font-size: 35px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+label {
+    margin-bottom: 35px;
+}
+
+.fa-solid {
+    font-size: 20px;
+    color: #E68C3A;
+    margin-right: 10px;
+}
+
+label input {
+    outline: none;
+    border: none;
+    color: #252525;
+    border-bottom: solid 1px #213E60;
+    padding: 0 5px;
+    font-size: 18px;
+}
+
+label input::placeholder {
+    color: rgba(37, 37, 37, 0.5);
+}
+
+.checkbox{
+    padding: 5px;
+    margin: 5px;
+}
+.remember{
+    padding: 5px;
+}
+
+
+.link {
+    color: #252525;
+    margin-bottom: 15px;
+    padding: 5px;
+    font-size: 12px;
+}
+
+button {
+    color: #fff;
+    border: none;
+    background: linear-gradient(to right, #E68C3A,#213E60);
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
