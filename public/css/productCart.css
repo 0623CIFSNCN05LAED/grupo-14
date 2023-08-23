@@ -1,55 +1,200 @@
+
+body{
+    margin: 0 15px;
+}
+
+.alertText{
+    background-color: #d20202;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.alertText p{
+    color: #fff;
+    padding: 5px 10px;
+}
+
 .title{
-    background-color: #ebebeb;
+    text-align: left;
+    font-size: 40px;
+    margin-bottom: 35px;
+    color: #243a76;
+}
+
+/* Productos seleccionados START */
+
+table{
+    width: 100%;
+}
+
+
+/* thead START */
+
+
+.productName{
+    padding-right: 50px;
+    text-align: left;
+    border-bottom: 1px solid #dadada;
+}
+
+.productPrice{
+    display: none;
+    visibility: hidden;
+}
+
+.productQuantity{
+    display: none;
+    visibility: hidden;
+}
+
+.productTotal{
+    display: none;
+    visibility: hidden;
+}
+
+/* tbody START */
+
+
+.mb5{
+    margin-bottom: 5px;
+}
+
+.product{
+    display: flex;
+    margin: 10px 0;
+}
+
+.productImage img{
+    width: 100px;
+    height: 100px;
+}
+
+.productTitle{
+    margin-top: 0px;
+    padding-left: 30px;
+}
+
+.productTitle a{
+    text-decoration: none;
+    color: black;   
+}
+
+.price{
+    display: block;
+    width: 33%;
     text-align: center;
+    float: left;
+    margin-top: 20px;
+    margin-bottom: 5px;
 }
 
-.categories{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background-color: #adadad;
+
+.quantity{
+    display: block;
+    width: 33%;
+    text-align: center;
+    float: left;
+    margin-top: 20px;
 }
 
-.productLavandina{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background-color: #ebebeb;
-}
-.productLavandina img{
-    width: 35px;
-    height: 35px;
-    margin: 15px 0px;
+.quantity input{
+    width: 15px;
+    border: none;
+    appearance: none;
 }
 
-.productJabonLiquido{
-    display: flex;
-    justify-content: space-around;
-    background-color: #adadad;
-}
-.productJabonLiquido img{
-    width: 35px;
-    height: 35px;
-    margin: 15px 0px;
+
+.subtotal{
+    display: block;
+    width: 32%;
+    text-align: center;
+    float: left;
+    margin-top: 20px;
 }
 
-.productEsponja{
-    display: flex;
-    justify-content: space-around;
-    background-color: #ebebeb;
-}
-.productEsponja img{
-    width: 35px;
-    height: 35px;
-    margin: 15px 0px;
+
+.fa-minus, .fa-plus{
+    font-size: 12px;
 }
 
-.quantityNumber{
-    display: flex;
-    align-items: center;
-    margin: 15px 0px;
+.eraseArticleButton{
+    width: 100%;
+    background-color: transparent;
+    border-radius: 8px;
+    border: #55a4da 2px solid;
+    margin-top: 20px;
+    padding: 10px 0;
+    font-size: 17px;
+    color: #55a4da;
+    margin-bottom: 15px;
+    cursor: pointer;
+
 }
-.buttonReset{
-    height: 20px;
-    margin: 15px 0px;
+.borra{
+    display: block;
+    border-bottom: 1px solid #dadada;;
+
+}
+
+/* boton vaciar carrito */
+
+.emptyCart{
+    width: 100%;
+    background-color: transparent;
+    border-radius: 8px;
+    border: #55a4da 2px solid;
+    margin-top: 20px;
+    padding: 10px 0;
+    font-size: 17px;
+    color: #55a4da;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(min-width:760px){
+    .productPrice{
+        visibility: visible;
+        display: table-cell;
+    }
+    
+    .productQuantity{
+        visibility: visible;
+        display: table-cell;
+    }
+
+    .productTotal{
+        visibility: visible;
+        display: table-cell;
+    }
 }
