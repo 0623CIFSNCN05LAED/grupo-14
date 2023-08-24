@@ -105,7 +105,7 @@
       </div>
       <h1 class="title">Carrito de compras</h1>
       <table>
-          <thead class="asd">
+          <thead>
               <tr>
               <th class="productName">Producto</th>
               <th class="productPrice">Precio</th>
@@ -143,8 +143,34 @@
       <div>
           <button class="emptyCart" type="submit">Vaciar carrito</button>
       </div>
+      <section class="cartSummary">
+        <h3 class="summaryTitle">Tu pedido</h3>
+        <table class="summaryTable">
+          <tr class="cartSubtotal">
+            <th>Subtotal</th>
+            <td class="subtotal">$1.000</td>
+          </tr>
+          <tr class="shipping">
+            <td class="envio">
+              <h4>Envío</p>
+              <p>Ingresá tu dirección para ver las opciones de envío. <a href="#">Calcular envío</a></p>
+            </td>
+          </tr>
+          <tr class="cartTotal">
+            <th>Total</th>
+            <td class="total">$1.500</td>
+          </tr>
+        </table>
+        <div class="discountCouponContainer">
+          <label for="couponCode">¿Tenes un cupón de descuento?</label>
+          <input class="couponInput" type="text" name="couponCode" id="couponCode" placeholder="Ingresar Cupón">
+          <button type="submit" class="couponButton" name="applyCoupon">Aplicar</button>
+        </div>
+        <div class="checkout">
+          <button type="submit" name="checkout">Finalizar compra</button>
+        </div>
+      </section>
   </main>
-    
 
     <footer>
       <section class="bk-color shadow">
