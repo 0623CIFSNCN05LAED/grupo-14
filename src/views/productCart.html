@@ -98,52 +98,93 @@
         </nav>
       </div>
     </header>
+
     <main>
       <div class="alertText">
-          <p>Todos los precios son finales, incluyen IVA</p>
-      </div>
-      <h1 class="title">Carrito de compras</h1>
-      <table>
-          <thead class="asd">
-              <tr>
-              <th class="productName">Producto</th>
-              <th class="productPrice">Precio</th>
-              <th class="productQuantity">Cantidad</th>
-              <th class="productTotal">Total</th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr class="itemInfo">
-              <td class="product">
-                  <span class="productImage"><a href="productDetail"><img src="/img/foto1.png"></a></span>
-                  <h4 class="productTitle"><a href="productDetail">Lavandina</a></h4> 
-              </td>
-              <td class="price">
-                  <div class="mb5">Precio:</div>
-                  <div>$500</div>
-              </td>
-              <td class="quantity">
-                  <div class="mb5">Cantidad:</div>
-                  <span><i class="fa-solid fa-minus"></i></span>
-                  <input type="text" name="itemQuantity" placeholder="00">
-                  <span><i class="fa-solid fa-plus"></i></span>
-              
-              </td>
-              <td class="subtotal">
-                  <div class="mb5">Subtotal:</div>
-                  <div>$500</div>
-              </td>
-              <td class="borra">
-                  <button class="eraseArticleButton" type="submit">Eliminar artículo</button>
-              </td>
-              </tr>
-          </tbody>
-      </table>
-      <div>
-          <button class="emptyCart" type="submit">Vaciar carrito</button>
-      </div>
+        <p>Todos los precios son finales, incluyen IVA</p>
+    </div>
+    <h1 class="title">Carrito de compras</h1>
+    <table>
+        <thead class="asd">
+            <tr>
+            <th class="productName">Producto</th>
+            <th class="productPrice">Precio</th>
+            <th class="productQuantity">Cantidad</th>
+            <th class="productTotal">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="itemInfo">
+            <td class="product">
+                <span class="productImage"><a href="productDetail"><img src="/img/foto1.png"></a></span>
+                <h4 class="productTitle"><a href="productDetail">Lavandina</a></h4> 
+            </td>
+            <td class="price">
+                <div class="mb5">Precio:</div>
+                <div>$500</div>
+            </td>
+            <td class="quantity">
+                <div class="mb5">Cantidad:</div>
+                <span><i class="fa-solid fa-minus"></i></span>
+                <input type="text" name="itemQuantity" placeholder="00">
+                <span><i class="fa-solid fa-plus"></i></span>
+
+            </td>
+            <td class="subtotal">
+                <div class="mb5">Subtotal:</div>
+                <div>$500</div>
+            </td>
+            <td class="borra">
+                <button class="eraseArticleButton" type="submit">Eliminar artículo</button>
+            </td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <button class="emptyCart" type="submit">Vaciar carrito</button>
+    </div>
+    <section class="priceCalculator">
+        <article>
+        <p class="order">Tu pedido</p>
+        </article>
+        <article>
+        <div>
+            <p class="shippingEstimate">Estimación de envio e impuestos</p>
+        </div>
+        <div>
+            <p class="priceEstimate">Ingrese su destino para obtener un precio estimado de envío</p>
+            <form action="productCart.html">
+            <p>
+                <label for="pais">País</label>
+                <input type="text" name="pais" id="pais">
+                <!-- Acá poner para dar opciones de todos los países -->
+            </p>
+            <p>
+                <label for="city">Ciudad/Provincia</label>
+                <input type="text" name="city" id="city">
+                <!-- Acá poner para dar opciones de todas las provinicas/ciudades -->
+            </p>
+            <p>
+                <label for="code">Código Postal</label>
+                <input type="number" name="code" id="code">
+            </p>
+            </form>
+        </div>
+        </article>
+        <article>
+        <p class="subtotal">Subtotal</p>
+        <p class="subtotalPrice">10</p>
+        </article>
+        <article>
+        <p class="total">Total</p>
+        <p class="totalPrice">15</p>
+        </article>
+        <article>
+        
+        </article>
+    </section>
+    <button type="submit">Realizar compra</button>
   </main>
-    
 
     <footer>
       <section class="bk-color shadow">
@@ -156,6 +197,7 @@
             name="email"
             placeholder="Ingresa tu Mail"
           />
+
           <button class="button-p" type="submit">Suscribirme</button>
         </div>
       </section>
@@ -225,10 +267,9 @@
         <div class="txt-c">
           <img class="img-qr item-1" src="/img/qr-afip.jpg" alt="qr-afip" />
         </div>
+
         <p class="copy">Copyright © 1999-2020 MercadoLiebre S.R.L.</p>
       </section>
     </footer>
-    </body>
-    </html>
-          
-  
+  </body>
+</html>
