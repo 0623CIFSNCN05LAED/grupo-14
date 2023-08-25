@@ -140,8 +140,15 @@ main{
     color: #55a4da;
     margin-bottom: 15px;
     cursor: pointer;
-
+    transition: all 400ms;
 }
+
+
+.eraseArticleButton:hover{
+background-color: #55a4da;
+    color: #fff;
+}
+
 .borra{
     display: block;
     border-bottom: 1px solid #dadada;;
@@ -161,6 +168,12 @@ main{
     font-size: 17px;
     color: #55a4da;
     cursor: pointer;
+    transition: all 400ms;
+}
+
+.emptyCartButton:hover{
+    background-color: #55a4da;
+    color: #fff;
 }
 
 /* cart summary START */
@@ -253,15 +266,13 @@ border-radius: 5px;
     background-color: #243a76;
     color: #fff;
     font-size: 17px;
+    transition: all 400ms;
+    cursor: pointer;
 }
 
-
-
-
-
-
-
-
+.checkout button:hover{
+    background-color: #55a4da;
+}
 
 
 
@@ -391,8 +402,16 @@ text-align: center;
 
 
 
-@media(min-width:760px){
-    .productPrice{
+/* Inicio PC */
+@media (min-width:1280px){
+
+.cartContainer{
+    position: relative;
+}
+
+    /* items Table */
+
+.productPrice{
         visibility: visible;
         display: table-cell;
     }
@@ -406,12 +425,31 @@ text-align: center;
         visibility: visible;
         display: table-cell;
     }
-}
+
+    .itemsTable{
+        width: 76%;
+    }
+
+    
 
 
+    /* cart summary */
+    .cartSummaryContainer{
+        width: 23%;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
 
-/* Inicio PC */
-@media (min-width:1280px){
+    .cartSummary{
+        margin-top: 0px;
+        /* position: fixed; */
+    }
+/* ahora se mueve antes de llegar a tocar el borde superior de la pantalla pero con 
+javascript hacemos que quede en el lugar y comience a usar la funcionalidad fixed al tocar 
+el borde superior */
+
+
 
 /* Inicio Newsletter */
 
