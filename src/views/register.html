@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,253 +10,325 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
+    <link rel="stylesheet" href="/css/register.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/header.css" />
     <title>Registro</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="topLeftHeader">
-          <p>Estas en TIENDA CONSUMIDOR FINAL</p>
-          <a href="#"><button>Cambiar a TIENDA MAYORISTA</button></a>
+      <div class="topLeftHeader">
+        <p>Estas en TIENDA CONSUMIDOR FINAL</p>
+        <a href="#"><button>Cambiar a TIENDA MAYORISTA</button></a>
+      </div>
+      <div class="navMobile">
+        <div class="navRightMobile">
+          <input
+            type="text"
+            placeholder="¿Qué Estás Buscando?"
+            class="searchBar"
+          />
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-cart-shopping"></i>
         </div>
-        <div class="navMobile">
-          <div class="navRightMobile">
-            <input
-              type="text"
-              placeholder="¿Qué Estás Buscando?"
-              class="searchBar"
-            />
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <i class="fa-solid fa-cart-shopping"></i>
-          </div>
-          <div class="noDesk">
-            <i class="fa-solid fa-bars"></i>
-            <img src="/img/logo.png" alt="logo" />
-          </div>
+        <div class="noDesk">
+          <i class="fa-solid fa-bars"></i>
+          <img src="/img/logo.png" alt="logo" />
         </div>
-        <div class="menuMobile">
-          <nav class="topRightHeader">
-            <ul class="bottomRightNav">
-              <li>
-                <a href="/login">Iniciar sesión</a>
-              </li>
-              <li>
-                <a href="/register">Crear una cuenta</a>
-              </li>
-            </ul>
-          </nav>
-          <nav class="navList">
-            <ul class="bottomLeftNav">
-              <li>
-                <a href="/products">Productos</a>
-                <ul>
-                  <li>
-                    <a href="#">Categoria 1</a>
-                    <ul>
-                      <li><a href="#">Subcategoria 1</a></li>
-                      <li><a href="#">Subcategoria 2</a></li>
-                      <li><a href="#">Subcategoria 3</a></li>
-                    </ul>
-                  </li>
-                </ul>
-                <ul>
-                  <li>
-                    <a href="#">Categoria 2</a>
-                    <ul>
-                      <li><a href="#">Subcategoria 1</a></li>
-                      <li><a href="#">Subcategoria 2</a></li>
-                      <li><a href="#">Subcategoria 3</a></li>
-                    </ul>
-                  </li>
-                </ul>
-                <ul>
-                  <li>
-                    <a href="#">Categoria 3</a>
-                    <ul>
-                      <li><a href="#">Subcategoria 1</a></li>
-                      <li><a href="#">Subcategoria 2</a></li>
-                      <li><a href="#">Subcategoria 3</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              </li>
-    
-              <li>
-                <a href="#">Tutoriales</a>
-                <ul>
-                  <li><a href="#">Tutorial 1</a></li>
-                  <li><a href="#">Tutorial 2</a></li>
-                  <li><a href="#">Tutorial 3</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Nosotros</a></li>
-              <li><a href="#">Contacto</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-      <main>
+      </div>
+      <div class="menuMobile">
+        <nav class="topRightHeader">
+          <ul class="bottomRightNav">
+            <li>
+              <a href="/login">Iniciar sesión</a>
+            </li>
+            <li>
+              <a href="/register">Crear una cuenta</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="navList">
+          <ul class="bottomLeftNav">
+            <li>
+              <a href="/products">Productos</a>
+              <ul>
+                <li>
+                  <a href="#">Categoria 1</a>
+                  <ul>
+                    <li><a href="#">Subcategoria 1</a></li>
+                    <li><a href="#">Subcategoria 2</a></li>
+                    <li><a href="#">Subcategoria 3</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <a href="#">Categoria 2</a>
+                  <ul>
+                    <li><a href="#">Subcategoria 1</a></li>
+                    <li><a href="#">Subcategoria 2</a></li>
+                    <li><a href="#">Subcategoria 3</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <a href="#">Categoria 3</a>
+                  <ul>
+                    <li><a href="#">Subcategoria 1</a></li>
+                    <li><a href="#">Subcategoria 2</a></li>
+                    <li><a href="#">Subcategoria 3</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            </li>
+
+            <li>
+              <a href="#">Tutoriales</a>
+              <ul>
+                <li><a href="#">Tutorial 1</a></li>
+                <li><a href="#">Tutorial 2</a></li>
+                <li><a href="#">Tutorial 3</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>        
+        <form action="/">
+
         <h2>
-            Crear Cuenta de Cliente
+          Crear Cuenta de Cliente
         </h2>
-        
-        
+
         <h4>
-            Información Personal
+          Información Personal
         </h4>
-    
-        
-        <form action="register.html" method="POST"></form>
-        <p>
-            <label for="name">Nombre:</label>
-            <input type="text" name="name" id="name">
-        </p>
-        <p>
-            <label for="lastname">Apellido:</label>
-            <input type="text" name="lastname" id="lastname">
-        </p>
-        <p>
-            <label for="dni">Cuit/Dni:</label>
-            <input type="number" name="dni" id="dni">
-        </p>
-        <h4>Datos de Domicilio</h4>
-        <p>
-            <label for="reason">Razón Social:</label>
-            <input type="text" name="reason" id="reason">
-        </p>
-        <p>
-            <label for="tel">Teléfono/Celular:</label>
-            <input type="number" name="tel" id="tel">
-        </p>
-        <p>
-            <label for="address">Dirección:</label>
-            <input type="text" name="address" id="address">
-        </p>
-        <p>
-            <label for="barrio">Barrio/Localidad:</label>
-            <input type="text" name="barrio" id="barrio">
-        </p>
-        <p>
-            <label for="codigoPostal">Código Postal:</label>
-            <input type="number" name="codigoPostal" id="codigoPostal">
-        </p>
-        <p>
-            <label for="pais">País:</label>
-            <input type="text" name="pais" id="pais">
-        </p>
-        <p>
-            <label for="especificaciones">Especificaciones para la entrega:</label>
-            <textarea name="especificaciones" id="especificaciones"></textarea>
-        </p>
-        <p>
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email">
-        </p>
-        <p>
-            <label for="password">Contraseña:</label>
-            <input type="text" name="password" id="password">
-        </p>
-        <p>
-            <label for="confirmPassword">Confirmar Contraseña:</label> 
-            <input type="text" name="confirmPassword" id="confirmPassword">
-        </p>
-        <p>
-            <label for="recordarme">Recordarme</label>
-            <input type="checkbox" name="recordarme" value="recordarme">
-        </p>
-        <p>
-            <label for="notificacion">Mandar Notificaciones</label>
-            <input type="checkbox" name="notificacion" value="notificacion">
-        </p>
-        <p>
-            <button type="submit">Crear Cuenta</button>
-        </p>
-      </main>
-      <footer>
-        <section class="bk-color shadow">
-          <h2 class="txt-c title-nl">Suscribite a nuestro newsletter</h2>
-  
-          <div class="box1-1">
-            <input
-              class="box1-2 mail-m"
-              type="email"
-              name="email"
-              placeholder="Ingresa tu Mail"
-            />
-            <button class="button-p" type="submit">Suscribirme</button>
-          </div>
-        </section>
-  
-        <h3 class="txt-c">Seguinos!</h3>
-        <section class="box2-1">
-          <div class="icons">
-            <a class="redes-m" href="#"
-              ><i class="fa-brands fa-instagram fa-2xl color-insta"></i
-            ></a>
-  
-            <a class="redes-m" href="#"
-              ><i class="fa-regular fa-envelope fa-2xl color-ml"></i
-            ></a>
-  
-            <a class="redes-m" href="#"
-              ><i class="fa-brands fa-whatsapp fa-2xl color-wp"></i
-            ></a>
-  
-            <a class="redes-m" href="#"
-              ><i class="fa-brands fa-square-facebook fa-2xl color-fb"></i
-            ></a>
-          </div>
-        </section>
-  
-        <section class="box5-1">
-          <div class="icons-margin">
-            <div class="txt-c icon-color">
-              <i
-                class="fa-regular fa-credit-card fa-2xl icons-margin iconos-color"
-              ></i>
+
+        <div class="form-field">
+            <div class="data">
+              <label for="name" class="requiredlabel">Nombre</label>
+              <input type="text" name="name" id="name" required pattern="[\w\s]+">
             </div>
-  
-            <h4 class="txt-c">Envios gratis a partir de $10.000</h4>
-            <p class="txt-c">
-              Con compras de 10,000 pesos o más, nuestros envíos son gratuitos,
+        </div>
+
+        <div class="form-field">
+          <div class="data">
+            <label for="lastname" class="requiredlabel">Apellido</label>
+            <input type="text" name="lastname" id="lastname" required pattern="[\w\s]+">
+          </div>
+        </div>
+
+        <div class="form-field">
+          <div class="data">
+            <label for="dni" class="requiredlabel">Cuit/Dni</label>
+            <input 
+              type="number" 
+              name="dni" 
+              id="dni" 
+              required
+              onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+          </div>
+        </div>
+
+        <h4>
+          Datos de Domicilio
+        </h4>
+
+        <div class="form-field">
+          <div class="data">
+            <label for="reason" class="requiredlabel">Razón Social</label>
+            <input type="text" name="reason" id="reason" required>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <div class="data">
+            <label for="tel" class="requiredlabel">Teléfono/Celular</label>
+            <input 
+              type="number" 
+              name="tel" 
+              id="tel"
+              required
+              onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+          </div>
+        </div>
+
+        <div class="form-field">
+          <div class="data">
+            <label for="address" class="requiredlabel">Dirección</label>
+            <input type="text" name="address" id="address" required>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <div class="data">
+            <label for="barrio" class="requiredlabel">Barrio/Localidad</label>
+            <input type="text" name="barrio" id="barrio" required>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <div class="data">
+            <label for="codigoPostal" class="requiredlabel">Código Postal</label>
+            <input 
+              type="number" 
+              name="codigoPostal" 
+              id="codigoPostal" 
+              required
+              onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+          </div>
+        </div>
+
+        <div class="form-field">
+          <div class="data">
+            <label for="pais" class="requiredlabel">País</label>
+            <input type="text" name="pais" id="pais" required>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <div class="data">
+            <label for="especificaciones" class="requiredlabel">Especificaciones para la entrega</label>
+            <input type="text" name="especificaciones" id="especificaciones">
+          </div>
+        </div>
+
+        <div class="form-field">
+          <div class="data">
+            <label for="email" class="requiredlabel">Email</label>
+            <input type="email" name="email" id="email" required>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <div class="data">
+            <label for="password" class="requiredlabel">Contraseña</label>
+            <input type="password" name="password" id="password" required>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <div class="data">
+            <label for="confirmPassword" class="requiredlabel">Confirmar Contraseña</label> 
+            <input type="password" name="confirmPassword" id="confirmPassword" required>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <div class="data-checkbox">
+            <input type="checkbox" name="remember" value="remember">
+            <label for="remember" class="labelTag">Recordarme</label>
+            
+            <input type="checkbox" name="notify" value="notify">
+            <label for="notify">Mandar Notificaciones</label>
+          </div>
+        </div>
+
+        <div class="button-form">
+          <button type="submit">Crear Cuenta</button>
+        </div>
+
+      </form>
+    </main>
+    <footer>
+      <section class="bk-color shadow">
+
+          <h2 class="txt-c title-nl"> Suscribite a nuestro newsletter</h2>
+          
+            <div class="box1-1">
+          
+                <input class="box1-2 mail-m" type="email" name="email" placeholder="Ingresa tu Mail" />
+          
+            
+          
+              <button class="button-p" type="submit">Suscribirme</button>
+          
+                
+          
+          </div>
+                </section>
+          
+          
+          
+          
+                <h3 class="txt-c">Seguinos!</h3>
+              <section class="box2-1">
+          
+          <div class="icons" >
+          
+          <a class="redes-m" href="#"><i class="fa-brands fa-instagram fa-2xl color-insta"></i></a>
+          
+          <a class="redes-m" href="#"><i class="fa-regular fa-envelope fa-2xl color-ml"></i></a>
+          
+          <a class="redes-m" href="#"><i class="fa-brands fa-whatsapp fa-2xl color-wp"></i></a>
+          
+          <a class="redes-m" href="#"><i class="fa-brands fa-square-facebook fa-2xl color-fb"></i></a>
+          
+          </div>
+          
+          </section>
+          
+              <section class="box5-1">
+          
+          <div class="icons-margin">
+                      <div class="txt-c icon-color"> 
+                          <i class="fa-regular fa-credit-card fa-2xl icons-margin iconos-color"></i>
+                      </div>
+          
+          <h4 class="txt-c">Envios gratis a partir de $10.000</h4>
+          <p class="txt-c">
+              Con compras de 10,000 pesos o más, nuestros envíos son gratuitos, 
               brindándote un valor adicional por elegirnos como tu distribuidor.
-            </p>
+          </p>
+          
           </div>
-  
+          
+          
+          
+          
           <div class="icons-margin">
-            <div class="txt-c icon-color">
+          
+              <div class="txt-c icon-color">
               <i class="fa-solid fa-truck-fast fa-2xl icons-margin"></i>
-            </div>
-  
-            <h4 class="txt-c">Envio en 24hs</h4>
-            <p class="txt-c">
-              Nuestros envíos, en solo 24 horas, aseguran que tus productos
-              lleguen rápido y en perfecto estado a tu puerta.
-            </p>
           </div>
-  
+          
+          <h4 class="txt-c">Envio en 24hs</h4>
+          <p class="txt-c">
+              Nuestros envíos, en solo 24 horas, aseguran que tus productos lleguen 
+              rápido y en perfecto estado a tu puerta.
+          </p>
+          
+          </div>
+          
+          
+          
+          
+          
           <div class="icons-margin">
-            <div class="txt-c icon-color">
-              <i class="fa-solid fa-headset fa-2xl icons-margin"></i>
-            </div>
-            <h4 class="txt-c">Atencion al cliente</h4>
-            <p class="txt-c">
-              Atención al cliente inigualable: Estamos aquí para servirte con
-              soluciones rápidas y amigables en cada paso de tu experiencia de
-              compra.
-            </p>
+              <div class="txt-c icon-color">
+                  <i class="fa-solid fa-headset fa-2xl icons-margin"></i>
+              </div>
+          <h4 class="txt-c">Atencion al cliente</h4>
+          <p class="txt-c">
+              Atención al cliente inigualable: Estamos aquí para servirte con 
+              soluciones rápidas y amigables en cada paso de tu experiencia de compra.
+          </p>
           </div>
-        </section>
-  
-        <section class="bk-color box6-1 shadow2">
-          <div class="txt-c">
-            <img class="img-qr item-1" src="/img/qr-afip.jpg" alt="qr-afip" />
+          </section>
+          
+          
+          <section class="bk-color box6-1 shadow2">
+          <div class="txt-c ">
+          <img class="img-qr item-1" src="/img/qr-afip.jpg" alt="qr-afip">
           </div>
-          <p class="copy">Copyright © 1999-2020 MercadoLiebre S.R.L.</p>
-        </section>
-      </footer>
-    
-</body>
+          
+              <p class="copy">Copyright © 1999-2020 MercadoLiebre S.R.L.</p>
+          </section>
+    </footer>
+  </body>
 </html>
