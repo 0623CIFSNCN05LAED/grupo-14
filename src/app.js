@@ -7,6 +7,8 @@ app.listen(PORT, () => console.log(`Servidor creado en el puerto ${PORT}`));
 
 app.use(express.static(path.join(__dirname, "../public")));
 
+app.set("view engine", "ejs");
+
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "/views/homeMayorista.html"));
 });

@@ -2,7 +2,7 @@
   "name": "grupo-14",
   "version": "1.0.0",
   "description": "Nuestro sitio web va a ofrecer los productos comercializados por una empresa distribuidora de elementos de limpieza, que opera por ventas al mayor y menor.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon src/app.js"
@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^3.1.9",
     "express": "^4.18.2",
     "nodemon": "^3.0.1"
   }
