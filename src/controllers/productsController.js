@@ -1,8 +1,10 @@
-const path = require("path");
 
 const productsController = {
   detail: (req, res) => {
-    res.render("productDetail");
+    res.render("productDetail"); 
+  },
+  cart: (req,res)=>{
+    res.render("productCart");
   },
 };
 
