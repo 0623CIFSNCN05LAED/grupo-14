@@ -8,6 +8,8 @@ const productsRouter = require("./routes/productsRouter");
 const mainRouter = require('./routes/mainRouter'); //aca estoy requiriendo las funcionalidades del archivo,
                                                   //hace falta porque con el module.exports=router solo exportaba la funcionalidad de express, router!!!
 
+const userRouter = require("./routes/userRouter");
+
 app.listen(PORT, () => console.log(`Servidor creado en el puerto ${PORT}`));
 
 app.use(express.static(path.join(__dirname, "../public")));
@@ -19,15 +21,10 @@ app.set("views", "./src/views");
 
 app.use(mainRouter);
 
-/* USERS */
+/* USER */
 
-app.get("/login", (req, res) => {
-  res.sendFile(path.join(__dirname, "/views/login.html"));
-});
+app.use(userRouter);
 
-app.get("/register", (req, res) => {
-  res.sendFile(path.join(__dirname, "/views/register.html"));
-});
 
 /* PRODUCTS */
 
