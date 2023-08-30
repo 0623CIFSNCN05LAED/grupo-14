@@ -2,10 +2,10 @@ const express = require("express");
 
 const userController = {
     login: (req,res)=>{
-        res.render("register");
+        res.render("users/register");
     },
     register: (req,res)=>{
-        res.render("register");
+        res.render("users/register");
     }
 };
 

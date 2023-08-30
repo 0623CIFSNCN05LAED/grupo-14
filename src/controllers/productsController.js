@@ -1,10 +1,10 @@
 
 const productsController = {
   detail: (req, res) => {
-    res.render("productDetail"); 
+    res.render("products/productDetail"); 
   },
   cart: (req,res)=>{
-    res.render("productCart");
+    res.render("products/productCart");
   },
 };
 

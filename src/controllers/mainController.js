@@ -1,10 +1,10 @@
 
 const mainController = {
     homeMayorista: (req,res)=>{
-        res.render("homeMayorista"); //aca va el archivo views en ()
+        res.render("main/homeMayorista"); //aca va la ruta desde views hasta el archivo homeMayorista. !! no va / al principio.
     },
     homeConsumidorFinal: (req,res)=>{
-        res.render("homeCf");
+        res.render("main/homeCf");
     },
 };
 
