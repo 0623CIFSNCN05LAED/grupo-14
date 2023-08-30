@@ -14,93 +14,12 @@
 
     <link rel="stylesheet" href="/css/productDetail.css" />
     <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/header.css" />
 
     <title>Detalle de producto</title>
   </head>
   <body>
-    <header>
-      <div class="topLeftHeader">
-        <p>Estas en TIENDA CONSUMIDOR FINAL</p>
-        <a href="#"><button>Cambiar a TIENDA MAYORISTA</button></a>
-      </div>
-      <div class="navMobile">
-        <div class="navRightMobile">
-          <input
-            type="text"
-            placeholder="¿Qué Estás Buscando?"
-            class="searchBar"
-          />
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <i class="fa-solid fa-cart-shopping"></i>
-        </div>
-        <div class="noDesk">
-          <i class="fa-solid fa-bars"></i>
-          <img src="/img/logo.png" alt="logo" />
-        </div>
-      </div>
-      <div class="menuMobile">
-        <nav class="topRightHeader">
-          <ul class="bottomRightNav">
-            <li>
-              <a href="/login">Iniciar sesión</a>
-            </li>
-            <li>
-              <a href="/register">Crear una cuenta</a>
-            </li>
-          </ul>
-        </nav>
-        <nav class="navList">
-          <ul class="bottomLeftNav">
-            <li>
-              <a href="/products">Productos</a>
-              <ul>
-                <li>
-                  <a href="#">Categoria 1</a>
-                  <ul>
-                    <li><a href="#">Subcategoria 1</a></li>
-                    <li><a href="#">Subcategoria 2</a></li>
-                    <li><a href="#">Subcategoria 3</a></li>
-                  </ul>
-                </li>
-              </ul>
-              <ul>
-                <li>
-                  <a href="#">Categoria 2</a>
-                  <ul>
-                    <li><a href="#">Subcategoria 1</a></li>
-                    <li><a href="#">Subcategoria 2</a></li>
-                    <li><a href="#">Subcategoria 3</a></li>
-                  </ul>
-                </li>
-              </ul>
-              <ul>
-                <li>
-                  <a href="#">Categoria 3</a>
-                  <ul>
-                    <li><a href="#">Subcategoria 1</a></li>
-                    <li><a href="#">Subcategoria 2</a></li>
-                    <li><a href="#">Subcategoria 3</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            </li>
-
-            <li>
-              <a href="#">Tutoriales</a>
-              <ul>
-                <li><a href="#">Tutorial 1</a></li>
-                <li><a href="#">Tutorial 2</a></li>
-                <li><a href="#">Tutorial 3</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Contacto</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <%- include('./partials/header') %>
     <main>
       <div class="nav">
         <a href="/">Home</a>
@@ -210,100 +129,89 @@
       </section>
     </main>
 
-
     <footer>
-      
       <section class="bk-color shadow">
+        <h2 class="txt-c title-nl">Suscribite a nuestro newsletter</h2>
 
-      <h2 class="txt-c title-nl"> Suscribite a nuestro newsletter</h2>
-      
-       <div class="box1-1">
-      
-            <input class="box1-2 mail-m" type="email" name="email" placeholder="Ingresa tu Mail" />
-      
-       
-      
+        <div class="box1-1">
+          <input
+            class="box1-2 mail-m"
+            type="email"
+            name="email"
+            placeholder="Ingresa tu Mail"
+          />
+
           <button class="button-p" type="submit">Suscribirme</button>
-      
-           
-      
-      </div>
-           </section>
-           <h3 class="txt-c">Seguinos!</h3>
-          <section class="box2-1">
-      
-      <div class="icons" >
-      
-      <a class="redes-m" href="#"><i class="fa-brands fa-instagram fa-2xl color-insta"></i></a>
-      
-      <a class="redes-m" href="#"><i class="fa-regular fa-envelope fa-2xl color-ml"></i></a>
-      
-      <a class="redes-m" href="#"><i class="fa-brands fa-whatsapp fa-2xl color-wp"></i></a>
-      
-      <a class="redes-m" href="#"><i class="fa-brands fa-square-facebook fa-2xl color-fb"></i></a>
-      
-      </div>
-      
+        </div>
       </section>
-      
-          <section class="box5-1">
-      
-      <div class="icons-margin">
-                  <div class="txt-c icon-color"> 
-                      <i class="fa-regular fa-credit-card fa-2xl icons-margin iconos-color"></i>
-                  </div>
-      
-      <h4 class="txt-c">Envios gratis a partir de $10.000</h4>
-      <p class="txt-c">
-          Con compras de 10,000 pesos o más, nuestros envíos son gratuitos, 
-          brindándote un valor adicional por elegirnos como tu distribuidor.
-      </p>
-      
-      </div>
-      
-      
-      
-      
-      <div class="icons-margin">
-      
-         <div class="txt-c icon-color">
-          <i class="fa-solid fa-truck-fast fa-2xl icons-margin"></i>
-      </div>
-      
-      <h4 class="txt-c">Envio en 24hs</h4>
-      <p class="txt-c">
-          Nuestros envíos, en solo 24 horas, aseguran que tus productos lleguen 
-          rápido y en perfecto estado a tu puerta.
-      </p>
-      
-      </div>
-      
-      
-      
-      
-      
-      <div class="icons-margin">
+      <h3 class="txt-c">Seguinos!</h3>
+      <section class="box2-1">
+        <div class="icons">
+          <a class="redes-m" href="#"
+            ><i class="fa-brands fa-instagram fa-2xl color-insta"></i
+          ></a>
+
+          <a class="redes-m" href="#"
+            ><i class="fa-regular fa-envelope fa-2xl color-ml"></i
+          ></a>
+
+          <a class="redes-m" href="#"
+            ><i class="fa-brands fa-whatsapp fa-2xl color-wp"></i
+          ></a>
+
+          <a class="redes-m" href="#"
+            ><i class="fa-brands fa-square-facebook fa-2xl color-fb"></i
+          ></a>
+        </div>
+      </section>
+
+      <section class="box5-1">
+        <div class="icons-margin">
           <div class="txt-c icon-color">
-              <i class="fa-solid fa-headset fa-2xl icons-margin"></i>
+            <i
+              class="fa-regular fa-credit-card fa-2xl icons-margin iconos-color"
+            ></i>
           </div>
-      <h4 class="txt-c">Atencion al cliente</h4>
-      <p class="txt-c">
-          Atención al cliente inigualable: Estamos aquí para servirte con 
-          soluciones rápidas y amigables en cada paso de tu experiencia de compra.
-      </p>
-      </div>
+
+          <h4 class="txt-c">Envios gratis a partir de $10.000</h4>
+          <p class="txt-c">
+            Con compras de 10,000 pesos o más, nuestros envíos son gratuitos,
+            brindándote un valor adicional por elegirnos como tu distribuidor.
+          </p>
+        </div>
+
+        <div class="icons-margin">
+          <div class="txt-c icon-color">
+            <i class="fa-solid fa-truck-fast fa-2xl icons-margin"></i>
+          </div>
+
+          <h4 class="txt-c">Envio en 24hs</h4>
+          <p class="txt-c">
+            Nuestros envíos, en solo 24 horas, aseguran que tus productos
+            lleguen rápido y en perfecto estado a tu puerta.
+          </p>
+        </div>
+
+        <div class="icons-margin">
+          <div class="txt-c icon-color">
+            <i class="fa-solid fa-headset fa-2xl icons-margin"></i>
+          </div>
+          <h4 class="txt-c">Atencion al cliente</h4>
+          <p class="txt-c">
+            Atención al cliente inigualable: Estamos aquí para servirte con
+            soluciones rápidas y amigables en cada paso de tu experiencia de
+            compra.
+          </p>
+        </div>
       </section>
-      
-      
+
       <section class="bk-color box6-1 shadow2">
-      <div class="txt-c ">
-      <img class="img-qr item-1" src="/img/qr-afip.jpg" alt="qr-afip">
-      </div>
-      
-          <p class="copy">Copyright © 1999-2020 MercadoLiebre S.R.L.</p>
+        <div class="txt-c">
+          <img class="img-qr item-1" src="/img/qr-afip.jpg" alt="qr-afip" />
+        </div>
+
+        <p class="copy">Copyright © 1999-2020 MercadoLiebre S.R.L.</p>
       </section>
-
-
-      </footer>
+    </footer>
   </body>
 </html>
