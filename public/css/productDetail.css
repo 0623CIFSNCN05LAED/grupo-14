@@ -53,9 +53,22 @@
 }
 
 .cart {
-  height: 35px;
   width: 100%;
-  background-color: #fff;
+  background-color: transparent;
+  border-radius: 8px;
+  border: #55a4da 2px solid;
+  margin-top: 20px;
+  padding: 10px 0;
+  font-size: 17px;
+  color: #55a4da;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: all 400ms;
+}
+
+.cart:hover {
+  background-color: #55a4da;
+  color: #fff;
 }
 
 .desc {
