@@ -63,6 +63,10 @@ header {
   margin-right: 5px;
 }
 
+.iconCart i {
+  color: black;
+}
+
 /* Estilos para la navegación en dispositivos móviles */
 .navMobile {
   display: flex;
