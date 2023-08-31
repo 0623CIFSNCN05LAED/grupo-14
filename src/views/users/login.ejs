@@ -1,54 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+  <head>
+    <%- include("../partials/head") %>
 
     <link rel="stylesheet" href="/css/login.css" />
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="/css/footer.css"/>
 
     <title>Login</title>
-</head>
-<body>
+  </head>
+  <body>
     <%- include('../partials/header') %>
+
     <main class="login">
-        <form class="form-login">
-        <div>   
-            <h3><i class="fa-solid fa-user" id="userImage"></i></h3>
-                <p>
-                <label >
-                    <i class="fa-solid fa-user iconLogin"></i>
-                    <input type="text" name="user" value="" placeholder="Usuario" id="username">
-                </label>
-                </p>
-                <p>
-                <label>
-                    <i class="fa-solid fa-lock iconLogin"></i>
-                    <input type="password" name="password" value="" placeholder="Constraseña" id="password">
-                </label>
-                </p>
-                <p>
-                    <a href="create account" class="link">Crear Cuenta</a>
-                </p>
-                <p><input type="checkbox" name="remember me" id="checkbox"> recordame <a href="forgot-password" id="remember">olvidaste tu contraseña?</a>
-                </p>
-        </div> 
-                <p>
-                    <input type="button" name="login" value="Ingresar" id="button">
-                </p>
-                
-        </form>
+      <form class="form-login">
+        <div>
+          <h3><i class="fa-solid fa-user" id="userImage"></i></h3>
+          <p>
+            <label>
+              <i class="fa-solid fa-user iconLogin"></i>
+              <input
+                type="text"
+                name="user"
+                value=""
+                placeholder="Usuario"
+                id="username"
+              />
+            </label>
+          </p>
+          <p>
+            <label>
+              <i class="fa-solid fa-lock iconLogin"></i>
+              <input
+                type="password"
+                name="password"
+                value=""
+                placeholder="Constraseña"
+                id="password"
+              />
+            </label>
+          </p>
+          <p>
+            <a href="create account" class="link">Crear Cuenta</a>
+          </p>
+          <p>
+            <input type="checkbox" name="remember me" id="checkbox" /> recordame
+            <a href="forgot-password" id="remember">olvidaste tu contraseña?</a>
+          </p>
+        </div>
+        <p>
+          <input type="button" name="login" value="Ingresar" id="button" />
+        </p>
+      </form>
     </main>
-    <%- include("./partials/footer") %>
-</body>
+
+    <%- include("../partials/footer") %>
+  </body>
 </html>
