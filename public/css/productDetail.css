@@ -108,11 +108,19 @@
 .cardBody img {
   width: 50%;
 }
-.cardFooter {
-  background: #e68c3a;
+.cardFooter button {
+  width: 100%;
+  padding: 15px 0;
+  border: none;
   border-radius: 0 0 15px 15px;
-  padding: 10px;
-  text-align: center;
+  background-color: #243a76;
+  color: #fff;
+  font-size: 17px;
+  transition: all 400ms;
+  cursor: pointer;
+}
+.cardFooter button:hover {
+  background-color: #55a4da;
 }
 .cardFooter a {
   text-decoration: none;
