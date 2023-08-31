@@ -169,9 +169,9 @@ header {
     display: flex;
     position: inherit;
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
-  .noDesk {
+  .noDesk i {
     display: none;
   }
   .topRightHeader {
@@ -182,5 +182,11 @@ header {
   }
   .bottomLeftNav {
     display: flex;
+  }
+  .noDesk img {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index: 2;
   }
 }
