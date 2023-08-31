@@ -292,7 +292,7 @@ border-radius: 5px;
 @media (min-width:1280px){
 
     main{
-        margin-bottom: 111px;
+        margin-bottom: 120px;
     }
     .cartContainer{
         position: relative;
@@ -386,25 +386,11 @@ border-radius: 5px;
     /* items table END */
 
 /* boton vaciar carrito START */
-    /* .emptyCartButton{
-        width: 100%;
-        background-color: transparent;
-        border-radius: 8px;
-        border: #55a4da 2px solid;
-        margin-top: 20px;
-        padding: 10px 0;
-        font-size: 17px;
-        color: #55a4da;
-        cursor: pointer;
-        transition: all 400ms;
-    } */
 
 .emptyCartButton{
     width: 20%;
     font-size: 15px;
 }
-
-
 
     /* boton vaciar carrito END */
 
@@ -414,7 +400,6 @@ border-radius: 5px;
         position: absolute;
         top: 0px;
         right: 0px;
-        display: none   ;
     }
 
     .cartSummary{
