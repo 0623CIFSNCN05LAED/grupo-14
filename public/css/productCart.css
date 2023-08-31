@@ -20,7 +20,7 @@ main{
     background-color: #d20202;
     border-radius: 5px;
     width: 300px;
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 .alertText p{
@@ -34,21 +34,22 @@ main{
     margin-bottom: 35px;
     color: #243a76;
 }
+/* IVA incluido END */
 
 /* Productos seleccionados START */
 
 .itemsTable{
     width: 100%;
-}
+    border-collapse: collapse;
 
+}
+/* Productos seleccionados END */
 
 /* thead START */
-
 
 .productName{
     padding-right: 50px;
     text-align: left;
-    border-bottom: 1px solid #dadada;
 }
 
 .productPrice{
@@ -66,10 +67,14 @@ main{
     visibility: hidden;
 }
 
+/* thead END */
+
 /* tbody START */
 
-
-
+.cartItem{
+    border-top: 1px #d1d1d1 solid;
+    border-bottom: 1px #d1d1d1 solid;
+}
 
 .product{
     display: flex;
@@ -92,7 +97,7 @@ main{
 }
 
 .price{
-    display: block;
+    display: table-cell;
     width: 33%;
     text-align: center;
     float: left;
@@ -102,8 +107,16 @@ main{
 
 
 .quantity{
-    display: block;
+    display: table-cell;
     width: 33%;
+    text-align: center;
+    float: left;
+    margin-top: 20px;
+}
+
+.itemInfo .subtotal{
+    display: table-cell;
+    width: 32%;
     text-align: center;
     float: left;
     margin-top: 20px;
@@ -115,16 +128,6 @@ main{
     appearance: none;
 }
 
-
-.itemInfo .subtotal{
-    display: block;
-    width: 32%;
-    text-align: center;
-    float: left;
-    margin-top: 20px;
-}
-
-
 .fa-minus, .fa-plus{
     font-size: 12px;
 }
@@ -132,12 +135,12 @@ main{
 .eraseArticleButton{
     width: 100%;
     background-color: transparent;
-    border-radius: 8px;
-    border: #55a4da 2px solid;
+    border-radius: 3px;
+    border: #d1d1d1 2px solid;
     margin-top: 20px;
     padding: 10px 0;
     font-size: 17px;
-    color: #55a4da;
+    color: #666;
     margin-bottom: 15px;
     cursor: pointer;
     transition: all 400ms;
@@ -145,15 +148,16 @@ main{
 
 
 .eraseArticleButton:hover{
-background-color: #55a4da;
-    color: #fff;
+background-color: #d1d1d1;
 }
 
 .borra{
     display: block;
-    border-bottom: 1px solid #dadada;;
-
+    border-bottom: 1px #d1d1d1 solid ;
 }
+
+
+/* tbody END */
 
 /* boton vaciar carrito */
 
@@ -175,6 +179,7 @@ background-color: #55a4da;
     background-color: #55a4da;
     color: #fff;
 }
+/* boton vaciar carrito END */
 
 /* cart summary START */
 
@@ -222,6 +227,7 @@ background-color: #55a4da;
 .cartTotal{
     font-weight: bolder;
 }
+/* cart summary END */
 
 /* Cupon descuento START */
 
@@ -255,6 +261,7 @@ border-radius: 5px;
     font-size: 12px;
     cursor: pointer;
 }
+/* cupon descuento END */
 
 /* finalizar compra button */
 
@@ -273,17 +280,34 @@ border-radius: 5px;
 .checkout button:hover{
     background-color: #55a4da;
 }
+/* finalizar compra button END */
+
+
+
+
+
+
 
 /* Inicio PC */
 @media (min-width:1280px){
 
-.cartContainer{
-    position: relative;
-}
+    main{
+        margin-bottom: 111px;
+    }
+    .cartContainer{
+        position: relative;
+    }
 
-    /* items Table */
+        /* items Table START*/
+    .itemInfo{
+        position: relative;
+    }
+        
+    .product{
+        width: 61%;
+    }
 
-.productPrice{
+    .productPrice{
         visibility: visible;
         display: table-cell;
     }
@@ -302,15 +326,95 @@ border-radius: 5px;
         width: 76%;
     }
 
+    .price{
+        width: 13%;
+        float: none;
+        position: relative;
+    }
     
+    .quantity{
+        width: 13%;
+        float: none;
+        position: relative;
+    }
+    
+    .itemInfo .subtotal{
+        width: 13%;
+        float: none;
+        position: relative;
+    }
+
+    .price h4, .quantity h4, .subtotal h4{
+        display: none;
+    }
+
+    .price div, .quantity div, .subtotal div{
+        position: absolute;
+        left: 50%;
+        transform: translatex(-50%);
+        top: 10px;
+    }
+
+    .quantity input{
+        width: 15px;
+        border: none;
+        appearance: none;
+    }
+    
+.desktopControl{
+    position: relative;
+    background-color: red;
+}
+
+/* boton borrar articulo START */
+    .borra{
+        position: absolute;
+        right: 0px;
+        width: 26%;
+        bottom: 5px;
+        border: none;
+    }
+
+.eraseArticleButton{
+    margin: 0px;
+    font-size: 13px;
+    padding: 5px;
+    border: 1px solid #d1d1d1;
+}
+/* boton borrar articulo END */
+
+    /* items table END */
+
+/* boton vaciar carrito START */
+    /* .emptyCartButton{
+        width: 100%;
+        background-color: transparent;
+        border-radius: 8px;
+        border: #55a4da 2px solid;
+        margin-top: 20px;
+        padding: 10px 0;
+        font-size: 17px;
+        color: #55a4da;
+        cursor: pointer;
+        transition: all 400ms;
+    } */
+
+.emptyCartButton{
+    width: 20%;
+    font-size: 15px;
+}
 
 
-    /* cart summary */
+
+    /* boton vaciar carrito END */
+
+    /* cart summary START*/
     .cartSummaryContainer{
         width: 23%;
         position: absolute;
         top: 0px;
         right: 0px;
+        display: none   ;
     }
 
     .cartSummary{
@@ -321,77 +425,9 @@ border-radius: 5px;
 javascript hacemos que quede en el lugar y comience a usar la funcionalidad fixed al tocar 
 el borde superior */
 
+/* cart summary END */
 
-
-/* Inicio Newsletter */
-
-    .title-nl{
-        padding-top: 25px;
-        margin-top: 30px;
-        
-    }
-
-    .mail-m{
-        margin-left: 30%;
-        margin-right: 30%;
-        margin-bottom: 1%;
-        padding: 7px ;
-    }
-
-    .button-p{
-        margin-left: 45%;
-        margin-right: 45%;
-        margin-bottom: 15px;
-        padding: 3px;
-    }
-
-    /* Final Newsletter */
-
-    /* Inicio Redes  */
-
-    .icons{
-        width:100% ;
-        text-align: center;
-        margin: 20px;
-    }
-
-/* Final Redes  */
-
-/* Inicio ifo  */
-
-.box5-1{
-    display: flex;
-    justify-content: space-between;
-}
-
-/* final ifo  */
-
-/* Inicio afip  */
-
-.img-qr{
-       width:25%;
-    }
-
-.box6-1{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-
-.item-1{
-    display: flex;
-    margin-left: 10px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    padding-left: 10px;
-    order: 1;
-}
-
-.copy{
-    margin-right: 10px;
-    padding-right: 20px;
-    color:#eee ;
-}
+/* boton vaciar carrito START */
 
 
 }
