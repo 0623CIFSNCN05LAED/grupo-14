@@ -23,7 +23,7 @@
 }
 
 #username{
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     outline: none;
     border: none;
     color: #252525;
@@ -41,7 +41,7 @@
     padding: 0 5px;
     font-size: 18px;
     margin-top: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 #userImage {
@@ -84,7 +84,7 @@
   color: #fff;
   border: none;
   background: linear-gradient(to right, #e68c3a, #213e60);
-  margin-top: 15px;
+  margin-top: 20px;
   padding: 5px 35px 5px 35px;
   cursor: pointer;
   font-size: 20px;
@@ -102,122 +102,6 @@
     font-size: 15px;
     padding: 10px;
 }
-
-/*        inicio        */
-/*        footer      */
-
-.txt-c {
-  text-align: center;
-}
-.b-color {
-  background-color: #025f9a;
-}
-
-.icon-color {
-  color: #ff8222;
-}
-
-.bk-color {
-  background-color: #243a76;
-}
-/* inicio newsletter */
-.title-nl {
-  margin-top: 15px;
-  color: #eee;
-}
-
-.mail-m {
-  margin-left: 20%;
-  margin-right: 20%;
-  margin-bottom: 3%;
-}
-.button-p {
-  margin-left: 30%;
-  margin-right: 30%;
-  margin-bottom: 15px;
-}
-
-.box1-1 {
-  display: flex;
-  flex-direction: column;
-}
-
-.box1-2 {
-  display: flex;
-}
-
-.box1-3 {
-  display: flex;
-}
-
-.shadow {
-  box-shadow: 0px 0px 10px rgb(100, 100, 100);
-}
-/* final newsletter */
-
-/* inicio Redes */
-.color-wp {
-  color: #25d366;
-}
-
-.color-fb {
-  color: #4267b2;
-}
-
-.color-ml {
-  color: #db4437;
-}
-
-.color-insta {
-  color: #c13584;
-}
-
-.icons {
-  width: 100%;
-  text-align: center;
-  margin: 10%;
-}
-.redes-m {
-  margin-left: 5%;
-  margin-right: 5%;
-}
-
-.box2-1 {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-bottom: 3%;
-  width: 100%;
-}
-
-/* Final Redes */
-
-/* inicio envio full-gratis-atencion cliente */
-.box3-1 {
-  display: flex;
-}
-
-.icons-margin {
-  margin: 4%;
-  color: #025f9a;
-}
-/* final envio full-gratis-atencion cliente */
-/* inicio afip img */
-
-.box4-1 {
-  display: flex;
-}
-
-.img-qr {
-  text-align: center;
-  width: 25%;
-  margin-top: 10px;
-}
-
-.shadow2 {
-  box-shadow: 0px 0px 10px rgb(66, 65, 65);
-}
-/* final afip img */
 
 /*        inicio        */
 /*        desktop      */

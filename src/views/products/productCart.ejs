@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <%- include("../partials/head") %>
+
+    <link rel="stylesheet" href="/css/productCart.css" />
+    <title>Carrito</title>
+  </head>
+  <body>
+
+    <%- include('../partials/header') %>
+
+    <main>
+      <div class="alertText">
+          <p>Todos los precios son finales, incluyen IVA</p>
+      </div>
+      <h1 class="title">Carrito de compras</h1>
+      <div class="cartContainer">
+        <table class="itemsTable">
+            <thead>
+                <tr>
+                <th class="productName">Producto</th>
+                <th class="productPrice">Precio</th>
+                <th class="productQuantity">Cantidad</th>
+                <th class="productTotal">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="itemInfo">
+                <td class="product">
+                    <span class="productImage"><a href="/products/productDetail"><img src="/img/foto1.png"></a></span>
+                    <h4 class="productTitle"><a href="/products/productDetail">Lavandina</a></h4> 
+                </td>
+                <td class="price">
+                    <div class="mb5">Precio:</div>
+                    <div>$500</div>
+                </td>
+                <td class="quantity">
+                    <div class="mb5">Cantidad:</div>
+                    <span><i class="fa-solid fa-minus"></i></span>
+                    <input type="text" name="itemQuantity" placeholder="00">
+                    <span><i class="fa-solid fa-plus"></i></span>
+                
+                </td>
+                <td class="subtotal">
+                    <div class="mb5">Subtotal:</div>
+                    <div>$500</div>
+                </td>
+                <td class="borra">
+                    <button class="eraseArticleButton" type="submit">Eliminar artículo</button>
+                </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="emptyCartButtonContainer">
+            <button class="emptyCartButton" name="emptyCart" type="submit">Vaciar carrito</button>
+        </div>
+        <div class="cartSummaryContainer">
+          <section class="cartSummary">
+            <h3 class="summaryTitle">Tu pedido</h3>
+            <table class="summaryTable">
+                <tbody>
+                  <tr class="cartSubtotal">
+                    <td class="txtAlignL">Subtotal</td>
+                    <td class="txtAlignR">$1.000</td>
+                  </tr>
+                  <tr class="shipping">
+                    <td colspan="2">
+                      <h4>Envío</p>
+                      <p>Ingresá tu dirección para ver las opciones de envío. <a href="#">Calcular envío</a></p>
+                    </td>
+                  </tr>
+                  <tr class="cartTotal">
+                    <td class="txtAlignL">Total</td>
+                    <td class="txtAlignR">$1.500</td>
+                  </tr>
+                </tbody>
+            </table>
+            <div class="discountCouponContainer">
+              <label for="couponCode">¿Tenes un cupón de descuento?</label>
+              <input class="couponInput" type="text" name="couponCode" id="couponCode" placeholder="Ingresar Cupón">
+              <button type="submit" class="couponButton" name="applyCoupon">APLICAR</button>
+            </div>
+            <div class="checkout">
+              <button type="submit" name="checkout">Finalizar compra</button>
+            </div>
+          </section>
+        </div>
+    </div>
+  </main>
+
+  <%- include("../partials/footer") %>
+  
+  </body>
+</html>
+          
+  

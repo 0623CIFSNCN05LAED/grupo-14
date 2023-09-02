@@ -1,12 +1,26 @@
 
-body{
-    margin: 0 15px;
+main{
+    padding: 10px 15px;
 }
 
+.txtAlignR{
+    text-align: right;
+}
+
+.txtAlignL{
+    text-align: left;
+}
+
+.mb5{
+    margin-bottom: 5px;
+}
+
+/* IVA incluido START */
 .alertText{
     background-color: #d20202;
     border-radius: 5px;
     width: 300px;
+    margin-top: 20px;
 }
 
 .alertText p{
@@ -23,7 +37,7 @@ body{
 
 /* Productos seleccionados START */
 
-table{
+.itemsTable{
     width: 100%;
 }
 
@@ -55,9 +69,7 @@ table{
 /* tbody START */
 
 
-.mb5{
-    margin-bottom: 5px;
-}
+
 
 .product{
     display: flex;
@@ -104,7 +116,7 @@ table{
 }
 
 
-.subtotal{
+.itemInfo .subtotal{
     display: block;
     width: 32%;
     text-align: center;
@@ -128,8 +140,15 @@ table{
     color: #55a4da;
     margin-bottom: 15px;
     cursor: pointer;
-
+    transition: all 400ms;
 }
+
+
+.eraseArticleButton:hover{
+background-color: #55a4da;
+    color: #fff;
+}
+
 .borra{
     display: block;
     border-bottom: 1px solid #dadada;;
@@ -138,7 +157,8 @@ table{
 
 /* boton vaciar carrito */
 
-.emptyCart{
+
+.emptyCartButton{
     width: 100%;
     background-color: transparent;
     border-radius: 8px;
@@ -148,172 +168,122 @@ table{
     font-size: 17px;
     color: #55a4da;
     cursor: pointer;
+    transition: all 400ms;
+}
+
+.emptyCartButton:hover{
+    background-color: #55a4da;
+    color: #fff;
+}
+
+/* cart summary START */
+
+.summaryTable{
+    width: 100%;
+    border-spacing: 0 10px;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.buttonReset{
-    height: 20px;
-    margin: 15px 0px;
+.cartSummary{
+    background-color: #f5f5f5;
+    margin-top: 20px;
+    padding: 15px;
 }
 
-.txt-c{
-    text-align: center;
-}
-.b-color{
-    background-color: #025f9a;
-}
-
-.icon-color{
-    color:#ff8222;
+.summaryTitle{
+    font-size: 14px;
+    color: #777;
+    border-bottom: 1px #d1d1d1 solid;
 }
 
-.bk-color{
-    background-color:#243a76 ;
-}
-/* inicio newsletter */
-.title-nl{
-    margin-top: 15px;
-    color: #eee;
-}
+.cartSubtotal{
+    color: #777;
+}   
 
-
-.mail-m{
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-bottom: 3%;
-}
-.button-p{
-    margin-left: 30%;
-    margin-right: 30%;
-    margin-bottom: 15px;
+.shipping h4{
+    padding: 10px 0;
+    border-top:1px #d1d1d1 solid ;
+    border-bottom: 1px #d1d1d1 solid;
+    font-size: 14px;
+    font-weight: normal;
+    color: #777;
 }
 
-.box1-1{
-    display: flex;
-    flex-direction: column;
+.shipping p{
+    font-size: 11px;
+    margin-top: 3px;
 }
 
-.box1-2{
-    display: flex;
-    
+.shipping a{
+    cursor: pointer;
+    color: #777;    
 }
 
-.box1-3{
-    display: flex;
-    
+.cartTotal{
+    font-weight: bolder;
 }
 
-.shadow{
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);  
-}
-/* final newsletter */
+/* Cupon descuento START */
 
-/* inicio Redes */
-.color-wp{
-    color: #25D366;
+.discountCouponContainer{
+    position: relative;
+    border-top: 1px solid #d1d1d1;
 }
 
-.color-fb{
-    color:#4267B2 ;
+.discountCouponContainer label{
+    display: block;
+    padding-top: 4px;
 }
 
-.color-ml{
-    color: #DB4437;
+.couponInput{
+width: 100%;
+position: relative;
+padding: 7px;
+border: none;
+margin-top: 10px;
+margin-bottom: 30px;
+border-radius: 5px;
 }
 
-.color-insta{
-    color: #C13584;
+.couponButton{
+    position: absolute;
+    right: 5px;
+    top: 33px;
+    padding: 7px;
+    border: none;
+    background-color: transparent;
+    font-size: 12px;
+    cursor: pointer;
 }
 
-.icons{
-    width:100% ;
-    text-align: center;
-    margin: 10%;
-}
-.redes-m{
-margin-left:5% ;
-margin-right: 5%;
-}
+/* finalizar compra button */
 
-
-.box2-1{
-    display: flex;
-   flex-direction: row;
-   justify-content: space-around;
-   margin-bottom: 3%;
-  width: 100%;
+.checkout button{
+    width: 100%;
+    padding: 15px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #243a76;
+    color: #fff;
+    font-size: 17px;
+    transition: all 400ms;
+    cursor: pointer;
 }
 
-
-
-/* Final Redes */
-
-/* inicio envio full-gratis-atencion cliente */
-.box3-1{
-    display: flex;
-    
+.checkout button:hover{
+    background-color: #55a4da;
 }
 
-.icons-margin{
-    margin: 4%;
-    color:#025f9a;
-}
-/* final envio full-gratis-atencion cliente */
-/* inicio afip img */
+/* Inicio PC */
+@media (min-width:1280px){
 
-.box4-1{
-    display: flex;
+.cartContainer{
+    position: relative;
 }
 
-.img-qr{
-text-align: center;
-   width:25%;
-   margin-top: 10px;
-}
+    /* items Table */
 
-.shadow2{
-    box-shadow: 0px 0px 10px rgb(66, 65, 65);  
-}
-/* final afip img */
-
-
-
-
-
-@media(min-width:760px){
-    .productPrice{
+.productPrice{
         visibility: visible;
         display: table-cell;
     }
@@ -327,12 +297,31 @@ text-align: center;
         visibility: visible;
         display: table-cell;
     }
-}
+
+    .itemsTable{
+        width: 76%;
+    }
+
+    
 
 
+    /* cart summary */
+    .cartSummaryContainer{
+        width: 23%;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
 
-/* Inicio PC */
-@media (min-width:1280px){
+    .cartSummary{
+        margin-top: 0px;
+        /* position: fixed; */
+    }
+/* ahora se mueve antes de llegar a tocar el borde superior de la pantalla pero con 
+javascript hacemos que quede en el lugar y comience a usar la funcionalidad fixed al tocar 
+el borde superior */
+
+
 
 /* Inicio Newsletter */
 

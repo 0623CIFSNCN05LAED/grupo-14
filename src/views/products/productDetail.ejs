@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head") %>
+
+    <link rel="stylesheet" href="/css/productDetail.css" />
+
+    <title>Detalle de producto</title>
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+
+    <main>
+      <div class="nav">
+        <a href="/">Home</a>
+        <span>/</span>
+        <a href="#">Productos</a>
+        <span>/</span>
+        <a href="/productDetail">Nombre de producto</a>
+      </div>
+      <section class="product">
+        <div class="card">
+          <img src="/img/foto1.png" alt="producto" />
+        </div>
+        <div class="data">
+          <div class="details">
+            <h2 class="name">Nombre del producto</h2>
+            <h3>$XXXX.XX</h3>
+            <form action="">
+              <div class="amount">
+                <p>stock disponible</p>
+                <h4>Cantidad:</h4>
+                <select name="cantidad" id="cantidad">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+              <a href="#"
+                ><button type="submit" class="cart">
+                  Agregar al carrito
+                  <i class="fa-solid fa-cart-shopping"></i></button
+              ></a>
+            </form>
+          </div>
+          <div class="desc">
+            <h3>Descripcion</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+              fuga nesciunt necessitatibus, impedit voluptatem ex quod vitae
+              illum, asperiores eius molestias nemo itaque architecto facere?
+              Iure neque distinctio illum vero? Lorem ipsum dolor sit amet
+              consectetur, adipisicing elit. Quaerat minima ducimus fugiat quos,
+              quasi libero ullam architecto porro suscipit veritatis ipsam sunt,
+              eum accusamus quo illo. Architecto libero in mollitia! Lorem ipsum
+              dolor sit amet consectetur adipisicing elit. Pariatur, minus
+              officiis? Minus ex itaque atque nihil sapiente consequuntur vitae,
+              fuga totam dolorem, praesentium soluta, incidunt in dolorum
+              aliquam odit consectetur?
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="relatedProducts">
+        <h3 class="name">Productos relacionados</h3>
+        <div class="otherProducts">
+          <i class="fa-solid fa-circle-arrow-left"></i>
+          <!-- TARJETA -->
+          <div class="card" id="card1">
+            <h4 class="cardTitle">Producto 1</h4>
+            <div class="cardBody">
+              <img src="\img\foto1.png" alt="imagen" />
+            </div>
+            <div class="cardFooter">
+              <a href="#"><button>Más información</button></a>
+            </div>
+          </div>
+          <!-- TARJETA -->
+
+          <!-- TARJETA -->
+          <div class="card" id="card2">
+            <h4 class="cardTitle">Producto 2</h4>
+            <div class="cardBody">
+              <img src="\img\foto1.png" alt="imagen" />
+            </div>
+            <div class="cardFooter">
+              <a href="#"><button>Más información</button></a>
+            </div>
+          </div>
+          <!-- TARJETA -->
+
+          <!-- TARJETA -->
+          <div class="card" id="card3">
+            <h4 class="cardTitle">Producto 3</h4>
+            <div class="cardBody">
+              <img src="\img\foto1.png" alt="imagen" />
+            </div>
+            <div class="cardFooter">
+              <a href="#"><button>Más información</button></a>
+            </div>
+          </div>
+          <!-- TARJETA -->
+
+          <!-- TARJETA -->
+          <div class="card" id="card4">
+            <h4 class="cardTitle">Producto 4</h4>
+            <div class="cardBody">
+              <img src="\img\foto1.png" alt="imagen" />
+            </div>
+            <div class="cardFooter">
+              <a href="#"><button>Más información</button></a>
+            </div>
+          </div>
+          <!-- TARJETA -->
+
+          <i class="fa-solid fa-circle-arrow-right"></i>
+        </div>
+      </section>
+    </main>
+
+    <%- include("../partials/footer") %>
+  </body>
+</html>

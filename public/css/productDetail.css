@@ -53,9 +53,22 @@
 }
 
 .cart {
-  height: 35px;
   width: 100%;
-  background-color: #fff;
+  background-color: transparent;
+  border-radius: 8px;
+  border: #55a4da 2px solid;
+  margin-top: 20px;
+  padding: 10px 0;
+  font-size: 17px;
+  color: #55a4da;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: all 400ms;
+}
+
+.cart:hover {
+  background-color: #55a4da;
+  color: #fff;
 }
 
 .desc {
@@ -95,11 +108,19 @@
 .cardBody img {
   width: 50%;
 }
-.cardFooter {
-  background: #e68c3a;
+.cardFooter button {
+  width: 100%;
+  padding: 15px 0;
+  border: none;
   border-radius: 0 0 15px 15px;
-  padding: 10px;
-  text-align: center;
+  background-color: #243a76;
+  color: #fff;
+  font-size: 17px;
+  transition: all 400ms;
+  cursor: pointer;
+}
+.cardFooter button:hover {
+  background-color: #55a4da;
 }
 .cardFooter a {
   text-decoration: none;
@@ -147,119 +168,6 @@
     width: 40%;
   }
 }
-
-.txt-c {
-  text-align: center;
-}
-.b-color {
-  background-color: #025f9a;
-}
-
-.icon-color {
-  color: #ff8222;
-}
-
-.bk-color {
-  background-color: #243a76;
-}
-/* inicio newsletter */
-.title-nl {
-  margin-top: 15px;
-  color: #eee;
-}
-
-.mail-m {
-  margin-left: 20%;
-  margin-right: 20%;
-  margin-bottom: 3%;
-}
-.button-p {
-  margin-left: 30%;
-  margin-right: 30%;
-  margin-bottom: 15px;
-}
-
-.box1-1 {
-  display: flex;
-  flex-direction: column;
-}
-
-.box1-2 {
-  display: flex;
-}
-
-.box1-3 {
-  display: flex;
-}
-
-.shadow {
-  box-shadow: 0px 0px 10px rgb(100, 100, 100);
-}
-/* final newsletter */
-
-/* inicio Redes */
-.color-wp {
-  color: #25d366;
-}
-
-.color-fb {
-  color: #4267b2;
-}
-
-.color-ml {
-  color: #db4437;
-}
-
-.color-insta {
-  color: #c13584;
-}
-
-.icons {
-  width: 100%;
-  text-align: center;
-  margin: 10%;
-}
-.redes-m {
-  margin-left: 5%;
-  margin-right: 5%;
-}
-
-.box2-1 {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-bottom: 3%;
-  width: 100%;
-}
-
-/* Final Redes */
-
-/* inicio envio full-gratis-atencion cliente */
-.box3-1 {
-  display: flex;
-}
-
-.icons-margin {
-  margin: 4%;
-  color: #025f9a;
-}
-/* final envio full-gratis-atencion cliente */
-/* inicio afip img */
-
-.box4-1 {
-  display: flex;
-}
-
-.img-qr {
-  text-align: center;
-  width: 25%;
-  margin-top: 10px;
-}
-
-.shadow2 {
-  box-shadow: 0px 0px 10px rgb(66, 65, 65);
-}
-/* final afip img */
 
 /* Inicio PC */
 @media (min-width: 1280px) {
