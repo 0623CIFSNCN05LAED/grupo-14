@@ -12,45 +12,36 @@
 
     <main class="login">
       <form class="form-login">
-        <div>
-          <h3><i class="fa-solid fa-user" id="userImage"></i></h3>
-          <p>
-            <label>
-              <i class="fa-solid fa-user iconLogin"></i>
-              <input
-                type="text"
-                name="user"
-                value=""
-                placeholder="Usuario"
-                id="username"
-              />
-            </label>
-          </p>
-          <p>
-            <label>
-              <i class="fa-solid fa-lock iconLogin"></i>
-              <input
-                type="password"
-                name="password"
-                value=""
-                placeholder="Constraseña"
-                id="password"
-              />
-            </label>
-          </p>
-          <p>
-            <a href="create account" class="link">Crear Cuenta</a>
-          </p>
-          <p>
-            <input type="checkbox" name="remember me" id="checkbox" /> recordame
-            <a href="forgot-password" id="remember">olvidaste tu contraseña?</a>
-          </p>
-        </div>
-        <p>
-          <input type="button" name="login" value="Ingresar" id="button" />
-        </p>
-      </form>
-    </main>
+          <div>   
+              <h3><i class="fa-solid fa-user" id="userImage"></i></h3>
+                  <p>
+                  <label >
+                      <i class="fa-solid fa-user iconLogin"></i>
+                      <input type="text" name="user" value="" placeholder="Usuario" id="username">
+                  </label>
+                  </p>
+                  <p>
+                  <label>
+                      <i class="fa-solid fa-lock iconLogin"></i>
+                      <input type="password" name="password" value="" placeholder="Constraseña" id="password">
+                  </label>
+                  </p>
+                  
+                  <p>
+                      <input type="checkbox" name="remember me" id="checkboxLogin">
+                      <span id="rememberLogin">recordar</span>
+                      <a href="forgot-password" id="forgotPass">olvidaste tu contraseña?</a>
+                  </p>
+          </div> 
+                  <p>
+                      <input type="button" name="login" value="Ingresar" id="buttonLogin">
+                  </p>
+                  <p>
+                      <a href="create account" class="createAccount">Registrarse</a>
+                  </p>
+                  
+          </form>
+  </main>
 
     <%- include("../partials/footer") %>
   </body>
