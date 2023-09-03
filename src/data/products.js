@@ -2,6 +2,7 @@ const products = [
   {
     id: 1,
     name: "Limpiador líquido Procenex pisos lavanda 900 ml.",
+    shortName: "Limpiador líquido Procenex",
     price: 284.0,
     image: "/img/limpiadorLiquidoProcenex.jpg",
     description:
@@ -10,6 +11,7 @@ const products = [
   {
     id: 2,
     name: "Lustramuebles Blem brillo y protección madera original aerosol 360 cc.",
+    shortName: "Lustramuebles Blem",
     price: 702.0,
     image: "/img/lustramueblesBlem.jpg",
     description:
@@ -18,6 +20,7 @@ const products = [
   {
     id: 3,
     name: "Jabón líquido para ropa Skip concentrado bio encimas 500 cc.",
+    shortName: "Jabón líquido Skip",
     price: 1597.5,
     image: "/img/jabonLiquidoSkip.jpg",
     description:
@@ -26,6 +29,7 @@ const products = [
   {
     id: 4,
     name: "Quitamanchas Trenet inspirado por Ayudin Ropa (Envase económico) 400 ml.",
+    shortName: "Quitamanchas Trenet",
     price: 287.5,
     image: "/img/quitamanchasTrenet.jpg",
     description:

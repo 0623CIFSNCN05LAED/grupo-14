@@ -9,7 +9,7 @@ const productsController = {
       return res.render("main/homeMayorista");
     }
 
-    res.render("products/productDetail", { product });
+    res.render("products/productDetail", { product, products });
   },
   cart: (req, res) => {
     res.render("products/productCart");

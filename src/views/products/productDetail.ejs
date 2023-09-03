@@ -16,7 +16,7 @@
         <span>/</span>
         <a href="#">Productos</a>
         <span>/</span>
-        <a href="/productDetail"><%= product.name %></a>
+        <a href="#"><%= product.shortName %></a>
       </div>
       <section class="product">
         <div class="card">
@@ -54,54 +54,19 @@
         <h3 class="name">Productos relacionados</h3>
         <div class="otherProducts">
           <i class="fa-solid fa-circle-arrow-left"></i>
-          <!-- TARJETA -->
-          <div class="card" id="card1">
-            <h4 class="cardTitle">Producto 1</h4>
+          <% products.forEach(product => { %>
+          <div class="card" id="card<%= product.id %>">
+            <h4 class="cardTitle"><%= product.shortName %></h4>
             <div class="cardBody">
-              <img src="\img\foto1.png" alt="imagen" />
+              <img src="<%= product.image %>" alt="imagen" />
             </div>
             <div class="cardFooter">
-              <a href="#"><button>Más información</button></a>
+              <a href="/products/productDetail/<%= product.id %>"
+                ><button>Más información</button></a
+              >
             </div>
           </div>
-          <!-- TARJETA -->
-
-          <!-- TARJETA -->
-          <div class="card" id="card2">
-            <h4 class="cardTitle">Producto 2</h4>
-            <div class="cardBody">
-              <img src="\img\foto1.png" alt="imagen" />
-            </div>
-            <div class="cardFooter">
-              <a href="#"><button>Más información</button></a>
-            </div>
-          </div>
-          <!-- TARJETA -->
-
-          <!-- TARJETA -->
-          <div class="card" id="card3">
-            <h4 class="cardTitle">Producto 3</h4>
-            <div class="cardBody">
-              <img src="\img\foto1.png" alt="imagen" />
-            </div>
-            <div class="cardFooter">
-              <a href="#"><button>Más información</button></a>
-            </div>
-          </div>
-          <!-- TARJETA -->
-
-          <!-- TARJETA -->
-          <div class="card" id="card4">
-            <h4 class="cardTitle">Producto 4</h4>
-            <div class="cardBody">
-              <img src="\img\foto1.png" alt="imagen" />
-            </div>
-            <div class="cardFooter">
-              <a href="#"><button>Más información</button></a>
-            </div>
-          </div>
-          <!-- TARJETA -->
-
+          <% }); %>
           <i class="fa-solid fa-circle-arrow-right"></i>
         </div>
       </section>
