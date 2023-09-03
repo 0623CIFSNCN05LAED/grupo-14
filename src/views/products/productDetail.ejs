@@ -16,16 +16,16 @@
         <span>/</span>
         <a href="#">Productos</a>
         <span>/</span>
-        <a href="/productDetail">Nombre de producto</a>
+        <a href="#"><%= product.shortName %></a>
       </div>
       <section class="product">
         <div class="card">
-          <img src="/img/foto1.png" alt="producto" />
+          <img src="<%= product.image %>" alt="producto" />
         </div>
         <div class="data">
           <div class="details">
-            <h2 class="name">Nombre del producto</h2>
-            <h3>$XXXX.XX</h3>
+            <h2 class="name"><%= product.name %></h2>
+            <h3>$ <%= product.price %></h3>
             <form action="">
               <div class="amount">
                 <p>stock disponible</p>
@@ -46,19 +46,7 @@
           </div>
           <div class="desc">
             <h3>Descripcion</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
-              fuga nesciunt necessitatibus, impedit voluptatem ex quod vitae
-              illum, asperiores eius molestias nemo itaque architecto facere?
-              Iure neque distinctio illum vero? Lorem ipsum dolor sit amet
-              consectetur, adipisicing elit. Quaerat minima ducimus fugiat quos,
-              quasi libero ullam architecto porro suscipit veritatis ipsam sunt,
-              eum accusamus quo illo. Architecto libero in mollitia! Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Pariatur, minus
-              officiis? Minus ex itaque atque nihil sapiente consequuntur vitae,
-              fuga totam dolorem, praesentium soluta, incidunt in dolorum
-              aliquam odit consectetur?
-            </p>
+            <p><%= product.description %></p>
           </div>
         </div>
       </section>
@@ -66,54 +54,19 @@
         <h3 class="name">Productos relacionados</h3>
         <div class="otherProducts">
           <i class="fa-solid fa-circle-arrow-left"></i>
-          <!-- TARJETA -->
-          <div class="card" id="card1">
-            <h4 class="cardTitle">Producto 1</h4>
+          <% products.forEach(product => { %>
+          <div class="card" id="card<%= product.id %>">
+            <h4 class="cardTitle"><%= product.shortName %></h4>
             <div class="cardBody">
-              <img src="\img\foto1.png" alt="imagen" />
+              <img src="<%= product.image %>" alt="imagen" />
             </div>
             <div class="cardFooter">
-              <a href="#"><button>Más información</button></a>
+              <a href="/products/productDetail/<%= product.id %>"
+                ><button>Más información</button></a
+              >
             </div>
           </div>
-          <!-- TARJETA -->
-
-          <!-- TARJETA -->
-          <div class="card" id="card2">
-            <h4 class="cardTitle">Producto 2</h4>
-            <div class="cardBody">
-              <img src="\img\foto1.png" alt="imagen" />
-            </div>
-            <div class="cardFooter">
-              <a href="#"><button>Más información</button></a>
-            </div>
-          </div>
-          <!-- TARJETA -->
-
-          <!-- TARJETA -->
-          <div class="card" id="card3">
-            <h4 class="cardTitle">Producto 3</h4>
-            <div class="cardBody">
-              <img src="\img\foto1.png" alt="imagen" />
-            </div>
-            <div class="cardFooter">
-              <a href="#"><button>Más información</button></a>
-            </div>
-          </div>
-          <!-- TARJETA -->
-
-          <!-- TARJETA -->
-          <div class="card" id="card4">
-            <h4 class="cardTitle">Producto 4</h4>
-            <div class="cardBody">
-              <img src="\img\foto1.png" alt="imagen" />
-            </div>
-            <div class="cardFooter">
-              <a href="#"><button>Más información</button></a>
-            </div>
-          </div>
-          <!-- TARJETA -->
-
+          <% }); %>
           <i class="fa-solid fa-circle-arrow-right"></i>
         </div>
       </section>
