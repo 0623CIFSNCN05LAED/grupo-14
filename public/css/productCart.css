@@ -19,13 +19,14 @@ main{
 .alertText{
     background-color: #d20202;
     border-radius: 5px;
-    width: 300px;
+    width: 285px;
     margin: 20px 0;
 }
 
 .alertText p{
     color: #fff;
     padding: 5px 10px;
+    font-size: 15px;
 }
 
 .title{
@@ -78,7 +79,7 @@ main{
 
 .product{
     display: flex;
-    margin: 10px 0;
+    margin: 10px 0 10px 10px;
 }
 
 .productImage img{
@@ -101,7 +102,6 @@ main{
     width: 33%;
     text-align: center;
     float: left;
-    margin-top: 20px;
     margin-bottom: 5px;
 }
 
@@ -111,7 +111,6 @@ main{
     width: 33%;
     text-align: center;
     float: left;
-    margin-top: 20px;
 }
 
 .itemInfo .subtotal{
@@ -119,7 +118,6 @@ main{
     width: 32%;
     text-align: center;
     float: left;
-    margin-top: 20px;
 }
 
 .quantity input{
@@ -294,6 +292,17 @@ border-radius: 5px;
     main{
         margin-bottom: 120px;
     }
+
+    .alertText{
+        width: 300px;
+    }
+
+    .alertText p{
+        color: #fff;
+        padding: 5px 10px;
+        font-size: 16px;
+    }
+
     .cartContainer{
         position: relative;
     }
@@ -369,15 +378,15 @@ border-radius: 5px;
 /* boton borrar articulo START */
     .borra{
         position: absolute;
-        right: 0px;
-        width: 26%;
-        bottom: 5px;
+        right: 10px;
+        width: 13%;
+        bottom: 10px;
         border: none;
     }
 
 .eraseArticleButton{
     margin: 0px;
-    font-size: 13px;
+    font-size: 11px;
     padding: 5px;
     border: 1px solid #d1d1d1;
 }
