@@ -11,159 +11,161 @@
     <%- include('../partials/header') %>
 
     <main>
-      <form action="/">
-        <h2>Crear Cuenta de Cliente</h2>
-
-        <h4>Información Personal</h4>
-
-        <div class="form-field">
-          <div class="data">
-            <label for="name" class="requiredlabel">Nombre</label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              required
-              pattern="[\w\s]+"
-            />
+      <div class="registerForm">
+        <form action="/">
+          <h2 class="registerTitle">Crear Cuenta de Cliente</h2>
+        
+          <h4 class="registerTitle">Información Personal</h4>
+        
+          <div class="form-field">
+            <div class="data">
+              <label for="name" class="requiredlabel">Nombre</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                required
+                pattern="[\w\s]+"
+              />
+            </div>
           </div>
-        </div>
-
-        <div class="form-field">
-          <div class="data">
-            <label for="lastname" class="requiredlabel">Apellido</label>
-            <input
-              type="text"
-              name="lastname"
-              id="lastname"
-              required
-              pattern="[\w\s]+"
-            />
+        
+          <div class="form-field">
+            <div class="data">
+              <label for="lastname" class="requiredlabel">Apellido</label>
+              <input
+                type="text"
+                name="lastname"
+                id="lastname"
+                required
+                pattern="[\w\s]+"
+              />
+            </div>
           </div>
-        </div>
-
-        <div class="form-field">
-          <div class="data">
-            <label for="dni" class="requiredlabel">Cuit/Dni</label>
-            <input
-              type="number"
-              name="dni"
-              id="dni"
-              required
-              onkeypress="return event.charCode >= 48 && event.charCode <= 57"
-            />
+        
+          <div class="form-field">
+            <div class="data">
+              <label for="dni" class="requiredlabel">Cuit/Dni</label>
+              <input
+                type="number"
+                name="dni"
+                id="dni"
+                required
+                onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+              />
+            </div>
           </div>
-        </div>
-
-        <h4>Datos de Domicilio</h4>
-
-        <div class="form-field">
-          <div class="data">
-            <label for="reason" class="requiredlabel">Razón Social</label>
-            <input type="text" name="reason" id="reason" required />
+        
+          <h4 class="registerTitle">Datos de Domicilio</h4>
+        
+          <div class="form-field">
+            <div class="data">
+              <label for="reason" class="requiredlabel">Razón Social</label>
+              <input type="text" name="reason" id="reason" required />
+            </div>
           </div>
-        </div>
-
-        <div class="form-field">
-          <div class="data">
-            <label for="tel" class="requiredlabel">Teléfono/Celular</label>
-            <input
-              type="number"
-              name="tel"
-              id="tel"
-              required
-              onkeypress="return event.charCode >= 48 && event.charCode <= 57"
-            />
+        
+          <div class="form-field">
+            <div class="data">
+              <label for="tel" class="requiredlabel">Teléfono/Celular</label>
+              <input
+                type="number"
+                name="tel"
+                id="tel"
+                required
+                onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+              />
+            </div>
           </div>
-        </div>
-
-        <div class="form-field">
-          <div class="data">
-            <label for="address" class="requiredlabel">Dirección</label>
-            <input type="text" name="address" id="address" required />
+        
+          <div class="form-field">
+            <div class="data">
+              <label for="address" class="requiredlabel">Dirección</label>
+              <input type="text" name="address" id="address" required />
+            </div>
           </div>
-        </div>
-
-        <div class="form-field">
-          <div class="data">
-            <label for="barrio" class="requiredlabel">Barrio/Localidad</label>
-            <input type="text" name="barrio" id="barrio" required />
+        
+          <div class="form-field">
+            <div class="data">
+              <label for="barrio" class="requiredlabel">Barrio/Localidad</label>
+              <input type="text" name="barrio" id="barrio" required />
+            </div>
           </div>
-        </div>
-
-        <div class="form-field">
-          <div class="data">
-            <label for="codigoPostal" class="requiredlabel"
-              >Código Postal</label
-            >
-            <input
-              type="number"
-              name="codigoPostal"
-              id="codigoPostal"
-              required
-              onkeypress="return event.charCode >= 48 && event.charCode <= 57"
-            />
+        
+          <div class="form-field">
+            <div class="data">
+              <label for="codigoPostal" class="requiredlabel"
+                >Código Postal</label
+              >
+              <input
+                type="number"
+                name="codigoPostal"
+                id="codigoPostal"
+                required
+                onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+              />
+            </div>
           </div>
-        </div>
-
-        <div class="form-field">
-          <div class="data">
-            <label for="pais" class="requiredlabel">País</label>
-            <input type="text" name="pais" id="pais" required />
+        
+          <div class="form-field">
+            <div class="data">
+              <label for="pais" class="requiredlabel">País</label>
+              <input type="text" name="pais" id="pais" required />
+            </div>
           </div>
-        </div>
-
-        <div class="form-field">
-          <div class="data">
-            <label for="especificaciones" class="requiredlabel"
-              >Especificaciones para la entrega</label
-            >
-            <input type="text" name="especificaciones" id="especificaciones" />
+        
+          <div class="form-field">
+            <div class="data">
+              <label for="especificaciones" class="requiredlabel"
+                >Especificaciones para la entrega</label
+              >
+              <input type="text" name="especificaciones" id="especificaciones" />
+            </div>
           </div>
-        </div>
-
-        <div class="form-field">
-          <div class="data">
-            <label for="email" class="requiredlabel">Email</label>
-            <input type="email" name="email" id="email" required />
+        
+          <div class="form-field">
+            <div class="data">
+              <label for="email" class="requiredlabel">Email</label>
+              <input type="email" name="email" id="email" required />
+            </div>
           </div>
-        </div>
-
-        <div class="form-field">
-          <div class="data">
-            <label for="password" class="requiredlabel">Contraseña</label>
-            <input type="password" name="password" id="password" required />
+        
+          <div class="form-field">
+            <div class="data">
+              <label for="password" class="requiredlabel">Contraseña</label>
+              <input type="password" name="password" id="password" required />
+            </div>
           </div>
-        </div>
-
-        <div class="form-field">
-          <div class="data">
-            <label for="confirmPassword" class="requiredlabel"
-              >Confirmar Contraseña</label
-            >
-            <input
-              type="password"
-              name="confirmPassword"
-              id="confirmPassword"
-              required
-            />
+        
+          <div class="form-field">
+            <div class="data">
+              <label for="confirmPassword" class="requiredlabel"
+                >Confirmar Contraseña</label
+              >
+              <input
+                type="password"
+                name="confirmPassword"
+                id="confirmPassword"
+                required
+              />
+            </div>
           </div>
-        </div>
-
-        <div class="form-field">
-          <div class="data-checkbox">
-            <input type="checkbox" name="remember" value="remember" />
-            <label for="remember" class="labelTag">Recordarme</label>
-
-            <input type="checkbox" name="notify" value="notify" />
-            <label for="notify">Mandar Notificaciones</label>
+        
+          <div class="form-field">
+            <div class="data-checkbox">
+              <input type="checkbox" name="remember" value="remember" />
+              <label for="remember" class="labelTag">Recordarme</label>
+        
+              <input type="checkbox" name="notify" value="notify" />
+              <label for="notify">Mandar Notificaciones</label>
+            </div>
           </div>
-        </div>
-
-        <div class="button-form">
-          <button type="submit">Crear Cuenta</button>
-        </div>
-      </form>
+        
+          <div class="button-form">
+            <button type="submit">Crear Cuenta</button>
+          </div>
+        </form>
+      </div class="registerForm">
     </main>
 
     <%- include("../partials/footer") %>
