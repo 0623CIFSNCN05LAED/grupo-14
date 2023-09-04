@@ -27,7 +27,7 @@
     outline: none;
     border: none;
     color: #252525;
-    border-bottom: solid 1px #e68c3a;
+    border-bottom: solid 1px  #ff8222;
     padding: 0 5px;
     font-size: 18px;
     
@@ -37,7 +37,7 @@
     outline: none;
     border: none;
     color: #252525;
-    border-bottom: solid 1px #e68c3a;
+    border-bottom: solid 1px  #ff8222;
     padding: 0 5px;
     font-size: 18px;
     margin-top: 5px;
@@ -55,7 +55,7 @@
 
 .iconLogin {
   font-size: 20px;
-  color: #e68c3a;
+  color:  #ff8222;
   margin-right: 10px;
 }
 
@@ -80,20 +80,21 @@
 }
 
 
-#buttonLogin {
-  color: #fff;
-  border: none;
-  background: linear-gradient(to right, #e68c3a, #213e60);
+.buttonLogin {
+  color: #243a76;
+  background-color: transparent;
   margin-top: 20px;
   padding: 5px 35px 5px 35px;
   cursor: pointer;
   font-size: 20px;
   border-radius: 8px;
-  transition: all 0.2 ease;
+  border:   #243a76 2px solid;
+  transition: all 500ms;
 }
 
-#buttonLogin:active{
-    transform: sacale(0.96);
+.buttonLogin:hover {
+  background: linear-gradient(to right, #ff8222,#243a76, #ff8222);
+  color: #fff;
 }
 .createAccount{
     color: #243a76;
@@ -102,6 +103,31 @@
     font-size: 15px;
     padding: 10px;
 }
+
+
+/* .createProductButton {
+  width: 100%;
+  background-color: transparent;
+  border-radius: 8px;
+  border: #e68c3a 2px solid;
+  margin-top: 20px;
+  padding: 10px ;
+  font-size: 17px;
+  color: #e68c3a;
+  cursor: pointer;
+  transition: all 400ms;
+
+  
+}
+
+.createProductButton:hover {
+  background-color:#e68c3a;
+  color: #fff;
+}
+ */
+
+
+
 
 /*        inicio        */
 /*        desktop      */
