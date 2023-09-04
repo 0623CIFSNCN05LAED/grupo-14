@@ -1,3 +1,8 @@
+
+
+
+
+
 /* Header */
 
 header {
@@ -7,39 +12,115 @@ header {
 }
 
 .topLeftHeader {
+  
   text-align: center;
   background-color: #243a76;
   padding: 3px 0;
+ 
+  
 }
 
-.topLeftHeader p {
-  margin: 5px;
-  color: white;
+
+.tiendaButton{
+  
+  background-color: transparent;
+  border-radius: 4px;
+  padding: 4px 8px;
+  color:white;
+  border: #e68c3a 2px solid;
+  cursor: pointer;
+  transition: all 400ms;
+ 
 }
+.tiendaButton:hover{
+  background-color:#e68c3a;
+  color: #fff;
+}
+
+
+/* texto tienda animacion */
+
+.textoTienda{
+  color: #ff8222;
+  font-family: "Source Sans Pro", sans-serif;  
+  -webkit-animation: reveal 3000ms ease-in-out forwards 200ms , glow 2500ms linear infinite 2000ms;
+          animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 2000ms;
+          animation-iteration-count: infinite;
+  
+}
+@-webkit-keyframes reveal {
+  50% {
+    letter-spacing: 5px;
+  }
+  100% {
+    background-size: 300% 300%;
+  }
+}
+@keyframes reveal {
+  50% {
+    letter-spacing: 5px;
+  }
+  100% {
+    background-size: 300% 300%;
+  }
+}
+@-webkit-keyframes glow {
+  40% {
+    text-shadow: 0 0 8px #fff;
+  }
+}
+@keyframes glow {
+  40% {
+    text-shadow: 0 0 8px #fff;
+  }
+}
+
+/* fin texto tienda animacion */
 
 .topRightHeader li {
   background-color: #55a4da;
   padding: 10px;
   margin: 5px;
   width: auto;
+  border-radius: 4px;
+  transition: all 400ms;
 }
 
 .topRightHeader ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  transition: all 200ms;
+ 
 }
 
 .topRightHeader a {
   text-decoration: none;
   color: white;
+  background: transparent;
 }
+
+
+.topRightHeader a:hover{
+  background-color:transparent;
+  color: #fff;
+  
+}
+
+.topRightHeader li:hover{
+  background-color:#ff8222;
+  color: #fff;
+  box-shadow: 2px 3px 3px #e4e1e1;
+  
+}
+
 
 .navList ul,
 .navMobile ul {
   list-style: none;
   margin: 0;
   padding: 0;
+    
 }
 
 .navList li,
@@ -48,7 +129,18 @@ header {
   padding: 10px;
   margin: 0 5px 5px;
   width: auto;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 200ms;
+  
+  
 }
+
+.navList li:hover, .navMobile li:hover{
+  background-color:#ff8222;
+  color: #fff;
+  box-shadow: 2px 3px 3px #e4e1e1;
+  }
 
 .navList a,
 .navMobile a {
@@ -63,17 +155,19 @@ header {
   margin-right: 5px;
 }
 
-.iconCart i {
-  color: black;
+.fa-cart-shopping, .fa-magnifying-glass {
+  color: #ff8222;
 }
 
 /* Estilos para la navegación en dispositivos móviles */
 .navMobile {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   font-size: 25px;
   background-color: #55a4da;
   padding: 5px;
+  
 }
 
 .navRightMobile {
@@ -85,6 +179,7 @@ header {
 
 .menuMobile {
   background-color: #243a76;
+  /* border: #e68c3a 2px solid; */
   padding: 5px;
   width: 80vw;
   position: fixed;
@@ -107,6 +202,12 @@ header {
     align-items: center;
     width: 40%;
     justify-content: space-around;
+  }
+  .tiendaMayoristaDiv{ /* dejo fijo el boton Cambiar a tienda mayorista */
+  
+    position: absolute;
+    right:55% ;
+  
   }
   .searchBar {
     display: inline-block;
