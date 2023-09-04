@@ -1,3 +1,4 @@
+const banner = require("../data/mainBanner")
 
 const mainController = {
     homeMayorista: (req,res)=>{
