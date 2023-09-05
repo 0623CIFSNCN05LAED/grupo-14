@@ -6,7 +6,7 @@ const PORT = 3333;
 const productsRouter = require("./routes/productsRouter");
 
 const mainRouter = require('./routes/mainRouter'); //aca estoy requiriendo las funcionalidades del archivo,
-                                                  //hace falta porque con el module.exports=router solo exportaba la funcionalidad de express, router!!!
+                                                  //hace falta porque con el module.exports=router solo exportaba la funcionalidad router de express!!!
 
 const userRouter = require("./routes/userRouter");
 
@@ -29,4 +29,3 @@ app.use(userRouter);
 /* PRODUCTS */
 
 app.use(productsRouter);
-
