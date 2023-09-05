@@ -10,36 +10,72 @@
 <body>
 
     <%- include('../partials/header') %>
-
     <main>
-        <div class="banner">
-            <!-- se va a ver correctamente cuando apliquemos javascript -->
-            <div class="carouselContainerBanner">
-                <img src="/img/foto1.png" alt="Imagen 1">
-                <img src="/img/foto2.png" alt="Imagen 2">
-                <img src="/img/foto3.png" alt="Imagen 3">
-                <img src="/img/foto4.png" alt="Imagen 4">
-                <button class="leftArrow"><i class="fa-solid fa-chevron-left" ></i></button>
-                <ul class="bottomCar">
-                    <li><button></button></i></li>
-                    <li><button></button></i></li>
-                    <li><button></button></i></li>
-                    <li><button></button></i></li>
-                </ul>
-                <button class="rightArrow"><i class="fa-solid fa-chevron-right"></i></button>
+        <div class="bannerContainer">
+            <div class="banner" id="banner"> 
+                <div class="bannerSection">
+                    <img src="/img/banner-cif.jpeg" alt="" class="bannerImg">
+                </div>
+                <div class="bannerSection">
+                    <img src="/img/banner-clorox.png" alt="" class="bannerImg">
+                </div>
+                <div class="bannerSection">
+                    <img src="/img/banner-poett.jpg" alt="" class="bannerImg">
+                </div>
+                <div class="bannerSection">
+                    <img src="/img/banner-skip.png" alt="" class="bannerImg">
+                </div>
+            </div>
+            <ul class="bottomCar">
+                <li><button id="circleBtn1"></button></i></li>
+                <li><button id="circleBtn2"></button></i></li>
+                <li><button id="circleBtn3"></button></i></li>
+                <li><button id="circleBtn4"></button></i></li>
+            </ul>
+            <button class="leftArrow" id="btnLeft"><i class="fa-solid fa-chevron-left" ></i></button>
+            <button class="rightArrow" id="btnRight"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
         </div>
-        <section class="offers">
+        <%- include('../partials/scriptMainBanner') %>
+        <section class="offersContainer">
             <h3>Ofertas de la quincena</h3>
-            <article class="carouselContainerOffers">
-                <div class="productCard">
+            <article class="carouselOffers">
+                <div class="productCard" id="productCard1">
                     <a href="/products/productDetail">
                         <img src="/img/foto3.png">
                         <p>Precio</p>
                         <p>Descripcion del producto</p>
                     </a>
                 </div>
-                <div class="productCard">
+                <div class="productCard" id="productCard2">
+                    <a href="/products/productDetail">
+                        <img src="/img/foto3.png">
+                        <p>Precio</p>
+                        <p>Descripcion del producto</p>
+                    </a>
+                </div>
+                <div class="productCard" id="productCard3">
+                    <a href="/products/productDetail">
+                        <img src="/img/foto3.png">
+                        <p>Precio</p>
+                        <p>Descripcion del producto</p>
+                    </a>
+                </div>
+                <div class="productCard" id="productCard4">
+                    <a href="/products/productDetail">
+                        <img src="/img/foto3.png">
+                        <p>Precio</p>
+                        <p>Descripcion del producto</p>
+                    </a>
+                </div>
+                <div class="productCard" id="productCard5">
+                    <a href="/products/productDetail">
+                        <img src="/img/foto3.png">
+                        <p>Precio</p>
+                        <p>Descripcion del producto</p>
+                    </a>
+                </div>
+                <div class="productCard" id="productCard6">
                     <a href="/products/productDetail">
                         <img src="/img/foto3.png">
                         <p>Precio</p>
