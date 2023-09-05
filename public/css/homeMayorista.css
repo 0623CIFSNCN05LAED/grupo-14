@@ -101,19 +101,17 @@ body {
   transform: scaleX(-1);
 }
 
-
-
 /* main Banner END */
 
 /* Offers START */
 
-.offers {
+.offersContainer {
   position: relative;
   overflow: hidden;
   margin: 10px 0;
 }
 
-.offers h3 {
+.offersContainer h3 {
   color: #243a76;
   text-align: center;
   padding: 10px 25px;
@@ -121,27 +119,16 @@ body {
   background-color: #55a4da;
 }
 
-.carouselContainerOffers {
+.carouselOffers {
   display: flex;
   overflow: hidden;
   justify-content: space-between;
   padding: 0px 4%;
 }
 
-.carouselContainerOffers .leftArrow {
-  border-radius: 0px;
-  right: 0%;
-  display: none;
-}
-
-.carouselContainerOffers .rightArrow {
-  border-radius: 0px;
-  display: none;
-}
-
 .productCard {
-  border: red 1px solid;
-  width: 48%;
+  width: 15%;
+  border: blue 1px solid;
 }
 
 .productCard img {
@@ -152,6 +139,24 @@ body {
   text-decoration: none;
   color: black;
 }
+
+
+
+
+
+
+.carouselOffers .leftArrow {
+  border-radius: 0px;
+  right: 0%;
+  display: none;
+}
+
+.carouselOffers .rightArrow {
+  border-radius: 0px;
+  display: none;
+}
+
+
 
 /* New Mayorista */
 
@@ -302,19 +307,6 @@ body {
   display: none;
 }
 
-.productCard {
-  border: red 1px solid;
-  width: 48%;
-}
-
-.productCard img {
-  width: 100%;
-}
-
-.productCard a {
-  text-decoration: none;
-  color: black;
-}
 
 /* encontra el producto */
 /*        inicio        */
