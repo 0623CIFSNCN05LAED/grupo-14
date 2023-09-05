@@ -198,15 +198,16 @@ header {
   }
   .topLeftHeader {
     display: flex;
+    padding-left: 20px;
     text-align: left;
     align-items: center;
     width: 40%;
-    justify-content: space-around;
+    justify-content: flex-start;
   }
   .tiendaMayoristaDiv{ /* dejo fijo el boton Cambiar a tienda mayorista */
   
     position: absolute;
-    right:55% ;
+    left: 28%;
   
   }
   .searchBar {
@@ -285,6 +286,7 @@ header {
     display: flex;
   }
   .noDesk img {
+    width: 3%;
     position: absolute;
     top: 50px;
     left: 50px;
