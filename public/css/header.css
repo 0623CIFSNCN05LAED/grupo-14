@@ -190,6 +190,9 @@ header {
   display: none;
 }
 
+.noDesk img {
+  width: 25%;
+}
 /* Estilos para pantallas de escritorio (más de 1280px) */
 @media (min-width: 1280px) {
   header {
