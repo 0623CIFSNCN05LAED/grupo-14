@@ -22,10 +22,9 @@
         
       </section>
       <section class="relatedProducts">
-        <h3 class="name">Lista de productos</h3>
-        <div class="otherProducts">
-          <i class="fa-solid fa-circle-arrow-left"></i>
-          <% products.forEach(product => { %>
+        <h3 class="nameList">Lista de productos</h3>
+        <div class="allProducts">
+            <% products.forEach(product => { %>
           <div class="card" id="card<%= product.id %>">
             <h4 class="cardTitle"><%= product.shortName %></h4>
             <div class="cardBody">
@@ -38,7 +37,7 @@
             </div>
           </div>
           <% }); %>
-          <i class="fa-solid fa-circle-arrow-right"></i>
+          
         </div>
       </section>
     </main>

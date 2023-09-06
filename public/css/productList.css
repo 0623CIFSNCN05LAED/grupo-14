@@ -26,7 +26,7 @@
     align-self: center;
   }
   
-  .name {
+  .nameList {
     background-color: #213e60;
     color: white;
     display: inline-block;
@@ -34,38 +34,9 @@
     margin-bottom: 5px;
   }
   
-  .details {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    justify-content: space-between;
-  }
+
   
-  .amount {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px;
-  }
-  
-  .amount p {
-    width: 100%;
-    text-align: left;
-  }
-  
-  .cart {
-    width: 100%;
-    background-color: transparent;
-    border-radius: 8px;
-    border: #55a4da 2px solid;
-    margin-top: 20px;
-    padding: 10px 0;
-    font-size: 17px;
-    color: #55a4da;
-    margin-bottom: 15px;
-    cursor: pointer;
-    transition: all 400ms;
-  }
-  
+ 
   .cart:hover {
     background-color: #55a4da;
     color: #fff;
@@ -76,23 +47,14 @@
     text-align: left;
   }
   
-  /* PRODUCTOS RELACIONADOS */
-  .otherProducts {
-    display: flex;
+
+  .allProducts {
+  display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-wrap: wrap;
   }
   
-  /* .relatedProducts {
-    display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-wrap: wrap;
-  } */
-  
-  /* PRODUCTOS RELACIONADOS  tarjetas*/
-
 
 
   
@@ -107,7 +69,7 @@
     border: 1px solid lightgray;
     box-shadow: 2px 2px 8px 4px #d3d3d3d1;
     border-radius: 15px;
-    /* asdd */
+   
     
     
     
@@ -153,116 +115,3 @@
   }
   
   
-  /* 
-   display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-wrap: wrap;
-  */
-  /* ESCONDEMOS 2 CARD EN MOBILE */
- /*  #card3,
-  #card4 {
-    display: none;
-  } */
-  
- /*  @media (min-width: 1200px) { */
-    /* PRODUCTOS RELACIONADOS MOSTARMOS CARD 3 Y 4*/
-    /* #card3,
-    #card4 {
-      justify-content: center;
-      display: inline-block;
-    }
-  
-    main {
-      max-width: 2000px;
-    }
-    .product {
-      display: flex;
-      flex-direction: row;
-      align-items: normal;
-      justify-content: space-around;
-    }
-    .product img {
-      margin: 20px;
-      width: 300px;
-    }
-    .data {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      width: 40%;
-    }
-  } */
-  
-  /* Inicio PC */
- /*  @media (min-width: 1280px)  */
-    /* Inicio Newsletter */
-  
-    /* .title-nl {
-      padding-top: 25px;
-      margin-top: 30px;
-    }
-  
-    .mail-m {
-      margin-left: 30%;
-      margin-right: 30%;
-      margin-bottom: 1%;
-      padding: 7px;
-    }
-  
-    .button-p {
-      margin-left: 45%;
-      margin-right: 45%;
-      margin-bottom: 15px;
-      padding: 3px;
-    } */
-  
-    /* Final Newsletter */
-  
-    /* Inicio Redes  */
-  
-  /*   .icons {
-      width: 100%;
-      text-align: center;
-      margin: 20px;
-    }
-   */
-    /* Final Redes  */
-  
-    /* Inicio ifo  */
-  
-   /*  .box5-1 {
-      display: flex;
-      justify-content: space-between;
-    }
-   */
-    /* final ifo  */
-  
-    /* Inicio afip  */
-  
-   /*  .img-qr {
-      width: 25%;
-    }
-  
-    .box6-1 {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-    }
-  
-    .item-1 {
-      display: flex;
-      margin-left: 10px;
-      margin-bottom: 20px;
-      margin-top: 20px;
-      padding-left: 10px;
-      order: 1;
-    }
-  
-    .copy {
-      margin-right: 10px;
-      padding-right: 20px;
-      color: #eee;
-    }
-  }
-   */
