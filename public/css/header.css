@@ -190,6 +190,16 @@ header {
   display: none;
 }
 
+.noDesk img {
+  width: 60px;
+  position: absolute;
+}
+
+.noDesk i {
+  margin-right: 5px;
+}
+
+
 /* Estilos para pantallas de escritorio (más de 1280px) */
 @media (min-width: 1280px) {
   header {
@@ -286,9 +296,9 @@ header {
     display: flex;
   }
   .noDesk img {
-    width: 3%;
+    width: 7%;
     position: absolute;
-    top: 50px;
+    top: 43px;
     left: 50px;
     z-index: 2;
   }
