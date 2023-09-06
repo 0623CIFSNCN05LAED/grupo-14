@@ -82,8 +82,9 @@
 
 .card:hover {
 	box-shadow: 5px 15px 25px #55a4da;
-    /*fin efectos cards  */
+    
 }
+/*fin efectos cards  */
   .cardTitle {
     text-align: center;
     padding: 10px 10px 0 10px;
