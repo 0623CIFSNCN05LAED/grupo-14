@@ -1,0 +1,196 @@
+.div-newProduct {
+    padding: 10px;
+    background-image: linear-gradient(
+        to right,
+        #243a76,
+        #55a4da
+      );;
+  }
+  
+  .form-newProduct {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    background: #24303c;
+    padding: 30px;    
+    margin: auto;
+    border-radius: 5px;
+    font-family: 'Arial';
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+    text-align: center;
+    align-items: center;
+    
+  }
+  
+  .form-newProduct h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #e68c3a;
+  }
+  
+  .controls {
+    width: 100%;
+    background: #24303c;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #e68c3a;
+    font-size: 18px;
+    color: white;
+  }
+  
+  .p-newProduct{
+    display: flex;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    color: #e68c3a;
+    font-size: 20px;
+    font-family: 'Arial';
+  }
+
+          /* SELECT Y CHECKBOX */
+
+.container{
+    
+  position: relative;
+  width: 100%;
+  padding: 0 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  border: 1px solid #e68c3a;
+  
+}
+
+.select-btn {
+  
+  display: flex;
+  height: 42px;
+  align-items: center;
+  justify-content:space-between;
+  padding: 0px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #24303c;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.select-btn .btn-text{
+  
+  
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.76);
+
+}
+
+.select-btn .arrow-dwn{
+  display: flex;
+  height: 21px;
+  width: 21px;
+  color: #ffffff;
+  font-size: 14px;
+  border-radius: 50%;
+  background: #6e93f7;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s; /* Efecto de arrow down */
+
+}
+
+.select-btn.open .arrow-dwn{
+  transform: rotate(-180deg); /* rotacion del arrow */
+}
+
+.list-items{
+  width: 90%;
+  position: absolute;/* para que la lista despliegue sobre el resto de inputs */
+  margin-top: 5px;
+  border-radius: 4px;
+  padding: 10px;
+  background: #24303c;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  display: none;
+}
+
+.select-btn.open ~ .list-items{
+  display: block;
+}
+
+.list-items .item{
+  
+  display: flex;
+  align-items: center; 
+  list-style: none;
+  height: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 0 10px;
+  border-radius: 4px;
+}
+
+.list-items .item:hover{
+  padding: 0 80px;
+  
+  background-color:#e68c3a ;
+}
+
+.item .item-text{
+  font-size: 16px;
+  font-weight: 400;
+  color: white
+}
+
+
+.item .checkbox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 16px;
+  width: 16px;
+  border-radius: 4px;
+  margin-right: 12px;
+  border: 1.5px solid #c0c0c0;
+  transition: all 0.3s ease-in-out; /* efecto del tick dentro del check */
+
+}
+
+.item.checked .checkbox{
+  background-color: #6e93f7;
+  border-color: #6e93f7;
+}
+
+.checkbox .check-icon{
+  color:#fff;
+  font-size: 11px;
+  transform: scale(0);
+  transition: all 0.3s ease-in-out;/* efecto del tick dentro del check */
+}
+
+.item.checked .check-icon{
+  transform: scale(1);
+}
+
+      /* FIN DE SELECT CON CHECKBOX */
+
+  .createProductButton {
+    width: 100%;
+    background-color: transparent;
+    border-radius: 8px;
+    border: #e68c3a 2px solid;
+    margin-top: 20px;
+    padding: 10px ;
+    font-size: 17px;
+    color: #e68c3a;
+    cursor: pointer;
+    transition: all 400ms;
+
+    
+  }
+  
+  .createProductButton:hover {
+    background-color:#e68c3a;
+    color: #fff;
+  }
+
+
+

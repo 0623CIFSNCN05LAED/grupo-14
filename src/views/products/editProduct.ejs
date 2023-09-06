@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head") %>
+
+    <link rel="stylesheet" href="\css\editProduct.css" />
+    <title>Editar Producto</title>
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+
+    <main>
+      
+        <div class="div-newProduct">
+            <section class="form-newProduct">
+              <h2>Editar Producto</h2>
+        
+              <input class="controls" type="text" name="productName" id="productName" placeholder="Nombre del Producto">
+        
+              <input class="controls" type="text" name="productBrand" id="productBrand" placeholder="Marca del Producto">
+        
+             <!--  SELECT CON CHECKBOX -->
+        
+                <div class="container">
+                    <div class="select-btn">
+                        <span class="btn-text">Categorías</span>
+                        <span class="arrow-dwn">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                    </div>  
+                    <ul class="list-items">
+                        <li class="item">
+                            <span class="checkbox">
+                                <i class="fa-solid fa-check check-icon"></i>
+                            </span>
+                            <span class="item-text"> Categoría 1</span>
+                        </li>
+                        <li class="item">
+                            <span class="checkbox">
+                                <i class="fa-solid fa-check check-icon"></i>
+                            </span>
+                            <span class="item-text"> Categoría 2</span>
+                        </li>
+                        <li class="item">
+                            <span class="checkbox">
+                                <i class="fa-solid fa-check check-icon"></i>
+                            </span>
+                            <span class="item-text"> Categoría 3</span>
+                        </li>
+                        <li class="item">
+                            <span class="checkbox">
+                                <i class="fa-solid fa-check check-icon"></i>
+                            </span>
+                            <span class="item-text"> Categoría 4</span>
+                        </li>
+                    </ul>
+                </div>
+        
+                <!-- FIN DE SELECT CON CHECKBOX -->
+        
+                <input class="controls" type="text" name="productCategory" id="productCategory" placeholder="Categoría">
+        
+                <input class="controls" type="number" name="productPrice" id="productPrice" placeholder="Precio">
+        
+                <input class="controls" type="number" name="productWholesale" id="productWholesale" placeholder="Precio por Mayor">
+        
+                <input class="controls" type="number" name="productStock" id="productStock" placeholder="Stock">
+              
+                <p class="p-newProduct">Seleccionar Imagen de Producto</p>
+                <input class="controls" type="file" name="productImage" id="productImage" accept="image/png, .jpeg, .jpg, image/gif">
+              
+                <p class="p-newProduct">Descripción</p>
+                <textarea id="freeform" name="freeform" rows="4" cols="50"></textarea>
+              
+                <button type="submit" class="createProductButton">Editar Producto</button>
+              
+            </section>
+          
+                                <!-- JS -->
+            <script>
+        
+                const selectBtn = document.querySelector(".select-btn"),
+                    items = document.querySelectorAll(".item");
+        
+                selectBtn.addEventListener("click", ()=>{
+                selectBtn.classList.toggle("open");
+              })
+        
+              /* cambia estado a checkeado(checked) al clickear sobre cada categoria */
+              items.forEach(item => {
+                item.addEventListener("click",() => {
+                  item.classList.toggle ("checked");
+        
+                  /* le asigna valor length */
+                  let checked = document.querySelectorAll(".checked"),
+                      btnText = document.querySelector(".btn-text");
+        
+                      /* MUESTRA LA CANTIDAD QUE SELECCIONAMOS */
+                      if (checked && checked.length > 0){
+                        /* console.log("valid") */
+                        btnText.innerText = `${checked.length} Seleccionadas`;
+                      }else{
+                        /* console.log("invalid") */
+                        btnText.innerText = "Seleccionar Categoría";
+                      }
+                })
+        
+              })
+        
+            </script>
+    </div >
+
+
+    </main>
+
+    <%- include("../partials/footer") %>
+  </body>
+</html>
