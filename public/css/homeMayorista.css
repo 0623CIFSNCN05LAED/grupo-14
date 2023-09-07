@@ -1,8 +1,5 @@
 /* Main */
 
-body {
-  width: 98vw;
-}
 
 /* banner START*/
 .bannerContainer{
@@ -139,11 +136,6 @@ body {
   text-decoration: none;
   color: black;
 }
-
-
-
-
-
 
 .carouselOffers .leftArrow {
   border-radius: 0px;
