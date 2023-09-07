@@ -8,8 +8,9 @@ const productsController = {
     if (!product) {
       return res.render("main/homeMayorista");
     }
-
+    
     res.render("products/productDetail", { product, products });
+        
   },
   cart: (req, res) => {
     res.render("products/productCart");
@@ -17,9 +18,15 @@ const productsController = {
   create: (req, res) => {
     res.render("products/createProduct");
   },
+  
+  productsList: (req, res) =>{
+    const id = req.params.id;
+    const product = products.find((product) => product.id == id);
 
-  edit: (req, res) => {
-    res.render("products/editProduct");
+    res.render("products/productList",{product,products});
+  },
+    edit: (req, res) => {
+      res.render("products/editProduct");
   },
 
 };

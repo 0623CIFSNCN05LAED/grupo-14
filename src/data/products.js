@@ -35,6 +35,7 @@ const products = [
     description:
       "Trenet es el experto en quitar manchas. Trenet Gatillo Oxi está especialmente formulado para remover una gran cantidad de manchas, y es más efectivo aún en manchas de características coloridas, como por ejemplo pasto, salsa de tomate, café, jugo de frutas, tinta y muchas otras sin necesidad de fregar y sin dañar la ropa. Su fórmula Hyperactive con Oxígeno Activo actúa inmediatamente sobre las manchas, debilitando su adherencia a las fibras y quitándolas fácilmente. Puede utilizarse en ropa blanca y en colores firmes.",
   },
+  
 ];
 
 module.exports = products;

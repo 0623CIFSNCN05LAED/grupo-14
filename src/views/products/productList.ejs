@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head") %>
+
+    <link rel="stylesheet" href="\css\productList.css" />
+
+    <title>Lista de Productos</title>
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+
+    <main>
+      <div class="nav">
+        <a href="/">Home</a>
+        <span>/</span>
+        <a href="#">Productos</a>
+        <span>/</span>
+        <a href="#">Lista de productos></a>
+      </div>
+      <section class="product">
+        
+      </section>
+      <section class="relatedProducts">
+        <h3 class="nameList">Lista de productos</h3>
+        <div class="allProducts">
+            <% products.forEach(product => { %>
+          <div class="card" id="card<%= product.id %>">
+            <h4 class="cardTitle"><%= product.shortName %></h4>
+            <div class="cardBody">
+              <img src="<%= product.image %>" alt="imagen" />
+            </div>
+            <div class="cardFooter">
+              <a href="/products/productDetail/<%= product.id %>"
+                ><button>Más información</button></a
+              >
+            </div>
+          </div>
+          <% }); %>
+          
+        </div>
+      </section>
+    </main>
+
+    <%- include("../partials/footer") %>
+  </body>
+</html>
