@@ -15,6 +15,23 @@
         <section class="offersContainer">
             <h3>Ofertas de la quincena</h3>
             <article class="carouselOffers">
+                <div class="allProducts">
+                    <% products.forEach(product =>{ %>
+                  <div class="card" id="card<%= product.id %>">
+                    <h4 class="cardTitle"><%= product.shortName %></h4>
+                    <div class="cardBody">
+                      <img src="<%= product.image %>" alt="imagen" />
+                    </div>
+                    <div class="cardFooter">
+                      <a href="/products/productDetail/<%= product.id %>"
+                        ><button>Más información</button></a
+                      >
+                    </div>
+                  </div>
+                  <% }); %>
+                  
+                </div>
+            <!--
                 <div class="productCard" id="productCard1">
                     <a href="/products/productDetail">
                         <img src="/img/foto3.png">
@@ -50,6 +67,7 @@
                         <p>Descripcion del producto</p>
                     </a>
                 </div>
+                
                 <div class="productCard" id="productCard6">
                     <a href="/products/productDetail">
                         <img src="/img/foto3.png">
@@ -57,6 +75,8 @@
                         <p>Descripcion del producto</p>
                     </a>
                 </div>
+
+            -->
                 <button class="leftArrow"><i class="fa-solid fa-chevron-left" ></i></button>
                 <button class="rightArrow"><i class="fa-solid fa-chevron-right"></i></button>
                 <!-- estan con display none para despues agregar en version tablet y desktop -->

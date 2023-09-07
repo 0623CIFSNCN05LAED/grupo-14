@@ -1,6 +1,12 @@
+const products = require("../data/products")
+
 const mainController = {
     homeMayorista: (req,res)=>{
-        res.render("main/homeMayorista"); //aca va la ruta desde views hasta el archivo homeMayorista. !! no va / al principio.
+        const id = req.params.id;
+        const product = products.find((product) => product.id == id);
+        res.render("main/homeMayorista", {
+            product, products
+        }); //aca va la ruta desde views hasta el archivo homeMayorista. !! no va / al principio.
     },
     homeConsumidorFinal: (req,res)=>{
         res.render("main/homeCf");
