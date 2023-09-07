@@ -7,7 +7,8 @@ const products = [
     image: "/img/limpiadorLiquidoProcenex.jpg",
     description:
       "Procenex Lavanda limpia profundamente las distintas superficies de tu hogar dejando un agradable aroma. Su fragancia están desarrolladas por las mejores casas perfumistas. Es ideal para pisos, azulejos, superficies lavables de la cocina, áreas de mascotas, basureros y superficies lavables del baño.",
-    offer: true
+    offer: true,
+    discount: 25,
   },
   {
     id: 2,
@@ -17,7 +18,8 @@ const products = [
     image: "/img/lustramueblesBlem.jpg",
     description:
       "Ventajas *Blem Aerosol mejora el aspecto de la mayoría de las superficies duras al eliminar el polvo y proporciona una capa protectora y brillante sin dejar acumulaciones de cera. ¿Sobre qué superficies es posible aplicar el producto? *Madera (Sellada) *Superficies Laminadas que no son Pisos *Cuero *Plástico Instrucciones de Uso: 1) Agita 2) Rocía 3) Limpia con un paño. Para mejores resultados, rocía sobre un paño y repasa, o rocía desde 20 cm de la superficie y repasa.",
-    offer: true
+    offer: true, 
+    discount: 5,
   },
   {
     id: 3,
@@ -27,7 +29,8 @@ const products = [
     image: "/img/jabonLiquidoSkip.jpg",
     description:
       "El nuevo jabón líquido Skip para Diluir Bio-Enzimas, tiene una nueva tecnología que garantiza la superioridad en la limpieza y cuidado de las fibras, asegurando un impacto positivo en el planeta. El nuevo Skip líquido para diluir ofrece el mismo cuidado de siempre pero de una forma más conveniente para el consumidor.",
-    offer: true
+    offer: true,
+    discount: 10,
   },
   {
     id: 4,
@@ -37,7 +40,8 @@ const products = [
     image: "/img/quitamanchasTrenet.jpg",
     description:
       "Trenet es el experto en quitar manchas. Trenet Gatillo Oxi está especialmente formulado para remover una gran cantidad de manchas, y es más efectivo aún en manchas de características coloridas, como por ejemplo pasto, salsa de tomate, café, jugo de frutas, tinta y muchas otras sin necesidad de fregar y sin dañar la ropa. Su fórmula Hyperactive con Oxígeno Activo actúa inmediatamente sobre las manchas, debilitando su adherencia a las fibras y quitándolas fácilmente. Puede utilizarse en ropa blanca y en colores firmes.",
-      offer: false
+      offer: false,
+      discount: 0,
   },
 ];
 
