@@ -25,6 +25,9 @@ const productsController = {
 
     res.render("products/productList",{product,products});
   },
+    edit: (req, res) => {
+      res.render("products/editProduct");
+  },
 
 };
 
