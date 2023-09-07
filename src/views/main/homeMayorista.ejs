@@ -13,19 +13,19 @@
     <main>
         <%- include('../partials/mainBanner') %>
         <section class="offersContainer">
-            <h3>Ofertas de la quincena</h3>
+            <h3>OFERTAS DE LA QUINCENA</h3>
             <article class="carouselOffers">
                 <div class="allProducts">
                     <% products.forEach(product =>{ %>
                   <div class="card" id="card<%= product.id %>">
-                    <h4 class="cardTitle"><%= product.shortName %></h4>
                     <div class="cardBody">
                       <img src="<%= product.image %>" alt="imagen" />
                     </div>
+                    <div><h4 class="cardTitle"><%= product.shortName %></h4></div>
                     <div class="cardFooter">
-                      <a href="/products/productDetail/<%= product.id %>"
-                        ><button>Más información</button></a
-                      >
+                        <a href="/products/productDetail/<%= product.id %>"
+                            ><button>$<%= product.price %></button></a
+                        >
                     </div>
                   </div>
                   <% }); %>
