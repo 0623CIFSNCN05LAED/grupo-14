@@ -24,8 +24,7 @@
                     <div><h4 class="cardTitle"><%= product.shortName %></h4></div>
                     <div class="cardFooter">
                         <a href="/products/productDetail/<%= product.id %>"
-                            ><button>$<%= product.price %></button></a
-                        >
+                            ><button>$<%= product.priceWithDiscount %></button></a>
                     </div>
                   </div>
                   <% }); %>
@@ -160,6 +159,5 @@
     </main>
 
     <%- include("../partials/footer") %>
-    
 </body>
 </html>
