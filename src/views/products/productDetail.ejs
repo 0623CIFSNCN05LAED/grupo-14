@@ -25,7 +25,7 @@
         <div class="data">
           <div class="details">
             <h2 class="name"><%= product.name %></h2>
-            <h3>$ <%= product.price %></h3>
+            <h3><%= product.price %></h3>
             <form action="">
               <div class="amount">
                 <p>stock disponible</p>
@@ -54,7 +54,7 @@
         <h3 class="name">Productos relacionados</h3>
         <div class="otherProducts">
           <i class="fa-solid fa-circle-arrow-left"></i>
-          <% products.forEach(product => { %>
+          <% relatedProducts.forEach(product => { %>
           <div class="card" id="card<%= product.id %>">
             <h4 class="cardTitle"><%= product.shortName %></h4>
             <div class="cardBody">

@@ -1,34 +1,34 @@
-const products = require("../data/products");
+const productService = require("../services/productService");
 
 const productsController = {
   detail: (req, res) => {
     const id = req.params.id;
-    const product = products.find((product) => product.id == id);
+    const product = productService.getProduct(id);
+    const relatedProducts = productService.getAllProducts(); // Por ahora muestra todos los productos en la seccion de productos relacionados hasta que tengamos bien las categorias
 
     if (!product) {
       return res.render("main/homeMayorista");
     }
-    
-    res.render("products/productDetail", { product, products });
-        
+
+    res.render("products/productDetail", { product, relatedProducts });
   },
+
   cart: (req, res) => {
     res.render("products/productCart");
   },
+
   create: (req, res) => {
     res.render("products/createProduct");
   },
-  
-  productsList: (req, res) =>{
-    const id = req.params.id;
-    const product = products.find((product) => product.id == id);
 
-    res.render("products/productList",{product,products});
-  },
-    edit: (req, res) => {
-      res.render("products/editProduct");
+  productsList: (req, res) => {
+    const products = productService.getAllProducts();
+    res.render("products/productList", { products });
   },
 
+  edit: (req, res) => {
+    res.render("products/editProduct");
+  },
 };
 
 module.exports = productsController;
