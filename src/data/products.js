@@ -1,19 +1,27 @@
 const fs = require("fs");
 const path = require("path");
 
-// Treamons y convertimos el archivo .json en .js
-const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
-const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-
 // Objeto de objetos de funciones genericas
 const db = {
   products: {
     // Buscar toda la lista de productos
     find: () => {
+      // Treamons y convertimos el archivo .json en .js
+      const productsFilePath = path.join(
+        __dirname,
+        "../data/productsDataBase.json"
+      );
+      const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
       return products;
     },
     // Buscar producto por id
     findById: (id) => {
+      // Treamons y convertimos el archivo .json en .js
+      const productsFilePath = path.join(
+        __dirname,
+        "../data/productsDataBase.json"
+      );
+      const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
       const product = products.find((product) => product.id == id);
       return product;
     },
