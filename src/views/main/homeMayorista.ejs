@@ -1,20 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-
+  <head>
     <%- include("../partials/head") %>
 
-    <link rel="stylesheet" href="/css/homeMayorista.css">
+    <link rel="stylesheet" href="/css/homeMayorista.css" />
     <title>Document</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <%- include('../partials/headerMayorista') %>
     <main>
-        <%- include('../partials/mainBanner') %>
-        <section class="offersContainer">
-            <h3>Ofertas de la quincena</h3>
-            <article class="carouselOffers">
+      <%- include('../partials/mainBanner') %>
+      <section class="offersContainer">
+        <h3>OFERTAS</h3>
+        <article class="carouselOffers">
+          <div class="allProducts">
+            <% products.forEach(product =>{ %>
+            <div class="card" id="card<%= product.id %>">
+              <div class="cardBody">
+                <img src="<%= product.image %>" alt="imagen" />
+              </div>
+              <div>
+                <h4 class="cardTitle">
+                  <%= product.shortName %> -- %<%= product.discount %> OFF
+                </h4>
+              </div>
+              <div class="cardFooter">
+                <a href="/products/productDetail/<%= product.id %>"
+                  ><button><%= product.priceWithDiscount %></button></a
+                >
+              </div>
+            </div>
+            <% }); %>
+          </div>
+          <!--
                 <div class="productCard" id="productCard1">
                     <a href="/products/productDetail">
                         <img src="/img/foto3.png">
@@ -50,6 +68,7 @@
                         <p>Descripcion del producto</p>
                     </a>
                 </div>
+                
                 <div class="productCard" id="productCard6">
                     <a href="/products/productDetail">
                         <img src="/img/foto3.png">
@@ -57,89 +76,122 @@
                         <p>Descripcion del producto</p>
                     </a>
                 </div>
-                <button class="leftArrow"><i class="fa-solid fa-chevron-left" ></i></button>
-                <button class="rightArrow"><i class="fa-solid fa-chevron-right"></i></button>
-                <!-- estan con display none para despues agregar en version tablet y desktop -->
-            </article>
-        </section>
-        <div class="newMayoristaContainer">
-            <div class="newMayoristaQuestion">
-                <h2>¿Tenés un negocio mayorista?</h2>
-                <p>Para comprar con nosotros debés darte de alta como cliente</p>
-            </div>
-            <div class="newMayoristaButtonContainer">
-                <button class="newMayoristaButton" type="submit" name="registerMayorista"><a href="/registerMayorista"><i class="fa-solid fa-angles-right hoverMayorista"></i>Registrate acá como <span class="hoverMayorista">nuevo cliente mayorista</span></a></button>
-            </div>
+
+            -->
+          <button class="leftArrow">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button class="rightArrow">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+          <!-- estan con display none para despues agregar en version tablet y desktop -->
+        </article>
+      </section>
+      <div class="newMayoristaContainer">
+        <div class="newMayoristaQuestion">
+          <h2>¿Tenés un negocio mayorista?</h2>
+          <p>Para comprar con nosotros debés darte de alta como cliente</p>
         </div>
-        <section class="benefitsSection">
-            <div>
-                <i class="fa-solid fa-id-card"></i>
-                <h2>Registrándote como mayorista podes</h2>
-            </div>
-            <div class="benefitsContainer">
-                <ol class="benefitsList">
-                    <li><i class="fa-solid fa-check"></i>Presentaciones minoristas y mayoristas con precios imbatibles</li>
-                    <li><i class="fa-solid fa-check"></i>Entregamos en 24/48 hrs a tu domicilio</li>
-                    <li><i class="fa-solid fa-check"></i>Elegís el rango de entrega de tu conveniencia</li>
-                    <li><i class="fa-solid fa-check"></i>Comprás y pagás online con todas las herramientas de Mercado Pago</li>
-                    <li><i class="fa-solid fa-check"></i>+ de 1000 marcas y productos con stocks en linea</li>
-                </ol>
-            </div>
-        </section>
-        <div class="loginOutsideBox">
-            <div class="loginBanner">
-                <h2 class="loginBannerTitle">Bienvenido a la tienda para clientes mayoristas</h2>
-                <div class="loginBannerLine"></div>
-                <p class="loginBannerText">Por favor, iniciá sesión o registrate</p>
-            </div>
-            <div class="loginFormContainer">
-                <h2 class="loginFormTitle">Ya soy cliente mayorista</h2>
-                <form class="loginForm">
-                    <p>ACA VA EL FORMULARIO DE LOGIN</p>
-                </form>
-            </div>
+        <div class="newMayoristaButtonContainer">
+          <button
+            class="newMayoristaButton"
+            type="submit"
+            name="registerMayorista"
+          >
+            <a href="/registerMayorista"
+              ><i class="fa-solid fa-angles-right hoverMayorista"></i>Registrate
+              acá como
+              <span class="hoverMayorista">nuevo cliente mayorista</span></a
+            >
+          </button>
         </div>
-        <section class="bestSellers">
+      </div>
+      <section class="benefitsSection">
+        <div>
+          <i class="fa-solid fa-id-card"></i>
+          <h2>Registrándote como mayorista podes</h2>
+        </div>
+        <div class="benefitsContainer">
+          <ol class="benefitsList">
+            <li>
+              <i class="fa-solid fa-check"></i>Presentaciones minoristas y
+              mayoristas con precios imbatibles
+            </li>
+            <li>
+              <i class="fa-solid fa-check"></i>Entregamos en 24/48 hrs a tu
+              domicilio
+            </li>
+            <li>
+              <i class="fa-solid fa-check"></i>Elegís el rango de entrega de tu
+              conveniencia
+            </li>
+            <li>
+              <i class="fa-solid fa-check"></i>Comprás y pagás online con todas
+              las herramientas de Mercado Pago
+            </li>
+            <li>
+              <i class="fa-solid fa-check"></i>+ de 1000 marcas y productos con
+              stocks en linea
+            </li>
+          </ol>
+        </div>
+      </section>
+      <div class="loginOutsideBox">
+        <div class="loginBanner">
+          <h2 class="loginBannerTitle">
+            Bienvenido a la tienda para clientes mayoristas
+          </h2>
+          <div class="loginBannerLine"></div>
+          <p class="loginBannerText">Por favor, iniciá sesión o registrate</p>
+        </div>
+        <div class="loginFormContainer">
+          <h2 class="loginFormTitle">Ya soy cliente mayorista</h2>
+          <form class="loginForm">
+            <p>ACA VA EL FORMULARIO DE LOGIN</p>
+          </form>
+        </div>
+      </div>
+      <section class="bestSellers">
         <h3>Los más vendidos</h3>
         <article class="carouselContainerBestSellers">
-            <div class="productCard">
-                <a href="/products/productDetail">
-                    <img src="/img/foto3.png">
-                    <p>Precio</p>
-                    <p>Descripcion del producto</p>
-                </a>
-            </div>
-            <div class="productCard">
-                <a href="/products/productDetail">
-                    <img src="/img/foto3.png">
-                    <p>Precio</p>
-                    <p>Descripcion del producto</p>
-                </a>
-            </div>
-            <button class="leftArrow"><i class="fa-solid fa-chevron-left" ></i></button>
-            <button class="rightArrow"><i class="fa-solid fa-chevron-right"></i></button>
-            <!-- estan con display none para despues agregar en version tablet y desktop -->
+          <div class="productCard">
+            <a href="/products/productDetail">
+              <img src="/img/foto3.png" />
+              <p>Precio</p>
+              <p>Descripcion del producto</p>
+            </a>
+          </div>
+          <div class="productCard">
+            <a href="/products/productDetail">
+              <img src="/img/foto3.png" />
+              <p>Precio</p>
+              <p>Descripcion del producto</p>
+            </a>
+          </div>
+          <button class="leftArrow">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button class="rightArrow">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+          <!-- estan con display none para despues agregar en version tablet y desktop -->
         </article>
-    </section>
-    <section class="boxc-1">
-
+      </section>
+      <section class="boxc-1">
         <article class="boxc-2">
-            
-            <img width="100%" src="/img/banner-clorox.png">
+          <img width="100%" src="/img/banner-clorox.png" />
         </article>
 
         <article class="boxc-3">
-            <img width="100%" src="/img/banner-poett.jpg">
+          <img width="100%" src="/img/banner-poett.jpg" />
         </article>
 
         <article class="boxc-4">
-            <img width="100%" src="/img/banner-skip.png">
+          <img width="100%" src="/img/banner-skip.png" />
         </article>
-
-    </section>
+      </section>
     </main>
 
     <%- include("../partials/footer") %>
-    
-</body>
+  </body>
 </html>

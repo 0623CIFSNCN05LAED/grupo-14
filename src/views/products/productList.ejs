@@ -15,16 +15,12 @@
         <a href="/">Home</a>
         <span>/</span>
         <a href="/products/productList">Productos</a>
-        <span>/</span>
-        <a href="#">Lista de productos</a>
       </div>
-      <section class="product">
-        
-      </section>
+      <section class="product"></section>
       <section class="relatedProducts">
         <h3 class="nameList">Lista de productos</h3>
         <div class="allProducts">
-            <% products.forEach(product => { %>
+          <% products.forEach(product => { %>
           <div class="card" id="card<%= product.id %>">
             <h4 class="cardTitle"><%= product.shortName %></h4>
             <div class="cardBody">
@@ -37,7 +33,6 @@
             </div>
           </div>
           <% }); %>
-          
         </div>
       </section>
     </main>
