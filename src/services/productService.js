@@ -1,5 +1,6 @@
 const db = require("../data/products");
 
+// Funciones de uso local(este mismo archivo)
 // Da el formato a los precios de cada producto
 const formatProductPrices = function (product) {
   // Calcula el precio final con el descuento incluido
@@ -23,6 +24,7 @@ const formatProductsPrices = function (products) {
   return products.map((product) => formatProductPrices(product));
 };
 
+// Funciones que se van a requerir en controllers
 const productServices = {
   // Nos brinda todos los productos de la lista
   getAllProducts: () => {
