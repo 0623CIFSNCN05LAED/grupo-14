@@ -40,7 +40,6 @@ const productServices = {
     const products = db.products
       .find()
       .filter((product) => product.offer == true);
-    console.log(products);
     return formatProductsPrices(products);
   },
 };
