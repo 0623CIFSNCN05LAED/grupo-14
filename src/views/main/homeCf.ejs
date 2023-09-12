@@ -42,20 +42,9 @@
         <section class="bestSellers">
             <h3>Los más vendidos</h3>
             <article class="carouselContainerBestSellers">
-                <div class="productCard">
-                    <a href="/products/productDetail">
-                        <img src="/img/foto3.png">
-                        <p>Precio</p>
-                        <p>Descripcion del producto</p>
-                    </a>
-                </div>
-                <div class="productCard">
-                    <a href="/products/productDetail">
-                        <img src="/img/foto3.png">
-                        <p>Precio</p>
-                        <p>Descripcion del producto</p>
-                    </a>
-                </div>
+                <% bestSellersProducts.forEach(product =>{ %>
+                    <%- include("../partials/productCard", {product}) %>
+                    <% }); %>
                 <button class="leftArrow"><i class="fa-solid fa-chevron-left" ></i></button>
                 <button class="rightArrow"><i class="fa-solid fa-chevron-right"></i></button>
                 <!-- estan con display none para despues agregar en version tablet y desktop -->
@@ -67,20 +56,9 @@
         <section class="opportunities">
             <h3>Mega Oportunidades</h3>
             <article class="carouselContainerOpportunities">
-                <div class="productCard">
-                    <a href="/products/productDetail">
-                        <img src="/img/foto3.png">
-                        <p>Precio</p>
-                        <p>Descripcion del producto</p>
-                    </a>
-                </div>
-                <div class="productCard">
-                    <a href="/products/productDetail">
-                        <img src="/img/foto3.png">
-                        <p>Precio</p>
-                        <p>Descripcion del producto</p>
-                    </a>
-                </div>
+                <% inSaleProducts.forEach(product =>{ %>
+                    <%- include("../partials/productCard", {product}) %>
+                    <% }); %>
                 <button class="leftArrow"><i class="fa-solid fa-chevron-left" ></i></button>
                 <button class="rightArrow"><i class="fa-solid fa-chevron-right"></i></button>
                 <!-- estan con display none para despues agregar en version tablet y desktop -->

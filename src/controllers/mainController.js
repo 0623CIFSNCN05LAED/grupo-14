@@ -13,7 +13,13 @@ const mainController = {
     }); 
   },
   homeConsumidorFinal: (req, res) => {
-    res.render("main/homeCf");
+    const inSaleProducts = productService.getInSaleProducts();
+    const bestSellersProducts = productService.getBestSellersProducts();
+    
+    res.render("main/homeCf", {
+      inSaleProducts,
+      bestSellersProducts
+    });
   },
 };
 
