@@ -1,15 +1,17 @@
 <div class="card" id="card<%= product.id %>">
+  <a href="/products/productDetail/<%= product.id %>">
     <div class="cardBody">
       <img src="<%= product.image %>" alt="imagen" />
     </div>
     <div>
-      <h4 class="cardTitle">
-        <%= product.shortName %> -- %<%= product.discount %> OFF
-      </h4>
+      <h4 class="cardTitle"><%= product.shortName %></h4>
     </div>
     <div class="cardFooter">
-      <a href="/products/productDetail/<%= product.id %>"> <!-- cambiar enlace a toda la card ? y mismo con el hover-->
-        <button><%= product.priceWithDiscount %></button>
-      </a>
+      <!-- cambiar enlace a toda la card ? y mismo con el hover-->
+      <button>
+        <%= product.priceWithDiscount %> &nbsp; &nbsp; <%= product.discount %>
+        %OFF
+      </button>
     </div>
-  </div>
+  </a>
+</div>
