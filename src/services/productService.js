@@ -1,47 +1,53 @@
 const db = require("../data/products");
 
-// Funciones de uso local(este mismo archivo)
-// Da el formato a los precios de cada producto
-const formatProductPrices = function (product) {
-  // Calcula el precio final con el descuento incluido
-  const priceWithDiscount =
+/************* Funciones de uso local(este mismo archivo) ****************/
+ 
+const formatProductPrices = function (product) {    /* Da el formato a los precios de cada producto */
+  
+  const priceWithDiscount =    // Calcula el precio final con el descuento incluido
     product.price - product.price * (product.discount / 100);
-  // Crea dentro del producto el precio con el descuento incluido y le da el formato
-  product.priceWithDiscount = `$ ${priceWithDiscount.toLocaleString("es", {
+  
+  product.priceWithDiscount = `$ ${priceWithDiscount.toLocaleString("es", {    // Crea dentro del producto el precio con el descuento incluido y le da el formato
     minimumFractionDigits: 2,
   })}`;
-  // Le da el formato al precio
-  product.price = `$ ${product.price.toLocaleString("es", {
+  
+  product.price = `$ ${product.price.toLocaleString("es", {    // Le da el formato al precio
     minimumFractionDigits: 2,
   })}`;
-  // Le da el formato al descuento
-  product.discount = product.discount.toLocaleString("es");
+  
+  product.discount = product.discount.toLocaleString("es");    // Le da el formato al descuento
 
   return product;
 };
-// Recibe los productos y a cada uno le otorga el formato
-const formatProductsPrices = function (products) {
+
+const formatProductsPrices = function (products) {    // Recibe los productos y a cada uno le otorga el formato
   return products.map((product) => formatProductPrices(product));
 };
 
-// Funciones que se van a requerir en controllers
+/*************** Funciones que se van a requerir en controllers *****************/
 const productServices = {
-  // Nos brinda todos los productos de la lista
-  getAllProducts: () => {
-    return db.products.find();
+  
+  getAllProducts: () => {    // Nos brinda todos los productos de la lista
+    return db.products.findAll();
   },
-  // Nos brinda el producto del id especificado
-  getProduct: (id) => {
+  
+  getProduct: (id) => {    // Nos brinda el producto del id especificado
     const product = db.products.findById(id);
     return formatProductPrices(product);
   },
-  // Nos brinda todos los productos en oferta
-  getInSaleProducts: () => {
+  
+  getInSaleProducts: () => {    // Nos brinda todos los productos en oferta
     const products = db.products
-      .find()
+      .findAll()
       .filter((product) => product.offer == true);
     return formatProductsPrices(products);
   },
+
+  getBestSellersProducts: function (){
+    const products = db.products.findAll().filter((product)=> product.bestSeller == true);
+    
+    return formatProductsPrices(products)
+  }
 };
 
 module.exports = productServices;

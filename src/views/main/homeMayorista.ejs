@@ -14,70 +14,10 @@
         <h3>OFERTAS</h3>
         <article class="carouselOffers">
           <div class="allProducts">
-            <% products.forEach(product =>{ %>
-            <div class="card" id="card<%= product.id %>">
-              <div class="cardBody">
-                <img src="<%= product.image %>" alt="imagen" />
-              </div>
-              <div>
-                <h4 class="cardTitle">
-                  <%= product.shortName %> -- %<%= product.discount %> OFF
-                </h4>
-              </div>
-              <div class="cardFooter">
-                <a href="/products/productDetail/<%= product.id %>"
-                  ><button><%= product.priceWithDiscount %></button></a
-                >
-              </div>
-            </div>
+            <% inSaleProducts.forEach(product =>{ %>
+            <%- include("../partials/productCard", {product}) %>
             <% }); %>
           </div>
-          <!--
-                <div class="productCard" id="productCard1">
-                    <a href="/products/productDetail">
-                        <img src="/img/foto3.png">
-                        <p>Precio</p>
-                        <p>Descripcion del producto</p>
-                    </a>
-                </div>
-                <div class="productCard" id="productCard2">
-                    <a href="/products/productDetail">
-                        <img src="/img/foto3.png">
-                        <p>Precio</p>
-                        <p>Descripcion del producto</p>
-                    </a>
-                </div>
-                <div class="productCard" id="productCard3">
-                    <a href="/products/productDetail">
-                        <img src="/img/foto3.png">
-                        <p>Precio</p>
-                        <p>Descripcion del producto</p>
-                    </a>
-                </div>
-                <div class="productCard" id="productCard4">
-                    <a href="/products/productDetail">
-                        <img src="/img/foto3.png">
-                        <p>Precio</p>
-                        <p>Descripcion del producto</p>
-                    </a>
-                </div>
-                <div class="productCard" id="productCard5">
-                    <a href="/products/productDetail">
-                        <img src="/img/foto3.png">
-                        <p>Precio</p>
-                        <p>Descripcion del producto</p>
-                    </a>
-                </div>
-                
-                <div class="productCard" id="productCard6">
-                    <a href="/products/productDetail">
-                        <img src="/img/foto3.png">
-                        <p>Precio</p>
-                        <p>Descripcion del producto</p>
-                    </a>
-                </div>
-
-            -->
           <button class="leftArrow">
             <i class="fa-solid fa-chevron-left"></i>
           </button>
@@ -154,20 +94,9 @@
       <section class="bestSellers">
         <h3>Los más vendidos</h3>
         <article class="carouselContainerBestSellers">
-          <div class="productCard">
-            <a href="/products/productDetail">
-              <img src="/img/foto3.png" />
-              <p>Precio</p>
-              <p>Descripcion del producto</p>
-            </a>
-          </div>
-          <div class="productCard">
-            <a href="/products/productDetail">
-              <img src="/img/foto3.png" />
-              <p>Precio</p>
-              <p>Descripcion del producto</p>
-            </a>
-          </div>
+          <% bestSellersProducts.forEach(product =>{ %>
+            <%- include("../partials/productCard", {product}) %>
+            <% }); %>
           <button class="leftArrow">
             <i class="fa-solid fa-chevron-left"></i>
           </button>

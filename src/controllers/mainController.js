@@ -4,8 +4,13 @@ const productService = require("../services/productService");
 
 const mainController = {
   homeMayorista: (req, res) => {
-    const products = productService.getInSaleProducts();
-    res.render("main/homeMayorista", { products }); //aca va la ruta desde views hasta el archivo homeMayorista. !! no va / al principio.
+    const inSaleProducts = productService.getInSaleProducts();
+    const bestSellersProducts = productService.getBestSellersProducts();
+
+    res.render("main/homeMayorista", { //aca va la ruta desde views hasta el archivo homeMayorista. !! no va / al principio.
+      inSaleProducts,
+      bestSellersProducts
+    }); 
   },
   homeConsumidorFinal: (req, res) => {
     res.render("main/homeCf");
