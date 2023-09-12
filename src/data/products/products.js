@@ -4,20 +4,21 @@ const path = require("path");
 /**************** Objeto de objetos de funciones genericas ***************/
 /**************** Exportado y requerido en productService.js *************/
 module.exports = {
-  findAll: function () {
-    // Buscar toda la lista de productos
+  getProducts: function () {
     // Treamons y convertimos el archivo .json en .js
     const productsFilePath = path.join(__dirname, "./productsDataBase.json");
     const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
     return products;
   },
 
+  findAll: function () {
+    // Buscar toda la lista de productos
+    return this.getProducts();
+  },
+
   findById: function (id) {
     // Buscar producto por id
-    // Treamons y convertimos el archivo .json en .js
-    const productsFilePath = path.join(__dirname, "./productsDataBase.json");
-    const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-    const product = products.find((product) => product.id == id);
+    const product = this.getProducts().find((product) => product.id == id);
     return product;
   },
 
