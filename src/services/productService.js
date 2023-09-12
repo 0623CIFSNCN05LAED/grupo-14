@@ -1,4 +1,4 @@
-const db = require("../data/products");
+const db = require("../data/db");
 
 /************* Funciones de uso local(este mismo archivo) ****************/
 
