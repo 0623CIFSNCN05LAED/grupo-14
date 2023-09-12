@@ -1,5 +1,3 @@
-const products = require("../data/products");
-
 const productService = require("../services/productService");
 
 const mainController = {
@@ -7,18 +5,19 @@ const mainController = {
     const inSaleProducts = productService.getInSaleProducts();
     const bestSellersProducts = productService.getBestSellersProducts();
 
-    res.render("main/homeMayorista", { //aca va la ruta desde views hasta el archivo homeMayorista. !! no va / al principio.
+    res.render("main/homeMayorista", {
+      //aca va la ruta desde views hasta el archivo homeMayorista. !! no va / al principio.
       inSaleProducts,
-      bestSellersProducts
-    }); 
+      bestSellersProducts,
+    });
   },
   homeConsumidorFinal: (req, res) => {
     const inSaleProducts = productService.getInSaleProducts();
     const bestSellersProducts = productService.getBestSellersProducts();
-    
+
     res.render("main/homeCf", {
       inSaleProducts,
-      bestSellersProducts
+      bestSellersProducts,
     });
   },
 };

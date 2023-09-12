@@ -1,4 +1,4 @@
-const db = require("../data/products");
+const db = require("../data/db");
 
 /************* Funciones de uso local(este mismo archivo) ****************/
 
@@ -54,6 +54,16 @@ const productServices = {
     const products = db.products
       .findAll()
       .filter((product) => product.bestSeller == true);
+
+    return formatProductsPrices(products);
+  },
+
+  getRelatedProducts: function (id) {
+    const product = db.products.findById(id);
+    const categoryProduct = product.category;
+    const products = db.products
+      .findAll()
+      .filter((productCate) => productCate.category == categoryProduct);
 
     return formatProductsPrices(products);
   },
