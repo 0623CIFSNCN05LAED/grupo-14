@@ -1,117 +1,104 @@
 .nav {
-    padding: 5px;
-    margin: 10px 5px;
-    color: white;
-    background-color: #243a76;
-    display: inline-block;
-  }
-  
-  .nav a {
-    color: white;
-  }
-  
-  .product {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    width: 90%;
-    text-align: center;
-    align-items: center;
-  }
-  
-  .product img {
-    width: 100%;
-    padding: 10px;
-    height: auto;
-    align-self: center;
-  }
-  
-  .nameList {
-    background-color: #213e60;
-    color: white;
-    display: inline-block;
-    padding: 5px;
-    margin-bottom: 5px;
-  }
-  
+  padding: 5px;
+  margin: 10px 5px;
+  color: white;
+  background-color: #243a76;
+  display: inline-block;
+}
 
- 
-  .cart:hover {
-    background-color: #55a4da;
-    color: #fff;
-  }
-  
-  .desc {
-    margin-top: 10px;
-    text-align: left;
-  }
-  
+.nav a {
+  color: white;
+}
 
-  .allProducts {
+.product {
   display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-wrap: wrap;
-  }
-  
+  flex-direction: column;
+  margin: auto;
+  width: 90%;
+  text-align: center;
+  align-items: center;
+}
 
+.product img {
+  width: 100%;
+  padding: 10px;
+  height: auto;
+  align-self: center;
+}
 
-  
-  .card {
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    margin: 2rem;
-    justify-content: center;
-    width: 320px;
-    height: 250px;
-    border: 1px solid lightgray;
-    box-shadow: 2px 2px 8px 4px #d3d3d3d1;
-    border-radius: 15px;
-   
-    
-    
-    
-  }
-  
+.nameList {
+  background-color: #213e60;
+  color: white;
+  display: inline-block;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.cart:hover {
+  background-color: #55a4da;
+  color: #fff;
+}
+
+.desc {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.allProducts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  justify-content: center;
+  width: 320px;
+  height: 250px;
+  border: 1px solid lightgray;
+  box-shadow: 2px 2px 8px 4px #d3d3d3d1;
+  border-radius: 15px;
+}
+
 /* Efectos cards */
-  .card:hover img{
-	scale:  1.1;
+.card:hover img {
+  scale: 1.1;
 }
 
 .card:hover {
-	box-shadow: 5px 15px 25px #55a4da;
-    
+  box-shadow: 5px 15px 25px #55a4da;
 }
 /*fin efectos cards  */
-  .cardTitle {
-    text-align: center;
-    padding: 10px 10px 0 10px;
-  }
-  .cardBody {
-    text-align: center;
-    padding: 10px;
-  }
-  .cardBody img {
-    width: 50%;
-  }
-  .cardFooter button {
-    width: 100%;
-    padding: 15px 0;
-    border: none;
-    border-radius: 0 0 15px 15px;
-    background-color: #243a76;
-    color: #fff;
-    font-size: 17px;
-    transition: all 400ms;
-    cursor: pointer;
-  }
-  .cardFooter button:hover {
-    background-color: #ffa54a;
-  }
-  .cardFooter a {
-    text-decoration: none;
-    color: black;
-  }
-  
-  
+.cardTitle {
+  text-align: center;
+  padding: 10px 10px 0 10px;
+}
+.cardBody {
+  text-align: center;
+  padding: 10px;
+}
+.cardBody img {
+  width: 50%;
+}
+.cardFooter button {
+  width: 100%;
+  padding: 15px 0;
+  border: none;
+  border-radius: 0 0 15px 15px;
+  background-color: #243a76;
+  color: #fff;
+  font-size: 17px;
+  transition: all 400ms;
+  cursor: pointer;
+}
+.cardFooter button:hover {
+  background-color: #ffa54a;
+}
+.cardFooter a {
+  text-decoration: none;
+  color: black;
+}

@@ -4,6 +4,7 @@
     <%- include("../partials/head") %>
 
     <link rel="stylesheet" href="/css/productDetail.css" />
+    <link rel="stylesheet" href="/css/productCard.css" />
 
     <title>Detalle de producto</title>
   </head>
@@ -54,19 +55,8 @@
         <h3 class="name">Productos relacionados</h3>
         <div class="otherProducts">
           <i class="fa-solid fa-circle-arrow-left"></i>
-          <% relatedProducts.forEach(product => { %>
-          <div class="card" id="card<%= product.id %>">
-            <h4 class="cardTitle"><%= product.shortName %></h4>
-            <div class="cardBody">
-              <img src="<%= product.image %>" alt="imagen" />
-            </div>
-            <div class="cardFooter">
-              <a href="/products/productDetail/<%= product.id %>"
-                ><button>Más información</button></a
-              >
-            </div>
-          </div>
-          <% }); %>
+          <% relatedProducts.forEach(product => { %> <%-
+          include("../partials/productCard", {product}) %> <% }); %>
           <i class="fa-solid fa-circle-arrow-right"></i>
         </div>
       </section>
