@@ -4,7 +4,7 @@ const productsController = {
   detail: (req, res) => {
     const id = req.params.id;
     const product = productService.getProduct(id); // Requiero un producto en base al id
-    const relatedProducts = productService.getAllProducts(); // Por ahora muestra todos los productos en la seccion de productos relacionados hasta que tengamos bien las categorias
+    const relatedProducts = productService.getRelatedProducts(id); // Por ahora muestra todos los productos en la seccion de productos relacionados hasta que tengamos bien las categorias
 
     if (!product) {
       return res.render("main/homeMayorista");
