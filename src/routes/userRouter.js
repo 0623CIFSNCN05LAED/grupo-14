@@ -3,8 +3,8 @@ const router = Router()
 
 const userController = require("../controllers/userController")
 
-router.get("/users/login", userController.login);
-router.get("/users/register", userController.register);
+router.get("/login", userController.login);
+router.get("/register", userController.register);
 
 
 module.exports = router

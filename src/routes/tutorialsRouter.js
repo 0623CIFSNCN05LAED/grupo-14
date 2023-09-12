@@ -3,10 +3,10 @@ const router = Router();
 
 const tutorialsController = require("../controllers/tutorialsController")
 
-router.get("/tutorials", tutorialsController.home);
+router.get("/", tutorialsController.home);
 
-router.get("/tutorials/tutorial1", tutorialsController.tutorial1);
+router.get("/tutorial1", tutorialsController.tutorial1);
 
-router.get("/tutorials/tutorial2", tutorialsController.tutorial2);
+router.get("/tutorial2", tutorialsController.tutorial2);
 
 module.exports = router;
