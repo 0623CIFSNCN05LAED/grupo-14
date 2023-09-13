@@ -58,12 +58,11 @@ const productServices = {
     return formatProductsPrices(products);
   },
 
-  getRelatedProducts: function (id) {
-    const product = db.products.findById(id);
+  getRelatedProducts: function (product) {
     const categoryProduct = product.category;
     const products = db.products
       .findAll()
-      .filter((productCate) => productCate.category == categoryProduct);
+      .filter((product) => product.category == categoryProduct);
 
     return formatProductsPrices(products);
   },

@@ -5,12 +5,14 @@
     "shortName": "Limpiador líquido Procenex",
     "brand": "Procenex",
     "price": 284.0,
+    "preferentialPrices": 2.0,
     "image": "/img/limpiadorLiquidoProcenex.jpg",
     "description": "Procenex Lavanda limpia profundamente las distintas superficies de tu hogar dejando un agradable aroma. Su fragancia están desarrolladas por las mejores casas perfumistas. Es ideal para pisos, azulejos, superficies lavables de la cocina, áreas de mascotas, basureros y superficies lavables del baño.",
     "offer": true,
     "discount": 25,
     "bestSeller": true,
-    "category": "Limpiador de piso"
+    "category": "Limpiador de piso",
+    "mount": 5
   },
   {
     "id": 2,
