@@ -277,9 +277,9 @@ header {
     display: flex;
   }
   .noDesk img {
-    width: 110px;
+    width: 140px;
     position: absolute;
-    top: 43px;
+    top: 12px;
     left: 50px;
     z-index: 2;
   }
