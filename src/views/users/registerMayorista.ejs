@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head") %>
+
+    <link rel="stylesheet" href="/css/register.css" />
+
+    <title>Registro</title>
+  </head>
+  <body>
+    <%- include('../partials/headerMayorista') %>
+    <main>
+      <div class="registerForm">
+        <form action="/">
+          <h2 class="registerTitle">CLIENTE MAYORISTA</h2>
+        
+          <h4 class="registerTitle">Información</h4>
+        
+          <div class="form-field">
+            <div class="data">
+              <label for="businessName" class="requiredlabel">Razón social</label>
+              <input
+                type="text"
+                name="businessName"
+                id="businessName"
+                required
+                pattern="[\w\s]+"
+              />
+            </div>
+          </div>
+        
+          <div class="form-field">
+            <div class="data">
+              <label for="cuit" class="requiredlabel">CUIT</label>
+              <input
+                type="number"
+                name="cuit"
+                id="cuit"
+                required
+                onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+              />
+            </div>
+          </div>
+        
+          <div class="form-field">
+            <div class="data">
+              <label for="tel" class="requiredlabel">Teléfono / Celular</label>
+              <input
+                type="number"
+                name="tel"
+                id="tel"
+                required
+                onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+              />
+            </div>
+          </div>
+
+          <div class="form-field">
+            <div class="data">
+              <label for="email" class="requiredlabel">Email</label>
+              <input type="email" name="email" id="email" required />
+            </div>
+          </div>
+
+          <div class="form-field">
+            <div class="data">
+              <label for="password" class="requiredlabel">Contraseña</label>
+              <input type="password" name="password" id="password" required />
+            </div>
+          </div>
+        
+          <div class="form-field">
+            <div class="data">
+              <label for="confirmPassword" class="requiredlabel"
+                >Confirmar Contraseña</label
+              >
+              <input
+                type="password"
+                name="confirmPassword"
+                id="confirmPassword"
+                required
+              />
+            </div>
+          </div>
+    
+          <h4 class="registerTitle">Domicilio</h4>
+        
+          <div class="form-field">
+            <div class="data">
+              <label for="address" class="requiredlabel">Dirección</label>
+              <input type="text" name="address" id="address" required />
+            </div>
+          </div>
+        
+          <div class="form-field">
+            <div class="data">
+              <label for="location" class="requiredlabel">Localidad</label>
+              <input type="text" name="location" id="location" required />
+            </div>
+          </div>
+        
+          <div class="form-field">
+            <div class="data">
+              <label for="cp" class="requiredlabel"
+                >C.P</label>
+              <input
+                type="number"
+                name="cp"
+                id="cp"
+                required
+                onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+              />
+            </div>
+          </div>
+        
+          <div class="form-field">
+            <div class="data">
+              <label for="province" class="requiredlabel">Provincia</label>
+              <input type="text" name="province" id="province" required />
+            </div>
+          </div>
+
+          <div class="form-field">
+            <div class="data">
+              <label for="country" class="requiredlabel">País</label>
+              <input type="text" name="country" id="country" required />
+            </div>
+          </div>
+        
+          <div class="form-field">
+            <div class="data">
+              <label for="specification" class="requiredlabel"
+                >Especificaciones para la entrega</label
+              >
+              <input type="text" name="specification" id="specification" />
+            </div>
+          </div>
+                
+          <div class="form-field">
+            <div class="data-checkbox">
+              <label for="notify">Mandar notificaciones</label>
+              <input type="checkbox" name="notify" id="notify" value="notify" />
+            </div>
+          </div>
+        
+          <div class="button-form">
+            <button type="submit">Crear cuenta</button>
+          </div>
+        </form>
+      </div class="registerForm">
+    </main>
+
+    <%- include("../partials/footer") %>
+  </body>
+</html>
