@@ -4,8 +4,10 @@
   "description": "Nuestro sitio web va a ofrecer los productos comercializados por una empresa distribuidora de elementos de limpieza, que opera por ventas al mayor y menor.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/app.js"
+    "test": "jest",
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+    
   },
   "keywords": [],
   "author": "",
@@ -13,6 +15,10 @@
   "dependencies": {
     "ejs": "^3.1.9",
     "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
     "nodemon": "^3.0.1"
   }
 }
