@@ -4,8 +4,15 @@
         "name": ,
         "lastName": ,
         "dni": ,
+        "tel": ,
+        "email": ,
         "password": ,
-        "customerCategory": ,
-        "image": ,
+        "address": ,
+        "location": ,
+        "cp": ,
+        "province": ,
+        "country": ,
+        "specification": ,
+        "notify": ,
     }
 ]
