@@ -8,14 +8,14 @@
     <title>Registro</title>
   </head>
   <body>
-    <%- include('../partials/headerCf') %>
+    <%- include('../partials/headerMayorista') %>
 
     <main>
       <div class="registerForm">
         <form action="/">
-          <h2 class="registerTitle">Crear Cuenta de Cliente</h2>
+          <h2 class="registerTitle">CLIENTE MAYORISTA</h2>
         
-          <h4 class="registerTitle">Información Personal</h4>
+          <h4 class="registerTitle">Información personal</h4>
         
           <div class="form-field">
             <div class="data">
@@ -45,7 +45,7 @@
         
           <div class="form-field">
             <div class="data">
-              <label for="dni" class="requiredlabel">Cuit/Dni</label>
+              <label for="dni" class="requiredlabel">DNI</label>
               <input
                 type="number"
                 name="dni"
@@ -56,18 +56,9 @@
             </div>
           </div>
         
-          <h4 class="registerTitle">Datos de Domicilio</h4>
-        
           <div class="form-field">
             <div class="data">
-              <label for="reason" class="requiredlabel">Razón Social</label>
-              <input type="text" name="reason" id="reason" required />
-            </div>
-          </div>
-        
-          <div class="form-field">
-            <div class="data">
-              <label for="tel" class="requiredlabel">Teléfono/Celular</label>
+              <label for="tel" class="requiredlabel">Teléfono / Celular</label>
               <input
                 type="number"
                 name="tel"
@@ -77,7 +68,16 @@
               />
             </div>
           </div>
+
+          <h4 class="registerTitle">Datos de Domicilio</h4>
         
+          <div class="form-field">
+            <div class="data">
+              <label for="reason" class="requiredlabel">Razón Social</label>
+              <input type="text" name="reason" id="reason" required />
+            </div>
+          </div>
+      
           <div class="form-field">
             <div class="data">
               <label for="address" class="requiredlabel">Dirección</label>

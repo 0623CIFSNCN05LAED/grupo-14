@@ -1,9 +1,9 @@
 [
     {
         "id": ,
-        "firstName": ,
+        "name": ,
         "lastName": ,
-        "email": ,
+        "dni": ,
         "password": ,
         "customerCategory": ,
         "image": ,
