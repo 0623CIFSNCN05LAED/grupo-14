@@ -172,11 +172,14 @@ header {
   display: none;
 }
 
-.noDesk img {
-  width: 60px;
+#logoMobile {
+  width: 90px;
+  top: 29px;
   position: absolute;
 }
-
+#logoDesk {
+  display: none;
+}
 .noDesk i {
   margin-right: 5px;
 }
@@ -276,11 +279,17 @@ header {
   .bottomLeftNav {
     display: flex;
   }
+  #logoDesk {
+    display: inline-block;
+  }
+  #logoMobile {
+    display: none;
+  }
   .noDesk img {
-    width: 110px;
+    width: 140px;
     position: absolute;
-    top: 43px;
-    left: 50px;
+    top: 12px;
+    left: 8px;
     z-index: 2;
   }
 }
