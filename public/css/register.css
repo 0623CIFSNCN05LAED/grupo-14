@@ -1,31 +1,27 @@
 .registerForm{
-    padding: 10px;
-    background-image: linear-gradient(
-        to right,
-        #243a76,
-        #55a4da
-      );;
+    padding: 20px;
+   background-color: lightgray; 
 }
 
 form{
     margin: auto;
     width: 95%;
-    font-size: 1em;
+    font-size: 0.9em;
     padding: 40px 15px 15px;
-    background: #24303c;
+    background: whitesmoke;
     border-radius: 5px;
     font-family: 'Arial';
-    color: white;
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    border-top : #243a76 double 10px;
-    border-bottom: #243a76 double 10px;
-    border-left:  #243a76 double 10px;
-    border-right: #eee double 5px;
+    
+    border-left: grey 5px;
+    border-right: grey 5px;
+    border-top: grey 5px;
+    border-bottom: grey 5px;
 }
 
 .registerTitle{
 
-    color:  #ff8222;
+    color:  rgb(59, 57, 57);
+    text-align: center;
     padding: 5px;
 }
 .data input, .data select{
@@ -35,6 +31,7 @@ form{
     padding-left: 5px;
     box-sizing: border-box;
     border: 1px solid #03264C;
+    border-radius: 30px;
     width: 100%;
     height: 55px;
 }
@@ -66,30 +63,19 @@ form button {
 .form-field{
     flex-wrap: wrap;
     padding: 20px;
-    text-align: center;  
+    text-align: center;
+    border-radius: 20px;  
     
 }
 
 .data{
     width: 100%;
     position: relative;
-    border: #55a4da solid 2px;
-    border-radius: 4px;
+    border: grey solid 1px;
+    border-radius: 30px;
    
 }
 
-.requiredlabel{
-    color:#24303c;
-    position: absolute;
-    left: 8px;
-    padding: 0px 5px;
-    top: -10px;
-    background-color: #fff;
-    font-size: small;
-    border: #55a4da solid 2px;
-    border-radius: 4px;
-    
-}
 
 form input:focus {
     border:2px solid  #ff8222;  /* cambia el color borde de inputs al seleccionar */
@@ -110,6 +96,10 @@ label {
     display: block;
     margin-top: 1px;
 }
+
+
+
+  
 /* input[type="checkbox"]:checked + label::after {
     font-family: "Font Awesome 5 Free";
     position: absolute;
