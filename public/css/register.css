@@ -1,6 +1,18 @@
 .registerForm{
-    padding: 20px;
+    
    background-color: lightgray; 
+}
+
+h2{
+  font-size: 24px;  
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+h4{
+    font-size:16px ;
+    margin-bottom: 0px;
+    text-align: left;
 }
 
 form{
@@ -9,21 +21,14 @@ form{
     font-size: 0.9em;
     padding: 40px 15px 15px;
     background: whitesmoke;
-    border-radius: 5px;
     font-family: 'Arial';
-    
     border-left: grey 5px;
     border-right: grey 5px;
     border-top: grey 5px;
     border-bottom: grey 5px;
 }
 
-.registerTitle{
 
-    color:  rgb(59, 57, 57);
-    text-align: center;
-    padding: 5px;
-}
 .data input, .data select{
     
     font-family: inherit;
