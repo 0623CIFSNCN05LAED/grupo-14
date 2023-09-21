@@ -21,6 +21,23 @@ const productsController = {
     res.render("products/createProduct");
   },
 
+  newProduct: (req, res) => {
+    const product = {
+      name: req.body.name,
+      shortName: req.body.shortName,
+      brand: req.body.brand,
+      price: Number(req.body.price),
+      preferentialPrice: Number(req.body.preferentialPrice),
+      image: req.file ? req.file.filename : "defaultImg.jpg",
+      description: req.body.description,
+      discount: Number(req.body.discount),
+      category: req.body.category,
+      mount: Number(req.body.mount),
+    };
+    productService.createProduct(product);
+    res.redirect("/products");
+  },
+
   productsList: (req, res) => {
     const products = productService.getAllProducts();
     res.render("products/productList", { products });

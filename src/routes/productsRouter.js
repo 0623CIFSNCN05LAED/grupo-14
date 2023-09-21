@@ -1,6 +1,22 @@
 /*************** Require's ******************/
 const { Router } = require("express");
 const router = Router();
+const path = require("path");
+const multer = require("multer");
+
+const storage = multer.diskStorage({
+  destination: path.join(__dirname, "../../public/img"),
+  filename: function (req, file, cb) {
+    cb(
+      null,
+      file.fieldname + "-" + Date.now() + path.extname(file.originalname)
+    );
+  },
+});
+
+const upload = multer({
+  storage: storage,
+});
 
 /*************** Controller require ******************/
 const productsController = require("../controllers/productsController");
@@ -13,7 +29,8 @@ router.get("/productDetail/:id", productsController.detail);
 
 /*************** Create one product ******************/
 router.get("/createProduct", productsController.create);
-// POST
+
+router.post("", upload.single("img"), productsController.newProduct);
 
 /*************** Edit one product ******************/
 router.get("/editProduct", productsController.edit);

@@ -66,7 +66,10 @@ const productServices = {
 
     return formatProductsPrices(products);
   },
-};
 
+  createProduct: function (product) {
+    db.products.create(product);
+  },
+};
 
 module.exports = productServices;

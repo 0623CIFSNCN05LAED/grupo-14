@@ -13,118 +13,125 @@
         <section class="form-newProduct">
           <h2>Nuevo Producto</h2>
 
-          <input
-            class="controls"
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Nombre del Producto"
-          />
+          <form action="/products" method="post" enctype="multipart/form-data">
+            <input
+              class="controls"
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Nombre del Producto"
+            />
 
-          <input
-            class="controls"
-            type="text"
-            name="shortName"
-            id="shortName"
-            placeholder="Producto abreviado"
-          />
+            <input
+              class="controls"
+              type="text"
+              name="shortName"
+              id="shortName"
+              placeholder="Producto abreviado"
+            />
 
-          <input
-            class="controls"
-            type="text"
-            name="brand"
-            id="brand"
-            placeholder="Marca del Producto"
-          />
+            <input
+              class="controls"
+              type="text"
+              name="brand"
+              id="brand"
+              placeholder="Marca del Producto"
+            />
 
-          <input
-            class="controls"
-            type="text"
-            name="price"
-            id="price"
-            placeholder="Precio"
-          />
+            <input
+              class="controls"
+              type="text"
+              name="price"
+              id="price"
+              placeholder="Precio"
+            />
 
-          <input
-            class="controls"
-            type="number"
-            name="discount"
-            id="discount"
-            placeholder="% OFF"
-          />
-          <!-- sacamos offer porque es redundante, agregar una función si tiene % offer true -->
-          <input
-            class="controls"
-            type="text"
-            name="preferentialPrices"
-            id="preferentialPrices"
-            placeholder="Precio por mayor"
-          />
+            <input
+              class="controls"
+              type="number"
+              name="discount"
+              id="discount"
+              placeholder="% OFF"
+            />
+            <!-- sacamos offer porque es redundante, agregar una función si tiene % offer true -->
+            <input
+              class="controls"
+              type="text"
+              name="preferentialPrices"
+              id="preferentialPrices"
+              placeholder="Precio por mayor"
+            />
 
-          <input
-            class="controls"
-            type="number"
-            name="mount"
-            id="mount"
-            placeholder="Stock"
-          />
-          <!-- sold va a ser resultado de una función que muestre la cantidad vendida -->
-          <!-- bestseller tiene que ser una función que compare las ventas de los productos -->
+            <input
+              class="controls"
+              type="number"
+              name="mount"
+              id="mount"
+              placeholder="Stock"
+            />
+            <!-- sold va a ser resultado de una función que muestre la cantidad vendida -->
+            <!-- bestseller tiene que ser una función que compare las ventas de los productos -->
 
-          <!--  SELECT CON CHECKBOX -->
+            <!--  SELECT CON CHECKBOX -->
 
-          <div class="container">
-            <div class="select-btn">
-              <span class="btn-text">Categorías</span>
-              <span class="arrow-dwn">
-                <i class="fa-solid fa-chevron-down"></i>
-              </span>
+            <div class="container">
+              <div class="select-btn">
+                <span class="btn-text">Categorías</span>
+                <span class="arrow-dwn">
+                  <i class="fa-solid fa-chevron-down"></i>
+                </span>
+              </div>
+              <ul class="list-items">
+                <li class="item">
+                  <span class="checkbox">
+                    <i class="fa-solid fa-check check-icon"></i>
+                  </span>
+                  <span class="item-text"> Categoría 1</span>
+                </li>
+                <li class="item">
+                  <span class="checkbox">
+                    <i class="fa-solid fa-check check-icon"></i>
+                  </span>
+                  <span class="item-text"> Categoría 2</span>
+                </li>
+                <li class="item">
+                  <span class="checkbox">
+                    <i class="fa-solid fa-check check-icon"></i>
+                  </span>
+                  <span class="item-text"> Categoría 3</span>
+                </li>
+                <li class="item">
+                  <span class="checkbox">
+                    <i class="fa-solid fa-check check-icon"></i>
+                  </span>
+                  <span class="item-text"> Categoría 4</span>
+                </li>
+              </ul>
             </div>
-            <ul class="list-items">
-              <li class="item">
-                <span class="checkbox">
-                  <i class="fa-solid fa-check check-icon"></i>
-                </span>
-                <span class="item-text"> Categoría 1</span>
-              </li>
-              <li class="item">
-                <span class="checkbox">
-                  <i class="fa-solid fa-check check-icon"></i>
-                </span>
-                <span class="item-text"> Categoría 2</span>
-              </li>
-              <li class="item">
-                <span class="checkbox">
-                  <i class="fa-solid fa-check check-icon"></i>
-                </span>
-                <span class="item-text"> Categoría 3</span>
-              </li>
-              <li class="item">
-                <span class="checkbox">
-                  <i class="fa-solid fa-check check-icon"></i>
-                </span>
-                <span class="item-text"> Categoría 4</span>
-              </li>
-            </ul>
-          </div>
 
-          <!-- FIN DE SELECT CON CHECKBOX -->
+            <!-- FIN DE SELECT CON CHECKBOX -->
 
-          <p class="p-newProduct">Seleccionar Imagen de Producto</p>
-          <input
-            class="controls"
-            type="file"
-            name="productImage"
-            id="productImage"
-            accept="image/png, .jpeg, .jpg, image/gif"
-          />
+            <p class="p-newProduct">Seleccionar Imagen de Producto</p>
+            <input
+              class="controls"
+              type="file"
+              name="productImage"
+              id="productImage"
+              accept="image/png, .jpeg, .jpg, image/gif"
+            />
 
-          <p class="p-newProduct">Descripción</p>
-          <textarea id="freeform" name="freeform" rows="4" cols="50"></textarea>
+            <p class="p-newProduct">Descripción</p>
+            <textarea
+              id="freeform"
+              name="freeform"
+              rows="4"
+              cols="50"
+            ></textarea>
 
-          <button type="submit" class="createProductButton">
-            Crear Producto
-          </button>
+            <button type="submit" class="createProductButton">
+              Crear Producto
+            </button>
+          </form>
         </section>
 
         <!-- JS -->
