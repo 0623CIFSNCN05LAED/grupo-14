@@ -17,6 +17,12 @@ module.exports = {
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
   },
 
+  productOnOffer: function (product) {
+    if (product.discount > 0 && product.discount != null) {
+      return true;
+    }
+  },
+
   findAll: function () {
     // Buscar toda la lista de productos
     return this.getProducts();
@@ -32,6 +38,7 @@ module.exports = {
     const products = this.getProducts();
     const newProduct = {
       id: uuidv4(),
+      offer: this.productOnOffer(product),
       ...product,
     };
     products.push(newProduct);
