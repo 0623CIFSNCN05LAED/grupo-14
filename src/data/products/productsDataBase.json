@@ -5,15 +5,15 @@
     "shortName": "Limpiador líquido Procenex",
     "brand": "Procenex",
     "price": 284.0,
+    "discount": 25,
     "preferentialPrices": 2.0,
+    "mount": 5,
+    "category": "Limpiador de piso",
     "image": "/img/limpiadorLiquidoProcenex.jpg",
     "description": "Procenex Lavanda limpia profundamente las distintas superficies de tu hogar dejando un agradable aroma. Su fragancia están desarrolladas por las mejores casas perfumistas. Es ideal para pisos, azulejos, superficies lavables de la cocina, áreas de mascotas, basureros y superficies lavables del baño.",
     "offer": true,
-    "discount": 25,
     "sold": 0,
-    "bestSeller": true,
-    "category": "Limpiador de piso",
-    "mount": 5
+    "bestSeller": true
   },
   {
     "id": 2,
@@ -21,14 +21,15 @@
     "shortName": "Lustramuebles Blem",
     "brand": "Blem",
     "price": 702.0,
+    "discount": 5,
     "preferentialPrices": 2.0,
+    "mount": 5,
+    "category": "Limpiador de muebles",
     "image": "/img/lustramueblesBlem.jpg",
     "description": "Ventajas *Blem Aerosol mejora el aspecto de la mayoría de las superficies duras al eliminar el polvo y proporciona una capa protectora y brillante sin dejar acumulaciones de cera. ¿Sobre qué superficies es posible aplicar el producto? *Madera (Sellada) *Superficies Laminadas que no son Pisos *Cuero *Plástico Instrucciones de Uso: 1) Agita 2) Rocía 3) Limpia con un paño. Para mejores resultados, rocía sobre un paño y repasa, o rocía desde 20 cm de la superficie y repasa.",
     "offer": true,
-    "discount": 5,
-    "bestSeller": false,
-    "category": "Limpiador de muebles",
-    "mount": 5
+    "sold": 0,
+    "bestSeller": false
   },
   {
     "id": 3,
@@ -36,14 +37,15 @@
     "shortName": "Jabón líquido Skip",
     "brand": "Skip",
     "price": 1597.5,
+    "discount": 10,
     "preferentialPrices": 2.0,
+    "mount": 5,
+    "category": "Limpiador de ropa",
     "image": "/img/jabonLiquidoSkip.jpg",
     "description": "El nuevo jabón líquido Skip para Diluir Bio-Enzimas, tiene una nueva tecnología que garantiza la superioridad en la limpieza y cuidado de las fibras, asegurando un impacto positivo en el planeta. El nuevo Skip líquido para diluir ofrece el mismo cuidado de siempre pero de una forma más conveniente para el consumidor.",
     "offer": true,
-    "discount": 10,
-    "bestSeller": true,
-    "category": "Limpiador de ropa",
-    "mount": 5
+    "sold": 0,
+    "bestSeller": true
   },
   {
     "id": 4,
@@ -51,14 +53,15 @@
     "shortName": "Quitamanchas Trenet",
     "brand": "Trenet",
     "price": 287.5,
+    "discount": 0,
     "preferentialPrices": 2.0,
+    "mount": 5,
+    "category": "Limpiador de ropa",
     "image": "/img/quitamanchasTrenet.jpg",
     "description": "Trenet es el experto en quitar manchas. Trenet Gatillo Oxi está especialmente formulado para remover una gran cantidad de manchas, y es más efectivo aún en manchas de características coloridas, como por ejemplo pasto, salsa de tomate, café, jugo de frutas, tinta y muchas otras sin necesidad de fregar y sin dañar la ropa. Su fórmula Hyperactive con Oxígeno Activo actúa inmediatamente sobre las manchas, debilitando su adherencia a las fibras y quitándolas fácilmente. Puede utilizarse en ropa blanca y en colores firmes.",
     "offer": false,
-    "discount": 0,
-    "bestSeller": false,
-    "category": "Limpiador de ropa",
-    "mount": 5
+    "sold": 0,
+    "bestSeller": false
   },
   {
     "id": 5,
@@ -66,14 +69,15 @@
     "shortName": "Higieniol doble hoja plus",
     "brand": "Higienol",
     "price": 920.0,
+    "discount": 0,
     "preferentialPrices": 2.0,
+    "mount": 5,
+    "category": "Papel higienico",
     "image": "/img/papelHigienolDobleHojaPlus.jpg",
     "description": "El papel higiénico Higienol es sinónimo de suavidad y calidad en cada hoja. Creado pensando en tu comodidad, ofrece una experiencia única en cada uso. Su textura suave y resistente garantiza una limpieza eficaz y delicada. Higienol se convierte en el compañero perfecto para mantener una higiene impecable en tu día a día. Confía en Higienol para una sensación de frescura y confort inigualable.",
     "offer": false,
-    "discount": 0,
-    "bestSeller": true,
-    "category": "Papel higienico",
-    "mount": 5
+    "sold": 0,
+    "bestSeller": true
   },
   {
     "id": 6,
@@ -81,14 +85,15 @@
     "shortName": "Higieniol doble hoja premium",
     "brand": "Higienol",
     "price": 970.0,
+    "discount": 0,
     "preferentialPrices": 2.0,
+    "mount": 5,
+    "category": "Papel higienico",
     "image": "/img/papelHigienolDobleHojaPremium.jpg",
     "description": "El papel higiénico Higienol es sinónimo de suavidad y calidad en cada hoja. Creado pensando en tu comodidad, ofrece una experiencia única en cada uso. Su textura suave y resistente garantiza una limpieza eficaz y delicada. Higienol se convierte en el compañero perfecto para mantener una higiene impecable en tu día a día. Confía en Higienol para una sensación de frescura y confort inigualable.",
     "offer": true,
-    "discount": 0,
-    "bestSeller": false,
-    "category": "Papel higienico",
-    "mount": 5
+    "sold": 0,
+    "bestSeller": false
   },
   {
     "id": 7,
@@ -96,14 +101,15 @@
     "shortName": "Higieniol hoja simple",
     "brand": "Higienol",
     "price": 453.0,
+    "discount": 0,
     "preferentialPrices": 2.0,
+    "mount": 5,
+    "category": "Papel higienico",
     "image": "/img/papelHigienolHojaSimple.jpg",
     "description": "El papel higiénico Higienol es sinónimo de suavidad y calidad en cada hoja. Creado pensando en tu comodidad, ofrece una experiencia única en cada uso. Su textura suave y resistente garantiza una limpieza eficaz y delicada. Higienol se convierte en el compañero perfecto para mantener una higiene impecable en tu día a día. Confía en Higienol para una sensación de frescura y confort inigualable.",
     "offer": false,
-    "discount": 0,
-    "bestSeller": true,
-    "category": "Papel higienico",
-    "mount": 5
+    "sold": 0,
+    "bestSeller": true
   },
   {
     "id": 8,
@@ -111,14 +117,15 @@
     "shortName": "Elite doble hoja",
     "brand": "Elite",
     "price": 1260.0,
+    "discount": 0,
     "preferentialPrices": 2.0,
+    "mount": 5,
+    "category": "Papel higienico",
     "image": "/img/papelEliteDobleHoja.jpg",
     "description": "El papel higiénico Elite es reconocido por su calidad y durabilidad en cada doble hoja. Pensado para tu confort, brinda una experiencia excepcional en cada uso. Su textura suave y resistente garantiza una limpieza efectiva y delicada. Elite se convierte en el aliado perfecto para mantener una higiene impecable en tu día a día. Confía en Elite para disfrutar de una sensación de frescura y comodidad insuperable.",
     "offer": false,
-    "discount": 0,
-    "bestSeller": false,
-    "category": "Papel higienico",
-    "mount": 5
+    "sold": 0,
+    "bestSeller": false
   },
   {
     "id": 9,
@@ -126,14 +133,15 @@
     "shortName": "Felpita doble textura",
     "brand": "Felpita",
     "price": 637.0,
+    "discount": 0,
     "preferentialPrices": 2.0,
+    "mount": 5,
+    "category": "Papel higienico",
     "image": "/img/papelFelpitaDoble.jpg",
     "description": "El papel higiénico de doble hoja marca Felpita se destaca por su calidad insuperable y su textura suave que proporciona una experiencia excepcional en cada uso. Este papel está diseñado pensando en tu confort y garantiza una limpieza efectiva y delicada en cada pasada. Felpita se convierte en el compañero ideal para mantener una higiene impecable en tu rutina diaria, brindándote una sensación de frescura y comodidad que lo hace destacar entre las opciones disponibles en el mercado. Confía en Felpita para cubrir tus necesidades de higiene de la manera más placentera.",
     "offer": false,
-    "discount": 0,
-    "bestSeller": true,
-    "category": "Papel higienico",
-    "mount": 5
+    "sold": 0,
+    "bestSeller": true
   },
   {
     "id": 10,
@@ -141,14 +149,15 @@
     "shortName": "Detergente Cif lima",
     "brand": "Cif",
     "price": 428.0,
+    "discount": 25,
     "preferentialPrices": 2.0,
+    "mount": 5,
+    "category": "Detergente",
     "image": "/img/detergenteCifLima.jpg",
     "description": "El detergente Cif es la elección perfecta para mantener tus superficies impecables y relucientes. Su fórmula poderosa elimina la grasa y la suciedad con facilidad, dejando una frescura y brillo incomparables. Ya sea en la cocina, el baño o cualquier otra área de tu hogar, Cif garantiza una limpieza profunda y efectiva. Confía en Cif para mantener un ambiente limpio y radiante en tu hogar.",
     "offer": true,
-    "discount": 25,
-    "bestSeller": true,
-    "category": "Detergente",
-    "mount": 5
+    "sold": 0,
+    "bestSeller": true
   },
   {
     "id": 11,
@@ -156,14 +165,15 @@
     "shortName": "Detergente Cif limón",
     "brand": "Cif",
     "price": 428.0,
+    "discount": 25,
     "preferentialPrices": 2.0,
+    "mount": 5,
+    "category": "Detergente",
     "image": "/img/detergenteCifLimon.jpg",
     "description": "El detergente Cif es la elección perfecta para mantener tus superficies impecables y relucientes. Su fórmula poderosa elimina la grasa y la suciedad con facilidad, dejando una frescura y brillo incomparables. Ya sea en la cocina, el baño o cualquier otra área de tu hogar, Cif garantiza una limpieza profunda y efectiva. Confía en Cif para mantener un ambiente limpio y radiante en tu hogar.",
     "offer": true,
-    "discount": 25,
-    "bestSeller": true,
-    "category": "Detergente",
-    "mount": 5
+    "sold": 0,
+    "bestSeller": true
   },
   {
     "id": 12,
@@ -171,14 +181,15 @@
     "shortName": "Magistral ultra detergente",
     "brand": "Magistral",
     "price": 1059.19,
+    "discount": 25,
     "preferentialPrices": 2.0,
+    "mount": 5,
+    "category": "Detergente",
     "image": "/img/detergenteMagistral.jpg",
     "description": "El detergente Magistral es tu aliado supremo para una limpieza impecable en cada rincón de tu hogar. Su fórmula avanzada combate la grasa y la suciedad con una eficacia inigualable, garantizando resultados sorprendentes. Ya sea en la cocina, el baño o cualquier otra área, Magistral proporciona una limpieza profunda y duradera que transforma tus superficies. Confía en Magistral para mantener tu hogar impecable y brillante en todo momento.",
     "offer": true,
-    "discount": 25,
-    "bestSeller": true,
-    "category": "Detergente",
-    "mount": 5
+    "sold": 0,
+    "bestSeller": true
   },
   {
     "id": 13,
@@ -186,14 +197,15 @@
     "shortName": "Lavavajilla Ala pomelo",
     "brand": "Ala",
     "price": 573.0,
+    "discount": 25,
     "preferentialPrices": 2.0,
+    "mount": 5,
+    "category": "Detergente",
     "image": "/img/detergenteAlaPomelo.jpg",
     "description": "El detergente Ala se destaca por ser la opción preferida para una limpieza excepcional en tu hogar. Su fórmula avanzada elimina eficazmente la suciedad y las manchas más difíciles, logrando resultados sorprendentes. Ya sea en la ropa o en diversas superficies, Ala proporciona una limpieza profunda y duradera que transforma todo a su máximo esplendor. Confía en Ala para mantener tu ropa y tu hogar en su mejor estado, marcando la diferencia en la limpieza de tu vida diaria.",
     "offer": true,
-    "discount": 25,
-    "bestSeller": true,
-    "category": "Detergente",
-    "mount": 5
+    "sold": 0,
+    "bestSeller": true
   },
   {
     "id": 14,
@@ -201,14 +213,15 @@
     "shortName": "Lavavajilla Ala oceano",
     "brand": "Ala",
     "price": 573.0,
+    "discount": 25,
     "preferentialPrices": 2.0,
+    "mount": 5,
+    "category": "Detergente",
     "image": "/img/detergenteAlaOceano.jpg",
     "description": "El detergente Ala se destaca por ser la opción preferida para una limpieza excepcional en tu hogar. Su fórmula avanzada elimina eficazmente la suciedad y las manchas más difíciles, logrando resultados sorprendentes. Ya sea en la ropa o en diversas superficies, Ala proporciona una limpieza profunda y duradera que transforma todo a su máximo esplendor. Confía en Ala para mantener tu ropa y tu hogar en su mejor estado, marcando la diferencia en la limpieza de tu vida diaria.",
     "offer": true,
-    "discount": 25,
-    "bestSeller": true,
-    "category": "Detergente",
-    "mount": 5
+    "sold": 0,
+    "bestSeller": true
   },
   {
     "id": 15,
@@ -216,14 +229,15 @@
     "shortName": "Limpiador Odex 1 l",
     "brand": "Odex",
     "price": 214.0,
+    "discount": 25,
     "preferentialPrices": 2.0,
+    "mount": 5,
+    "category": "Lavandina",
     "image": "/img/lavandinaOdex1litro.jpg",
     "description": "La lavandina Odex es tu solución esencial para mantener tu hogar limpio y desinfectado. Elimina eficazmente hongos, virus y bacterias en superficies diversas, desde baños hasta cocinas. Su versatilidad y eficacia la convierten en un aliado indispensable para la limpieza diaria, ofreciendo una desinfección confiable. Cuando la higiene es esencial, confía en Odex.",
     "offer": true,
-    "discount": 25,
-    "bestSeller": true,
-    "category": "Lavandina",
-    "mount": 5
+    "sold": 0,
+    "bestSeller": true
   },
   {
     "id": 16,
@@ -231,14 +245,15 @@
     "shortName": "Lavandina Odex 2 l",
     "brand": "Odex",
     "price": 438.0,
+    "discount": 25,
     "preferentialPrices": 2.0,
+    "mount": 5,
+    "category": "Lavandina",
     "image": "/img/lavandinaOdex2litros.jpg",
     "description": "La lavandina Odex es tu solución esencial para mantener tu hogar limpio y desinfectado. Elimina eficazmente hongos, virus y bacterias en superficies diversas, desde baños hasta cocinas. Su versatilidad y eficacia la convierten en un aliado indispensable para la limpieza diaria, ofreciendo una desinfección confiable. Cuando la higiene es esencial, confía en Odex.",
     "offer": true,
-    "discount": 25,
-    "bestSeller": true,
-    "category": "Lavandina",
-    "mount": 5
+    "sold": 0,
+    "bestSeller": true
   },
   {
     "id": 17,
@@ -246,14 +261,15 @@
     "shortName": "Lavandina Ayudín 1 l",
     "brand": "Ayudín",
     "price": 248.0,
+    "discount": 25,
     "preferentialPrices": 2.0,
+    "mount": 5,
+    "category": "Lavandina",
     "image": "/img/lavandinaAyudin1litro.jpg",
     "description": "La lavandina Ayudín Clásica mantiene todo su poder para desodorizar y desinfectar. Es ideal para que realices la limpieza de tu hogar, que lo utilices en diferentes superficies. Ayudín elimina el 99.9% de hongos, virus y bacterias. En el baño, la cocina y en otras áreas de la casa, podemos encontrar superficies contaminadas. Por eso, se recomienda la desinfección de los pisos de la cocina, living, cuartos, baño, patio y balcón; la mesada, pileta y utensilios de cocina, artefactos del baño, las llaves de las canillas, el botón de descarga del inodoro y las manijas de todas las puertas de la casa. Por su versatilidad y dado que es un producto de limpieza de los más económicos, es un aliado infaltable en los hogares, ofreciendo limpieza y desinfección por menos de $2 por día. Cuando realmente importa confia en Ayudin. • Efectivo contra Sars-CoV-2 • Elimina el 99,9% de las bacterias y virus • Desinfección más rápida • Apta para consumo humano",
     "offer": true,
-    "discount": 25,
-    "bestSeller": true,
-    "category": "Lavandina",
-    "mount": 5
+    "sold": 0,
+    "bestSeller": true
   },
   {
     "id": 18,
@@ -261,14 +277,15 @@
     "shortName": "Lavandina Ayudín 2 l.",
     "brand": "Ayudín",
     "price": 465.0,
+    "discount": 25,
     "preferentialPrices": 2.0,
+    "mount": 5,
+    "category": "Lavandina",
     "image": "/img/lavandinaAyudin2litros.jpg",
     "description": "La lavandina Ayudín Clásica mantiene todo su poder para desodorizar y desinfectar. Es ideal para que realices la limpieza de tu hogar, que lo utilices en diferentes superficies. Ayudín elimina el 99.9% de hongos, virus y bacterias. En el baño, la cocina y en otras áreas de la casa, podemos encontrar superficies contaminadas. Por eso, se recomienda la desinfección de los pisos de la cocina, living, cuartos, baño, patio y balcón; la mesada, pileta y utensilios de cocina, artefactos del baño, las llaves de las canillas, el botón de descarga del inodoro y las manijas de todas las puertas de la casa. Por su versatilidad y dado que es un producto de limpieza de los más económicos, es un aliado infaltable en los hogares, ofreciendo limpieza y desinfección por menos de $2 por día. Cuando realmente importa confia en Ayudin. • Efectivo contra Sars-CoV-2 • Elimina el 99,9% de las bacterias y virus • Desinfección más rápida • Apta para consumo humano",
     "offer": true,
-    "discount": 25,
-    "bestSeller": true,
-    "category": "Lavandina",
-    "mount": 5
+    "sold": 0,
+    "bestSeller": true
   },
   {
     "id": 19,
@@ -276,13 +293,14 @@
     "shortName": "Lavandina Ayudín 4 l.",
     "brand": "Ayudín",
     "price": 906.0,
+    "discount": 25,
     "preferentialPrices": 2.0,
+    "mount": 5,
+    "category": "Lavandina",
     "image": "/img/lavandinaAyudin4litros.jpg",
     "description": "La lavandina Ayudín Clásica mantiene todo su poder para desodorizar y desinfectar. Es ideal para que realices la limpieza de tu hogar, que lo utilices en diferentes superficies. Ayudín elimina el 99.9% de hongos, virus y bacterias. En el baño, la cocina y en otras áreas de la casa, podemos encontrar superficies contaminadas. Por eso, se recomienda la desinfección de los pisos de la cocina, living, cuartos, baño, patio y balcón; la mesada, pileta y utensilios de cocina, artefactos del baño, las llaves de las canillas, el botón de descarga del inodoro y las manijas de todas las puertas de la casa. Por su versatilidad y dado que es un producto de limpieza de los más económicos, es un aliado infaltable en los hogares, ofreciendo limpieza y desinfección por menos de $2 por día. Cuando realmente importa confia en Ayudin. • Efectivo contra Sars-CoV-2 • Elimina el 99,9% de las bacterias y virus • Desinfección más rápida • Apta para consumo humano",
     "offer": true,
-    "discount": 25,
-    "bestSeller": true,
-    "category": "Lavandina",
-    "mount": 5
+    "sold": 0,
+    "bestSeller": true
   }
 ]
