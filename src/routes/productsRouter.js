@@ -30,7 +30,7 @@ router.get("/productDetail/:id", productsController.detail);
 /*************** Create one product ******************/
 router.get("/createProduct", productsController.create);
 
-router.post("", upload.single("img"), productsController.newProduct);
+router.post("", upload.single("image"), productsController.newProduct);
 
 /*************** Edit one product ******************/
 router.get("/editProduct", productsController.edit);

@@ -1,7 +1,7 @@
 <div class="card" id="card<%= product.id %>">
   <a href="/products/productDetail/<%= product.id %>">
     <div class="cardBody">
-      <img src="<%= product.image %>" alt="imagen" />
+      <img src="/img/<%= product.image %>" alt="imagen" />
     </div>
     <div>
       <h4 class="cardTitle"><%= product.shortName %></h4>
@@ -10,6 +10,7 @@
       <!-- cambiar enlace a toda la card ? y mismo con el hover-->
       <button>
         <%= product.priceWithDiscount %> &nbsp; &nbsp; <%= product.discount %>
+        <!-- habria que hacer un if de que si discount es cero no lo muestre -->
         %OFF
       </button>
     </div>
