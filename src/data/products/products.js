@@ -46,7 +46,6 @@ module.exports = {
   },
 
   update: function (id, product) {
-    console.log(`Update in product ${product.name}`)
     // Cargo todos los productos
     const products = this.getProducts()
     // Busco producto por su id
@@ -54,10 +53,14 @@ module.exports = {
     // Sobrescribo las propiedades
     productToEdit.name = product.name;
     productToEdit.description = product.description;
-    productToEdit.price = product.price;
-    productToEdit.discount = product.discount;
+    productToEdit.price = Number(product.price);
+    productToEdit.discount = Number(product.discount);
+    productToEdit.preferentialPrice = Number(product.preferentialPrice);
+    productToEdit.mount = Number(product.mount);
+    productToEdit.image = product.image;
+    productToEdit.brand = product.brand;
+    productToEdit.shortName = product.shortName;
     productToEdit.category = product.category;
-    console.log(productToEdit);
     // Guardo los productos
     this.saveProducts(products)
     return product

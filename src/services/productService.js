@@ -33,13 +33,23 @@ const productServices = {
   getAllProducts: () => {
     // Nos brinda todos los productos de la lista
     const products = db.products.findAll();
-    return formatProductsPrices(products);
+    return products;
   },
 
   getProduct: (id) => {
     // Nos brinda el producto del id especificado
     const product = db.products.findById(id);
+    return product;
+  },
+
+  getFormattedProduct: (id) => {
+    const product = db.products.findById(id);
     return formatProductPrices(product);
+  },
+
+  getFormattedProducts: () => {
+    const products = db.products.findAll();
+    return formatProductsPrices(products);
   },
 
   getInSaleProducts: () => {
@@ -72,7 +82,7 @@ const productServices = {
   },
 
   updateProduct: function(id, product){
-    db.product.update(id, product);
+    db.products.update(id, product);
   }
 };
 
