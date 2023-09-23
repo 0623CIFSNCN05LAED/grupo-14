@@ -46,9 +46,24 @@ module.exports = {
   },
 
   update: function (id, product) {
-    // Modificar un producto
-    /* console.log(`Updating product ${product.name}`);
-      return product; */
+    // Cargo todos los productos
+    const products = this.getProducts()
+    // Busco producto por su id
+    const productToEdit = products.find((product) => product.id == id)
+    // Sobrescribo las propiedades
+    productToEdit.name = product.name;
+    productToEdit.description = product.description;
+    productToEdit.price = Number(product.price);
+    productToEdit.discount = Number(product.discount);
+    productToEdit.preferentialPrice = Number(product.preferentialPrice);
+    productToEdit.mount = Number(product.mount);
+    productToEdit.image = product.image;
+    productToEdit.brand = product.brand;
+    productToEdit.shortName = product.shortName;
+    productToEdit.category = product.category;
+    // Guardo los productos
+    this.saveProducts(products)
+    return product
   },
 
   delete: function (id) {
