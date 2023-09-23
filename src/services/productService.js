@@ -70,6 +70,10 @@ const productServices = {
   createProduct: function (product) {
     db.products.create(product);
   },
+
+  updateProduct: function(id, product){
+    db.product.update(id, product);
+  }
 };
 
 module.exports = productServices;

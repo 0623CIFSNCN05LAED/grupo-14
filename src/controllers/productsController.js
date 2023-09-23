@@ -46,6 +46,19 @@ const productsController = {
   edit: (req, res) => {
     res.render("products/editProduct");
   },
+
+  edit: (req, res) => {
+    const id = req.params.id;
+    const product = productService.getProduct(id);
+    res.render("editProduct", {product});
+  },
+
+  update: (req, res) => {
+    const product = req.body;
+    const id = req.params.id;
+    productService.updateProduct(id, product);
+    res.redirect("/products");
+  }
 };
 
 module.exports = productsController;

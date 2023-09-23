@@ -10,7 +10,7 @@
 
     <main>
       <div class="div-newProduct">
-        <section class="form-newProduct">
+        <form class="form-newProduct" action="/products/<%= product.id %>?_method=put" method="post">
           <h2>Nuevo Producto</h2>
 
           <input
@@ -19,6 +19,7 @@
             name="name"
             id="name"
             placeholder="Nombre del Producto"
+            value="<%= product.name %>">
           />
 
           <input
@@ -27,6 +28,7 @@
             name="shortName"
             id="shortName"
             placeholder="Producto abreviado"
+            value="<%= product.shortName %>">
           />
 
           <input
@@ -35,6 +37,7 @@
             name="brand"
             id="brand"
             placeholder="Marca del Producto"
+            value="<%= product.brand %>">
           />
 
           <input
@@ -43,6 +46,7 @@
             name="price"
             id="price"
             placeholder="Precio"
+            value="<%= product.price %>">
           />
 
           <input
@@ -51,6 +55,7 @@
             name="discount"
             id="discount"
             placeholder="% OFF"
+            value="<%= product.discount %>">
           />
           <!-- sacamos offer porque es redundante, agregar una función si tiene % offer true -->
           <input
@@ -59,6 +64,7 @@
             name="preferentialPrices"
             id="preferentialPrices"
             placeholder="Precio por mayor"
+            value="<%= product.preferentialPrices %>">
           />
 
           <input
@@ -67,6 +73,7 @@
             name="mount"
             id="mount"
             placeholder="Stock"
+            value="<%= product.mount %>">
           />
           <!-- sold va a ser resultado de una función que muestre la cantidad vendida -->
           <!-- bestseller tiene que ser una función que compare las ventas de los productos -->
@@ -137,7 +144,7 @@
           <button type="submit" class="createProductButton">
             Crear Producto
           </button>
-        </section>
+        </form>
 
         <!-- JS -->
         <script>

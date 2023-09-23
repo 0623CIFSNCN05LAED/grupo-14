@@ -46,9 +46,21 @@ module.exports = {
   },
 
   update: function (id, product) {
-    // Modificar un producto
-    /* console.log(`Updating product ${product.name}`);
-      return product; */
+    console.log(`Update in product ${product.name}`)
+    // Cargo todos los productos
+    const products = this.getProducts()
+    // Busco producto por su id
+    const productToEdit = products.find((product) => product.id == id)
+    // Sobrescribo las propiedades
+    productToEdit.name = product.name;
+    productToEdit.description = product.description;
+    productToEdit.price = product.price;
+    productToEdit.discount = product.discount;
+    productToEdit.category = product.category;
+    console.log(productToEdit);
+    // Guardo los productos
+    this.saveProducts(products)
+    return product
   },
 
   delete: function (id) {
