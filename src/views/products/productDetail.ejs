@@ -50,14 +50,17 @@
             </div>
             <form action="">
               <div class="amount">
+                <% if (product.mount == 0) { %>
+                <p>No hay stock</p>
+                <% } else { %>
                 <p>stock disponible</p>
                 <h4>Cantidad:</h4>
                 <select name="cantidad" id="cantidad">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
+                  <% for (let i = 1; i <= product.mount; i++) { %>
+                  <option value="<%= [i] %>"><%= [i] %></option>
+                  <% } %>
                 </select>
+                <% } %>
               </div>
               <a href="#"
                 ><button type="submit" class="cart">
