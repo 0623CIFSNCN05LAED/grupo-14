@@ -29,12 +29,10 @@ router.get("/productDetail/:id", productsController.detail);
 
 /*************** Create one product ******************/
 router.get("/createProduct", productsController.create);
-
 router.post("", upload.single("image"), productsController.newProduct);
 
 /*************** Edit one product ******************/
 router.get("/editProduct/:id", productsController.edit);
-// PUT
 router.put("/:id", upload.single("image"), productsController.update);
 /*************** Delete one product ******************/
 // Delete

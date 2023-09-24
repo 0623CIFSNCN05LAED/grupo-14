@@ -11,7 +11,7 @@
     <main>
       <div class="div-newProduct">
         <form class="form-newProduct" action="/products/<%= product.id %>?_method=put" method="post">
-          <h2>Nuevo Producto</h2>
+          <h2><%= product.shortName %></h2>
 
           <input
             class="controls"
@@ -85,8 +85,12 @@
               <option value="">Elegi:</option>
               <option value="detergente"<%= product.category ? "selected" : ""%>>Detergente</option>
               <option value="lavandina"<%= product.category ? "selected" : ""%>>Lavandina</option>
+              <option value="papelHigienico"<%= product.category ? "selected" : ""%>>Papel higiénico</option>
+              <option value="limpiadorDeRopa"<%= product.category ? "selected" : ""%>>Limpiador de ropa</option>
+              <option value="limpiadorDeMuebles"<%= product.category ? "selected" : ""%>>Limpiador de muebles</option>
+              <option value="limpiadorDePiso"<%= product.category ? "selected" : ""%>>Limpiador de piso</option>
             </select> 
-            <!-- queda la categoria incorrecta -->
+            <!-- cuando vamos a editar en el select aparece la ultima opcion, ARREGLAR -->
 
           <!-- <div class="container">
             <div class="select-btn">
@@ -150,7 +154,7 @@
           <textarea id="description" name="description" rows="4" cols="50"><%= product.description %></textarea>
 
           <button type="submit" class="createProductButton">
-            Crear Producto
+            Editar producto
           </button>
         </form>
 

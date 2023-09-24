@@ -19,7 +19,20 @@
       </div>
       <section class="product">
         <div class="card">
-          <img src="/img/<%= product.image %>" alt="producto" />
+          <div>
+            <img src="/img/<%= product.image %>" alt="producto" />
+          </div>
+          <div class="buttons">
+            <a href="/products/editProduct/<%= product.id %>"
+              ><button class="edit">Editar producto</button></a
+            >
+            <form
+              action="/products/<%= product.id %>?_method=delete"
+              method="post"
+            >
+              <button type="submit" class="delete">Eliminar producto</button>
+            </form>
+          </div>
         </div>
         <div class="data">
           <div class="details">
