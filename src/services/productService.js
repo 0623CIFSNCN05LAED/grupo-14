@@ -1,4 +1,6 @@
 const db = require("../data/db");
+const fs = require("fs");
+const path = require("path")
 
 /************* Funciones de uso local(este mismo archivo) ****************/
 
@@ -27,6 +29,13 @@ const formatProductsPrices = function (products) {
   // Recibe los productos y a cada uno le otorga el formato
   return products.map((product) => formatProductPrices(product));
 };
+
+
+function deleteImage(image){
+  fs.unlinkSync(path.join(__dirname, "../../public/img/products/" + image))
+}
+
+/* Terminan funcion de uso local */
 
 /*************** Funciones que se van a requerir en controllers *****************/
 const productServices = {
@@ -87,6 +96,14 @@ const productServices = {
   updateProduct: function (id, product) {
     db.products.update(id, product);
   },
+
+  deleteProduct: function(id){
+    
+    const { image } = db.products.findById(id);
+     deleteImage(image);
+    db.products.delete(id);
+  },
+    
 };
 
 module.exports = productServices;
