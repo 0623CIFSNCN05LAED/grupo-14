@@ -34,6 +34,14 @@
   margin-bottom: 5px;
 }
 
+.prices {
+  margin-top: 5px;
+}
+
+.notPrice {
+  text-decoration: line-through;
+}
+
 .details {
   display: flex;
   flex-direction: column;
