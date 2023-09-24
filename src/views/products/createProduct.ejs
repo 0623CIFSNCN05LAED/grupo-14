@@ -15,43 +15,43 @@
 
           <form action="/products" method="post" enctype="multipart/form-data">
             <div class="inputGroup">
-            <input type="text" name="name" id="name" class="inputGroupInput" value="<%= product.name %>" required>
+            <input type="text" name="name" id="name" class="inputGroupInput"  required>
             <label for="name" class="inputGroupLabel">Nombre del producto</label>
           </div>
           <div class="inputGroup">
-            <input type="text" name="shortName" id="shortName" class="inputGroupInput" value="<%= product.shortName %>" required>
+            <input type="text" name="shortName" id="shortName" class="inputGroupInput" required>
             <label for="shortName" class="inputGroupLabel">Producto abreviado</label>
           </div>
           <div class="inputGroup">
-            <input type="text" name="brand" id="brand" class="inputGroupInput" value="<%= product.brand %>" required>
+            <input type="text" name="brand" id="brand" class="inputGroupInput" required>
             <label for="brand" class="inputGroupLabel">Marca</label>
           </div>
           <div class="inputGroup">
-            <input type="number" name="price" id="price" class="inputGroupInput" value="<%= product.price %>" required>
+            <input type="number" name="price" id="price" class="inputGroupInput" required>
             <label for="price" class="inputGroupLabel">Precio minorista</label>
           </div>
           <div class="inputGroup">
-            <input type="number" name="discount" id="discount" class="inputGroupInput" value="<%= product.discount %>" required>
+            <input type="number" name="discount" id="discount" class="inputGroupInput" required>
             <label for="discount" class="inputGroupLabel">% OFF</label>
           </div>
           <div class="inputGroup">
-            <input type="number" name="preferentialPrice" id="preferentialPrice" class="inputGroupInput" value="<%= product.preferentialPrice %>" required>
+            <input type="number" name="preferentialPrice" id="preferentialPrice" class="inputGroupInput" required>
             <label for="preferentialPrice" class="inputGroupLabel">Precio mayorista</label>
           </div>
           <div class="inputGroup">
-            <input type="number" name="mount" id="mount" class="inputGroupInput" value="<%= product.mount %>" required>
+            <input type="number" name="mount" id="mount" class="inputGroupInput" required>
             <label for="mount" class="inputGroupLabel">Stock</label>
           </div>
           <div class="inputGroup">
             <label for="category" id="categoryLabel" class="p-newProduct">Categoria:</label>
               <select name="category" id="category" class="inputGroupInput">
                 <option value="">Elegi una categoría</option>
-                <option value="detergente"<%= product.category ? "selected" : ""%>>Detergente</option>
-                <option value="lavandina"<%= product.category ? "selected" : ""%>>Lavandina</option>
-                <option value="papelHigienico"<%= product.category ? "selected" : ""%>>Papel higiénico</option>
-                <option value="limpiadorDeRopa"<%= product.category ? "selected" : ""%>>Limpiador de ropa</option>
-                <option value="limpiadorDeMuebles"<%= product.category ? "selected" : ""%>>Limpiador de muebles</option>
-                <option value="limpiadorDePiso"<%= product.category ? "selected" : ""%>>Limpiador de piso</option>
+                <option value="detergente">Detergente</option>
+                <option value="lavandina">Lavandina</option>
+                <option value="papelHigienico">Papel higiénico</option>
+                <option value="limpiadorDeRopa">Limpiador de ropa</option>
+                <option value="limpiadorDeMuebles">Limpiador de muebles</option>
+                <option value="limpiadorDePiso">Limpiador de piso</option>
               </select> 
           </div>
             <!-- sold va a ser resultado de una función que muestre la cantidad vendida -->
@@ -63,7 +63,7 @@
 
           <div class="inputGroup">
             <label for="description" class="p-newProduct">Descripción</label>
-            <textarea id="description" name="description" rows="10" cols="44"><%= product.description %></textarea>
+            <textarea id="description" name="description" rows="10" cols="44"></textarea>
           </div>
           <button type="submit" class="createProductButton">Crear Producto</button>
           </form>

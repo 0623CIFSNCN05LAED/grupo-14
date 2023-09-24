@@ -18,8 +18,7 @@ const productsController = {
   },
 
   create: (req, res) => {
-    const product = productService.getFormattedProducts();
-    res.render("products/createProduct", {product});
+    res.render("products/createProduct");
   },
 
   newProduct: (req, res) => {
