@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <%- include("../partials/head", {title: 'Editar producto'}) %>
 
@@ -13,180 +13,61 @@
         <form class="form-newProduct" action="/products/<%= product.id %>?_method=put" method="post">
           <h2><%= product.shortName %></h2>
 
-          <input
-            class="controls"
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Nombre del Producto"
-            value="<%= product.name %>"
-          />
-
-          <input
-            class="controls"
-            type="text"
-            name="shortName"
-            id="shortName"
-            placeholder="Producto abreviado"
-            value="<%= product.shortName %>"
-          />
-
-          <input
-            class="controls"
-            type="text"
-            name="brand"
-            id="brand"
-            placeholder="Marca del Producto"
-            value="<%= product.brand %>"
-          />
-
-          <input
-            class="controls"
-            type="text"
-            name="price"
-            id="price"
-            placeholder="Precio"
-            value="<%= product.price %>"
-          />
-
-          <input
-            class="controls"
-            type="number"
-            name="discount"
-            id="discount"
-            placeholder="% OFF"
-            value="<%= product.discount %>"
-          />
-          <!-- sacamos offer porque es redundante, agregar una función si tiene % offer true -->
-          <input
-            class="controls"
-            type="text"
-            name="preferentialPrice"
-            id="preferentialPrice"
-            placeholder="Precio por mayor"
-            value="<%= product.preferentialPrice %>"
-          />
-
-          <input
-            class="controls"
-            type="number"
-            name="mount"
-            id="mount"
-            placeholder="Stock"
-            value="<%= product.mount %>"
-          />
-          <!-- sold va a ser resultado de una función que muestre la cantidad vendida -->
-          <!-- bestseller tiene que ser una función que compare las ventas de los productos -->
-
-          <!--  SELECT CON CHECKBOX -->
-
-          <label for="category">Categoria:</label>
-            <select name="category" id="category" class="controls">
-              <option value="">Elegi:</option>
-              <option value="detergente"<%= product.category ? "selected" : ""%>>Detergente</option>
-              <option value="lavandina"<%= product.category ? "selected" : ""%>>Lavandina</option>
-              <option value="papelHigienico"<%= product.category ? "selected" : ""%>>Papel higiénico</option>
-              <option value="limpiadorDeRopa"<%= product.category ? "selected" : ""%>>Limpiador de ropa</option>
-              <option value="limpiadorDeMuebles"<%= product.category ? "selected" : ""%>>Limpiador de muebles</option>
-              <option value="limpiadorDePiso"<%= product.category ? "selected" : ""%>>Limpiador de piso</option>
-            </select> 
+          <div class="inputGroup">
+            <input type="text" name="name" id="name" class="inputGroupInput" value="<%= product.name %>" required>
+            <label for="name" class="inputGroupLabel">Nombre del producto</label>
+          </div>
+          <div class="inputGroup">
+            <input type="text" name="shortName" id="shortName" class="inputGroupInput" value="<%= product.shortName %>" required>
+            <label for="shortName" class="inputGroupLabel">Producto abreviado</label>
+          </div>
+          <div class="inputGroup">
+            <input type="text" name="brand" id="brand" class="inputGroupInput" value="<%= product.brand %>" required>
+            <label for="brand" class="inputGroupLabel">Marca</label>
+          </div>
+          <div class="inputGroup">
+            <input type="number" name="price" id="price" class="inputGroupInput" value="<%= product.price %>" required>
+            <label for="price" class="inputGroupLabel">Precio minorista</label>
+          </div>
+          <div class="inputGroup">
+            <input type="number" name="discount" id="discount" class="inputGroupInput" value="<%= product.discount %>" required>
+            <label for="discount" class="inputGroupLabel">% OFF</label>
+          </div>
+          <div class="inputGroup">
+            <input type="text" name="preferentialPrice" id="preferentialPrice" class="inputGroupInput" value="<%= product.preferentialPrice %>" required>
+            <label for="preferentialPrice" class="inputGroupLabel">Precio mayorista</label>
+          </div>
+          <div class="inputGroup">
+            <input type="number" name="mount" id="mount" class="inputGroupInput" value="<%= product.mount %>" required>
+            <label for="mount" class="inputGroupLabel">Stock</label>
+          </div>
+          <div class="inputGroup">
+            <label for="category" id="categoryLabel" class="p-newProduct">Categoria:</label>
+              <select name="category" id="category" class="inputGroupInput">
+                <option value="">Elegi una categoría</option>
+                <option value="detergente"<%= product.category ? "selected" : ""%>>Detergente</option>
+                <option value="lavandina"<%= product.category ? "selected" : ""%>>Lavandina</option>
+                <option value="papelHigienico"<%= product.category ? "selected" : ""%>>Papel higiénico</option>
+                <option value="limpiadorDeRopa"<%= product.category ? "selected" : ""%>>Limpiador de ropa</option>
+                <option value="limpiadorDeMuebles"<%= product.category ? "selected" : ""%>>Limpiador de muebles</option>
+                <option value="limpiadorDePiso"<%= product.category ? "selected" : ""%>>Limpiador de piso</option>
+              </select> 
+          </div>
             <!-- cuando vamos a editar en el select aparece la ultima opcion, ARREGLAR -->
+          <div class="inputGroup">
+            <label for="image" class="p-newProduct">Seleccionar Imagen de Producto</label>
+            <input class="inputGroupInput" type="file" name="image" id="image" accept="image/png, .jpeg, .jpg, image/gif"/>
+          </div>
 
-          <!-- <div class="container">
-            <div class="select-btn">
-              <span class="btn-text">Categorías</span>
-              <span class="arrow-dwn">
-                <i class="fa-solid fa-chevron-down"></i>
-              </span>
-            </div>
-            <ul class="list-items">
-              <li class="item">
-                <span class="checkbox">
-                  <i class="fa-solid fa-check check-icon"></i>
-                </span>
-                <span class="item-text"> Detergente</span>
-              </li>
-              <li class="item">
-                <span class="checkbox">
-                  <i class="fa-solid fa-check check-icon"></i>
-                </span>
-                <span class="item-text"> Lavandina</span>
-              </li>
-              <li class="item">
-                <span class="checkbox">
-                  <i class="fa-solid fa-check check-icon"></i>
-                </span>
-                <span class="item-text"> Limpiador de muebles</span>
-              </li>
-              <li class="item">
-                <span class="checkbox">
-                  <i class="fa-solid fa-check check-icon"></i>
-                </span>
-                <span class="item-text"> Limpiador de piso</span>
-              </li>
-              <li class="item">
-                <span class="checkbox">
-                  <i class="fa-solid fa-check check-icon"></i>
-                </span>
-                <span class="item-text"> Limpiador de ropa</span>
-              </li>
-              <li class="item">
-                <span class="checkbox">
-                  <i class="fa-solid fa-check check-icon"></i>
-                </span>
-                <span class="item-text"> Papel higiénico</span>
-              </li>
-            </ul>
-          </div> -->
-
-          <!-- FIN DE SELECT CON CHECKBOX -->
-
-          <p class="p-newProduct">Seleccionar Imagen de Producto</p>
-          <input
-            class="controls"
-            type="file"
-            name="image"
-            id="image"
-            accept="image/png, .jpeg, .jpg, image/gif"
-          />
-
-          <p class="p-newProduct">Descripción</p>
-          <textarea id="description" name="description" rows="4" cols="50"><%= product.description %></textarea>
+          <div class="inputGroup">
+            <label for="description" class="p-newProduct">Descripción</label>
+            <textarea id="description" name="description" rows="10" cols="44"><%= product.description %></textarea>
+          </div>
 
           <button type="submit" class="createProductButton">
             Editar producto
           </button>
         </form>
-
-        <!-- JS -->
-        <script>
-          const selectBtn = document.querySelector(".select-btn"),
-            items = document.querySelectorAll(".item");
-
-          selectBtn.addEventListener("click", () => {
-            selectBtn.classList.toggle("open");
-          });
-
-          /* cambia estado a checkeado(checked) al clickear sobre cada categoria */
-          items.forEach((item) => {
-            item.addEventListener("click", () => {
-              item.classList.toggle("checked");
-
-              /* le asigna valor length */
-              let checked = document.querySelectorAll(".checked"),
-                btnText = document.querySelector(".btn-text");
-
-              /* MUESTRA LA CANTIDAD QUE SELECCIONAMOS */
-              if (checked && checked.length > 0) {
-                /* console.log("valid") */
-                btnText.innerText = `${checked.length} Seleccionadas`;
-              } else {
-                /* console.log("invalid") */
-                btnText.innerText = "Seleccionar Categoría";
-              }
-            });
-          });
-        </script>
       </div>
     </main>
 
