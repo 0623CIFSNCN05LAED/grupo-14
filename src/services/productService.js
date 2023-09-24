@@ -70,9 +70,12 @@ const productServices = {
 
   getRelatedProducts: function (product) {
     const categoryProduct = product.category;
+    const id = product.id;
     const products = db.products
       .findAll()
-      .filter((product) => product.category == categoryProduct);
+      .filter(
+        (product) => product.category == categoryProduct && product.id != id
+      );
 
     return formatProductsPrices(products);
   },
@@ -81,9 +84,9 @@ const productServices = {
     db.products.create(product);
   },
 
-  updateProduct: function(id, product){
+  updateProduct: function (id, product) {
     db.products.update(id, product);
-  }
+  },
 };
 
 module.exports = productServices;
