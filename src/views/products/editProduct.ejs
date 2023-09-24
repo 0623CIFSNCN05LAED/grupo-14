@@ -41,69 +41,33 @@
             <input type="number" name="mount" id="mount" class="inputGroupInput" value="<%= product.mount %>" required>
             <label for="mount" class="inputGroupLabel">Stock</label>
           </div>
-
-          <!--  SELECT CON CHECKBOX -->
-
-          <label for="category">Categoria:</label>
-            <select name="category" id="category" class="controls">
-              <option value="">Elegi:</option>
-              <option value="detergente"<%= product.category ? "selected" : ""%>>Detergente</option>
-              <option value="lavandina"<%= product.category ? "selected" : ""%>>Lavandina</option>
-              <option value="papelHigienico"<%= product.category ? "selected" : ""%>>Papel higiénico</option>
-              <option value="limpiadorDeRopa"<%= product.category ? "selected" : ""%>>Limpiador de ropa</option>
-              <option value="limpiadorDeMuebles"<%= product.category ? "selected" : ""%>>Limpiador de muebles</option>
-              <option value="limpiadorDePiso"<%= product.category ? "selected" : ""%>>Limpiador de piso</option>
-            </select> 
+          <div class="inputGroup">
+            <label for="category" id="categoryLabel" class="p-newProduct">Categoria:</label>
+              <select name="category" id="category" class="inputGroupInput">
+                <option value="">Elegi una categoría</option>
+                <option value="detergente"<%= product.category ? "selected" : ""%>>Detergente</option>
+                <option value="lavandina"<%= product.category ? "selected" : ""%>>Lavandina</option>
+                <option value="papelHigienico"<%= product.category ? "selected" : ""%>>Papel higiénico</option>
+                <option value="limpiadorDeRopa"<%= product.category ? "selected" : ""%>>Limpiador de ropa</option>
+                <option value="limpiadorDeMuebles"<%= product.category ? "selected" : ""%>>Limpiador de muebles</option>
+                <option value="limpiadorDePiso"<%= product.category ? "selected" : ""%>>Limpiador de piso</option>
+              </select> 
+          </div>
             <!-- cuando vamos a editar en el select aparece la ultima opcion, ARREGLAR -->
+          <div class="inputGroup">
+            <label for="image" class="p-newProduct">Seleccionar Imagen de Producto</label>
+            <input class="inputGroupInput" type="file" name="image" id="image" accept="image/png, .jpeg, .jpg, image/gif"/>
+          </div>
 
-          <!-- FIN DE SELECT CON CHECKBOX -->
-
-          <p class="p-newProduct">Seleccionar Imagen de Producto</p>
-          <input
-            class="controls"
-            type="file"
-            name="image"
-            id="image"
-            accept="image/png, .jpeg, .jpg, image/gif"
-          />
-
-          <p class="p-newProduct">Descripción</p>
-          <textarea id="description" name="description" rows="4" cols="50"><%= product.description %></textarea>
+          <div class="inputGroup">
+            <label for="description" class="p-newProduct">Descripción</label>
+            <textarea id="description" name="description" rows="10" cols="44"><%= product.description %></textarea>
+          </div>
 
           <button type="submit" class="createProductButton">
             Editar producto
           </button>
         </form>
-
-        <!-- JS -->
-        <script>
-          const selectBtn = document.querySelector(".select-btn"),
-            items = document.querySelectorAll(".item");
-
-          selectBtn.addEventListener("click", () => {
-            selectBtn.classList.toggle("open");
-          });
-
-          /* cambia estado a checkeado(checked) al clickear sobre cada categoria */
-          items.forEach((item) => {
-            item.addEventListener("click", () => {
-              item.classList.toggle("checked");
-
-              /* le asigna valor length */
-              let checked = document.querySelectorAll(".checked"),
-                btnText = document.querySelector(".btn-text");
-
-              /* MUESTRA LA CANTIDAD QUE SELECCIONAMOS */
-              if (checked && checked.length > 0) {
-                /* console.log("valid") */
-                btnText.innerText = `${checked.length} Seleccionadas`;
-              } else {
-                /* console.log("invalid") */
-                btnText.innerText = "Seleccionar Categoría";
-              }
-            });
-          });
-        </script>
       </div>
     </main>
 
