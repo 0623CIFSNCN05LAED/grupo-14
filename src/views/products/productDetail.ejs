@@ -37,7 +37,17 @@
         <div class="data">
           <div class="details">
             <h2 class="name"><%= product.name %></h2>
-            <h3><%= product.price %></h3>
+            <div class="prices">
+              <% if (product.discount > 0) { %>
+              <h5>
+                <span class="notPrice"><%= product.price %></span> / <%=
+                product.discount %>% OFF
+              </h5>
+              <h2><%= product.priceWithDiscount %></h2>
+              <% } else { %>
+              <h2><%= product.price %></h2>
+              <% } %>
+            </div>
             <form action="">
               <div class="amount">
                 <p>stock disponible</p>
