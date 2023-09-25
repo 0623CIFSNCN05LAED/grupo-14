@@ -45,22 +45,37 @@ module.exports = {
     this.saveProducts(products);
   },
 
-  update: function (id, product) {
+  update: function (id, product,file) {
     // Cargo todos los productos
     const products = this.getProducts()
     // Busco producto por su id
     const productToEdit = products.find((product) => product.id == id)
     // Sobrescribo las propiedades
-    productToEdit.name = product.name;
-    productToEdit.description = product.description;
+    Object.assign(productToEdit,product)
+    /* productToEdit.name = product.name;  /* Usar object.assign????????????????????? en el json quedaria como un string si lo usamos*/
+    // productToEdit.description = product.description; 
     productToEdit.price = Number(product.price);
     productToEdit.discount = Number(product.discount);
     productToEdit.preferentialPrice = Number(product.preferentialPrice);
     productToEdit.mount = Number(product.mount);
-    productToEdit.image = product.image;
-    productToEdit.brand = product.brand;
+    /* productToEdit.brand = product.brand;
     productToEdit.shortName = product.shortName;
-    productToEdit.category = product.category;
+    productToEdit.category = product.category; */
+    if (file) { /* si usa imagen nueva, borra la anterior de nuestro public */
+      let image = file.filename;
+      let oldImage = this.findById(id).image;
+
+      function deleteImage(image) {
+        fs.unlinkSync(
+          path.join(__dirname, "../../../public/img/products/" + image)
+        );
+      }
+      deleteImage(oldImage);
+      productToEdit.image = image;
+    } else {
+      let image = this.findById(id).image;
+      productToEdit.image = image;
+    }
     // Guardo los productos
     this.saveProducts(products)
     return product

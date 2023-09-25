@@ -1,4 +1,6 @@
 const productService = require("../services/productService");
+const fs = require("fs");
+const path = require("path")
 
 const productsController = {
   detail: (req, res) => {
@@ -52,20 +54,15 @@ const productsController = {
   update: (req, res) => {
     const product = req.body;
     const id = req.params.id;
-    const image = req.file
-      ? req.file.filename
-      : productService.getProduct(id).image;
-    product.image = image;
-    productService.updateProduct(id, product);
+    const file = req.file
+    productService.updateProduct(id, product,file);
     res.redirect("/products");
   },
-
-  delete: (req, res) =>{
+  delete: (req, res) => {
     const id = req.params.id;
     productService.deleteProduct(id);
     res.redirect("/products");
   },
-  
 };
 
 module.exports = productsController;

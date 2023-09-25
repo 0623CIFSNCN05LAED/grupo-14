@@ -93,8 +93,8 @@ const productServices = {
     db.products.create(product);
   },
 
-  updateProduct: function (id, product) {
-    db.products.update(id, product);
+  updateProduct: function (id, product,file) {
+    db.products.update(id, product,file);
   },
 
   deleteProduct: function(id){
