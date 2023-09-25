@@ -59,6 +59,13 @@ const productsController = {
     productService.updateProduct(id, product);
     res.redirect("/products");
   },
+
+  delete: (req, res) =>{
+    const id = req.params.id;
+    productService.deleteProduct(id);
+    res.redirect("/products");
+  },
+  
 };
 
 module.exports = productsController;
