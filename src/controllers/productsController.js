@@ -1,6 +1,5 @@
 const productService = require("../services/productService");
-const fs = require("fs");
-const path = require("path")
+const {validationResult} = require("express-validator")
 
 const productsController = {
   detail: (req, res) => {
@@ -24,20 +23,33 @@ const productsController = {
   },
 
   newProduct: (req, res) => {
-    const product = {
-      name: req.body.name,
-      shortName: req.body.shortName,
-      brand: req.body.brand,
-      price: Number(req.body.price),
-      discount: Number(req.body.discount),
-      preferentialPrice: Number(req.body.preferentialPrice),
-      mount: Number(req.body.mount),
-      category: req.body.category,
-      image: req.file ? req.file.filename : "defaultImg.jpg",
-      description: req.body.description,
-    };
-    productService.createProduct(product);
-    res.redirect("/products");
+
+    const errors = validationResult(req); 
+
+    if(errors.isEmpty()){
+      const product = { /* esto pasarlo a service o data, no deberia estar aca la logica*/
+        name: req.body.name,
+        shortName: req.body.shortName,
+        brand: req.body.brand,
+        price: Number(req.body.price),
+        discount: Number(req.body.discount),
+        preferentialPrice: Number(req.body.preferentialPrice),
+        mount: Number(req.body.mount),
+        category: req.body.category,
+        image: req.file ? req.file.filename : "defaultImg.jpg",
+        description: req.body.description,
+      };
+      productService.createProduct(product);
+      res.redirect("/products");
+    } else{
+      return res.render("products/createProduct",
+        { errors: errors.mapped(), /* Convertimos el array de objetos en un objeto de objetos */
+          oldData: req.body 
+      } 
+      )
+      
+    }
+
   },
 
   productsList: (req, res) => {

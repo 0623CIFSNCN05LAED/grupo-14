@@ -37,6 +37,7 @@
 .inputGroup{
   position: relative;
   width: 100%;
+  margin-bottom: 28px;
 }
 
 .inputGroupInput{
@@ -49,7 +50,6 @@
   background-color: transparent;
   transition: outline-color 500ms;
   width: 100%;
-  margin-bottom: 28px;
   font-size: 14px;
 }
 

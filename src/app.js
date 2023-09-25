@@ -8,7 +8,7 @@ const app = express();
 
 // ********* Middlewares *****************
 app.use(express.static(path.join(__dirname, "../public")));
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));  /* esto nos permite capturar en req.body la info de un formulario que se envia via post */
 app.use(express.json());
 app.use(methodOverride("_method"))
 
