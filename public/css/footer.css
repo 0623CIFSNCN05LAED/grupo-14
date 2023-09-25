@@ -17,7 +17,7 @@
   }
   /* inicio newsletter */
   .title-nl {
-    margin-top: 15px;
+   padding-top: 25px;
     color: #eee;
   }
   
@@ -70,7 +70,7 @@
   .icons {
     width: 100%;
     text-align: center;
-    margin: 10%;
+    margin-top: 10%;
   }
   .redes-m {
     margin-left: 5%;
@@ -81,12 +81,18 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-bottom: 3%;
+    margin-top: 3%;
     width: 100%;
   }
   
   /* Final Redes */
   
+.seg{
+  padding-top: 5px;
+}
+.icon-2{
+  margin: 5%;
+}
   /* inicio envio full-gratis-atencion cliente */
   .box3-1 {
     display: flex;
