@@ -45,12 +45,12 @@
             <label for="category" id="categoryLabel" class="p-newProduct">Categoria:</label>
               <select name="category" id="category" class="inputGroupInput">
                 <option value="">Elegi una categoría</option>
-                <option value="detergente"<%= product.category ? "selected" : ""%>>Detergente</option>
-                <option value="lavandina"<%= product.category ? "selected" : ""%>>Lavandina</option>
-                <option value="papelHigienico"<%= product.category ? "selected" : ""%>>Papel higiénico</option>
-                <option value="limpiadorDeRopa"<%= product.category ? "selected" : ""%>>Limpiador de ropa</option>
-                <option value="limpiadorDeMuebles"<%= product.category ? "selected" : ""%>>Limpiador de muebles</option>
-                <option value="limpiadorDePiso"<%= product.category ? "selected" : ""%>>Limpiador de piso</option>
+                <option value="detergente" <%= product.category === "detergente" ? "selected" : ""%>>Detergente</option>
+                <option value="lavandina" <%= product.category === "lavandina" ? "selected" : ""%> >Lavandina</option>
+                <option value="papelHigienico" <%= product.category === "papelHigienico" ? "selected" : ""%> >Papel higiénico</option>
+                <option value="limpiadorDeRopa" <%= product.category === "limpiadorDeRopa" ? "selected" : ""%> >Limpiador de ropa</option>
+                <option value="limpiadorDeMuebles" <%= product.category === "limpiadorDeMuebles" ? "selected" : ""%> >Limpiador de muebles</option>
+                <option value="limpiadorDePiso" <%= product.category === "limpiadorDePiso" ? "selected" : ""%> >Limpiador de piso</option>
               </select> 
           </div>
             <!-- cuando vamos a editar en el select aparece la ultima opcion, ARREGLAR -->
