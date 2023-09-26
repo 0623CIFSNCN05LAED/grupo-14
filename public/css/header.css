@@ -8,7 +8,7 @@ header {
 
 .topLeftHeader {
   text-align: center;
-  background-color: #243a76;
+  background-color: #9397a7;
   padding: 3px 0;
 }
 
@@ -17,26 +17,24 @@ header {
   border-radius: 4px;
   padding: 4px 8px;
   color: white;
-  border: #e68c3a 2px solid;
+  border: #fff 2px solid;
   cursor: pointer;
   transition: all 400ms;
 }
 .tiendaButton:hover {
-  background-color: #e68c3a;
+  background-color: #111e4f;
+  opacity: 70%;
   color: #fff;
 }
 
 /* texto tienda animacion */
 
 .textoTienda {
-  color: #ff8222;
+  color: #fff;
   font-family: "Source Sans Pro", sans-serif;
-  -webkit-animation: reveal 3000ms ease-in-out forwards 200ms,
-    glow 2500ms linear infinite 2000ms;
-  animation: reveal 3000ms ease-in-out forwards 200ms,
-    glow 2500ms linear infinite 2000ms;
-  animation-iteration-count: infinite;
 }
+
+/*
 @-webkit-keyframes reveal {
   50% {
     letter-spacing: 5px;
@@ -63,7 +61,7 @@ header {
     text-shadow: 0 0 8px #fff;
   }
 }
-
+*/
 /* fin texto tienda animacion */
 
 .topRightHeader li {
@@ -94,9 +92,9 @@ header {
 }
 
 .topRightHeader li:hover {
-  background-color: #ff8222;
+  background-color: #111e4f;
+  opacity: 70%;
   color: #fff;
-  box-shadow: 2px 3px 3px #e4e1e1;
 }
 
 .navList ul,
@@ -119,9 +117,9 @@ header {
 
 .navList li:hover,
 .navMobile li:hover {
-  background-color: #ff8222;
+  background-color: #111e4f;
+  opacity: 70%;
   color: #fff;
-  box-shadow: 2px 3px 3px #e4e1e1;
 }
 
 .navList a,
@@ -139,7 +137,7 @@ header {
 
 .fa-cart-shopping,
 .fa-magnifying-glass {
-  color: #ff8222;
+  color: #fff;
 }
 
 /* Estilos para la navegación en dispositivos móviles */
@@ -213,7 +211,7 @@ header {
     flex-direction: row;
     width: 60%;
     font-size: 25px;
-    background-color: #243a76;
+    background-color: #9397a7;
     padding: 5px;
   }
   .navRightMobile {
@@ -222,11 +220,11 @@ header {
     justify-content: right;
   }
   .topRightHeader li {
-    background-color: #243a76;
+    background-color: #9397a7;
   }
   .navList li,
   .navMobile li {
-    background-color: #243a76;
+    background-color: #9397a7;
   }
   .navRightMobile i {
     margin: 0 10px;
@@ -261,7 +259,7 @@ header {
 
   /**/
   .menuMobile {
-    background-color: #55a4da;
+    background-color: #9397a7;
     display: flex;
     position: inherit;
     width: 100%;
