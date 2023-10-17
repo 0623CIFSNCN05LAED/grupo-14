@@ -45,7 +45,7 @@
   width: 15px;
   border-radius: 50%;
   cursor: pointer;
-  background-color: yellow;
+  background-color: white;
 }
 
 .leftArrow {
@@ -107,19 +107,19 @@
 
 .benefitsContainer {
   padding: 5px 25px;
-  background-color: #9397a7;
+  background-color: white;
 }
 
 .benefitsTitle {
   display: block;
   text-align: left;
-  color: white;
+  color: #9397a7;
 }
 
 .benefitsList {
   list-style: none;
   text-align: left;
-  color: white;
+  color: #9397a7;
 }
 
 .benefitsList li {
@@ -145,7 +145,7 @@
   text-align: center;
   padding: 10px 25px;
   font-size: 25px;
-  background-color: lightblue;
+  background-color: white;
 }
 
 .carouselContainerBrands {
@@ -181,7 +181,7 @@
   text-align: center;
   padding: 10px 25px;
   font-size: 25px;
-  background-color: lightblue;
+  background-color: white;
 }
 
 .carouselContainerBestSellers {
@@ -256,7 +256,7 @@
   text-align: center;
   padding: 10px 25px;
   font-size: 25px;
-  background-color: lightblue;
+  background-color: white;
 }
 
 .carouselContainerOpportunities {
