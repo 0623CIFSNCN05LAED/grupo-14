@@ -302,19 +302,5 @@
     "offer": true,
     "sold": 0,
     "bestSeller": true
-  },
-  {
-    "id": "d597d7fb-cb7d-47c3-a43e-92727c50438f",
-    "offer": true,
-    "name": "dfsSDFD",
-    "shortName": "afddaa",
-    "brand": "Magistral",
-    "price": 100,
-    "discount": 0,
-    "preferentialPrice": 50,
-    "mount": 3,
-    "category": "limpiadorDePiso",
-    "image": "image-1695504072955.jpg",
-    "description": "prueba 2"
   }
 ]

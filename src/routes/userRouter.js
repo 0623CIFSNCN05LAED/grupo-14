@@ -15,9 +15,10 @@ router.get("/login", userController.login);
 
 /*************** Register CF ******************/
 router.get("/registerCf", userController.registerCf);
-router.post("/", uploadImgUser.single("image"), userController.newUser);
+router.post("/", uploadImgUser.single("image"), userController.newUserCf);
 
 /*************** Register M ******************/
 router.get("/registerMayorista", userController.registerMayorista);
+router.post("/M", uploadImgUser.single("image"), userController.newUserM);
 
 module.exports = router;

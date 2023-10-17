@@ -9,7 +9,7 @@ const userController = {
   registerCf: (req, res) => {
     res.render("users/registerCf");
   },
-  newUser: (req, res) => {
+  newUserCf: (req, res) => {
     const user = {
       name: req.body.name,
       lastName: req.body.lastname,
@@ -25,13 +25,33 @@ const userController = {
       country: req.body.country,
       specification: req.body.specification,
       notify: req.body.notify,
-      category: "consumidor final",
+      category: "consumidorFinal",
     };
     userService.createUser(user);
     res.redirect("/cf");
   },
   registerMayorista: (req, res) => {
     res.render("users/registerMayorista");
+  },
+  newUserM: (req, res) => {
+    const user = {
+      businessName: req.body.businessName,
+      cuit: req.body.cuit,
+      tel: req.body.tel,
+      email: req.body.email,
+      password: req.body.password,
+      image: req.file ? req.file.filename : "userDefault.png",
+      address: req.body.address,
+      location: req.body.location,
+      cp: req.body.cp,
+      province: req.body.province,
+      country: req.body.country,
+      specification: req.body.specification,
+      notify: req.body.notify,
+      category: "mayorista",
+    };
+    userService.createUser(user);
+    res.redirect("/mayorista");
   },
 };
 
