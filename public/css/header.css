@@ -9,7 +9,7 @@ header {
 .topLeftHeader {
   text-align: center;
   background-color: #9397a7;
-  padding: 3px 0;
+  padding: 10px 0;
 }
 
 .tiendaButton {
@@ -64,8 +64,67 @@ header {
 */
 /* fin texto tienda animacion */
 
+/*buscador nuevo*/
+.container-1 {
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+
+.container-1 input#search {
+  width: 300px;
+  height: 30px;
+  background: #9397a7;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #63717f;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+
+  -webkit-transition: background 0.55s ease;
+  -moz-transition: background 0.55s ease;
+  -ms-transition: background 0.55s ease;
+  -o-transition: background 0.55s ease;
+  transition: background 0.55s ease;
+}
+
+.container-1 input#search::-webkit-input-placeholder {
+  color: #65737e;
+}
+.container-1 input#search:-moz-placeholder {
+  color: #65737e;
+}
+.container-1 input#search::-moz-placeholder {
+  color: #65737e;
+}
+.container-1 input#search:-ms-input-placeholder {
+  color: #65737e;
+}
+.container-1 .icon {
+  position: absolute;
+  right: 85%;
+  top: 10%;
+  bottom: 30%;
+  margin-left: 5px;
+  margin-top: 1px;
+  z-index: 100;
+  color: #4f5b66;
+}
+.container-1 input#search:hover,
+.container-1 input#search:focus,
+.container-1 input#search:active {
+  outline: none;
+  background: #ffffff;
+}
+
+/*fin de nueva barra*/
+
 .topRightHeader li {
-  background-color: #55a4da;
+  background-color: #9397a7;
   padding: 10px;
   margin: 5px;
   width: auto;
@@ -106,7 +165,7 @@ header {
 
 .navList li,
 .navMobile li {
-  background-color: #55a4da;
+  background-color: #9397a7;
   padding: 10px;
   margin: 0 5px 5px;
   width: auto;
@@ -135,6 +194,8 @@ header {
   margin-right: 5px;
 }
 
+.fa-solid,
+.fa-bars,
 .fa-cart-shopping,
 .fa-magnifying-glass {
   color: #fff;
@@ -146,8 +207,8 @@ header {
   align-items: center;
   justify-content: space-between;
   font-size: 25px;
-  background-color: #55a4da;
-  padding: 5px;
+  background-color: #9397a7;
+  padding: 10px;
 }
 
 .navRightMobile {
@@ -172,7 +233,8 @@ header {
 
 #logoMobile {
   width: 90px;
-  top: 29px;
+  top: 48px;
+  left: 62px;
   position: absolute;
 }
 #logoDesk {
@@ -202,65 +264,6 @@ header {
     position: absolute;
     left: 28%;
   }
-
-  /*buscador nuevo*/
-  .container-1 {
-    width: 300px;
-    vertical-align: middle;
-    white-space: nowrap;
-    position: relative;
-  }
-
-  .container-1 input#search {
-    width: 300px;
-    height: 30px;
-    background: #9397a7;
-    border: none;
-    font-size: 10pt;
-    float: left;
-    color: #63717f;
-    padding-left: 45px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-
-    -webkit-transition: background 0.55s ease;
-    -moz-transition: background 0.55s ease;
-    -ms-transition: background 0.55s ease;
-    -o-transition: background 0.55s ease;
-    transition: background 0.55s ease;
-  }
-
-  .container-1 input#search::-webkit-input-placeholder {
-    color: #65737e;
-  }
-  .container-1 input#search:-moz-placeholder {
-    color: #65737e;
-  }
-  .container-1 input#search::-moz-placeholder {
-    color: #65737e;
-  }
-  .container-1 input#search:-ms-input-placeholder {
-    color: #65737e;
-  }
-  .container-1 .icon {
-    position: absolute;
-    right: 85%;
-    top: 10%;
-    bottom: 30%;
-    margin-left: 5px;
-    margin-top: 1px;
-    z-index: 100;
-    color: #4f5b66;
-  }
-  .container-1 input#search:hover,
-  .container-1 input#search:focus,
-  .container-1 input#search:active {
-    outline: none;
-    background: #ffffff;
-  }
-
-  /*fin de nueva barra*/
 
   .navMobile {
     flex-direction: row;
@@ -334,6 +337,7 @@ header {
   }
   #logoDesk {
     display: inline-block;
+    top: 5px;
   }
   #logoMobile {
     display: none;
