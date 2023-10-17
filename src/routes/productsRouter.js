@@ -1,24 +1,10 @@
 /*************** Require's ******************/
 const { Router } = require("express");
 const router = Router();
-const path = require("path");
-const multer = require("multer");
 const { body } = require("express-validator");
 
-/*************** Multer storage *************/
-const storage = multer.diskStorage({
-  destination: path.join(__dirname, "../../public/img/products"),
-  filename: function (req, file, cb) {
-    cb(
-      null,
-      file.fieldname + "-" + Date.now() + path.extname(file.originalname)
-    );
-  },
-});
-
-const upload = multer({
-  storage: storage,
-});
+/*************** Middlewares require ******************/
+const uploadImgProduct = require("../middlewares/multerProduct");
 
 /********** Express validator ****************/
 
@@ -73,7 +59,7 @@ router.get("/detail/:id", productsController.detail);
 router.get("/create", productsController.create);
 router.post(
   "/",
-  upload.single("image"),
+  uploadImgProduct.single("image"),
   validations,
   productsController.newProduct
 );
