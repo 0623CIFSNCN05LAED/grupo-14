@@ -265,6 +265,10 @@ header {
     left: 28%;
   }
 
+  .tiendaButton {
+    bottom: 120px;
+  }
+
   .navMobile {
     flex-direction: row;
     width: 60%;
