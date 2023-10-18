@@ -1,4 +1,5 @@
 const express = require("express");
+const bcrypt = require("bcryptjs");
 
 const userService = require("../services/userService");
 
@@ -16,7 +17,7 @@ const userController = {
       dni: req.body.dni,
       tel: req.body.tel,
       email: req.body.email,
-      password: req.body.password,
+      password: bcrypt.hashSync(req.body.password),
       image: req.file ? req.file.filename : "userDefault.png",
       address: req.body.address,
       location: req.body.location,
@@ -39,7 +40,7 @@ const userController = {
       cuit: req.body.cuit,
       tel: req.body.tel,
       email: req.body.email,
-      password: req.body.password,
+      password: bcrypt.hashSync(req.body.password),
       image: req.file ? req.file.filename : "userDefault.png",
       address: req.body.address,
       location: req.body.location,
