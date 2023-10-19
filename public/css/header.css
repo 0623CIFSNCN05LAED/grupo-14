@@ -256,12 +256,14 @@ header {
     text-align: left;
     align-items: center;
     width: 40%;
-    justify-content: flex-start;
+    justify-content: flex-end;
   }
   .tiendaMayoristaDiv {
     /* dejo fijo el boton Cambiar a tienda mayorista */
 
     position: absolute;
+    top: 50px;
+    z-index: 2;
     left: 28%;
   }
 
@@ -341,7 +343,7 @@ header {
   }
   #logoDesk {
     display: inline-block;
-    top: 5px;
+    top: -50px;
   }
   #logoMobile {
     display: none;
