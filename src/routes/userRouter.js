@@ -9,13 +9,19 @@ const userController = require("../controllers/userController");
 const uploadImgUser = require("../middlewares/multerUser");
 
 /*************** Validations require ******************/
+const registerValidation = require("../validations/registerValidation");
 
 /*************** Login form ******************/
 router.get("/login", userController.login);
 
 /*************** Register CF ******************/
 router.get("/registerCf", userController.registerCf);
-router.post("/", uploadImgUser.single("image"), userController.newUserCf);
+router.post(
+  "/",
+  uploadImgUser.single("image"),
+  registerValidation,
+  userController.newUserCf
+);
 
 /*************** Register M ******************/
 router.get("/registerMayorista", userController.registerMayorista);
