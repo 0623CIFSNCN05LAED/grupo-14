@@ -1,14 +1,8 @@
 const { body } = require("express-validator");
-const path = require("path");
 
 module.exports = [
   body("businessName").notEmpty().withMessage("Debes completar el campo de "),
   body("cuit").notEmpty().withMessage("Debes completar el campo de "),
-  body("name").notEmpty().withMessage("Debes completar el campo de nombre"),
-  body("lastName")
-    .notEmpty()
-    .withMessage("Debes completar el campo de nombre "),
-  body("dni").notEmpty().withMessage("Debes completar el campo de "),
   body("tel").notEmpty().withMessage("Debes completar el campo de "),
   body("email")
     .notEmpty()

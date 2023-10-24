@@ -16,39 +16,5 @@
     "specification": "al lado venden falopa",
     "notify": "notify",
     "category": "consumidorFinal"
-  },
-  {
-    "id": "b3b1ffe1-78c9-4b5d-955f-e9013bbc85b7",
-    "businessName": "messistore",
-    "cuit": "23",
-    "tel": "32",
-    "email": "pp@gmail.com",
-    "password": "343",
-    "image": "image-1697580867465.png",
-    "address": "9 de julio",
-    "location": "pinamar",
-    "cp": "34",
-    "province": "4343",
-    "country": "argentina",
-    "specification": "al lado venden falopa",
-    "category": "mayorista"
-  },
-  {
-    "id": "c81e4269-f456-4b6d-b5f7-28302e5edd4f",
-    "name": "Matias",
-    "lastName": "white",
-    "dni": "342",
-    "tel": "432",
-    "email": "pp@gmail.com",
-    "password": "234",
-    "image": "image-1697581017881.png",
-    "address": "9 de julio",
-    "location": "234",
-    "cp": "432",
-    "province": "432",
-    "country": "34",
-    "specification": "234234432",
-    "notify": "notify",
-    "category": "consumidorFinal"
   }
 ]

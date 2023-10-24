@@ -7,11 +7,12 @@ const userController = require("../controllers/userController");
 
 /*************** Middlewares require ******************/
 const uploadImgUser = require("../middlewares/multerUser");
-const registerCfMiddleware = require("../middlewares/registerCfMiddleware");
-const registerMMiddleware = require("../middlewares/registerMMiddleware");
+const registerMiddlewareCf = require("../middlewares/registerMiddlewareCf");
+const registerMiddlewareM = require("../middlewares/registerMiddlewareM");
 
 /*************** Validations require ******************/
-const registerValidation = require("../validations/registerValidation");
+const registerValidationCf = require("../validations/registerValidationCf");
+const registerValidationM = require("../validations/registerValidationM");
 
 /*************** Login form ******************/
 router.get("/login", userController.login);
@@ -21,8 +22,8 @@ router.get("/registerCf", userController.registerCf);
 router.post(
   "/",
   uploadImgUser.single("image"),
-  registerValidation,
-  /* registerCfMiddleware, */
+  registerValidationCf,
+  registerMiddlewareCf,
   userController.newUserCf
 );
 
@@ -31,8 +32,8 @@ router.get("/registerMayorista", userController.registerMayorista);
 router.post(
   "/M",
   uploadImgUser.single("image"),
-  registerValidation,
-  registerMMiddleware,
+  registerValidationM,
+  registerMiddlewareM,
   userController.newUserM
 );
 
