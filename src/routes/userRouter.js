@@ -7,6 +7,7 @@ const userController = require("../controllers/userController");
 
 /*************** Middlewares require ******************/
 const uploadImgUser = require("../middlewares/multerUser");
+const registerMiddleware = require("../middlewares/registerMiddleware");
 
 /*************** Validations require ******************/
 const registerValidation = require("../validations/registerValidation");
@@ -20,6 +21,7 @@ router.post(
   "/",
   uploadImgUser.single("image"),
   registerValidation,
+  registerMiddleware,
   userController.newUserCf
 );
 

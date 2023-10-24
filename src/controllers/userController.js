@@ -1,6 +1,6 @@
 const express = require("express");
 const bcrypt = require("bcryptjs");
-
+const { validationResult } = require("express-validator");
 const userService = require("../services/userService");
 
 const userController = {
@@ -11,6 +11,13 @@ const userController = {
     res.render("users/registerCf");
   },
   newUserCf: (req, res) => {
+    const resultValidation = validationResult(req);
+    if (resultValidation.length > 0) {
+      return res.render("users/registerCf", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
+    }
     const user = {
       name: req.body.name,
       lastName: req.body.lastname,
@@ -29,7 +36,7 @@ const userController = {
       category: "consumidorFinal",
     };
     userService.createUser(user);
-    res.redirect("/cf");
+    res.redirect("users/login");
   },
   registerMayorista: (req, res) => {
     res.render("users/registerMayorista");
