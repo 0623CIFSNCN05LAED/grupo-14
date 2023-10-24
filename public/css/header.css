@@ -8,7 +8,7 @@ header {
 
 .topLeftHeader {
   text-align: center;
-  background-color: #9397a7;
+  background-color: #6f6f6f;
   padding: 10px 0;
 }
 
@@ -75,11 +75,11 @@ header {
 .container-1 input#search {
   width: 300px;
   height: 30px;
-  background: #9397a7;
+  background: #6f6f6f;
   border: none;
   font-size: 10pt;
   float: left;
-  color: #63717f;
+  color: #6f6f6f;
   padding-left: 45px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -93,16 +93,16 @@ header {
 }
 
 .container-1 input#search::-webkit-input-placeholder {
-  color: #65737e;
+  color: #6f6f6f;
 }
 .container-1 input#search:-moz-placeholder {
-  color: #65737e;
+  color: #6f6f6f;
 }
 .container-1 input#search::-moz-placeholder {
-  color: #65737e;
+  color: #6f6f6f;
 }
 .container-1 input#search:-ms-input-placeholder {
-  color: #65737e;
+  color: #6f6f6f;
 }
 .container-1 .icon {
   position: absolute;
@@ -112,7 +112,7 @@ header {
   margin-left: 5px;
   margin-top: 1px;
   z-index: 100;
-  color: #4f5b66;
+  color: white;
 }
 .container-1 input#search:hover,
 .container-1 input#search:focus,
@@ -124,7 +124,7 @@ header {
 /*fin de nueva barra*/
 
 .topRightHeader li {
-  background-color: #9397a7;
+  background-color: #6f6f6f;
   padding: 10px;
   margin: 5px;
   width: auto;
@@ -165,7 +165,7 @@ header {
 
 .navList li,
 .navMobile li {
-  background-color: #9397a7;
+  background-color: #6f6f6f;
   padding: 10px;
   margin: 0 5px 5px;
   width: auto;
@@ -207,7 +207,7 @@ header {
   align-items: center;
   justify-content: space-between;
   font-size: 25px;
-  background-color: #9397a7;
+  background-color: #6f6f6f;
   padding: 10px;
 }
 
@@ -275,7 +275,7 @@ header {
     flex-direction: row;
     width: 60%;
     font-size: 25px;
-    background-color: #9397a7;
+    background-color: #6f6f6f;
     padding: 5px;
   }
   .navRightMobile {
@@ -284,11 +284,11 @@ header {
     justify-content: right;
   }
   .topRightHeader li {
-    background-color: #9397a7;
+    background-color: #6f6f6f;
   }
   .navList li,
   .navMobile li {
-    background-color: #9397a7;
+    background-color: #6f6f6f;
   }
   .navRightMobile i {
     margin: 0 10px;
@@ -323,7 +323,7 @@ header {
 
   /**/
   .menuMobile {
-    background-color: #9397a7;
+    background-color: #6f6f6f;
     display: flex;
     position: inherit;
     width: 100%;
