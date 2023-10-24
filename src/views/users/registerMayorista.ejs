@@ -4,7 +4,6 @@
     <%- include("../partials/head", {title: 'Registro mayorista'}) %>
 
     <link rel="stylesheet" href="/css/register.css" />
-
   </head>
   <body>
     <%- include('../partials/headerMayorista') %>
@@ -14,13 +13,13 @@
           <h2 class="registerTitle">CLIENTE MAYORISTA</h2>
           <h4 class="registerTitle">Información</h4>
           <div class="form-field">
-            <div class="data">            
-              <input 
+            <div class="data">
+              <input
                 placeholder="Razón social"
                 type="text"
                 name="businessName"
                 id="businessName"
-                style="padding-left:20px;"
+                style="padding-left: 20px"
                 value="<%= locals.oldData ? oldData.businessName : null %>"
                 pattern="[\w\s]+"
               />
@@ -38,7 +37,7 @@
                 type="number"
                 name="cuit"
                 id="cuit"
-                style="padding-left:20px;"
+                style="padding-left: 20px"
                 value="<%= locals.oldData ? oldData.cuit : null %>"
                 onkeypress="return event.charCode >= 48 && event.charCode <= 57"
               />
@@ -56,7 +55,7 @@
                 type="number"
                 name="tel"
                 id="tel"
-                style="padding-left:20px;"
+                style="padding-left: 20px"
                 value="<%= locals.oldData ? oldData.tel : null %>"
                 onkeypress="return event.charCode >= 48 && event.charCode <= 57"
               />
@@ -69,13 +68,13 @@
           </div>
           <div class="form-field">
             <div class="data">
-              <input 
+              <input
                 placeholder="Email"
-                type="email" 
-                name="email" 
-                id="email" 
-                style="padding-left:20px;"
-                value="<%= locals.oldData ? oldData.email : null %>" 
+                type="email"
+                name="email"
+                id="email"
+                style="padding-left: 20px"
+                value="<%= locals.oldData ? oldData.email : null %>"
               />
               <div>
                 <% if(locals.errors && errors.email) { %>
@@ -86,13 +85,13 @@
           </div>
           <div class="form-field">
             <div class="data">
-              <input 
+              <input
                 placeholder="Contraseña"
-                type="password" 
-                name="password" 
-                id="password" 
-                style="padding-left:20px;"
-                value="<%= locals.oldData ? oldData.password : null %>" 
+                type="password"
+                name="password"
+                id="password"
+                style="padding-left: 20px"
+                value="<%= locals.oldData ? oldData.password : null %>"
               />
               <div>
                 <% if(locals.errors && errors.password) { %>
@@ -108,7 +107,7 @@
                 type="password"
                 name="confirmPassword"
                 id="confirmPassword"
-                style="padding-left:20px;"
+                style="padding-left: 20px"
                 value="<%= locals.oldData ? oldData.confirmPassword : null %>"
               />
               <div>
@@ -127,20 +126,20 @@
                 name="image"
                 id="image"
                 accept="image/png, .jpeg, .jpg, image/gif"
-                style="padding-left:20px;"
+                style="padding-left: 20px"
               />
             </div>
           </div>
           <h4 class="registerTitle">Domicilio</h4>
           <div class="form-field">
             <div class="data">
-              <input 
+              <input
                 placeholder="Dirección"
-                type="text" 
-                name="address" 
-                id="address" 
-                style="padding-left:20px;"
-                value="<%= locals.oldData ? oldData.address : null %>" 
+                type="text"
+                name="address"
+                id="address"
+                style="padding-left: 20px"
+                value="<%= locals.oldData ? oldData.address : null %>"
               />
               <div>
                 <% if(locals.errors && errors.address) { %>
@@ -151,13 +150,13 @@
           </div>
           <div class="form-field">
             <div class="data">
-              <input 
+              <input
                 placeholder="Localidad"
-                type="text" 
-                name="location" 
-                id="location" 
-                style="padding-left:20px;"
-                value="<%= locals.oldData ? oldData.location : null %>" 
+                type="text"
+                name="location"
+                id="location"
+                style="padding-left: 20px"
+                value="<%= locals.oldData ? oldData.location : null %>"
               />
               <div>
                 <% if(locals.errors && errors.location) { %>
@@ -173,7 +172,7 @@
                 type="number"
                 name="cp"
                 id="cp"
-                style="padding-left:20px;"
+                style="padding-left: 20px"
                 value="<%= locals.oldData ? oldData.cp : null %>"
                 onkeypress="return event.charCode >= 48 && event.charCode <= 57"
               />
@@ -186,12 +185,12 @@
           </div>
           <div class="form-field">
             <div class="data">
-              <input 
+              <input
                 placeholder="Provincia"
-                type="text" 
-                name="province" 
-                id="province" 
-                style="padding-left:20px;"
+                type="text"
+                name="province"
+                id="province"
+                style="padding-left: 20px"
                 value="<%= locals.oldData ? oldData.province : null %>"
               />
               <div>
@@ -203,12 +202,12 @@
           </div>
           <div class="form-field">
             <div class="data">
-              <input 
+              <input
                 placeholder="País"
-                type="text" 
-                name="country" 
-                id="country" 
-                style="padding-left:20px;"
+                type="text"
+                name="country"
+                id="country"
+                style="padding-left: 20px"
                 value="<%= locals.oldData ? oldData.country : null %>"
               />
               <div>
@@ -220,12 +219,13 @@
           </div>
           <div class="form-field">
             <div class="data">
-              <input 
+              <input
                 placeholder="Especificaciones para la entrega"
-                type="text" 
-                name="specification" 
-                id="specification" 
-                style="padding-left:20px;"/>
+                type="text"
+                name="specification"
+                id="specification"
+                style="padding-left: 20px"
+              />
             </div>
           </div>
           <div class="form-field">
@@ -238,7 +238,7 @@
             <button type="submit">Crear cuenta</button>
           </div>
         </form>
-      </div class="registerForm">
+      </div>
     </main>
     <%- include("../partials/footer") %>
   </body>

@@ -4,6 +4,7 @@ const router = Router();
 
 /*************** Middlewares require ******************/
 const uploadImgProduct = require("../middlewares/multerProduct");
+const productMiddleware = require("../middlewares/productMiddleware");
 
 /*************** Validations require ******************/
 const productValidation = require("../validations/productValidation");
@@ -23,12 +24,19 @@ router.post(
   "/",
   uploadImgProduct.single("image"),
   productValidation,
+  productMiddleware,
   productsController.newProduct
 );
 
 /*************** Edit one product ******************/
 router.get("/edit/:id", productsController.edit);
-router.put("/:id", uploadImgProduct.single("image"), productsController.update);
+router.put(
+  "/:id",
+  uploadImgProduct.single("image"),
+  productValidation,
+  productMiddleware,
+  productsController.update
+);
 
 /*************** Delete one product ******************/
 router.delete("/:id", productsController.delete);
