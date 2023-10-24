@@ -20,7 +20,7 @@ const userController = {
     }
     const user = {
       name: req.body.name,
-      lastName: req.body.lastname,
+      lastName: req.body.lastName,
       dni: req.body.dni,
       tel: req.body.tel,
       email: req.body.email,
