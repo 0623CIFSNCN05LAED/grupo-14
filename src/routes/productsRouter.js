@@ -30,13 +30,7 @@ router.post(
 
 /*************** Edit one product ******************/
 router.get("/edit/:id", productsController.edit);
-router.put(
-  "/:id",
-  uploadImgProduct.single("image"),
-  productValidation,
-  productMiddleware,
-  productsController.update
-);
+router.put("/:id", uploadImgProduct.single("image"), productsController.update);
 
 /*************** Delete one product ******************/
 router.delete("/:id", productsController.delete);
