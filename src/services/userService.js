@@ -7,8 +7,8 @@ const userServices = {
     const user = {
       id: uuidv4(),
       ...dataUser.body,
-      password: bcrypt.hashSync(dataUser.body.password),
-      confirmPassword: bcrypt.hashSync(dataUser.body.confirmPassword),
+      password: bcrypt.hashSync(dataUser.body.password, 10),
+      confirmPassword: bcrypt.hashSync(dataUser.body.confirmPassword, 10),
       image: dataUser.file ? dataUser.file.filename : "userDefault.png",
       category: "consumidorFinal",
     };
@@ -18,8 +18,8 @@ const userServices = {
     const user = {
       id: uuidv4(),
       ...dataUser.body,
-      password: bcrypt.hashSync(dataUser.body.password),
-      confirmPassword: bcrypt.hashSync(dataUser.body.confirmPassword),
+      password: bcrypt.hashSync(dataUser.body.password, 10),
+      confirmPassword: bcrypt.hashSync(dataUser.body.confirmPassword, 10),
       image: dataUser.file ? dataUser.file.filename : "userDefault.png",
       category: "mayorista",
     };

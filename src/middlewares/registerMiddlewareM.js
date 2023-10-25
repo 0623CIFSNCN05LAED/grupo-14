@@ -7,6 +7,15 @@ module.exports = (req, res, next) => {
       errors: errores.mapped(),
       oldData: req.body,
     });
+  } else if (userInDB) {
+    res.render("users/registerMayorista", {
+      errors: {
+        email: {
+          msg: "Este correo electrónico ya está registrado.",
+        },
+      },
+      oldData: req.body,
+    });
   } else {
     next();
   }
