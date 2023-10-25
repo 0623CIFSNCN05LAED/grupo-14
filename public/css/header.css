@@ -233,7 +233,7 @@ header {
 
 #logoMobile {
   width: 90px;
-  top: 48px;
+  top: 45px;
   left: 62px;
   position: absolute;
 }
@@ -343,7 +343,8 @@ header {
   }
   #logoDesk {
     display: inline-block;
-    top: -50px;
+    top: 20px;
+    left: 30px;
   }
   #logoMobile {
     display: none;
