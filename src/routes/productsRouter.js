@@ -4,6 +4,7 @@ const router = Router();
 
 /*************** Middlewares require ******************/
 const uploadImgProduct = require("../middlewares/multerProduct");
+const productMiddleware = require("../middlewares/productMiddleware");
 
 /*************** Validations require ******************/
 const productValidation = require("../validations/productValidation");
@@ -23,6 +24,7 @@ router.post(
   "/",
   uploadImgProduct.single("image"),
   productValidation,
+  productMiddleware,
   productsController.newProduct
 );
 
