@@ -1,6 +1,5 @@
 const fs = require("fs");
 const path = require("path");
-const { v4: uuidv4 } = require("uuid");
 
 /**************** Objeto de objetos de funciones genericas ***************/
 /**************** Exportado y requerido en userService.js *************/
@@ -28,11 +27,7 @@ module.exports = {
 
   create: function (user) {
     const users = this.getUsers();
-    const newUser = {
-      id: uuidv4(),
-      ...user,
-    };
-    users.push(newUser);
+    users.push(user);
     this.saveUsers(users);
   },
 };
