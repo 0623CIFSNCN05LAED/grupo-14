@@ -141,11 +141,11 @@
 }
 
 .allyBrands h3 {
-  color: #9397a7;
+  color: white;
   text-align: center;
   padding: 10px 25px;
   font-size: 25px;
-  background-color: white;
+  background-color: #6f6f6f;
 }
 
 .carouselContainerBrands {
@@ -177,11 +177,11 @@
 }
 
 .bestSellers h3 {
-  color: #9397a7;
+  color: white;
   text-align: center;
   padding: 10px 25px;
   font-size: 25px;
-  background-color: white;
+  background-color: #6f6f6f;
 }
 
 .carouselContainerBestSellers {
@@ -219,7 +219,7 @@
 /*Site Alert START */
 
 .SiteAlert {
-  background-color: orange;
+  background-color: #111e4f;
   padding: 15px;
 }
 
@@ -235,11 +235,11 @@
 .alertContainer i {
   padding-right: 10px;
   font-size: 12px;
-  color: #185397;
+  color: white;
 }
 
 .alertContainer a {
-  color: #185397;
+  color: white;
   text-decoration: none;
 }
 
@@ -252,11 +252,11 @@
 }
 
 .opportunities h3 {
-  color: #9397a7;
+  color: white;
   text-align: center;
   padding: 10px 25px;
   font-size: 25px;
-  background-color: white;
+  background-color: #6f6f6f;
 }
 
 .carouselContainerOpportunities {
@@ -407,8 +407,8 @@
   margin: 10px;
   justify-content: center;
   width: 46%;
-  border: 1px solid lightgray;
-  box-shadow: 2px 2px 8px 4px #d3d3d3d1;
+  border: 1px solid white;
+  box-shadow: 2px 2px 8px 4px white;
   border-radius: 15px;
 }
 .cardTitle {
@@ -427,14 +427,14 @@
   padding: 15px 0;
   border: none;
   border-radius: 0 0 15px 15px;
-  background-color: #243a76;
+  background-color: #111e4f;
   color: #fff;
   font-size: 17px;
   transition: all 400ms;
   cursor: pointer;
 }
 .card:hover button {
-  background-color: #ffa54a;
+  background-color: #111e4f;
 }
 .card a {
   text-decoration: none;
@@ -450,7 +450,7 @@
 }
 
 .card:hover {
-  box-shadow: 5px 15px 25px #55a4da;
+  box-shadow: 5px 15px 25px #111e4f;
 }
 /* fin productCard */
 

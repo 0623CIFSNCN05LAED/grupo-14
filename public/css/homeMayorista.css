@@ -45,7 +45,7 @@
   width: 15px;
   border-radius: 50%;
   cursor: pointer;
-  background-color: yellow;
+  background-color: white;
 }
 
 .leftArrow {
@@ -56,7 +56,7 @@
   cursor: pointer;
   width: 30px;
   height: 60px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: #6f6f6f;
   border: none;
   border-bottom-right-radius: 50px;
   border-top-right-radius: 50px;
@@ -80,7 +80,7 @@
   cursor: pointer;
   width: 30px;
   height: 60px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: #6f6f6f;
   border: none;
   border-bottom-right-radius: 50px;
   border-top-right-radius: 50px;
@@ -108,11 +108,11 @@
 }
 
 .offersContainer h3 {
-  color: #243a76;
+  color: white;
   text-align: center;
   padding: 10px 25px;
   font-size: 25px;
-  background-color: #55a4da;
+  background-color: #6f6f6f;
 }
 
 .carouselOffers {
@@ -147,14 +147,14 @@
   padding: 15px 0;
   border: none;
   border-radius: 0 0 15px 15px;
-  background-color: #243a76;
+  background-color: #6f6f6f;
   color: #fff;
   font-size: 17px;
   transition: all 400ms;
   cursor: pointer;
 }
 .card:hover button {
-  background-color: #ffa54a;
+  background-color: #111e4f;
 }
 .card a {
   text-decoration: none;
@@ -170,7 +170,7 @@
 }
 
 .card:hover {
-  box-shadow: 5px 15px 25px #55a4da;
+  box-shadow: 5px 15px 25px #111e4f;
 }
 /*
 .productCard {
@@ -201,15 +201,15 @@
 /* New Mayorista */
 
 .newMayoristaQuestion {
-  background-color: #55a4da;
+  background-color: white;
   width: 100%;
   padding: 20px;
   margin: 0 auto;
-  color: #fff;
+  color: #111e4f;
 }
 
 .newMayoristaButtonContainer {
-  background-color: #243a76;
+  background-color: white;
   width: 100%;
   margin: 0 auto;
 }
@@ -222,7 +222,7 @@
 
 .newMayoristaButton a {
   text-decoration: none;
-  color: #fff;
+  color: #111e4f;
   cursor: pointer;
 }
 
@@ -231,7 +231,7 @@
 }
 
 .newMayoristaButton a:hover .hoverMayorista {
-  color: orange;
+  color: #111e4f;
 }
 
 .newMayoristaButton i {
@@ -241,18 +241,18 @@
 /* benefits START */
 
 .benefitsSection {
-  background-color: #eee;
+  background-color: #fff;
   padding: 30px 20px;
-  border-bottom: 4px solid #55a4da;
+  border-bottom: 4px solid #6f6f6f;
 }
 
 .benefitsSection i {
   font-size: 30px;
-  color: #55a4da;
+  color: #111e4f;
 }
 
 .benefitsSection h2 {
-  color: #243a76;
+  color: #111e4f;
   margin: 9px 0;
 }
 
@@ -277,13 +277,13 @@
 }
 
 .loginBanner {
-  background-color: #243a76;
+  background-color: white;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: #111e4f;
   padding: 30px 15px;
 }
 
@@ -296,21 +296,8 @@
 .loginBannerLine {
   width: 70px;
   height: 3px;
-  background-color: #ff8222;
+  background-color: white;
   margin: 15px auto;
-}
-
-.loginFormContainer {
-  border: solid 1px #dadada;
-  border-radius: 10px;
-  text-align: center;
-  margin-top: 20px;
-}
-
-.loginFormTitle {
-  color: #243a76;
-  margin-top: 20px;
-  margin-bottom: 10px;
 }
 
 /* lo mas vendido START */
@@ -322,11 +309,11 @@
 }
 
 .bestSellers h3 {
-  color: #243a76;
+  color: white;
   text-align: center;
   padding: 10px 25px;
   font-size: 25px;
-  background-color: #55a4da;
+  background-color: #6f6f6f;
 }
 
 .carouselContainerBestSellers {
