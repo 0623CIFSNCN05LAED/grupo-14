@@ -9,7 +9,7 @@
     <%- include('../partials/headerCf') %>
 
     <main class="login">
-      <form class="form-login">
+      <form class="form-login" action="/users/login" method="post">
         <div>
           <h3><i class="fa-solid fa-user" id="userImage"></i></h3>
           <p>
@@ -17,10 +17,10 @@
               <i class="fa-solid fa-user iconLogin"></i>
               <input
                 type="text"
-                name="user"
+                name="email"
                 value=""
-                placeholder="Usuario"
-                id="username"
+                placeholder="correo electrónico"
+                id="email"
               />
             </label>
           </p>
@@ -46,12 +46,14 @@
           </p>
         </div>
         <p>
-          <input
+          <!--   <input
             type="button"
             name="login"
             value="Ingresar"
             class="buttonLogin"
           />
+         -->
+          <button type="submit" class="buttonLogin">Ingresar</button>
         </p>
         <p>
           <a href="create account" class="createAccount">Registrarse</a>

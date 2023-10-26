@@ -16,5 +16,23 @@
     "specification": "al lado venden falopa",
     "notify": "notify",
     "category": "consumidorFinal"
+  },
+  {
+    "id": "4f077d89-a506-4890-98b4-0afad0ae4775",
+    "name": "ew",
+    "lastName": "erwr",
+    "dni": "324",
+    "tel": "3242",
+    "email": "dsfdds@fds.com",
+    "password": "$2a$10$lcmxBVKCIf1ktfa7La....5wZxbxpusRXBO7EbqISKoADsXK6Txra",
+    "confirmPassword": "$2a$10$fVKvAoJ8jZoPMxcaAZkLxek5RxggCZ/wN9Mc0Imv2J8oWHP5LJvE6",
+    "address": "laklask",
+    "location": "ddsadsa",
+    "cp": "127",
+    "province": "asjdsalk",
+    "country": "dsad",
+    "specification": "dadsds",
+    "image": "userDefault.png",
+    "category": "consumidorFinal"
   }
 ]

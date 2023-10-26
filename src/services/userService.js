@@ -3,6 +3,10 @@ const bcrypt = require("bcryptjs");
 const { v4: uuidv4 } = require("uuid");
 
 const userServices = {
+  userInDb: function (emailToCompare) {
+    const user = db.users.findByField("email", emailToCompare);
+    return user;
+  },
   createUserCf: function (dataUser) {
     const user = {
       id: uuidv4(),
