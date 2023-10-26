@@ -7,6 +7,12 @@ const userServices = {
     const user = db.users.findByField("email", emailToCompare);
     return user;
   },
+
+  correctPassword: function (passwordToCheck, userPassword) {
+    const verifiedPassword = bcrypt.compareSync(passwordToCheck, userPassword);
+    return verifiedPassword;
+  },
+
   createUserCf: function (dataUser) {
     const user = {
       id: uuidv4(),

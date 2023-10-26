@@ -9,9 +9,15 @@ const userController = {
   },
   loginProcess: (req, res) => {
     const userToLogin = userService.userInDb(req.body.email);
-    console.log(userToLogin);
     if (userToLogin) {
-      return res.send(userToLogin);
+      const isOkThePassword = userService.correctPassword(
+        req.body.password,
+        userToLogin.password
+      );
+      console.log(isOkThePassword);
+      if (isOkThePassword) {
+        return res.send("Ok puedes ingresar");
+      }
     }
   },
   registerCf: (req, res) => {
