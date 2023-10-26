@@ -11,6 +11,11 @@ module.exports = {
     return users;
   },
 
+  saveUsers: function (users) {
+    const usersFilePath = path.join(__dirname, "./usersDataBase.json");
+    fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
+  },
+
   findAll: function () {
     return this.getUsers();
   },
@@ -18,5 +23,16 @@ module.exports = {
   findById: function (id) {
     const user = this.getUsers().find((user) => user.id == id);
     return user;
+  },
+
+  findByField: function (field, text) {
+    const userFound = this.getUsers().find((user) => user[field] == text);
+    return userFound;
+  },
+
+  create: function (user) {
+    const users = this.getUsers();
+    users.push(user);
+    this.saveUsers(users);
   },
 };

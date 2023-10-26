@@ -2,220 +2,261 @@
 <html lang="es">
   <head>
     <%- include("../partials/head", {title: 'Registro consumidor final'}) %>
-
     <link rel="stylesheet" href="/css/register.css" />
-
   </head>
   <body>
     <%- include('../partials/headerCf') %>
-
     <main>
       <div class="registerForm">
-        <form action="/">
+        <form action="/users" method="post" enctype="multipart/form-data">
           <h2 class="registerTitle">CONSUMIDOR FINAL</h2>
-        
           <h4 class="registerTitle">Información personal</h4>
-        
           <div class="form-field">
             <div class="data">
-              
               <input
-              placeholder="Nombre"
+                placeholder="Nombre"
                 type="text"
                 name="name"
                 id="name"
-                style="padding-left:20px;"
-                required
+                style="padding-left: 20px"
+                value="<%= locals.oldData ? oldData.name : null %>"
                 pattern="[\w\s]+"
               />
+              <div>
+                <% if(locals.errors && errors.name) { %>
+                <p><%= errors.name.msg %></p>
+                <% } %>
+              </div>
             </div>
           </div>
-        
           <div class="form-field">
             <div class="data">
-
               <input
-              placeholder="Apellido"
+                placeholder="Apellido"
                 type="text"
-                name="lastname"
-                id="lastname"
-                style="padding-left:20px;"
-                required
+                name="lastName"
+                id="lastName"
+                style="padding-left: 20px"
+                value="<%= locals.oldData ? oldData.lastName : null %>"
                 pattern="[\w\s]+"
               />
+              <div>
+                <% if(locals.errors && errors.lastName) { %>
+                <p><%= errors.lastName.msg %></p>
+                <% } %>
+              </div>
             </div>
           </div>
-        
           <div class="form-field">
             <div class="data">
-             
               <input
-              placeholder="DNI"
+                placeholder="DNI"
                 type="number"
                 name="dni"
                 id="dni"
-                style="padding-left:20px;"
-                required
+                style="padding-left: 20px"
+                value="<%= locals.oldData ? oldData.dni : null %>"
                 onkeypress="return event.charCode >= 48 && event.charCode <= 57"
               />
+              <div>
+                <% if(locals.errors && errors.dni) { %>
+                <p><%= errors.dni.msg %></p>
+                <% } %>
+              </div>
             </div>
           </div>
-        
           <div class="form-field">
             <div class="data">
-          
               <input
-              placeholder="Teléfono / Celular"
+                placeholder="Teléfono / Celular"
                 type="number"
                 name="tel"
                 id="tel"
-                style="padding-left:20px;"
-                required
+                style="padding-left: 20px"
+                value="<%= locals.oldData ? oldData.tel : null %>"
                 onkeypress="return event.charCode >= 48 && event.charCode <= 57"
               />
+              <div>
+                <% if(locals.errors && errors.tel) { %>
+                <p><%= errors.tel.msg %></p>
+                <% } %>
+              </div>
             </div>
           </div>
-
           <div class="form-field">
             <div class="data">
-             
               <input
-              placeholder="Email" 
-              type="email" 
-              name="email" 
-              id="email" 
-              style="padding-left:20px;"
-              required />
+                placeholder="Email"
+                type="email"
+                name="email"
+                id="email"
+                style="padding-left: 20px"
+                value="<%= locals.oldData ? oldData.email : null %>"
+              />
+              <div>
+                <% if(locals.errors && errors.email) { %>
+                <p><%= errors.email.msg %></p>
+                <% } %>
+              </div>
             </div>
           </div>
-
           <div class="form-field">
             <div class="data">
-          
-              <input 
-              placeholder="Contraseña"
-              type="password" 
-              name="password" 
-              id="password" 
-              style="padding-left:20px;"
-              required />
-            </div>
-          </div>
-        
-          <div class="form-field">
-            <div class="data">
-             
               <input
-              placeholder="Confirmar Contraseña"
+                placeholder="Contraseña"
+                type="password"
+                name="password"
+                id="password"
+                style="padding-left: 20px"
+                value="<%= locals.oldData ? oldData.password : null %>"
+              />
+              <div>
+                <% if(locals.errors && errors.password) { %>
+                <p><%= errors.password.msg %></p>
+                <% } %>
+              </div>
+            </div>
+          </div>
+          <div class="form-field">
+            <div class="data">
+              <input
+                placeholder="Confirmar Contraseña"
                 type="password"
                 name="confirmPassword"
                 id="confirmPassword"
-                style="padding-left:20px;"
-                required
+                style="padding-left: 20px"
+                value="<%= locals.oldData ? oldData.confirmPassword : null %>"
+              />
+              <div>
+                <% if(locals.errors && errors.confirmPassword) { %>
+                <p><%= errors.confirmPassword.msg %></p>
+                <% } %>
+              </div>
+            </div>
+          </div>
+          <div class="form-field">
+            <div class="data">
+              <label for="image">Subir imagen de perfil</label>
+              <input
+                placeholder="Subir imagen de perfil"
+                type="file"
+                name="image"
+                id="image"
+                accept="image/png, .jpeg, .jpg, image/gif"
+                style="padding-left: 20px"
               />
             </div>
           </div>
-    
           <h4 class="registerTitle">Domicilio</h4>
-        
           <div class="form-field">
             <div class="data">
-          
-              <input 
-              placeholder="Dirección"
-              type="text" 
-              name="address" 
-              id="address" 
-              style="padding-left:20px;"
-              required />
-            </div>
-          </div>
-        
-          <div class="form-field">
-            <div class="data">
-              
-              <input 
-              placeholder="Localidad"
-              type="text" 
-              name="location" 
-              id="location" 
-              style="padding-left:20px;"
-              required />
-            </div>
-          </div>
-        
-          <div class="form-field">
-            <div class="data">
-             
               <input
-              placeholder="C.P"
+                placeholder="Dirección"
+                type="text"
+                name="address"
+                id="address"
+                style="padding-left: 20px"
+                value="<%= locals.oldData ? oldData.address : null %>"
+              />
+              <div>
+                <% if(locals.errors && errors.address) { %>
+                <p><%= errors.address.msg %></p>
+                <% } %>
+              </div>
+            </div>
+          </div>
+          <div class="form-field">
+            <div class="data">
+              <input
+                placeholder="Localidad"
+                type="text"
+                name="location"
+                id="location"
+                style="padding-left: 20px"
+                value="<%= locals.oldData ? oldData.location : null %>"
+              />
+              <div>
+                <% if(locals.errors && errors.location) { %>
+                <p><%= errors.location.msg %></p>
+                <% } %>
+              </div>
+            </div>
+          </div>
+          <div class="form-field">
+            <div class="data">
+              <input
+                placeholder="C.P"
                 type="number"
                 name="cp"
                 id="cp"
-                style="padding-left:20px;"
-                required
+                style="padding-left: 20px"
+                value="<%= locals.oldData ? oldData.cp : null %>"
                 onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+              />
+              <div>
+                <% if(locals.errors && errors.cp) { %>
+                <p><%= errors.cp.msg %></p>
+                <% } %>
+              </div>
+            </div>
+          </div>
+          <div class="form-field">
+            <div class="data">
+              <input
+                placeholder="Provincia"
+                type="text"
+                name="province"
+                id="province"
+                style="padding-left: 20px"
+                value="<%= locals.oldData ? oldData.province : null %>"
+              />
+              <div>
+                <% if(locals.errors && errors.province) { %>
+                <p><%= errors.province.msg %></p>
+                <% } %>
+              </div>
+            </div>
+          </div>
+          <div class="form-field">
+            <div class="data">
+              <input
+                placeholder="País"
+                type="text"
+                name="country"
+                id="country"
+                style="padding-left: 20px"
+                value="<%= locals.oldData ? oldData.country : null %>"
+              />
+              <div>
+                <% if(locals.errors && errors.country) { %>
+                <p><%= errors.country.msg %></p>
+                <% } %>
+              </div>
+            </div>
+          </div>
+          <div class="form-field">
+            <div class="data">
+              <input
+                placeholder="Especificaciones para la entrega"
+                type="text"
+                name="specification"
+                id="specification"
+                style="padding-left: 20px"
               />
             </div>
           </div>
-        
-          <div class="form-field">
-            <div class="data">
-              
-              <input 
-              placeholder="Provincia"
-              type="text" 
-              name="province" 
-              id="province" 
-              style="padding-left:20px;"
-              required />
-            </div>
-          </div>
-
-          <div class="form-field">
-            <div class="data">
-              
-              <input 
-              placeholder="País"
-              type="text" 
-              name="country" 
-              id="country" 
-              style="padding-left:20px;"
-              required />
-            </div>
-          </div>
-        
-          <div class="form-field">
-            <div class="data">
-             
-              
-              <input 
-              placeholder="Especificaciones para la entrega"
-              type="text" 
-              name="specification" 
-              id="specification" 
-              style="padding-left:20px;"/>
-            </div>
-          </div>
-                
           <div class="form-field">
             <div class="data-checkbox">
               <label for="notify">Mandar notificaciones</label>
-              <input 
-              type="checkbox" 
-              name="notify" 
-              id="notify" 
-              value="notify" />
+              <input type="checkbox" name="notify" id="notify" value="notify" />
             </div>
           </div>
-        
           <div class="button-form">
             <button type="submit">Crear cuenta</button>
           </div>
         </form>
-      </div class="registerForm">
+      </div>
     </main>
-
     <%- include("../partials/footer") %>
   </body>
 </html>

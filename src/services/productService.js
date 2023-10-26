@@ -1,6 +1,6 @@
 const db = require("../data/db");
 const fs = require("fs");
-const path = require("path")
+const path = require("path");
 
 /************* Funciones de uso local(este mismo archivo) ****************/
 
@@ -30,9 +30,8 @@ const formatProductsPrices = function (products) {
   return products.map((product) => formatProductPrices(product));
 };
 
-
-function deleteImage(image){
-  fs.unlinkSync(path.join(__dirname, "../../public/img/products/" + image))
+function deleteImage(image) {
+  fs.unlinkSync(path.join(__dirname, "../../public/img/products/" + image));
 }
 
 /* Terminan funcion de uso local */
@@ -85,25 +84,34 @@ const productServices = {
       .filter(
         (product) => product.category == categoryProduct && product.id != id
       );
-
     return formatProductsPrices(products);
   },
 
-  createProduct: function (product) {
+  createProduct: function (dataProduct) {
+    const product = {
+      name: dataProduct.body.name,
+      shortName: dataProduct.body.shortName,
+      brand: dataProduct.body.brand,
+      price: Number(dataProduct.body.price),
+      discount: Number(dataProduct.body.discount),
+      preferentialPrice: Number(dataProduct.body.preferentialPrice),
+      mount: Number(dataProduct.body.mount),
+      category: dataProduct.body.category,
+      image: dataProduct.file ? dataProduct.file.filename : "defaultImg.jpg",
+      description: dataProduct.body.description,
+    };
     db.products.create(product);
   },
 
-  updateProduct: function (id, product,file) {
-    db.products.update(id, product,file);
+  updateProduct: function (id, product, file) {
+    db.products.update(id, product, file);
   },
 
-  deleteProduct: function(id){
-    
+  deleteProduct: function (id) {
     const { image } = db.products.findById(id);
-     deleteImage(image);
+    deleteImage(image);
     db.products.delete(id);
   },
-    
 };
 
 module.exports = productServices;
