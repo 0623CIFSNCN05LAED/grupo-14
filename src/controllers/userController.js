@@ -40,6 +40,10 @@ const userController = {
       user: req.session.userLogged,
     });
   },
+  logout: (req, res) => {
+    req.session.destroy();
+    return res.redirect("/");
+  },
   registerCf: (req, res) => {
     res.render("users/registerCf");
   },

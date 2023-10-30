@@ -23,6 +23,9 @@ router.post("/login", userController.loginProcess);
 /*************** User profile ******************/
 router.get("/profile", authMiddleware, userController.profile);
 
+/*************** Logout ******************/
+router.get("/logout", userController.logout);
+
 /*************** Register CF ******************/
 router.get("/registerCf", guestMiddleware, userController.registerCf);
 router.post(
