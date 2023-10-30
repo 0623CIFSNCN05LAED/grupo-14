@@ -1,20 +1,19 @@
 [
   {
-    "id": "3c84c704-e660-4a5a-b167-3d5225dad184",
-    "name": "Messi",
-    "lastName": "white",
-    "dni": "2332432",
-    "tel": "324324",
-    "email": "pp@gmail.com",
-    "password": "234243",
-    "image": "image-1697554236967.png",
-    "address": "9 de julio",
-    "location": "pinamar",
-    "cp": "32",
-    "province": "formosa",
+    "id": "0d5acd55-cbd2-47a1-8875-3f336b092e79",
+    "name": "Lionel",
+    "lastName": "Messi",
+    "dni": "3232",
+    "tel": "231",
+    "email": "messi@gmail.com",
+    "password": "$2a$10$UJzexxMwyuF8mrmT9oJ0EuupuLUfAjbStwSQ4E7sY06klLuqT2NLm",
+    "address": "eqw",
+    "location": "wqe",
+    "cp": "12",
+    "province": "wqe",
     "country": "argentina",
-    "specification": "al lado venden falopa",
-    "notify": "notify",
+    "specification": "",
+    "image": "image-1698691166378.jpg",
     "category": "consumidorFinal"
   }
 ]

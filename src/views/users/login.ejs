@@ -9,7 +9,7 @@
     <%- include('../partials/headerCf') %>
 
     <main class="login">
-      <form class="form-login">
+      <form class="form-login" action="/users/login" method="post">
         <div>
           <h3><i class="fa-solid fa-user" id="userImage"></i></h3>
           <p>
@@ -17,13 +17,18 @@
               <i class="fa-solid fa-user iconLogin"></i>
               <input
                 type="text"
-                name="user"
+                name="email"
                 value=""
-                placeholder="Usuario"
-                id="username"
+                placeholder="correo electrónico"
+                id="email"
               />
             </label>
           </p>
+          <div>
+            <% if(locals.errors && errors.email) { %>
+            <p><%= errors.email.msg %></p>
+            <% } %>
+          </div>
           <p>
             <label>
               <i class="fa-solid fa-lock iconLogin"></i>
@@ -36,6 +41,11 @@
               />
             </label>
           </p>
+          <div>
+            <% if(locals.errors && errors.password) { %>
+            <p><%= errors.password.msg %></p>
+            <% } %>
+          </div>
 
           <p>
             <input type="checkbox" name="remember me" id="checkboxLogin" />
@@ -46,12 +56,14 @@
           </p>
         </div>
         <p>
-          <input
+          <!--   <input
             type="button"
             name="login"
             value="Ingresar"
             class="buttonLogin"
           />
+         -->
+          <button type="submit" class="buttonLogin">Ingresar</button>
         </p>
         <p>
           <a href="create account" class="createAccount">Registrarse</a>
