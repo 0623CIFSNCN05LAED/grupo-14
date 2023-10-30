@@ -9,20 +9,22 @@ const userController = require("../controllers/userController");
 const uploadImgUser = require("../middlewares/multerUser");
 const registerMiddlewareCf = require("../middlewares/registerMiddlewareCf");
 const registerMiddlewareM = require("../middlewares/registerMiddlewareM");
+const guestMiddleware = require("../middlewares/guestMiddleware");
+const authMiddleware = require("../middlewares/authMiddleware");
 
 /*************** Validations require ******************/
 const registerValidationCf = require("../validations/registerValidationCf");
 const registerValidationM = require("../validations/registerValidationM");
 
 /*************** Login form ******************/
-router.get("/login", userController.login);
+router.get("/login", guestMiddleware, userController.login);
 router.post("/login", userController.loginProcess);
 
 /*************** User profile ******************/
-router.get("/profile", userController.profile);
+router.get("/profile", authMiddleware, userController.profile);
 
 /*************** Register CF ******************/
-router.get("/registerCf", userController.registerCf);
+router.get("/registerCf", guestMiddleware, userController.registerCf);
 router.post(
   "/",
   uploadImgUser.single("image"),
@@ -32,7 +34,11 @@ router.post(
 );
 
 /*************** Register M ******************/
-router.get("/registerMayorista", userController.registerMayorista);
+router.get(
+  "/registerMayorista",
+  guestMiddleware,
+  userController.registerMayorista
+);
 router.post(
   "/M",
   uploadImgUser.single("image"),
