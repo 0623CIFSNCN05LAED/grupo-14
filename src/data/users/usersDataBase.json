@@ -34,5 +34,40 @@
     "specification": "dadsds",
     "image": "userDefault.png",
     "category": "consumidorFinal"
+  },
+  {
+    "id": "987835ad-1a6a-40d3-91de-d9e37a1d3f7a",
+    "name": "Messi",
+    "lastName": "dasds",
+    "dni": "321",
+    "tel": "321",
+    "email": "mati_6_7@live.com.ar",
+    "password": "$2a$10$XJkVKDV3mXfk1Bgk4QHwk.X977odyU7etrRaGQbTge6sPl3dH5YYW",
+    "confirmPassword": "$2a$10$4x1ogD5cng6sqyp9bYrFOOx/9mSIBNwnXm9D6vP9yFCvHRLMi6XFC",
+    "address": "9 de julio",
+    "location": "pinamar",
+    "cp": "213",
+    "province": "formosa",
+    "country": "argentina",
+    "specification": "",
+    "image": "userDefault.png",
+    "category": "consumidorFinal"
+  },
+  {
+    "id": "f8860739-ab61-491a-9072-f232406516c4",
+    "name": "sd",
+    "lastName": "23",
+    "dni": "213",
+    "tel": "132",
+    "email": "asd@gmail.com",
+    "password": "$2a$10$kCXz.OfGMNGaMoajSxfUHeV.sdwepzJbR1p9FZQCuUhYjxJkyetFW",
+    "address": "9 de julio",
+    "location": "pinamar",
+    "cp": "321",
+    "province": "32",
+    "country": "argentina",
+    "specification": "",
+    "image": "image-1698684557110.png",
+    "category": "consumidorFinal"
   }
 ]

@@ -17,6 +17,10 @@ const registerValidationM = require("../validations/registerValidationM");
 /*************** Login form ******************/
 router.get("/login", userController.login);
 router.post("/login", userController.loginProcess);
+
+/*************** User profile ******************/
+router.get("/profile", userController.profile);
+
 /*************** Register CF ******************/
 router.get("/registerCf", userController.registerCf);
 router.post(

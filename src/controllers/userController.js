@@ -14,11 +14,31 @@ const userController = {
         req.body.password,
         userToLogin.password
       );
-      console.log(isOkThePassword);
       if (isOkThePassword) {
-        return res.send("Ok puedes ingresar");
+        delete userToLogin.password;
+        req.session.userLogged = userToLogin;
+        return res.redirect("/users/profile");
       }
+      return res.render("users/login", {
+        errors: {
+          password: {
+            msg: "Las credenciales son invalidas",
+          },
+        },
+      });
     }
+    return res.render("users/login", {
+      errors: {
+        email: {
+          msg: "No se encuentra este email en nuestra base de datos",
+        },
+      },
+    });
+  },
+  profile: (req, res) => {
+    res.render("users/userProfile", {
+      user: req.session.userLogged,
+    });
   },
   registerCf: (req, res) => {
     res.render("users/registerCf");

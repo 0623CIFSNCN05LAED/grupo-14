@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head", {title: 'Inicio de sesión'}) %>
+
+    <link rel="stylesheet" href="/css/login.css" />
+  </head>
+
+  <body>
+    <%- include('../partials/headerCf') %>
+    <main>
+      <div>
+        <p>Imagen de usuario</p>
+        <img src="/img/users/<%= user.image %>" alt="avatar" />
+      </div>
+      <div>
+        <h2><%= user.name %></h2>
+      </div>
+      <div>
+        <h2><%= user.lastName %></h2>
+      </div>
+    </main>
+    <%- include('../partials/footer') %>
+  </body>
+</html>

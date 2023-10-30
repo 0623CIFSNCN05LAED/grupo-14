@@ -24,6 +24,11 @@
               />
             </label>
           </p>
+          <div>
+            <% if(locals.errors && errors.email) { %>
+            <p><%= errors.email.msg %></p>
+            <% } %>
+          </div>
           <p>
             <label>
               <i class="fa-solid fa-lock iconLogin"></i>
@@ -36,6 +41,11 @@
               />
             </label>
           </p>
+          <div>
+            <% if(locals.errors && errors.password) { %>
+            <p><%= errors.password.msg %></p>
+            <% } %>
+          </div>
 
           <p>
             <input type="checkbox" name="remember me" id="checkboxLogin" />

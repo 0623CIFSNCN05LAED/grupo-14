@@ -14,22 +14,22 @@ const userServices = {
   },
 
   createUserCf: function (dataUser) {
+    delete dataUser.body.confirmPassword;
     const user = {
       id: uuidv4(),
       ...dataUser.body,
       password: bcrypt.hashSync(dataUser.body.password, 10),
-      confirmPassword: bcrypt.hashSync(dataUser.body.confirmPassword, 10),
       image: dataUser.file ? dataUser.file.filename : "userDefault.png",
       category: "consumidorFinal",
     };
     db.users.create(user);
   },
   createUserM: function (dataUser) {
+    delete dataUser.body.confirmPassword;
     const user = {
       id: uuidv4(),
       ...dataUser.body,
       password: bcrypt.hashSync(dataUser.body.password, 10),
-      confirmPassword: bcrypt.hashSync(dataUser.body.confirmPassword, 10),
       image: dataUser.file ? dataUser.file.filename : "userDefault.png",
       category: "mayorista",
     };
