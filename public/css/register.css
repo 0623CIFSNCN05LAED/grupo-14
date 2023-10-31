@@ -33,14 +33,6 @@
     margin-left: 30px;
 }
 
-
-
-
-
-
-
-
- 
  .data input, .data select{
      
      font-family: inherit;
@@ -56,11 +48,11 @@
     
      background-color: transparent;
      border-radius: 8px;
-     border: #e68c3a 2px solid;
+     border: #6f6f6f 2px solid;
      margin-top: 20px;
      padding: 10px 20px ;
      font-size: 17px;
-     color: #e68c3a;
+     color: #6f6f6f;
      cursor: pointer;
      transition: all 400ms;
      /* transform: rotate(-1.5deg); */
@@ -73,7 +65,7 @@
    form button:hover,
    form button:focus {
      outline: none;
-     background: #ff8222;
+     background: #6f6f6f;
      color: #fff;
    }
  
