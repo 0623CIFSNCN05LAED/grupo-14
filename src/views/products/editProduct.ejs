@@ -13,33 +13,39 @@
         <form class="form-newProduct" action="/products/<%= product.id %>?_method=put" method="post" enctype="multipart/form-data">
           <h2><%= product.shortName %></h2>
 
-          <div class="inputGroup">
-            <input type="text" name="name" id="name" class="inputGroupInput" value="<%= product.name %>" required>
-            <label for="name" class="inputGroupLabel">Nombre del producto</label>
+          <div class="side">
+            <div class="inputGroup name">
+              <input type="text" name="name" id="name" class="inputGroupInput" value="<%= product.name %>" required>
+              <label for="name" class="inputGroupLabel">Nombre del producto</label>
+            </div>
+            <div class="inputGroup">
+              <input type="text" name="shortName" id="shortName" class="inputGroupInput" value="<%= product.shortName %>" required>
+              <label for="shortName" class="inputGroupLabel">Producto abreviado</label>
+            </div>
           </div>
-          <div class="inputGroup">
-            <input type="text" name="shortName" id="shortName" class="inputGroupInput" value="<%= product.shortName %>" required>
-            <label for="shortName" class="inputGroupLabel">Producto abreviado</label>
-          </div>
-          <div class="inputGroup">
+          <div class="inputGroup brand">
             <input type="text" name="brand" id="brand" class="inputGroupInput" value="<%= product.brand %>" required>
             <label for="brand" class="inputGroupLabel">Marca</label>
           </div>
-          <div class="inputGroup">
-            <input type="number" name="price" id="price" class="inputGroupInput" value="<%= product.price %>" required>
-            <label for="price" class="inputGroupLabel">Precio minorista</label>
+          <div class="side">
+            <div class="inputGroup inputNumber">
+              <input type="number" name="price" id="price" class="inputGroupInput" value="<%= product.price %>" required>
+              <label for="price" class="inputGroupLabel">Precio minorista</label>
+            </div>
+            <div class="inputGroup inputNumber">
+              <input type="number" name="discount" id="discount" class="inputGroupInput" value="<%= product.discount %>" required>
+              <label for="discount" class="inputGroupLabel">% OFF</label>
+            </div>
           </div>
-          <div class="inputGroup">
-            <input type="number" name="discount" id="discount" class="inputGroupInput" value="<%= product.discount %>" required>
-            <label for="discount" class="inputGroupLabel">% OFF</label>
-          </div>
-          <div class="inputGroup">
-            <input type="number" name="preferentialPrice" id="preferentialPrice" class="inputGroupInput" value="<%= product.preferentialPrice %>" required>
-            <label for="preferentialPrice" class="inputGroupLabel">Precio mayorista</label>
-          </div>
-          <div class="inputGroup">
-            <input type="number" name="mount" id="mount" class="inputGroupInput" value="<%= product.mount %>" required>
-            <label for="mount" class="inputGroupLabel">Stock</label>
+          <div class="side">
+            <div class="inputGroup inputNumber">
+              <input type="number" name="preferentialPrice" id="preferentialPrice" class="inputGroupInput" value="<%= product.preferentialPrice %>" required>
+              <label for="preferentialPrice" class="inputGroupLabel">Precio mayorista</label>
+            </div>
+            <div class="inputGroup inputNumber">
+              <input type="number" name="mount" id="mount" class="inputGroupInput" value="<%= product.mount %>" required>
+              <label for="mount" class="inputGroupLabel">Stock</label>
+            </div>
           </div>
           <div class="inputGroup">
             <label for="category" id="categoryLabel" class="p-newProduct">Categoria:</label>
@@ -53,7 +59,6 @@
                 <option value="limpiadorDePiso" <%= product.category === "limpiadorDePiso" ? "selected" : ""%> >Limpiador de piso</option>
               </select> 
           </div>
-            <!-- cuando vamos a editar en el select aparece la ultima opcion, ARREGLAR -->
           <div class="inputGroup">
             <label for="image" class="p-newProduct">Seleccionar Imagen de Producto</label>
             <input class="inputGroupInput" type="file" name="image" id="image" accept="image/png, .jpeg, .jpg, image/gif"/>
