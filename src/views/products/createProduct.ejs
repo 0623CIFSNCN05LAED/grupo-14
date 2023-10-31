@@ -10,71 +10,75 @@
 
     <main>
       <div class="div-newProduct">
-        <section class="form-newProduct">
+        <form class="form-newProduct" action="/products" method="post" enctype="multipart/form-data">
           <h2>Nuevo Producto</h2>
-
-          <form action="/products" method="post" enctype="multipart/form-data">
+          <div class="side">
+            <div class="inputGroup name">
+              <input type="text" name="name" id="name" class="inputGroupInput" value="<%= locals.oldData ? oldData.name : null %>">
+              <label for="name" class="inputGroupLabel">Nombre del producto</label>
+              <div>
+                <% if(locals.errors && errors.name) { %>
+                <p><%= errors.name.msg %></p>
+                <% } %>
+              </div>
+            </div>
             <div class="inputGroup">
-            <input type="text" name="name" id="name" class="inputGroupInput" value="<%= locals.oldData ? oldData.name : null %>">
-            <label for="name" class="inputGroupLabel">Nombre del producto</label>
-            <div>
-              <% if(locals.errors && errors.name) { %>
-                    <p><%= errors.name.msg %></p>
-              <% } %>
+              <input type="text" name="shortName" id="shortName" class="inputGroupInput" value="<%= locals.oldData ? oldData.shortName : null %>">
+              <label for="shortName" class="inputGroupLabel">Producto abreviado</label>
+              <div>
+                <% if(locals.errors && errors.shortName) { %>
+                <p><%= errors.shortName.msg %></p>
+                <% } %>
+              </div>
             </div>
           </div>
-          <div class="inputGroup">
-            <input type="text" name="shortName" id="shortName" class="inputGroupInput" value="<%= locals.oldData ? oldData.shortName : null %>">
-            <label for="shortName" class="inputGroupLabel">Producto abreviado</label>
-            <div>
-              <% if(locals.errors && errors.shortName) { %>
-                    <p><%= errors.shortName.msg %></p>
-              <% } %>
-            </div>
-          </div>
-          <div class="inputGroup">
+          <div class="inputGroup brand">
             <input type="text" name="brand" id="brand" class="inputGroupInput" value="<%= locals.oldData ? oldData.brand : null %>">
             <label for="brand" class="inputGroupLabel">Marca</label>
             <div>
               <% if(locals.errors && errors.brand) { %>
-                    <p><%= errors.brand.msg %></p>
+              <p><%= errors.brand.msg %></p>
               <% } %>
             </div>
           </div>
-          <div class="inputGroup">
-            <input type="number" name="price" id="price" class="inputGroupInput" value="<%= locals.oldData ? oldData.price : null %>">
-            <label for="price" class="inputGroupLabel">Precio minorista</label>
-            <div>
-              <% if(locals.errors && errors.price) { %>
-                    <p><%= errors.price.msg %></p>
-              <% } %>
+          <div class="side">
+            <div class="inputGroup inputNumber">
+              <input type="number" name="price" id="price" class="inputGroupInput" value="<%= locals.oldData ? oldData.price : null %>">
+              <label for="price" class="inputGroupLabel">Precio minorista</label>
+              <div>
+                <% if(locals.errors && errors.price) { %>
+                <p><%= errors.price.msg %></p>
+                <% } %>
+              </div>
+            </div>
+            <div class="inputGroup inputNumber">
+              <input type="number" name="discount" id="discount" class="inputGroupInput" value="<%= locals.oldData ? oldData.discount : null %>">
+              <label for="discount" class="inputGroupLabel">% OFF</label>
+              <div>
+                <% if(locals.errors && errors.discount) { %>
+                <p><%= errors.discount.msg %></p>
+                <% } %>
+              </div>
             </div>
           </div>
-          <div class="inputGroup">
-            <input type="number" name="discount" id="discount" class="inputGroupInput" value="<%= locals.oldData ? oldData.discount : null %>">
-            <label for="discount" class="inputGroupLabel">% OFF</label>
-            <div>
-              <% if(locals.errors && errors.discount) { %>
-                    <p><%= errors.discount.msg %></p>
-              <% } %>
+          <div class="side">
+            <div class="inputGroup inputNumber">
+              <input type="number" name="preferentialPrice" id="preferentialPrice" class="inputGroupInput" value="<%= locals.oldData ? oldData.preferentialPrice : null %>">
+              <label for="preferentialPrice" class="inputGroupLabel">Precio mayorista</label>
+              <div>
+                <% if(locals.errors && errors.preferentialPrice) { %>
+                <p><%= errors.preferentialPrice.msg %></p>
+                <% } %>
+              </div>
             </div>
-          </div>
-          <div class="inputGroup">
-            <input type="number" name="preferentialPrice" id="preferentialPrice" class="inputGroupInput" value="<%= locals.oldData ? oldData.preferentialPrice : null %>">
-            <label for="preferentialPrice" class="inputGroupLabel">Precio mayorista</label>
-            <div>
-              <% if(locals.errors && errors.preferentialPrice) { %>
-                    <p><%= errors.preferentialPrice.msg %></p>
-              <% } %>
-            </div>
-          </div>
-          <div class="inputGroup">
-            <input type="number" name="mount" id="mount" class="inputGroupInput" value="<%= locals.oldData ? oldData.mount : null %>">
-            <label for="mount" class="inputGroupLabel">Stock</label>
-            <div>
-              <% if(locals.errors && errors.mount) { %>
-                    <p><%= errors.mount.msg %></p>
-              <% } %>
+            <div class="inputGroup inputNumber">
+              <input type="number" name="mount" id="mount" class="inputGroupInput" value="<%= locals.oldData ? oldData.mount : null %>">
+              <label for="mount" class="inputGroupLabel">Stock</label>
+              <div>
+                <% if(locals.errors && errors.mount) { %>
+                <p><%= errors.mount.msg %></p>
+                <% } %>
+              </div>
             </div>
           </div>
           <div class="inputGroup">
@@ -90,35 +94,30 @@
             </select> 
             <div>
               <% if(locals.errors && errors.category) { %>
-                    <p><%= errors.category.msg %></p>
+              <p><%= errors.category.msg %></p>
               <% } %>
             </div>
           </div>
-            <!-- sold va a ser resultado de una función que muestre la cantidad vendida -->
-            <!-- bestseller tiene que ser una función que compare las ventas de los productos -->
           <div class="inputGroup">
             <label for="image" class="p-newProduct">Seleccionar Imagen de Producto</label>
             <input class="inputGroupInput" type="file" name="image" id="image" accept="image/png, .jpeg, .jpg, image/gif"/>
             <div>
               <% if(locals.errors && errors.image) { %>
-                    <p><%= errors.image.msg %></p>
+              <p><%= errors.image.msg %></p>
               <% } %>
             </div>
           </div>
-
           <div class="inputGroup">
             <label for="description" class="p-newProduct">Descripción</label>
             <textarea id="description" name="description" rows="10" cols="44" value="<%= locals.oldData ? oldData.description : null %>"></textarea>
             <div>
               <% if(locals.errors && errors.description) { %>
-                    <p><%= errors.description.msg %></p>
+              <p><%= errors.description.msg %></p>
               <% } %>
             </div>
           </div>
           <button type="submit" class="createProductButton">Crear Producto</button>
-          </form>
-        </section>
-
+        </form>
       </div>
     </main>
 
