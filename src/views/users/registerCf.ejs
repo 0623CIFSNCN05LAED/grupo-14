@@ -7,81 +7,84 @@
   <body>
     <%- include('../partials/headerCf') %>
     <main>
-      <div class="div-newProduct">
-        <h2>CONSUMIDOR FINAL</h2>
+      <div class="divNewUser">
         <form
-          class="form-newProduct"
+          class="formNewUser"
           action="/users"
           method="post"
           enctype="multipart/form-data"
         >
-          <h4 class="p-newProduct">Información personal</h4>
-
-          <div class="inputGroup">
-            <input
-              type="text"
-              name="name"
-              id="name"
-              class="inputGroupInput"
-              value="<%= locals.oldData ? oldData.name : null %>"
-              pattern="[\w\s]+"
-            />
-            <label for="name" class="inputGroupLabel">Nombre</label>
-            <div>
-              <% if(locals.errors && errors.name) { %>
-              <p><%= errors.name.msg %></p>
-              <% } %>
+          <h2>CONSUMIDOR FINAL</h2>
+          <h4 class="subtitle">Información personal</h4>
+          <div class="side">
+            <div class="inputGroup dataSide">
+              <input
+                type="text"
+                name="name"
+                id="name"
+                class="inputGroupInput"
+                value="<%= locals.oldData ? oldData.name : null %>"
+                pattern="[\w\s]+"
+              />
+              <label for="name" class="inputGroupLabel">Nombre</label>
+              <div class="error">
+                <% if(locals.errors && errors.name) { %>
+                <p><%= errors.name.msg %></p>
+                <% } %>
+              </div>
+            </div>
+            <div class="inputGroup dataSide">
+              <input
+                type="text"
+                name="lastName"
+                id="lastName"
+                class="inputGroupInput"
+                value="<%= locals.oldData ? oldData.lastName : null %>"
+                pattern="[\w\s]+"
+              />
+              <label for="lastName" class="inputGroupLabel">Apellido</label>
+              <div class="error">
+                <% if(locals.errors && errors.lastName) { %>
+                <p><%= errors.lastName.msg %></p>
+                <% } %>
+              </div>
             </div>
           </div>
 
-          <div class="inputGroup">
-            <input
-              type="text"
-              name="lastName"
-              id="lastName"
-              class="inputGroupInput"
-              value="<%= locals.oldData ? oldData.lastName : null %>"
-              pattern="[\w\s]+"
-            />
-            <label for="lastName" class="inputGroupLabel">Apellido</label>
-            <div>
-              <% if(locals.errors && errors.lastName) { %>
-              <p><%= errors.lastName.msg %></p>
-              <% } %>
+          <div class="side">
+            <div class="inputGroup dataSide">
+              <input
+                type="number"
+                name="dni"
+                id="dni"
+                class="inputGroupInput"
+                value="<%= locals.oldData ? oldData.dni : null %>"
+                onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+              />
+              <label for="dni" class="inputGroupLabel">DNI</label>
+              <div class="error">
+                <% if(locals.errors && errors.dni) { %>
+                <p><%= errors.dni.msg %></p>
+                <% } %>
+              </div>
             </div>
-          </div>
-
-          <div class="inputGroup">
-            <input
-              type="number"
-              name="dni"
-              id="dni"
-              class="inputGroupInput"
-              value="<%= locals.oldData ? oldData.dni : null %>"
-              onkeypress="return event.charCode >= 48 && event.charCode <= 57"
-            />
-            <label for="dni" class="inputGroupLabel">DNI</label>
-            <div>
-              <% if(locals.errors && errors.dni) { %>
-              <p><%= errors.dni.msg %></p>
-              <% } %>
-            </div>
-          </div>
-
-          <div class="inputGroup">
-            <input
-              type="number"
-              name="tel"
-              id="tel"
-              class="inputGroupInput"
-              value="<%= locals.oldData ? oldData.tel : null %>"
-              onkeypress="return event.charCode >= 48 && event.charCode <= 57"
-            />
-            <label for="tel" class="inputGroupLabel">Teléfono / Celular</label>
-            <div>
-              <% if(locals.errors && errors.tel) { %>
-              <p><%= errors.tel.msg %></p>
-              <% } %>
+            <div class="inputGroup dataSide">
+              <input
+                type="number"
+                name="tel"
+                id="tel"
+                class="inputGroupInput"
+                value="<%= locals.oldData ? oldData.tel : null %>"
+                onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+              />
+              <label for="tel" class="inputGroupLabel"
+                >Teléfono / Celular</label
+              >
+              <div class="error">
+                <% if(locals.errors && errors.tel) { %>
+                <p><%= errors.tel.msg %></p>
+                <% } %>
+              </div>
             </div>
           </div>
 
@@ -94,49 +97,50 @@
               value="<%= locals.oldData ? oldData.email : null %>"
             />
             <label for="email" class="inputGroupLabel">Email</label>
-            <div>
+            <div class="error">
               <% if(locals.errors && errors.email) { %>
               <p><%= errors.email.msg %></p>
               <% } %>
             </div>
           </div>
 
-          <div class="inputGroup">
-            <input
-              type="password"
-              name="password"
-              id="password"
-              class="inputGroupInput"
-              value="<%= locals.oldData ? oldData.password : null %>"
-            />
-            <label for="password" class="inputGroupLabel">Contraseña</label>
-            <div>
-              <% if(locals.errors && errors.password) { %>
-              <p><%= errors.password.msg %></p>
-              <% } %>
+          <div class="side">
+            <div class="inputGroup dataSide">
+              <input
+                type="password"
+                name="password"
+                id="password"
+                class="inputGroupInput"
+                value="<%= locals.oldData ? oldData.password : null %>"
+              />
+              <label for="password" class="inputGroupLabel">Contraseña</label>
+              <div class="error">
+                <% if(locals.errors && errors.password) { %>
+                <p><%= errors.password.msg %></p>
+                <% } %>
+              </div>
+            </div>
+            <div class="inputGroup dataSide">
+              <input
+                type="password"
+                name="confirmPassword"
+                id="confirmPassword"
+                class="inputGroupInput"
+                value="<%= locals.oldData ? oldData.confirmPassword : null %>"
+              />
+              <label for="confirmPassword" class="inputGroupLabel"
+                >Confirmar Contraseña</label
+              >
+              <div class="error">
+                <% if(locals.errors && errors.confirmPassword) { %>
+                <p><%= errors.confirmPassword.msg %></p>
+                <% } %>
+              </div>
             </div>
           </div>
 
           <div class="inputGroup">
-            <input
-              type="password"
-              name="confirmPassword"
-              id="confirmPassword"
-              class="inputGroupInput"
-              value="<%= locals.oldData ? oldData.confirmPassword : null %>"
-            />
-            <label for="confirmPassword" class="inputGroupLabel"
-              >Confirmar Contraseña</label
-            >
-            <div>
-              <% if(locals.errors && errors.confirmPassword) { %>
-              <p><%= errors.confirmPassword.msg %></p>
-              <% } %>
-            </div>
-          </div>
-
-          <div class="inputGroup">
-            <label for="image" class="p-newProduct"
+            <label for="image" class="subtitle"
               >Seleccionar Imagen de Producto</label
             >
             <input
@@ -148,91 +152,95 @@
             />
           </div>
 
-          <h4 class="p-newProduct">Domicilio</h4>
+          <h4 class="subtitle">Domicilio</h4>
 
-          <div class="inputGroup">
-            <input
-              type="text"
-              name="address"
-              id="address"
-              class="inputGroupInput"
-              value="<%= locals.oldData ? oldData.address : null %>"
-            />
-            <label for="address" class="inputGroupLabel">Dirección</label>
-            <div>
-              <% if(locals.errors && errors.address) { %>
-              <p><%= errors.address.msg %></p>
-              <% } %>
+          <div class="side">
+            <div class="inputGroup homeSide">
+              <input
+                type="text"
+                name="address"
+                id="address"
+                class="inputGroupInput"
+                value="<%= locals.oldData ? oldData.address : null %>"
+              />
+              <label for="address" class="inputGroupLabel">Dirección</label>
+              <div class="error">
+                <% if(locals.errors && errors.address) { %>
+                <p><%= errors.address.msg %></p>
+                <% } %>
+              </div>
+            </div>
+
+            <div class="inputGroup homeSide">
+              <input
+                type="text"
+                name="location"
+                id="location"
+                class="inputGroupInput"
+                value="<%= locals.oldData ? oldData.location : null %>"
+              />
+              <label for="location" class="inputGroupLabel">Localidad</label>
+              <div class="error">
+                <% if(locals.errors && errors.location) { %>
+                <p><%= errors.location.msg %></p>
+                <% } %>
+              </div>
+            </div>
+
+            <div class="inputGroup cp">
+              <input
+                type="number"
+                name="cp"
+                id="cp"
+                class="inputGroupInput"
+                value="<%= locals.oldData ? oldData.cp : null %>"
+                onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+              />
+              <label for="location" class="inputGroupLabel">C.P</label>
+              <div class="error">
+                <% if(locals.errors && errors.cp) { %>
+                <p><%= errors.cp.msg %></p>
+                <% } %>
+              </div>
+            </div>
+          </div>
+
+          <div class="side">
+            <div class="inputGroup dataSide">
+              <input
+                type="text"
+                name="province"
+                id="province"
+                class="inputGroupInput"
+                value="<%= locals.oldData ? oldData.province : null %>"
+              />
+              <label for="province" class="inputGroupLabel">Provincia</label>
+              <div class="error">
+                <% if(locals.errors && errors.province) { %>
+                <p><%= errors.province.msg %></p>
+                <% } %>
+              </div>
+            </div>
+
+            <div class="inputGroup dataSide">
+              <input
+                type="text"
+                name="country"
+                id="country"
+                class="inputGroupInput"
+                value="<%= locals.oldData ? oldData.country : null %>"
+              />
+              <label for="country" class="inputGroupLabel">País</label>
+              <div class="error">
+                <% if(locals.errors && errors.country) { %>
+                <p><%= errors.country.msg %></p>
+                <% } %>
+              </div>
             </div>
           </div>
 
           <div class="inputGroup">
-            <input
-              type="text"
-              name="location"
-              id="location"
-              class="inputGroupInput"
-              value="<%= locals.oldData ? oldData.location : null %>"
-            />
-            <label for="location" class="inputGroupLabel">Localidad</label>
-            <div>
-              <% if(locals.errors && errors.location) { %>
-              <p><%= errors.location.msg %></p>
-              <% } %>
-            </div>
-          </div>
-
-          <div class="inputGroup">
-            <input
-              type="number"
-              name="cp"
-              id="cp"
-              class="inputGroupInput"
-              value="<%= locals.oldData ? oldData.cp : null %>"
-              onkeypress="return event.charCode >= 48 && event.charCode <= 57"
-            />
-            <label for="location" class="inputGroupLabel">C.P</label>
-            <div>
-              <% if(locals.errors && errors.cp) { %>
-              <p><%= errors.cp.msg %></p>
-              <% } %>
-            </div>
-          </div>
-
-          <div class="inputGroup">
-            <input
-              type="text"
-              name="province"
-              id="province"
-              class="inputGroupInput"
-              value="<%= locals.oldData ? oldData.province : null %>"
-            />
-            <label for="province" class="inputGroupLabel">Provincia</label>
-            <div>
-              <% if(locals.errors && errors.province) { %>
-              <p><%= errors.province.msg %></p>
-              <% } %>
-            </div>
-          </div>
-
-          <div class="inputGroup">
-            <input
-              type="text"
-              name="country"
-              id="country"
-              class="inputGroupInput"
-              value="<%= locals.oldData ? oldData.country : null %>"
-            />
-            <label for="country" class="inputGroupLabel">País</label>
-            <div>
-              <% if(locals.errors && errors.country) { %>
-              <p><%= errors.country.msg %></p>
-              <% } %>
-            </div>
-          </div>
-
-          <div class="inputGroup">
-            <label for="specification" class="p-newProduct"
+            <label for="specification" class="subtitle"
               >Especificaciones para la entrega</label
             >
             <textarea

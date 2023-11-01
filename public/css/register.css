@@ -1,26 +1,27 @@
-.div-newProduct {
+.divNewUser {
   padding: 10px;
-  background-image: linear-gradient(to right, #243a76, #55a4da);
+  background-image: #fff;
 }
-.form-newProduct {
+
+.formNewUser {
   display: flex;
   flex-direction: column;
   width: 400px;
-  background: #24303c;
+  /* background: #24303c; */
   padding: 30px;
   margin: auto;
   border-radius: 5px;
   font-family: "Arial";
-  color: white;
+  color: #000;
   box-shadow: 7px 13px 37px #000;
   text-align: center;
   align-items: center;
 }
 
-.form-newProduct h2 {
+.formNewUser h2 {
   font-size: 30px;
   margin-bottom: 20px;
-  color: #fff;
+  color: #000;
 }
 
 .side {
@@ -35,7 +36,7 @@
 
 .inputGroupInput {
   font: inherit;
-  color: #fff;
+  color: #000;
   padding: 10px;
   border: none;
   border-radius: 4px;
@@ -43,7 +44,7 @@
   background-color: transparent;
   transition: outline-color 500ms;
   width: 100%;
-  margin-bottom: 28px;
+  /* margin-bottom: 28px; */
   font-size: 14px;
 }
 
@@ -52,7 +53,7 @@
   top: 0;
   left: 0;
   translate: 10px 10px;
-  color: #fff;
+  color: #000;
   transition: translate 500ms, scale 500ms;
 }
 
@@ -61,9 +62,14 @@
   padding-inline: 5px;
   translate: 10px -10px;
   scale: 0.8;
-  background-color: #24303c;
+  background-color: #fff;
 }
 /* Div contenedor de input y label (con animaciones) END */
+
+.error {
+  color: red;
+  padding: 10px 0 20px;
+}
 
 /* image input START */
 
@@ -78,7 +84,7 @@
 
 #specification {
   background-color: transparent;
-  color: #fff;
+  color: #000;
   border: none;
   border-radius: 4px;
   outline: 2px solid #243a76;
@@ -90,11 +96,10 @@
 
 /* textarea END */
 
-.p-newProduct {
+.subtitle {
   display: flex;
-  margin-top: 0px;
-  margin-bottom: 10px;
-  color: #fff;
+  margin: 20px;
+  color: #000;
   font-size: 20px;
   font-family: "Arial";
 }
@@ -118,30 +123,26 @@
 }
 
 @media (min-width: 560px) {
-  .form-newProduct {
+  .formNewUser {
     width: 85%;
     max-width: 1200px;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
   }
 
   .side {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
 
-  .name {
-    flex-basis: 160%;
-    padding-right: 10px;
+  .dataSide {
+    width: 48%;
   }
 
-  .brand {
-    flex-basis: 30%;
+  .homeSide {
+    width: 40%;
   }
 
-  .inputNumber {
-    flex-basis: 40%;
+  .cp {
+    width: 12%;
   }
 
   .createUserButton {
