@@ -36,16 +36,16 @@
             <div class="inputGroup dataSide">
               <input
                 type="number"
-                name="dni"
-                id="dni"
+                name="cuit"
+                id="cuit"
                 class="inputGroupInput"
-                value="<%= locals.oldData ? oldData.dni : null %>"
+                value="<%= locals.oldData ? oldData.cuit : null %>"
                 onkeypress="return event.charCode >= 48 && event.charCode <= 57"
               />
-              <label for="dni" class="inputGroupLabel">DNI</label>
+              <label for="dni" class="inputGroupLabel">CUIT</label>
               <div class="error">
-                <% if(locals.errors && errors.dni) { %>
-                <p><%= errors.dni.msg %></p>
+                <% if(locals.errors && errors.cuit) { %>
+                <p><%= errors.cuit.msg %></p>
                 <% } %>
               </div>
             </div>
