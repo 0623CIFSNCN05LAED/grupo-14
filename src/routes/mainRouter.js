@@ -6,7 +6,7 @@ const router = Router();
 const mainController = require("../controllers/mainController");
 
 /*************** Main Router *******************/
-router.get("/", mainController.homeMayorista); //aca va el url entre ''
+router.get("/", mainController.homeMayorista);
 router.get("/mayorista", mainController.homeMayorista);
 router.get("/cf", mainController.homeConsumidorFinal);
 
