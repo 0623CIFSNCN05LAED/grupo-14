@@ -146,7 +146,7 @@ select {
 
   .side {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
 
   .name {
@@ -154,12 +154,8 @@ select {
     padding-right: 10px;
   }
 
-  .brand {
-    flex-basis: 30%;
-  }
-
   .inputNumber {
-    flex-basis: 40%;
+    flex-basis: 48%;
   }
 
   .createProductButton {
