@@ -9,6 +9,7 @@ const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 const app = express();
 
 // ********* Middlewares *****************
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(
   express.urlencoded({ extended: false })
