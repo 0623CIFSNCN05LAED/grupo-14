@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
     const User = sequelize.define("User", {
         id: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING(255),
             primaryKey: true,
         },
         email: {
@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(255),
         },
         phoneNumber: {
-            type: DataTypes.STRING(20),
+            type: DataTypes.INTEGER,
         },
         notify: {
             type: DataTypes.BOOLEAN,
@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
         as: 'addresses',
     });
 
-    User.belongsToMany(models.UserAdmin, {
+    User.belongsTo(models.UserAdmin, {
         foreignKey: 'user_id',
         as: 'admin',
         scope: {
@@ -40,7 +40,7 @@ module.exports = (sequelize, DataTypes) => {
         },
     });
 
-    User.belongsToMany(models.UserCf, {
+    User.belongsTo(models.UserCf, {
         foreignKey: 'user_id',
         as: 'cf',
         scope: {
@@ -48,7 +48,7 @@ module.exports = (sequelize, DataTypes) => {
         },
     });
 
-    User.belongsToMany(models.UserMayorista, {
+    User.belongsTo(models.UserMayorista, {
         foreignKey: 'user_id',
         as: 'mayorista',
         scope: {
