@@ -5,7 +5,7 @@ module.exports = (sequelize,dataTypes)=>{
         type: dataTypes.INTEGER,
         primaryKey: true,
       },
-      name: dataTypes.STRING(100),
+      name: dataTypes.STRING(255),
     };
     const config = {
         tableName: "Categories",

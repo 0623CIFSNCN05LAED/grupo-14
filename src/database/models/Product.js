@@ -2,7 +2,7 @@ module.exports = (sequelize, dataTypes)=>{
     const alias = "Product";
     const cols = {
       id: {
-        type: dataTypes.INTEGER,
+        type: dataTypes.STRING(255),
         primaryKey: true,
       },
       name: dataTypes.STRING(255),
@@ -15,6 +15,9 @@ module.exports = (sequelize, dataTypes)=>{
       category_id: dataTypes.INTEGER,
       description: dataTypes.TEXT,
       brand_id: dataTypes.INTEGER,
+      sold: dataTypes.INTEGER,
+      bestSeller: dataTypes.BOOLEAN,
+      offer: dataTypes.BOOLEAN
     };
     const config= {
         tableName: "Products",
