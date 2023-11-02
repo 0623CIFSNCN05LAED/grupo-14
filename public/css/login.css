@@ -1,131 +1,120 @@
-.login {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-
-  background: linear-gradient(
-    to right,
-    #243a76,
-    #55a4da
-  ); /* PARA HACER GRADUACION DE COLOR DEL PRIMERO AL SEGUNDO */
-}
-
-.form-login {
+main {
   display: flex;
   flex-direction: column;
-  background-color: rgba(255, 255, 255,0.8);
-  text-align: center;
-  padding: 20px 25px;
-  box-shadow: 0 5px 10px rgba(71, 3, 6, 0.7);
-  border-radius: 10px;
-  
+  align-items: center;
+  background-color: black;
 }
 
-#username{
-    margin-bottom: 8px;
-    outline: none;
-    border: none;
-    color: #252525;
-    border-bottom: solid 1px  #ff8222;
-    padding: 0 5px;
-    font-size: 18px;
-    
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-#password{
-    outline: none;
-    border: none;
-    color: #252525;
-    border-bottom: solid 1px  #ff8222;
-    padding: 0 5px;
-    font-size: 18px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-}
-
-#userImage {
-    
-  font-size: 50px;
-  color: #213e60;
-  margin-right: 10px;
-  padding-bottom: 15px;
-}
-
-
-.iconLogin {
-  font-size: 20px;
-  color:  #ff8222;
-  margin-right: 10px;
-}
-
-
-#username input::placeholder {
-  color: rgba(37, 37, 37, 0.5);
-}
-
-
-#checkboxLogin {
-  padding: 5px;
-  margin: 5px;
-}
-
-#rememberLogin{
-    font-size: 15px;
-}
-
-#forgotPass {
-  font-size: 12px;
+.logo img {
+  width: 50%;
   padding: 10px;
 }
 
+.div-newProduct {
+  padding: 20px;
+  width: 60%;
+}
+
+.form-newProduct {
+  display: flex;
+  flex-direction: column;
+  background: #6f6f6f;
+  padding: 30px;
+  margin: auto;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+}
+
+/* Div contenedor de input y label (con animaciones) START */
+.inputGroup {
+  position: relative;
+  width: 100%;
+}
+
+.inputGroupInput {
+  font: inherit;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  outline: 2px solid #243a76;
+  background-color: transparent;
+  transition: outline-color 500ms;
+  width: 100%;
+  /*   margin-bottom: 10px; */
+  font-size: 14px;
+}
+
+.inputGroupLabel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  translate: 10px 10px;
+  color: #fff;
+  transition: translate 500ms, scale 500ms;
+}
+
+.inputGroupInput:focus + .inputGroupLabel,
+.inputGroupInput:valid + .inputGroupLabel {
+  padding-inline: 5px;
+  translate: 10px -10px;
+  scale: 0.8;
+  background-color: #6f6f6f;
+}
+/* Div contenedor de input y label (con animaciones) END */
+
+.error {
+  color: red;
+  padding: 10px 0 20px;
+}
 
 .buttonLogin {
-  color: #243a76;
-  background-color: transparent;
-  margin-top: 20px;
-  padding: 5px 35px 5px 35px;
-  cursor: pointer;
-  font-size: 20px;
-  border-radius: 8px;
-  border:   #243a76 2px solid;
-  transition: all 500ms;
-}
-
-.buttonLogin:hover {
-  background: linear-gradient(to right, #ff8222,#243a76, #ff8222);
-  color: #fff;
-}
-.createAccount{
-    color: #243a76;
-    display: flex;
-    justify-content: right;
-    font-size: 15px;
-    padding: 10px;
-}
-
-
-/* .createProductButton {
   width: 100%;
   background-color: transparent;
   border-radius: 8px;
-  border: #e68c3a 2px solid;
+  border: #243a76 2px solid;
   margin-top: 20px;
-  padding: 10px ;
+  padding: 10px;
   font-size: 17px;
-  color: #e68c3a;
+  color: #243a76;
   cursor: pointer;
   transition: all 400ms;
-
-  
 }
 
-.createProductButton:hover {
-  background-color:#e68c3a;
+.buttonLogin:hover {
+  background-color: #243a76;
   color: #fff;
 }
- */
 
-@media (min-width: 1280px) {
-  
+@media (min-width: 1290px) {
+  main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .logo img {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .form-newProduct {
+    width: 85%;
+    max-width: 1200px;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .buttonLogin {
+    width: 25%;
+  }
 }

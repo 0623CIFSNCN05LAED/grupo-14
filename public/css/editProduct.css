@@ -1,46 +1,45 @@
 .div-newProduct {
-    padding: 10px;
-    background-image: linear-gradient(
-        to right,
-        #243a76,
-        #55a4da
-      );;
-  }
-   .form-newProduct {
-    display: flex;
-    flex-direction: column;
-    width: 400px;
-    background: #24303c;
-    padding: 30px;    
-    margin: auto;
-    border-radius: 5px;
-    font-family: 'Arial';
-    color: white;
-    box-shadow: 7px 13px 37px #000;
-    text-align: center;
-    align-items: center;
-    
-  }
-  
-  .form-newProduct h2 {
-    font-size: 30px;
-    margin-bottom: 20px;
-    color: #fff;
-  }
-  
-  /* Div contenedor de input y label (con animaciones) START */
-.inputGroup{
+  padding: 10px;
+  background-image: white;
+}
+.form-newProduct {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  /* background: #24303c; */
+  padding: 30px;
+  margin: auto;
+  border-radius: 5px;
+  font-family: "Arial";
+  color: black;
+  box-shadow: 7px 13px 37px #000;
+  text-align: center;
+  align-items: center;
+}
+
+.form-newProduct h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.side {
+  width: 100%;
+}
+
+/* Div contenedor de input y label (con animaciones) START */
+.inputGroup {
   position: relative;
   width: 100%;
 }
 
-.inputGroupInput{
+.inputGroupInput {
   font: inherit;
-  color: #fff;
+  color: #000;
   padding: 10px;
   border: none;
   border-radius: 4px;
-  outline: 2px solid #e68c3a;
+  outline: 2px solid #243a76;
   background-color: transparent;
   transition: outline-color 500ms;
   width: 100%;
@@ -48,37 +47,36 @@
   font-size: 14px;
 }
 
-
-.inputGroupLabel{
+.inputGroupLabel {
   position: absolute;
   top: 0;
   left: 0;
-  translate: 10px 10px; 
-  color: #fff;
-  transition: translate 500ms, scale 500ms
+  translate: 10px 10px;
+  color: #000;
+  transition: translate 500ms, scale 500ms;
 }
 
-.inputGroupInput:focus + .inputGroupLabel ,
+.inputGroupInput:focus + .inputGroupLabel,
 .inputGroupInput:valid + .inputGroupLabel {
   padding-inline: 5px;
   translate: 10px -10px;
   scale: 0.8;
-  background-color: #24303c;
+  background-color: #fff;
 }
 /* Div contenedor de input y label (con animaciones) END */
 
 /* select START */
 
-select{
-    cursor: pointer;
+select {
+  cursor: pointer;
 }
 
-#category{
+#category {
   margin-top: 10px;
 }
 .inputGroupInput option {
-  color: #fff;
-  background-color: #243a76;
+  color: #000;
+  background-color: #fff;
   padding: 5px;
 }
 /* ********************* falta hacer que los desplegables tengan la misma estetica que el input ******************* */
@@ -87,7 +85,7 @@ select{
 
 /* image input START */
 
-#image{
+#image {
   cursor: pointer;
 }
 /* ********************* falta darle estilo al boton del input type file *************************** */
@@ -96,54 +94,71 @@ select{
 
 /* textarea START */
 
-#description{
+#description {
   background-color: transparent;
-  color: #fff;
+  color: #000;
   border: none;
   border-radius: 4px;
-  outline: 2px solid #e68c3a;
+  outline: 2px solid #243a76;
   background-color: transparent;
   width: 100%;
   font-size: 14px;
   padding: 5px 10px;
 }
 
-
-  
 /* textarea END */
 
+.p-newProduct {
+  display: flex;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  color: #000;
+  font-size: 20px;
+  font-family: "Arial";
+}
 
-  .p-newProduct{
-    display: flex;
-    margin-top: 0px;
-    margin-bottom: 10px;
-    color: #fff;
-    font-size: 20px;
-    font-family: 'Arial';
+.createProductButton {
+  width: 100%;
+  background-color: transparent;
+  border-radius: 8px;
+  border: #243a76 2px solid;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 17px;
+  color: #243a76;
+  cursor: pointer;
+  transition: all 400ms;
+}
+
+.createProductButton:hover {
+  background-color: #243a76;
+  color: #fff;
+}
+
+@media (min-width: 560px) {
+  .form-newProduct {
+    width: 85%;
+    max-width: 1200px;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
+  .side {
+    display: flex;
+    justify-content: space-between;
+  }
 
+  .name {
+    flex-basis: 160%;
+    padding-right: 10px;
+  }
 
+  .inputNumber {
+    flex-basis: 48%;
+  }
 
   .createProductButton {
-    width: 100%;
-    background-color: transparent;
-    border-radius: 8px;
-    border: #e68c3a 2px solid;
-    margin-top: 20px;
-    padding: 10px ;
-    font-size: 17px;
-    color: #e68c3a;
-    cursor: pointer;
-    transition: all 400ms;
-
-    
+    width: 25%;
   }
-  
-  .createProductButton:hover {
-    background-color:#e68c3a;
-    color: #fff;
-  }
-
-
-
+}

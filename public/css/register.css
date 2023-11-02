@@ -1,152 +1,151 @@
-.registerForm{
-    
-    background-color: lightgray; 
- }
- 
- h2{
-   font-size: 24px;  
-   margin-bottom: 25px;
-   text-align: center;
- }
- 
- h4{
-     font-size:16px ;
-     margin-bottom: 0px;
-     text-align: left;
- }
- 
- form{
-     margin: auto;
-     width: 95%;
-     font-size: 0.9em;
-     padding: 40px 15px 15px;
-     background: whitesmoke;
-     font-family: 'Arial';
-     border-left: grey 5px;
-     border-right: grey 5px;
-     border-top: grey 5px;
-     border-bottom: grey 5px;
- }
-
-.ph{
-    padding-left: 30px;
-    margin-left: 30px;
+.divNewUser {
+  padding: 10px;
+  background-image: #fff;
 }
 
+.formNewUser {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  /* background: #24303c; */
+  padding: 30px;
+  margin: auto;
+  border-radius: 5px;
+  font-family: "Arial";
+  color: #000;
+  box-shadow: 7px 13px 37px #000;
+  text-align: center;
+  align-items: center;
+}
 
+.formNewUser h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #000;
+}
 
+.side {
+  width: 100%;
+}
 
+/* Div contenedor de input y label (con animaciones) START */
+.inputGroup {
+  position: relative;
+  width: 100%;
+}
 
+.inputGroupInput {
+  font: inherit;
+  color: #000;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  outline: 2px solid #243a76;
+  background-color: transparent;
+  transition: outline-color 500ms;
+  width: 100%;
+  /* margin-bottom: 28px; */
+  font-size: 14px;
+}
 
+.inputGroupLabel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  translate: 10px 10px;
+  color: #000;
+  transition: translate 500ms, scale 500ms;
+}
 
+.inputGroupInput:focus + .inputGroupLabel,
+.inputGroupInput:valid + .inputGroupLabel {
+  padding-inline: 5px;
+  translate: 10px -10px;
+  scale: 0.8;
+  background-color: #fff;
+}
+/* Div contenedor de input y label (con animaciones) END */
 
- 
- .data input, .data select{
-     
-     font-family: inherit;
-     font-size: 100%;
-     padding-left: 5px;
-     box-sizing: border-box;
-     border: 1px solid #03264C;
-     border-radius: 30px;
-     width: 100%;
-     height: 55px;
- }
- form button {
-    
-     background-color: transparent;
-     border-radius: 8px;
-     border: #e68c3a 2px solid;
-     margin-top: 20px;
-     padding: 10px 20px ;
-     font-size: 17px;
-     color: #e68c3a;
-     cursor: pointer;
-     transition: all 400ms;
-     /* transform: rotate(-1.5deg); */
-   }
-   
-   form button:after {
-     content: " >>>";
-   }
-   
-   form button:hover,
-   form button:focus {
-     outline: none;
-     background: #ff8222;
-     color: #fff;
-   }
- 
- .form-field{
-     flex-wrap: wrap;
-     padding: 20px;
-     text-align: center;
-     border-radius: 20px;  
-     
- }
- 
- .data{
-     width: 100%;
-     position: relative;
-     border: grey solid 1px;
-     border-radius: 30px;
-    
- }
- 
- form input:focus {
-     border:2px solid  #ff8222;  /* cambia el color borde de inputs al seleccionar */
-     background-color:#F0F8FF;
-     
-     }
- 
- .data-checkbox{
-     display: flex;
-     padding: 1px;
-     font-size: small;
-     justify-content: space-evenly;
-     
- }
- 
- label {
-     display: block;
-     margin-top: 1px;
- }
- 
- 
-   
- /* input[type="checkbox"]:checked + label::after {
-     font-family: "Font Awesome 5 Free";
-     position: absolute;
-     display: inline;
-     padding: 0px 5px;
-     vertical-align: baseline;
-     font-weight: 700;
-     content: "\f058";
-     color: #39b54a;
- } */
- /* input[type="checkbox"] {
-     display: contents;
- } */
- /* .validation{
-     display: block;
-     width: 100%;
-     margin: 10px 0px;
-     padding: 10px 10px;
-     font-size: 13px;
-     font-weight: 100;
-     background-color: #3f0e1e;
-     color: white;
-     height: 3em;
- } */
- 
- .button-form{
-     justify-content: space-evenly;
-     display: flex;
- }
- 
- @media (min-width: 361px) {
-     form {
-         width: 450px;
-     }
- }
- 
+.error {
+  color: red;
+  padding: 10px 0 20px;
+}
+
+/* image input START */
+
+#image {
+  cursor: pointer;
+}
+/* ********************* falta darle estilo al boton del input type file *************************** */
+
+/* image input END */
+
+/* textarea START */
+
+#specification {
+  background-color: transparent;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  outline: 2px solid #243a76;
+  background-color: transparent;
+  width: 100%;
+  font-size: 14px;
+  padding: 5px 10px;
+}
+
+/* textarea END */
+
+.subtitle {
+  display: flex;
+  margin: 20px;
+  color: #000;
+  font-size: 20px;
+  font-family: "Arial";
+}
+
+.createUserButton {
+  width: 100%;
+  background-color: transparent;
+  border-radius: 8px;
+  border: #243a76 2px solid;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 17px;
+  color: #243a76;
+  cursor: pointer;
+  transition: all 400ms;
+}
+
+.createUserButton:hover {
+  background-color: #243a76;
+  color: #fff;
+}
+
+@media (min-width: 560px) {
+  .formNewUser {
+    width: 85%;
+    max-width: 1200px;
+  }
+
+  .side {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .dataSide {
+    width: 48%;
+  }
+
+  .homeSide {
+    width: 40%;
+  }
+
+  .cp {
+    width: 12%;
+  }
+
+  .createUserButton {
+    width: 25%;
+  }
+}
