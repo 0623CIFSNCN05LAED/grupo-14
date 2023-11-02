@@ -10,7 +10,6 @@ const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 const app = express();
 
 // ********* Middlewares *****************
-app.use(cookies);
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(
   express.urlencoded({ extended: false })
@@ -24,6 +23,7 @@ app.use(
     saveUninitialized: false,
   })
 );
+app.use(cookies());
 app.use(userLoggedMiddleware);
 
 // **************** Template Engine *********************
