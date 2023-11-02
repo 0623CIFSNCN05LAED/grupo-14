@@ -3,37 +3,45 @@
   <head>
     <%- include("../partials/head", {title: 'Crear producto'}) %>
 
-    <link rel="stylesheet" href="\css\createProduct.css" />
+    <link rel="stylesheet" href="/css/createProduct.css" />
   </head>
   <body>
     <%- include('../partials/headerCf') %>
 
     <main>
       <div class="div-newProduct">
+
         <form class="form-newProduct" action="/products" method="post" enctype="multipart/form-data">
+
           <h2>Nuevo Producto</h2>
           <div class="side">
+
             <div class="inputGroup name">
-              <input type="text" name="name" id="name" class="inputGroupInput" value="<%= locals.oldData ? oldData.name : null %>">
+              <input type="text" name="name" id="name" class="inputGroupInput" value="<%= locals.oldData ? oldData.name : null %>" required>
               <label for="name" class="inputGroupLabel">Nombre del producto</label>
+
               <div>
                 <% if(locals.errors && errors.name) { %>
                 <p><%= errors.name.msg %></p>
                 <% } %>
               </div>
+
             </div>
+
             <div class="inputGroup">
-              <input type="text" name="shortName" id="shortName" class="inputGroupInput" value="<%= locals.oldData ? oldData.shortName : null %>">
+              <input type="text" name="shortName" id="shortName" class="inputGroupInput" value="<%= locals.oldData ? oldData.shortName : null %>" required>
               <label for="shortName" class="inputGroupLabel">Producto abreviado</label>
+
               <div>
                 <% if(locals.errors && errors.shortName) { %>
                 <p><%= errors.shortName.msg %></p>
                 <% } %>
               </div>
+              
             </div>
           </div>
           <div class="inputGroup brand">
-            <input type="text" name="brand" id="brand" class="inputGroupInput" value="<%= locals.oldData ? oldData.brand : null %>">
+            <input type="text" name="brand" id="brand" class="inputGroupInput" value="<%= locals.oldData ? oldData.brand : null %>" required>
             <label for="brand" class="inputGroupLabel">Marca</label>
             <div>
               <% if(locals.errors && errors.brand) { %>
@@ -43,7 +51,7 @@
           </div>
           <div class="side">
             <div class="inputGroup inputNumber">
-              <input type="number" name="price" id="price" class="inputGroupInput" value="<%= locals.oldData ? oldData.price : null %>">
+              <input type="number" name="price" id="price" class="inputGroupInput" value="<%= locals.oldData ? oldData.price : null %>" required>
               <label for="price" class="inputGroupLabel">Precio minorista</label>
               <div>
                 <% if(locals.errors && errors.price) { %>
@@ -52,7 +60,7 @@
               </div>
             </div>
             <div class="inputGroup inputNumber">
-              <input type="number" name="discount" id="discount" class="inputGroupInput" value="<%= locals.oldData ? oldData.discount : null %>">
+              <input type="number" name="discount" id="discount" class="inputGroupInput" value="<%= locals.oldData ? oldData.discount : null %>" required>
               <label for="discount" class="inputGroupLabel">% OFF</label>
               <div>
                 <% if(locals.errors && errors.discount) { %>
@@ -63,7 +71,7 @@
           </div>
           <div class="side">
             <div class="inputGroup inputNumber">
-              <input type="number" name="preferentialPrice" id="preferentialPrice" class="inputGroupInput" value="<%= locals.oldData ? oldData.preferentialPrice : null %>">
+              <input type="number" name="preferentialPrice" id="preferentialPrice" class="inputGroupInput" value="<%= locals.oldData ? oldData.preferentialPrice : null %>" required>
               <label for="preferentialPrice" class="inputGroupLabel">Precio mayorista</label>
               <div>
                 <% if(locals.errors && errors.preferentialPrice) { %>
@@ -72,7 +80,7 @@
               </div>
             </div>
             <div class="inputGroup inputNumber">
-              <input type="number" name="mount" id="mount" class="inputGroupInput" value="<%= locals.oldData ? oldData.mount : null %>">
+              <input type="number" name="mount" id="mount" class="inputGroupInput" value="<%= locals.oldData ? oldData.mount : null %>"required>
               <label for="mount" class="inputGroupLabel">Stock</label>
               <div>
                 <% if(locals.errors && errors.mount) { %>

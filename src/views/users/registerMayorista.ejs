@@ -24,6 +24,7 @@
               class="inputGroupInput"
               value="<%= locals.oldData ? oldData.businessName : null %>"
               pattern="[\w\s]+"
+              required
             />
             <label for="name" class="inputGroupLabel">Razón social</label>
             <div class="error">
@@ -41,6 +42,7 @@
                 class="inputGroupInput"
                 value="<%= locals.oldData ? oldData.cuit : null %>"
                 onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                required
               />
               <label for="dni" class="inputGroupLabel">CUIT</label>
               <div class="error">
@@ -57,6 +59,7 @@
                 class="inputGroupInput"
                 value="<%= locals.oldData ? oldData.tel : null %>"
                 onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                required
               />
               <label for="tel" class="inputGroupLabel"
                 >Teléfono / Celular</label
@@ -76,6 +79,7 @@
               id="email"
               class="inputGroupInput"
               value="<%= locals.oldData ? oldData.email : null %>"
+              required
             />
             <label for="email" class="inputGroupLabel">Email</label>
             <div class="error">
@@ -93,6 +97,7 @@
                 id="password"
                 class="inputGroupInput"
                 value="<%= locals.oldData ? oldData.password : null %>"
+                required
               />
               <label for="password" class="inputGroupLabel">Contraseña</label>
               <div class="error">
@@ -108,6 +113,7 @@
                 id="confirmPassword"
                 class="inputGroupInput"
                 value="<%= locals.oldData ? oldData.confirmPassword : null %>"
+                required
               />
               <label for="confirmPassword" class="inputGroupLabel"
                 >Confirmar Contraseña</label
@@ -143,6 +149,7 @@
                 id="address"
                 class="inputGroupInput"
                 value="<%= locals.oldData ? oldData.address : null %>"
+                required
               />
               <label for="address" class="inputGroupLabel">Dirección</label>
               <div class="error">
@@ -159,6 +166,7 @@
                 id="location"
                 class="inputGroupInput"
                 value="<%= locals.oldData ? oldData.location : null %>"
+                required
               />
               <label for="location" class="inputGroupLabel">Localidad</label>
               <div class="error">
@@ -176,6 +184,7 @@
                 class="inputGroupInput"
                 value="<%= locals.oldData ? oldData.cp : null %>"
                 onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                required
               />
               <label for="location" class="inputGroupLabel">C.P</label>
               <div class="error">
@@ -194,6 +203,7 @@
                 id="province"
                 class="inputGroupInput"
                 value="<%= locals.oldData ? oldData.province : null %>"
+                required
               />
               <label for="province" class="inputGroupLabel">Provincia</label>
               <div class="error">
@@ -210,6 +220,7 @@
                 id="country"
                 class="inputGroupInput"
                 value="<%= locals.oldData ? oldData.country : null %>"
+                required
               />
               <label for="country" class="inputGroupLabel">País</label>
               <div class="error">
