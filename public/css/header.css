@@ -8,7 +8,7 @@ header {
 
 .topLeftHeader {
   text-align: center;
-  background-color: #6f6f6f;
+  background-color: rgb(73, 81, 141);
   padding: 10px 0;
 }
 
@@ -124,7 +124,7 @@ header {
 /*fin de nueva barra*/
 
 .topRightHeader li {
-  background-color: #6f6f6f;
+  background-color:#6f6f6f ;
   padding: 10px;
   margin: 5px;
   width: auto;
@@ -207,7 +207,7 @@ header {
   align-items: center;
   justify-content: space-between;
   font-size: 25px;
-  background-color: #6f6f6f;
+  background-color: rgb(73, 81, 141);
   padding: 10px;
 }
 
@@ -275,7 +275,7 @@ header {
     flex-direction: row;
     width: 60%;
     font-size: 25px;
-    background-color: #6f6f6f;
+    background-color: rgb(73, 81, 141);
     padding: 5px;
   }
   .navRightMobile {
@@ -284,11 +284,11 @@ header {
     justify-content: right;
   }
   .topRightHeader li {
-    background-color: #6f6f6f;
+    background-color: rgb(73, 81, 141);
   }
   .navList li,
   .navMobile li {
-    background-color: #6f6f6f;
+    background-color: rgb(73, 81, 141);
   }
   .navRightMobile i {
     margin: 0 10px;
@@ -323,7 +323,7 @@ header {
 
   /**/
   .menuMobile {
-    background-color: #6f6f6f;
+    background-color: rgb(73, 81, 141);
     display: flex;
     position: inherit;
     width: 100%;
