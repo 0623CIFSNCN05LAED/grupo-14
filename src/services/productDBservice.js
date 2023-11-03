@@ -44,7 +44,7 @@ module.exports = {
             });
             return bestSellerProducts;
         } catch {
-
+            
         }
     },
     findRelatedProducts: async function(product){
@@ -60,38 +60,39 @@ module.exports = {
 
         }
     },
-    createProduct: function (dataProduct){
-        Product.createProduct({
-                name: dataProduct.name,
-                shortName: dataProduct.shortName,
-                retailPrice: dataProduct.retailPrice,
-                wholesalePrice: dataProduct.wholesalePrice,
-                discount: dataProduct.discount,
-                stock: dataProduct.stock,
-                image: dataProduct.file ? dataProduct.file.filename : "defaultImg.jpg",
-                category_id: dataProduct.category_id,
-                description: dataProduct.description,
-                brand_id: dataProduct.brand_id,
-                sold: dataProduct.sold,
-                bestSeller: dataProduct.bestSeller,
-                offer: dataProduct.offer,
+    createProduct: function (req){
+        Product.create({
+                id: uuidv4(),
+                name: req.body.name,
+                shortName: req.body.shortName,
+                retailPrice: req.body.retailPrice,
+                wholesalePrice: req.body.wholesalePrice,
+                discount: req.body.discount,
+                stock: req.body.stock,
+                image: req.file ? req.file.filename : "defaultImg.jpg",
+                category_id: Number(req.body.category_id),
+                description: req.body.description,
+                brand_id: Number(req.body.brand_id),
+                sold: req.body.sold,
+                bestSeller: req.body.bestSeller,
+                offer: req.body.offer,
         });
     },
-    editProduct: function(dataProduct, id){
+    editProduct: function(req, id){
         Product.update({
-            name: dataProduct.name,
-                shortName: dataProduct.shortName,
-                retailPrice: dataProduct.retailPrice,
-                wholesalePrice: dataProduct.wholesalePrice,
-                discount: dataProduct.discount,
-                stock: dataProduct.stock,
-                image: dataProduct.image,
-                category_id: dataProduct.category_id,
-                description: dataProduct.description,
-                brand_id: dataProduct.brand_id,
-                sold: dataProduct.sold,
-                bestSeller: dataProduct.bestSeller,
-                offer: dataProduct.offer,
+            name: req.body.name,
+                shortName: req.body.shortName,
+                retailPrice: req.body.retailPrice,
+                wholesalePrice: req.body.wholesalePrice,
+                discount: req.body.discount,
+                stock: req.body.stock,
+                image: req.file ? req.file.filename : "defaultImg.jpg",
+                category_id: req.body.category_id,
+                description: req.body.description,
+                brand_id: req.body.brand_id,
+                sold: req.body.sold,
+                bestSeller: req.body.bestSeller,
+                offer: req.body.offer,
         },{
             where: {id: id}
         })

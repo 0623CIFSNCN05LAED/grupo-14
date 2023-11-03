@@ -26,8 +26,8 @@ module.exports = {
     },
 
     create: (req,res)=>{
-        const dataProduct = req;
-        productDBservice.createProduct(dataProduct);
+        const dataForm = req;
+        productDBservice.createProduct(dataForm);
         res.redirect("/products");
     },
 
@@ -39,8 +39,8 @@ module.exports = {
 
     edit: (req,res)=>{
         const id = req.params.id
-        const dataProduct = req;
-        productDBservice.editProduct(dataProduct, id);
+        const dataForm = req;
+        productDBservice.editProduct(dataForm, id);
         res.redirect("/products");
     },
     

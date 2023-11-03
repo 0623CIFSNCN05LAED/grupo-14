@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-  const AddressesUsers = sequelize.define('AddressesUsers', {
+  const AddressesUsers = sequelize.define('AddressUser', {
     id: {
       type: dataTypes.INTEGER,
       primaryKey: true,
@@ -11,7 +11,10 @@ module.exports = (sequelize, dataTypes) => {
     user_id: {
       type: dataTypes.STRING(255),
     },
-  });
+  }, {
+        tableName: "AddressesUsers",
+        timestamps: false
+    });
 
   
   AddressesUsers.associate = function(models){
