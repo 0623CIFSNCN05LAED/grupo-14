@@ -31,10 +31,14 @@ module.exports = {
         res.redirect("/products");
     },
 
-    viewEdit: (req,res)=>{
-        const id = req.params.id;
-        const product = productDBservice.findById(id);
-        res.render("products/editProduct", { product });
+    viewEdit: async(req,res)=>{
+        try{
+            const id = req.params.id;
+            const product = await productDBservice.findById(id);
+            res.render("products/editProduct", { product });
+        } catch{
+
+        }
     },
 
     edit: (req,res)=>{
