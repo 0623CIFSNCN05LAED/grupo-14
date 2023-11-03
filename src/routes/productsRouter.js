@@ -11,6 +11,7 @@ const productValidation = require("../validations/productValidation");
 
 /*************** Controller require ******************/
 const productsController = require("../controllers/productsController");
+const productDBcontroller = require("../controllers/productDBcontroller");
 
 /*************** Get all products ******************/
 router.get("/", productsController.productsList);
