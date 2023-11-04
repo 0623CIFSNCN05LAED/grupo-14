@@ -4,7 +4,11 @@
     <%- include("../partials/head", {title: 'Tutorial 2'}) %>
   </head>
   <body>
-    <%- include('../partials/headerCf') %>
+    <% if (locals.userLogged.category == 'consumidorFinal' ||
+    locals.userLogged.category == 'admin') { %> <%-
+    include('../partials/headerCf') %> <% } else if (locals.userLogged.category
+    == 'mayorista' || locals.userLogged.category == 'admin') { %> <%-
+    include('../partials/headerMayorista') %> <% } %>
 
     <main>Soy la pagina tutorial 2!</main>
 

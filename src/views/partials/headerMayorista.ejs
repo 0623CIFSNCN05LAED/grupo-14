@@ -46,7 +46,11 @@
             <li>
               <a href="/users/profile">
                 <img src="/img/users/<%= locals.userLogged.image %>" width="40"> <!-- TOCAR EL CSS PARA LA IMAGEN -->
-                <%= locals.userLogged.lastName %>, <%= locals.userLogged.name %>
+                <% if (locals.userLogged.category == 'admin') { %>
+                  <%= locals.userLogged.lastName %>, <%= locals.userLogged.name %>
+                <% } else { %>
+                  <%= locals.userLogged.businessName %>
+                <% } %>
               </a>
             </li>
             <% } else { %>

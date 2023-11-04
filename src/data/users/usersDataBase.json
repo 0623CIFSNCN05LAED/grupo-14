@@ -15,5 +15,38 @@
     "specification": "",
     "image": "image-1698691166378.jpg",
     "category": "consumidorFinal"
+  },
+  {
+    "id": "ab00c6e3-9f81-46b8-86f0-8eca14804dbc",
+    "businessName": "South Park",
+    "cuit": "12",
+    "tel": "13",
+    "email": "sp@gmail.com",
+    "password": "$2a$10$z3QlfG70yo079WbjF4nPw.fRkyzEi5EEVtFdg4RtfoRNW2NJaNNFW",
+    "address": "das",
+    "location": "qew",
+    "cp": "2",
+    "province": "qew",
+    "country": "etf",
+    "specification": "",
+    "image": "image-1699120925490.png",
+    "category": "mayorista"
+  },
+  {
+    "id": "46610235-0c56-4fde-82d7-f07e5ffdeddf",
+    "name": "Mr",
+    "lastName": "Robot",
+    "dni": "312",
+    "tel": "312",
+    "email": "mr@gmail.com",
+    "password": "$2a$10$RJKusrpTGdEPijDZPj1OpOH5jytEtKC0l/Fl0a7P4Fn273LdmXoI.",
+    "address": "das",
+    "location": "re",
+    "cp": "3",
+    "province": "ewq",
+    "country": "dsa",
+    "specification": "",
+    "image": "image-1699124137927.jpg",
+    "category": "admin"
   }
 ]
