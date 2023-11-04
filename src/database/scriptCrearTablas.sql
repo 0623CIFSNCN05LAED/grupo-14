@@ -123,3 +123,20 @@ values
 ("c20662c1-8ff0-4d8d-a9f9-2f8df941eb07", "Lavandina Ayudín clásica 1 l.", "Lavandina Ayudín 1 l", 12, 6, 248, 2, 1, 25, 5, 0, 0, "lavandinaAyudin1litro.jpg", "La lavandina Ayudín Clásica mantiene todo su poder para desodorizar y desinfectar. Es ideal para que realices la limpieza de tu hogar, que lo utilices en diferentes superficies. Ayudín elimina el 99.9% de hongos, virus y bacterias. En el baño, la cocina y en otras áreas de la casa, podemos encontrar superficies contaminadas. Por eso, se recomienda la desinfección de los pisos de la cocina, living, cuartos, baño, patio y balcón; la mesada, pileta y utensilios de cocina, artefactos del baño, las llaves de las canillas, el botón de descarga del inodoro y las manijas de todas las puertas de la casa. Por su versatilidad y dado que es un producto de limpieza de los más económicos, es un aliado infaltable en los hogares, ofreciendo limpieza y desinfección por menos de $2 por día. Cuando realmente importa, confía en Ayudin."),
 ("2fcd9ed8-4785-425a-a708-5df96a48c310", "Lavandina Ayudín clásica 2 l.", "Lavandina Ayudín 2 l", 12, 6, 465, 2, 1, 0, 4, 0, 0, "lavandinaAyudin2litros.jpg", "La lavandina Ayudín Clásica mantiene todo su poder para desodorizar y desinfectar. Es ideal para que realices la limpieza de tu hogar, que lo utilices en diferentes superficies. Ayudín elimina el 99.9% de hongos, virus y bacterias. En el baño, la cocina y en otras áreas de la casa, podemos encontrar superficies contaminadas. Por eso, se recomienda la desinfección de los pisos de la cocina, living, cuartos, baño, patio y balcón; la mesada, pileta y utensilios de cocina, artefactos del baño, las llaves de las canillas, el botón de descarga del inodoro y las manijas de todas las puertas de la casa. Por su versatilidad y dado que es un producto de limpieza de los más económicos, es un aliado infaltable en los hogares, ofreciendo limpieza y desinfección por menos de $2 por día. Cuando realmente importa, confía en Ayudin."),
 ("90157fc3-837e-48bb-bb90-68098c3723f7", "Lavandina Ayudín clásica 4 l.", "Lavandina Ayudín 4 l", 12, 6, 906, 2, 1, 25, 5, 0, 0, "lavandinaAyudin4litros.jpg", "La lavandina Ayudín Clásica mantiene todo su poder para desodorizar y desinfectar. Es ideal para que realices la limpieza de tu hogar, que lo utilices en diferentes superficies. Ayudín elimina el 99.9% de hongos, virus y bacterias. En el baño, la cocina y en otras áreas de la casa, podemos encontrar superficies contaminadas. Por eso, se recomienda la desinfección de los pisos de la cocina, living, cuartos, baño, patio y balcón; la mesada, pileta y utensilios de cocina, artefactos del baño, las llaves de las canillas, el botón de descarga del inodoro y las manijas de todas las puertas de la casa. Por su versatilidad y dado que es un producto de limpieza de los más económicos, es un aliado infaltable en los hogares, ofreciendo limpieza y desinfección por menos de $2 por día. Cuando realmente importa, confía en Ayudin.");
+
+insert into users values
+("7de0e1e3-c381-47ad-a110-2b8f04244b15", "admin@gmail.com", "$2a$10$QNgQTvsl71/kqldjCHIPFuKcoRD5j6vjEJ1Xul5bZKUURK6qeej6W
+", 1556781234, 1),
+("60465b83-b8ff-4657-8a29-302867206814", "cf@gmail.com", "$2a$10$11.DQbJLbzcsEJC8mQAKneRHaFR03ox8ISZhAL7QNOFeebENzTHrC
+", 1587654321, 1),
+("8d3d369b-4042-446d-a548-d074025503c7", "mayorista@gmail.com", "$2a$10$/7f6f/NZMGtfFiFHKkXvWe4GLj2QZHwHU4bFYEbFcpnSSI0aEDagW
+", 1543215678, 1);
+
+insert into usersadmin values
+("7de0e1e3-c381-47ad-a110-2b8f04244b15", "admin", "administrador");
+
+insert into userscf values
+("60465b83-b8ff-4657-8a29-302867206814", "consumidor", "final", 42123456);
+
+insert into usersmayoristas values
+("8d3d369b-4042-446d-a548-d074025503c7", "mayorista", 2042123456);
