@@ -10,6 +10,22 @@
   color: white;
 }
 
+.button {
+  margin-bottom: 10px;
+}
+
+.create {
+  margin: 0px 5px;
+  color: #fff;
+  background-color: green;
+  width: 20%;
+  border-radius: 8px;
+  border: none;
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
 .product {
   display: flex;
   flex-direction: column;
@@ -101,4 +117,16 @@
 .cardFooter a {
   text-decoration: none;
   color: black;
+}
+
+@media (min-width: 860px) {
+  .create {
+    width: 15%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .create {
+    width: 10%;
+  }
 }

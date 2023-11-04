@@ -18,6 +18,13 @@
       <section class="product"></section>
       <section class="relatedProducts">
         <h3 class="nameList">Lista de productos</h3>
+        <% if (locals.isLogged && locals.userLogged.category == "admin") { %>
+        <div class="button">
+          <a href="/products/create"
+            ><button class="create">Crear producto</button></a
+          >
+        </div>
+        <% } %>
         <div class="allProducts">
           <% products.forEach(product => { %><%-
           include("../partials/productCard", {product}) %> <% }); %>
