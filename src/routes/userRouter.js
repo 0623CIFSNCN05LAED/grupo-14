@@ -4,6 +4,7 @@ const router = Router();
 
 /*************** Controller require ******************/
 const userController = require("../controllers/userController");
+const userDBcontroller = require("../controllers/userDBcontroller");
 
 /*************** Middlewares require ******************/
 const uploadImgUser = require("../middlewares/multerUser");

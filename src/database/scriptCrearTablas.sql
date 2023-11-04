@@ -1,18 +1,18 @@
+CREATE DATABASE cleanwave;
+
 CREATE TABLE Users (
     id VARCHAR(255)PRIMARY KEY,
     email VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
     phoneNumber INT NOT NULL,
     notify TINYINT(1) NOT NULL,
-    profile_id INT NOT NULL
 );
 
 CREATE TABLE UsersAdmin (
     id VARCHAR(255) PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     lastName VARCHAR(255) NOT NULL,
-    user_id VARCHAR(255) NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES Users(id)
+    FOREIGN KEY (id) REFERENCES Users(id)
 );
 
 CREATE TABLE UsersCf (
@@ -20,16 +20,14 @@ CREATE TABLE UsersCf (
     name VARCHAR(255) NOT NULL,
     lastName VARCHAR(255) NOT NULL,
     dni INT NOT NULL,
-    user_id VARCHAR(255) NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES Users(id)
+    FOREIGN KEY (id) REFERENCES Users(id)
 );
 
 CREATE TABLE UsersMayoristas (
     id VARCHAR(255)PRIMARY KEY,
     businessName VARCHAR(255) NOT NULL,
     cuit INT NOT NULL,
-    user_id VARCHAR(255) NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES Users(id)
+    FOREIGN KEY (id) REFERENCES Users(id)
 );
 
 CREATE TABLE Addresses (
