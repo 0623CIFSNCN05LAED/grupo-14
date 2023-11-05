@@ -7,7 +7,11 @@
   </head>
 
   <body>
-    <%- include('../partials/headerCf') %>
+    <% if (!locals.userLogged || locals.userLogged.category == 'consumidorFinal' || locals.userLogged.category == 'admin') {%> 
+      <%- include('../partials/headerCf') %> 
+    <% } else if (locals.userLogged.category == 'mayorista') { %> 
+      <%- include('../partials/headerMayorista') %> 
+    <% } %>
     <main>
       <div>
         <p>Imagen de usuario</p>
@@ -19,7 +23,7 @@
       <div>
         <h2><%= user.lastName %></h2>
       </div>
-      <a href="/users/logout"><button">LOGOUT</button></a>
+      <a href="/users/logout"><button>LOGOUT</button></a>
     </main>
     <%- include('../partials/footer') %>
   </body>

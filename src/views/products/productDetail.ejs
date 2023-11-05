@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="/css/productCard.css" />
   </head>
   <body>
-    <%- include('../partials/headerCf') %>
+    <% if (!locals.userLogged || locals.userLogged.category == 'consumidorFinal' || locals.userLogged.category == 'admin') {%> 
+      <%- include('../partials/headerCf') %> 
+    <% } else if (locals.userLogged.category == 'mayorista') { %> 
+      <%- include('../partials/headerMayorista') %> 
+    <% } %>
 
     <main>
       <div class="nav">
@@ -22,6 +26,7 @@
           <div>
             <img src="/img/products/<%= product.image %>" alt="producto" />
           </div>
+          <% if (locals.isLogged && locals.userLogged.category == "admin") { %>
           <div class="buttons">
             <a href="/products/edit/<%= product.id %>"
               ><button class="edit">Editar producto</button></a
@@ -33,6 +38,7 @@
               <button type="submit" class="delete">Eliminar producto</button>
             </form>
           </div>
+          <% } %>
         </div>
         <div class="data">
           <div class="details">
