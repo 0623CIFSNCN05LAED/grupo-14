@@ -7,11 +7,11 @@
   </head>
 
   <body>
-    <% if (locals.userLogged.category == 'consumidorFinal' ||
-    locals.userLogged.category == 'admin') { %> <%-
-    include('../partials/headerCf') %> <% } else if (locals.userLogged.category
-    == 'mayorista' || locals.userLogged.category == 'admin') { %> <%-
-    include('../partials/headerMayorista') %> <% } %>
+    <% if (!locals.userLogged || locals.userLogged.category == 'consumidorFinal' || locals.userLogged.category == 'admin') {%> 
+      <%- include('../partials/headerCf') %> 
+    <% } else if (locals.userLogged.category == 'mayorista') { %> 
+      <%- include('../partials/headerMayorista') %> 
+    <% } %>
     <main>
       <div>
         <p>Imagen de usuario</p>
