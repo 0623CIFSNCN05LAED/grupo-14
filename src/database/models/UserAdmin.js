@@ -9,10 +9,7 @@ module.exports = (sequelize, dataTypes) => {
     },
     lastName: {
       type: dataTypes.STRING(255),
-    },
-    user_id: {
-      type: dataTypes.STRING(255),
-    },
+    }
   }, {
         tableName: "UsersAdmin",
         timestamps: false

@@ -12,10 +12,7 @@ module.exports = (sequelize, dataTypes) => {
     },
     dni: {
       type: dataTypes.INTEGER,
-    },
-    user_id: {
-      type: dataTypes.INTEGER,
-    },
+    }
   }, {
         tableName: "UsersCf",
         timestamps: false

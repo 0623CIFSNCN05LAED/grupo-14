@@ -9,10 +9,7 @@ module.exports = (sequelize, dataTypes) => {
     },
     cuit: {
       type: dataTypes.INTEGER,
-    },
-    user_id: {
-      type: dataTypes.INTEGER,
-    },
+    }
   }, {
         tableName: "UsersMayoristas",
         timestamps: false
