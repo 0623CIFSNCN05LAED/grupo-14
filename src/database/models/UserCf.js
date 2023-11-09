@@ -23,7 +23,7 @@ module.exports = (sequelize, dataTypes) => {
 
   UsersCf.associate = function (models) {
     UsersCf.hasMany(models.User, {
-      foreignKey: 'user_id',
+      foreignKey: 'id',
       as: 'user',
     });
   };

@@ -16,9 +16,6 @@ module.exports = (sequelize, DataTypes) => {
         notify: {
             type: DataTypes.BOOLEAN,
         },
-        profile_id: {
-            type: DataTypes.INTEGER,
-        }
     }, {
         tableName: "Users",
         timestamps: false
@@ -33,27 +30,18 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     User.belongsTo(models.UserAdmin, {
-        foreignKey: 'user_id',
-        as: 'admin',
-        scope: {
-            profile_id: 1, // Condición para la relación con UserAdmin
-        },
+        foreignKey: 'id',
+        as: 'admin'
     });
 
     User.belongsTo(models.UserCf, {
-        foreignKey: 'user_id',
-        as: 'cf',
-        scope: {
-            profile_id: 2, // Condición para la relación con UserCf
-        },
+        foreignKey: 'id',
+        as: 'cf'
     });
 
     User.belongsTo(models.UserMayorista, {
-        foreignKey: 'user_id',
-        as: 'mayorista',
-        scope: {
-            profile_id: 3, // Condición para la relación con UserMayorista
-        },
+        foreignKey: 'id',
+        as: 'mayorista'
     });
 };
 

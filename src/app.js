@@ -4,6 +4,7 @@ const path = require("path");
 const methodOverride = require("method-override");
 const session = require("express-session");
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
+const cookieParser = require("cookie-parser")
 
 // ********** express() ******************
 const app = express();
@@ -22,6 +23,7 @@ app.use(
     saveUninitialized: false,
   })
 );
+app.use(cookieParser())
 app.use(userLoggedMiddleware);
 
 // **************** Template Engine *********************

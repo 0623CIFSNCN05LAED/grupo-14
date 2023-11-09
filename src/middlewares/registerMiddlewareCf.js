@@ -1,9 +1,9 @@
 const { validationResult } = require("express-validator");
-const db = require("../data/db");
+const userDBservice = require("../services/userDBservice")
 
 module.exports = (req, res, next) => {
   let errores = validationResult(req);
-  let userInDB = db.users.findByField("email", req.body.email);
+  let userInDB = userDBservice.findByEmail(req.body.email)
   if (!errores.isEmpty()) {
     res.render("users/registerCf", {
       errors: errores.mapped(),

@@ -17,7 +17,6 @@ module.exports = {
             const relatedProducts = await productDBservice.findRelatedProducts(product)
             res.render("products/productDetail", { product, relatedProducts });
         } catch(error){
-            return res.render("main/homeMayorista");
         }
     },
 

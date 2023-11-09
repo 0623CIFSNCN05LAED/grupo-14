@@ -18,7 +18,6 @@ module.exports = {
             const product = await Product.findByPk(id);
             return product;
         } catch {
-
         }
     },
     findInSaleProducts: async function(){
@@ -57,7 +56,6 @@ module.exports = {
             });
             return relatedProducts;
         } catch {
-
         }
     },
     createProduct: function (req){

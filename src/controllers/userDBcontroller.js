@@ -1,7 +1,6 @@
 const userDBservice = require("../services/userDBservice");
 const bcrypt = require("bcryptjs");
 
-
 module.exports = {
     viewLogin: (req,res)=>{
         res.render("users/login");
@@ -9,12 +8,15 @@ module.exports = {
     login: async (req,res)=>{
         try {
             const email = req.body.email
-            const userToLogin = await userDBservice.userInDb(email);
-            if(userToLogin){
-                const validPassword = bcrypt.compareSync(req.body.password, userToLogin.password)
+            const userToLogin = await userDBservice.findByEmail(email);
+            const dataUser = userToLogin
+            if(dataUser){
+                console.log(req.body.password)
+                console.log(dataUser.password)
+                const validPassword = await bcrypt.compare(req.body.password, dataUser.password)
                 if(validPassword){
-                    delete userToLogin.password;
-                    req.session.userLogged = userToLogin;
+                    delete dataUser.password;
+                    req.session.userLogged = dataUser;
                     return res.redirect("/users/profile");
                 } else {
                     return res.render("users/login", {
@@ -43,24 +45,25 @@ module.exports = {
         req.session.destroy();
         return res.redirect("/");
     },
-    viewRegisterCf: (req,res)=>{
-        res.render("users/registerCf")
+    
+    viewRegister: (req,res)=>{
+        res.render("users/register")
+    },
+
+    register: (req,res)=>{
+        const dataUser = req.body;
+        userDBservice.create(dataUser);
+        res.redirect("/")
+
+    },
+
+    delete: (req,res)=>{
+        const id = req.params.id;
+        userDBservice.delete(id)
+        res.redirect("/")
     },
     
-    registerCf: (req,res)=>{
-        const dataUser = req;
-        userDBservice.createCf(dataUser);
-        res.redirect("login");
-    },
+    
 
-    viewRegisterM: (req,res)=>{
-        res.render("/users/registerMayorista")
-    },
-
-    registerM: (req,res)=>{
-        const dataUser = req;
-        userDBservice.createM(dataUser);
-        res.redirect("login");       
-    }
     
 }

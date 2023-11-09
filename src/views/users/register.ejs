@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include("../partials/head", {title: 'Registro usuario'}) %>
+    <link rel="stylesheet" href="/css/register.css" />
+  </head>
+  <body>
+    <%- include('../partials/headerCf') %>
+    <main>
+      <form action="/users/register" method="post" class="registerForm">
+        <h4 class="registerTitle">Información personal</h4>
+        <div class="form-field">
+            <div class="data">
+                <label>Categoria de usuario</label>
+              <select name="category" id="category">
+                <option value="admin">admin</option>
+                <option value="cf">consumidor final</option>
+                <option value="mayorista">mayorista</option>
+              </select>
+              
+            </div>
+          <div class="form-field">
+            <div class="data">
+              <input
+                placeholder="Nombre"
+                type="text"
+                name="name"
+                id="name"
+                style="padding-left: 20px"
+                value="<%= locals.oldData ? oldData.name : null %>"
+                pattern="[\w\s]+"
+              />
+            </div>
+          </div>
+          <div class="form-field">
+            <div class="data">
+              <input
+                placeholder="Apellido"
+                type="text"
+                name="lastName"
+                id="lastName"
+                style="padding-left: 20px"
+                value="<%= locals.oldData ? oldData.lastName : null %>"
+                pattern="[\w\s]+"
+              />
+              
+            </div>
+          </div>
+          <div class="form-field">
+            <div class="data">
+              <input
+                placeholder="DNI"
+                type="number"
+                name="dni"
+                id="dni"
+                style="padding-left: 20px"
+                value="<%= locals.oldData ? oldData.dni : null %>"
+                onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+              />
+              
+            </div>
+          </div>
+          <div class="form-field">
+            <div class="data">
+              <input
+                placeholder="Teléfono / Celular"
+                type="number"
+                name="tel"
+                id="tel"
+                style="padding-left: 20px"
+                value="<%= locals.oldData ? oldData.tel : null %>"
+                onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+              />
+              
+            </div>
+          </div>
+          <div class="form-field">
+            <div class="data">
+              <input
+                placeholder="Email"
+                type="email"
+                name="email"
+                id="email"
+                style="padding-left: 20px"
+                value="<%= locals.oldData ? oldData.email : null %>"
+              />
+              
+            </div>
+          </div>
+          <div class="form-field">
+            <div class="data">
+              <input
+                placeholder="Contraseña"
+                type="password"
+                name="password"
+                id="password"
+                style="padding-left: 20px"
+                value="<%= locals.oldData ? oldData.password : null %>"
+              />
+              
+            </div>
+          </div>
+          <div class="form-field">
+            <div class="data">
+              <input
+                placeholder="Confirmar Contraseña"
+                type="password"
+                name="confirmPassword"
+                id="confirmPassword"
+                style="padding-left: 20px"
+                value="<%= locals.oldData ? oldData.confirmPassword : null %>"
+              />
+              
+            </div>
+          </div>
+          
+          
+          <div class="form-field">
+                <div class="data">
+                  <input
+                    placeholder="Razón social"
+                    type="text"
+                    name="businessName"
+                    id="businessName"
+                    style="padding-left: 20px"
+                    value="<%= locals.oldData ? oldData.businessName : null %>"
+                    pattern="[\w\s]+"
+                  />
+                  
+                </div>
+              </div>
+              <div class="form-field">
+                <div class="data">
+                  <input
+                    placeholder="CUIT"
+                    type="number"
+                    name="cuit"
+                    id="cuit"
+                    style="padding-left: 20px"
+                    value="<%= locals.oldData ? oldData.cuit : null %>"
+                    onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                  />
+                  
+                </div>
+              </div>
+              <div class="form-field">
+            <div class="data-checkbox">
+              <label for="notify">Mandar notificaciones</label>
+              <input type="checkbox" name="notify" id="notify" value="notify" />
+            </div>
+          </div>
+          <div class="button-form">
+            <button type="submit">Crear cuenta</button>
+          </div>
+        </form>
+      </div>
+
+
+
+
+
+    </main>
+    <%- include("../partials/footer") %>
+  </body>
+</html>
