@@ -1,10 +1,10 @@
-const db = require("../data/db");
+const userService = require("../services/userDBservice")
 
 module.exports = (req, res, next) => {
   res.locals.isLogged = false;
 
   let emailInCookie = req.cookies.email;
-  let userFromCookie = db.users.findByField("email", emailInCookie);
+  let userFromCookie = userService.findByEmail(emailInCookie);
 
   if (userFromCookie) {
     req.session.userLogged = userFromCookie;

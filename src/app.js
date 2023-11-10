@@ -24,11 +24,7 @@ app.use(
     saveUninitialized: false,
   })
 );
-<<<<<<< HEAD
 app.use(cookieParser())
-=======
-app.use(cookies());
->>>>>>> main
 app.use(userLoggedMiddleware);
 
 // **************** Template Engine *********************

@@ -20,7 +20,7 @@ router.get("/", productDBcontroller.list);
 router.get("/detail/:id", productDBcontroller.detail);
 
 /*************** Create one product ******************/
-router.get("/create", userAdminMiddleware, productsController.create);
+router.get("/create", userAdminMiddleware, productDBcontroller.create);
 router.get("/create", productDBcontroller.viewCreate);
 router.post(
   "/",
@@ -31,8 +31,6 @@ router.post(
 );
 
 /*************** Edit one product ******************/
-router.get("/edit/:id", userAdminMiddleware, productsController.edit);
-router.put("/:id", uploadImgProduct.single("image"), productsController.update);
 router.get("/edit/:id", productDBcontroller.viewEdit);
 router.put("/:id", uploadImgProduct.single("image"), productDBcontroller.edit);
 
