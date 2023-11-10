@@ -5,7 +5,7 @@ CREATE TABLE Users (
     email VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
     phoneNumber INT NOT NULL,
-    notify TINYINT(1) NOT NULL,
+    notify TINYINT(1) NOT NULL
 );
 
 CREATE TABLE UsersAdmin (
