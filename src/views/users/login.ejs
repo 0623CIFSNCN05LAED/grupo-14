@@ -8,45 +8,48 @@
   <body>
     <%- include('../partials/headerCf') %>
 
-    <main class="login">
-      <form class="form-login" action="/users/login" method="post">
-        <div>
-          <h3><i class="fa-solid fa-user" id="userImage"></i></h3>
-          <p>
-            <label>
-              <i class="fa-solid fa-user iconLogin"></i>
-              <input
-                type="text"
-                name="email"
-                value=""
-                placeholder="correo electrónico"
-                id="email"
-              />
-            </label>
-          </p>
-          <div>
-            <% if(locals.errors && errors.email) { %>
-            <p><%= errors.email.msg %></p>
-            <% } %>
+    <main>
+      <div class="logo">
+        <img src="/img/logo.png" alt="" />
+      </div>
+      <div class="div-newProduct">
+        <form class="form-newProduct" action="/users/login" method="post">
+          <div class="inputGroup">
+            <input
+              type="text"
+              name="email"
+              class="inputGroupInput"
+              value=""
+              id="email"
+              required
+            />
+            <label for="email" class="inputGroupLabel"
+              >Correo electrónico</label
+            >
+            <div class="error">
+              <% if(locals.errors && errors.email) { %>
+              <p><%= errors.email.msg %></p>
+              <% } %>
+            </div>
           </div>
-          <p>
-            <label>
-              <i class="fa-solid fa-lock iconLogin"></i>
-              <input
-                type="password"
-                name="password"
-                value=""
-                placeholder="Contraseña"
-                id="password"
-              />
-            </label>
-          </p>
-          <div>
-            <% if(locals.errors && errors.password) { %>
-            <p><%= errors.password.msg %></p>
-            <% } %>
+          <div class="inputGroup">
+            <input
+              type="password"
+              name="password"
+              class="inputGroupInput"
+              value=""
+              id="password"
+              required
+            />
+            <label for="password" class="inputGroupLabel">Contraseña</label>
+            <div class="error">
+              <% if(locals.errors && errors.password) { %>
+              <p><%= errors.password.msg %></p>
+              <% } %>
+            </div>
           </div>
 
+<<<<<<< HEAD
           <p>
             <input type="checkbox" name="rememberUser" id="checkboxLogin" />
             <span id="rememberLogin">recordar</span>
@@ -69,6 +72,19 @@
           <a href="create account" class="createAccount">Registrarse</a>
         </p>
       </form>
+=======
+          <div class="inputGroup">
+            <div>
+              <input type="checkbox" name="rememberUser" id="checkboxLogin" />
+              <label for="rememberUser">Recordarme</label>
+            </div>
+            <div>
+              <button type="submit" class="buttonLogin">Ingresar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+>>>>>>> main
     </main>
 
     <%- include("../partials/footer") %>

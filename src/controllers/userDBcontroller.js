@@ -17,6 +17,9 @@ module.exports = {
                 if(validPassword){
                     delete dataUser.password;
                     req.session.userLogged = dataUser;
+                    if (req.body.rememberUser) {
+                        res.cookie("email", req.body.email, { maxAge: 1000 * 60 * 2 });
+                    }
                     return res.redirect("/users/profile");
                 } else {
                     return res.render("users/login", {
@@ -43,6 +46,7 @@ module.exports = {
     },
     logout: (req, res) => {
         req.session.destroy();
+        res.clearCookie("email");
         return res.redirect("/");
     },
     
