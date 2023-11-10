@@ -125,18 +125,18 @@ values
 ("90157fc3-837e-48bb-bb90-68098c3723f7", "Lavandina Ayudín clásica 4 l.", "Lavandina Ayudín 4 l", 12, 6, 906, 2, 1, 25, 5, 0, 0, "lavandinaAyudin4litros.jpg", "La lavandina Ayudín Clásica mantiene todo su poder para desodorizar y desinfectar. Es ideal para que realices la limpieza de tu hogar, que lo utilices en diferentes superficies. Ayudín elimina el 99.9% de hongos, virus y bacterias. En el baño, la cocina y en otras áreas de la casa, podemos encontrar superficies contaminadas. Por eso, se recomienda la desinfección de los pisos de la cocina, living, cuartos, baño, patio y balcón; la mesada, pileta y utensilios de cocina, artefactos del baño, las llaves de las canillas, el botón de descarga del inodoro y las manijas de todas las puertas de la casa. Por su versatilidad y dado que es un producto de limpieza de los más económicos, es un aliado infaltable en los hogares, ofreciendo limpieza y desinfección por menos de $2 por día. Cuando realmente importa, confía en Ayudin.");
 
 insert into users values
-("7de0e1e3-c381-47ad-a110-2b8f04244b15", "admin@gmail.com", "$2a$10$QNgQTvsl71/kqldjCHIPFuKcoRD5j6vjEJ1Xul5bZKUURK6qeej6W
+("dc5b9aa1-4c33-4857-a4a8-fe9967d3e1eb", "admin@gmail.com", "$$2a$10$t2SQRuQutHWtf67WBtck7eLE6hSZX5QV7Yx7bn2rnkOQ2KXG5cM.W
 ", 1556781234, 1),
-("60465b83-b8ff-4657-8a29-302867206814", "cf@gmail.com", "$2a$10$11.DQbJLbzcsEJC8mQAKneRHaFR03ox8ISZhAL7QNOFeebENzTHrC
+("0d9be258-3f37-41a8-8af5-d444af1e09f5", "cf@gmail.com", "$2a$10$SYDv5k3qjtWOtxL6c0meZODTO0aEBfyPL3G2Fw6fJFioHD8l9nw4u
 ", 1587654321, 1),
-("8d3d369b-4042-446d-a548-d074025503c7", "mayorista@gmail.com", "$2a$10$/7f6f/NZMGtfFiFHKkXvWe4GLj2QZHwHU4bFYEbFcpnSSI0aEDagW
+("218be8c1-ccf8-4c71-8bae-966717694ab1", "mayorista@gmail.com", "$2a$10$Swy286pmdGVKr4aOrH.Geez37pLmMz3VF8b8mmRof6QJ.K7zjFYLO
 ", 1543215678, 1);
 
 insert into usersadmin values
-("7de0e1e3-c381-47ad-a110-2b8f04244b15", "admin", "administrador");
+("dc5b9aa1-4c33-4857-a4a8-fe9967d3e1eb", "admin", "administrador");
 
 insert into userscf values
-("60465b83-b8ff-4657-8a29-302867206814", "consumidor", "final", 42123456);
+("0d9be258-3f37-41a8-8af5-d444af1e09f5", "consumidor", "final", 42123456);
 
 insert into usersmayoristas values
-("8d3d369b-4042-446d-a548-d074025503c7", "mayorista", 2042123456);
+("218be8c1-ccf8-4c71-8bae-966717694ab1", "mayorista", 2042123456);
