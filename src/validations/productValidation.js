@@ -6,7 +6,7 @@ module.exports = [
   body("shortName")
     .notEmpty()
     .withMessage("Debes completar el campo de nombre abreviado"),
-  body("brand").notEmpty().withMessage("Debes completar el campo de marca"),
+  body("brand_id").notEmpty().withMessage("Debes completar el campo de marca"),
   body("price")
     .notEmpty()
     .withMessage("Debes completar el campo de precio minorista"),
@@ -17,7 +17,7 @@ module.exports = [
     .notEmpty()
     .withMessage("Debes completar el campo de precio mayorista"),
   body("mount").notEmpty().withMessage("Debes completar el campo de stock"),
-  body("category").notEmpty().withMessage("Debes seleccionar una categoria"),
+  body("category_id").notEmpty().withMessage("Debes seleccionar una categoria"),
   body("description")
     .notEmpty()
     .withMessage("Debes completar el campo de descripicion"),

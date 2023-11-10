@@ -3,7 +3,7 @@ const { Router } = require("express");
 const router = Router();
 
 /*************** Controller require ******************/
-const userController = require("../controllers/userController");
+const userDBcontroller = require("../controllers/userDBcontroller");
 
 /*************** Middlewares require ******************/
 const uploadImgUser = require("../middlewares/multerUser");
@@ -17,37 +17,23 @@ const registerValidationCf = require("../validations/registerValidationCf");
 const registerValidationM = require("../validations/registerValidationM");
 
 /*************** Login form ******************/
-router.get("/login", guestMiddleware, userController.login);
-router.post("/login", userController.loginProcess);
+router.get("/login", guestMiddleware, userDBcontroller.viewLogin);
+router.post("/login", userDBcontroller.login);
 
 /*************** User profile ******************/
-router.get("/profile", authMiddleware, userController.profile);
+router.get("/profile", authMiddleware, userDBcontroller.profile);
 
 /*************** Logout ******************/
-router.get("/logout", userController.logout);
+router.get("/logout", userDBcontroller.logout);
 
-/*************** Register CF ******************/
-router.get("/registerCf", guestMiddleware, userController.registerCf);
-router.post(
-  "/",
-  uploadImgUser.single("image"),
-  registerValidationCf,
-  registerMiddlewareCf,
-  userController.newUserCf
-);
+/*************** Register **********************/
+router.get("/register", userDBcontroller.viewRegister)
 
-/*************** Register M ******************/
-router.get(
-  "/registerMayorista",
-  guestMiddleware,
-  userController.registerMayorista
-);
-router.post(
-  "/M",
-  uploadImgUser.single("image"),
-  registerValidationM,
-  registerMiddlewareM,
-  userController.newUserM
-);
+router.post("/register", userDBcontroller.register)
+
+/* ************* Delete ********************** */
+router.delete("/delete", userDBcontroller.delete)
+
+
 
 module.exports = router;

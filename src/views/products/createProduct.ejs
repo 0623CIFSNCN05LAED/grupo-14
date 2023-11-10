@@ -40,9 +40,24 @@
               
             </div>
           </div>
+<<<<<<< HEAD
+          <div class="inputGroup">
+            <input type="text" name="shortName" id="shortName" class="inputGroupInput" value="<%= locals.oldData ? oldData.shortName : null %>">
+            <label for="shortName" class="inputGroupLabel">Producto abreviado</label>
+            <div>
+              <% if(locals.errors && errors.shortName) { %>
+                    <p><%= errors.shortName.msg %></p>
+              <% } %>
+            </div>
+          </div>
+          <div class="inputGroup">
+            <input type="text" name="brand_id" id="brand_id" class="inputGroupInput" value="<%= locals.oldData ? oldData.brand : null %>">
+            <label for="brand_id" class="inputGroupLabel">Marca</label>
+=======
           <div class="inputGroup brand">
             <input type="text" name="brand" id="brand" class="inputGroupInput" value="<%= locals.oldData ? oldData.brand : null %>" required>
             <label for="brand" class="inputGroupLabel">Marca</label>
+>>>>>>> main
             <div>
               <% if(locals.errors && errors.brand) { %>
               <p><%= errors.brand.msg %></p>
@@ -90,15 +105,15 @@
             </div>
           </div>
           <div class="inputGroup">
-            <label for="category" id="categoryLabel" class="p-newProduct">Categoria:</label>
-            <select name="category" id="category" class="inputGroupInput">
+            <label for="category_id" id="categoryLabel" class="p-newProduct">Categoria:</label>
+            <select name="category_id" id="category_id" class="inputGroupInput">
               <option value="" <%= locals.oldData && (oldData.category === "") ? "selected" : ""  %>>Elegi una categoría</option>
-              <option value="detergente" <%= locals.oldData && (oldData.category === "detergente") ? "selected" : ""  %>>Detergente</option>
-              <option value="lavandina" <%= locals.oldData && (oldData.category === "lavandina") ? "selected" : ""  %>>Lavandina</option>
-              <option value="papelHigienico" <%= locals.oldData && (oldData.category === "papelHigienico") ? "selected" : ""  %>>Papel higiénico</option>
-              <option value="limpiadorDeRopa" <%= locals.oldData && (oldData.category === "limpiadorDeRopa") ? "selected" : ""  %>>Limpiador de ropa</option>
-              <option value="limpiadorDeMuebles" <%= locals.oldData && (oldData.category === "limpiadorDeMuebles") ? "selected" : ""  %>>Limpiador de muebles</option>
-              <option value="limpiadorDePiso" <%= locals.oldData && (oldData.category === "limpiadorDePiso") ? "selected" : ""  %>>Limpiador de piso</option>
+              <option value="1" <%= locals.oldData && (oldData.category === "limpiadorDePiso") ? "selected" : ""  %>>Limpiador de piso</option>
+              <option value="2" <%= locals.oldData && (oldData.category === "limpiadorDeMuebles") ? "selected" : ""  %>>Limpiador de muebles</option>
+              <option value="3" <%= locals.oldData && (oldData.category === "limpiadorDeRopa") ? "selected" : ""  %>>Limpiador de ropa</option>
+              <option value="4" <%= locals.oldData && (oldData.category === "papelHigienico") ? "selected" : ""  %>>Papel higiénico</option>
+              <option value="5" <%= locals.oldData && (oldData.category === "detergente") ? "selected" : ""  %>>Detergente</option>
+              <option value="6" <%= locals.oldData && (oldData.category === "lavandina") ? "selected" : ""  %>>Lavandina</option>
             </select> 
             <div>
               <% if(locals.errors && errors.category) { %>

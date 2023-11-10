@@ -1,24 +1,33 @@
-const productService = require("../services/productService");
+const productDBservice = require("../services/productDBservice")
 
 const mainController = {
-  homeMayorista: (req, res) => {
-    const inSaleProducts = productService.getInSaleProducts();
-    const bestSellersProducts = productService.getBestSellersProducts();
+  homeMayorista: async (req, res) => {
+    try{
+      const inSaleProducts = await productDBservice.findInSaleProducts();
+      const bestSellersProducts = await productDBservice.findBestSellerProducts();
 
     res.render("main/homeMayorista", {
-      //aca va la ruta desde views hasta el archivo homeMayorista. !! no va / al principio.
       inSaleProducts,
       bestSellersProducts,
     });
+    }catch{
+
+    }
+    
   },
-  homeConsumidorFinal: (req, res) => {
-    const inSaleProducts = productService.getInSaleProducts();
-    const bestSellersProducts = productService.getBestSellersProducts();
+  homeConsumidorFinal: async(req, res) => {
+    try{
+    const inSaleProducts = await productDBservice.findInSaleProducts();
+    const bestSellersProducts = await productDBservice.findBestSellerProducts();
 
     res.render("main/homeCf", {
       inSaleProducts,
       bestSellersProducts,
     });
+    }catch{
+
+    }
+
   },
 };
 

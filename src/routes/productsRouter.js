@@ -11,32 +11,35 @@ const userAdminMiddleware = require("../middlewares/userAdminMiddleware");
 const productValidation = require("../validations/productValidation");
 
 /*************** Controller require ******************/
-const productsController = require("../controllers/productsController");
+const productDBcontroller = require("../controllers/productDBcontroller");
 
 /*************** Get all products ******************/
-router.get("/", productsController.productsList);
+router.get("/", productDBcontroller.list);
 
 /*************** Get one product ******************/
-router.get("/detail/:id", productsController.detail);
+router.get("/detail/:id", productDBcontroller.detail);
 
 /*************** Create one product ******************/
 router.get("/create", userAdminMiddleware, productsController.create);
+router.get("/create", productDBcontroller.viewCreate);
 router.post(
   "/",
   uploadImgProduct.single("image"),
   productValidation,
   productMiddleware,
-  productsController.newProduct
+  productDBcontroller.create
 );
 
 /*************** Edit one product ******************/
 router.get("/edit/:id", userAdminMiddleware, productsController.edit);
 router.put("/:id", uploadImgProduct.single("image"), productsController.update);
+router.get("/edit/:id", productDBcontroller.viewEdit);
+router.put("/:id", uploadImgProduct.single("image"), productDBcontroller.edit);
 
 /*************** Delete one product ******************/
-router.delete("/:id", productsController.delete);
+router.delete("/:id", productDBcontroller.delete);
 
 /*************** Product cart ******************/
-router.get("/cart", productsController.cart);
+router.get("/cart", productDBcontroller.cart);
 
 module.exports = router;
