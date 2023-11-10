@@ -36,7 +36,7 @@ module.exports = {
             const product = await productDBservice.findById(id);
             res.render("products/editProduct", { product });
         } catch{
-
+                    
         }
     },
 
