@@ -13,7 +13,7 @@ module.exports = {
     detail: async (req,res)=>{
         try{
             const id = req.params.id;
-            const product = await productDBservice.findById(id);
+            const product = await productDBservice.getFormattedProduct(id);
             const relatedProducts = await productDBservice.findRelatedProducts(product)
             res.render("products/productDetail", { product, relatedProducts });
         } catch(error){
@@ -34,6 +34,7 @@ module.exports = {
         try{
             const id = req.params.id;
             const product = await productDBservice.findById(id);
+            console.log(typeof product.wholesalePrice)            
             res.render("products/editProduct", { product });
         } catch{
                     

@@ -46,23 +46,23 @@
             <div class="prices">
               <% if (product.discount > 0) { %>
               <h5>
-                <span class="notPrice"><%= product.price %></span> / <%=
+                <span class="notPrice"><%= product.retailPrice %></span> / <%=
                 product.discount %>% OFF
               </h5>
               <h2><%= product.priceWithDiscount %></h2>
               <% } else { %>
-              <h2><%= product.price %></h2>
+              <h2><%= product.retailPrice %></h2>
               <% } %>
             </div>
             <form action="">
               <div class="amount">
-                <% if (product.mount == 0) { %>
+                <% if (product.stock == 0) { %>
                 <p>No hay stock</p>
                 <% } else { %>
                 <p>stock disponible</p>
                 <h4>Cantidad:</h4>
                 <select name="cantidad" id="cantidad">
-                  <% for (let i = 1; i <= product.mount; i++) { %>
+                  <% for (let i = 1; i <= product.stock; i++) { %>
                   <option value="<%= [i] %>"><%= [i] %></option>
                   <% } %>
                 </select>
