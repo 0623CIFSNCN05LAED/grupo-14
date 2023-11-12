@@ -1,10 +1,10 @@
-const userService = require("../services/userDBservice")
+const userService = require("../services/userDBservice");
 
-module.exports = (req, res, next) => {
+module.exports = async (req, res, next) => {
   res.locals.isLogged = false;
 
   let emailInCookie = req.cookies.email;
-  let userFromCookie = userService.findByEmail(emailInCookie);
+  let userFromCookie = await userService.findByEmail(emailInCookie);
 
   if (userFromCookie) {
     req.session.userLogged = userFromCookie;
