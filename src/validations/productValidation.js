@@ -7,16 +7,16 @@ module.exports = [
     .notEmpty()
     .withMessage("Debes completar el campo de nombre abreviado"),
   body("brand_id").notEmpty().withMessage("Debes completar el campo de marca"),
-  body("price")
+  body("retailPrice")
     .notEmpty()
     .withMessage("Debes completar el campo de precio minorista"),
   body("discount")
     .notEmpty()
     .withMessage("Debes completar el campo de descuento"),
-  body("preferentialPrice")
+  body("wholesalePrice")
     .notEmpty()
     .withMessage("Debes completar el campo de precio mayorista"),
-  body("mount").notEmpty().withMessage("Debes completar el campo de stock"),
+  body("stock").notEmpty().withMessage("Debes completar el campo de stock"),
   body("category_id").notEmpty().withMessage("Debes seleccionar una categoria"),
   body("description")
     .notEmpty()
