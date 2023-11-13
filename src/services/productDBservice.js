@@ -46,10 +46,12 @@ module.exports = {
       return product;
     } catch {}
   },
-  
-  getFormattedProduct: function(id){
-    const product = this.findById(id);
-    return formatProductPrices(product)
+
+  getFormattedProduct: async function (id) {
+    try {
+      const product = await this.findById(id);
+      return formatProductPrices(product);
+    } catch {}
   },
 
   findInSaleProducts: async function () {
