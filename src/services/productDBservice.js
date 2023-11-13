@@ -43,9 +43,15 @@ module.exports = {
   findById: async function (id) {
     try {
       const product = await Product.findByPk(id);
-      return formatProductPrices(product);
+      return product;
     } catch {}
   },
+  
+  getFormattedProduct: function(id){
+    const product = this.findById(id);
+    return formatProductPrices(product)
+  },
+
   findInSaleProducts: async function () {
     try {
       const inSaleProducts = await Product.findAll({
