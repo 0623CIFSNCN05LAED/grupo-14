@@ -9,7 +9,7 @@
   <body>
     <% if (!locals.userLogged || locals.userLogged.category == 'consumidorFinal' || locals.userLogged.category == 'admin') {%> 
       <%- include('../partials/headerCf') %> 
-    <% } else if (locals.userLogged.category == 'mayorista') { %> 
+    <% } else if (locals.userLogged.mayorista !== null) { %> 
       <%- include('../partials/headerMayorista') %> 
     <% } %>
     <main>

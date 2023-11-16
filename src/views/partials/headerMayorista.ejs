@@ -7,18 +7,18 @@
         <div class="tiendaMayoristaDiv">
           <a href="/cf"><button class="tiendaButton">Cambiar a TIENDA CONSUMIDOR FINAL</button></a>
         </div>
-      <% } else if (locals.userLogged.category == 'admin') { %>
+      <% } else if (locals.userLogged.admin !== null) { %>
         <div class="textoTienda">
           <p>Bienvenido administrador <%= locals.userLogged.name %> <%= locals.userLogged.lastName %> - TIENDA MAYORISTA</p>
         </div>
         <div class="tiendaMayoristaDiv">
           <a href="/cf"><button class="tiendaButton">Cambiar a TIENDA CONSUMIDOR FINAL</button></a>
         </div>
-      <% } else if (locals.userLogged.category == 'consumidorFinal') { %>
+      <% } else if (locals.userLogged.cf !== null) { %>
         <div class="textoTienda">
           <p>TIENDA CONSUMIDOR FINAL</p>
         </div>
-      <% } else { %>
+      <% } else if (locals.userLogged.mayorista !== null){ %>
         <div class="textoTienda">
           <p>TIENDA MAYORISTA</p>
         </div>
