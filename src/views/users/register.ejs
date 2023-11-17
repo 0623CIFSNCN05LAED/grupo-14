@@ -31,6 +31,9 @@
                 pattern="[\w\s]+"
               />
             </div>
+            <% if(locals.errors && errors.name) { %>
+              <p><%= errors.name.msg %></p>
+              <% } %>
           </div>
           <div class="form-field">
             <div class="data">
@@ -73,6 +76,9 @@
               />
               
             </div>
+            <% if(locals.errors && errors.tel) { %>
+              <p><%= errors.tel.msg %></p>
+              <% } %>
           </div>
           <div class="form-field">
             <div class="data">

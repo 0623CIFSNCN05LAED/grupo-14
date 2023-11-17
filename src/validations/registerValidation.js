@@ -1,10 +1,24 @@
 const { body } = require("express-validator");
 
 module.exports = [
-  body("businessName")
+  body("category").custom((value) => {
+    if (value == "admin") {
+       body("name").notEmpty().withMessage("Debes completar el campo de nombre."),
+  body("lastName")
+    .notEmpty()
+    .withMessage("Debes completar el campo de apellido.")
+    } else if (value == "cf") {
+       body("name").notEmpty().withMessage("Debes completar el campo de nombre."),
+  body("lastName")
+    .notEmpty()
+    .withMessage("Debes completar el campo de apellido."),
+ body("dni").notEmpty().withMessage("Debes completar el campo de DNI.")
+    } else if  (value == "mayorista") {
+     body("businessName")
     .notEmpty()
     .withMessage("Debes completar el campo de razón social."),
-  body("cuit").notEmpty().withMessage("Debes completar el campo de CUIT."),
+  body("cuit").notEmpty().withMessage("Debes completar el campo de CUIT.")
+   }}),
   body("tel")
     .notEmpty()
     .withMessage("Debes completar el campo de Teléfono / Celular."),
@@ -26,13 +40,5 @@ module.exports = [
     }
     return true;
   }),
-  body("address")
-    .notEmpty()
-    .withMessage("Debes completar el campo de dirección."),
-  body("location").notEmpty().withMessage("Debes seleccionar una localidad."),
-  body("cp").notEmpty().withMessage("Debes completar el campo de C.P."),
-  body("province")
-    .notEmpty()
-    .withMessage("Debes completar el campo de provincia."),
-  body("country").notEmpty().withMessage("Debes completar el campo de país."),
+ 
 ];
