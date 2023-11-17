@@ -2,7 +2,7 @@ module.exports = (sequelize, dataTypes)=>{
     const alias = "Cart";
     const cols = {
         id: {
-            type: dataTypes.STRING(255),
+            type: dataTypes.INTEGER,
             primaryKey: true
         },
         user_id: dataTypes.STRING(255),

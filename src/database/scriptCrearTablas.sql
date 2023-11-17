@@ -82,7 +82,7 @@ CREATE TABLE Products (
 );
 
 CREATE TABLE Carts (
-    id VARCHAR(255)PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     user_id VARCHAR(255),
     quantity INT,
     total_price DECIMAL(10, 2),
@@ -93,7 +93,7 @@ CREATE TABLE Carts (
 
 CREATE TABLE CartsProducts (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    cart_id VARCHAR(255) NOT NULL,
+    cart_id INT NOT NULL,
     product_id VARCHAR(255) NOT NULL,
     FOREIGN KEY (cart_id) REFERENCES Carts(id),
     FOREIGN KEY (product_id) REFERENCES Products(id)

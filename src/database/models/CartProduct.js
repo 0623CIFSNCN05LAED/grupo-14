@@ -6,7 +6,7 @@ module.exports = (sequelize, dataTypes) => {
       autoIncrement: true,
     },
     cart_id: {
-      type: dataTypes.STRING(255),
+      type: dataTypes.INTEGER,
     },
     porduct_id: {
       type: dataTypes.STRING(255),
