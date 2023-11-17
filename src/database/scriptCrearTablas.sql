@@ -5,7 +5,9 @@ CREATE TABLE Users (
     email VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
     phoneNumber INT NOT NULL,
-    notify TINYINT(1) NOT NULL
+    notify TINYINT(1) NOT NULL,
+    active_cart_id VARCHAR(255),
+    FOREIGN KEY (active_cart_id) REFERENCES Carts(id)
 );
 
 CREATE TABLE UsersAdmin (
@@ -78,6 +80,25 @@ CREATE TABLE Products (
     FOREIGN KEY (category_id) REFERENCES Categories(id),
     FOREIGN KEY (brand_id) REFERENCES Brands(id)
 );
+
+CREATE TABLE Carts (
+    id VARCHAR(255)PRIMARY KEY,
+    user_id VARCHAR(255),
+    quantity INT,
+    total_price DECIMAL(10, 2),
+    status VARCHAR(20),
+    purchase_date DATE,
+    FOREIGN KEY (user_id) REFERENCES Users(id),
+);
+
+CREATE TABLE CartsProducts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    cart_id VARCHAR(255) NOT NULL,
+    product_id VARCHAR(255) NOT NULL,
+    FOREIGN KEY (cart_id) REFERENCES Carts(id),
+    FOREIGN KEY (product_id) REFERENCES Products(id)
+);
+
 
 insert into categories values
 (1, "pisos"),
