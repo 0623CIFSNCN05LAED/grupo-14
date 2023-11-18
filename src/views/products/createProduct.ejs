@@ -17,7 +17,7 @@
           <div class="side">
 
             <div class="inputGroup name">
-              <input type="text" name="name" id="name" class="inputGroupInput" value="<%= locals.oldData ? oldData.name : null %>" required>
+              <input type="text" name="name" id="name" class="inputGroupInput" value="<%= locals.oldData ? oldData.name : null %>" >
               <label for="name" class="inputGroupLabel">Nombre del producto</label>
 
               <div>
@@ -29,7 +29,7 @@
             </div>
 
             <div class="inputGroup">
-              <input type="text" name="shortName" id="shortName" class="inputGroupInput" value="<%= locals.oldData ? oldData.shortName : null %>" required>
+              <input type="text" name="shortName" id="shortName" class="inputGroupInput" value="<%= locals.oldData ? oldData.shortName : null %>" >
               <label for="shortName" class="inputGroupLabel">Producto abreviado</label>
 
               <div>
@@ -52,7 +52,7 @@
           </div>
           <div class="side">
             <div class="inputGroup inputNumber">
-              <input type="number" name="retailPrice" id="retailPrice" class="inputGroupInput" value="<%= locals.oldData ? oldData.retailPrice : null %>" required>
+              <input type="number" name="retailPrice" id="retailPrice" class="inputGroupInput" value="<%= locals.oldData ? oldData.retailPrice : null %>" >
               <label for="retailPrice" class="inputGroupLabel">Precio minorista</label>
               <div>
                 <% if(locals.errors && errors.retailPrice) { %>
@@ -61,7 +61,7 @@
               </div>
             </div>
             <div class="inputGroup inputNumber">
-              <input type="number" name="discount" id="discount" class="inputGroupInput" value="<%= locals.oldData ? oldData.discount : null %>" required>
+              <input type="number" name="discount" id="discount" class="inputGroupInput" value="<%= locals.oldData ? oldData.discount : null %>" >
               <label for="discount" class="inputGroupLabel">% OFF</label>
               <div>
                 <% if(locals.errors && errors.discount) { %>
@@ -72,7 +72,7 @@
           </div>
           <div class="side">
             <div class="inputGroup inputNumber">
-              <input type="number" name="wholesalePrice" id="wholesalePrice" class="inputGroupInput" value="<%= locals.oldData ? oldData.wholesalePrice : null %>" required>
+              <input type="number" name="wholesalePrice" id="wholesalePrice" class="inputGroupInput" value="<%= locals.oldData ? oldData.wholesalePrice : null %>" >
               <label for="wholesalePrice" class="inputGroupLabel">Precio mayorista</label>
               <div>
                 <% if(locals.errors && errors.wholesalePrice) { %>
@@ -81,7 +81,7 @@
               </div>
             </div>
             <div class="inputGroup inputNumber">
-              <input type="number" name="stock" id="stock" class="inputGroupInput" value="<%= locals.oldData ? oldData.stock : null %>"required>
+              <input type="number" name="stock" id="stock" class="inputGroupInput" value="<%= locals.oldData ? oldData.stock : null %>">
               <label for="stock" class="inputGroupLabel">Stock</label>
               <div>
                 <% if(locals.errors && errors.stock) { %>

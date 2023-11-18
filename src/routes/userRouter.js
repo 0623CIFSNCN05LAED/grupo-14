@@ -27,13 +27,16 @@ router.get("/profile", authMiddleware, userDBcontroller.profile);
 router.get("/logout", userDBcontroller.logout);
 
 /*************** Register **********************/
-router.get("/register", userDBcontroller.viewRegister)
+router.get("/register", userDBcontroller.viewRegister);
 
-router.post("/register",registerMiddleware, registerValidation, userDBcontroller.register)
+router.post(
+  "/register",
+  registerValidation,
+  registerMiddleware,
+  userDBcontroller.register
+);
 
 /* ************* Delete ********************** */
-router.delete("/delete", userDBcontroller.delete)
-
-
+router.delete("/delete", userDBcontroller.delete);
 
 module.exports = router;
