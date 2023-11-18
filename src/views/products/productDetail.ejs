@@ -4,7 +4,7 @@
     <%- include("../partials/head", {title: 'Detalle de producto'}) %>
 
     <link rel="stylesheet" href="/css/productDetail.css" />
-    <link rel="stylesheet" href="/css/productCard.css" />
+    <script src="/scripts/addToCart.js" ></script>
   </head>
   <body>
     <% if (!locals.userLogged || locals.userLogged.category == 'consumidorFinal' || locals.userLogged.category == 'admin') {%> 
@@ -68,12 +68,8 @@
                 </select>
                 <% } %>
               </div>
-              <a href="#"
-                ><button type="submit" class="cart">
-                  Agregar al carrito
-                  <i class="fa-solid fa-cart-shopping"></i></button
-              ></a>
             </form>
+            <button type="button" id="addToCart" class="cart">Agregar al carrito<i class="fa-solid fa-cart-shopping"></i></button>
           </div>
           <div class="desc">
             <h3>Descripcion</h3>

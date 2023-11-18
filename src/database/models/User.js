@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
 
     User.associate = function (models) {
     User.belongsToMany(models.Address, {
-        through: 'AddressesUsers',
+        through: 'AddressUser',
         foreignKey: 'user_id',
         otherKey: 'address_id',
         as: 'addresses',

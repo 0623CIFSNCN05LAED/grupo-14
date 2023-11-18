@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-  const AddressesUsers = sequelize.define('AddressUser', {
+  const AddressUser = sequelize.define('AddressUser', {
     id: {
       type: dataTypes.INTEGER,
       primaryKey: true,
@@ -17,15 +17,15 @@ module.exports = (sequelize, dataTypes) => {
     });
 
   
-  AddressesUsers.associate = function(models){
-      AddressesUsers.belongsTo(models.Address, {
+  AddressUser.associate = function(models){
+      AddressUser.belongsTo(models.Address, {
           foreignKey: "address_id"
       }),
 
-      AddressesUsers.belongsTo(models.User, {
+      AddressUser.belongsTo(models.User, {
           foreignKey: "user_id"
       })
   }
 
-  return AddressesUsers;
+  return AddressUser;
 };
