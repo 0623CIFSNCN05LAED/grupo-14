@@ -50,17 +50,14 @@ module.exports = {
     res.clearCookie("email");
     return res.redirect("/");
   },
-
   viewRegister: (req, res) => {
     res.render("users/register");
   },
-
   register: (req, res) => {
     const dataUser = req.body;
     userDBservice.create(dataUser);
     res.redirect("/");
   },
-
   delete: (req, res) => {
     const id = req.params.id;
     userDBservice.delete(id);
