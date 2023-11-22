@@ -7,14 +7,14 @@ const userDBcontroller = require("../controllers/userDBcontroller");
 
 /*************** Middlewares require ******************/
 const uploadImgUser = require("../middlewares/multerUser");
-const registerMiddlewareCf = require("../middlewares/registerMiddlewareCf");
-const registerMiddlewareM = require("../middlewares/registerMiddlewareM");
+const registerMiddleware = require("../middlewares/registerMiddleware");
+const addressMiddleware = require("../middlewares/addressMiddleware");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
 
 /*************** Validations require ******************/
-const registerValidationCf = require("../validations/registerValidationCf");
-const registerValidationM = require("../validations/registerValidationM");
+const registerValidation = require("../validations/registerValidation");
+const addressValidation = require("../validations/addressValidation");
 
 /*************** Login form ******************/
 router.get("/login", guestMiddleware, userDBcontroller.viewLogin);
@@ -27,13 +27,16 @@ router.get("/profile", authMiddleware, userDBcontroller.profile);
 router.get("/logout", userDBcontroller.logout);
 
 /*************** Register **********************/
-router.get("/register", userDBcontroller.viewRegister)
+router.get("/register", userDBcontroller.viewRegister);
 
-router.post("/register", userDBcontroller.register)
+router.post(
+  "/register" /* uploadImgUser.single("image"), */,
+  registerValidation,
+  registerMiddleware,
+  userDBcontroller.register
+);
 
 /* ************* Delete ********************** */
-router.delete("/delete", userDBcontroller.delete)
-
-
+router.delete("/delete", userDBcontroller.delete);
 
 module.exports = router;
