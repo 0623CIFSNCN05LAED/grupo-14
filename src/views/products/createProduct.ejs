@@ -4,6 +4,7 @@
     <%- include("../partials/head", {title: 'Crear producto'}) %>
 
     <link rel="stylesheet" href="/css/createProduct.css" />
+    <script src="/js/createProduct.js" defer></script>
   </head>
   <body>
     <%- include('../partials/headerCf') %>
@@ -11,7 +12,7 @@
     <main>
       <div class="div-newProduct">
 
-        <form class="form-newProduct" action="/products" method="post" enctype="multipart/form-data">
+        <form class="form-newProduct" action="/products" method="post" enctype="multipart/form-data" id="form">
 
           <h2>Nuevo Producto</h2>
           <div class="side">
