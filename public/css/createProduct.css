@@ -135,6 +135,18 @@ select {
   color: #fff;
 }
 
+/* validaciones START */
+
+.errorMessage {
+  display: none;
+  color: red;
+}
+
+.display {
+  display: block;
+}
+/* validaciones END */
+
 @media (min-width: 560px) {
   .form-newProduct {
     width: 85%;
