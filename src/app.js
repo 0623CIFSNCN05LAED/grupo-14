@@ -3,7 +3,6 @@ const express = require("express");
 const path = require("path");
 const methodOverride = require("method-override");
 const session = require("express-session");
-const cookies = require("cookie-parser");
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 const cookieParser = require("cookie-parser")
 

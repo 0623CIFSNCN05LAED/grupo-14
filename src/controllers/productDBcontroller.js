@@ -13,7 +13,7 @@ module.exports = {
   detail: async (req, res) => {
     try {
       const id = req.params.id;
-      const product = await productDBservice.getFormattedProduct(id);
+      const product = await productDBservice.findById(id);
       const relatedProducts = await productDBservice.findRelatedProducts(
         product
       );
@@ -56,4 +56,10 @@ module.exports = {
   cart: (req, res) => {
     res.render("products/productCart");
   },
+
+  addToCart: (req,res)=>{
+    const product = req.body.product;
+    const userId = req.body.userId;
+    productDBservice.addToCart(product,userId)
+  }
 };

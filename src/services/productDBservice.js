@@ -1,34 +1,33 @@
-const { Product } = require("../database/models");
+const { Product, Cart, CartProduct } = require("../database/models");
 const { v4: uuidv4 } = require("uuid");
-const path = require("path");
 
 /************* Funciones de uso local(este mismo archivo) ****************/
 
-const formatProductPrices = function (product) {
-  /* Da el formato a los precios de cada producto */
+// const formatProductPrices = function (product) {
+//   /* Da el formato a los precios de cada producto */
 
-  const priceWithDiscount = // Calcula el precio final con el descuento incluido
-    product.retailPrice - product.retailPrice * (product.discount / 100);
+//   const priceWithDiscount = // Calcula el precio final con el descuento incluido
+    
 
-  product.priceWithDiscount = `$ ${priceWithDiscount.toLocaleString("es", {
-    // Crea dentro del producto el precio con el descuento incluido y le da el formato
-    minimumFractionDigits: 2,
-  })}`;
+//   product.priceWithDiscount = ` ${priceWithDiscount.toLocaleString("es", {
+//     // Crea dentro del producto el precio con el descuento incluido y le da el formato
+//     minimumFractionDigits: 2,
+//   })}`;
 
-  product.retailPrice = `$ ${product.retailPrice.toLocaleString("es", {
-    // Le da el formato al precio
-    minimumFractionDigits: 2,
-  })}`;
+//   product.retailPrice = ` ${product.retailPrice.toLocaleString("es", {
+//     // Le da el formato al precio
+//     minimumFractionDigits: 2,
+//   })}`;
 
-  product.discount = product.discount.toLocaleString("es"); // Le da el formato al descuento
+//   product.discount = product.discount.toLocaleString("es"); // Le da el formato al descuento
 
-  return product;
-};
+//   return product;
+// };
 
-const formatProductsPrices = function (products) {
-  // Recibe los productos y a cada uno le otorga el formato
-  return products.map((product) => formatProductPrices(product));
-};
+// const formatProductsPrices = function (products) {
+//   // Recibe los productos y a cada uno le otorga el formato
+//   return products.map((product) => formatProductPrices(product));
+// };
 
 /* Terminan funcion de uso local */
 
@@ -36,7 +35,7 @@ module.exports = {
   findAll: async function () {
     try {
       const products = await Product.findAll();
-      return formatProductsPrices(products);
+      return products;
     } catch {}
   },
 
@@ -47,13 +46,6 @@ module.exports = {
     } catch {}
   },
 
-  getFormattedProduct: async function (id) {
-    try {
-      const product = await this.findById(id);
-      return formatProductPrices(product);
-    } catch {}
-  },
-
   findInSaleProducts: async function () {
     try {
       const inSaleProducts = await Product.findAll({
@@ -61,7 +53,7 @@ module.exports = {
           offer: 1,
         },
       });
-      return formatProductsPrices(inSaleProducts);
+      return inSaleProducts;
     } catch {}
   },
   findBestSellerProducts: async function () {
@@ -71,7 +63,7 @@ module.exports = {
           bestSeller: 1,
         },
       });
-      return formatProductsPrices(bestSellerProducts);
+      return bestSellerProducts;
     } catch {}
   },
   findRelatedProducts: async function (product) {
@@ -81,7 +73,7 @@ module.exports = {
           category_id: product.category_id,
         },
       });
-      return formatProductsPrices(relatedProducts);
+      return relatedProducts;
     } catch {}
   },
   createProduct: function (req) {
@@ -92,6 +84,7 @@ module.exports = {
       retailPrice: req.body.retailPrice,
       wholesalePrice: req.body.wholesalePrice,
       discount: req.body.discount,
+      priceWithDiscount: req.body.retailPrice - req.body.retailPrice * (req.body.discount / 100),
       stock: req.body.stock,
       image: req.file ? req.file.filename : "defaultImg.jpg",
       category_id: Number(req.body.category_id),
@@ -129,4 +122,28 @@ module.exports = {
       where: { id: id },
     });
   },
+
+  addToCart: async function(product, userId){
+    try{
+    const cart =  await Cart.create({
+        id: uuidv4(),
+        user_id: userId,
+        quantity: 1,
+        total_price: product.priceWithDiscount,
+        status: "sold",
+        purchase_date: null,
+      });
+      
+      const cartId = cart.id;
+      
+      CartProduct.create({
+        cart_id: cartId,
+        product_id: product.id
+      })
+    
+
+    }catch{
+  } 
+    
+  }
 };

@@ -10,6 +10,7 @@ module.exports = (sequelize, dataTypes)=>{
       retailPrice: dataTypes.DECIMAL(10, 2),
       wholesalePrice: dataTypes.DECIMAL(10, 2),
       discount: dataTypes.INTEGER,
+      priceWithDiscount: dataTypes.DECIMAL(10,2),
       stock: dataTypes.INTEGER,
       image: dataTypes.STRING(255),
       category_id: dataTypes.INTEGER,
