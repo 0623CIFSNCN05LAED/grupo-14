@@ -1,3 +1,17 @@
+const validations = [
+  {
+    field: "name",
+    validation: () => true,
+    message: "mensaje de validación",
+  },
+];
+
+validations.forEach((validation) => {
+  const inputId = validation.field;
+  const input = document.getElementById(imputId);
+  const inputErrorMessage = document.getElementById(inputId + "Error");
+});
+
 const form = document.getElementById("form");
 
 form.addEventListener("submit", (event) => {
