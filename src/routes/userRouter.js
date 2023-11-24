@@ -6,6 +6,7 @@ const router = Router();
 const userDBcontroller = require("../controllers/userDBcontroller");
 
 /*************** Middlewares require ******************/
+const loginMiddleware = require("../middlewares/loginMiddleware");
 const uploadImgUser = require("../middlewares/multerUser");
 const registerMiddleware = require("../middlewares/registerMiddleware");
 const addressMiddleware = require("../middlewares/addressMiddleware");
@@ -13,12 +14,13 @@ const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
 
 /*************** Validations require ******************/
+const loginValidation = require("../validations/loginValidation");
 const registerValidation = require("../validations/registerValidation");
 const addressValidation = require("../validations/addressValidation");
 
 /*************** Login form ******************/
 router.get("/login", guestMiddleware, userDBcontroller.viewLogin);
-router.post("/login", userDBcontroller.login);
+router.post("/login", loginValidation, loginMiddleware, userDBcontroller.login);
 
 /*************** User profile ******************/
 router.get("/profile", authMiddleware, userDBcontroller.profile);
