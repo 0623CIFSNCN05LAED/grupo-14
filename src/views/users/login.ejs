@@ -22,11 +22,12 @@
               class="inputGroupInput"
               value=""
               id="email"
-              required
             />
+            
             <label for="email" class="inputGroupLabel"
               >Correo electrónico</label
             >
+            <p class="errorMsg" id="emailError"></p>
             <div class="error">
               <% if(locals.errors && errors.email) { %>
               <p><%= errors.email.msg %></p>
@@ -40,9 +41,9 @@
               class="inputGroupInput"
               value=""
               id="password"
-              required
             />
             <label for="password" class="inputGroupLabel">Contraseña</label>
+            <p class="errorMsg" id="passwordError"></p>
             <div class="error">
               <% if(locals.errors && errors.password) { %>
               <p><%= errors.password.msg %></p>
