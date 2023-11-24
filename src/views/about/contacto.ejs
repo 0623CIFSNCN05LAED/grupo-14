@@ -4,11 +4,7 @@
     <%- include("../partials/head", {title: 'Contacto'}) %>
   </head>
   <body>
-    <% if (!locals.userLogged || locals.userLogged.category == 'consumidorFinal' || locals.userLogged.category == 'admin') {%> 
-      <%- include('../partials/headerCf') %> 
-    <% } else if (locals.userLogged.category == 'mayorista') { %> 
-      <%- include('../partials/headerMayorista') %> 
-    <% } %>
+    <%- include('../partials/header') %> 
 
     <main>Soy la pagina contacto!</main>
 
