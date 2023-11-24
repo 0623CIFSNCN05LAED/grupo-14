@@ -60,6 +60,7 @@ module.exports = {
   addToCart: (req,res)=>{
     const product = req.body.product;
     const userId = req.body.userId;
-    productDBservice.addToCart(product,userId)
+    const quantity = req.body.quantity
+    productDBservice.addToCart(product,userId, quantity)
   }
 };

@@ -110,6 +110,19 @@
   text-align: left;
 }
 
+/* stock START */
+.stockContainer {
+  display: flex;
+  align-items: center;
+}
+
+.stockButton {
+  font-size: 20px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+/* stock END */
+
 /* PRODUCTOS RELACIONADOS */
 
 .relatedProducts {

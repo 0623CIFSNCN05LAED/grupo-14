@@ -62,13 +62,12 @@
                 <% if (product.stock == 0) { %>
                 <p>No hay stock</p>
                 <% } else { %>
-                <p>stock disponible</p>
                 <h4>Cantidad:</h4>
-                <select name="cantidad" id="cantidad">
-                  <% for (let i = 1; i <= product.stock; i++) { %>
-                  <option value="<%= [i] %>"><%= [i] %></option>
-                  <% } %>
-                </select>
+                <div class="stockContainer">
+                    <button class="stockButton" id="subtract">-</button>
+                    <input type="number" id="quantity" value="1" min="1">
+                    <button class="stockButton" id="add">+</button>
+                </div>
                 <% } %>
               </div>
             </form>

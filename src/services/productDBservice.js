@@ -123,14 +123,14 @@ module.exports = {
     });
   },
 
-  addToCart: async function(product, userId){
+  addToCart: async function(product, userId, quantity){
     try{
     const cart =  await Cart.create({
         id: uuidv4(),
         user_id: userId,
-        quantity: 1,
-        total_price: product.priceWithDiscount,
-        status: "sold",
+        quantity: quantity,
+        total_price: product.priceWithDiscount * quantity,
+        status: "prueba",
         purchase_date: null,
       });
       

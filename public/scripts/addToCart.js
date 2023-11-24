@@ -1,10 +1,32 @@
 
 window.onload = function(){
-    const addToCartScript = document.getElementById("addToCartScript"); /* agarro al elemento script */
-    const productString = decodeURIComponent(addToCartScript.getAttribute("data-product")) /* decodifico la informacion que me paso la vista */
-    const product = JSON.parse(productString) /* paso esa informacion a formato json */
+    const quantityInput = document.getElementById("quantity");
+    const addButton = document.getElementById("add");
+    const subtractButton = document.getElementById("subtract");
 
-    const userIdScript = decodeURIComponent(addToCartScript.getAttribute("data-user"))
+    addButton.addEventListener("click", function(e){
+        e.preventDefault();
+        quantityInput.value = Number(quantityInput.value) + 1;
+
+        
+    });
+    
+    subtractButton.addEventListener("click", function(e){
+        e.preventDefault();
+        if(quantityInput.value > 1){
+            quantityInput.value = Number(quantityInput.value) - 1;
+        }
+    });
+    
+    
+
+
+
+    const addToCartScript = document.getElementById("addToCartScript"); /* agarro al elemento script */
+    const productString = decodeURIComponent(addToCartScript.getAttribute("data-product")); /* decodifico la informacion que me paso la vista */
+    const product = JSON.parse(productString); /* paso esa informacion a formato json */
+
+    const userIdScript = decodeURIComponent(addToCartScript.getAttribute("data-user"));
     const userId = JSON.parse(userIdScript);
     /* CUANDO ESTEN LAS VALIDACIONES DEL FRONT HAGO local STORAGE */
     /* on click, validar y si pasan. Guardar el id en local storage */
@@ -12,11 +34,11 @@ window.onload = function(){
     const addToCartButton = document.getElementById("addToCart");
     
     addToCartButton.addEventListener("click",  function(){
-        const data =  {product, userId}
-        console.log("data",data)
+        const quantity = quantityInput.value
+        const data =  {product, userId,quantity}
         fetch("/products/addToCart", {
             method: "POST",
-            body: JSON.stringify(data), /* este data es el que se le pasa al servidor como req.body */
+            body: JSON.stringify(data), /* este data es el que se le pasa al servidor como req.body*/
             headers: {
                 "Content-Type": "application/json"
             }
@@ -25,6 +47,9 @@ window.onload = function(){
         }).then(function(info){
             console.log("info",info)
         })
-    })
-    
+    });
+
+
+
+
 }
