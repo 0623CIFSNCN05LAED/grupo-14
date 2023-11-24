@@ -1,44 +1,18 @@
 const userDBservice = require("../services/userDBservice");
-const bcrypt = require("bcryptjs");
 
 module.exports = {
   viewLogin: (req, res) => {
     res.render("users/login");
   },
   login: async (req, res) => {
-    try {
-      const email = req.body.email;
-      const userToLogin = await userDBservice.findByEmail(email);
-      const dataUser = userToLogin;
-      if (dataUser) {
-        const validPassword = await bcrypt.compare(
-          req.body.password,
-          dataUser.password
-        );
-        if (validPassword) {
-          delete dataUser.password;
-          req.session.userLogged = dataUser;
-          if (req.body.rememberUser) {
-            res.cookie("email", req.body.email, { maxAge: 1000 * 60 * 2 });
-          }
-          return res.redirect("/users/profile");
-        } else {
-          return res.render("users/login", {
-            errors: {
-              password: { msg: "Las credenciales son invalidas" },
-            },
-          });
-        }
-      } else {
-        return res.render("users/login", {
-          errors: {
-            email: {
-              msg: "No se encuentra este email en nuestra base de datos",
-            },
-          },
-        });
-      }
-    } catch {}
+    const dataUser = await userDBservice.findByEmail(req.body.email);
+    delete dataUser.password;
+    req.session.userLogged = dataUser;
+    console.log("user", req.session.userLogged.admin.name);
+    if (req.body.rememberUser) {
+      res.cookie("email", req.body.email, { maxAge: 1000 * 60 * 2 });
+    }
+    return res.redirect("/users/profile");
   },
   profile: (req, res) => {
     res.render("users/userProfile", {
