@@ -7,11 +7,7 @@
     <link rel="stylesheet" href="/css/productCard.css" />
   </head>
   <body>
-    <% if (!locals.userLogged || locals.userLogged.category == 'consumidorFinal' || locals.userLogged.category == 'admin') {%> 
-      <%- include('../partials/headerCf') %> 
-    <% } else if (locals.userLogged.category == 'mayorista') { %> 
-      <%- include('../partials/headerMayorista') %> 
-    <% } %>
+    <%- include('../partials/header') %> 
 
     <main>
       <div class="nav">
