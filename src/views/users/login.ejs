@@ -4,6 +4,7 @@
     <%- include("../partials/head", {title: 'Inicio de sesión'}) %>
 
     <link rel="stylesheet" href="/css/login.css" />
+    <script src="/js/login.js" defer></script>
   </head>
   <body>
     <%- include('../partials/header') %>
@@ -13,7 +14,7 @@
         <img src="/img/logo.png" alt="" />
       </div>
       <div class="div-newProduct">
-        <form class="form-newProduct" action="/users/login" method="post">
+        <form class="form-newProduct" action="/users/login" method="post" id="formLogin">
           <div class="inputGroup">
             <input
               type="text"
