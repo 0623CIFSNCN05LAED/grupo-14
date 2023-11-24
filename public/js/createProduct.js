@@ -2,52 +2,52 @@ const validations = [
   {
     field: "name",
     check: (input) => input.value != "",
-    message: "El campo no debe estar vacío",
+    message: "Debes completar el campo de nombre",
   },
   {
     field: "shortName",
     check: (input) => input.value != "",
-    message: "El campo no debe estar vacío",
+    message: "Debes completar el campo de nombre abreviado",
   },
   {
     field: "brand_id",
     check: (input) => input.value != "",
-    message: "El campo no debe estar vacío",
+    message: "Debes completar el campo de marca",
   },
   {
     field: "retailPrice",
     check: (input) => input.value != "",
-    message: "El campo no debe estar vacío",
+    message: "Debes completar el campo de precio minorista",
   },
   {
     field: "discount",
     check: (input) => input.value != "",
-    message: "El campo no debe estar vacío",
+    message: "Debes completar el campo de descuento",
   },
   {
     field: "wholesalePrice",
     check: (input) => input.value != "",
-    message: "El campo no debe estar vacío",
+    message: "Debes completar el campo de precio mayorista",
   },
   {
     field: "stock",
     check: (input) => input.value != "",
-    message: "El campo no debe estar vacío",
+    message: "Debes completar el campo de stock",
   },
   {
-    field: "categoryLabel",
+    field: "category_id",
     check: (input) => input.value != "",
-    message: "El campo no debe estar vacío",
+    message: "Debes seleccionar una categoria",
   },
   {
     field: "image",
     check: (input) => input.files && input.files.length > 0,
-    message: "Cargar una imagen",
+    message: "Debes subir una imagen",
   },
   {
-    field: "descriptionError",
+    field: "description",
     check: (input) => input.value != "",
-    message: "El campo no debe estar vacío",
+    message: "Debes completar el campo de descripicion",
   },
 ];
 
@@ -58,7 +58,7 @@ validations.forEach((validation) => {
 
   function validate() {
     console.log("input", input.value);
-    imputValidation(validation, input, inputErrorMessage);
+    inputValidation(validation, input, inputErrorMessage);
   }
 
   input.addEventListener("blur", validate);
@@ -84,13 +84,13 @@ form.addEventListener("submit", (event) => {
   }
 });
 
-function imputValidation(validation, input, inputErrorMessage) {
-  if (!input.value) {
+function inputValidation(validation, input, inputErrorMessage) {
+  /* if (!input.value) {
     inputErrorMessage.innerText = "El campo no debe estar vacío";
     inputErrorMessage.classList.add("display");
     return false;
   }
-
+ */
   if (!validation.check(input)) {
     inputErrorMessage.innerText = validation.message;
     inputErrorMessage.classList.add("display");

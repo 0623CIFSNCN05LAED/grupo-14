@@ -110,7 +110,7 @@
               <option value="6" <%= locals.oldData && (oldData.category === "lavandina") ? "selected" : ""  %>>Lavandina</option>
             </select> 
             <div>
-              <p class="errorMessage" id="categoryLabelError"></p>
+              <p class="errorMessage" id="category_idError"></p>
               <% if(locals.errors && errors.category_id) { %>
               <p><%= errors.category_id.msg %></p>
               <% } %>
