@@ -84,6 +84,44 @@
             <% } %>
           </div>
         </div>
+        <div class="formField" id="businessNameField">
+          <div class="data">
+            <input
+              placeholder="Razón social"
+              type="text"
+              name="businessName"
+              id="businessName"
+              style="padding-left: 20px"
+              value="<%= locals.oldData ? oldData.businessName : null %>"
+              pattern="[\w\s]+"
+            />
+          </div>
+          <div class="error">
+            <p class="errorMessage" id="businessNameError"></p>
+            <% if(locals.errors && errors.businessName) { %>
+              <p><%= errors.businessName.msg %></p>
+            <% } %>
+          </div>
+        </div>
+        <div class="formField" id="cuitField">
+          <div class="data">
+            <input
+              placeholder="CUIT"
+              type="number"
+              name="cuit"
+              id="cuit"
+              style="padding-left: 20px"
+              value="<%= locals.oldData ? oldData.cuit : null %>"
+              onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+            />
+          </div>
+          <div class="error">
+            <p class="errorMessage" id="cuitError"></p>
+            <% if(locals.errors && errors.cuit) { %>
+              <p><%= errors.cuit.msg %></p>
+            <% } %>
+          </div>
+        </div>
         <div class="formField">
           <div class="data">
             <input
@@ -154,44 +192,6 @@
             <p class="errorMessage" id="confirmPasswordError"></p>
             <% if(locals.errors && errors.confirmPassword) { %>
               <p><%= errors.confirmPassword.msg %></p>
-            <% } %>
-          </div>
-        </div>
-        <div class="formField" id="businessNameField">
-          <div class="data">
-            <input
-              placeholder="Razón social"
-              type="text"
-              name="businessName"
-              id="businessName"
-              style="padding-left: 20px"
-              value="<%= locals.oldData ? oldData.businessName : null %>"
-              pattern="[\w\s]+"
-            />
-          </div>
-          <div class="error">
-            <p class="errorMessage" id="businessNameError"></p>
-            <% if(locals.errors && errors.businessName) { %>
-              <p><%= errors.businessName.msg %></p>
-            <% } %>
-          </div>
-        </div>
-        <div class="formField" id="cuitField">
-          <div class="data">
-            <input
-              placeholder="CUIT"
-              type="number"
-              name="cuit"
-              id="cuit"
-              style="padding-left: 20px"
-              value="<%= locals.oldData ? oldData.cuit : null %>"
-              onkeypress="return event.charCode >= 48 && event.charCode <= 57"
-            />
-          </div>
-          <div class="error">
-            <p class="errorMessage" id="cuitError"></p>
-            <% if(locals.errors && errors.cuit) { %>
-              <p><%= errors.cuit.msg %></p>
             <% } %>
           </div>
         </div>

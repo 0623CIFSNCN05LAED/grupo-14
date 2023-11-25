@@ -1,7 +1,7 @@
 const { body } = require("express-validator");
 
 module.exports = [
-  body("category").notEmpty().withMessage("Debe seleccionar una categoria"),
+  body("category").notEmpty().withMessage("Debes seleccionar una categoria"),
   body("name").custom((value, { req }) => {
     if (
       (req.body.category == "admin" || req.body.category == "cf") &&
