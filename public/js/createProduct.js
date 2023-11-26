@@ -1,8 +1,15 @@
 const validations = [
   {
     field: "name",
-    check: (input) => input.value != "",
-    message: "Debes completar el campo de nombre",
+    check: (input) => {
+      let msg = "";
+      if (input.value === "") {
+        msg = "Debes completar el campo de nombre.";
+      } else if (input.value.length < 2) {
+        msg = "El nombre debe tener al menos dos caracteres.";
+      }
+      return msg;
+    },
   },
   {
     field: "shortName",
@@ -57,7 +64,6 @@ validations.forEach((validation) => {
   const inputErrorMessage = document.getElementById(inputId + "Error");
 
   function validate() {
-    console.log("input", input.value);
     inputValidation(validation, input, inputErrorMessage);
   }
 
@@ -85,14 +91,8 @@ form.addEventListener("submit", (event) => {
 });
 
 function inputValidation(validation, input, inputErrorMessage) {
-  /* if (!input.value) {
-    inputErrorMessage.innerText = "El campo no debe estar vacío";
-    inputErrorMessage.classList.add("display");
-    return false;
-  }
- */
-  if (!validation.check(input)) {
-    inputErrorMessage.innerText = validation.message;
+  if (validation.check(input) != "") {
+    inputErrorMessage.innerText = validation.check(input);
     inputErrorMessage.classList.add("display");
     return false;
   }
