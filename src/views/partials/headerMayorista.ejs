@@ -9,7 +9,7 @@
         </div>
       <% } else if (locals.userLogged.admin !== null) { %>
         <div class="textoTienda">
-          <p>Bienvenido administrador <%= locals.userLogged.name %> <%= locals.userLogged.lastName %> - TIENDA MAYORISTA</p>
+          <p>Bienvenido administrador <%= locals.userLogged.admin.name %> <%= locals.userLogged.admin.lastName %> - TIENDA MAYORISTA</p>
         </div>
         <div class="tiendaMayoristaDiv">
           <a href="/cf"><button class="tiendaButton">Cambiar a TIENDA CONSUMIDOR FINAL</button></a>

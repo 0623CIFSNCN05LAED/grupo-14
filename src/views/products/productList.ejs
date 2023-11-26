@@ -7,12 +7,7 @@
     <link rel="stylesheet" href="/css/productCard.css" />
   </head>
   <body>
-    
-    <% if (!locals.userLogged || locals.userLogged.category == 'consumidorFinal' || locals.userLogged.category == 'admin') {%> 
-      <%- include('../partials/headerCf') %> 
-    <% } else if (locals.userLogged.category == 'mayorista') { %> 
-      <%- include('../partials/headerMayorista') %> 
-    <% } %>
+    <%- include('../partials/header') %> 
 
     <main>
       <div class="nav">
@@ -23,7 +18,7 @@
       <section class="product"></section>
       <section class="relatedProducts">
         <h3 class="nameList">Lista de productos</h3>
-        <% if (locals.isLogged && locals.userLogged.category == "admin") { %>
+        <% if (locals.isLogged && locals.userLogged.admin !== null) { %>
         <div class="button">
           <a href="/products/create"
             ><button class="create">Crear producto</button></a

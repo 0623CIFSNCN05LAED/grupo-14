@@ -9,7 +9,7 @@
           </div>
         <% } else if (locals.userLogged.category == 'admin') { %>
           <div class="textoTienda">
-            <p>Bienvenido administrador <%= locals.userLogged.name %> <%= locals.userLogged.lastName %> - TIENDA CONSUMIDOR FINAL</p>
+            <p>Bienvenido administrador <%= locals.userLogged.admin.name %> <%= locals.userLogged.admin.lastName %> - TIENDA CONSUMIDOR FINAL</p>
           </div>
           <div class="tiendaMayoristaDiv">
             <a href="/mayorista"><button class="tiendaButton">Cambiar a TIENDA MAYORISTA</button></a>
