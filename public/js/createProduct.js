@@ -48,7 +48,8 @@ const validations = [
     field: "description",
     check: (input) => input.value != "",
     message: "Debes completar el campo de descripicion",
-  },
+  },  
+
 ];
 
 validations.forEach((validation) => {
