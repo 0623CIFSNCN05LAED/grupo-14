@@ -5,8 +5,8 @@ const validations = [
       let msg = "";
       if (input.value === "") {
         msg = "Debes completar el campo de nombre.";
-      } else if (input.value.length < 2) {
-        msg = "El nombre debe tener al menos dos caracteres.";
+      } else if (input.value.length < 5) {
+        msg = "El nombre debe tener al menos 5 caracteres.";
       }
       return msg;
     },
@@ -51,11 +51,23 @@ const validations = [
     check: (input) => input.files && input.files.length > 0,
     message: "Debes subir una imagen",
   },
-  {
+ /*  {
     field: "description",
     check: (input) => input.value != "",
     message: "Debes completar el campo de descripicion",
-  },  
+  }, */ 
+  {
+    field: "description",
+    check: (input) => {
+      let msg = "";
+      if (input.value === "") {
+        msg = "Debes completar el campo de descripicion.";
+      } else if (input.value.length < 20) {
+        msg = "La descripcion debe de tener 20 caracteres";
+      }
+      return msg;
+    },
+  }, 
 
 ];
 
