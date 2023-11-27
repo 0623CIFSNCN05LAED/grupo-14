@@ -7,7 +7,7 @@ module.exports = [
       (req.body.category == "admin" || req.body.category == "cf") &&
       value == ""
     ) {
-      throw new Error("Debes completar el campo de nombre.");
+      throw new Error("Debes completar el campo de Nombre.");
     } else if (
       (req.body.category == "admin" || req.body.category == "cf") &&
       value.length < 2
@@ -21,7 +21,7 @@ module.exports = [
       (req.body.category == "admin" || req.body.category == "cf") &&
       value == ""
     ) {
-      throw new Error("Debes completar el campo de apellido.");
+      throw new Error("Debes completar el campo de Apellido.");
     }
     return true;
   }),
@@ -45,7 +45,7 @@ module.exports = [
     if (req.body.category == "mayorista" && value == "") {
       throw new Error("Debes completar el campo de CUIT.");
     } else if (req.body.category == "mayorista" && value.length !== 11) {
-      throw new Error("El DNI debe tener 11 caracteres.");
+      throw new Error("El CUIT debe tener 11 caracteres.");
     }
     return true;
   }),
