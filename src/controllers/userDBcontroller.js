@@ -8,7 +8,6 @@ module.exports = {
     const dataUser = await userDBservice.findByEmail(req.body.email);
     delete dataUser.password;
     req.session.userLogged = dataUser;
-    console.log("user", req.session.userLogged.admin.name);
     if (req.body.rememberUser) {
       res.cookie("email", req.body.email, { maxAge: 1000 * 60 * 2 });
     }
