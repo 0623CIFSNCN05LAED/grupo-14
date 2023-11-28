@@ -7,7 +7,11 @@
   </head>
 
   <body>
-      <%- include('../partials/header') %> 
+    <% if (!locals.userLogged || locals.userLogged.category == 'cf' || locals.userLogged.category == 'admin') {%> 
+      <%- include('../partials/headerCf') %> 
+    <% } else if (locals.userLogged.mayorista !== null) { %> 
+      <%- include('../partials/headerMayorista') %> 
+    <% } %>
     <main>
       <div>
         <p>Imagen de usuario</p>

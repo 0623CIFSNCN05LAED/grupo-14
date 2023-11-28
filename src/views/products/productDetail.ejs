@@ -4,7 +4,10 @@
     <%- include("../partials/head", {title: 'Detalle de producto'}) %>
 
     <link rel="stylesheet" href="/css/productDetail.css" />
-    <link rel="stylesheet" href="/css/productCard.css" />
+    <% if(locals.userLogged){ %> <!-- por que no funcionaba si usaba solo userLogged -->
+
+      <script id="addToCartScript" src="/scripts/addToCart.js"  data-product="<%- encodeURIComponent(JSON.stringify(product)) %>" data-user="<%- encodeURIComponent(JSON.stringify(userLogged.id)) %>"></script>
+    <% } %>
   </head>
   <body>
     <%- include('../partials/header') %> 
@@ -42,12 +45,12 @@
             <div class="prices">
               <% if (product.discount > 0) { %>
               <h5>
-                <span class="notPrice"><%= product.retailPrice %></span> / <%=
+                <span class="notPrice">$ <%= product.retailPrice %></span> / <%=
                 product.discount %>% OFF
               </h5>
-              <h2><%= product.priceWithDiscount %></h2>
+              <h2>$ <%= product.priceWithDiscount %></h2>
               <% } else { %>
-              <h2><%= product.retailPrice %></h2>
+              <h2>$ <%= product.priceWithDiscount %></h2>
               <% } %>
             </div>
             <form action="">
@@ -55,21 +58,16 @@
                 <% if (product.stock == 0) { %>
                 <p>No hay stock</p>
                 <% } else { %>
-                <p>stock disponible</p>
                 <h4>Cantidad:</h4>
-                <select name="cantidad" id="cantidad">
-                  <% for (let i = 1; i <= product.stock; i++) { %>
-                  <option value="<%= [i] %>"><%= [i] %></option>
-                  <% } %>
-                </select>
+                <div class="stockContainer">
+                    <button class="stockButton" id="subtract">-</button>
+                    <input type="number" id="quantity" value="1" min="1">
+                    <button class="stockButton" id="add">+</button>
+                </div>
                 <% } %>
               </div>
-              <a href="#"
-                ><button type="submit" class="cart">
-                  Agregar al carrito
-                  <i class="fa-solid fa-cart-shopping"></i></button
-              ></a>
             </form>
+            <button type="button" id="addToCart" class="cart">Agregar al carrito<i class="fa-solid fa-cart-shopping"></i></button>
           </div>
           <div class="desc">
             <h3>Descripcion</h3>

@@ -10,6 +10,7 @@ module.exports = (sequelize, dataTypes)=>{
       retailPrice: dataTypes.DECIMAL(10, 2),
       wholesalePrice: dataTypes.DECIMAL(10, 2),
       discount: dataTypes.INTEGER,
+      priceWithDiscount: dataTypes.DECIMAL(10,2),
       stock: dataTypes.INTEGER,
       image: dataTypes.STRING(255),
       category_id: dataTypes.INTEGER,
@@ -30,12 +31,18 @@ module.exports = (sequelize, dataTypes)=>{
         Product.belongsTo(models.Category, {
             as: "category",
             foreignKey: "category_id"
-        })
+        });
 
         Product.belongsTo(models.Brand, {
             as: "brand",
             foreignKey: "brand_id"
-        })
+        });
+        Product.belongsToMany(models.Cart, {
+            as: "cart",
+            through: "CartProduct",
+            foreignKey: "product_id",
+            otherKey: "cart_id"
+        });
     }
     
 

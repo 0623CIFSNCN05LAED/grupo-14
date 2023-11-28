@@ -13,7 +13,7 @@ module.exports = {
   detail: async (req, res) => {
     try {
       const id = req.params.id;
-      const product = await productDBservice.getFormattedProduct(id);
+      const product = await productDBservice.findById(id);
       const relatedProducts = await productDBservice.findRelatedProducts(
         product
       );
@@ -53,7 +53,5 @@ module.exports = {
     res.redirect("/products");
   },
 
-  cart: (req, res) => {
-    res.render("products/productCart");
-  },
+
 };

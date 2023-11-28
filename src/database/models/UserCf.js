@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-  const UsersCf = sequelize.define('UserCf', {
+  const UserCf = sequelize.define('UserCf', {
     id: {
       type: dataTypes.STRING(255),
       primaryKey: true,
@@ -18,12 +18,12 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     });
 
-  UsersCf.associate = function (models) {
-    UsersCf.hasMany(models.User, {
+  UserCf.associate = function (models) {
+    UserCf.hasMany(models.User, {
       foreignKey: 'id',
       as: 'user',
     });
   };
 
-  return UsersCf;
+  return UserCf;
 };
