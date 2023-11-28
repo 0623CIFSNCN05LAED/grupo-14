@@ -1,38 +1,6 @@
 CREATE DATABASE cleanwave;
 USE cleanwave;
 
-CREATE TABLE Users (
-    id VARCHAR(255)PRIMARY KEY,
-    email VARCHAR(255) NOT NULL,
-    password VARCHAR(255) NOT NULL,
-    phoneNumber INT NOT NULL,
-    notify TINYINT(1) NOT NULL,
-    active_cart_id VARCHAR(255),
-    FOREIGN KEY (active_cart_id) REFERENCES Carts(id)
-);
-
-CREATE TABLE UsersAdmin (
-    id VARCHAR(255) PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    lastName VARCHAR(255) NOT NULL,
-    FOREIGN KEY (id) REFERENCES Users(id)
-);
-
-CREATE TABLE UsersCf (
-    id VARCHAR(255)PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    lastName VARCHAR(255) NOT NULL,
-    dni INT NOT NULL,
-    FOREIGN KEY (id) REFERENCES Users(id)
-);
-
-CREATE TABLE UsersMayoristas (
-    id VARCHAR(255)PRIMARY KEY,
-    businessName VARCHAR(255) NOT NULL,
-    cuit INT NOT NULL,
-    FOREIGN KEY (id) REFERENCES Users(id)
-);
-
 CREATE TABLE Addresses (
     id INT AUTO_INCREMENT PRIMARY KEY,
     country VARCHAR(255) NOT NULL,
@@ -42,14 +10,6 @@ CREATE TABLE Addresses (
     number INT NOT NULL,
     apartment VARCHAR(20),
     note TEXT
-);
-
-CREATE TABLE AddressesUsers (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    address_id INT NOT NULL,
-    user_id VARCHAR(255) NOT NULL,
-    FOREIGN KEY (address_id) REFERENCES Addresses(id),
-    FOREIGN KEY (user_id) REFERENCES Users(id)
 );
 
 CREATE TABLE Categories (
@@ -62,9 +22,8 @@ CREATE TABLE Brands (
     name VARCHAR(255) NOT NULL
 );
 
-
 CREATE TABLE Products (
-    id VARCHAR(255)PRIMARY KEY,
+    id VARCHAR(255) PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     shortname VARCHAR(255),
     brand_id INT NOT NULL,
@@ -83,14 +42,46 @@ CREATE TABLE Products (
     FOREIGN KEY (brand_id) REFERENCES Brands(id)
 );
 
+CREATE TABLE Users (
+    id VARCHAR(255) PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    phoneNumber INT NOT NULL,
+    notify TINYINT(1) NOT NULL,
+    active_cart_id VARCHAR(255)
+);
+
+CREATE TABLE UsersAdmin (
+    id VARCHAR(255) PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE UsersCf (
+    id VARCHAR(255) PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    lastName VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE UsersMayoristas (
+    id VARCHAR(255) PRIMARY KEY,
+    businessName VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE AddressesUsers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    address_id INT NOT NULL,
+    user_id VARCHAR(255) NOT NULL,
+    FOREIGN KEY (address_id) REFERENCES Addresses(id),
+    FOREIGN KEY (user_id) REFERENCES Users(id)
+);
+
 CREATE TABLE Carts (
     id VARCHAR(255) PRIMARY KEY,
     user_id VARCHAR(255),
     quantity INT,
     total_price DECIMAL(10, 2),
     status VARCHAR(20),
-    purchase_date DATE,
-    FOREIGN KEY (user_id) REFERENCES Users(id)
+    purchase_date DATE
 );
 
 CREATE TABLE CartsProducts (
@@ -103,10 +94,14 @@ CREATE TABLE CartsProducts (
     FOREIGN KEY (product_id) REFERENCES Products(id)
 );
 
+ALTER TABLE Users ADD FOREIGN KEY (active_cart_id) REFERENCES Carts(id);
+ALTER TABLE UsersAdmin ADD FOREIGN KEY (id) REFERENCES Users(id);
+ALTER TABLE UsersCf ADD FOREIGN KEY (id) REFERENCES Users(id);
+ALTER TABLE UsersMayoristas ADD FOREIGN KEY (id) REFERENCES Users(id);
 
 insert into categories values
 (1, "pisos"),
-(2,"muebles"),
+(2, "muebles"),
 (3, "ropa"),
 (4, "papelHigienico"),
 (5, "detergente"),
@@ -125,7 +120,6 @@ insert into brands values
 (10, "ala"),
 (11, "odex"),
 (12, "ayudin");
-
 
 insert into products (id, name, shortname, brand_id, category_id, retailprice, wholesaleprice, offer, discount, priceWithDiscount, stock, sold, bestseller, image, description)
 values
@@ -149,19 +143,3 @@ values
 ("2fcd9ed8-4785-425a-a708-5df96a48c310", "Lavandina Ayudín clásica 2 l.", "Lavandina Ayudín 2 l", 12, 6, 465, 2, 1, 0, 666, 4, 0, 0, "lavandinaAyudin2litros.jpg", "La lavandina Ayudín Clásica mantiene todo su poder para desodorizar y desinfectar. Es ideal para que realices la limpieza de tu hogar, que lo utilices en diferentes superficies. Ayudín elimina el 99.9% de hongos, virus y bacterias. En el baño, la cocina y en otras áreas de la casa, podemos encontrar superficies contaminadas. Por eso, se recomienda la desinfección de los pisos de la cocina, living, cuartos, baño, patio y balcón; la mesada, pileta y utensilios de cocina, artefactos del baño, las llaves de las canillas, el botón de descarga del inodoro y las manijas de todas las puertas de la casa. Por su versatilidad y dado que es un producto de limpieza de los más económicos, es un aliado infaltable en los hogares, ofreciendo limpieza y desinfección por menos de $2 por día. Cuando realmente importa, confía en Ayudin."),
 ("90157fc3-837e-48bb-bb90-68098c3723f7", "Lavandina Ayudín clásica 4 l.", "Lavandina Ayudín 4 l", 12, 6, 906, 2, 1, 25, 666, 5, 0, 0, "lavandinaAyudin4litros.jpg", "La lavandina Ayudín Clásica mantiene todo su poder para desodorizar y desinfectar. Es ideal para que realices la limpieza de tu hogar, que lo utilices en diferentes superficies. Ayudín elimina el 99.9% de hongos, virus y bacterias. En el baño, la cocina y en otras áreas de la casa, podemos encontrar superficies contaminadas. Por eso, se recomienda la desinfección de los pisos de la cocina, living, cuartos, baño, patio y balcón; la mesada, pileta y utensilios de cocina, artefactos del baño, las llaves de las canillas, el botón de descarga del inodoro y las manijas de todas las puertas de la casa. Por su versatilidad y dado que es un producto de limpieza de los más económicos, es un aliado infaltable en los hogares, ofreciendo limpieza y desinfección por menos de $2 por día. Cuando realmente importa, confía en Ayudin.");
 
-insert into users values
-("dc5b9aa1-4c33-4857-a4a8-fe9967d3e1eb", "admin@gmail.com", "$$2a$10$t2SQRuQutHWtf67WBtck7eLE6hSZX5QV7Yx7bn2rnkOQ2KXG5cM.W
-", 1556781234, 1),
-("0d9be258-3f37-41a8-8af5-d444af1e09f5", "cf@gmail.com", "$2a$10$SYDv5k3qjtWOtxL6c0meZODTO0aEBfyPL3G2Fw6fJFioHD8l9nw4u
-", 1587654321, 1),
-("218be8c1-ccf8-4c71-8bae-966717694ab1", "mayorista@gmail.com", "$2a$10$Swy286pmdGVKr4aOrH.Geez37pLmMz3VF8b8mmRof6QJ.K7zjFYLO
-", 1543215678, 1);
-
-insert into usersadmin values
-("dc5b9aa1-4c33-4857-a4a8-fe9967d3e1eb", "admin", "administrador");
-
-insert into userscf values
-("0d9be258-3f37-41a8-8af5-d444af1e09f5", "consumidor", "final", 42123456);
-
-insert into usersmayoristas values
-("218be8c1-ccf8-4c71-8bae-966717694ab1", "mayorista", 2042123456);
