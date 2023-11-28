@@ -53,18 +53,24 @@ CREATE TABLE Users (
 
 CREATE TABLE UsersAdmin (
     id VARCHAR(255) PRIMARY KEY,
-    name VARCHAR(255) NOT NULL
+    name VARCHAR(255) NOT NULL,
+    lastName VARCHAR(255) NOT NULL,
+    FOREIGN KEY (id) REFERENCES Users(id)
 );
 
 CREATE TABLE UsersCf (
-    id VARCHAR(255) PRIMARY KEY,
+    id VARCHAR(255)PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    lastName VARCHAR(255) NOT NULL
+    lastName VARCHAR(255) NOT NULL,
+    dni INT NOT NULL,
+    FOREIGN KEY (id) REFERENCES Users(id)
 );
 
 CREATE TABLE UsersMayoristas (
-    id VARCHAR(255) PRIMARY KEY,
-    businessName VARCHAR(255) NOT NULL
+    id VARCHAR(255)PRIMARY KEY,
+    businessName VARCHAR(255) NOT NULL,
+    cuit INT NOT NULL,
+    FOREIGN KEY (id) REFERENCES Users(id)
 );
 
 CREATE TABLE AddressesUsers (
@@ -81,7 +87,8 @@ CREATE TABLE Carts (
     quantity INT,
     total_price DECIMAL(10, 2),
     status VARCHAR(20),
-    purchase_date DATE
+    purchase_date DATE,
+    FOREIGN KEY (user_id) REFERENCES Users(id)
 );
 
 CREATE TABLE CartsProducts (
@@ -95,9 +102,6 @@ CREATE TABLE CartsProducts (
 );
 
 ALTER TABLE Users ADD FOREIGN KEY (active_cart_id) REFERENCES Carts(id);
-ALTER TABLE UsersAdmin ADD FOREIGN KEY (id) REFERENCES Users(id);
-ALTER TABLE UsersCf ADD FOREIGN KEY (id) REFERENCES Users(id);
-ALTER TABLE UsersMayoristas ADD FOREIGN KEY (id) REFERENCES Users(id);
 
 insert into categories values
 (1, "pisos"),
