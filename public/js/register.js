@@ -22,6 +22,12 @@ window.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
+  
+  
+  function validEmail(correo) {
+    const expresionRegular = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return expresionRegular.test(correo);
+  }
 
   const commonValidations = [
 
@@ -30,11 +36,11 @@ window.addEventListener("DOMContentLoaded", function () {
       checks: [
         {
           check: (input) => input.value.trim() !== "",
-          message: "Debes completar el campo de nombre.",
+          message: "Por favor, ingrese su nombre.",
         },
         {
           check: (input) => input.value.length >= 2,
-          message: "Debe tener más de dos caracteres.",
+          message: "El nombre debe tener al menos 2 caracteres. Intenta nuevamente.",
         },        
       ],
     },
@@ -43,37 +49,64 @@ window.addEventListener("DOMContentLoaded", function () {
       checks: [
         {
           check: (input) => input.value.trim() !== "",
-          message: "Debes completar el campo de apellido.",
+          message: "Por favor, ingrese su apellido.",
         },
         {
           check: (input) => input.value.length >= 2,
-          message: "Debe tener más de dos caracteres.",
+          message: "El apellido debe tener al menos 2 caracteres. Intenta nuevamente.",
         },       
       ],
     },
     {
       field: "tel",
       check: (input) => input.value !== "",
-      message: "Debes completar el campo de teléfono",
+      message: "Por favor, ingrese teléfono / celular.",
     },
     {
       field: "email",
-      check: (input) => input.value !== "",
-      message: "Debes completar el campo de email",
+      checks: [
+        {
+          check: (input) => input.value !== "",
+          message: "Por favor, ingrese Correo Electrónico.",
+        },
+        {
+          check: (input) => validEmail(input.value),
+          message: "Por favor, ingrese un correo electrónico válido. Ejemplo: nombre@dominio.com",
+        },
+      ],
+
     },
     {
       field: "password",
-      check: (input) => input.value !== "",
-      message: "Debes completar el campo de contraseña",
+      checks: [
+        {
+          check: (input) => input.value !== "",
+          message: "Por favor, ingrese una contraseña",
+        },
+        {
+          check: (input) => input.value.length >= 8,
+          message: "La contraseña debe tener al menos 8 caracteres. Intenta nuevamente.",
+        },  
+      ],
+      
     },
     {
       field: "confirmPassword",
-      check: (input) => {
-        const passwordInput = document.getElementById("password");
-        return input.value === passwordInput.value;
-      },
-      message: "Las contraseñas no coinciden",
-    },
+      checks: [
+        {
+          check: (input) => input.value !== "",
+          message: "Por favor, ingrese confirmar contraseña",
+        },
+        {
+        check: (input) => {
+          const passwordInput = document.getElementById("password");
+          return input.value === passwordInput.value;
+        },
+        message: "Las contraseñas no coinciden. Por favor, verifica que las contraseñas ingresadas sean iguales.",
+        },
+                
+      ],
+    }
   ];
 
   const cfValidations = [
@@ -83,11 +116,11 @@ window.addEventListener("DOMContentLoaded", function () {
       checks: [
         {
           check: (input) => input.value.trim() !== "",
-          message: "Debes completar el campo de DNI.",
+          message: "Por favor, ingrese su DNI.",
         },
         {
           check: (input) => input.value.length === 8,
-          message: "El DNI debe tener 8 caracteres.",
+          message: "El DNI debe contener exactamente 8 números. Por favor, verifícalo e inténtalo nuevamente.",
         },        
       ],
     },
@@ -99,19 +132,27 @@ window.addEventListener("DOMContentLoaded", function () {
     
     {
       field: "businessName",
-      check: (input) => input.value !== "",
-      message: "Debes seleccionar una categoria",
+      checks: [
+        {
+          check: (input) => input.value.trim() !== "",
+          message: "Por favor, Razon Social.",
+        },
+        {
+          check: (input) => input.value.length >= 2,
+          message: "Su Razon Social debe tener al menos 2 caracteres. Intenta nuevamente.",
+        },       
+      ],
     },
     {
       field: "cuit",
       checks: [
         {
           check: (input) => input.value.trim() !== "",
-          message: "El campo no debe estar vacío.",
+          message: "Por favor, ingrese CUIT.",
         },
         {
           check: (input) => input.value.length === 11,
-          message: "El CUIT debe tener 11 caracteres.",
+          message: "El CUIT debe contener exactamente 11 números. Por favor, verifícalo e inténtalo nuevamente.",
         },       
       ],    
     },

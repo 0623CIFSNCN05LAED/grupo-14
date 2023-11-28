@@ -1,18 +1,18 @@
 const { body } = require("express-validator");
 
 module.exports = [
-  body("category").notEmpty().withMessage("Debes seleccionar una categoria"),
+  body("category").notEmpty().withMessage("Debe seleccionar una categoria"),
   body("name").custom((value, { req }) => {
     if (
       (req.body.category == "admin" || req.body.category == "cf") &&
       value == ""
     ) {
-      throw new Error("Debes completar el campo de Nombre.");
+      throw new Error("Por favor, ingrese un Nombre.");
     } else if (
       (req.body.category == "admin" || req.body.category == "cf") &&
       value.length < 2
     ) {
-      throw new Error("Debe tener mas de dos caracteres.");
+      throw new Error("El nombre debe tener al menos 2 caracteres. Intenta nuevamente.");
     }
     return true;
   }),
@@ -21,52 +21,58 @@ module.exports = [
       (req.body.category == "admin" || req.body.category == "cf") &&
       value == ""
     ) {
-      throw new Error("Debes completar el campo de Apellido.");
+      throw new Error("Por favor, ingrese su Apellido.");
+    }
+    else if (
+      (req.body.category == "admin" || req.body.category == "cf") &&
+      value.length < 2
+    ) {
+      throw new Error("El Apellido debe tener al menos 2 caracteres. Intenta nuevamente.");
     }
     return true;
   }),
   body("dni").custom((value, { req }) => {
     if (req.body.category == "cf" && value == "") {
-      throw new Error("Debes completar el campo de DNI.");
+      throw new Error("Por favor, ingrese su DNI.");
     } else if (req.body.category == "cf" && value.length !== 8) {
-      throw new Error("El DNI debe tener 8 caracteres.");
+      throw new Error("El DNI debe contener exactamente 8 números. Por favor, verifícalo e inténtalo nuevamente.");
     }
     return true;
   }),
   body("businessName").custom((value, { req }) => {
     if (req.body.category == "mayorista" && value == "") {
-      throw new Error("Debes completar el campo de Razón social.");
+      throw new Error("Por favor, ingrese Razón Social.");
     } else if (req.body.category == "mayorista" && value.length < 2) {
-      throw new Error("Debe tener mas de dos caracteres.");
+      throw new Error("Su Razon Social debe tener al menos 2 caracteres. Intenta nuevamente.");
     }
     return true;
   }),
   body("cuit").custom((value, { req }) => {
     if (req.body.category == "mayorista" && value == "") {
-      throw new Error("Debes completar el campo de CUIT.");
+      throw new Error("Por favor, ingrese CUIT.");
     } else if (req.body.category == "mayorista" && value.length !== 11) {
-      throw new Error("El CUIT debe tener 11 caracteres.");
+      throw new Error("El CUIT debe contener exactamente 11 números. Por favor, verifícalo e inténtalo nuevamente.");
     }
     return true;
   }),
   body("tel")
     .notEmpty()
-    .withMessage("Debes completar el campo de Teléfono / Celular."),
+    .withMessage("Por favor,ingrese Teléfono / Celular."),
   body("email")
     .notEmpty()
-    .withMessage("Debes introducir una dirección de correo eléctronico.")
+    .withMessage("Por favor, ingrese Correo Electrónico.")
     .bail()
     .isEmail()
-    .withMessage("Debes introducir un formato de correo eléctronico válido."),
+    .withMessage("Por favor, ingrese un Correo Electrónico válido. Ejemplo: nombre@dominio.com"),
   body("password")
     .notEmpty()
-    .withMessage("Debes escribir una contraseña.")
+    .withMessage("Por favor, ingrese una contraseña")
     .bail()
     .isLength({ min: 8 })
-    .withMessage("La contraseña debe tener como mínimo 8 caracteres."),
+    .withMessage("La contraseña debe tener al menos 8 caracteres. Intenta nuevamente."),
   body("confirmPassword").custom((value, { req }) => {
     if (value !== req.body.password) {
-      throw new Error("Las contraseñas no coinciden.");
+      throw new Error("Las contraseñas no coinciden. Por favor, verifica que las contraseñas ingresadas sean iguales.");
     }
     return true;
   }),
