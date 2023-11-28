@@ -36,11 +36,4 @@ router.put("/:id", uploadImgProduct.single("image"), productDBcontroller.edit);
 /*************** Delete one product ******************/
 router.delete("/:id", productDBcontroller.delete);
 
-/*************** Product cart ******************/
-router.get("/cart", productDBcontroller.cart);
-
-/* ************* Add to cart ****************** */
-router.post("/addToCart", productDBcontroller.addToCart)
-
-
 module.exports = router;

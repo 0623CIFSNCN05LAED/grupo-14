@@ -53,14 +53,5 @@ module.exports = {
     res.redirect("/products");
   },
 
-  cart: (req, res) => {
-    res.render("products/productCart");
-  },
 
-  addToCart: (req,res)=>{
-    const product = req.body.product;
-    const userId = req.body.userId;
-    const quantity = req.body.quantity
-    productDBservice.addToCart(product,userId, quantity)
-  }
 };

@@ -30,4 +30,8 @@ router.use("/about", aboutRouter);
 const tutorialsRouter = require("./tutorialsRouter");
 router.use("/tutorials", tutorialsRouter);
 
+/* *********** Cart Router ***************** */
+const cartRouter = require("./cartRouter");
+router.use("/cart", cartRouter)
+
 module.exports = router;

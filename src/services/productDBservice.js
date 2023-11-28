@@ -1,4 +1,4 @@
-const { Product, Cart, CartProduct } = require("../database/models");
+const { Product } = require("../database/models");
 const { v4: uuidv4 } = require("uuid");
 
 /************* Funciones de uso local(este mismo archivo) ****************/
@@ -123,27 +123,5 @@ module.exports = {
     });
   },
 
-  addToCart: async function(product, userId, quantity){
-    try{
-    const cart =  await Cart.create({
-        id: uuidv4(),
-        user_id: userId,
-        quantity: quantity,
-        total_price: product.priceWithDiscount * quantity,
-        status: "prueba",
-        purchase_date: null,
-      });
-      
-      const cartId = cart.id;
-      
-      CartProduct.create({
-        cart_id: cartId,
-        product_id: product.id
-      })
-    
 
-    }catch{
-  } 
-    
-  }
 };

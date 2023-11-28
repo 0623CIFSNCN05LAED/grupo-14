@@ -1,4 +1,5 @@
 CREATE DATABASE cleanwave;
+USE cleanwave;
 
 CREATE TABLE Users (
     id VARCHAR(255)PRIMARY KEY,
@@ -96,6 +97,8 @@ CREATE TABLE CartsProducts (
     id INT AUTO_INCREMENT PRIMARY KEY,
     cart_id VARCHAR(255) NOT NULL,
     product_id VARCHAR(255) NOT NULL,
+    quantity INT,
+    total_price DECIMAL(10, 2),
     FOREIGN KEY (cart_id) REFERENCES Carts(id),
     FOREIGN KEY (product_id) REFERENCES Products(id)
 );
