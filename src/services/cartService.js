@@ -14,7 +14,6 @@ module.exports = {
           status: "active"
       }
     });
-    console.log("findCarByUserID", activeCart.dataValues)
     return activeCart.dataValues
   } catch (error) {
     console.log(error)
@@ -96,5 +95,30 @@ module.exports = {
   } catch (error) {
     console.error('Error al agregar al carrito:', error);
   }
-}
+},
+  getAllRowsInCartProductByUserId: async function(userId){
+    try{
+        const activeCart = await this.findCartByUserId(userId);
+
+        const cartProductRows = await CartProduct.findAll(
+          {
+            attributes: ['cart_id', 'product_id', 'quantity', "total_price"],
+            where: { cart_id: activeCart.id }
+});
+    const cartProductRowsDataValues = cartProductRows.map(cartProduct => cartProduct.dataValues)
+    return cartProductRowsDataValues
+    }catch (error){
+      console.log(error)
+    }
+  },
+  getAllProductsInActiveCartByUserId: async function (userId){
+    try{
+      const activeCart = await this.findCartByUserId(userId);
+      const products = activeCart.product.map(product => product.dataValues);
+      return products
+    }catch(error){
+      console.log(error)
+    }
+  }
+ 
 }
