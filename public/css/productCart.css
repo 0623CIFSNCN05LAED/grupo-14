@@ -342,9 +342,13 @@ border-radius: 5px;
     }
     
     .quantity{
-        width: 13%;
+        width: 15%;
         float: none;
         position: relative;
+    }
+
+    #quantity{
+        width: 30px;
     }
     
     .itemInfo .subtotal{
