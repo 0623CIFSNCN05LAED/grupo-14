@@ -1,15 +1,16 @@
 const validations = [
   {
     field: "name",
-    check: (input) => {
-      let msg = "";
-      if (input.value === "") {
-        msg = "Debes completar el campo de nombre.";
-      } else if (input.value.length < 5) {
-        msg = "El nombre debe tener al menos 5 caracteres.";
-      }
-      return msg;
-    },
+    checks: [
+      {
+       check: (input) => input.value === "",
+       message = "Debes completar el campo de nombre.";
+      }, 
+      {
+       check: (input) => input.value.length <5,
+       message = "El nombre debe tener al menos 5 caracteres.";
+     },
+    ],
   },
   {
     field: "shortName",
@@ -58,18 +59,21 @@ const validations = [
   }, */ 
   {
     field: "description",
-    check: (input) => {
-      let msg = "";
-      if (input.value === "") {
-        msg = "Debes completar el campo de descripicion.";
-      } else if (input.value.length < 20) {
-        msg = "La descripcion debe de tener 20 caracteres";
-      }
-      return msg;
-    },
+    checks: [
+      {
+       check: (input) => input.value === "",
+       message = "Debes completar el campo de descripción.";
+      }, 
+      {
+       check: (input) => input.value.length <20,
+       message = "El nombre debe tener al menos 20 caracteres.";
+     },
+    ],
   }, 
-
 ];
+
+
+
 
 validations.forEach((validation) => {
   const inputId = validation.field;
