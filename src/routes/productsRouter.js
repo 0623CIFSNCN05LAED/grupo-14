@@ -20,7 +20,10 @@ router.get("/", productDBcontroller.list);
 router.get("/detail/:id", productDBcontroller.detail);
 
 /*************** Create one product ******************/
-router.get("/create", userAdminMiddleware, productDBcontroller.viewCreate);
+router.get(
+  "/create",
+  /* userAdminMiddleware, */ productDBcontroller.viewCreate
+);
 router.post(
   "/",
   uploadImgProduct.single("image"),

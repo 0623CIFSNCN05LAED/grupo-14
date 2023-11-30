@@ -3,48 +3,48 @@ const validations = [
     field: "name",
     checks: [
       {
-       check: (input) => input.value === "",
-       message = "Debes completar el campo de nombre.";
-      }, 
+        check: (input) => input.value.trim() !== "",
+        message: "Debes completar el campo de nombre",
+      },
       {
-       check: (input) => input.value.length <5,
-       message = "El nombre debe tener al menos 5 caracteres.";
-     },
+        check: (input) => input.value.length >= 5,
+        message: "El nombre debe tener al menos 5 caracteres",
+      },
     ],
   },
   {
     field: "shortName",
-    check: (input) => input.value != "",
+    check: (input) => input.value.trim() !== "",
     message: "Debes completar el campo de nombre abreviado",
   },
   {
     field: "brand_id",
-    check: (input) => input.value != "",
+    check: (input) => input.value.trim() !== "",
     message: "Debes completar el campo de marca",
   },
   {
     field: "retailPrice",
-    check: (input) => input.value != "",
+    check: (input) => input.value.trim() !== "",
     message: "Debes completar el campo de precio minorista",
   },
   {
     field: "discount",
-    check: (input) => input.value != "",
+    check: (input) => input.value.trim() !== "",
     message: "Debes completar el campo de descuento",
   },
   {
     field: "wholesalePrice",
-    check: (input) => input.value != "",
+    check: (input) => input.value.trim() !== "",
     message: "Debes completar el campo de precio mayorista",
   },
   {
     field: "stock",
-    check: (input) => input.value != "",
+    check: (input) => input.value.trim() !== "",
     message: "Debes completar el campo de stock",
   },
   {
     field: "category_id",
-    check: (input) => input.value != "",
+    check: (input) => input.value.trim() !== "",
     message: "Debes seleccionar una categoria",
   },
   {
@@ -52,28 +52,20 @@ const validations = [
     check: (input) => input.files && input.files.length > 0,
     message: "Debes subir una imagen",
   },
- /*  {
-    field: "description",
-    check: (input) => input.value != "",
-    message: "Debes completar el campo de descripicion",
-  }, */ 
   {
     field: "description",
     checks: [
       {
-       check: (input) => input.value === "",
-       message = "Debes completar el campo de descripción.";
-      }, 
+        check: (input) => input.value.trim() !== "",
+        message: "Debes completar el campo de descripción",
+      },
       {
-       check: (input) => input.value.length <20,
-       message = "El nombre debe tener al menos 20 caracteres.";
-     },
+        check: (input) => input.value.length >= 20,
+        message: "La descripción debe tener al menos 20 caracteres",
+      },
     ],
-  }, 
+  },
 ];
-
-
-
 
 validations.forEach((validation) => {
   const inputId = validation.field;
@@ -108,12 +100,18 @@ form.addEventListener("submit", (event) => {
 });
 
 function inputValidation(validation, input, inputErrorMessage) {
-  if (validation.check(input) != "") {
-    inputErrorMessage.innerText = validation.check(input);
+  if (validation.checks) {
+    const failedCheck = validation.checks.find((check) => !check.check(input));
+    if (failedCheck) {
+      inputErrorMessage.innerText = failedCheck.message;
+      inputErrorMessage.classList.add("display");
+      return false;
+    }
+  } else if (!validation.check(input)) {
+    inputErrorMessage.innerText = validation.message;
     inputErrorMessage.classList.add("display");
     return false;
   }
-
   inputErrorMessage.innerText = "";
   inputErrorMessage.classList.remove("display");
   return true;
