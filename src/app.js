@@ -4,7 +4,7 @@ const path = require("path");
 const methodOverride = require("method-override");
 const session = require("express-session");
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
-const cookieParser = require("cookie-parser")
+const cookieParser = require("cookie-parser");
 
 // ********** express() ******************
 const app = express();
@@ -23,7 +23,7 @@ app.use(
     saveUninitialized: false,
   })
 );
-app.use(cookieParser())
+app.use(cookieParser());
 app.use(userLoggedMiddleware);
 
 // **************** Template Engine *********************
@@ -34,6 +34,9 @@ app.set("views", "./src/views");
 const mainRouter = require("./routes/mainRouter"); //aca estoy requiriendo las funcionalidades del archivo,
 //hace falta porque con el module.exports=router solo exportaba la funcionalidad router de express!!!
 app.use(mainRouter);
+app.get("/", (req, res) => {
+  res.redirect("/cf");
+});
 
 // *************** Iniciar el servidor web *****************
 const PORT = 3333;
