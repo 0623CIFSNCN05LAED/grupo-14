@@ -4,7 +4,7 @@ const router = Router();
 
 /*************** CF Router *******************/
 const cfRouter = require("./cfRouter");
-router.use("/cf", cfRouter);
+router.use("/consumidorfinal", cfRouter);
 
 /*************** Mayorista Router *******************/
 const mayoristaRouter = require("./mayoristaRouter");
@@ -25,5 +25,9 @@ router.use("/tutorials", tutorialsRouter);
 /* *********** Cart Router ***************** */
 const cartRouter = require("./cartRouter");
 router.use("/cart", cartRouter);
+
+/* *********** API products Router ***************** */
+const apiProductsRouter = require("./api/products");
+router.use("/api/products", apiProductsRouter);
 
 module.exports = router;
