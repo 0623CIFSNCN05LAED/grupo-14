@@ -4,6 +4,7 @@
     <%- include("../partials/head", {title: 'Crear producto'}) %>
 
     <link rel="stylesheet" href="/css/createProduct.css" />
+    <script src="/js/createProduct.js" defer></script>
   </head>
   <body>
     <%- include('../partials/header') %> 
@@ -11,7 +12,7 @@
     <main>
       <div class="div-newProduct">
 
-        <form class="form-newProduct" action="/products" method="post" enctype="multipart/form-data">
+        <form class="form-newProduct" action="/products" method="post" enctype="multipart/form-data" id="form">
 
           <h2>Nuevo Producto</h2>
           <div class="side">
@@ -21,6 +22,7 @@
               <label for="name" class="inputGroupLabel">Nombre del producto</label>
 
               <div>
+                <p class="errorMessage" id="nameError"></p>
                 <% if(locals.errors && errors.name) { %>
                 <p><%= errors.name.msg %></p>
                 <% } %>
@@ -33,6 +35,7 @@
               <label for="shortName" class="inputGroupLabel">Producto abreviado</label>
 
               <div>
+                <p class="errorMessage" id="shortNameError"></p>
                 <% if(locals.errors && errors.shortName) { %>
                 <p><%= errors.shortName.msg %></p>
                 <% } %>
@@ -45,6 +48,7 @@
             <input type="text" name="brand_id" id="brand_id" class="inputGroupInput" value="<%= locals.oldData ? oldData.brand_id : null %>">
             <label for="brand_id" class="inputGroupLabel">Marca</label>
             <div>
+              <p class="errorMessage" id="brand_idError"></p>
               <% if(locals.errors && errors.brand_id) { %>
               <p><%= errors.brand_id.msg %></p>
               <% } %>
@@ -55,6 +59,7 @@
               <input type="number" name="retailPrice" id="retailPrice" class="inputGroupInput" value="<%= locals.oldData ? oldData.retailPrice : null %>" >
               <label for="retailPrice" class="inputGroupLabel">Precio minorista</label>
               <div>
+                <p class="errorMessage" id="retailPriceError"></p>
                 <% if(locals.errors && errors.retailPrice) { %>
                 <p><%= errors.retailPrice.msg %></p>
                 <% } %>
@@ -64,6 +69,7 @@
               <input type="number" name="discount" id="discount" class="inputGroupInput" value="<%= locals.oldData ? oldData.discount : null %>" >
               <label for="discount" class="inputGroupLabel">% OFF</label>
               <div>
+                <p class="errorMessage" id="discountError"></p>
                 <% if(locals.errors && errors.discount) { %>
                 <p><%= errors.discount.msg %></p>
                 <% } %>
@@ -75,6 +81,7 @@
               <input type="number" name="wholesalePrice" id="wholesalePrice" class="inputGroupInput" value="<%= locals.oldData ? oldData.wholesalePrice : null %>" >
               <label for="wholesalePrice" class="inputGroupLabel">Precio mayorista</label>
               <div>
+                <p class="errorMessage" id="wholesalePriceError"></p>
                 <% if(locals.errors && errors.wholesalePrice) { %>
                 <p><%= errors.wholesalePrice.msg %></p>
                 <% } %>
@@ -84,6 +91,7 @@
               <input type="number" name="stock" id="stock" class="inputGroupInput" value="<%= locals.oldData ? oldData.stock : null %>">
               <label for="stock" class="inputGroupLabel">Stock</label>
               <div>
+                <p class="errorMessage" id="stockError"></p>
                 <% if(locals.errors && errors.stock) { %>
                 <p><%= errors.stock.msg %></p>
                 <% } %>
@@ -102,6 +110,7 @@
               <option value="6" <%= locals.oldData && (oldData.category === "lavandina") ? "selected" : ""  %>>Lavandina</option>
             </select> 
             <div>
+              <p class="errorMessage" id="category_idError"></p>
               <% if(locals.errors && errors.category_id) { %>
               <p><%= errors.category_id.msg %></p>
               <% } %>
@@ -111,6 +120,7 @@
             <label for="image" class="p-newProduct">Seleccionar Imagen de Producto</label>
             <input class="inputGroupInput" type="file" name="image" id="image" accept="image/png, .jpeg, .jpg, image/gif"/>
             <div>
+              <p class="errorMessage" id="imageError"></p>
               <% if(locals.errors && errors.image) { %>
               <p><%= errors.image.msg %></p>
               <% } %>
@@ -120,6 +130,7 @@
             <label for="description" class="p-newProduct">Descripción</label>
             <textarea id="description" name="description" rows="10" cols="44" value="<%= locals.oldData ? oldData.description : null %>"></textarea>
             <div>
+              <p class="errorMessage" id="descriptionError"></p>
               <% if(locals.errors && errors.description) { %>
               <p><%= errors.description.msg %></p>
               <% } %>
