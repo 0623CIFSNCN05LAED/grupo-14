@@ -10,7 +10,7 @@ const userCfCanNotPass = require("../middlewares/userCfMiddleware");
 const userMCanNotPass = require("../middlewares/userMMiddleware");
 
 /*************** Main Router *******************/
-router.get("/", userCfCanNotPass, mainController.homeMayorista); //aca va el url entre ''
+router.get("/", userCfCanNotPass, mainController.homeMayorista); 
 router.get("/mayorista", userCfCanNotPass, mainController.homeMayorista);
 router.get("/cf", userMCanNotPass, mainController.homeConsumidorFinal);
 

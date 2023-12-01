@@ -20,14 +20,12 @@
             <div class="inputGroup name">
               <input type="text" name="name" id="name" class="inputGroupInput" value="<%= locals.oldData ? oldData.name : null %>" >
               <label for="name" class="inputGroupLabel">Nombre del producto</label>
-
               <div>
                 <p class="errorMessage" id="nameError"></p>
                 <% if(locals.errors && errors.name) { %>
                 <p><%= errors.name.msg %></p>
                 <% } %>
               </div>
-
             </div>
 
             <div class="inputGroup">
@@ -45,10 +43,23 @@
           </div>
           
           <div class="inputGroup brand">
-            <input type="text" name="brand_id" id="brand_id" class="inputGroupInput" value="<%= locals.oldData ? oldData.brand_id : null %>">
-            <label for="brand_id" class="inputGroupLabel">Marca</label>
-            <div>
-              <p class="errorMessage" id="brand_idError"></p>
+            <label for="brand_id" id="brandLabel" class="p-newProduct">Marca:</label>
+            <select name="brand_id" id="brand_id" class="inputGroupInput">
+              <option value="" <%= locals.oldData && (oldData.brand_id === "") ? "selected" : ""  %>>Elegi una Marca</option>
+              <option value="1" <%= locals.oldData && (oldData.brand_id === "1") ? "selected" : ""  %>>Procenex</option>
+              <option value="2" <%= locals.oldData && (oldData.brand_id === "2") ? "selected" : ""  %>>Blem</option>
+              <option value="3" <%= locals.oldData && (oldData.brand_id === "3") ? "selected" : ""  %>>Skip</option>
+              <option value="4" <%= locals.oldData && (oldData.brand_id === "4") ? "selected" : ""  %>>Trenet</option>
+              <option value="5" <%= locals.oldData && (oldData.brand_id === "5") ? "selected" : ""  %>>Higienol</option>
+              <option value="6" <%= locals.oldData && (oldData.brand_id === "6") ? "selected" : ""  %>>Elite</option>
+              <option value="7" <%= locals.oldData && (oldData.brand_id === "7") ? "selected" : ""  %>>Felpita</option>
+              <option value="8" <%= locals.oldData && (oldData.brand_id === "8") ? "selected" : ""  %>>Cif</option>
+              <option value="9" <%= locals.oldData && (oldData.brand_id === "9") ? "selected" : ""  %>>Magistral</option>
+              <option value="10" <%= locals.oldData && (oldData.brand_id === "10") ? "selected" : ""  %>>Ala</option>
+              <option value="11" <%= locals.oldData && (oldData.brand_id === "11") ? "selected" : ""  %>>Odex</option>
+              <option value="12" <%= locals.oldData && (oldData.brand_id === "12") ? "selected" : ""  %>>Ayudin</option>
+            </select>
+            <div> 
               <% if(locals.errors && errors.brand_id) { %>
               <p><%= errors.brand_id.msg %></p>
               <% } %>
@@ -57,7 +68,7 @@
           <div class="side">
             <div class="inputGroup inputNumber">
               <input type="number" name="retailPrice" id="retailPrice" class="inputGroupInput" value="<%= locals.oldData ? oldData.retailPrice : null %>" >
-              <label for="retailPrice" class="inputGroupLabel">Precio minorista</label>
+              <label for="retailPrice" class="inputGroupLabel">Precio Consumidor Final</label>
               <div>
                 <p class="errorMessage" id="retailPriceError"></p>
                 <% if(locals.errors && errors.retailPrice) { %>
@@ -66,12 +77,20 @@
               </div>
             </div>
             <div class="inputGroup inputNumber">
-              <input type="number" name="discount" id="discount" class="inputGroupInput" value="<%= locals.oldData ? oldData.discount : null %>" >
-              <label for="discount" class="inputGroupLabel">% OFF</label>
+              <input type="number" name="discountCf" id="discountCf" class="inputGroupInput" value="<%= locals.oldData ? oldData.discountCf : null %>" >
+              <label for="discountCf" class="inputGroupLabel">% OFF Consumidor Final</label>
               <div>
-                <p class="errorMessage" id="discountError"></p>
-                <% if(locals.errors && errors.discount) { %>
-                <p><%= errors.discount.msg %></p>
+                <% if(locals.errors && errors.discountCf) { %>
+                <p><%= errors.discountCf.msg %></p>
+                <% } %>
+              </div>
+            </div>
+            <div class="inputGroup inputNumber">
+              <input type="number" name="discountM" id="discountM" class="inputGroupInput" value="<%= locals.oldData ? oldData.discountM : null %>" >
+              <label for="discountM" class="inputGroupLabel">% OFF Mayorista</label>
+              <div>
+                <% if(locals.errors && errors.discountM) { %>
+                <p><%= errors.discountM.msg %></p>
                 <% } %>
               </div>
             </div>
@@ -101,13 +120,13 @@
           <div class="inputGroup">
             <label for="category_id" id="categoryLabel" class="p-newProduct">Categoria:</label>
             <select name="category_id" id="category_id" class="inputGroupInput">
-              <option value="" <%= locals.oldData && (oldData.category === "") ? "selected" : ""  %>>Elegi una categoría</option>
-              <option value="1" <%= locals.oldData && (oldData.category === "limpiadorDePiso") ? "selected" : ""  %>>Limpiador de piso</option>
-              <option value="2" <%= locals.oldData && (oldData.category === "limpiadorDeMuebles") ? "selected" : ""  %>>Limpiador de muebles</option>
-              <option value="3" <%= locals.oldData && (oldData.category === "limpiadorDeRopa") ? "selected" : ""  %>>Limpiador de ropa</option>
-              <option value="4" <%= locals.oldData && (oldData.category === "papelHigienico") ? "selected" : ""  %>>Papel higiénico</option>
-              <option value="5" <%= locals.oldData && (oldData.category === "detergente") ? "selected" : ""  %>>Detergente</option>
-              <option value="6" <%= locals.oldData && (oldData.category === "lavandina") ? "selected" : ""  %>>Lavandina</option>
+              <option value="" <%= locals.oldData && (oldData.category_id === "") ? "selected" : ""  %>>Elegi una categoría</option>
+              <option value="1" <%= locals.oldData && (oldData.category_id === "1") ? "selected" : ""  %>>Limpiador de piso</option>
+              <option value="2" <%= locals.oldData && (oldData.category_id === "2") ? "selected" : ""  %>>Limpiador de muebles</option>
+              <option value="3" <%= locals.oldData && (oldData.category_id === "3") ? "selected" : ""  %>>Limpiador de ropa</option>
+              <option value="4" <%= locals.oldData && (oldData.category_id === "4") ? "selected" : ""  %>>Papel higiénico</option>
+              <option value="5" <%= locals.oldData && (oldData.category_id === "5") ? "selected" : ""  %>>Detergente</option>
+              <option value="6" <%= locals.oldData && (oldData.category_id === "6") ? "selected" : ""  %>>Lavandina</option>
             </select> 
             <div>
               <p class="errorMessage" id="category_idError"></p>
@@ -128,7 +147,7 @@
           </div>
           <div class="inputGroup">
             <label for="description" class="p-newProduct">Descripción</label>
-            <textarea id="description" name="description" rows="10" cols="44" value="<%= locals.oldData ? oldData.description : null %>"></textarea>
+            <textarea id="description" name="description" rows="10" cols="44"><%= locals.oldData ? oldData.description : null %></textarea>
             <div>
               <p class="errorMessage" id="descriptionError"></p>
               <% if(locals.errors && errors.description) { %>

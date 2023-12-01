@@ -5,6 +5,7 @@
     <%- include("../partials/head", {title: 'Carrito'}) %>
 
     <link rel="stylesheet" href="/css/productCart.css" />
+    <script id="cartDetailScript" src="/scripts/cartDetail.js"></script>
   </head>
   <body>
     <%- include('../partials/header') %> 
@@ -38,21 +39,23 @@
                       </td>
                       <td class="quantity">
                         <h4 class="mb5">Cantidad:</h4>
-                        <div>
-                          <span><i class="fa-solid fa-minus"></i></span>
-                          <input type="text" name="itemQuantity" placeholder=<% cartProduct.forEach(cartData => { %>
-                       <% if (cartData.product_id == product.id) { %>
-                        <%= cartData.quantity %>
-                       <% } %>
-                      <% }) %>>
-                          <span><i class="fa-solid fa-plus"></i></span>
+                        <div class="stockContainer">
+                            <button class="stockButton" id="subtract"><i class="fa-solid fa-minus"></i></button>
+                            <input type="number" id="quantity" value=
+                                  <% cartProduct.forEach(cartData => { %>
+                                        <% if (cartData.product_id == product.id) { %>
+                                            <%= cartData.quantity %>
+                                        <% } %>
+                                  <% }) %> 
+                            min="1">
+                            <button class="stockButton" id="add"><i class="fa-solid fa-plus"></button>
                         </div>
                       </td>
                     <td class="subtotal">
-                      <h4 class="mb5">Subtotal:</h4>
-                      <div><% cartProduct.forEach(cartData => { %>
+                      <h4 class="mb5">Total:</h4>
+                      <div class="totalPrice"><% cartProduct.forEach(cartData => { %>
                        <% if (cartData.product_id == product.id) { %>
-                        <%= product.priceWithDiscount %>
+                        <%= product.priceWithDiscount * cartData.quantity %>
                        <% } %>
                       <% }) %></div>
                     </td>

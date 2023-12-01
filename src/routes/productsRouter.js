@@ -4,39 +4,41 @@ const router = Router();
 
 /*************** Middlewares require ******************/
 const uploadImgProduct = require("../middlewares/multerProduct");
-const productMiddleware = require("../middlewares/productMiddleware");
+const createProductMiddleware = require("../middlewares/createProductMiddleware");
+const editProductMiddleware = require("../middlewares/editProductMiddleware");
 const userAdminMiddleware = require("../middlewares/userAdminMiddleware");
 
 /*************** Validations require ******************/
 const productValidation = require("../validations/productValidation");
 
 /*************** Controller require ******************/
-const productDBcontroller = require("../controllers/productDBcontroller");
+const productController = require("../controllers/productController");
 
 /*************** Get all products ******************/
-router.get("/", productDBcontroller.list);
+router.get("/", productController.list);
 
 /*************** Get one product ******************/
-router.get("/detail/:id", productDBcontroller.detail);
+router.get("/detail/:id", productController.detail);
 
 /*************** Create one product ******************/
-router.get(
-  "/create",
-  /* userAdminMiddleware, */ productDBcontroller.viewCreate
-);
+router.get("/create", userAdminMiddleware, productController.viewCreate);
 router.post(
   "/",
   uploadImgProduct.single("image"),
   productValidation,
-  productMiddleware,
-  productDBcontroller.create
+  createProductMiddleware,
+  productController.create
 );
 
 /*************** Edit one product ******************/
-router.get("/edit/:id", productDBcontroller.viewEdit);
-router.put("/:id", uploadImgProduct.single("image"), productDBcontroller.edit);
+router.get("/edit/:id", productController.viewEdit);
+router.put("/:id",
+uploadImgProduct.single("image"),
+productValidation,
+editProductMiddleware,
+productController.edit);
 
 /*************** Delete one product ******************/
-router.delete("/:id", productDBcontroller.delete);
+router.delete("/:id", productController.delete);
 
 module.exports = router;

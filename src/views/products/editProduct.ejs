@@ -17,102 +17,103 @@
           <div class="side">
 
             <div class="inputGroup name">
-              <input type="text" name="name" id="name" class="inputGroupInput" value="<%= product.name %>" required>
+              <input type="text" name="name" id="name" class="inputGroupInput" value="<%= product.name %>">
               <label for="name" class="inputGroupLabel">Nombre del producto</label>
-              
               <div>
-                <p class="errorMessage" id="nameError"></p>
                 <% if(locals.errors && errors.name) { %>
                 <p><%= errors.name.msg %></p>
                 <% } %>
               </div>
-
             </div>
 
             <div class="inputGroup">
-              <input type="text" name="shortName" id="shortName" class="inputGroupInput" value="<%= product.shortName %>" required>
+              <input type="text" name="shortName" id="shortName" class="inputGroupInput" value="<%= product.shortName %>">
               <label for="shortName" class="inputGroupLabel">Producto abreviado</label>
-            
               <div>
-                <p class="errorMessage" id="shortNameError"></p>
                 <% if(locals.errors && errors.shortName) { %>
                 <p><%= errors.shortName.msg %></p>
                 <% } %>
               </div>
-              
             </div>
 
           </div>
 
           <div class="inputGroup brand">
-            <input type="text" name="brand_id" id="brand_id" class="inputGroupInput" value="<%= product.brand_id %>" required>
-            <label for="brand_id" class="inputGroupLabel">Marca</label>
-          
-            <div>
-              <p class="errorMessage" id="brand_idError"></p>
+            <label for="brand_id" id="brandLabel" class="p-newProduct">Marca:</label>
+            <select name="brand_id" id="brand_id" class="inputGroupInput">
+              <option value="" <%= product.brand == ""? "selected" : ""%>>Elegi una Marca</option>
+              <option value="1" <%= product.brand_id == 1 ? "selected" : ""  %>>Procenex</option>
+              <option value="2" <%= product.brand_id == 2 ? "selected" : ""  %>>Blem</option>
+              <option value="3" <%= product.brand_id == 3 ? "selected" : ""  %>>Skip</option>
+              <option value="4" <%= product.brand_id == 4 ? "selected" : ""  %>>Trenet</option>
+              <option value="5" <%= product.brand_id === 5 ? "selected" : ""  %>>Higienol</option>
+              <option value="6" <%= product.brand_id == 6 ? "selected" : ""  %>>Elite</option>
+              <option value="7" <%= product.brand_id == 7 ? "selected" : ""  %>>Felpita</option>
+              <option value="8" <%= product.brand_id == 8 ? "selected" : ""  %>>Cif</option>
+              <option value="9" <%= product.brand_id == 9 ? "selected" : ""  %>>Magistral</option>
+              <option value="10" <%= product.brand_id == 10 ? "selected" : ""  %>>Ala</option>
+              <option value="11" <%= product.brand_id == 11 ? "selected" : ""  %>>Odex</option>
+              <option value="12" <%= product.brand_id == 12 ? "selected" : ""  %>>Ayudin</option>
+            </select>
+            <div> 
               <% if(locals.errors && errors.brand_id) { %>
               <p><%= errors.brand_id.msg %></p>
               <% } %>
             </div>
-          
-          </div>
+            <div> 
 
           <div class="side">
 
             <div class="inputGroup inputNumber">
-              <input type="text" name="retailPrice" id="retailPrice" class="inputGroupInput" value="<%= product.retailPrice %>" required>
-              <label for="retailPrice" class="inputGroupLabel">Precio minorista</label>
-            
+              <input type="text" name="retailPrice" id="retailPrice" class="inputGroupInput" value="<%= product.retailPrice %>">
+              <label for="retailPrice" class="inputGroupLabel">Precio Consumidor Final</label>
               <div>
-                <p class="errorMessage" id="retailPriceError"></p>
                 <% if(locals.errors && errors.retailPrice) { %>
                 <p><%= errors.retailPrice.msg %></p>
                 <% } %>
               </div>
-            
             </div>
 
             <div class="inputGroup inputNumber">
-              <input type="number" name="discount" id="discount" class="inputGroupInput" value="<%= product.discount %>" required>
-              <label for="discount" class="inputGroupLabel">% OFF</label>
-            
+              <input type="number" name="discountCf" id="discountCf" class="inputGroupInput" value="<%= product.discountCf %>">
+              <label for="discountCf" class="inputGroupLabel">% OFF</label>
               <div>
-                <p class="errorMessage" id="discountError"></p>
-                <% if(locals.errors && errors.discount) { %>
-                <p><%= errors.discount.msg %></p>
+                <% if(locals.errors && errors.discountCf) { %>
+                <p><%= errors.discountCf.msg %></p>
                 <% } %>
               </div>
-            
             </div>
-
+            <div class="inputGroup inputNumber">
+              <input type="number" name="discountM" id="discountM" class="inputGroupInput" value="<%= product.discountM %>">
+              <label for="discountM" class="inputGroupLabel">% OFF</label>
+              <div>
+                <% if(locals.errors && errors.discountM) { %>
+                <p><%= errors.discountM.msg %></p>
+                <% } %>
+              </div>
+            </div>
           </div>
 
           <div class="side">
 
             <div class="inputGroup inputNumber">
-              <input type="text" name="wholesalePrice" id="wholesalePrice" class="inputGroupInput" value="<%= product.wholesalePrice %>" required>
+              <input type="text" name="wholesalePrice" id="wholesalePrice" class="inputGroupInput" value="<%= product.wholesalePrice %>">
               <label for="wholesalePrice" class="inputGroupLabel">Precio mayorista</label>
-            
               <div>
-                <p class="errorMessage" id="wholesalePriceError"></p>
                 <% if(locals.errors && errors.wholesalePrice) { %>
                 <p><%= errors.wholesalePrice.msg %></p>
                 <% } %>
               </div>
-            
             </div>
 
             <div class="inputGroup inputNumber">
-              <input type="number" name="stock" id="stock" class="inputGroupInput" value="<%= product.stock %>" required>
+              <input type="number" name="stock" id="stock" class="inputGroupInput" value="<%= product.stock %>">
               <label for="stock" class="inputGroupLabel">Stock</label>
-            
               <div>
-                <p class="errorMessage" id="stockError"></p>
                 <% if(locals.errors && errors.stock) { %>
                 <p><%= errors.stock.msg %></p>
                 <% } %>
               </div>
-            
             </div>
 
           </div>
@@ -120,46 +121,39 @@
           <div class="inputGroup">
             <label for="category_id" id="categoryLabel" class="p-newProduct">Categoria:</label>
               <select name="category_id" id="category_id" class="inputGroupInput">
-                <option value="">Elegi una categoría</option>
-                <option value="1" <%= product.category_id === "limpiadorDePiso" ? "selected" : ""%> >Limpiador de piso</option>
-                <option value="2" <%= product.category_id === "limpiadorDeMuebles" ? "selected" : ""%> >Limpiador de muebles</option>
-                <option value="3" <%= product.category_id === "limpiadorDeRopa" ? "selected" : ""%> >Limpiador de ropa</option>
-                <option value="4" <%= product.category_id === "papelHigienico" ? "selected" : ""%> >Papel higiénico</option>
-                <option value="5" <%= product.category_id === "detergente" ? "selected" : ""%>>Detergente</option>
-                <option value="6" <%= product.category_id === "lavandina" ? "selected" : ""%> >Lavandina</option>
-              </select> 
+                <option value="" <%= product.category_id == ""? "selected" : ""%>>Elegi una categoría</option>
+                <option value="1" <%= product.category_id == 1? "selected" : ""%> >Limpiador de piso</option>
+                <option value="2" <%= product.category_id == 2 ? "selected" : ""%> >Limpiador de muebles</option>
+                <option value="3" <%= product.category_id == 3 ? "selected" : ""%> >Limpiador de ropa</option>
+                <option value="4" <%= product.category_id == 4 ? "selected" : ""%> >Papel higiénico</option>
+                <option value="5" <%= product.category_id == 5 ? "selected" : ""%>>Detergente</option>
+                <option value="6" <%= product.category_id == 6 ? "selected" : ""%> >Lavandina</option>
+              </select>
               <div>
-              <p class="errorMessage" id="category_idError"></p>
-              <% if(locals.errors && errors.category_id) { %>
-              <p><%= errors.category_id.msg %></p>
-              <% } %>
-              </div>
+                <% if(locals.errors && errors.category_id) { %>
+                <p><%= errors.category_id.msg %></p>
+                <% } %>
+              </div> 
           </div>
           
           <div class="inputGroup">
             <label for="image" class="p-newProduct">Seleccionar Imagen de Producto</label>
             <input class="inputGroupInput" type="file" name="image" id="image" accept="image/png, .jpeg, .jpg, image/gif"/>
-          
             <div>
-              <p class="errorMessage" id="imageError"></p>
               <% if(locals.errors && errors.image) { %>
               <p><%= errors.image.msg %></p>
               <% } %>
             </div>
-
           </div>
 
           <div class="inputGroup">
             <label for="description" class="p-newProduct">Descripción</label>
             <textarea id="description" name="description" rows="10" cols="44"><%= product.description %></textarea>
-          
             <div>
-              <p class="errorMessage" id="descriptionError"></p>
               <% if(locals.errors && errors.description) { %>
               <p><%= errors.description.msg %></p>
               <% } %>
             </div>
-
           </div>
 
           <button type="submit" class="createProductButton">
