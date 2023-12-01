@@ -14,9 +14,13 @@ router.get("/", userCfCanNotPass, mainController.homeMayorista);
 router.get("/mayorista", userCfCanNotPass, mainController.homeMayorista);
 router.get("/cf", userMCanNotPass, mainController.homeConsumidorFinal);
 
-/*************** Products Router ********************/
-const productsRouter = require("./productsRouter");
-router.use("/products", productsRouter);
+/*************** CF Router *******************/
+const cfRouter = require("./cfRouter");
+router.use("/consumidorfinal", cfRouter);
+
+/*************** Mayorista Router *******************/
+const mayoristaRouter = require("./mayoristaRouter");
+router.use("/mayorista", mayoristaRouter);
 
 /*************** Users Router **********************/
 const userRouter = require("./userRouter");
@@ -32,6 +36,10 @@ router.use("/tutorials", tutorialsRouter);
 
 /* *********** Cart Router ***************** */
 const cartRouter = require("./cartRouter");
-router.use("/cart", cartRouter)
+router.use("/cart", cartRouter);
+
+/* *********** API products Router ***************** */
+const apiProductsRouter = require("./api/products");
+router.use("/api/products", apiProductsRouter);
 
 module.exports = router;
