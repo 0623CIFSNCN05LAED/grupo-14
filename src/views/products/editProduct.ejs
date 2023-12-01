@@ -40,7 +40,7 @@
           <div class="inputGroup brand">
             <label for="brand_id" id="brandLabel" class="p-newProduct">Marca:</label>
             <select name="brand_id" id="brand_id" class="inputGroupInput">
-              <option value="">Elegi una Marca</option>
+              <option value="" <%= product.brand == ""? "selected" : ""%>>Elegi una Marca</option>
               <option value="1" <%= product.brand_id == 1 ? "selected" : ""  %>>Procenex</option>
               <option value="2" <%= product.brand_id == 2 ? "selected" : ""  %>>Blem</option>
               <option value="3" <%= product.brand_id == 3 ? "selected" : ""  %>>Skip</option>
@@ -120,7 +120,7 @@
           <div class="inputGroup">
             <label for="category_id" id="categoryLabel" class="p-newProduct">Categoria:</label>
               <select name="category_id" id="category_id" class="inputGroupInput">
-                <option value="">Elegi una categoría</option>
+                <option value="" <%= product.category_id == ""? "selected" : ""%>>Elegi una categoría</option>
                 <option value="1" <%= product.category_id == 1? "selected" : ""%> >Limpiador de piso</option>
                 <option value="2" <%= product.category_id == 2 ? "selected" : ""%> >Limpiador de muebles</option>
                 <option value="3" <%= product.category_id == 3 ? "selected" : ""%> >Limpiador de ropa</option>
