@@ -4,7 +4,9 @@ const Products = db.Product;
 
 const productsAPIController = {
   list: (req, res) => {
-    Products.findAll().then((products) => {
+    Products.findAll({
+      include: ["category", "brand"],
+    }).then((products) => {
       let respuesta = {
         meta: {
           status: 200,
