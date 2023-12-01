@@ -10,9 +10,12 @@ module.exports = [
   body("retailPrice")
     .notEmpty()
     .withMessage("Debes completar el campo de precio minorista"),
-  body("discount")
+  body("discountCf")
     .notEmpty()
-    .withMessage("Debes completar el campo de descuento"),
+    .withMessage("Debes completar el campo de descuento Consumidor Final"),
+    body("discountM")
+    .notEmpty()
+    .withMessage("Debes completar el campo de descuento Mayorista"),
   body("wholesalePrice")
     .notEmpty()
     .withMessage("Debes completar el campo de precio mayorista"),
