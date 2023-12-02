@@ -2,18 +2,6 @@
 const { Router } = require("express");
 const router = Router();
 
-/*************** Controller Require's ****************/
-const mainController = require("../controllers/mainController");
-
-/*************** Middlewares require ******************/
-const userCfCanNotPass = require("../middlewares/userCfMiddleware");
-const userMCanNotPass = require("../middlewares/userMMiddleware");
-
-/*************** Main Router *******************/
-router.get("/", userCfCanNotPass, mainController.homeMayorista); 
-router.get("/mayorista", userCfCanNotPass, mainController.homeMayorista);
-router.get("/cf", userMCanNotPass, mainController.homeConsumidorFinal);
-
 /*************** CF Router *******************/
 const cfRouter = require("./cfRouter");
 router.use("/consumidorfinal", cfRouter);
