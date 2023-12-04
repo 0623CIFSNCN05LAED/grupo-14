@@ -12,7 +12,7 @@ const userCfCanNotPass = require("../middlewares/userCfMiddleware");
 router.get("/", userCfCanNotPass, mainController.homeMayorista);
 
 /*************** Products Router ********************/
-const productsRouter = require("./productsRouter");
-router.use("/products", productsRouter);
+const productsMRouter = require("./productsMRouter");
+router.use("/products", productsMRouter);
 
 module.exports = router;

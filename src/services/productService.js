@@ -7,7 +7,6 @@ const { v4: uuidv4 } = require("uuid");
 //   /* Da el formato a los precios de cada producto */
 
 //   const priceWithDiscount = // Calcula el precio final con el descuento incluido
-    
 
 //   product.priceWithDiscount = ` ${priceWithDiscount.toLocaleString("es", {
 //     // Crea dentro del producto el precio con el descuento incluido y le da el formato
@@ -32,17 +31,95 @@ const { v4: uuidv4 } = require("uuid");
 /* Terminan funcion de uso local */
 
 module.exports = {
-  findAll: async function () {
+  findAllM: async function () {
     try {
-      const products = await Product.findAll();
-      return products;
+      const productsDB = await Product.findAll();
+      const productsM = productsDB.map(function (product) {
+        return {
+          id: product.id,
+          name: product.name,
+          shortName: product.shortName,
+          price: product.wholesalePrice,
+          discount: product.discountM,
+          stock: product.stock,
+          image: product.image,
+          category_id: product.category_id,
+          description: product.description,
+          brand_id: product.brand_id,
+          offer: product.offer,
+        };
+      });
+      return productsM;
+    } catch {}
+  },
+  findAllCf: async function () {
+    try {
+      const productsDB = await Product.findAll();
+      const productsCf = productsDB.map(function (product) {
+        return {
+          id: product.id,
+          name: product.name,
+          shortName: product.shortName,
+          price: product.retailPrice,
+          discount: product.discountCf,
+          stock: product.stock,
+          image: product.image,
+          category_id: product.category_id,
+          description: product.description,
+          brand_id: product.brand_id,
+          offer: product.offer,
+        };
+      });
+      return productsCf;
     } catch {}
   },
 
-  findById: async function (id) {
+  /* findById: async function (id) {
     try {
       const product = await Product.findByPk(id);
       return product;
+    } catch {}
+  }, */
+
+  findProductCf: async function (id) {
+    try {
+      const product = await Product.findByPk(id);
+      const productCf = {
+        id: product.id,
+        name: product.name,
+        shortName: product.shortName,
+        price: product.retailPrice,
+        discount: product.discountCf,
+        stock: product.stock,
+        image: product.image,
+        category_id: product.category_id,
+        description: product.description,
+        brand_id: product.brand_id,
+        offer: product.offer,
+      };
+      console.log("producto consumidor final", productCf);
+      return productCf;
+    } catch {}
+  },
+
+  findProductM: async function (id) {
+    try {
+      const product = await Product.findByPk(id);
+      const productM = {
+        id: product.id,
+        name: product.name,
+        shortName: product.shortName,
+        price: product.wholesalePrice,
+        discount: product.discountM,
+        stock: product.stock,
+        image: product.image,
+        category_id: product.category_id,
+        description: product.description,
+        brand_id: product.brand_id,
+        offer: product.offer,
+      };
+      console.log("producto consumidor final", productM);
+      return productM;
     } catch {}
   },
 
@@ -119,6 +196,4 @@ module.exports = {
       where: { id: id },
     });
   },
-
-
 };

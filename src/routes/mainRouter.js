@@ -10,6 +10,10 @@ router.use("/consumidorfinal", cfRouter);
 const mayoristaRouter = require("./mayoristaRouter");
 router.use("/mayorista", mayoristaRouter);
 
+/*************** Products Router ********************/
+const productsRouter = require("./productsRouter");
+router.use("/products", productsRouter);
+
 /*************** Users Router **********************/
 const userRouter = require("./userRouter");
 router.use("/users", userRouter);

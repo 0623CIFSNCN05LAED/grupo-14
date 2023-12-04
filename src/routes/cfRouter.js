@@ -11,8 +11,8 @@ const userMCanNotPass = require("../middlewares/userMMiddleware");
 /*************** CF Router ********************/
 router.get("/", userMCanNotPass, mainController.homeConsumidorFinal);
 
-/*************** Products Router ********************/
-const productsRouter = require("./productsRouter");
-router.use("/products", productsRouter);
+/*************** CF Products Router ********************/
+const productsCfRouter = require("./productsCfRouter");
+router.use("/products", productsCfRouter);
 
 module.exports = router;

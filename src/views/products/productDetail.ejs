@@ -8,7 +8,6 @@
 
       <script id="addToCartScript" src="/scripts/addToCart.js"  data-product="<%- encodeURIComponent(JSON.stringify(product)) %>" data-user="<%- encodeURIComponent(JSON.stringify(userLogged.id)) %>"></script>
     <% } %>
-    <script src="/scripts/price.js" id="priceScript" data-product="<%- encodeURIComponent(JSON.stringify(product)) %>"></script>
   </head>
   <body>
     <%- include('../partials/header') %> 
@@ -46,11 +45,11 @@
             <div class="prices">
               <% if (product.discount > 0) { %>
               <h5>
-                <span class="notPrice" id="notPrice"></span> / <span id="discount"></span>
+                <span class="notPrice">$<%= product.price %></span> / <span><%= product.discount %>% OFF</span>
               </h5>
-              <h2 id="priceWithDiscount"></h2>
+              <h2><%= product.price %></h2> <!-- Precio con descuento, arreglar cuando se defina -->
               <% } else { %>
-              <h2 id="price"></h2>
+              <h2><%= product.price %></h2>
               <% } %>
             </div>
             <form action="">
