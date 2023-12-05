@@ -1,4 +1,4 @@
-const validation = [
+const validations = [
   {
     field: "country",
     check: (input) => input.value.trim() !== "",
@@ -25,16 +25,11 @@ const validation = [
     message: "Debes completar el campo numeración",
   },
   {
-    field: "apartment",
-    check: (input) => input.value.trim() !== "",
-    message: "Debes completar el campo piso - departamento",
-  },
-  {
     field: "note",
     checks: [
       {
         check: (input) => input.value.trim() !== "",
-        message: "Debes completar el campo de descripción",
+        message: "Debes completar el campo referencias del domicilio",
       },
       {
         check: (input) => input.value.length >= 5,

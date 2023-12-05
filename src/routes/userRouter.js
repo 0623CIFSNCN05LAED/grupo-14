@@ -38,6 +38,16 @@ router.post(
   userDBcontroller.register
 );
 
+/*************** Address **********************/
+router.get("/address", userDBcontroller.viewFormAddress);
+
+router.post(
+  "/address",
+  addressValidation,
+  addressMiddleware,
+  userDBcontroller.registerAddress
+);
+
 /* ************* Delete ********************** */
 router.delete("/delete", userDBcontroller.delete);
 

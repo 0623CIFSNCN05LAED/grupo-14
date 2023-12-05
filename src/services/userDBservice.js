@@ -3,6 +3,7 @@ const {
   UserCf,
   UserMayorista,
   UserAdmin,
+  Address,
 } = require("../database/models");
 const { v4: uuidv4 } = require("uuid");
 const bcrypt = require("bcryptjs");
@@ -35,7 +36,7 @@ module.exports = {
     }
   },
   create: async function (dataUser) {
-    try{
+    try {
       const newUser = {
         id: uuidv4(),
         email: dataUser.email,
@@ -43,9 +44,9 @@ module.exports = {
         phoneNumber: dataUser.tel,
         notify: dataUser.notify ? 1 : 0,
       };
-  
+
       await User.create(newUser);
-  
+
       if (dataUser.category == "cf") {
         delete dataUser.cuit;
         delete dataUser.businessName;
@@ -53,7 +54,7 @@ module.exports = {
           id: newUser.id,
           name: dataUser.name,
           lastName: dataUser.lastName,
-          dni: dataUser.dni
+          dni: dataUser.dni,
         });
       } else if (dataUser.category == "mayorista") {
         delete dataUser.name;
@@ -74,11 +75,24 @@ module.exports = {
           lastName: dataUser.lastName,
         });
       }
-
-    }catch{
-
-    }
+    } catch {}
   },
+
+  createAddress: async function (dataAddress) {
+    try {
+      const newAddress = {
+        country: dataAddress.country,
+        province: dataAddress.province,
+        neighborhood: dataAddress.neighborhood,
+        street: dataAddress.street,
+        number: dataAddress.number,
+        apartment: dataAddress.apartment,
+        note: dataAddress.note,
+      };
+      await Address.create(newAddress);
+    } catch {}
+  },
+
   delete: function (id) {
     User.destroy({ where: { id: id } });
     UserCf.destroy({ where: { id: id } });
