@@ -23,10 +23,6 @@
   color: #fff;
 }
 
-.side {
-  width: 100%;
-}
-
 /* Div contenedor de input y label (con animaciones) START */
 .inputGroup {
   position: relative;
@@ -65,36 +61,9 @@
 }
 /* Div contenedor de input y label (con animaciones) END */
 
-/* select START */
-
-select {
-  cursor: pointer;
-}
-
-#category {
-  margin-top: 10px;
-}
-.inputGroupInput option {
-  color: #fff;
-  background-color: #243a76;
-  padding: 5px;
-}
-/* ********************* falta hacer que los desplegables tengan la misma estetica que el input ******************* */
-
-/* select END */
-
-/* image input START */
-
-#image {
-  cursor: pointer;
-}
-/* ********************* falta darle estilo al boton del input type file *************************** */
-
-/* image input END */
-
 /* textarea START */
 
-#description {
+#note {
   background-color: transparent;
   color: #fff;
   border: none;
@@ -117,7 +86,7 @@ select {
   font-family: "Arial";
 }
 
-.createAddresstButton {
+.createAddressButton {
   width: 100%;
   background-color: transparent;
   border-radius: 8px;

@@ -13,7 +13,7 @@
         <form action="/users/address" method="post" class="form-newAddress">
           <h2>Datos de residencia</h2>
 
-          <div class="inputGroup country">
+          <div class="inputGroup">
             <input
               type="text"
               name="country"
@@ -136,18 +136,16 @@
           </div>
 
           <div class="inputGroup">
-            <input
-              type="text"
-              name="note"
-              id="note"
-              class="inputGroupInput"
-              style="padding-left: 20px"
-              value="<%= locals.oldData ? oldData.note : null %>"
-              pattern="[\w\s]+"
-            />
-            <label for="note" class="inputGroupLabel"
+            <label for="note" class="p-newAddress"
               >Referencias del domicilio</label
             >
+            <textarea
+              id="note"
+              name="note"
+              rows="10"
+              cols="44"
+              value="<%= locals.oldData ? oldData.note : null %>"
+            ></textarea>
 
             <div class="error">
               <p class="errorMessage" id="noteError"></p>
@@ -157,9 +155,7 @@
             </div>
           </div>
 
-          <div class="createAddressButton">
-            <button type="submit">Confirmar</button>
-          </div>
+          <button class="createAddressButton" type="submit">Confirmar</button>
         </form>
       </div>
     </main>
