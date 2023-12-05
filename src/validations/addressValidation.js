@@ -11,5 +11,10 @@ module.exports = [
   body("apartament")
     .notEmpty()
     .withMessage("Debes completar el campo piso - departamento"),
-  body("note").notEmpty().withMessage("Debes completar el campo descripción"),
+  body("note")
+    .notEmpty()
+    .withMessage("Debes completar el campo descripción")
+    .bail()
+    .isLength({ min: 5 })
+    .withMessage("La descripción debe tener al menos 5 caracteres"),
 ];
