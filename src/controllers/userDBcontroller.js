@@ -31,6 +31,14 @@ module.exports = {
     userDBservice.create(dataUser);
     res.redirect("/");
   },
+  viewFormAddress: (req, res) => {
+    res.render("users/address");
+  },
+  registerAddress: (req, res) => {
+    const dataAddress = req.body;
+    userDBservice.createAddress(dataAddress);
+    res.redirect("/");
+  },
   delete: (req, res) => {
     const id = req.params.id;
     userDBservice.delete(id);

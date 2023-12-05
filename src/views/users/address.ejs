@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include("../partials/head", {title: 'Dirección de usuario'}) %>
+    <link rel="stylesheet" href="/css/address.css" />
+    <script src="/js/address.js" defer></script>
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+
+    <main>
+      <div class="div-newAddress">
+        <form action="/users/address" method="post" class="form-newAddress">
+          <h2>Datos de residencia</h2>
+
+          <div class="inputGroup">
+            <input
+              type="text"
+              name="country"
+              id="country"
+              class="inputGroupInput"
+              style="padding-left: 20px"
+              value="<%= locals.oldData ? oldData.country : null %>"
+              pattern="[\w\s]+"
+            />
+            <label for="country" class="inputGroupLabel">País</label>
+
+            <div>
+              <p class="errorMessage" id="countryError"></p>
+              <% if(locals.errors && errors.country) { %>
+              <p><%= errors.country.msg %></p>
+              <% } %>
+            </div>
+          </div>
+
+          <div class="inputGroup">
+            <input
+              type="text"
+              name="province"
+              id="province"
+              class="inputGroupInput"
+              style="padding-left: 20px"
+              value="<%= locals.oldData ? oldData.province : null %>"
+              pattern="[\w\s]+"
+            />
+            <label for="province" class="inputGroupLabel">Provincia</label>
+
+            <div>
+              <p class="errorMessage" id="provinceError"></p>
+              <% if(locals.errors && errors.province) { %>
+              <p><%= errors.province.msg %></p>
+              <% } %>
+            </div>
+          </div>
+
+          <div class="inputGroup">
+            <input
+              type="text"
+              name="neighborhood"
+              id="neighborhood"
+              class="inputGroupInput"
+              style="padding-left: 20px"
+              value="<%= locals.oldData ? oldData.neighborhood : null %>"
+              pattern="[\w\s]+"
+            />
+            <label for="neighborhood" class="inputGroupLabel">Localidad</label>
+
+            <div class="error">
+              <p class="errorMessage" id="neighborhoodError"></p>
+              <% if(locals.errors && errors.neighborhood) { %>
+              <p><%= errors.neighborhood.msg %></p>
+              <% } %>
+            </div>
+          </div>
+
+          <div class="inputGroup">
+            <input
+              type="text"
+              name="street"
+              id="street"
+              class="inputGroupInput"
+              style="padding-left: 20px"
+              value="<%= locals.oldData ? oldData.street : null %>"
+              pattern="[\w\s]+"
+            />
+            <label for="street" class="inputGroupLabel">Calle</label>
+
+            <div class="error">
+              <p class="errorMessage" id="streetError"></p>
+              <% if(locals.errors && errors.street) { %>
+              <p><%= errors.street.msg %></p>
+              <% } %>
+            </div>
+          </div>
+
+          <div class="inputGroup">
+            <input
+              type="number"
+              name="number"
+              id="number"
+              class="inputGroupInput"
+              style="padding-left: 20px"
+              value="<%= locals.oldData ? oldData.number : null %>"
+              onkeypress="return event.charCode >= 0 && event.charCode <= 9999"
+            />
+            <label for="number" class="inputGroupLabel">Numeración</label>
+
+            <div class="error">
+              <p class="errorMessage" id="numberError"></p>
+              <% if(locals.errors && errors.number) { %>
+              <p><%= errors.number.msg %></p>
+              <% } %>
+            </div>
+          </div>
+
+          <div class="inputGroup">
+            <input
+              type="text"
+              name="apartment"
+              id="apartment"
+              class="inputGroupInput"
+              style="padding-left: 20px"
+              value="<%= locals.oldData ? oldData.apartment : null %>"
+              onkeypress="return event.charCode >= 0 && event.charCode <= 1000"
+            />
+            <label for="apartment" class="inputGroupLabel"
+              >Piso - Departamento</label
+            >
+
+            <div class="error">
+              <p class="errorMessage" id="apartmentError"></p>
+              <% if(locals.errors && errors.apartment) { %>
+              <p><%= errors.apartment.msg %></p>
+              <% } %>
+            </div>
+          </div>
+
+          <div class="inputGroup">
+            <label for="note" class="p-newAddress"
+              >Referencias del domicilio</label
+            >
+            <textarea
+              id="note"
+              name="note"
+              rows="10"
+              cols="44"
+              value="<%= locals.oldData ? oldData.note : null %>"
+            ></textarea>
+
+            <div class="error">
+              <p class="errorMessage" id="noteError"></p>
+              <% if(locals.errors && errors.note) { %>
+              <p><%= errors.note.msg %></p>
+              <% } %>
+            </div>
+          </div>
+
+          <button class="createAddressButton" type="submit">Confirmar</button>
+        </form>
+      </div>
+    </main>
+    <%- include("../partials/footer") %>
+  </body>
+</html>
