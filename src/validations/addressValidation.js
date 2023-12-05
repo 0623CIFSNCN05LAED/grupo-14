@@ -1,13 +1,15 @@
 const { body } = require("express-validator");
 
 module.exports = [
-  body("address")
+  body("country").notEmpty().withMessage("Debes completar el campo país"),
+  body("province").notEmpty().withMessage("Debes completar el campo provincia"),
+  body("neighborhood")
     .notEmpty()
-    .withMessage("Debes completar el campo de dirección."),
-  body("location").notEmpty().withMessage("Debes seleccionar una localidad."),
-  body("cp").notEmpty().withMessage("Debes completar el campo de C.P."),
-  body("province")
+    .withMessage("Debes completar el campo localidad"),
+  body("street").notEmpty().withMessage("Debes completar el campo calle"),
+  body("number").notEmpty().withMessage("Debes completar el campo numeración"),
+  body("apartament")
     .notEmpty()
-    .withMessage("Debes completar el campo de provincia."),
-  body("country").notEmpty().withMessage("Debes completar el campo de país."),
+    .withMessage("Debes completar el campo piso - departamento"),
+  body("note").notEmpty().withMessage("Debes completar el campo descripción"),
 ];
