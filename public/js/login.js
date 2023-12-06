@@ -1,13 +1,21 @@
 const validations = [
     {
         field: 'email',
-        check: (input) => input.value != '' && isValidEmail(input.value),
-        msg: 'Debe completar con su email'
+        checks: [
+            {
+                check: input => input.value !== "",
+                msg: 'Ingresar un correo electrónico'
+            },
+            {
+                check: input => isValidEmail(input.value),
+                msg: 'Ingresar un correo electrónico válido. Ejemplo: nombre@dominio.com'
+            }
+        ]
     },
     {
         field: 'password',
-        check: (input) => input.value != '',
-        msg: 'Debe completar con su contraseña'
+        check: (input) => input.value !== "",
+        msg: 'Ingresar una contraseña'
     }
 ]
 
@@ -18,7 +26,6 @@ validations.forEach( (validation) => {
 
     
     function validate(){
-        console.log('input', input.value);
         inputValidation(validation, input, inputErrorMsg)
     };
 
@@ -33,6 +40,7 @@ form.addEventListener('submit', (event) => {
     event.preventDefault();
 
     const validationsResult = [];
+
     validations.forEach( (validation) => {
         const inputId = validation.field;
         const input = document.getElementById(inputId);
@@ -48,22 +56,22 @@ form.addEventListener('submit', (event) => {
 });
 
 function inputValidation(validation, input, inputErrorMsg){
-    if(!input.value){
-        inputErrorMsg.innerText = 'El campo no debe estar vacío';
-        inputErrorMsg.classList.add('display');
-        return;
+    if (validation.checks) {
+        const failedCheck = validation.checks.find((check) => !check.check(input));
+        if (failedCheck) {
+            inputErrorMsg.innerText = failedCheck.message;
+            inputErrorMsg.classList.add("display");
+          return false;
+        }
+      } else if (!validation.check(input)) {
+        inputErrorMsg.innerText = validation.message;
+        inputErrorMsg.classList.add("display");
+        return false;
+      }
+      inputErrorMsg.innerText = "";
+      inputErrorMsg.classList.remove("display");
+      return true;
     }
-
-    if(!validation.check(input)){
-        inputErrorMsg.innerText = validation.msg;
-        inputErrorMsg.classList.add('display');
-        return;
-    }
-
-    inputErrorMsg.innerText = '';
-    inputErrorMsg.classList.remove('display');
-    return;
-}
 
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
