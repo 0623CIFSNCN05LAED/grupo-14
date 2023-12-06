@@ -94,6 +94,18 @@ main {
   color: #fff;
 }
 
+/* Comienzo validaciones */
+
+.errorMsg{
+  display: none;
+  color: red;
+}
+
+.display{
+  display: block;
+}
+/* Final validaciones */
+
 @media (min-width: 1290px) {
   main {
     display: flex;
