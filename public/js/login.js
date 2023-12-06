@@ -40,7 +40,7 @@ form.addEventListener('submit', (event) => {
     event.preventDefault();
 
     const validationsResult = [];
-
+    
     validations.forEach( (validation) => {
         const inputId = validation.field;
         const input = document.getElementById(inputId);
@@ -57,14 +57,17 @@ form.addEventListener('submit', (event) => {
 
 function inputValidation(validation, input, inputErrorMsg){
     if (validation.checks) {
-        const failedCheck = validation.checks.find((check) => !check.check(input));
+        // Busca el primer check que no se cumple y muestra mensaje
+        const failedCheck = validation.checks.find(
+          (check) => !check.check(input)
+        );
         if (failedCheck) {
-            inputErrorMsg.innerText = failedCheck.message;
+            inputErrorMsg.innerText = failedCheck.msg;
             inputErrorMsg.classList.add("display");
           return false;
         }
       } else if (!validation.check(input)) {
-        inputErrorMsg.innerText = validation.message;
+        inputErrorMsg.innerText = validation.msg;
         inputErrorMsg.classList.add("display");
         return false;
       }
