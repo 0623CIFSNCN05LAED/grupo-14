@@ -9,9 +9,10 @@ const { v4: uuidv4 } = require("uuid");
 const bcrypt = require("bcryptjs");
 
 module.exports = {
-  getAllUsersAndCount: async function (){
-    try{
-      const { count, rows } = await User.findAndCountAll({ /* esto devuelve count y rows */
+  getAllUsersAndCount: async function () {
+    try {
+      const { count, rows } = await User.findAndCountAll({
+        /* esto devuelve count y rows */
         include: [
           {
             model: UserAdmin,
@@ -26,19 +27,57 @@ module.exports = {
             as: "cf",
           },
         ],
-      }); 
-      const filterDataRows = rows.map(user => ({
+      });
+      const filterDataRows = rows.map((user) => ({
+        id: user.id,
+        email: user.email,
+        name: user.admin || user.cf ? user.admin.name || user.cf.name : null, /* esto estaria bien?????????????? */
+        businessName: user.mayorista ? user.mayorista.businessName : null,
+        detail: "/api/users/" + user.id
+      }));
+      return {
+        count,
+        rows: filterDataRows,
+      }; /* como espera count y rows tengo que aclarar el valor de rows */
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  findById: async function (userId) {
+    try {
+      const user = await User.findOne({
+        where: {
+          id: userId,
+        },
+        include: [
+          {
+            model: UserAdmin,
+            as: "admin",
+          },
+          {
+            model: UserMayorista,
+            as: "mayorista",
+          },
+          {
+            model: UserCf,
+            as: "cf",
+          },
+        ],
+      });
+      
+      const filterUserData = {
         id: user.id,
         email: user.email,
         name: user.admin || user.cf ? user.admin.name || user.cf.name : null,
+        lastName: user.admin || user.cf ? user.admin.lastName || user.cf.lastName : null,
+        dni: user.cf ? user.cf.dni : null,
         businessName: user.mayorista ? user.mayorista.businessName : null,
-      }))
-      return {count, rows:filterDataRows} /* como espera count y rows tengo que aclarar el valor de rows */
-      
-    } catch (error){
+      };
+
+      return filterUserData
+    } catch (error) {
       console.log(error);
     }
-    
   },
 
   findByEmail: async function (emailToCompare) {
