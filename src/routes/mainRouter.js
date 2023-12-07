@@ -34,4 +34,8 @@ router.use("/cart", cartRouter);
 const apiProductsRouter = require("./api/products");
 router.use("/api/products", apiProductsRouter);
 
+/* *********** API users Router ****************** */
+const apiUsersRouter = require("./api/usersApiRouter")
+router.use("/api/users", apiUsersRouter)
+
 module.exports = router;

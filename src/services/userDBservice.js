@@ -9,6 +9,38 @@ const { v4: uuidv4 } = require("uuid");
 const bcrypt = require("bcryptjs");
 
 module.exports = {
+  getAllUsersAndCount: async function (){
+    try{
+      const { count, rows } = await User.findAndCountAll({ /* esto devuelve count y rows */
+        include: [
+          {
+            model: UserAdmin,
+            as: "admin",
+          },
+          {
+            model: UserMayorista,
+            as: "mayorista",
+          },
+          {
+            model: UserCf,
+            as: "cf",
+          },
+        ],
+      }); 
+      const filterDataRows = rows.map(user => ({
+        id: user.id,
+        email: user.email,
+        name: user.admin || user.cf ? user.admin.name || user.cf.name : null,
+        businessName: user.mayorista ? user.mayorista.businessName : null,
+      }))
+      return {count, rows:filterDataRows} /* como espera count y rows tengo que aclarar el valor de rows */
+      
+    } catch (error){
+      console.log(error);
+    }
+    
+  },
+
   findByEmail: async function (emailToCompare) {
     try {
       const user = await User.findOne({
