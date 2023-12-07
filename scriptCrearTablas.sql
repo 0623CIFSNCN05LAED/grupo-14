@@ -51,6 +51,13 @@ CREATE TABLE Users (
     active_cart_id VARCHAR(255)
 );
 
+CREATE TABLE UserSuperAdmin (
+    id VARCHAR(255) PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    lastName VARCHAR(255) NOT NULL,
+    FOREIGN KEY (id) REFERENCES Users(id)
+);
+
 CREATE TABLE UsersAdmin (
     id VARCHAR(255) PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
