@@ -45,6 +45,7 @@ module.exports = {
           image: productDB.image,
           category_id: productDB.category_id,
           brand_id: productDB.brand_id,
+          href: "mayorista",
         };
       });
       return productsM;
@@ -63,6 +64,7 @@ module.exports = {
           image: productDB.image,
           category_id: productDB.category_id,
           brand_id: productDB.brand_id,
+          href: "consumidorfinal",
         };
       });
       return productsCf;
@@ -134,6 +136,7 @@ module.exports = {
           priceWithDiscount: productDB.wholesalePrice * (1 - productDB.discountM / 100),
           discount: productDB.discountM,
           image: productDB.image,
+          href: "mayorista",
         };
       });
       return inSaleProductsM;
@@ -154,6 +157,7 @@ module.exports = {
           priceWithDiscount: productDB.retailPrice * (1 - productDB.discountCf / 100),
           discount: productDB.discountCf,
           image: productDB.image,
+          href: "consumidorfinal",
         };
       });
       return inSaleProductsCf;
@@ -177,6 +181,7 @@ module.exports = {
           priceWithDiscount: productDB.wholesalePrice * (1 - productDB.discountM / 100),
           discount: productDB.discountM,
           image: productDB.image,
+          href: "mayorista",
         };
       });
       return bestSellerProductsM;
@@ -197,6 +202,7 @@ module.exports = {
           priceWithDiscount: productDB.retailPrice * (1 - productDB.discountCf / 100),
           discount: productDB.discountCf,
           image: productDB.image,
+          href: "consumidorfinal",
         };
       });
       return bestSellerProductsCf;
@@ -223,6 +229,7 @@ module.exports = {
             priceWithDiscount: productDB.wholesalePrice * (1 - productDB.discountM / 100),
             discount: productDB.discountM,
             image: productDB.image,
+            href: "mayorista",
           };
         });
       return relatedProductsM;
@@ -246,6 +253,7 @@ module.exports = {
             priceWithDiscount: productDB.retailPrice * (1 - productDB.discountCf / 100),
             discount: productDB.discountCf,
             image: productDB.image,
+            href: "consumidorfinal",
           };
         });
       return relatedProductsCf;
