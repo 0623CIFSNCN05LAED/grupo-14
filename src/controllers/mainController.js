@@ -1,33 +1,27 @@
-const productService = require("../services/productService")
+const productService = require("../services/productService");
 
 const mainController = {
   homeMayorista: async (req, res) => {
-    try{
-      const inSaleProducts = await productService.findInSaleProducts();
-      const bestSellersProducts = await productService.findBestSellerProducts();
+    try {
+      const inSaleProducts = await productService.findInSaleProductsM();
+      const bestSellersProducts = await productService.findBestSellerProductsM();
 
-    res.render("main/homeMayorista", {
-      inSaleProducts,
-      bestSellersProducts,
-    });
-    }catch{
-
-    }
-    
+      res.render("main/homeMayorista", {
+        inSaleProducts,
+        bestSellersProducts,
+      });
+    } catch {}
   },
-  homeConsumidorFinal: async(req, res) => {
-    try{
-    const inSaleProducts = await productService.findInSaleProducts();
-    const bestSellersProducts = await productService.findBestSellerProducts();
+  homeConsumidorFinal: async (req, res) => {
+    try {
+      const inSaleProducts = await productService.findInSaleProductsCf();
+      const bestSellersProducts = await productService.findBestSellerProductsCf();
 
-    res.render("main/homeCf", {
-      inSaleProducts,
-      bestSellersProducts,
-    });
-    }catch{
-
-    }
-
+      res.render("main/homeCf", {
+        inSaleProducts,
+        bestSellersProducts,
+      });
+    } catch {}
   },
 };
 

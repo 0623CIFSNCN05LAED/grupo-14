@@ -45,9 +45,9 @@
             <div class="prices">
               <% if (product.discount > 0) { %>
               <h5>
-                <span class="notPrice">$<%= product.price %></span> / <span><%= product.discount %>% OFF</span>
+                <span class="notPrice">$ <%= product.price %></span> / <span><%= product.discount %>% OFF</span>
               </h5>
-              <h2><%= product.price %></h2> <!-- Precio con descuento, arreglar cuando se defina -->
+              <h2>$ <%= product.priceWithDiscount %></h2> 
               <% } else { %>
               <h2><%= product.price %></h2>
               <% } %>

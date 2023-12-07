@@ -1,5 +1,5 @@
 <div class="card" id="card<%= product.id %>">
-  <a href="/products/detail/<%= product.id %>">
+  <a href="/consumidorfinal/products/detail/<%= product.id %>">
     <div class="cardBody">
       <img src="/img/products/<%= product.image %>" alt="imagen" />
     </div>
@@ -9,9 +9,7 @@
     <div class="cardFooter">
       <!-- cambiar enlace a toda la card ? y mismo con el hover-->
       <button>
-        $ <%= product.price %> &nbsp; &nbsp; <%= product.discount %>
-        <!-- habria que hacer un if de que si discount es cero no lo muestre -->
-        %OFF
+        <%= product.discount === 0 ? `$ ${product.price}` : `$ ${product.priceWithDiscount} / ${product.discount}% OFF` %>
       </button>
     </div>
   </a>
