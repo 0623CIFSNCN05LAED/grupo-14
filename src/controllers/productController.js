@@ -1,22 +1,38 @@
 const productService = require("../services/productService");
 
 module.exports = {
-  list: async (req, res) => {
+  listM: async (req, res) => {
     try {
-      const products = await productService.findAll();
+      const products = await productService.findAllM();
       res.render("products/productList", { products });
     } catch {
       res.send("error");
     }
   },
 
-  detail: async (req, res) => {
+  listCf: async (req, res) => {
+    try {
+      const products = await productService.findAllCf();
+      res.render("products/productList", { products });
+    } catch {
+      res.send("error");
+    }
+  },
+
+  detailCf: async (req, res) => {
     try {
       const id = req.params.id;
-      const product = await productService.findById(id);
-      const relatedProducts = await productService.findRelatedProducts(
-        product
-      );
+      const product = await productService.findProductCf(id);
+      const relatedProducts = await productService.findRelatedProductsCf(product);
+      res.render("products/productDetail", { product, relatedProducts });
+    } catch (error) {}
+  },
+
+  detailM: async (req, res) => {
+    try {
+      const id = req.params.id;
+      const product = await productService.findProductM(id);
+      const relatedProducts = await productService.findRelatedProductsM(product);
       res.render("products/productDetail", { product, relatedProducts });
     } catch (error) {}
   },
@@ -51,6 +67,4 @@ module.exports = {
     productService.deleteProduct(id);
     res.redirect("/products");
   },
-
-
 };

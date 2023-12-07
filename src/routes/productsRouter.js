@@ -14,12 +14,6 @@ const productValidation = require("../validations/productValidation");
 /*************** Controller require ******************/
 const productController = require("../controllers/productController");
 
-/*************** Get all products ******************/
-router.get("/", productController.list);
-
-/*************** Get one product ******************/
-router.get("/detail/:id", productController.detail);
-
 /*************** Create one product ******************/
 router.get("/create", userAdminMiddleware, productController.viewCreate);
 router.post(
@@ -31,12 +25,14 @@ router.post(
 );
 
 /*************** Edit one product ******************/
-router.get("/edit/:id", productController.viewEdit);
-router.put("/:id",
-uploadImgProduct.single("image"),
-productValidation,
-editProductMiddleware,
-productController.edit);
+router.get("/edit/:id", userAdminMiddleware, productController.viewEdit);
+router.put(
+  "/:id",
+  uploadImgProduct.single("image"),
+  productValidation,
+  editProductMiddleware,
+  productController.edit
+);
 
 /*************** Delete one product ******************/
 router.delete("/:id", productController.delete);

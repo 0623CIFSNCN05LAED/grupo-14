@@ -35,7 +35,7 @@ const mainRouter = require("./routes/mainRouter"); //aca estoy requiriendo las f
 //hace falta porque con el module.exports=router solo exportaba la funcionalidad router de express!!!
 app.use(mainRouter);
 app.get("/", (req, res) => {
-  res.redirect("/cf");
+  res.redirect("/consumidorfinal");
 });
 
 // *************** Iniciar el servidor web *****************

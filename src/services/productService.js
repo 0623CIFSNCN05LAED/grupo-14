@@ -7,7 +7,6 @@ const { v4: uuidv4 } = require("uuid");
 //   /* Da el formato a los precios de cada producto */
 
 //   const priceWithDiscount = // Calcula el precio final con el descuento incluido
-    
 
 //   product.priceWithDiscount = ` ${priceWithDiscount.toLocaleString("es", {
 //     // Crea dentro del producto el precio con el descuento incluido y le da el formato
@@ -32,50 +31,229 @@ const { v4: uuidv4 } = require("uuid");
 /* Terminan funcion de uso local */
 
 module.exports = {
-  findAll: async function () {
+  /* START FIND ALL PRODUCTS */
+  findAllM: async function () {
     try {
-      const products = await Product.findAll();
-      return products;
+      const productsDB = await Product.findAll();
+      const productsM = productsDB.map(function (productDB) {
+        return {
+          id: productDB.id,
+          shortName: productDB.shortName,
+          price: productDB.wholesalePrice,
+          priceWithDiscount: productDB.wholesalePrice * (1 - productDB.discountM / 100),
+          discount: productDB.discountM,
+          image: productDB.image,
+          category_id: productDB.category_id,
+          brand_id: productDB.brand_id,
+        };
+      });
+      return productsM;
     } catch {}
   },
+  findAllCf: async function () {
+    try {
+      const productsDB = await Product.findAll();
+      const productsCf = productsDB.map(function (productDB) {
+        return {
+          id: productDB.id,
+          shortName: productDB.shortName,
+          price: productDB.retailPrice,
+          priceWithDiscount: productDB.retailPrice * (1 - productDB.discountCf / 100),
+          discount: productDB.discountCf,
+          image: productDB.image,
+          category_id: productDB.category_id,
+          brand_id: productDB.brand_id,
+        };
+      });
+      return productsCf;
+    } catch {}
+  },
+  /* END FIND ALL PRODUCTS */
 
-  findById: async function (id) {
+  /* START FIND PRODUCT BY ID */
+  /* findById: async function (id) {
     try {
       const product = await Product.findByPk(id);
       return product;
     } catch {}
-  },
-
-  findInSaleProducts: async function () {
+  }, */
+  findProductM: async function (id) {
     try {
-      const inSaleProducts = await Product.findAll({
+      const productDB = await Product.findByPk(id);
+      const productM = {
+        id: productDB.id,
+        name: productDB.name,
+        shortName: productDB.shortName,
+        price: productDB.wholesalePrice,
+        priceWithDiscount: productDB.wholesalePrice * (1 - productDB.discountM / 100),
+        discount: productDB.discountM,
+        stock: productDB.stock,
+        image: productDB.image,
+        category_id: productDB.category_id,
+        description: productDB.description,
+        brand_id: productDB.brand_id,
+        offer: productDB.offer,
+      };
+      return productM;
+    } catch {}
+  },
+  findProductCf: async function (id) {
+    try {
+      const productDB = await Product.findByPk(id);
+      const productCf = {
+        id: productDB.id,
+        name: productDB.name,
+        shortName: productDB.shortName,
+        price: productDB.retailPrice,
+        priceWithDiscount: productDB.retailPrice * (1 - productDB.discountCf / 100),
+        discount: productDB.discountCf,
+        stock: productDB.stock,
+        image: productDB.image,
+        category_id: productDB.category_id,
+        description: productDB.description,
+        brand_id: productDB.brand_id,
+      };
+      return productCf;
+    } catch {}
+  },
+  /* END FIND PRODUCT BY ID */
+
+  /* START FIND IN SALE PRODUCTS */
+  findInSaleProductsM: async function () {
+    try {
+      const inSaleProductsDB = await Product.findAll({
         where: {
           offer: 1,
         },
       });
-      return inSaleProducts;
+      const inSaleProductsM = inSaleProductsDB.map(function (productDB) {
+        return {
+          id: productDB.id,
+          shortName: productDB.shortName,
+          price: productDB.wholesalePrice,
+          priceWithDiscount: productDB.wholesalePrice * (1 - productDB.discountM / 100),
+          discount: productDB.discountM,
+          image: productDB.image,
+        };
+      });
+      return inSaleProductsM;
     } catch {}
   },
-  findBestSellerProducts: async function () {
+  findInSaleProductsCf: async function () {
     try {
-      const bestSellerProducts = await Product.findAll({
+      const inSaleProductsDB = await Product.findAll({
+        where: {
+          offer: 1,
+        },
+      });
+      const inSaleProductsCf = inSaleProductsDB.map(function (productDB) {
+        return {
+          id: productDB.id,
+          shortName: productDB.shortName,
+          price: productDB.retailPrice,
+          priceWithDiscount: productDB.retailPrice * (1 - productDB.discountCf / 100),
+          discount: productDB.discountCf,
+          image: productDB.image,
+        };
+      });
+      return inSaleProductsCf;
+    } catch {}
+  },
+  /* END FIND IN SALE PRODUCTS */
+
+  /* START FIND BEST SELLER PRODUCTS */
+  findBestSellerProductsM: async function () {
+    try {
+      const bestSellerProductsDB = await Product.findAll({
         where: {
           bestSeller: 1,
         },
       });
-      return bestSellerProducts;
+      const bestSellerProductsM = bestSellerProductsDB.map(function (productDB) {
+        return {
+          id: productDB.id,
+          shortName: productDB.shortName,
+          price: productDB.wholesalePrice,
+          priceWithDiscount: productDB.wholesalePrice * (1 - productDB.discountM / 100),
+          discount: productDB.discountM,
+          image: productDB.image,
+        };
+      });
+      return bestSellerProductsM;
     } catch {}
   },
-  findRelatedProducts: async function (product) {
+  findBestSellerProductsCf: async function () {
     try {
-      const relatedProducts = await Product.findAll({
+      const bestSellerProductsDB = await Product.findAll({
+        where: {
+          bestSeller: 1,
+        },
+      });
+      const bestSellerProductsCf = bestSellerProductsDB.map(function (productDB) {
+        return {
+          id: productDB.id,
+          shortName: productDB.shortName,
+          price: productDB.retailPrice,
+          priceWithDiscount: productDB.retailPrice * (1 - productDB.discountCf / 100),
+          discount: productDB.discountCf,
+          image: productDB.image,
+        };
+      });
+      return bestSellerProductsCf;
+    } catch {}
+  },
+  /* END FIND BEST SELLER PRODUCTS */
+
+  /* START RELATED PRODUCTS */
+  findRelatedProductsM: async function (product) {
+    try {
+      const relatedProductsDB = await Product.findAll({
         where: {
           category_id: product.category_id,
         },
       });
-      return relatedProducts;
+      const idProduct = product.id;
+      const relatedProductsM = relatedProductsDB
+        .filter((productDB) => productDB.id !== idProduct)
+        .map(function (productDB) {
+          return {
+            id: productDB.id,
+            shortName: productDB.shortName,
+            price: productDB.wholesalePrice,
+            priceWithDiscount: productDB.wholesalePrice * (1 - productDB.discountM / 100),
+            discount: productDB.discountM,
+            image: productDB.image,
+          };
+        });
+      return relatedProductsM;
     } catch {}
   },
+  findRelatedProductsCf: async function (product) {
+    try {
+      const relatedProductsDB = await Product.findAll({
+        where: {
+          category_id: product.category_id,
+        },
+      });
+      const idProduct = product.id;
+      const relatedProductsCf = relatedProductsDB
+        .filter((productDB) => productDB.id !== idProduct)
+        .map(function (productDB) {
+          return {
+            id: productDB.id,
+            shortName: productDB.shortName,
+            price: productDB.retailPrice,
+            priceWithDiscount: productDB.retailPrice * (1 - productDB.discountCf / 100),
+            discount: productDB.discountCf,
+            image: productDB.image,
+          };
+        });
+      return relatedProductsCf;
+    } catch {}
+  },
+  /* END RELATED PRODUCTS */
+
+  /* START CREATE, EDIT AND DELETE PRODUCT */
   createProduct: function (req) {
     Product.create({
       id: uuidv4(),
@@ -119,6 +297,5 @@ module.exports = {
       where: { id: id },
     });
   },
-
-
+  /* START CREATE, EDIT AND DELETE PRODUCT */
 };
