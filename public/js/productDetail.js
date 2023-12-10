@@ -1,9 +1,13 @@
-
+/* CARRUSEL */
 const wrapper = document.querySelector(".wrapper");
 const carousel = document.querySelector(".carousel");
 const firstCardWidth = carousel.querySelector(".card").offsetWidth;
 const arrowBtns = document.querySelectorAll(".wrapper i");
 const carouselChildrens = [...carousel.children];
+
+
+if (carouselChildrens.length > 1){/* si hay mas de un producto se aplica logica de carrusel */ 
+
 
 let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
 
@@ -83,4 +87,5 @@ document.addEventListener("mouseup", dragStop);
 carousel.addEventListener("scroll", infiniteScroll);
 wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
 wrapper.addEventListener("mouseleave", autoPlay);
-
+}
+/* FIN CARRUSEL */

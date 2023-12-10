@@ -77,17 +77,23 @@
         </div>
       </section>
       <section class="relatedProducts">
+        <!-- Carrusel -->
         <h3 class="titleRelatedProducts">Productos relacionados</h3>
         <div class="wrapper">
-          <i id="left" class="fa-solid fa-angle-left"></i>
+          <% if (relatedProducts.length > 0) { %>            
+          <i id="left" class="fa-solid fa-angle-left arrow"></i>
         <ul class="carousel">     
           <% relatedProducts.forEach(product => { %>
             <li class="card"><%-
             include("../partials/productCard", {product}) %>
             </li> <% }); %>
           </ul>
-        <i id="right" class="fa-solid fa-angle-right"></i>  
+        <i id="right" class="fa-solid fa-angle-right arrow"></i> 
+        <% } else { %>
+          <div class="no-products-message">No hay productos relacionados.</div>
+      <% } %> 
         </div>
+        <!-- carrusel -->
       </section>
     </main>   
 

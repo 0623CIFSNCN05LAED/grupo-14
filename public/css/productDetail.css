@@ -141,7 +141,7 @@
 }
 
 /* Flechas comienzo */
-.wrapper i {
+.wrapper .arrow {
   color: black;
   top: 50%;
   height: 50px;
@@ -166,7 +166,13 @@
 .relatedProducts i:last-child{
   right: 0px;
 }
-/* flechas fin */
+
+
+/* oculta flechas cuando solo hay un producto */
+.wrapper:only-child .arrow {
+  display: none;
+}
+
 
 
 .wrapper .carousel{
