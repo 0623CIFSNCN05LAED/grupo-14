@@ -1,13 +1,12 @@
 /* CARRUSEL */
-const wrapper = document.querySelector(".wrapper");
+const carouselContainerOpportunities = document.querySelector(".carouselContainerOpportunities");
 const carousel = document.querySelector(".carousel");
 const firstCardWidth = carousel.querySelector(".card").offsetWidth;
-const arrowBtns = document.querySelectorAll(".wrapper i");
+const arrowBtns = document.querySelectorAll(".carouselContainerOpportunities i");
 const carouselChildrens = [...carousel.children];
 
 
 if (carouselChildrens.length > 1){/* si hay mas de un producto se aplica logica de carrusel */ 
-
 
 
 
@@ -35,6 +34,8 @@ arrowBtns.forEach(btn => {
         carousel.scrollLeft += btn.id == "left" ? -firstCardWidth : firstCardWidth;
     });
 });
+
+/* efectos Dragging cuando presiono el mouse encima */
 
 let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
 
@@ -83,10 +84,6 @@ const dragStop = () => {
     }, 300);
 }
 
-// Asigna los eventos a los elementos correspondientes
-carousel.addEventListener("mousedown", dragStart);
-document.addEventListener("mousemove", dragging);
-document.addEventListener("mouseup", dragStop);
 
 
 const infiniteScroll = () => {
@@ -109,6 +106,8 @@ const infiniteScroll = () => {
     if(!carouselContainerOpportunities.matches(":hover")) autoPlay();
 }
 
+
+
 const autoPlay = () => {
     if(window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
     // Autoplay the carousel after every 2500 ms
@@ -120,7 +119,7 @@ carousel.addEventListener("mousedown", dragStart);
 carousel.addEventListener("mousemove", dragging);
 document.addEventListener("mouseup", dragStop);
 carousel.addEventListener("scroll", infiniteScroll);
-wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
-wrapper.addEventListener("mouseleave", autoPlay);
+carouselContainerOpportunities.addEventListener("mouseenter", () => clearTimeout(timeoutId));
+carouselContainerOpportunities.addEventListener("mouseleave", autoPlay);
 }
 /* FIN CARRUSEL */

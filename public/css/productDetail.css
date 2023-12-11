@@ -127,7 +127,7 @@
 
 
 
-/* PRODUCTOS RELACIONADOS */
+/* PRODUCTOS RELACIONADOS carrusel */
 
  .titleRelatedProducts{
   padding: 20px;
@@ -256,7 +256,7 @@
   justify-content: center;
   width: 101%;
   white-space: nowrap; /* evita el salto de línea del precio y el descuento */
-  max-width: 100%; /* Asegura que el botón no sea más ancho que el 100% */
+  max-width: 100%; /* Asegura que el botón no sea más ancho que el 100% de la card*/
   padding: 12px 12px;
   box-sizing: border-box;
   border: none;
