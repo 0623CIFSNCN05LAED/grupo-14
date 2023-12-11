@@ -17,6 +17,7 @@ module.exports = {
     res.render("users/userProfile", {
       user: req.session.userLogged,
     });
+    console.log(req.session.userLogged);
   },
   logout: (req, res) => {
     req.session.destroy();

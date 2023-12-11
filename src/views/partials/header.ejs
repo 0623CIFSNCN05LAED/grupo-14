@@ -7,14 +7,21 @@
           <div class="tiendaMayoristaDiv">
             <a href="/mayorista"><button class="tiendaButton">Cambiar a TIENDA MAYORISTA</button></a>
           </div>
-        <% } else if (locals.userLogged.category == 'admin') { %>
+        <% } else if (locals.userLogged.admin != null) { %>
           <div class="textoTienda">
             <p>Bienvenido administrador <%= locals.userLogged.admin.name %> <%= locals.userLogged.admin.lastName %> - TIENDA CONSUMIDOR FINAL</p>
           </div>
           <div class="tiendaMayoristaDiv">
             <a href="/mayorista"><button class="tiendaButton">Cambiar a TIENDA MAYORISTA</button></a>
           </div>
-        <% } else if (locals.userLogged.category == 'consumidorFinal') { %>
+        <% } else if (locals.userLogged.superAdmin != null) { %>
+          <div class="textoTienda">
+            <p>Bienvenido superAdministrador <%= locals.userLogged.superAdmin.name %> <%= locals.userLogged.superAdmin.lastName %> - TIENDA CONSUMIDOR FINAL</p>
+          </div>
+          <div class="tiendaMayoristaDiv">
+            <a href="/mayorista"><button class="tiendaButton">Cambiar a TIENDA MAYORISTA</button></a>
+          </div>
+        <% } else if (locals.userLogged.cf != null) { %>
           <div class="textoTienda">
             <p>TIENDA CONSUMIDOR FINAL</p>
           </div>

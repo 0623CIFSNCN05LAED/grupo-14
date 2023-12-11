@@ -2,27 +2,11 @@
 <html lang="en">
   <head>
     <%- include("../partials/head", {title: 'Inicio de sesión'}) %>
-
-    <link rel="stylesheet" href="/css/login.css" />
   </head>
 
   <body>
-    <% if (!locals.userLogged || locals.userLogged.category == 'cf' || locals.userLogged.category == 'admin') {%> 
-      <%- include('../partials/headerCf') %> 
-    <% } else if (locals.userLogged.mayorista !== null) { %> 
-      <%- include('../partials/headerMayorista') %> 
-    <% } %>
+    <%- include('../partials/header') %> 
     <main>
-      <div>
-        <p>Imagen de usuario</p>
-        <img src="/img/users/<%= user.image %>" alt="avatar" />
-      </div>
-      <div>
-        <h2><%= user.name %></h2>
-      </div>
-      <div>
-        <h2><%= user.lastName %></h2>
-      </div>
       <a href="/users/logout"><button>LOGOUT</button></a>
     </main>
     <%- include('../partials/footer') %>

@@ -3,6 +3,7 @@ const {
   UserCf,
   UserMayorista,
   UserAdmin,
+  UserSuperAdmin,
   Address,
 } = require("../database/models");
 const { v4: uuidv4 } = require("uuid");
@@ -27,6 +28,10 @@ module.exports = {
           {
             model: UserCf,
             as: "cf",
+          },
+          {
+            model: UserSuperAdmin,
+            as: "superAdmin",
           },
         ],
       });
