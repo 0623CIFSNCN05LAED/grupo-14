@@ -158,7 +158,7 @@ insert into users values
 ("84a2eb0b-beac-4b67-82d6-be3f5e89c755", "consumidor@gmail.com", "$2a$10$sxNBXkT6upeSCi64xTLQQ.zcPi17IBTpnPnkLC1Qh0dkV7onn04BK", 1554565434, 0, null),
 ("70fbb4da-fd38-4156-b7a4-841e2cb4a3cf", "administrador@gmail.com", "$2a$10$zvsrElYM/OzkcyH2zKdlv.E57Sem7u1jMmJKRWPWCcrSFda0SxFze", 1552342323, 0, null),
 ("8afa3aa2-ffff-43c3-9268-2bf6b7622fbd", "mayorista@gmail.com", "$2a$10$datVPQUQF2Pk3eCq7Yaq/eKQhYF7l5UKdtOV/2rnjbtBcHtDl6Ojy", 1111111111, 0, null),
-("a5537012-542e-4438-8b1c-68f0de1468bc", "superadmin@gmail.com", "$2a$10$P4MboQUKZwxb1SnqtSrSCOS4lKcYAl49gFiGa6YXvtce69NYJopC2", 2147483647, 0, null)
+("a5537012-542e-4438-8b1c-68f0de1468bc", "superadmin@gmail.com", "$2a$10$P4MboQUKZwxb1SnqtSrSCOS4lKcYAl49gFiGa6YXvtce69NYJopC2", 2147483647, 0, null);
 
 insert into usersCf values
 ("84a2eb0b-beac-4b67-82d6-be3f5e89c755", "Consumidor", "Final", 12123123);
