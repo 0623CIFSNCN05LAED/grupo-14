@@ -4,26 +4,31 @@
     <%- include("../partials/head", {title: 'Tienda mayorista'}) %>
 
     <link rel="stylesheet" href="/css/homeMayorista.css" />
+    <script src="/js/homeMayorista.js" defer></script>
   </head>
   <body>
     <%- include('../partials/headerMayorista') %>
     <main>
       <%- include('../partials/mainBanner') %>
-      <section class="offersContainer">
-        <h3>OFERTAS</h3>
-        <article class="carouselOffers">
-          <div class="allProducts">
-            <% inSaleProducts.forEach(product =>{ %> <%-
-            include("../partials/productCard", {product}) %> <% }); %>
-          </div>
-          <button class="leftArrow">
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-          <button class="rightArrow">
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
-          <!-- estan con display none para despues agregar en version tablet y desktop -->
-        </article>
+
+      <section class="opportunities">
+        <!-- carrusel -->
+        <h3>Mega Oportunidades</h3>
+
+        <div class="carouselContainerOpportunities"> <!-- wrapper -->
+          <% if (inSaleProducts.length > 0) { %>            
+            <i id="left" class="fa-solid fa-angle-left arrow"></i>
+          <ul class="carousel">     
+            <% inSaleProducts.forEach(product => { %>
+              <li class="card"><%-
+              include("../partials/productCard", {product}) %>
+              </li> <% }); %>
+            </ul>
+          <i id="right" class="fa-solid fa-angle-right arrow"></i> 
+          <% } else { %>
+            <div class="no-products-message">Disculpe, no hay ofertas, vuelva intentar más tarde.</div>
+        <% } %> 
+        </div>
       </section>
       <div class="newMayoristaContainer">
         <div class="newMayoristaQuestion">

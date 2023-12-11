@@ -582,8 +582,10 @@
     background-color: #185397;
   }
   .contenedor {
+    width: 100%;
+    height: 400px;
     display: flex;
-    border: 3px solid red;
+    border-top: 20px solid #6f6f6f ;
   }
 
   .contenedor-2 {
@@ -602,7 +604,7 @@
     justify-content: center;
     height: 100%;
     width: 100%;
-    border: 3px solid blue;
+    
   }
 
   .contenedor-4 {
@@ -612,21 +614,21 @@
     padding: 15%;
     height: 60%;
     width: 100%;
-    border: 3px solid rgb(43, 255, 0);
+    
   }
 
   .contenedor-5 {
     display: flex;
     justify-content: center;
     padding: 2%;
-    border: 3px solid rgb(255, 0, 191);
+    border: 3px solid black;
   }
 
   .contenedor-6 {
     display: flex;
     justify-content: center;
     padding: 2%;
-    border: 3px solid rgb(0, 0, 0);
+    border: 3px solid black;
   }
 
   .pd-r {
