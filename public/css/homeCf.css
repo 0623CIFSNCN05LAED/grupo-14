@@ -253,10 +253,7 @@
 }
 /* carrusel */
 
-.titleRelatedProducts{
-  padding: 20px;
-  text-align: center;
-}
+
 .carouselContainerOpportunities {/* wrapper */
   position: relative;
   display: flex;
