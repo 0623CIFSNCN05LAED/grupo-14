@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-  const UserSuperAdmin = sequelize.define('SuperAdmin', {
+  const UserSuperAdmin = sequelize.define('UserSuperAdmin', {
     id: {
       type: dataTypes.STRING(255),
       primaryKey: true,

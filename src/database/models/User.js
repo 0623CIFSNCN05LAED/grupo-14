@@ -32,6 +32,11 @@ module.exports = (sequelize, DataTypes) => {
         as: 'addresses',
     });
 
+    User.belongsTo(models.UserSuperAdmin, {
+      foreignKey: "id",
+      as: "superAdmin",
+    });
+
     User.belongsTo(models.UserAdmin, {
         foreignKey: 'id',
         as: 'admin'
