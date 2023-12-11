@@ -83,11 +83,6 @@ const dragStop = () => {
     }, 300);
 }
 
-// Asigna los eventos a los elementos correspondientes
-carousel.addEventListener("mousedown", dragStart);
-document.addEventListener("mousemove", dragging);
-document.addEventListener("mouseup", dragStop);
-
 
 const infiniteScroll = () => {
     // If the carousel is at the end, append copies of the first few cards to the end
