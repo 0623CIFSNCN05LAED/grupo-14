@@ -1,3 +1,5 @@
+/* Beneficios al consumidor final  */
+
 const benefitsList = document.querySelector('.benefitsList');
 const listItems = benefitsList.querySelectorAll('li');
 const durationPerCharacter = 10; // Milisegundos por carácter
@@ -51,7 +53,7 @@ setTimeout(() => {
   showListItem(0);
 }, 250);
 
-
+/* FIN Beneficios al consumidor final  */
 
 
 /* CARRUSEL */
