@@ -92,10 +92,6 @@ module.exports = {
       let filterUserData = {
         id: user.id,
         email: user.email,
-        // name: user.admin || user.cf ? user.admin.name || user.cf.name : null, /* esto estaria bien?????????????? */
-        // lastName: user.admin || user.cf ? user.admin.lastName || user.cf.lastName : null, /* esto estaria bien?????????????? */
-        // dni: user.cf ? user.cf.dni : null, /* esto estaria bien?????????????? */
-        // businessName: user.mayorista ? user.mayorista.businessName : null, /* esto estaria bien?????????????? */
         phoneNumber: user.phoneNumber,
         notify: user.notify == 1? true: false,
         active_cart_id: user.active_cart_id ? user.active_cart_id : "Este usuario no tiene un carrito activo"
