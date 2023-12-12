@@ -13,33 +13,52 @@ module.exports = {
   getAllUsersAndCount: async function () {
     try {
       const { count, rows } = await User.findAndCountAll({
-        /* esto devuelve count y rows */
-        include: [
-          {
-            model: UserAdmin,
-            as: "admin",
-          },
-          {
-            model: UserMayorista,
-            as: "mayorista",
-          },
-          {
-            model: UserCf,
-            as: "cf",
-          },
-        ],
-      });
-      const filterDataRows = rows.map((user) => ({
-        id: user.id,
-        email: user.email,
-        name: user.admin || user.cf ? user.admin.name || user.cf.name : null, /* esto estaria bien?????????????? */
-        businessName: user.mayorista ? user.mayorista.businessName : null,/* esto estaria bien?????????????? */
-        detail: "/api/users/" + user.id
-      }));
-      return {
-        count,
-        rows: filterDataRows,
-      }; /* como espera count y rows tengo que aclarar el valor de rows */
+            /* esto devuelve count y rows */
+            include: [
+              {
+                model: UserAdmin,
+                as: "admin",
+              },
+              {
+                model: UserMayorista,
+                as: "mayorista",
+              },
+              {
+                model: UserCf,
+                as: "cf",
+              },
+              {
+                model: UserSuperAdmin,
+                as: "superAdmin",
+              },
+            ],
+          });
+
+          const filteredRows = rows.map((user)=>{
+            
+                let userDetails = {
+                id: user.id,
+                email: user.email,
+                detail: "/api/users/" + user.id,
+              }
+
+              const categoriesToCheck = ["superAdmin", "admin", "cf", "mayorista"];
+
+              for (const category of categoriesToCheck) {
+                if (user.dataValues[category]) {
+                  if (category === "mayorista") {
+                    userDetails.businessName = user.dataValues[category].businessName;
+                  } else {
+                    userDetails.name = user.dataValues[category].name;
+                  }
+                  break; 
+                }
+              }
+              
+              return userDetails
+          })
+
+      return { count, rows: filteredRows }; /* como espera count y rows tengo que aclarar el valor de rows */
     } catch (error) {
       console.log(error);
     }
@@ -63,22 +82,47 @@ module.exports = {
             model: UserCf,
             as: "cf",
           },
+          {
+            model: UserSuperAdmin,
+            as: "superAdmin",
+          },
         ],
       });
       
-      const filterUserData = {
+      let filterUserData = {
         id: user.id,
         email: user.email,
-        name: user.admin || user.cf ? user.admin.name || user.cf.name : null, /* esto estaria bien?????????????? */
-        lastName: user.admin || user.cf ? user.admin.lastName || user.cf.lastName : null, /* esto estaria bien?????????????? */
-        dni: user.cf ? user.cf.dni : null, /* esto estaria bien?????????????? */
-        businessName: user.mayorista ? user.mayorista.businessName : null, /* esto estaria bien?????????????? */
+        // name: user.admin || user.cf ? user.admin.name || user.cf.name : null, /* esto estaria bien?????????????? */
+        // lastName: user.admin || user.cf ? user.admin.lastName || user.cf.lastName : null, /* esto estaria bien?????????????? */
+        // dni: user.cf ? user.cf.dni : null, /* esto estaria bien?????????????? */
+        // businessName: user.mayorista ? user.mayorista.businessName : null, /* esto estaria bien?????????????? */
         phoneNumber: user.phoneNumber,
         notify: user.notify == 1? true: false,
         active_cart_id: user.active_cart_id ? user.active_cart_id : "Este usuario no tiene un carrito activo"
       };
 
+      const categoriesToCheck = ["superAdmin", "admin", "cf", "mayorista"];
+
+      for ( const category of categoriesToCheck){
+        if(user[category]){
+          if(category === "mayorista"){
+              filterUserData.businessName = user[category].businessName;
+          } else {
+            filterUserData.name = user[category].name;
+            filterUserData.lastName = user[category].lastName;
+            if(category === "cf"){
+              filterUserData.dni = user[category].dni
+            }
+          }
+        }
+      }
+
+
+
+
+
       return filterUserData
+
     } catch (error) {
       console.log(error);
     }
