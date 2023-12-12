@@ -4,6 +4,8 @@
     <%- include("../partials/head", {title: 'Detalle de producto'}) %>
 
     <link rel="stylesheet" href="/css/productDetail.css" />
+    <script src="/js/productDetail.js" defer></script>
+    
     <% if(locals.userLogged){ %> <!-- por que no funcionaba si usaba solo userLogged -->
 
       <script id="addToCartScript" src="/scripts/addToCart.js"  data-product="<%- encodeURIComponent(JSON.stringify(product)) %>" data-user="<%- encodeURIComponent(JSON.stringify(userLogged.id)) %>"></script>
@@ -75,15 +77,25 @@
         </div>
       </section>
       <section class="relatedProducts">
-        <h3 class="name">Productos relacionados</h3>
-        <div class="otherProducts">
-          <i class="fa-solid fa-circle-arrow-left"></i>
-          <% relatedProducts.forEach(product => { %> <%-
-          include("../partials/productCard", {product}) %> <% }); %>
-          <i class="fa-solid fa-circle-arrow-right"></i>
+        <!-- Carrusel -->
+        <h3 class="titleRelatedProducts">Productos relacionados</h3>
+        <div class="wrapper">
+          <% if (relatedProducts.length > 0) { %>            
+          <i id="left" class="fa-solid fa-angle-left arrow"></i>
+        <ul class="carousel">     
+          <% relatedProducts.forEach(product => { %>
+            <li class="card"><%-
+            include("../partials/productCard", {product}) %>
+            </li> <% }); %>
+          </ul>
+        <i id="right" class="fa-solid fa-angle-right arrow"></i> 
+        <% } else { %>
+          <div class="no-products-message">No hay productos relacionados.</div>
+      <% } %> 
         </div>
+        <!-- carrusel -->
       </section>
-    </main>
+    </main>   
 
     <%- include("../partials/footer") %>
   </body>
