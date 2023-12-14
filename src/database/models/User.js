@@ -1,35 +1,39 @@
 module.exports = (sequelize, DataTypes) => {
-    const User = sequelize.define("User", {
-        id: {
-            type: DataTypes.STRING(255),
-            primaryKey: true,
-        },
-        email: {
-            type: DataTypes.STRING(255),
-        },
-        password: {
-            type: DataTypes.STRING(255),
-        },
-        phoneNumber: {
-            type: DataTypes.INTEGER,
-        },
-        notify: {
-            type: DataTypes.BOOLEAN,
-        },
-        active_cart_id: {
-            type: DataTypes.STRING(255)
-        }
-    }, {
-        tableName: "Users",
-        timestamps: false
-    });
+  const User = sequelize.define(
+    "User",
+    {
+      id: {
+        type: DataTypes.STRING(255),
+        primaryKey: true,
+      },
+      email: {
+        type: DataTypes.STRING(255),
+      },
+      password: {
+        type: DataTypes.STRING(255),
+      },
+      phoneNumber: {
+        type: DataTypes.INTEGER,
+      },
+      notify: {
+        type: DataTypes.BOOLEAN,
+      },
+      active_cart_id: {
+        type: DataTypes.STRING(255),
+      },
+    },
+    {
+      tableName: "Users",
+      timestamps: false,
+    }
+  );
 
-    User.associate = function (models) {
+  User.associate = function (models) {
     User.belongsToMany(models.Address, {
-        through: 'AddressUser',
-        foreignKey: 'user_id',
-        otherKey: 'address_id',
-        as: 'addresses',
+      through: "AddressUser",
+      foreignKey: "user_id",
+      otherKey: "address_id",
+      as: "addresses",
     });
 
     User.belongsTo(models.UserSuperAdmin, {
@@ -38,25 +42,29 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     User.belongsTo(models.UserAdmin, {
-        foreignKey: 'id',
-        as: 'admin'
+      foreignKey: "id",
+      as: "admin",
+    });
+
+    User.belongsTo(models.Address, {
+      foreignKey: "id",
+      as: "address",
     });
 
     User.belongsTo(models.UserCf, {
-        foreignKey: 'id',
-        as: 'cf'
+      foreignKey: "id",
+      as: "cf",
     });
 
     User.belongsTo(models.UserMayorista, {
-        foreignKey: 'id',
-        as: 'mayorista'
+      foreignKey: "id",
+      as: "mayorista",
     });
     User.belongsTo(models.Cart, {
-            as: "aciveCart",
-            foreignKey: "active_cart_id"
-        });
-};
+      as: "aciveCart",
+      foreignKey: "active_cart_id",
+    });
+  };
 
-
-    return User;
+  return User;
 };
