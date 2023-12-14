@@ -84,6 +84,32 @@ window.addEventListener("DOMContentLoaded", function () {
   ];
 
   const cfValidations = [
+    {
+      field: "name",
+      checks: [
+        {
+          check: (input) => input.value.trim() !== "",
+          message: "Por favor, ingrese su nombre.",
+        },
+        {
+          check: (input) => input.value.length >= 2,
+          message: "El nombre debe tener al menos 2 caracteres. Intenta nuevamente.",
+        },        
+      ],
+    },
+    {
+      field: "lastName",
+      checks: [
+        {
+          check: (input) => input.value.trim() !== "",
+          message: "Por favor, ingrese su apellido.",
+        },
+        {
+          check: (input) => input.value.length >= 2,
+          message: "El apellido debe tener al menos 2 caracteres. Intenta nuevamente.",
+        },       
+      ],
+    },
 
     {
       field: "dni",
