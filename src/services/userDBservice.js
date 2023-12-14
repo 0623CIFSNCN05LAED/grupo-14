@@ -93,6 +93,7 @@ module.exports = {
         id: user.id,
         email: user.email,
         phoneNumber: user.phoneNumber,
+        image: user.image,
         notify: user.notify == 1? true: false,
         active_cart_id: user.active_cart_id ? user.active_cart_id : "Este usuario no tiene un carrito activo"
       };
@@ -160,6 +161,7 @@ module.exports = {
         id: uuidv4(),
         email: dataUser.email,
         password: bcrypt.hashSync(dataUser.password),
+        image: dataUser.image,
         phoneNumber: dataUser.tel,
         notify: dataUser.notify ? 1 : 0,
         image: file ? file.filename : "defaultImg.jpg"
