@@ -32,32 +32,6 @@ window.addEventListener("DOMContentLoaded", function () {
   const commonValidations = [
 
     {
-      field: "name",
-      checks: [
-        {
-          check: (input) => input.value.trim() !== "",
-          message: "Por favor, ingrese su nombre.",
-        },
-        {
-          check: (input) => input.value.length >= 2,
-          message: "El nombre debe tener al menos 2 caracteres. Intenta nuevamente.",
-        },        
-      ],
-    },
-    {
-      field: "lastName",
-      checks: [
-        {
-          check: (input) => input.value.trim() !== "",
-          message: "Por favor, ingrese su apellido.",
-        },
-        {
-          check: (input) => input.value.length >= 2,
-          message: "El apellido debe tener al menos 2 caracteres. Intenta nuevamente.",
-        },       
-      ],
-    },
-    {
       field: "tel",
       check: (input) => input.value !== "",
       message: "Por favor, ingrese teléfono / celular.",
@@ -126,7 +100,34 @@ window.addEventListener("DOMContentLoaded", function () {
     },
   ];
 
-  const adminValidations = [];
+  const adminValidations = [
+    {
+      field: "name",
+      checks: [
+        {
+          check: (input) => input.value.trim() !== "",
+          message: "Por favor, ingrese su nombre.",
+        },
+        {
+          check: (input) => input.value.length >= 2,
+          message: "El nombre debe tener al menos 2 caracteres. Intenta nuevamente.",
+        },        
+      ],
+    },
+    {
+      field: "lastName",
+      checks: [
+        {
+          check: (input) => input.value.trim() !== "",
+          message: "Por favor, ingrese su apellido.",
+        },
+        {
+          check: (input) => input.value.length >= 2,
+          message: "El apellido debe tener al menos 2 caracteres. Intenta nuevamente.",
+        },       
+      ],
+    },
+  ];
 
   const mayoristaValidations = [
     
