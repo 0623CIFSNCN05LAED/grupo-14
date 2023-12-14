@@ -33,9 +33,13 @@ module.exports = (sequelize, dataTypes) => {
       timestamps: false,
     }
   );
-
-  Address.belongsTo(models.Users, {
-    foreignKey: "id",
-    as: "users",
-  });
+  
+  Address.associate = function (models) {
+    Address.belongsTo(models.User, {
+      foreignKey: "id",
+      as: "users",
+    });
+  };
+  
+  return Address
 };
