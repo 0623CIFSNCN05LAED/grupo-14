@@ -32,7 +32,7 @@ router.get("/logout", userDBcontroller.logout);
 router.get("/register", userDBcontroller.viewRegister);
 
 router.post(
-  "/register" /* uploadImgUser.single("image"), */,
+  "/register", uploadImgUser.single("image"),
   registerValidation,
   registerMiddleware,
   userDBcontroller.register

@@ -1,40 +1,37 @@
 module.exports = (sequelize, DataTypes) => {
-  const User = sequelize.define(
-    "User",
-    {
-      id: {
-        type: DataTypes.STRING(255),
-        primaryKey: true,
+    const User = sequelize.define(
+      "User",
+      {
+        id: {
+          type: DataTypes.STRING(255),
+          primaryKey: true,
+        },
+        email: {
+          type: DataTypes.STRING(255),
+        },
+        password: {
+          type: DataTypes.STRING(255),
+        },
+        image: {
+          type: DataTypes.STRING(255),
+        },
+        phoneNumber: {
+          type: DataTypes.INTEGER,
+        },
+        notify: {
+          type: DataTypes.BOOLEAN,
+        },
+        active_cart_id: {
+          type: DataTypes.STRING(255),
+        },
       },
-      email: {
-        type: DataTypes.STRING(255),
-      },
-      password: {
-        type: DataTypes.STRING(255),
-      },
-      phoneNumber: {
-        type: DataTypes.INTEGER,
-      },
-      notify: {
-        type: DataTypes.BOOLEAN,
-      },
-      active_cart_id: {
-        type: DataTypes.STRING(255),
-      },
-    },
-    {
-      tableName: "Users",
-      timestamps: false,
-    }
-  );
+      {
+        tableName: "Users",
+        timestamps: false,
+      }
+    );
 
   User.associate = function (models) {
-    User.belongsToMany(models.Address, {
-      through: "AddressUser",
-      foreignKey: "user_id",
-      otherKey: "address_id",
-      as: "addresses",
-    });
 
     User.belongsTo(models.UserSuperAdmin, {
       foreignKey: "id",

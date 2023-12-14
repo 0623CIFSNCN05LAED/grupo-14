@@ -35,6 +35,7 @@ CREATE TABLE Users (
     id VARCHAR(255) PRIMARY KEY,
     email VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
+    image VARCHAR(255),
     phoneNumber INT NOT NULL,
     notify TINYINT(1) NOT NULL,
     active_cart_id VARCHAR(255)
@@ -148,10 +149,10 @@ values
 ("90157fc3-837e-48bb-bb90-68098c3723f7", "Lavandina Ayudín clásica 4 l.", "Lavandina Ayudín 4 l", 12, 6, 333, 222, 1, 25, 10, 5, 0, 0, "lavandinaAyudin4litros.jpg", "La lavandina Ayudín Clásica mantiene todo su poder para desodorizar y desinfectar. Es ideal para que realices la limpieza de tu hogar, que lo utilices en diferentes superficies. Ayudín elimina el 99.9% de hongos, virus y bacterias. En el baño, la cocina y en otras áreas de la casa, podemos encontrar superficies contaminadas. Por eso, se recomienda la desinfección de los pisos de la cocina, living, cuartos, baño, patio y balcón; la mesada, pileta y utensilios de cocina, artefactos del baño, las llaves de las canillas, el botón de descarga del inodoro y las manijas de todas las puertas de la casa. Por su versatilidad y dado que es un producto de limpieza de los más económicos, es un aliado infaltable en los hogares, ofreciendo limpieza y desinfección por menos de $2 por día. Cuando realmente importa, confía en Ayudin.");
 
 insert into users values
-("84a2eb0b-beac-4b67-82d6-be3f5e89c755", "consumidor@gmail.com", "$2a$10$sxNBXkT6upeSCi64xTLQQ.zcPi17IBTpnPnkLC1Qh0dkV7onn04BK", 1554565434, 0, null),
-("70fbb4da-fd38-4156-b7a4-841e2cb4a3cf", "administrador@gmail.com", "$2a$10$zvsrElYM/OzkcyH2zKdlv.E57Sem7u1jMmJKRWPWCcrSFda0SxFze", 1552342323, 0, null),
-("8afa3aa2-ffff-43c3-9268-2bf6b7622fbd", "mayorista@gmail.com", "$2a$10$datVPQUQF2Pk3eCq7Yaq/eKQhYF7l5UKdtOV/2rnjbtBcHtDl6Ojy", 1111111111, 0, null),
-("a5537012-542e-4438-8b1c-68f0de1468bc", "superadmin@gmail.com", "$2a$10$P4MboQUKZwxb1SnqtSrSCOS4lKcYAl49gFiGa6YXvtce69NYJopC2", 2147483647, 0, null);
+("84a2eb0b-beac-4b67-82d6-be3f5e89c755", "consumidor@gmail.com", "$2a$10$sxNBXkT6upeSCi64xTLQQ.zcPi17IBTpnPnkLC1Qh0dkV7onn04BK","userDefault.png", 1554565434, 0, null),
+("70fbb4da-fd38-4156-b7a4-841e2cb4a3cf", "administrador@gmail.com", "$2a$10$zvsrElYM/OzkcyH2zKdlv.E57Sem7u1jMmJKRWPWCcrSFda0SxFze","userDefault.png", 1552342323, 0, null),
+("8afa3aa2-ffff-43c3-9268-2bf6b7622fbd", "mayorista@gmail.com", "$2a$10$datVPQUQF2Pk3eCq7Yaq/eKQhYF7l5UKdtOV/2rnjbtBcHtDl6Ojy","userDefault.png", 1111111111, 0, null),
+("a5537012-542e-4438-8b1c-68f0de1468bc", "superadmin@gmail.com", "$2a$10$P4MboQUKZwxb1SnqtSrSCOS4lKcYAl49gFiGa6YXvtce69NYJopC2","userDefault.png", 2147483647, 0, null);
 
 insert into usersCf values
 ("84a2eb0b-beac-4b67-82d6-be3f5e89c755", "Consumidor", "Final", 12123123);
