@@ -29,7 +29,8 @@ module.exports = {
   },
   register: (req, res) => {
     const dataUser = req.body;
-    userDBservice.create(dataUser);
+    const file = req.file
+    userDBservice.create(dataUser, file);
     res.redirect("/");
   },
   viewFormAddress: (req, res) => {

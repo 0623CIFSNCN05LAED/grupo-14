@@ -9,7 +9,7 @@
     <%- include('../partials/header') %>
     
     <main>
-      <form action="/users/register" method="post" class="registerForm" id="form">
+      <form action="/users/register" method="post" class="registerForm"  enctype="multipart/form-data" id="form">
         <h4 class="registerTitle">Información personal</h4>
         <div class="form-field">
           <div class="data">
@@ -122,6 +122,10 @@
             <% } %>
           </div>
         </div>
+        <div class="formField" id="imageField">
+          <div class="data">
+            <input type="file" id="image" name="image" accept="image/png, .jpeg, .jpg"/>
+          </div>
         <div class="formField">
           <div class="data">
             <input

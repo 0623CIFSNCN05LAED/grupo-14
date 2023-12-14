@@ -154,7 +154,7 @@ module.exports = {
       return false; /* ?? */
     }
   },
-  create: async function (dataUser) {
+  create: async function (dataUser, file) {
     try {
       const newUser = {
         id: uuidv4(),
@@ -162,6 +162,7 @@ module.exports = {
         password: bcrypt.hashSync(dataUser.password),
         phoneNumber: dataUser.tel,
         notify: dataUser.notify ? 1 : 0,
+        image: file ? file.filename : "defaultImg.jpg"
       };
 
       await User.create(newUser);
