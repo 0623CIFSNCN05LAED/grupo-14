@@ -1,17 +1,6 @@
 CREATE DATABASE cleanwave;
 USE cleanwave;
 
-CREATE TABLE Addresses (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    country VARCHAR(255) NOT NULL,
-    province VARCHAR(255) NOT NULL,
-    neighborhood VARCHAR(255) NOT NULL,
-    street VARCHAR(255) NOT NULL,
-    number INT NOT NULL,
-    apartment VARCHAR(20),
-    note TEXT
-);
-
 CREATE TABLE Categories (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL
@@ -51,6 +40,18 @@ CREATE TABLE Users (
     active_cart_id VARCHAR(255)
 );
 
+CREATE TABLE Addresses (
+    id VARCHAR(255) PRIMARY KEY,
+    country VARCHAR(255) NOT NULL,
+    province VARCHAR(255) NOT NULL,
+    neighborhood VARCHAR(255) NOT NULL,
+    street VARCHAR(255) NOT NULL,
+    number INT NOT NULL,
+    apartment VARCHAR(20),
+    note TEXT,
+    FOREIGN KEY (id) REFERENCES Users(id)
+);
+
 CREATE TABLE UserSuperAdmin (
     id VARCHAR(255) PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
@@ -78,14 +79,6 @@ CREATE TABLE UsersMayoristas (
     businessName VARCHAR(255) NOT NULL,
     cuit INT NOT NULL,
     FOREIGN KEY (id) REFERENCES Users(id)
-);
-
-CREATE TABLE AddressesUsers (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    address_id INT NOT NULL,
-    user_id VARCHAR(255) NOT NULL,
-    FOREIGN KEY (address_id) REFERENCES Addresses(id),
-    FOREIGN KEY (user_id) REFERENCES Users(id)
 );
 
 CREATE TABLE Carts (
@@ -171,3 +164,9 @@ insert into usersmayoristas values
 
 insert into usersuperadmin values
 ("a5537012-542e-4438-8b1c-68f0de1468bc", "Super", "Admin");
+
+insert into addresses values
+("84a2eb0b-beac-4b67-82d6-be3f5e89c755", "pais", "provincia", "barrio", "calle", 10, "depto", "nota"),
+("70fbb4da-fd38-4156-b7a4-841e2cb4a3cf", "pais", "provincia", "barrio", "calle", 10, "depto", "nota"),
+("8afa3aa2-ffff-43c3-9268-2bf6b7622fbd", "pais", "provincia", "barrio", "calle", 10, "depto", "nota"),
+("a5537012-542e-4438-8b1c-68f0de1468bc", "pais", "provincia", "barrio", "calle", 10, "depto", "nota");
