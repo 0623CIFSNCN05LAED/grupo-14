@@ -46,6 +46,7 @@ CREATE TABLE Users (
     id VARCHAR(255) PRIMARY KEY,
     email VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
+    image VARCHAR(255),
     phoneNumber INT NOT NULL,
     notify TINYINT(1) NOT NULL,
     active_cart_id VARCHAR(255)
