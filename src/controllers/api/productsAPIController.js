@@ -30,7 +30,7 @@ const productsAPIController = {
           description: productDB.description,
           category: productDB.category.name,
           brand: productDB.brand.name,
-          detail: `${req.originalUrl}/${productDB.id}`,
+          detail: `http://localhost:3333${req.originalUrl}/${productDB.id}`,
         })),
       };
       res.json(response);
