@@ -12,7 +12,11 @@
     <% } %>
   </head>
   <body>
-    <%- include('../partials/header') %> 
+    <% if (product.href == "consumidorfinal") { %>
+      <%- include('../partials/header') %> 
+    <% } else if (product.href == "mayorista") { %>
+      <%- include('../partials/headerMayorista') %> 
+    <% } %>
 
     <main>
       <div class="nav">

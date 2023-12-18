@@ -17,7 +17,6 @@ module.exports = {
     res.render("users/userProfile", {
       user: req.session.userLogged,
     });
-    console.log(req.session.userLogged);
   },
   logout: (req, res) => {
     req.session.destroy();
@@ -29,7 +28,7 @@ module.exports = {
   },
   register: (req, res) => {
     const dataUser = req.body;
-    const file = req.file
+    const file = req.file;
     userDBservice.create(dataUser, file);
     res.redirect("/");
   },

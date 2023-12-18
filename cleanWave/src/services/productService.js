@@ -73,12 +73,12 @@ module.exports = {
   /* END FIND ALL PRODUCTS */
 
   /* START FIND PRODUCT BY ID */
-  /* findById: async function (id) {
+  findById: async function (id) {
     try {
       const product = await Product.findByPk(id);
       return product;
     } catch {}
-  }, */
+  },
   findProductM: async function (id) {
     try {
       const productDB = await Product.findByPk(id);
@@ -95,6 +95,7 @@ module.exports = {
         description: productDB.description,
         brand_id: productDB.brand_id,
         offer: productDB.offer,
+        href: "mayorista",
       };
       return productM;
     } catch {}
@@ -114,6 +115,7 @@ module.exports = {
         category_id: productDB.category_id,
         description: productDB.description,
         brand_id: productDB.brand_id,
+        href: "consumidorfinal",
       };
       return productCf;
     } catch {}
