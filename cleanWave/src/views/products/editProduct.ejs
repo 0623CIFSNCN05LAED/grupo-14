@@ -63,7 +63,6 @@
             <div> 
 
           <div class="side">
-
             <div class="inputGroup inputNumber">
               <input type="text" name="retailPrice" id="retailPrice" class="inputGroupInput" value="<%= product.retailPrice %>">
               <label for="retailPrice" class="inputGroupLabel">Precio Consumidor Final</label>
@@ -73,13 +72,23 @@
                 <% } %>
               </div>
             </div>
-
             <div class="inputGroup inputNumber">
               <input type="number" name="discountCf" id="discountCf" class="inputGroupInput" value="<%= product.discountCf %>">
               <label for="discountCf" class="inputGroupLabel">% OFF</label>
               <div>
                 <% if(locals.errors && errors.discountCf) { %>
                 <p><%= errors.discountCf.msg %></p>
+                <% } %>
+              </div>
+            </div>
+          </div>
+          <div class="side">
+            <div class="inputGroup inputNumber">
+              <input type="text" name="wholesalePrice" id="wholesalePrice" class="inputGroupInput" value="<%= product.wholesalePrice %>">
+              <label for="wholesalePrice" class="inputGroupLabel">Precio mayorista</label>
+              <div>
+                <% if(locals.errors && errors.wholesalePrice) { %>
+                <p><%= errors.wholesalePrice.msg %></p>
                 <% } %>
               </div>
             </div>
@@ -93,31 +102,15 @@
               </div>
             </div>
           </div>
-
-          <div class="side">
-
-            <div class="inputGroup inputNumber">
-              <input type="text" name="wholesalePrice" id="wholesalePrice" class="inputGroupInput" value="<%= product.wholesalePrice %>">
-              <label for="wholesalePrice" class="inputGroupLabel">Precio mayorista</label>
-              <div>
-                <% if(locals.errors && errors.wholesalePrice) { %>
-                <p><%= errors.wholesalePrice.msg %></p>
-                <% } %>
-              </div>
+          <div class="inputGroup inputNumber">
+            <input type="number" name="stock" id="stock" class="inputGroupInput" value="<%= product.stock %>">
+            <label for="stock" class="inputGroupLabel">Stock</label>
+            <div>
+              <% if(locals.errors && errors.stock) { %>
+              <p><%= errors.stock.msg %></p>
+              <% } %>
             </div>
-
-            <div class="inputGroup inputNumber">
-              <input type="number" name="stock" id="stock" class="inputGroupInput" value="<%= product.stock %>">
-              <label for="stock" class="inputGroupLabel">Stock</label>
-              <div>
-                <% if(locals.errors && errors.stock) { %>
-                <p><%= errors.stock.msg %></p>
-                <% } %>
-              </div>
-            </div>
-
           </div>
-
           <div class="inputGroup">
             <label for="category_id" id="categoryLabel" class="p-newProduct">Categoria:</label>
               <select name="category_id" id="category_id" class="inputGroupInput">

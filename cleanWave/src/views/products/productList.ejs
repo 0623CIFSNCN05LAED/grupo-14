@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="/css/productCard.css" />
   </head>
   <body>
-    <%- include('../partials/header') %> 
+    <% if (products[0].href == "consumidorfinal") { %>
+      <%- include('../partials/header') %> 
+    <% } else if (products[0].href == "mayorista") { %>
+      <%- include('../partials/headerMayorista') %> 
+    <% } %>
 
     <main>
       <div class="nav">
