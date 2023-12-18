@@ -1,8 +1,0 @@
-Paleta colores mayorista.newMayoristaContainer
-
-azul: #243a76
-naranja: #ff8222
-celeste: #55a4da
-gris claro: #eee
-
-////////////////////////
