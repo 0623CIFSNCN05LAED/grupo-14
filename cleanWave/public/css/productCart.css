@@ -1,0 +1,431 @@
+
+main{
+    padding: 10px 15px;
+}
+
+.txtAlignR{
+    text-align: right;
+}
+
+.txtAlignL{
+    text-align: left;
+}
+
+.mb5{
+    margin-bottom: 5px;
+}
+
+/* IVA incluido START */
+.alertText{
+    background-color: #d20202;
+    border-radius: 5px;
+    width: 285px;
+    margin: 20px 0;
+}
+
+.alertText p{
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 15px;
+}
+
+.title{
+    text-align: left;
+    font-size: 40px;
+    margin-bottom: 35px;
+    color: #243a76;
+}
+/* IVA incluido END */
+
+/* Productos seleccionados START */
+
+.itemsTable{
+    width: 100%;
+    border-collapse: collapse;
+
+}
+/* Productos seleccionados END */
+
+/* thead START */
+
+.productName{
+    padding-right: 50px;
+    text-align: left;
+}
+
+.productPrice{
+    display: none;
+    visibility: hidden;
+}
+
+.productQuantity{
+    display: none;
+    visibility: hidden;
+}
+
+.productTotal{
+    display: none;
+    visibility: hidden;
+}
+
+/* thead END */
+
+/* tbody START */
+
+.cartItem{
+    border-top: 1px #d1d1d1 solid;
+    border-bottom: 1px #d1d1d1 solid;
+}
+
+.product{
+    display: flex;
+    margin: 10px 0 10px 10px;
+}
+
+.productImage img{
+    width: 100px;
+    height: 100px;
+}
+
+.productTitle{
+    margin-top: 0px;
+    padding-left: 30px;
+}
+
+.productTitle a{
+    text-decoration: none;
+    color: black;   
+}
+
+.price{
+    display: table-cell;
+    width: 33%;
+    text-align: center;
+    float: left;
+    margin-bottom: 5px;
+}
+
+
+.quantity{
+    display: table-cell;
+    width: 33%;
+    text-align: center;
+    float: left;
+}
+
+.itemInfo .subtotal{
+    display: table-cell;
+    width: 32%;
+    text-align: center;
+    float: left;
+}
+
+.quantity input{
+    width: 15px;
+    border: none;
+    appearance: none;
+}
+
+.fa-minus, .fa-plus{
+    font-size: 12px;
+}
+
+.eraseArticleButton{
+    width: 100%;
+    background-color: transparent;
+    border-radius: 3px;
+    border: #d1d1d1 2px solid;
+    margin-top: 20px;
+    padding: 10px 0;
+    font-size: 17px;
+    color: #666;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 400ms;
+}
+
+
+.eraseArticleButton:hover{
+background-color: #d1d1d1;
+}
+
+.borra{
+    display: block;
+    border-bottom: 1px #d1d1d1 solid ;
+}
+
+
+/* tbody END */
+
+/* boton vaciar carrito */
+
+
+.emptyCartButton{
+    width: 100%;
+    background-color: transparent;
+    border-radius: 8px;
+    border: #55a4da 2px solid;
+    margin-top: 20px;
+    padding: 10px 0;
+    font-size: 17px;
+    color: #55a4da;
+    cursor: pointer;
+    transition: all 400ms;
+}
+
+.emptyCartButton:hover{
+    background-color: #55a4da;
+    color: #fff;
+}
+/* boton vaciar carrito END */
+
+/* cart summary START */
+
+.summaryTable{
+    width: 100%;
+    border-spacing: 0 10px;
+}
+
+
+.cartSummary{
+    background-color: #f5f5f5;
+    margin-top: 20px;
+    padding: 15px;
+}
+
+.summaryTitle{
+    font-size: 14px;
+    color: #777;
+    border-bottom: 1px #d1d1d1 solid;
+}
+
+.cartSubtotal{
+    color: #777;
+}   
+
+.shipping h4{
+    padding: 10px 0;
+    border-top:1px #d1d1d1 solid ;
+    border-bottom: 1px #d1d1d1 solid;
+    font-size: 14px;
+    font-weight: normal;
+    color: #777;
+}
+
+.shipping p{
+    font-size: 11px;
+    margin-top: 3px;
+}
+
+.shipping a{
+    cursor: pointer;
+    color: #777;    
+}
+
+.cartTotal{
+    font-weight: bolder;
+}
+/* cart summary END */
+
+/* Cupon descuento START */
+
+.discountCouponContainer{
+    position: relative;
+    border-top: 1px solid #d1d1d1;
+}
+
+.discountCouponContainer label{
+    display: block;
+    padding-top: 4px;
+}
+
+.couponInput{
+width: 100%;
+position: relative;
+padding: 7px;
+border: none;
+margin-top: 10px;
+margin-bottom: 30px;
+border-radius: 5px;
+}
+
+.couponButton{
+    position: absolute;
+    right: 5px;
+    top: 33px;
+    padding: 7px;
+    border: none;
+    background-color: transparent;
+    font-size: 12px;
+    cursor: pointer;
+}
+/* cupon descuento END */
+
+/* finalizar compra button */
+
+.checkout button{
+    width: 100%;
+    padding: 15px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #243a76;
+    color: #fff;
+    font-size: 17px;
+    transition: all 400ms;
+    cursor: pointer;
+}
+
+.checkout button:hover{
+    background-color: #55a4da;
+}
+/* finalizar compra button END */
+
+
+
+
+
+
+
+/* Inicio PC */
+@media (min-width:1280px){
+
+    main{
+        margin-bottom: 120px;
+    }
+
+    .alertText{
+        width: 300px;
+    }
+
+    .alertText p{
+        color: #fff;
+        padding: 5px 10px;
+        font-size: 16px;
+    }
+
+    .cartContainer{
+        position: relative;
+    }
+
+        /* items Table START*/
+    .itemInfo{
+        position: relative;
+    }
+        
+    .product{
+        width: 61%;
+    }
+
+    .productPrice{
+        visibility: visible;
+        display: table-cell;
+    }
+    
+    .productQuantity{
+        visibility: visible;
+        display: table-cell;
+    }
+
+    .productTotal{
+        visibility: visible;
+        display: table-cell;
+    }
+
+    .itemsTable{
+        width: 76%;
+    }
+
+    .price{
+        width: 13%;
+        float: none;
+        position: relative;
+    }
+    
+    .quantity{
+        width: 15%;
+        float: none;
+        position: relative;
+    }
+
+    #quantity{
+        width: 30px;
+    }
+    
+    .itemInfo .subtotal{
+        width: 13%;
+        float: none;
+        position: relative;
+    }
+
+    .price h4, .quantity h4, .subtotal h4{
+        display: none;
+    }
+
+    .price div, .quantity div, .subtotal div{
+        position: absolute;
+        left: 50%;
+        transform: translatex(-50%);
+        top: 10px;
+    }
+
+    .quantity input{
+        width: 15px;
+        border: none;
+        appearance: none;
+    }
+    
+.desktopControl{
+    position: relative;
+    background-color: red;
+}
+
+/* boton borrar articulo START */
+    .borra{
+        position: absolute;
+        right: 10px;
+        width: 13%;
+        bottom: 10px;
+        border: none;
+    }
+
+.eraseArticleButton{
+    margin: 0px;
+    font-size: 11px;
+    padding: 5px;
+    border: 1px solid #d1d1d1;
+}
+/* boton borrar articulo END */
+
+    /* items table END */
+
+/* boton vaciar carrito START */
+
+.emptyCartButton{
+    width: 20%;
+    font-size: 15px;
+}
+
+    /* boton vaciar carrito END */
+
+    /* cart summary START*/
+    .cartSummaryContainer{
+        width: 23%;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+
+    .cartSummary{
+        margin-top: 0px;
+        /* position: fixed; */
+    }
+/* ahora se mueve antes de llegar a tocar el borde superior de la pantalla pero con 
+javascript hacemos que quede en el lugar y comience a usar la funcionalidad fixed al tocar 
+el borde superior */
+
+/* cart summary END */
+
+/* boton vaciar carrito START */
+
+
+}

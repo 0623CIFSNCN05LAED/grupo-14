@@ -1,0 +1,47 @@
+/* POR AHORA TODO ESTO FUNCIONA SOLO SI EL USUARIO ESTA LOGUEADO!!! por que el script esta dentro de un if en la vista */
+window.onload = function(){
+    const quantityInput = document.getElementById("quantity");
+    const addButton = document.getElementById("add");
+    const subtractButton = document.getElementById("subtract");
+
+    addButton.addEventListener("click", function(e){
+        e.preventDefault();
+        quantityInput.value = Number(quantityInput.value) + 1;
+
+        
+    });
+    
+    subtractButton.addEventListener("click", function(e){
+        e.preventDefault();
+        if(quantityInput.value > 1){
+            quantityInput.value = Number(quantityInput.value) - 1;
+        }
+    });
+    
+    const addToCartScript = document.getElementById("addToCartScript"); /* agarro al elemento script */
+    const productString = decodeURIComponent(addToCartScript.getAttribute("data-product")); /* decodifico la informacion que me paso la vista */
+    const product = JSON.parse(productString); /* paso esa informacion a formato json */
+
+    const userIdScript = decodeURIComponent(addToCartScript.getAttribute("data-user"));
+    const userId = JSON.parse(userIdScript);
+    /* CUANDO ESTEN LAS VALIDACIONES DEL FRONT HAGO local STORAGE */
+    /* on click, validar y si pasan. Guardar el id en local storage */
+    
+    const addToCartButton = document.getElementById("addToCart");
+    
+    addToCartButton.addEventListener("click",  function(){
+        const quantity = quantityInput.value
+        const data =  {product, userId,quantity}
+        fetch("/cart/addToCart", {
+            method: "POST",
+            body: JSON.stringify(data), /* este data es el que se le pasa al servidor como req.body*/
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function(response){
+            return response.json()
+        }).then(function(info){
+            console.log("info",info)
+        })
+    });
+}

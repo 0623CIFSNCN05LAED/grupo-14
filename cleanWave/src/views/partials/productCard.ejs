@@ -1,0 +1,16 @@
+<div class="card" id="card<%= product.id %>">
+  <a href="/<%= product.href %>/products/detail/<%= product.id %>">
+    <div class="cardBody">
+      <img src="/img/products/<%= product.image %>" alt="imagen" draggable="false"/>
+    </div>
+    <div>
+      <h4 class="cardTitle"><%= product.shortName %></h4>
+    </div>
+    <div class="cardFooter">
+      <!-- cambiar enlace a toda la card ? y mismo con el hover-->
+      <button>
+        <%= product.discount === 0 ? `$ ${product.price}` : `$ ${product.priceWithDiscount} / ${product.discount}% OFF` %>
+      </button>
+    </div>
+  </a>
+</div>

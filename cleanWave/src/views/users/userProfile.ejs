@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head", {title: 'Inicio de sesión'}) %>
+  </head>
+
+  <body>
+    <%- include('../partials/header') %> 
+    <main>
+      <img src="/img/users/<%= user.image %>">
+      <a href="/users/logout"><button>LOGOUT</button></a>
+    </main>
+    <%- include('../partials/footer') %>
+  </body>
+</html>
