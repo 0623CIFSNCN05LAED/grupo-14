@@ -5,6 +5,7 @@ const methodOverride = require("method-override");
 const session = require("express-session");
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 const cookieParser = require("cookie-parser");
+const cors = require("cors");
 
 // ********** express() ******************
 const app = express();
@@ -25,6 +26,7 @@ app.use(
 );
 app.use(cookieParser());
 app.use(userLoggedMiddleware);
+app.use(cors())
 
 // **************** Template Engine *********************
 app.set("view engine", "ejs");
