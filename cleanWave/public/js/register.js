@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", function () {
-  const formFieldElements = document.querySelectorAll(".formField");
+  const formFieldElements = document.querySelectorAll(".inputGroup");
   const category = document.getElementById("category");
 
   formFieldElements.forEach(function (field) {
@@ -8,8 +8,8 @@ window.addEventListener("DOMContentLoaded", function () {
 
   /* limpia inputs y mensajes de error al cambiar opcion en el select */
   function clearInputsAndErrorMessages() {
-    formFieldElements.forEach(function (formField) {
-      const inputField = formField.querySelector("input");
+    formFieldElements.forEach(function (inputGroup) {
+      const inputField = inputGroup.querySelector("input");
       if (inputField) {
         inputField.value = "";
       }
@@ -22,15 +22,13 @@ window.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
-  
-  
+
   function validEmail(correo) {
     const expresionRegular = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return expresionRegular.test(correo);
   }
 
   const commonValidations = [
-
     {
       field: "tel",
       check: (input) => input.value !== "",
@@ -45,10 +43,10 @@ window.addEventListener("DOMContentLoaded", function () {
         },
         {
           check: (input) => validEmail(input.value),
-          message: "Por favor, ingrese un correo electrónico válido. Ejemplo: nombre@dominio.com",
+          message:
+            "Por favor, ingrese un correo electrónico válido. Ejemplo: nombre@dominio.com",
         },
       ],
-
     },
     {
       field: "password",
@@ -59,10 +57,10 @@ window.addEventListener("DOMContentLoaded", function () {
         },
         {
           check: (input) => input.value.length >= 8,
-          message: "La contraseña debe tener al menos 8 caracteres. Intenta nuevamente.",
-        },  
+          message:
+            "La contraseña debe tener al menos 8 caracteres. Intenta nuevamente.",
+        },
       ],
-      
     },
     {
       field: "confirmPassword",
@@ -72,15 +70,15 @@ window.addEventListener("DOMContentLoaded", function () {
           message: "Por favor, ingrese confirmar contraseña",
         },
         {
-        check: (input) => {
-          const passwordInput = document.getElementById("password");
-          return input.value === passwordInput.value;
+          check: (input) => {
+            const passwordInput = document.getElementById("password");
+            return input.value === passwordInput.value;
+          },
+          message:
+            "Las contraseñas no coinciden. Por favor, verifica que las contraseñas ingresadas sean iguales.",
         },
-        message: "Las contraseñas no coinciden. Por favor, verifica que las contraseñas ingresadas sean iguales.",
-        },
-                
       ],
-    }
+    },
   ];
 
   const cfValidations = [
@@ -93,8 +91,9 @@ window.addEventListener("DOMContentLoaded", function () {
         },
         {
           check: (input) => input.value.length >= 2,
-          message: "El nombre debe tener al menos 2 caracteres. Intenta nuevamente.",
-        },        
+          message:
+            "El nombre debe tener al menos 2 caracteres. Intenta nuevamente.",
+        },
       ],
     },
     {
@@ -106,8 +105,9 @@ window.addEventListener("DOMContentLoaded", function () {
         },
         {
           check: (input) => input.value.length >= 2,
-          message: "El apellido debe tener al menos 2 caracteres. Intenta nuevamente.",
-        },       
+          message:
+            "El apellido debe tener al menos 2 caracteres. Intenta nuevamente.",
+        },
       ],
     },
 
@@ -120,8 +120,9 @@ window.addEventListener("DOMContentLoaded", function () {
         },
         {
           check: (input) => input.value.length === 8,
-          message: "El DNI debe contener exactamente 8 números. Por favor, verifícalo e inténtalo nuevamente.",
-        },        
+          message:
+            "El DNI debe contener exactamente 8 números. Por favor, verifícalo e inténtalo nuevamente.",
+        },
       ],
     },
   ];
@@ -136,8 +137,9 @@ window.addEventListener("DOMContentLoaded", function () {
         },
         {
           check: (input) => input.value.length >= 2,
-          message: "El nombre debe tener al menos 2 caracteres. Intenta nuevamente.",
-        },        
+          message:
+            "El nombre debe tener al menos 2 caracteres. Intenta nuevamente.",
+        },
       ],
     },
     {
@@ -149,14 +151,14 @@ window.addEventListener("DOMContentLoaded", function () {
         },
         {
           check: (input) => input.value.length >= 2,
-          message: "El apellido debe tener al menos 2 caracteres. Intenta nuevamente.",
-        },       
+          message:
+            "El apellido debe tener al menos 2 caracteres. Intenta nuevamente.",
+        },
       ],
     },
   ];
 
   const mayoristaValidations = [
-    
     {
       field: "businessName",
       checks: [
@@ -166,8 +168,9 @@ window.addEventListener("DOMContentLoaded", function () {
         },
         {
           check: (input) => input.value.length >= 2,
-          message: "Su Razon Social debe tener al menos 2 caracteres. Intenta nuevamente.",
-        },       
+          message:
+            "Su Razon Social debe tener al menos 2 caracteres. Intenta nuevamente.",
+        },
       ],
     },
     {
@@ -179,9 +182,10 @@ window.addEventListener("DOMContentLoaded", function () {
         },
         {
           check: (input) => input.value.length === 11,
-          message: "El CUIT debe contener exactamente 11 números. Por favor, verifícalo e inténtalo nuevamente.",
-        },       
-      ],    
+          message:
+            "El CUIT debe contener exactamente 11 números. Por favor, verifícalo e inténtalo nuevamente.",
+        },
+      ],
     },
   ];
 
@@ -192,14 +196,14 @@ window.addEventListener("DOMContentLoaded", function () {
 
     const selectedOption = category.value;
 
-    formFieldElements.forEach(function (formField) {
-      formField.style.display = "block";
+    formFieldElements.forEach(function (inputGroup) {
+      inputGroup.style.display = "block";
     });
 
     switch (selectedOption) {
       case "":
-        formFieldElements.forEach(function (formField) {
-          formField.style.display = "none";
+        formFieldElements.forEach(function (inputGroup) {
+          inputGroup.style.display = "none";
         });
         break;
       case "admin":
@@ -229,7 +233,6 @@ window.addEventListener("DOMContentLoaded", function () {
       const inputErrorMessage = document.getElementById(inputId + "Error");
 
       function validate() {
-        
         inputValidation(validation, input, inputErrorMessage);
       }
 
