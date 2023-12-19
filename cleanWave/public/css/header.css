@@ -218,6 +218,10 @@ header {
   text-align: right;
 }
 
+.avatar {
+  width: 23px;
+}
+
 .menuMobile {
   background-color: #243a76;
   /* border: #e68c3a 2px solid; */
