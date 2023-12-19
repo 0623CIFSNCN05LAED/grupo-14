@@ -1,4 +1,12 @@
-import {BsCart3, BsGrid1X2Fill, BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsListCheck, BsMenuButtonWideFill, BsFillGearFill} from "react-icons/bs"
+import {
+  BsGrid1X2Fill,
+  BsFillArchiveFill,
+  BsFillGrid3X3GapFill,
+  BsPeopleFill,
+  BsListCheck,
+  BsMenuButtonWideFill,
+  BsFillGearFill,
+} from "react-icons/bs";
 import PropTypes from "prop-types";
 
 export default function Sidebar({ openSidebarToggle, OpenSidebar }) {
@@ -8,10 +16,11 @@ export default function Sidebar({ openSidebarToggle, OpenSidebar }) {
       className={openSidebarToggle ? "sidebarResponsive" : ""}
     >
       <div className="sidebarTitle">
-        <div className="sidebarBrand">
-          <BsCart3 className="icon" /> SHOP
-        </div>
-        <span className="icon closeIcon" onClick={OpenSidebar}>
+        <div className="sidebarBrand">CLEAN WAVE</div>
+        <span
+          className="icon closeIcon"
+          onClick={OpenSidebar}
+        >
           X
         </span>
       </div>
@@ -24,8 +33,7 @@ export default function Sidebar({ openSidebarToggle, OpenSidebar }) {
         </li>
         <li className="sidebarListItem">
           <a href="">
-            <BsFillArchiveFill className="icon" />
-            Products
+            <BsFillArchiveFill className="icon" /> Products
           </a>
         </li>
         <li className="sidebarListItem">
@@ -35,26 +43,22 @@ export default function Sidebar({ openSidebarToggle, OpenSidebar }) {
         </li>
         <li className="sidebarListItem">
           <a href="">
-            <BsPeopleFill className="icon" />
-            Customers
+            <BsPeopleFill className="icon" /> Users
           </a>
         </li>
         <li className="sidebarListItem">
           <a href="">
-            <BsListCheck className="icon" />
-            Inventory
+            <BsListCheck className="icon" /> Inventory
           </a>
         </li>
         <li className="sidebarListItem">
           <a href="">
-            <BsMenuButtonWideFill className="icon" />
-            Reports
+            <BsMenuButtonWideFill className="icon" /> Reports
           </a>
         </li>
         <li className="sidebarListItem">
           <a href="">
-            <BsFillGearFill className="icon" />
-            Settings
+            <BsFillGearFill className="icon" /> Settings
           </a>
         </li>
       </ul>
@@ -64,5 +68,5 @@ export default function Sidebar({ openSidebarToggle, OpenSidebar }) {
 
 Sidebar.propTypes = {
   OpenSidebar: PropTypes.isRequired,
-  openSidebarToggle: PropTypes.isRequired
+  openSidebarToggle: PropTypes.isRequired,
 };
