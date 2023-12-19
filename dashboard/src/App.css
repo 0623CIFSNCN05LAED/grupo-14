@@ -1,9 +1,9 @@
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #1d2634;
-    color: #9e9ea4;
-    font-family: "Montserrat", sans-serif; 
+  margin: 0;
+  padding: 0;
+  background-color: #1d2634;
+  color: #9e9ea4;
+  font-family: "Montserrat", sans-serif;
 }
 
 .closeIcon {
@@ -18,8 +18,8 @@ body {
   grid-template-columns: 260px 1fr 1fr 1fr;
   grid-template-rows: 0.2fr 3fr;
   grid-template-areas:
-  "sidebar header header header"
-  "sidebar main main main";
+    "sidebar header header header"
+    "sidebar main main main";
   height: 100vh;
 }
 
@@ -55,7 +55,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px 0px 30px;
-  margin-bottom: 30px;  
+  margin-bottom: 30px;
 }
 
 .sidebarTitle span {
@@ -85,6 +85,7 @@ body {
 
 .sidebarListItem a {
   text-decoration: none;
+  color: #9e9ea4;
 }
 
 .sidebarResponsive {
@@ -122,23 +123,25 @@ body {
   justify-content: space-around;
   padding: 8px 15px;
   border-radius: 5px;
+  color: #1d2634;
+  background-color: #9e9ea4;
 }
 
-.card:first-child {
-  background-color: blue; 
+/* .card:first-child {
+  background-color: #9e9ea4;
 }
 
 .card:nth-child(2) {
-  background-color: orange;
+  background-color: #9e9ea4;
 }
 
 .card:nth-child(3) {
-  background-color: green;
+  background-color: #9e9ea4;
 }
 
 .card:nth-child(4) {
-  background-color: red;
-}
+  background-color: #9e9ea4;
+} */
 
 .cardInner {
   display: flex;
@@ -160,13 +163,13 @@ body {
 
 /* END Main */
 
-@media (max-width: 990px){
+@media (max-width: 990px) {
   .gridContainer {
     grid-template-columns: 1fr;
     grid-template-rows: 0.2fr 3fr;
-    grid-template-areas: 
-    "header"
-    "main";
+    grid-template-areas:
+      "header"
+      "main";
   }
 
   #sidebar {
