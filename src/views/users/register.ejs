@@ -13,23 +13,23 @@
         <form action="/users/register" method="post" class="form-newRegister"  enctype="multipart/form-data" id="form">
           <h2>Información personal</h2>
 
-          <div class="inputGroup">
-            <select name="category" id="category">
+          <div class="cat">
+            <label class="p-newRegister">Categoria de usuario</label>
+            <select name="category" id="category" class="inputGroupInput">
               <option value="" <%= locals.oldData && (oldData.category === "") ? "selected" : ""  %>>Elegi una categoría</option>
               <option value="admin" <%= locals.oldData && (oldData.category === "admin") ? "selected" : ""  %>>admin</option>
               <option value="cf" <%= locals.oldData && (oldData.category === "cf") ? "selected" : ""  %>>consumidor final</option>
               <option value="mayorista" <%= locals.oldData && (oldData.category === "mayorista") ? "selected" : ""  %>>mayorista</option>
             </select>
-          </div>
-          <label class="inputGroupLabel">Categoria de usuario</label>
           
           <div class="errorMessage">
             <% if(locals.errors && errors.category) { %>
               <p><%= errors.category.msg %></p>
             <% } %>
           </div>
+          </div>
 
-          <div class="inputGroup">
+          <div class="inputGroup" id="nameField">
             <input
               type="text"
               name="name"
@@ -39,7 +39,7 @@
               value="<%= locals.oldData ? oldData.name : null %>"
               pattern="[\w\s]+"
             />
-          </div>
+          
           <label for="nombre" class="inputGroupLabel">Nombre</label>
           
           <div>
@@ -48,8 +48,9 @@
               <p><%= errors.name.msg %></p>
             <% } %>
           </div>
-        
-          <div class="inputGroup">
+          </div>
+
+          <div class="inputGroup" id="lastNameField">
             <input
               type="text"
               name="lastName"
@@ -59,7 +60,7 @@
               value="<%= locals.oldData ? oldData.lastName : null %>"
               pattern="[\w\s]+"
             />
-          </div>
+          
           <label for="lastName" class="inputGroupLabel">Apellido</label>
           
           <div>
@@ -68,8 +69,9 @@
               <p><%= errors.lastName.msg %></p>
             <% } %>
           </div>
+          </div>
 
-          <div class="inputGroup">
+          <div class="inputGroup" id="dniField">
             <input
               type="number"
               name="dni"
@@ -79,7 +81,7 @@
               value="<%= locals.oldData ? oldData.dni : null %>"
               onkeypress="return event.charCode >= 48 && event.charCode <= 57"
             />
-          </div>
+          
           <label for="dni" class="inputGroupLabel">DNI</label>
           
           <div>
@@ -88,8 +90,9 @@
               <p><%= errors.dni.msg %></p>
             <% } %>
           </div>
+          </div>
 
-          <div class="inputGroup">
+          <div class="inputGroup" id="businessNameField">
             <input
               type="text"
               name="businessName"
@@ -99,7 +102,7 @@
               value="<%= locals.oldData ? oldData.businessName : null %>"
               pattern="[\w\s]+"
             />
-          </div>
+          
           <label for="businessName" class="inputGroupLabel">Razón social</label>
           
           <div>
@@ -108,8 +111,9 @@
               <p><%= errors.businessName.msg %></p>
             <% } %>
           </div>
+          </div>
         
-          <div class="inputGroup">
+          <div class="inputGroup" id="cuitField">
             <input
               type="number"
               name="cuit"
@@ -119,7 +123,7 @@
               value="<%= locals.oldData ? oldData.cuit : null %>"
               onkeypress="return event.charCode >= 48 && event.charCode <= 57"
             />
-          </div>
+          
           <label for="cuit" class="inputGroupLabel">CUIT</label>
           
           <div>
@@ -128,9 +132,11 @@
               <p><%= errors.cuit.msg %></p>
             <% } %>
           </div>
+          </div>
 
           <div class="inputGroup">
-            <input type="file" id="image" name="image" accept="image/png, .jpeg, .jpg"/>
+            <label class="p-newRegister">Foto de perfil</label>
+            <input class="inputGroupInput" type="file" id="image" name="image" accept="image/png, .jpeg, .jpg"/>
           </div>
 
           <div class="inputGroup">
@@ -143,7 +149,7 @@
               value="<%= locals.oldData ? oldData.tel : null %>"
               onkeypress="return event.charCode >= 48 && event.charCode <= 57"
             />    
-          </div>
+          
           <label for="tel" class="inputGroupLabel">Teléfono / Celular</label>
           
           <div>
@@ -152,7 +158,8 @@
               <p><%= errors.tel.msg %></p>
             <% } %>
           </div>
-    
+          </div>
+
           <div class="inputGroup">
             <input
               type="email"
@@ -162,7 +169,7 @@
               style="padding-left: 20px"
               value="<%= locals.oldData ? oldData.email : null %>"
             />    
-          </div>
+          
           <label for="email" class="inputGroupLabel">Email</label>
          
           <div>
@@ -171,16 +178,18 @@
               <p><%= errors.email.msg %></p>
             <% } %>
           </div>
+          </div>
        
           <div class="inputGroup">
             <input
               type="password"
               name="password"
               id="password"
+              class="inputGroupInput"
               style="padding-left: 20px"
               value="<%= locals.oldData ? oldData.password : null %>"
             />      
-          </div>
+          
           <label for="password" class="inputGroupLabel">Contraseña</label>
           
           <div>
@@ -189,16 +198,18 @@
               <p><%= errors.password.msg %></p>
             <% } %>
           </div>
+          </div>
         
           <div class="inputGroup">
             <input
               type="password"
               name="confirmPassword"
               id="confirmPassword"
+              class="inputGroupInput"
               style="padding-left: 20px"
               value="<%= locals.oldData ? oldData.confirmPassword : null %>"
             />  
-          </div>
+         
           <label for="confirmPassword" class="inputGroupLabel">Confirmar Contraseña</label>
          
           <div>
@@ -207,6 +218,7 @@
               <p><%= errors.confirmPassword.msg %></p>
             <% } %>
           </div>
+          </div>
     
         <div class="inputGroup">
           <div class="createAddressButton">
@@ -214,8 +226,8 @@
             <input type="checkbox" name="notify" id="notify" value="notify" />
           </div>
         
-          <div class="createAddressButton">
-            <button id="button" type="submit">Crear cuenta</button>
+          <div>
+            <button class="createRegisterButton" id="button" type="submit">Crear cuenta</button>
           </div>
         </div>
 

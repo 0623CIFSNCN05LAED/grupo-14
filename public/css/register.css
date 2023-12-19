@@ -24,7 +24,8 @@
 }
 
 /* Div contenedor de input y label (con animaciones) START */
-.inputGroup {
+.inputGroup,
+.cat {
   position: relative;
   width: 100%;
 }
@@ -36,7 +37,7 @@
   border: none;
   border-radius: 4px;
   outline: 2px solid #243a76;
-  background-color: transparent;
+  background-color: #24303c;
   transition: outline-color 500ms;
   width: 100%;
   margin-bottom: 28px;
