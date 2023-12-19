@@ -26,14 +26,17 @@
   align-self: center;
 }
 
+.card {
+  box-shadow: 2px 2px 8px 4px #d3d3d3d1;
+  border-radius: 15px;
+}
+
 .name {
   background-color: #213e60;
   color: white;
   display: inline-block;
   padding: 5px;
-  margin-bottom: 5px;    
-  
-  
+  margin-bottom: 5px;
 }
 
 .prices {
@@ -55,6 +58,7 @@
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
+  align-items: center;
 }
 
 .amount p {
@@ -116,20 +120,43 @@
 .stockContainer {
   display: flex;
   align-items: center;
+  margin-left: 10px;
+}
+
+#quantity {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  width: 3rem;
+  text-align: center;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .stockButton {
-  font-size: 20px;
-  padding: 5px 10px;
-  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  outline-offset: 0.1875rem;
+  transition: color 0.2s;
+  outline: none;
+  background-color: #f3f4f6;
+  pointer-events: none;
+  opacity: 0.5;
+  border: 1px solid #e5e7eb;
+  height: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 /* stock END */
 
-
-
 /* PRODUCTOS RELACIONADOS carrusel */
 
- .titleRelatedProducts{
+.titleRelatedProducts {
   margin-top: 20px;
   color: white;
   text-align: center;
@@ -140,8 +167,8 @@
 .wrapper {
   position: relative;
   display: flex;
-	align-items: center;
-	justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Flechas comienzo */
@@ -149,7 +176,7 @@
   color: black;
   top: 50%;
   height: 50px;
-  width: 50px; 
+  width: 50px;
   cursor: pointer;
   font-size: 1.25rem;
   position: absolute;
@@ -157,33 +184,30 @@
   line-height: 50px;
   background: #fff;
   border-radius: 50%;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
   transform: translateY(-50%);
   transition: transform 0.1s linear;
 }
-.relatedProducts i:active{
+.relatedProducts i:active {
   transform: translateY(-50%) scale(0.85);
 }
-.relatedProducts i:first-child{
+.relatedProducts i:first-child {
   left: 0px;
 }
-.relatedProducts i:last-child{
+.relatedProducts i:last-child {
   right: 0px;
 }
-
 
 /* oculta flechas cuando solo hay un producto */
 .wrapper:only-child .arrow {
   display: none;
 }
 
-
-
-.wrapper .carousel{
+.wrapper .carousel {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: calc((100% / 1) - 100px);
-  overflow-x:hidden;
+  overflow-x: hidden;
   scroll-snap-type: x mandatory;
   gap: 5px;
   border-radius: 8px;
@@ -209,33 +233,30 @@
   justify-content: center;
   align-items: center;
 }
-.card a {/* saca las lineas subrayadas del precio y titulo */
+.card a {
+  /* saca las lineas subrayadas del precio y titulo */
   text-decoration: none;
   color: inherit;
 }
 
 .carousel .card {
-  
   display: flex;
   flex-direction: column;
   margin: 2rem;
   justify-content: center;
   width: 320px;
   height: 250px;
-  
+
   box-shadow: 2px 2px 8px 4px #d3d3d3d1;
   cursor: pointer;
   border-radius: 15px;
-  
 }
 
 .carousel .cardBody {
   padding: 20px;
   text-align: center;
-  
 }
 .carousel .cardTitle {
-  
   text-align: center;
   padding: 10px 10px 0 10px;
 }
@@ -244,18 +265,16 @@
   /* object-fit: cover; */
 }
 /* efectos img */
-.carousel .card:hover img{
-	scale:  1.1;
+.carousel .card:hover img {
+  scale: 1.1;
 }
 
 .carousel .card:hover {
-	box-shadow: 10px 20px 30px #55a4da;
-    
+  box-shadow: 10px 20px 30px #55a4da;
 }
 /* fin efectos */
 
 .carousel .cardFooter button {
- 
   display: flex;
   justify-content: center;
   width: 101%;
@@ -270,62 +289,57 @@
   font-size: 17px;
   transition: all 400ms;
   cursor: pointer;
-  margin: 0px ;
-    
+  margin: 0px;
 }
 
 .carousel .cardFooter button:hover {
   background-color: #8a8683;
 }
 
-
 @media screen and (min-width: 600px) {
   .wrapper .carousel {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: calc((120% / 2) );
-  
-  overflow-x:hidden;
-  scroll-snap-type: x mandatory;
-  gap: 5px;
-  border-radius: 8px;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((120% / 2));
+
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    gap: 5px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
   }
 }
 @media screen and (min-width: 700px) {
   .wrapper .carousel {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: calc((100% / 2) );
-  
-  overflow-x:hidden;
-  scroll-snap-type: x mandatory;
-  gap: 5px;
-  border-radius: 8px;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 2));
+
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    gap: 5px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
   }
 }
-  
 
 @media screen and (min-width: 900px) {
   .wrapper .carousel {
-  display: grid;
-  grid-auto-flow: column;
-  overflow-x:hidden;
-  scroll-snap-type: x mandatory;
-  gap: 5px;
-  border-radius: 8px;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    gap: 5px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
     grid-auto-columns: calc((100% / 2) - 100px);
   }
 }
 
-
 @media screen and (min-width: 1200px) {
-
   .product {
     display: flex;
     flex-direction: row;
@@ -342,66 +356,59 @@
     flex-direction: column;
     justify-content: space-around;
     width: 50%;
-    
   }
-  
-  .wrapper .carousel {
-  display: grid;
-  grid-auto-flow: column;
-  overflow-x:hidden;
-  scroll-snap-type: x mandatory;
-  gap: 5px;
-  border-radius: 8px;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-    grid-auto-columns: calc((100% / 3) - 30px);
-    }
-  
-}
 
-
-@media screen and (min-width: 1250px) {
   .wrapper .carousel {
     display: grid;
     grid-auto-flow: column;
-    overflow-x:hidden;
+    overflow-x: hidden;
     scroll-snap-type: x mandatory;
     gap: 5px;
     border-radius: 8px;
     scroll-behavior: smooth;
     scrollbar-width: none;
-      grid-auto-columns: calc((100% / 3) - 80px);
-    }
+    grid-auto-columns: calc((100% / 3) - 30px);
   }
+}
+
+@media screen and (min-width: 1250px) {
+  .wrapper .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    gap: 5px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    grid-auto-columns: calc((100% / 3) - 80px);
+  }
+}
 
 @media screen and (min-width: 1600px) {
   .wrapper .carousel {
-  display: grid;
-  grid-auto-flow: column;
-  overflow-x:hidden;
-  scroll-snap-type: x mandatory;
-  gap: 5px;
-  border-radius: 8px;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  grid-auto-columns: calc((100% / 3) - 130px);
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    gap: 5px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    grid-auto-columns: calc((100% / 3) - 130px);
   }
 }
-
 
 @media screen and (min-width: 1700px) {
   .wrapper .carousel {
-  display: grid;
-  grid-auto-flow: column;
-  overflow-x:hidden;
-  scroll-snap-type: x mandatory;
-  gap: 5px;
-  border-radius: 8px;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  grid-auto-columns: calc((100% / 4) - 100px);
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    gap: 5px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    grid-auto-columns: calc((100% / 4) - 100px);
   }
-  
 }
-
-

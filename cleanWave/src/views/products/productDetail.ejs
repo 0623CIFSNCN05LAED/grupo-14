@@ -12,7 +12,11 @@
     <% } %>
   </head>
   <body>
-    <%- include('../partials/header') %> 
+    <% if (product.href == "consumidorfinal") { %>
+      <%- include('../partials/header') %> 
+    <% } else if (product.href == "mayorista") { %>
+      <%- include('../partials/headerMayorista') %> 
+    <% } %>
 
     <main>
       <div class="nav">
@@ -54,6 +58,7 @@
               <h2>$ <%= product.price %></h2>
               <% } %>
             </div>
+            <% if(locals.userLogged) { %>
             <form action="">
               <div class="amount">
                 <% if (product.stock == 0) { %>
@@ -69,6 +74,7 @@
               </div>
             </form>
             <button type="button" id="addToCart" class="cart">Agregar al carrito<i class="fa-solid fa-cart-shopping"></i></button>
+            <% } %>
           </div>
           <div class="desc">
             <h3>Descripcion</h3>
