@@ -1,21 +1,20 @@
-import './App.css'
-import Dashboard from './components/Dashboard'
-import {Link, Switch, Route} from "react-router-dom"
-
+import "./App.css";
+import { Link, Routes, Route } from "react-router-dom"; /* usamos Routes en vez de Switch por la version del dom */
+import Dashboard from "./components/Dashboard";
+import Home from "./views/Home";
 
 function App() {
-
   return (
     <>
-      <Link to="/dashboard" exact="true">Dashboard</Link>
-      <Switch>
-      <Route path="/dashboard"  />
+      <Link to="/" exact="true">Home</Link>
+      <Link to="/dashboard">Dashboard</Link>
 
-      </Switch>
-
-      <Dashboard />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard />} /> {/* usamos element en vez de component por la version del dom */}
+      </Routes>
     </>
   );
 }
 
-export default App
+export default App;
