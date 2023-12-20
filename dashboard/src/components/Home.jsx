@@ -8,7 +8,7 @@ export default function Home() {
   console.log(products);
   const [users, setUsers] = useState([]);
   console.log(users);
-
+  const [categoriesCount, setCategoriesCount] = useState(0);
   useEffect(() => {
     console.log("se monto el componente");
 
@@ -19,10 +19,23 @@ export default function Home() {
       })
       .catch((error) => console.log(error));
 
-    fetch("http://localhost:3333/api/products")
+
+
+
+
+
+
+
+
+
+
+   
+
+      fetch("http://localhost:3333/api/products")
       .then((response) => response.json())
       .then((data) => {
         setProducts(data.products);
+        setCategoriesCount(Object.keys(data.countByCategory).length); 
       })
       .catch((error) => console.log(error));
   }, []);
@@ -41,7 +54,7 @@ export default function Home() {
         />
         <Card
           title="CATEGORIES"
-          quantity="12"
+          quantity={categoriesCount}
           icon={<BsFillGrid3X3GapFill />}
         />
         <Card
