@@ -1,0 +1,74 @@
+window.onload = function(){
+    document.querySelectorAll(".cartItem").forEach(cartItem => {
+
+        const addButton = cartItem.querySelector("#add");
+        const subtractButton = cartItem.querySelector("#subtract");
+        const quantityInput = cartItem.querySelector("#quantity");
+
+        addButton.addEventListener("click", function(e) {
+            // aumenta en 1 la cantidad
+            e.preventDefault();
+            quantityInput.value = Number(quantityInput.value) + 1;
+            
+            // agrega el producto al carrito
+            const productId = cartItem.querySelector(".itemInfo").id ;
+            const quantity = 1;
+            const data = { productId, quantity };
+            
+            fetch("/cart/addToCart", { /* la ruta del fetch va a la misma ruta que esa en el router */
+                method: "POST",
+                body: JSON.stringify(data), /* este data es el que se le pasa al servidor como req.body*/
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            }).then(function(response){
+                return response.json()
+            }).then(function(info){
+                console.log("info",info)
+            })
+
+            // Actualiza el precio total
+            cartItem.querySelector(".totalPrice").innerHTML = cartItem.querySelector("#price").innerHTML * Number(quantityInput.value) 
+
+        });
+
+        subtractButton.addEventListener("click", function(e) {
+            // Disminuye en 1 la cantidad
+            e.preventDefault();
+            if (quantityInput.value > 0) {
+                quantityInput.value = Number(quantityInput.value) - 1;
+            }
+
+            // elimina una unidad(1) de ese producto del carrito
+            const productId = cartItem.querySelector(".itemInfo").id;
+            fetch("cart/deleteOneUnitFromCart", {
+              method: "PUT",
+              body: JSON.stringify({productId}),
+              headers: {
+                "Content-Type": "application/json",
+              },
+            })
+              .then(function (response) {
+                return response.json();
+              })
+              .then(function (info) {
+                console.log("info", info);
+              });
+
+            // Actualiza el precio total
+            cartItem.querySelector(".totalPrice").innerHTML = cartItem.querySelector("#price").innerHTML * Number(quantityInput.value) 
+
+        });
+
+
+        /* BOTON DE ELIMINAR PRODUCTO */
+
+        
+
+    });
+
+
+
+
+
+}

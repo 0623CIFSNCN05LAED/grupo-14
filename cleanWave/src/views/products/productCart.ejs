@@ -5,7 +5,7 @@
     <%- include("../partials/head", {title: 'Carrito'}) %>
 
     <link rel="stylesheet" href="/css/productCart.css" />
-    <script id="cartDetailScript" src="/scripts/cartDetail.js"></script>
+    <script id="cartDetailScript" src="/js/cartDetail.js"></script>
   </head>
   <body>
     <%- include('../partials/header') %> 
@@ -27,15 +27,15 @@
             </thead>
              <% products.forEach(product => { %>
               
-              <tbody class="cartItem">
-                <tr class="itemInfo">
+              <tbody class="cartItem" >
+                <tr class="itemInfo" id=<%= product.id %>>
                   <td class="product">
                     <span class="productImage"><a href="/products/detail/<%= product.id %>"><img src="/img/products/<%= product.image %>"></a></span>
                       <h4 class="productTitle"><a href="/products/detail/<%= product.id %>"><%= product.shortName %></a></h4> 
                   </td>
                     <td class="price">
                         <h4 class="mb5">Precio:</h4>
-                        <div><%= product.priceWithDiscount %></div>
+                        <div id="price"><%= product.wholesalePrice - (product.wholesalePrice * (product.discountM / 100))  %></div> <!-- ACA FALTA LA DIFERENCIACION SI EL USUARIO ES M O CF. esta asumiendo que siempre es M -->
                       </td>
                       <td class="quantity">
                         <h4 class="mb5">Cantidad:</h4>
@@ -55,7 +55,7 @@
                       <h4 class="mb5">Total:</h4>
                       <div class="totalPrice"><% cartProduct.forEach(cartData => { %>
                        <% if (cartData.product_id == product.id) { %>
-                        <%= product.priceWithDiscount * cartData.quantity %>
+                        <%= (product.wholesalePrice - (product.wholesalePrice * (product.discountM / 100))) * cartData.quantity %> <!-- ACA FALTA LA DIFERENCIACION SI EL USUARIO ES M O CF. esta asumiendo que siempre es M -->
                        <% } %>
                       <% }) %></div>
                     </td>

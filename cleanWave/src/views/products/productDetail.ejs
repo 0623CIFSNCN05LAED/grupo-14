@@ -8,7 +8,7 @@
     
     <% if(locals.userLogged){ %> <!-- por que no funcionaba si usaba solo userLogged -->
 
-      <script id="addToCartScript" src="/scripts/addToCart.js"  data-product="<%- encodeURIComponent(JSON.stringify(product)) %>" data-user="<%- encodeURIComponent(JSON.stringify(userLogged.id)) %>"></script>
+      <script id="addToCartScript" src="/js/addToCart.js"  data-product="<%- encodeURIComponent(JSON.stringify(product)) %>" ></script>
     <% } %>
   </head>
   <body>
