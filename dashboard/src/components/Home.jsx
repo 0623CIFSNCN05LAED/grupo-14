@@ -22,11 +22,38 @@ function LatestDetailPanel({ type }) {
         <div>
           <p>ID: {latestDetail.id}</p>
           <p>Name: {latestDetail.name}</p>
-         
+          {/* Agrega aquí otros detalles según la estructura del objeto */}
         </div>
       ) : (
         <p>Loading...</p>
       )}
+    </div>
+  );
+}
+
+function ProductListPanel() {
+  const [productsList, setProductsList] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3333/api/products")
+      .then((response) => response.json())
+      .then((data) => {
+        setProductsList(data.products);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+  return (
+    <div className="product-list-panel">
+      <h2>Product List</h2>
+      <ul>
+        {productsList.map((product) => (
+          <li key={product.id}>
+            <p>{product.name}</p>
+            {/* Agrega aquí otros detalles del producto */}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
@@ -78,9 +105,11 @@ export default function Home() {
       </div>
       
       <div className="detail-panels">
-        <LatestDetailPanel type="Product" /> 
-        <LatestDetailPanel type="User" /> 
+        <LatestDetailPanel type="Product" /> {/* Muestra el detalle del último producto */}
+        <LatestDetailPanel type="User" /> {/* Muestra el detalle del último usuario */}
       </div>
+
+      <ProductListPanel /> {/* Muestra el listado de productos */}
 
       <div>
         <TableCategories />
@@ -88,4 +117,3 @@ export default function Home() {
     </main>
   );
 }
-
