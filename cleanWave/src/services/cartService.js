@@ -14,7 +14,9 @@ module.exports = {
           status: "active",
         },
       });
-      return activeCart.dataValues;
+      if(activeCart){
+        return activeCart.dataValues;
+      }
     } catch (error) {
       console.log(error);
     }
@@ -161,15 +163,16 @@ module.exports = {
   getAllRowsInCartProductByUserId: async function (userId) {
     try {
       const activeCart = await this.findCartByUserId(userId);
-
-      const cartProductRows = await CartProduct.findAll({
-        attributes: ["cart_id", "product_id", "quantity", "total_price"],
-        where: { cart_id: activeCart.id },
-      });
-      const cartProductRowsDataValues = cartProductRows.map(
-        (cartProduct) => cartProduct.dataValues
-      );
-      return cartProductRowsDataValues;
+      if(activeCart){
+        const cartProductRows = await CartProduct.findAll({
+          attributes: ["cart_id", "product_id", "quantity", "total_price"],
+          where: { cart_id: activeCart.id },
+        });
+        const cartProductRowsDataValues = cartProductRows.map(
+          (cartProduct) => cartProduct.dataValues
+        );
+        return cartProductRowsDataValues;
+        }
     } catch (error) {
       console.log(error);
     }
@@ -177,8 +180,10 @@ module.exports = {
   getAllProductsInActiveCartByUserId: async function (userId) {
     try {
       const activeCart = await this.findCartByUserId(userId);
-      const products = activeCart.product.map((product) => product.dataValues);
-      return products;
+      if(activeCart){
+        const products = activeCart.product.map((product) => product.dataValues);
+        return products;
+      }
     } catch (error) {
       console.log(error);
     }

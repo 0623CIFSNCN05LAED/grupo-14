@@ -25,6 +25,8 @@
                 <th class="productTotal">Total</th>
                 </tr>
             </thead>
+            <% if (activeCart && cartProduct && products) { %>
+             
              <% products.forEach(product => { %>
               
               <tbody class="cartItem" >
@@ -102,6 +104,10 @@
             </div>
           </section>
         </div>
+            <% } else { %>
+              <h1>TU CARRITO DE COMPRAS ESTA VACIO</h1>
+            <% } %>
+
     </div>
   </main>
 
