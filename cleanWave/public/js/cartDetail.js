@@ -27,9 +27,18 @@ window.onload = function(){
                 console.log("info",info)
             })
 
-            // Actualiza el precio total
+            // Actualiza el precio total del item
             cartItem.querySelector(".totalPrice").innerHTML = cartItem.querySelector("#price").innerHTML * Number(quantityInput.value) 
-
+            
+            // Actualiza precios totales del carrito
+            const totalPrices = document.querySelectorAll(".totalPrice");
+            let cartSubtotalPrice = 0;
+            
+            totalPrices.forEach((totalPrice)=>{
+              cartSubtotalPrice += parseFloat(totalPrice.innerHTML);
+            })
+            document.querySelector("#cartSubtotal").innerHTML = cartSubtotalPrice;
+            document.querySelector("#cartTotal").innerHTML = cartSubtotalPrice;            
         });
 
         subtractButton.addEventListener("click", function(e) {
@@ -55,11 +64,20 @@ window.onload = function(){
                 console.log("info", info);
               });
 
-            // Actualiza el precio total
+            // Actualiza el precio total del item
             cartItem.querySelector(".totalPrice").innerHTML = cartItem.querySelector("#price").innerHTML * Number(quantityInput.value) 
 
-        });
+            // Actualiza precios totales del carrito
+            const totalPrices = document.querySelectorAll(".totalPrice");
+            let cartSubtotalPrice = 0;
+            
+            totalPrices.forEach((totalPrice)=>{
+              cartSubtotalPrice += parseFloat(totalPrice.innerHTML);
+            })
+            document.querySelector("#cartSubtotal").innerHTML = cartSubtotalPrice;
+            document.querySelector("#cartTotal").innerHTML = cartSubtotalPrice;
 
+        });
 
         /* BOTON DE ELIMINAR PRODUCTO */
 
