@@ -46,7 +46,7 @@ module.exports = {
           id: uuidv4(),
           user_id: userId,
           quantity: quantity,
-          total_price: product.priceWithDiscount * quantity,
+          total_price: (product.wholesalePrice -(product.wholesalePrice * (product.discountM / 100))) * quantity,
           status: "active",
           purchase_date: null,
         });
@@ -55,7 +55,7 @@ module.exports = {
           cart_id: cart.id,
           product_id: product.id,
           quantity: quantity,
-          total_price: product.priceWithDiscount * quantity,
+          total_price: (product.wholesalePrice -(product.wholesalePrice * (product.discountM / 100))) * quantity,
         });
       } else {
         /* si existe carrito */
@@ -67,7 +67,7 @@ module.exports = {
             {
               quantity: Number(cartProduct.quantity) + Number(quantity),
               total_price:
-                product.priceWithDiscount *
+                (product.wholesalePrice -(product.wholesalePrice * (product.discountM / 100))) *
                 (Number(cartProduct.quantity) + Number(quantity)),
             },
             {
@@ -80,7 +80,7 @@ module.exports = {
             cart_id: cart.id,
             product_id: product.id,
             quantity: quantity,
-            total_price: product.priceWithDiscount * quantity,
+            total_price: (product.wholesalePrice -(product.wholesalePrice * (product.discountM / 100))) * quantity,
           });
         }
 
@@ -110,24 +110,46 @@ module.exports = {
         cart,
         product
       );
-        
-      await CartProduct.update(
-        {
-          quantity: cartProduct.quantity == 0 ? 0 : cartProduct.quantity - 1,
-        },
-        {
-          where: {
-            cart_id: cart.id,
-            product_id: product.id,
-          },
-        }
-      );
 
-      if (cartProduct.quantity == 0) {
+      if (cartProduct.quantity == 1) {
         await CartProduct.destroy({
           where: {
             cart_id: cart.id,
             product_id: product.id,
+          },
+        });
+      } else {
+        await CartProduct.update(
+          {
+            quantity: cartProduct.quantity - 1,
+            total_price: cartProduct.total_price -  (product.wholesalePrice -(product.wholesalePrice * (product.discountM / 100)))
+          },
+          {
+            where: {
+              cart_id: cart.id,
+              product_id: product.id,
+            },
+          }
+          );
+        }
+      await Cart.update(
+        {
+          quantity: cart.quantity - 1,
+          total_price: cart.total_price - (product.wholesalePrice -(product.wholesalePrice * (product.discountM / 100)))
+        },
+        {
+          where: {
+            id: cart.id,
+            user_id: userId
+          }
+        }
+      )
+      
+      if(cart.quantity == 1){
+        Cart.destroy({
+          where: {
+            id: cart.id,
+            user_id: userId,
           },
         });
       }
