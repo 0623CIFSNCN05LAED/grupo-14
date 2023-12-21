@@ -60,6 +60,7 @@
               <option value="12" <%= locals.oldData && (oldData.brand_id === "12") ? "selected" : ""  %>>Ayudin</option>
             </select>
             <div> 
+              <p class="errorMessage" id="brand_idError"></p>
               <% if(locals.errors && errors.brand_id) { %>
               <p><%= errors.brand_id.msg %></p>
               <% } %>
@@ -80,6 +81,7 @@
               <input type="number" name="discountCf" id="discountCf" class="inputGroupInput" value="<%= locals.oldData ? oldData.discountCf : null %>" >
               <label for="discountCf" class="inputGroupLabel">% OFF Consumidor Final</label>
               <div>
+                <p class="errorMessage" id="discountCfError"></p>
                 <% if(locals.errors && errors.discountCf) { %>
                 <p><%= errors.discountCf.msg %></p>
                 <% } %>
@@ -101,6 +103,7 @@
               <input type="number" name="discountM" id="discountM" class="inputGroupInput" value="<%= locals.oldData ? oldData.discountM : null %>" >
               <label for="discountM" class="inputGroupLabel">% OFF Mayorista</label>
               <div>
+                <p class="errorMessage" id="discountMError"></p>
                 <% if(locals.errors && errors.discountM) { %>
                 <p><%= errors.discountM.msg %></p>
                 <% } %>

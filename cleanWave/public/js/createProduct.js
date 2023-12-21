@@ -28,15 +28,21 @@ const validations = [
     message: "Debes completar el campo de precio minorista",
   },
   {
-    field: "discount",
+    field: "discountCf",
     check: (input) => input.value.trim() !== "",
-    message: "Debes completar el campo de descuento",
+    message: "Debes completar el campo de descuento minorista",
+  },
+  {
+    field: "discountM",
+    check: (input) => input.value.trim() !== "",
+    message: "Debes completar el campo de descuento mayorista",
   },
   {
     field: "wholesalePrice",
     check: (input) => input.value.trim() !== "",
     message: "Debes completar el campo de precio mayorista",
   },
+
   {
     field: "stock",
     check: (input) => input.value.trim() !== "",

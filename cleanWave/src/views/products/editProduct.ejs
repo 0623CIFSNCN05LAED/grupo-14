@@ -20,6 +20,7 @@
               <input type="text" name="name" id="name" class="inputGroupInput" value="<%= product.name %>">
               <label for="name" class="inputGroupLabel">Nombre del producto</label>
               <div>
+                <p class="errorMessage" id="nameError"></p>
                 <% if(locals.errors && errors.name) { %>
                 <p><%= errors.name.msg %></p>
                 <% } %>
@@ -30,6 +31,7 @@
               <input type="text" name="shortName" id="shortName" class="inputGroupInput" value="<%= product.shortName %>">
               <label for="shortName" class="inputGroupLabel">Producto abreviado</label>
               <div>
+                <p class="errorMessage" id="shortNameError"></p>
                 <% if(locals.errors && errors.shortName) { %>
                 <p><%= errors.shortName.msg %></p>
                 <% } %>
@@ -56,6 +58,7 @@
               <option value="12" <%= product.brand_id == 12 ? "selected" : ""  %>>Ayudin</option>
             </select>
             <div> 
+              <p class="errorMessage" id="brand_idError"></p>
               <% if(locals.errors && errors.brand_id) { %>
               <p><%= errors.brand_id.msg %></p>
               <% } %>
@@ -67,6 +70,7 @@
               <input type="text" name="retailPrice" id="retailPrice" class="inputGroupInput" value="<%= product.retailPrice %>">
               <label for="retailPrice" class="inputGroupLabel">Precio Consumidor Final</label>
               <div>
+                <p class="errorMessage" id="retailPriceError"></p>
                 <% if(locals.errors && errors.retailPrice) { %>
                 <p><%= errors.retailPrice.msg %></p>
                 <% } %>
@@ -76,6 +80,7 @@
               <input type="number" name="discountCf" id="discountCf" class="inputGroupInput" value="<%= product.discountCf %>">
               <label for="discountCf" class="inputGroupLabel">% OFF</label>
               <div>
+                <p class="errorMessage" id="discountCfError"></p>
                 <% if(locals.errors && errors.discountCf) { %>
                 <p><%= errors.discountCf.msg %></p>
                 <% } %>
@@ -87,6 +92,7 @@
               <input type="text" name="wholesalePrice" id="wholesalePrice" class="inputGroupInput" value="<%= product.wholesalePrice %>">
               <label for="wholesalePrice" class="inputGroupLabel">Precio mayorista</label>
               <div>
+                <p class="errorMessage" id="wholesalePriceError"></p>
                 <% if(locals.errors && errors.wholesalePrice) { %>
                 <p><%= errors.wholesalePrice.msg %></p>
                 <% } %>
@@ -96,6 +102,7 @@
               <input type="number" name="discountM" id="discountM" class="inputGroupInput" value="<%= product.discountM %>">
               <label for="discountM" class="inputGroupLabel">% OFF</label>
               <div>
+                <p class="errorMessage" id="discountMError"></p>
                 <% if(locals.errors && errors.discountM) { %>
                 <p><%= errors.discountM.msg %></p>
                 <% } %>
@@ -106,6 +113,7 @@
             <input type="number" name="stock" id="stock" class="inputGroupInput" value="<%= product.stock %>">
             <label for="stock" class="inputGroupLabel">Stock</label>
             <div>
+              <p class="errorMessage" id="stockError"></p>
               <% if(locals.errors && errors.stock) { %>
               <p><%= errors.stock.msg %></p>
               <% } %>
@@ -123,6 +131,7 @@
                 <option value="6" <%= product.category_id == 6 ? "selected" : ""%> >Lavandina</option>
               </select>
               <div>
+                <p class="errorMessage" id="category_idError"></p>
                 <% if(locals.errors && errors.category_id) { %>
                 <p><%= errors.category_id.msg %></p>
                 <% } %>
@@ -133,6 +142,7 @@
             <label for="image" class="p-newProduct">Seleccionar Imagen de Producto</label>
             <input class="inputGroupInput" type="file" name="image" id="image" accept="image/png, .jpeg, .jpg, image/gif"/>
             <div>
+              <p class="errorMessage" id="imageError"></p>
               <% if(locals.errors && errors.image) { %>
               <p><%= errors.image.msg %></p>
               <% } %>
@@ -143,6 +153,7 @@
             <label for="description" class="p-newProduct">Descripción</label>
             <textarea id="description" name="description" rows="10" cols="44"><%= product.description %></textarea>
             <div>
+              <p class="errorMessage" id="descriptionError"></p>
               <% if(locals.errors && errors.description) { %>
               <p><%= errors.description.msg %></p>
               <% } %>
