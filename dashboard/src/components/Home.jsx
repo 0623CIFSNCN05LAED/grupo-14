@@ -1,17 +1,42 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill } from "react-icons/bs";
 import Card from "./HomeContent/Card";
 import TableCategories from "./HomeContent/Table";
 
+function LatestDetailPanel({ type }) {
+  const [latestDetail, setLatestDetail] = useState(null);
+
+  useEffect(() => {
+    fetch(`http://localhost:3333/api/latest${type}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setLatestDetail(data);
+      })
+      .catch((error) => console.log(error));
+  }, [type]);
+
+  return (
+    <div className="latest-detail-panel">
+      <h2>Latest {type}</h2>
+      {latestDetail ? (
+        <div>
+          <p>ID: {latestDetail.id}</p>
+          <p>Name: {latestDetail.name}</p>
+         
+        </div>
+      ) : (
+        <p>Loading...</p>
+      )}
+    </div>
+  );
+}
+
 export default function Home() {
   const [products, setProducts] = useState([]);
-  console.log(products);
   const [users, setUsers] = useState([]);
-  console.log(users);
   const [categoriesCount, setCategoriesCount] = useState(0);
-  useEffect(() => {
-    console.log("se monto el componente");
 
+  useEffect(() => {
     fetch("http://localhost:3333/api/users")
       .then((response) => response.json())
       .then((data) => {
@@ -19,23 +44,11 @@ export default function Home() {
       })
       .catch((error) => console.log(error));
 
-
-
-
-
-
-
-
-
-
-
-   
-
-      fetch("http://localhost:3333/api/products")
+    fetch("http://localhost:3333/api/products")
       .then((response) => response.json())
       .then((data) => {
         setProducts(data.products);
-        setCategoriesCount(Object.keys(data.countByCategory).length); 
+        setCategoriesCount(Object.keys(data.countByCategory).length);
       })
       .catch((error) => console.log(error));
   }, []);
@@ -63,9 +76,16 @@ export default function Home() {
           icon={<BsPeopleFill />}
         />
       </div>
+      
+      <div className="detail-panels">
+        <LatestDetailPanel type="Product" /> 
+        <LatestDetailPanel type="User" /> 
+      </div>
+
       <div>
         <TableCategories />
       </div>
     </main>
   );
 }
+
