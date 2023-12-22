@@ -1,4 +1,8 @@
 
+.displayNone {
+    display: none;
+}
+
 main{
     padding: 10px 15px;
 }
@@ -75,6 +79,10 @@ main{
 .cartItem{
     border-top: 1px #d1d1d1 solid;
     border-bottom: 1px #d1d1d1 solid;
+}
+
+.itemInfo{
+    /* display: none; */
 }
 
 .product{

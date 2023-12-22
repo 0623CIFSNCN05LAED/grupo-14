@@ -44,8 +44,12 @@ window.onload = function(){
         subtractButton.addEventListener("click", function(e) {
             // Disminuye en 1 la cantidad
             e.preventDefault();
-            if (quantityInput.value > 0) {
-                quantityInput.value = Number(quantityInput.value) - 1;
+           
+            if(quantityInput.value > 0 && quantityInput.value == 1) {
+              quantityInput.value = Number(quantityInput.value) - 1;
+              cartItem.querySelector(".itemInfo").classList.add("displayNone");
+            } else if (quantityInput.value > 0){
+              quantityInput.value = Number(quantityInput.value) - 1;
             }
 
             // elimina una unidad(1) de ese producto del carrito
@@ -86,6 +90,7 @@ window.onload = function(){
           e.preventDefault();
 
           const productId = cartItem.querySelector(".itemInfo").id;
+          cartItem.querySelector(".itemInfo").classList.add("displayNone")
 
           fetch("/cart/deleteArticleFromCart", {
             method: "DELETE",
@@ -101,14 +106,26 @@ window.onload = function(){
               console.log("info", info);
             });
 
+            // Actualiza precios totales del carrito
+             const totalPrices = document.querySelectorAll(".totalPrice");
+             const erasedArticlePrice = cartItem.querySelector(".totalPrice");
+             erasedArticlePrice.classList.remove("totalPrice")
+             let cartSubtotalPrice = 0;
+
+            totalPrices.forEach((totalPrice)=>{
+              cartSubtotalPrice += parseFloat(totalPrice.innerHTML);
+            })
+            document.querySelector("#cartSubtotal").innerHTML = cartSubtotalPrice - parseFloat(erasedArticlePrice.innerHTML);
+            document.querySelector("#cartTotal").innerHTML = cartSubtotalPrice - parseFloat(erasedArticlePrice.innerHTML);
         })
 
         /* Vaciar carrito */
         const emptyCartButton = document.querySelector(".emptyCartButton");
-
+        
         emptyCartButton.addEventListener("click", function(e){
           e.preventDefault();
-
+          cartItem.classList.add("displayNone")
+          
           fetch("/cart/eraseCart", {
             method: "DELETE",
             headers: {
@@ -121,7 +138,8 @@ window.onload = function(){
             .then(function (info) {
               console.log("info", info);
             });
-
+            document.querySelector("#cartSubtotal").innerHTML = 0;
+            document.querySelector("#cartTotal").innerHTML = 0;
         })
 
     });
