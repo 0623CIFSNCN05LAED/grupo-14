@@ -1,5 +1,6 @@
 const {Cart, CartProduct, Product} = require("../database/models");
 const { v4: uuidv4 } = require("uuid");
+const userService = require("../services/userDBservice")
 
 module.exports = {
   findCartByUserId: async function (userId) {
@@ -48,10 +49,7 @@ module.exports = {
           id: uuidv4(),
           user_id: userId,
           quantity: quantity,
-          total_price:
-            (product.wholesalePrice -
-              product.wholesalePrice * (product.discountM / 100)) *
-            quantity,
+          total_price: product.priceWithDiscount * quantity,
           status: "active",
           purchase_date: null,
         });
@@ -60,10 +58,7 @@ module.exports = {
           cart_id: cart.id,
           product_id: product.id,
           quantity: quantity,
-          total_price:
-            (product.wholesalePrice -
-              product.wholesalePrice * (product.discountM / 100)) *
-            quantity,
+          total_price: product.priceWithDiscount * quantity,
         });
       } else {
         /* si existe carrito */
@@ -74,10 +69,7 @@ module.exports = {
           await CartProduct.update(
             {
               quantity: Number(cartProduct.quantity) + Number(quantity),
-              total_price:
-                (product.wholesalePrice -
-                  product.wholesalePrice * (product.discountM / 100)) *
-                (Number(cartProduct.quantity) + Number(quantity)),
+              total_price: product.priceWithDiscount * (Number(cartProduct.quantity) + Number(quantity)),
             },
             {
               where: { product_id: product.id, cart_id: cart.id },
@@ -89,10 +81,7 @@ module.exports = {
             cart_id: cart.id,
             product_id: product.id,
             quantity: quantity,
-            total_price:
-              (product.wholesalePrice -
-                product.wholesalePrice * (product.discountM / 100)) *
-              quantity,
+            total_price: product.priceWithDiscount * quantity,
           });
         }
 
@@ -134,10 +123,7 @@ module.exports = {
         await CartProduct.update(
           {
             quantity: cartProduct.quantity - 1,
-            total_price:
-              cartProduct.total_price -
-              (product.wholesalePrice -
-                product.wholesalePrice * (product.discountM / 100)),
+            total_price: cartProduct.total_price - product.priceWithDiscount,
           },
           {
             where: {
@@ -150,10 +136,7 @@ module.exports = {
       await Cart.update(
         {
           quantity: cart.quantity - 1,
-          total_price:
-            cart.total_price -
-            (product.wholesalePrice -
-              product.wholesalePrice * (product.discountM / 100)),
+          total_price: cart.total_price - product.priceWithDiscount,
         },
         {
           where: {
@@ -253,12 +236,30 @@ module.exports = {
   getAllProductsInActiveCartByUserId: async function (userId) {
     try {
       const activeCart = await this.findCartByUserId(userId);
-      if (activeCart) {
-        const products = activeCart.product.map(
-          (product) => product.dataValues
-        );
-        return products;
-      }
+      const user = await userService.findById(userId)
+      console.log(user)
+if (activeCart) {
+  const products = activeCart.product.map((product) => product.dataValues);
+
+  if (user.businessName != null) {
+    products.map((product) => {
+      product.price =
+        Number(product.wholesalePrice) -
+        (Number(product.wholesalePrice) * (product.discountM / 100));
+    });
+  } else if (user.dni != null) {
+    products.map((product) => {
+      product.price =
+        Number(product.retailPrice) -
+        (Number(product.retailPrice) * (product.discountCf / 100));
+    });
+  }
+
+  console.log("MAPAS", products);
+  return products;
+}
+
+
     } catch (error) {
       console.log(error);
     }

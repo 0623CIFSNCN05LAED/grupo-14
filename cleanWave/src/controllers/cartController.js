@@ -18,8 +18,9 @@ module.exports = {
 
   addToCart: async (req,res)=>{
     try {
-      const product = await productService.findById(req.body.productId)
+      const product = req.body.product
       const userId = req.session.userLogged.id;
+      console.log(req.session.userLogged)
       const quantity = req.body.quantity
       cartService.addToCart(product,userId, quantity)
       
