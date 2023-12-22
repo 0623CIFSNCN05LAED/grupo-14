@@ -14,7 +14,7 @@ module.exports = {
           status: "active",
         },
       });
-      if(activeCart){
+      if (activeCart) {
         return activeCart.dataValues;
       }
     } catch (error) {
@@ -48,7 +48,10 @@ module.exports = {
           id: uuidv4(),
           user_id: userId,
           quantity: quantity,
-          total_price: (product.wholesalePrice -(product.wholesalePrice * (product.discountM / 100))) * quantity,
+          total_price:
+            (product.wholesalePrice -
+              product.wholesalePrice * (product.discountM / 100)) *
+            quantity,
           status: "active",
           purchase_date: null,
         });
@@ -57,7 +60,10 @@ module.exports = {
           cart_id: cart.id,
           product_id: product.id,
           quantity: quantity,
-          total_price: (product.wholesalePrice -(product.wholesalePrice * (product.discountM / 100))) * quantity,
+          total_price:
+            (product.wholesalePrice -
+              product.wholesalePrice * (product.discountM / 100)) *
+            quantity,
         });
       } else {
         /* si existe carrito */
@@ -69,7 +75,8 @@ module.exports = {
             {
               quantity: Number(cartProduct.quantity) + Number(quantity),
               total_price:
-                (product.wholesalePrice -(product.wholesalePrice * (product.discountM / 100))) *
+                (product.wholesalePrice -
+                  product.wholesalePrice * (product.discountM / 100)) *
                 (Number(cartProduct.quantity) + Number(quantity)),
             },
             {
@@ -82,7 +89,10 @@ module.exports = {
             cart_id: cart.id,
             product_id: product.id,
             quantity: quantity,
-            total_price: (product.wholesalePrice -(product.wholesalePrice * (product.discountM / 100))) * quantity,
+            total_price:
+              (product.wholesalePrice -
+                product.wholesalePrice * (product.discountM / 100)) *
+              quantity,
           });
         }
 
@@ -124,7 +134,10 @@ module.exports = {
         await CartProduct.update(
           {
             quantity: cartProduct.quantity - 1,
-            total_price: cartProduct.total_price -  (product.wholesalePrice -(product.wholesalePrice * (product.discountM / 100)))
+            total_price:
+              cartProduct.total_price -
+              (product.wholesalePrice -
+                product.wholesalePrice * (product.discountM / 100)),
           },
           {
             where: {
@@ -132,22 +145,52 @@ module.exports = {
               product_id: product.id,
             },
           }
-          );
-        }
+        );
+      }
       await Cart.update(
         {
           quantity: cart.quantity - 1,
-          total_price: cart.total_price - (product.wholesalePrice -(product.wholesalePrice * (product.discountM / 100)))
+          total_price:
+            cart.total_price -
+            (product.wholesalePrice -
+              product.wholesalePrice * (product.discountM / 100)),
         },
         {
           where: {
             id: cart.id,
-            user_id: userId
-          }
+            user_id: userId,
+          },
         }
-      )
-      
-      if(cart.quantity == 1){
+      );
+
+      if (cart.quantity == 1) {
+        Cart.destroy({
+          where: {
+            id: cart.id,
+            user_id: userId,
+          },
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  deleteArticleFromCart: async function (product, userId) {
+    try {
+      const cart = await this.findCartByUserId(userId);
+      const cartProduct = await this.findCartProductByCartAndProduct(
+        cart,
+        product
+      );
+
+      CartProduct.destroy({
+        where: {
+          cart_id: cart.id,
+          product_id: product.id,
+        },
+      });
+
+      if (cartProduct.quantity == cart.quantity) {
         Cart.destroy({
           where: {
             id: cart.id,
@@ -163,7 +206,7 @@ module.exports = {
   getAllRowsInCartProductByUserId: async function (userId) {
     try {
       const activeCart = await this.findCartByUserId(userId);
-      if(activeCart){
+      if (activeCart) {
         const cartProductRows = await CartProduct.findAll({
           attributes: ["cart_id", "product_id", "quantity", "total_price"],
           where: { cart_id: activeCart.id },
@@ -172,7 +215,7 @@ module.exports = {
           (cartProduct) => cartProduct.dataValues
         );
         return cartProductRowsDataValues;
-        }
+      }
     } catch (error) {
       console.log(error);
     }
@@ -180,8 +223,10 @@ module.exports = {
   getAllProductsInActiveCartByUserId: async function (userId) {
     try {
       const activeCart = await this.findCartByUserId(userId);
-      if(activeCart){
-        const products = activeCart.product.map((product) => product.dataValues);
+      if (activeCart) {
+        const products = activeCart.product.map(
+          (product) => product.dataValues
+        );
         return products;
       }
     } catch (error) {

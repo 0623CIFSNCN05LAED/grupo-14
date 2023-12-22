@@ -15,8 +15,11 @@ router.get("/",authMiddleware, cartController.viewCart);
 /* ************* Add to cart ****************** */
 router.post("/addToCart", cartController.addToCart)
 
-/* ************* Remove from cart ************* */
+/* ************* Remove one unit from cart ************* */
 router.put("/deleteOneUnitFromCart", cartController.deleteOneUnitFromCart);
+
+/* ************* Remove article from cart ***************/
+router.delete("/deleteArticleFromCart", cartController.deleteArticleFromCart)
 
 
 module.exports = router;

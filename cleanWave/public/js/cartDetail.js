@@ -79,9 +79,29 @@ window.onload = function(){
 
         });
 
-        /* BOTON DE ELIMINAR PRODUCTO */
+        /* Eliminar articulo */
+        const eraseArticleButton = cartItem.querySelector(".eraseArticleButton");
 
-        
+        eraseArticleButton.addEventListener("click", function(e){
+          e.preventDefault();
+
+           const productId = cartItem.querySelector(".itemInfo").id;
+          fetch("/cart/deleteArticleFromCart", {
+            method: "DELETE",
+            body: JSON.stringify({ productId }),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          })
+            .then(function (response) {
+              return response.json();
+            })
+            .then(function (info) {
+              console.log("info", info);
+            });
+
+        })
+
 
     });
 

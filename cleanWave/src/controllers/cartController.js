@@ -37,5 +37,15 @@ module.exports = {
     } catch (error){
       console.log(error)
     }
+  },
+
+  deleteArticleFromCart: async (req,res)=>{
+    try {
+       const product = await productService.findById(req.body.productId);
+       const userId = req.session.userLogged.id;
+       cartService.deleteArticleFromCart(product, userId);
+    } catch(error){
+      console.log(error)
+    }
   }
 }
