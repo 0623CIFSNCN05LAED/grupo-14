@@ -85,7 +85,8 @@ window.onload = function(){
         eraseArticleButton.addEventListener("click", function(e){
           e.preventDefault();
 
-           const productId = cartItem.querySelector(".itemInfo").id;
+          const productId = cartItem.querySelector(".itemInfo").id;
+
           fetch("/cart/deleteArticleFromCart", {
             method: "DELETE",
             body: JSON.stringify({ productId }),
@@ -102,6 +103,26 @@ window.onload = function(){
 
         })
 
+        /* Vaciar carrito */
+        const emptyCartButton = document.querySelector(".emptyCartButton");
+
+        emptyCartButton.addEventListener("click", function(e){
+          e.preventDefault();
+
+          fetch("/cart/eraseCart", {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          })
+            .then(function (response) {
+              return response.json();
+            })
+            .then(function (info) {
+              console.log("info", info);
+            });
+
+        })
 
     });
 

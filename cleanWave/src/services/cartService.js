@@ -202,6 +202,22 @@ module.exports = {
       console.log(error);
     }
   },
+  eraseCart: async function(userId){
+    try {
+      const cart = await this.findCartByUserId(userId);
+
+      await CartProduct.destroy({
+        where: {cart_id: cart.id}
+      })
+
+      Cart.destroy({
+        where: { id: cart.id, user_id: userId },
+      });
+
+    }catch(e){
+      console.log(e)
+    }
+  },
 
   getAllRowsInCartProductByUserId: async function (userId) {
     try {

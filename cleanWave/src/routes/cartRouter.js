@@ -21,5 +21,8 @@ router.put("/deleteOneUnitFromCart", cartController.deleteOneUnitFromCart);
 /* ************* Remove article from cart ***************/
 router.delete("/deleteArticleFromCart", cartController.deleteArticleFromCart)
 
+/* ************* Erase Cart **************************** */
+router.delete("/eraseCart", cartController.eraseCart)
+
 
 module.exports = router;

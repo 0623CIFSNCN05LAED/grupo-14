@@ -47,5 +47,13 @@ module.exports = {
     } catch(error){
       console.log(error)
     }
+  },
+  eraseCart: async (req,res)=>{
+    try{
+      const userId = req.session.userLogged.id;
+      cartService.eraseCart(userId);
+    }catch(e){
+      console.log(e)
+    }
   }
 }
