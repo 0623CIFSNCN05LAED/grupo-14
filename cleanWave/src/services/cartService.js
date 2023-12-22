@@ -182,6 +182,19 @@ module.exports = {
         cart,
         product
       );
+      
+      Cart.update(
+        {
+          quantity: cart.quantity - cartProduct.quantity,
+          total_price: cart.total_price - cartProduct.total_price,
+        },
+        {
+          where: {
+            id: cart.id,
+            user_id: userId,
+          },
+        }
+      );
 
       CartProduct.destroy({
         where: {
@@ -189,6 +202,7 @@ module.exports = {
           product_id: product.id,
         },
       });
+
 
       if (cartProduct.quantity == cart.quantity) {
         Cart.destroy({
