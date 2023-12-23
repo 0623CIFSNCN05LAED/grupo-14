@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./TableCategories.css";
 
 export default function TableCategories() {
   const [categories, setCategories] = useState([]);
@@ -28,9 +29,9 @@ export default function TableCategories() {
   return (
     <section>
       <h2>Categories</h2>
-      <table>
-        <thead>
-          <tr>
+      <table className="table">
+        <thead className="thead">
+          <tr className="principalRow">
             <th scope="col">#</th>
             <th scope="col">Name</th>
             <th scope="col">Quantity</th>
@@ -41,7 +42,7 @@ export default function TableCategories() {
             <tr key={index}>
               <th scope="row">{index + 1}</th>
               <td>{category.name.toUpperCase()}</td>
-              <td>{category.quantity}</td>
+              <td className="quantity">{category.quantity}</td>
             </tr>
           ))}
         </tbody>
