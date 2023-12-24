@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill } from "react-icons/bs";
 import Card from "./HomeContent/Card";
 import TableCategories from "./HomeContent/TableCategories";
+import ProductList from "./HomeContent/ProductList";
 
 function LatestDetailPanel({ type }) {
   const [latestDetail, setLatestDetail] = useState(null);
@@ -27,33 +28,6 @@ function LatestDetailPanel({ type }) {
       ) : (
         <p>Loading...</p>
       )}
-    </div>
-  );
-}
-
-function ProductListPanel() {
-  const [productsList, setProductsList] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:3333/api/products")
-      .then((response) => response.json())
-      .then((data) => {
-        setProductsList(data.products);
-      })
-      .catch((error) => console.log(error));
-  }, []);
-
-  return (
-    <div className="product-list-panel">
-      <h2>Product List</h2>
-      <ul>
-        {productsList.map((product) => (
-          <li key={product.id}>
-            <p>{product.name}</p>
-            {/* Agrega aquí otros detalles del producto */}
-          </li>
-        ))}
-      </ul>
     </div>
   );
 }
@@ -107,10 +81,9 @@ export default function Home() {
         {/* Muestra el detalle del último producto */}
         <LatestDetailPanel type="User" /> {/* Muestra el detalle del último usuario */}
       </div>
-      <ProductListPanel /> {/* Muestra el listado de productos */}
-      <div>
-        <TableCategories />
-      </div>
+
+      <ProductList />
+      <TableCategories />
     </main>
   );
 }

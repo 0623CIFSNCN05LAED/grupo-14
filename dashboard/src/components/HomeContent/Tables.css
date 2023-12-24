@@ -1,15 +1,22 @@
-table {
+.tableCategories {
   width: 25%;
+}
+
+.tableProducts {
+  width: 100%;
+}
+
+table {
   border-collapse: collapse;
   margin-top: 10px;
 }
 
-.thead {
+thead {
   background-color: #9e9ea4;
   color: #1d2634;
 }
 
-.principalRow th {
+thead th {
   text-align: center;
   padding: 8px;
 }
@@ -25,5 +32,10 @@ tbody th {
 tbody td {
   padding: 15px;
   text-align: center;
-  border-left: 1px solid #9e9ea4;
+  /* border-left: 1px solid #9e9ea4; */
+}
+
+tbody tr:hover {
+  background-color: #9e9ea4;
+  color: #1d2634;
 }
