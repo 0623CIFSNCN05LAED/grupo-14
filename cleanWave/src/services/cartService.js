@@ -37,6 +37,7 @@ module.exports = {
   addToCart: async function (product, userId, quantity) {
     try {
       const existingCart = await this.findCartByUserId(userId);
+      console.log("serviceeeee", product)
       const cartProduct = await this.findCartProductByCartAndProduct(
         existingCart,
         product
@@ -111,7 +112,6 @@ module.exports = {
         cart,
         product
       );
-
       if (cartProduct.quantity == 1) {
         await CartProduct.destroy({
           where: {
@@ -237,25 +237,23 @@ module.exports = {
     try {
       const activeCart = await this.findCartByUserId(userId);
       const user = await userService.findById(userId)
-      console.log(user)
 if (activeCart) {
   const products = activeCart.product.map((product) => product.dataValues);
 
   if (user.businessName != null) {
     products.map((product) => {
-      product.price =
+      product.priceWithDiscount =
         Number(product.wholesalePrice) -
         (Number(product.wholesalePrice) * (product.discountM / 100));
     });
   } else if (user.dni != null) {
     products.map((product) => {
-      product.price =
+      product.priceWithDiscount =
         Number(product.retailPrice) -
-        (Number(product.retailPrice) * (product.discountCf / 100));
+        Number(product.retailPrice) * (product.discountCf / 100);
     });
   }
 
-  console.log("MAPAS", products);
   return products;
 }
 

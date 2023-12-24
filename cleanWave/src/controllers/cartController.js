@@ -20,7 +20,6 @@ module.exports = {
     try {
       const product = req.body.product
       const userId = req.session.userLogged.id;
-      console.log(req.session.userLogged)
       const quantity = req.body.quantity
       cartService.addToCart(product,userId, quantity)
       
@@ -31,7 +30,7 @@ module.exports = {
 
   deleteOneUnitFromCart: async (req,res)=>{
     try {
-       const product = await productService.findById(req.body.productId);
+       const product = req.body.product;
       const userId = req.session.userLogged.id;
       cartService.deleteOneUnitFromCart(product, userId);
       
@@ -42,7 +41,7 @@ module.exports = {
 
   deleteArticleFromCart: async (req,res)=>{
     try {
-       const product = await productService.findById(req.body.productId);
+       const product = req.body.product;
        const userId = req.session.userLogged.id;
        cartService.deleteArticleFromCart(product, userId);
     } catch(error){

@@ -11,9 +11,12 @@ window.onload = function(){
             quantityInput.value = Number(quantityInput.value) + 1;
             
             // agrega el producto al carrito
-            const productId = cartItem.querySelector(".itemInfo").id ;
+            const itemInfo = cartItem.querySelector(".itemInfo")
+            const productString = decodeURIComponent(itemInfo.getAttribute("data-product"))
+            const product = JSON.parse(productString)
+            console.log("cartDetail.js",product)
             const quantity = 1;
-            const data = { productId, quantity };
+            const data = { product, quantity };
             
             fetch("/cart/addToCart", { /* la ruta del fetch va a la misma ruta que esa en el router */
                 method: "POST",
@@ -42,59 +45,23 @@ window.onload = function(){
         });
 
         subtractButton.addEventListener("click", function(e) {
-            // Disminuye en 1 la cantidad
-            e.preventDefault();
-           
-            if(quantityInput.value > 0 && quantityInput.value == 1) {
-              quantityInput.value = Number(quantityInput.value) - 1;
-              cartItem.querySelector(".itemInfo").classList.add("displayNone");
-            } else if (quantityInput.value > 0){
-              quantityInput.value = Number(quantityInput.value) - 1;
-            }
-
-            // elimina una unidad(1) de ese producto del carrito
-            const productId = cartItem.querySelector(".itemInfo").id;
-            fetch("cart/deleteOneUnitFromCart", {
-              method: "PUT",
-              body: JSON.stringify({productId}),
-              headers: {
-                "Content-Type": "application/json",
-              },
-            })
-              .then(function (response) {
-                return response.json();
-              })
-              .then(function (info) {
-                console.log("info", info);
-              });
-
-            // Actualiza el precio total del item
-            cartItem.querySelector(".totalPrice").innerHTML = cartItem.querySelector("#price").innerHTML * Number(quantityInput.value) 
-
-            // Actualiza precios totales del carrito
-            const totalPrices = document.querySelectorAll(".totalPrice");
-            let cartSubtotalPrice = 0;
-            
-            totalPrices.forEach((totalPrice)=>{
-              cartSubtotalPrice += parseFloat(totalPrice.innerHTML);
-            })
-            document.querySelector("#cartSubtotal").innerHTML = cartSubtotalPrice;
-            document.querySelector("#cartTotal").innerHTML = cartSubtotalPrice;
-
-        });
-
-        /* Eliminar articulo */
-        const eraseArticleButton = cartItem.querySelector(".eraseArticleButton");
-
-        eraseArticleButton.addEventListener("click", function(e){
+          // Disminuye en 1 la cantidad
           e.preventDefault();
+          const itemInfo = cartItem.querySelector(".itemInfo")
 
-          const productId = cartItem.querySelector(".itemInfo").id;
-          cartItem.querySelector(".itemInfo").classList.add("displayNone")
+          if (quantityInput.value > 0 && quantityInput.value == 1) {
+            quantityInput.value = Number(quantityInput.value) - 1;
+            itemInfo.classList.add("displayNone");
+          } else if (quantityInput.value > 0) {
+            quantityInput.value = Number(quantityInput.value) - 1;
+          }
 
-          fetch("/cart/deleteArticleFromCart", {
-            method: "DELETE",
-            body: JSON.stringify({ productId }),
+          // elimina una unidad(1) de ese producto del carrito
+          const productString = decodeURIComponent(itemInfo.getAttribute("data-product"))
+          const product = JSON.parse(productString)
+          fetch("cart/deleteOneUnitFromCart", {
+            method: "PUT",
+            body: JSON.stringify({ product }),
             headers: {
               "Content-Type": "application/json",
             },
@@ -106,17 +73,60 @@ window.onload = function(){
               console.log("info", info);
             });
 
-            // Actualiza precios totales del carrito
-             const totalPrices = document.querySelectorAll(".totalPrice");
-             const erasedArticlePrice = cartItem.querySelector(".totalPrice");
-             erasedArticlePrice.classList.remove("totalPrice")
-             let cartSubtotalPrice = 0;
+          // Actualiza el precio total del item
+          cartItem.querySelector(".totalPrice").innerHTML =
+            cartItem.querySelector("#price").innerHTML *
+            Number(quantityInput.value);
 
-            totalPrices.forEach((totalPrice)=>{
-              cartSubtotalPrice += parseFloat(totalPrice.innerHTML);
+          // Actualiza precios totales del carrito
+          const totalPrices = document.querySelectorAll(".totalPrice");
+          let cartSubtotalPrice = 0;
+
+          totalPrices.forEach((totalPrice) => {
+            cartSubtotalPrice += parseFloat(totalPrice.innerHTML);
+          });
+          document.querySelector("#cartSubtotal").innerHTML = cartSubtotalPrice;
+          document.querySelector("#cartTotal").innerHTML = cartSubtotalPrice;
+        });
+
+        /* Eliminar articulo */
+        const eraseArticleButton = cartItem.querySelector(".eraseArticleButton");
+
+        eraseArticleButton.addEventListener("click", function(e){
+          e.preventDefault();
+
+          const itemInfo = cartItem.querySelector(".itemInfo")
+          const productString = decodeURIComponent(itemInfo.getAttribute("data-product"))
+          const product = JSON.parse(productString)
+          itemInfo.classList.add("displayNone");
+
+          fetch("/cart/deleteArticleFromCart", {
+            method: "DELETE",
+            body: JSON.stringify({ product }),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          })
+            .then(function (response) {
+              return response.json();
             })
-            document.querySelector("#cartSubtotal").innerHTML = cartSubtotalPrice - parseFloat(erasedArticlePrice.innerHTML);
-            document.querySelector("#cartTotal").innerHTML = cartSubtotalPrice - parseFloat(erasedArticlePrice.innerHTML);
+            .then(function (info) {
+              console.log("info", info);
+            });
+
+          // Actualiza precios totales del carrito
+          const totalPrices = document.querySelectorAll(".totalPrice");
+          const erasedArticlePrice = cartItem.querySelector(".totalPrice");
+          erasedArticlePrice.classList.remove("totalPrice");
+          let cartSubtotalPrice = 0;
+
+          totalPrices.forEach((totalPrice) => {
+            cartSubtotalPrice += parseFloat(totalPrice.innerHTML);
+          });
+          document.querySelector("#cartSubtotal").innerHTML =
+            cartSubtotalPrice - parseFloat(erasedArticlePrice.innerHTML);
+          document.querySelector("#cartTotal").innerHTML =
+            cartSubtotalPrice - parseFloat(erasedArticlePrice.innerHTML);
         })
 
         /* Vaciar carrito */

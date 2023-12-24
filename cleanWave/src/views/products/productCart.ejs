@@ -30,14 +30,14 @@
              <% products.forEach(product => { %>
               
               <tbody class="cartItem" >
-                <tr class="itemInfo" id=<%= product.id %>>
+                <tr class="itemInfo" data-product="<%- encodeURIComponent(JSON.stringify(product)) %>">
                   <td class="product">
                     <span class="productImage"><a href="mayorista/products/detail/<%= product.id %>"><img src="/img/products/<%= product.image %>"></a></span>
                       <h4 class="productTitle"><a href="mayorista/products/detail/<%= product.id %>"><%= product.shortName %></a></h4> 
                   </td>
                     <td class="price">
                         <h4 class="mb5">Precio:</h4>
-                        <div id="price"><%= product.price %></div> <!-- ACA FALTA LA DIFERENCIACION SI EL USUARIO ES M O CF. esta asumiendo que siempre es M -->
+                        <div id="price"><%= product.priceWithDiscount %></div> <!-- ACA FALTA LA DIFERENCIACION SI EL USUARIO ES M O CF. esta asumiendo que siempre es M -->
                       </td>
                       <td class="quantity">
                         <h4 class="mb5">Cantidad:</h4>
@@ -57,7 +57,7 @@
                       <h4 class="mb5">Total:</h4>
                       <div class="totalPrice"><% cartProduct.forEach(cartData => { %>
                        <% if (cartData.product_id == product.id) { %>
-                        <%= product.price * cartData.quantity %> <!-- ACA FALTA LA DIFERENCIACION SI EL USUARIO ES M O CF. esta asumiendo que siempre es M -->
+                        <%= product.priceWithDiscount * cartData.quantity %> <!-- ACA FALTA LA DIFERENCIACION SI EL USUARIO ES M O CF. esta asumiendo que siempre es M -->
                        <% } %>
                       <% }) %></div>
                     </td>

@@ -20,6 +20,7 @@ window.onload = function(){
     const addToCartScript = document.getElementById("addToCartScript"); /* agarro al elemento script */
     const productString = decodeURIComponent(addToCartScript.getAttribute("data-product")); /* decodifico la informacion que me paso la vista */
     const product = JSON.parse(productString); /* paso esa informacion a formato json */
+    console.log("addToCart.js",product)
 
     /* CUANDO ESTEN LAS VALIDACIONES DEL FRONT HAGO local STORAGE */
     /* on click, validar y si pasan. Guardar el id en local storage */
