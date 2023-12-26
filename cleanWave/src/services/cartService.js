@@ -215,6 +215,20 @@ module.exports = {
       console.log(e)
     }
   },
+  purchaseCart: async function(userId){
+    try{
+      Cart.update({
+        status: "purchased"
+      },
+      {
+        where: {user_id: userId, status: "active"}
+      })
+
+
+    }catch(e){
+      console.log(e)
+    }
+  },
 
   getAllRowsInCartProductByUserId: async function (userId) {
     try {

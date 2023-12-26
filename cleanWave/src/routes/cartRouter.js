@@ -24,5 +24,8 @@ router.delete("/deleteArticleFromCart", cartController.deleteArticleFromCart)
 /* ************* Erase Cart **************************** */
 router.delete("/eraseCart", cartController.eraseCart)
 
+/* ************ Purchase Cart *************************** */
+router.put("/purchaseCart", cartController.purchaseCart)
+
 
 module.exports = router;

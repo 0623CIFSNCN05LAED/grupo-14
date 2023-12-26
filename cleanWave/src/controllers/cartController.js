@@ -55,5 +55,13 @@ module.exports = {
     }catch(e){
       console.log(e)
     }
+  },
+  purchaseCart: async(req,res)=>{
+    try{
+      const userId = req.session.userLogged.id;
+      cartService.purchaseCart(userId)
+    }catch (e){
+      console.log(e)
+    }
   }
 }
