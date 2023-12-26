@@ -21,9 +21,6 @@ module.exports = (sequelize, DataTypes) => {
         notify: {
           type: DataTypes.BOOLEAN,
         },
-        active_cart_id: {
-          type: DataTypes.STRING(255),
-        },
       },
       {
         tableName: "Users",
@@ -57,10 +54,7 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: "id",
       as: "mayorista",
     });
-    User.belongsTo(models.Cart, {
-      as: "aciveCart",
-      foreignKey: "active_cart_id",
-    });
+
   };
 
   return User;

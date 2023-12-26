@@ -3,7 +3,7 @@ const { v4: uuidv4 } = require("uuid");
 const userService = require("../services/userDBservice")
 
 module.exports = {
-  findCartByUserId: async function (userId) {
+  findActiveCartByUserId: async function (userId) {
     try {
       const activeCart = await Cart.findOne({
         include: {
@@ -36,7 +36,7 @@ module.exports = {
 
   addToCart: async function (product, userId, quantity) {
     try {
-      const existingCart = await this.findCartByUserId(userId);
+      const existingCart = await this.findActiveCartByUserId(userId);
       console.log("serviceeeee", product)
       const cartProduct = await this.findCartProductByCartAndProduct(
         existingCart,
@@ -107,7 +107,7 @@ module.exports = {
 
   deleteOneUnitFromCart: async function (product, userId) {
     try {
-      const cart = await this.findCartByUserId(userId);
+      const cart = await this.findActiveCartByUserId(userId);
       const cartProduct = await this.findCartProductByCartAndProduct(
         cart,
         product
@@ -160,7 +160,7 @@ module.exports = {
   },
   deleteArticleFromCart: async function (product, userId) {
     try {
-      const cart = await this.findCartByUserId(userId);
+      const cart = await this.findActiveCartByUserId(userId);
       const cartProduct = await this.findCartProductByCartAndProduct(
         cart,
         product
@@ -201,7 +201,7 @@ module.exports = {
   },
   eraseCart: async function(userId){
     try {
-      const cart = await this.findCartByUserId(userId);
+      const cart = await this.findActiveCartByUserId(userId);
 
       await CartProduct.destroy({
         where: {cart_id: cart.id}
@@ -218,7 +218,7 @@ module.exports = {
 
   getAllRowsInCartProductByUserId: async function (userId) {
     try {
-      const activeCart = await this.findCartByUserId(userId);
+      const activeCart = await this.findActiveCartByUserId(userId);
       if (activeCart) {
         const cartProductRows = await CartProduct.findAll({
           attributes: ["cart_id", "product_id", "quantity", "total_price"],
@@ -235,7 +235,7 @@ module.exports = {
   },
   getAllProductsInActiveCartByUserId: async function (userId) {
     try {
-      const activeCart = await this.findCartByUserId(userId);
+      const activeCart = await this.findActiveCartByUserId(userId);
       const user = await userService.findById(userId)
 if (activeCart) {
   const products = activeCart.product.map((product) => product.dataValues);

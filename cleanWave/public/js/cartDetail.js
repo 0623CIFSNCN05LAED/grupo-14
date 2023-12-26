@@ -154,8 +154,9 @@ window.onload = function(){
 
     });
 
-
-
+    /* Finalizar compra */
+    const checkoutButton = document.querySelector(".checkoutButton");
+    
 
 
 }

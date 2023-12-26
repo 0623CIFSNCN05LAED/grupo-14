@@ -37,7 +37,7 @@
                   </td>
                     <td class="price">
                         <h4 class="mb5">Precio:</h4>
-                        <div id="price"><%= product.priceWithDiscount %></div> <!-- ACA FALTA LA DIFERENCIACION SI EL USUARIO ES M O CF. esta asumiendo que siempre es M -->
+                        <div id="price"><%= product.priceWithDiscount %></div>
                       </td>
                       <td class="quantity">
                         <h4 class="mb5">Cantidad:</h4>
@@ -57,7 +57,7 @@
                       <h4 class="mb5">Total:</h4>
                       <div class="totalPrice"><% cartProduct.forEach(cartData => { %>
                        <% if (cartData.product_id == product.id) { %>
-                        <%= product.priceWithDiscount * cartData.quantity %> <!-- ACA FALTA LA DIFERENCIACION SI EL USUARIO ES M O CF. esta asumiendo que siempre es M -->
+                        <%= product.priceWithDiscount * cartData.quantity %>
                        <% } %>
                       <% }) %></div>
                     </td>
@@ -100,7 +100,7 @@
               <button type="submit" class="couponButton" name="applyCoupon">APLICAR</button>
             </div>
             <div class="checkout">
-              <button type="submit" name="checkout">Finalizar compra</button>
+              <button type="submit" name="checkout" class="checkoutButton">Finalizar compra</button>
             </div>
           </section>
         </div>
