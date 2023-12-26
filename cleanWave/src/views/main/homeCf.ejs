@@ -12,24 +12,27 @@
     <main>
       <%- include('../partials/mainBanner') %>
       <section class="opportunities">
-        <!-- carrusel -->
+        <!-- Carrusel 1 -->
         <h3>Mega Oportunidades</h3>
-
-        <div class="carouselContainerOpportunities"> <!-- wrapper -->
-          <% if (inSaleProducts.length > 0) { %>            
-            <i id="left" class="fa-solid fa-angle-left arrow"></i>
-          <ul class="carousel">     
-            <% inSaleProducts.forEach(product => { %>
-              <li class="card"><%-
-              include("../partials/productCard", {product}) %>
-              </li> <% }); %>
-            </ul>
-          <i id="right" class="fa-solid fa-angle-right arrow"></i> 
-          <% } else { %>
-            <div class="no-products-message">Disculpe, no hay ofertas, vuelva intentar más tarde.</div>
-        <% } %> 
+      
+        <div class="carouselContainerOpportunities">
+          <!-- Wrapper -->
+          <% (function () { %>
+            <% if (inSaleProducts.length > 0) { %>
+              <i id="left" class="fa-solid fa-angle-left arrow"></i>
+              <ul class="carousel">
+                <% inSaleProducts.forEach(product => { %>
+                  <li class="card"><%- include("../partials/productCard", {product}) %></li>
+                <% }); %>
+              </ul>
+              <i id="right" class="fa-solid fa-angle-right arrow"></i>
+            <% } else { %>
+              <div class="no-products-message">Disculpe, no hay ofertas, vuelva intentar más tarde.</div>
+            <% } %>
+          <% })(); %>
         </div>
       </section>
+      <!-- fin Carrusel -->
       <section class="benefitsSection">
         <div>
           <img src="/img/beneficiosBanner.jpg" id="fotoLimpiar" />
@@ -62,6 +65,32 @@
           </ol>
         </div>
       </section>
+      <!-- carrusel 2 -->
+            <section class="bestSellers"> <!-- opportunities -->
+              <h3>Los más vendidos</h3>
+              <div class="carouselContainerBestSeller"><!-- carouselContainerOpportunities -->
+                <% (function () { %>
+                  <% if (bestSellersProducts.length > 0) { %>
+                    <i id="left" class="fa-solid fa-angle-left arrow"></i>
+                    <ul class="carousel">
+                      <% bestSellersProducts.forEach(product => { %>
+                        <li class="card"><%- include("../partials/productCard", {product}) %></li>
+                      <% }); %>
+                    </ul>
+                    <i id="right" class="fa-solid fa-angle-right arrow"></i>
+                  <% } else { %>
+                    <div class="no-products-message">Disculpe, no hay productos más vendidos.</div>
+                  <% } %>
+                <% })(); %>
+              </div>
+            </section>
+            <div class="SiteAlert">
+              <p class="alertContainer">
+                <i class="fa-solid fa-triangle-exclamation"></i>Estás visualizando los
+                precios para consumidor final. Si sos mayorista, hacé
+                <a href="/mayorista">&nbsp;click Aquí</a>
+              </p>
+            </div>
       <section class="allyBrands">
         <h3>Nos acompañan</h3>
         <div class="carouselContainerBrands">
@@ -77,30 +106,9 @@
           </button>
         </div>
       </section>
-      <section class="bestSellers">
-        <h3>Los más vendidos</h3>
-        <article class="carouselContainerBestSellers">
-          <% bestSellersProducts.forEach(product =>{ %> <%-
-          include("../partials/productCard", {product}) %> <% }); %>
-          <button class="leftArrow">
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-          <button class="rightArrow">
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
-          <!-- estan con display none para despues agregar en version tablet y desktop -->
-        </article>
-      </section>
-      <div class="SiteAlert">
-        <p class="alertContainer">
-          <i class="fa-solid fa-triangle-exclamation"></i>Estás visualizando los
-          precios para consumidor final. Si sos mayorista,
-          <a href="/HOMEMAYORISTA">&nbsp;hacé click acá</a>
-        </p>
-      </div>
-      
+     
 
-      <section class="contenedor bk">
+<!--       <section class="contenedor bk">
         <img width="50%" class="img-r" src="/img/encontra-productos.webp" />
         <div class="contenedor-2">
           <section>
@@ -141,7 +149,7 @@
             </button>
           </form>
         </div>
-      </section class="boxes">
+       </section class="boxes">
       <section class="boxc-1">
         <article class="boxc-2">
           <img width="100%" src="/img/banner-clorox.png" />
@@ -154,7 +162,7 @@
         <article class="boxc-4">
           <img width="100%" src="/img/banner-skip.png" />
         </article>
-      </section>
+      </section> -->
     </main>
 
     <%- include("../partials/footer") %>

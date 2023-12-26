@@ -98,8 +98,63 @@
 }
 
 /* main banner END */
+
+/* foto con beneficios consumidor final */
+#fotoLimpiar {
+  width: 100%;
+  height: 600px;
+  margin: 0px;
+  margin-bottom: -5px;
+  object-fit: cover; /* Hace que la imagen se ajuste y cubra el contenedor sin distorsionarse */
+}
+
+.benefitsContainer {
+  
+  position: absolute;
+  height: 50%;
+  top: 50%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  margin: 0px;
+  background-color: rgba(255, 255, 255, 0); /* Fondo semi-transparente */
+}
+
+.benefitsTitle {
+  font-size: 35px;
+  display: block;
+  margin-bottom: 4%;
+  color: #151516;
+}
+
+.benefitsList {
+  list-style: none;
+  align-items: center;
+  padding: 15px;
+  color: #27356e;
+}
+
+.benefitsList li {
+  font-size: 18px;
+  color: #111e4f;
+  margin-right: 10px;
+  margin-bottom: 3%;
+  padding: 5px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.benefitsList i {
+  font-size: 12px;
+ 
+}
+
+/* fin beneficios consumidor final */
+
+
 /* Opportunities START */
-.opportunities h3 {
+.opportunities h3,
+.bestSellers h3 {
   color: white;
   text-align: center;
   padding: 10px 25px;
@@ -109,7 +164,8 @@
 /* carrusel */
 
 
-.carouselContainerOpportunities {/* wrapper */
+.carouselContainerOpportunities, 
+.carouselContainerBestSeller {/* wrapper */
   position: relative;
   display: flex;
 	align-items: center;
@@ -117,7 +173,8 @@
 }
 
 /* Flechas comienzo */
-.carouselContainerOpportunities .arrow {
+.carouselContainerOpportunities .arrow,
+.carouselContainerBestSeller .arrow {
   color: black;
   top: 50%;
   height: 50px;
@@ -133,25 +190,30 @@
   transform: translateY(-50%);
   transition: transform 0.1s linear;
 }
-.opportunities i:active{
+.opportunities i:active,
+.bestSellers i:active{
   transform: translateY(-50%) scale(0.85);
 }
-.opportunities i:first-child{
+.opportunities i:first-child,
+.bestSellers i:first-child{
   left: 0px;
 }
-.opportunities i:last-child{
+.opportunities i:last-child,
+.bestSellers i:last-child{
   right: 0px;
 }
 
 
 /* oculta flechas cuando solo hay un producto */
-.carouselContainerOpportunities:only-child .arrow {
+.carouselContainerOpportunities:only-child .arrow,
+.carouselContainerBestSeller:only-child .arrow {
   display: none;
 }
 
 
 
-.carouselContainerOpportunities .carousel{
+.carouselContainerOpportunities .carousel,
+.carouselContainerBestSeller .carousel{
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: calc((100% / 1) - 100px);
@@ -221,34 +283,35 @@
 }
 
 .carousel .card:hover {
-	box-shadow: 10px 20px 30px #55a4da;
+	box-shadow: 5px 10px 15px #98a0a5;
     
 }
 /* fin efectos */
 
 .carousel .cardFooter button {
- 
   display: flex;
   justify-content: center;
   width: 101%;
-  white-space: nowrap; /* evita el salto de línea del precio y el descuento */
-  max-width: 100%; /* Asegura que el botón no sea más ancho que el 100% de la card*/
+  white-space: nowrap;
+  max-width: 100%;
   padding: 12px 12px;
   box-sizing: border-box;
-  border: none;
+  border: 2px solid #6f6f6f; 
   border-radius: 0 0 15px 15px;
-  background-color: #243a76;
-  color: #fff;
+  background-color:#6f6f6f; 
+  color:  #fff; 
   font-size: 17px;
   transition: all 400ms;
   cursor: pointer;
-  margin: 0px ;
-    
+  margin: 0px;
 }
 
 .carousel .cardFooter button:hover {
-  background-color: #8a8683;
+  background-color: #505050; 
+  color:#fff; 
 }
+
+
 /* beneficios START*/
 
 .benefitsSection {
@@ -256,55 +319,12 @@
 
 }
 
-#fotoLimpiar {
-  width: 100%;
-  height: 600px;
-  object-fit: cover; /* Hace que la imagen se ajuste y cubra el contenedor sin distorsionarse */
-}
-
-.benefitsContainer {
-  
-  position: absolute;
-  height: 50%;
-  top: 50%;
-  left: 35%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  
-  background-color: rgba(255, 255, 255, 0); /* Fondo semi-transparente */
-}
-
-.benefitsTitle {
-  display: block;
-  color: #151516;
-}
-
-.benefitsList {
-  list-style: none;
-  align-items: center;
-  padding: 20px;
-  color: #27356e;
-}
-
-.benefitsList li {
-  font-size: 18px;
-  margin-right: 10px;
-  margin-bottom: 5%;
-  padding: 5px;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.benefitsList i {
-  font-size: 12px;
- 
-}
-
 /* Nos acompañan START */
 
 .allyBrands {
   position: relative;
   overflow: hidden;
+  margin-top: -5px;
   
 }
 
@@ -338,10 +358,10 @@
 
 /* lo mas vendido START */
 
-.bestSellers {
+/* .bestSellers {
   position: relative;
   overflow: hidden;
-  margin: 10px 0;
+  margin: 0px;
 }
 
 .bestSellers h3 {
@@ -362,12 +382,12 @@
 .carouselContainerBestSellers .leftArrow {
   border-radius: 0px;
   right: 0%;
-  display: none;
+ 
 }
 
 .carouselContainerBestSellers .rightArrow {
   border-radius: 0px;
-  display: none;
+ 
 }
 
 .productCard {
@@ -382,20 +402,20 @@
 .productCard a {
   text-decoration: none;
   color: black;
-}
+} */
 
 /*Site Alert START */
 
 .SiteAlert {
   background-color: #111e4f;
-  padding: 15px;
+  padding: 20px;
 }
 
 .alertContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 8.5px;
+  font-size: 18px;
   align-items: center;
   color: #fff;
 }
@@ -409,12 +429,17 @@
 .alertContainer a {
   color: white;
   text-decoration: none;
+  transition: color 0.3s; /* Agregado para suavizar la transición del color */
+}
+
+.alertContainer a:hover {
+  color:#55a4da; ; /* Cambiar a color gris en hover */
 }
 
 
 /* encontra el producto */
 /*        inicio        */
-.bk {
+/* .bk {
   background-color: #eee;
 }
 
@@ -502,11 +527,11 @@
   display: block;
   text-align: center;
 }
-
+ */
 /*        inicio        */
 /*        categorias      */
 
-.boxes {
+/* .boxes {
   display: flex;
 }
 
@@ -519,20 +544,20 @@
 .boxc-3,
 .boxc-4 {
   flex: 1;
-  margin: 0; /* Añadido para eliminar el espacio entre los elementos */
+  margin: 0; 
 }
 
 img {
   width: 100%;
-  height: 100%; /* Cambiado a 100% para mantener el mismo alto que el ancho */
-  object-fit: cover; /* Añadido para cubrir completamente el espacio disponible */
+  height: 100%; 
+  object-fit: cover; 
 }
-
+ */
 
 /* fin categorias */
 
 /* inicio productCard */
-.card {
+/* .card {
   display: flex;
   flex-direction: column;
   margin: 10px;
@@ -582,14 +607,14 @@ img {
 
 .card:hover {
   box-shadow: 5px 15px 25px #111e4f;
-}
+} */
 /* fin productCard */
 
 /*        inicio        */
 /*        desktop      */
-@media (min-width: 1280px) {
-  /* encontra el producto */
-  /*        inicio        */
+/* encontra el producto */
+/* @media (min-width: 1280px) {
+
   .bk {
     background-color: #185397;
   }
@@ -659,13 +684,14 @@ img {
   .img-r {
     border: 3px solid blue;
   }
+}  */
   /* encontra el producto */
   /*        final         */
-}
 
 /* RESPONSIVE CARRUSEL */
 @media screen and (min-width: 600px) {
-  .carouselContainerOpportunities .carousel {
+  .carouselContainerOpportunities .carousel,
+  .carouselContainerBestSeller .carousel {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: calc((120% / 2) );
@@ -679,7 +705,8 @@ img {
   }
 }
 @media screen and (min-width: 700px) {
-  .carouselContainerOpportunities .carousel {
+  .carouselContainerOpportunities .carousel,
+  .carouselContainerBestSeller .carousel {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: calc((100% / 2) );
@@ -695,7 +722,8 @@ img {
   
 
 @media screen and (min-width: 900px) {
-  .carouselContainerOpportunities .carousel {
+  .carouselContainerOpportunities .carousel,
+  .carouselContainerBestSeller .carousel {
   display: grid;
   grid-auto-flow: column;
   overflow-x:hidden;
@@ -711,7 +739,8 @@ img {
 
 @media screen and (min-width: 1200px) {
 
-  .carouselContainerOpportunities .carousel {
+  .carouselContainerOpportunities .carousel,
+  .carouselContainerBestSeller .carousel {
   display: grid;
   grid-auto-flow: column;
   overflow-x:hidden;
@@ -727,7 +756,8 @@ img {
 
 
 @media screen and (min-width: 1250px) {
-  .carouselContainerOpportunities .carousel {
+  .carouselContainerOpportunities .carousel,
+  .carouselContainerBestSeller .carousel {
     display: grid;
     grid-auto-flow: column;
     overflow-x:hidden;
@@ -741,7 +771,8 @@ img {
   }
 
 @media screen and (min-width: 1600px) {
-  .carouselContainerOpportunities .carousel {
+  .carouselContainerOpportunities .carousel,
+  .carouselContainerBestSeller .carousel {
   display: grid;
   grid-auto-flow: column;
   overflow-x:hidden;
@@ -756,7 +787,8 @@ img {
 
 
 @media screen and (min-width: 1700px) {
-  .carouselContainerOpportunities .carousel {
+  .carouselContainerOpportunities .carousel, 
+  .carouselContainerBestSeller .carousel {
   display: grid;
   grid-auto-flow: column;
   overflow-x:hidden;
