@@ -1,6 +1,7 @@
 const {Cart, CartProduct, Product} = require("../database/models");
 const { v4: uuidv4 } = require("uuid");
-const userService = require("../services/userDBservice")
+const userService = require("../services/userDBservice");
+const { all } = require("../routes/cartRouter");
 
 module.exports = {
   findActiveCartByUserId: async function (userId) {
@@ -217,13 +218,15 @@ module.exports = {
   },
   purchaseCart: async function(userId){
     try{
-      Cart.update({
-        status: "purchased"
-      },
-      {
-        where: {user_id: userId, status: "active"}
-      })
+      const allRows = this.getAllProductsInActiveCartByUserId(userId)
+      console.log("tarrarara", allRows)
 
+      // Cart.update({
+      //   status: "purchased"
+      // },
+      // {
+      //   where: {user_id: userId, status: "active"}
+      // })
 
     }catch(e){
       console.log(e)
