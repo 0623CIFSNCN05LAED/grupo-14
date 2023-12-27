@@ -1,7 +1,8 @@
 const {Cart, CartProduct, Product} = require("../database/models");
 const { v4: uuidv4 } = require("uuid");
 const userService = require("../services/userDBservice");
-const { all } = require("../routes/cartRouter");
+const productService = require("../services/productService");
+const currentDate = new Date()
 
 module.exports = {
   findActiveCartByUserId: async function (userId) {
@@ -32,13 +33,12 @@ module.exports = {
         },
       });
       return cartProduct.dataValues;
-    } catch {}
+    } catch (e){console.log(e)}
   },
 
   addToCart: async function (product, userId, quantity) {
     try {
       const existingCart = await this.findActiveCartByUserId(userId);
-      console.log("serviceeeee", product)
       const cartProduct = await this.findCartProductByCartAndProduct(
         existingCart,
         product
@@ -67,7 +67,7 @@ module.exports = {
         cart = existingCart;
 
         if (cartProduct && cartProduct.product_id == product.id) {
-          /* si existe carrito y producto */
+          /* si existe cartProduct y producto */
           await CartProduct.update(
             {
               quantity: Number(cartProduct.quantity) + Number(quantity),
@@ -77,7 +77,7 @@ module.exports = {
               where: { product_id: product.id, cart_id: cart.id },
             }
           );
-        } else {
+        } else{
           /* si existe carrito pero NO producto */
           await CartProduct.create({
             cart_id: cart.id,
@@ -97,7 +97,7 @@ module.exports = {
             }),
           },
           {
-            where: { user_id: userId },
+            where: { user_id: userId, id:cart.id },
           }
         );
       }
@@ -218,15 +218,38 @@ module.exports = {
   },
   purchaseCart: async function(userId){
     try{
-      const allRows = this.getAllProductsInActiveCartByUserId(userId)
+      const allRows = await this.getAllRowsInCartProductByUserId(userId)
+      const activeCart = await this.findActiveCartByUserId(userId)
       console.log("tarrarara", allRows)
 
-      // Cart.update({
-      //   status: "purchased"
-      // },
-      // {
-      //   where: {user_id: userId, status: "active"}
-      // })
+      allRows.forEach(async (row)=>{
+        try{
+
+          const product =  await productService.findById(row.product_id)
+  
+          Product.update(
+            {
+              stock: product.stock - row.quantity,
+              sold: product.sold + row.quantity
+            },
+            {
+              where: {
+                id: product.id,
+              },
+            }
+          );
+        } catch (e){
+          console.log(e)
+        }
+      })
+
+      Cart.update({
+        status: "purchased",
+        purchase_date: currentDate
+      },
+      {
+        where: {user_id: userId, status: "active", id: activeCart.id}
+      })
 
     }catch(e){
       console.log(e)
