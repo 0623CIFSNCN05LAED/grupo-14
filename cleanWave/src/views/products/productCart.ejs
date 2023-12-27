@@ -8,7 +8,11 @@
     <script id="cartDetailScript" src="/js/cartDetail.js"></script>
   </head>
   <body>
+    <% if (userLogged.mayorista != null) { %>
+     <%- include ("../partials/headerMayorista") %>
+    <% } else { %>
     <%- include('../partials/header') %> 
+    <% } %>
 
     <main>
       <div class="alertText">

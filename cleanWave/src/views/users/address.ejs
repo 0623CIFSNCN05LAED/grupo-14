@@ -6,7 +6,11 @@
     <script src="/js/address.js" defer></script>
   </head>
   <body>
-    <%- include('../partials/header') %>
+    <% if (userLogged.mayorista != null) { %>
+     <%- include ("../partials/headerMayorista") %>
+    <% } else { %>
+    <%- include('../partials/header') %> 
+    <% } %>
 
     <main>
       <div class="div-newAddress">

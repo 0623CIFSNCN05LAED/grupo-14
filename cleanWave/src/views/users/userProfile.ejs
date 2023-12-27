@@ -5,7 +5,11 @@
   </head>
 
   <body>
+    <% if (userLogged.mayorista != null) { %>
+     <%- include ("../partials/headerMayorista") %>
+    <% } else { %>
     <%- include('../partials/header') %> 
+    <% } %>
     <main>
       <img src="/img/users/<%= user.image %>">
       <a href="/users/logout"><button>LOGOUT</button></a>
