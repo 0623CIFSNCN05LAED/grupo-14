@@ -1,37 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill } from "react-icons/bs";
+import {
+  BsFillArchiveFill,
+  BsFillGrid3X3GapFill,
+  BsPeopleFill,
+} from "react-icons/bs";
 import Card from "./HomeContent/Card";
+import LastProduct from "./HomeContent/LastProduct";
+import LastUser from "./HomeContent/LastUser";
 import ProductList from "./HomeContent/ProductList";
 import TableCategories from "./HomeContent/TableCategories";
 import PieCategories from "./HomeContent/PieCategories";
-
-function LatestDetailPanel({ type }) {
-  const [latestDetail, setLatestDetail] = useState(null);
-
-  useEffect(() => {
-    fetch(`http://localhost:3333/api/latest${type}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setLatestDetail(data);
-      })
-      .catch((error) => console.log(error));
-  }, [type]);
-
-  return (
-    <div className="latest-detail-panel">
-      <h2>Latest {type}</h2>
-      {latestDetail ? (
-        <div>
-          <p>ID: {latestDetail.id}</p>
-          <p>Name: {latestDetail.name}</p>
-          {/* Agrega aquí otros detalles según la estructura del objeto */}
-        </div>
-      ) : (
-        <p>Loading...</p>
-      )}
-    </div>
-  );
-}
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -71,17 +49,12 @@ export default function Home() {
           quantity={categoriesCount}
           icon={<BsFillGrid3X3GapFill />}
         />
-        <Card
-          title="USERS"
-          quantity={users.length}
-          icon={<BsPeopleFill />}
-        />
+        <Card title="USERS" quantity={users.length} icon={<BsPeopleFill />} />
       </div>
-      <div className="detail-panels">
-        <LatestDetailPanel type="Product" />{" "}
-        {/* Muestra el detalle del último producto */}
-        <LatestDetailPanel type="User" /> {/* Muestra el detalle del último usuario */}
-      </div>
+
+      <LastProduct />
+
+      <LastUser />
 
       <ProductList />
       <div className="side">
