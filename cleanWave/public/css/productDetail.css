@@ -134,6 +134,7 @@
 
 .stockButton {
   display: inline-flex;
+  cursor: pointer;
   align-items: center;
   justify-content: center;
   border-radius: 0.375rem;
@@ -143,9 +144,8 @@
   transition: color 0.2s;
   outline: none;
   background-color: #f3f4f6;
-  pointer-events: none;
   opacity: 0.5;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #f3f7ff;
   height: 1.5rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
