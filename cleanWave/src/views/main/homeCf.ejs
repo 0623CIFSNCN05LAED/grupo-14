@@ -12,9 +12,9 @@
     <main>
       <%- include('../partials/mainBanner') %>
       <section class="opportunities">
+
         <!-- Carrusel 1 -->
-        <h3>Mega Oportunidades</h3>
-      
+        <h3>Mega Oportunidades</h3>      
         <div class="carouselContainerOpportunities">
           <!-- Wrapper -->
           <% (function () { %>
@@ -32,7 +32,8 @@
           <% })(); %>
         </div>
       </section>
-      <!-- fin Carrusel -->
+      <!-- fin Carrusel 1 -->
+
       <section class="benefitsSection">
         <div>
           <img src="/img/beneficiosBanner.jpg" id="fotoLimpiar" />
@@ -66,9 +67,9 @@
         </div>
       </section>
       <!-- carrusel 2 -->
-            <section class="bestSellers"> <!-- opportunities -->
+            <section class="bestSellers"> 
               <h3>Los más vendidos</h3>
-              <div class="carouselContainerBestSeller"><!-- carouselContainerOpportunities -->
+              <div class="carouselContainerBestSeller">
                 <% (function () { %>
                   <% if (bestSellersProducts.length > 0) { %>
                     <i id="left" class="fa-solid fa-angle-left arrow"></i>
@@ -84,6 +85,7 @@
                 <% })(); %>
               </div>
             </section>
+        <!-- fin carrusel 2 -->
             <div class="SiteAlert">
               <p class="alertContainer">
                 <i class="fa-solid fa-triangle-exclamation"></i>Estás visualizando los
@@ -98,71 +100,8 @@
           <img src="/img/logoClorox.png" alt="logoMarca 2" />
           <img src="/img/logoCif.jpg" alt="logoMarca 3" />
           <img src="/img/logoPoett.png" alt="logoMarca 4" />
-          <button class="leftArrow">
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-          <button class="rightArrow">
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
         </div>
       </section>
-     
-
-<!--       <section class="contenedor bk">
-        <img width="50%" class="img-r" src="/img/encontra-productos.webp" />
-        <div class="contenedor-2">
-          <section>
-            <article class="contenedor-3">
-              <h2 class="bl">Encontrá el producto perfecto</h2>
-              <h3 class="bl">
-                Decinos qué necesitas limpiar y te ayudamos a resolverlo
-              </h3>
-            </article>
-          </section>
-
-          <form class="contenedor-4">
-            <div class="contenedor-5">
-              <h2 class="pd-r">Necesito</h2>
-              <select name="action" class="select-2">
-                <option value="" disabled selected>(acción)</option>
-                <option value="blanquear">blanquear</option>
-                <option value="desodorizar">desodorizar</option>
-                <option value="eliminarElMoho">eliminar el moho</option>
-                <option value="higienizar">higienizar</option>
-                <option value="desinfectar">desinfectar</option>
-                <option value="quitarLaMancha">quitar la mancha</option>
-                <option value="lavar">lavar</option>
-              </select>
-            </div>
-            <div class="contenedor-6">
-              <h2 class="pd-r">Mi</h2>
-              <select name="spot" class="select-1">
-                <option value="" disabled selected>(ubicación)</option>
-                <option value="baño">baño</option>
-                <option value="cocina">cocina</option>
-                <option value="espacioExterior">espacio exterior</option>
-                <option value="ropa">ropa</option>
-              </select>
-            </div>
-            <button class="enc" type="submit" name="findProduct">
-              Encontrar
-            </button>
-          </form>
-        </div>
-       </section class="boxes">
-      <section class="boxc-1">
-        <article class="boxc-2">
-          <img width="100%" src="/img/banner-clorox.png" />
-        </article>
-
-        <article class="boxc-3">
-          <img width="100%" src="/img/banner-poett.jpg" />
-        </article>
-
-        <article class="boxc-4">
-          <img width="100%" src="/img/banner-skip.png" />
-        </article>
-      </section> -->
     </main>
 
     <%- include("../partials/footer") %>
