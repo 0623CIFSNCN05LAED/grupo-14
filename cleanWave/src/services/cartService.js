@@ -32,7 +32,11 @@ module.exports = {
           product_id: product.id,
         },
       });
-      return cartProduct.dataValues;
+      if(cartProduct){
+        return cartProduct.dataValues
+      } else {
+        return null
+      }
     } catch (e){console.log(e)}
   },
 
@@ -66,7 +70,7 @@ module.exports = {
         /* si existe carrito */
         cart = existingCart;
 
-        if (cartProduct && cartProduct.product_id == product.id) {
+        if (cartProduct != null && cartProduct.product_id == product.id) {
           /* si existe cartProduct y producto */
           await CartProduct.update(
             {
