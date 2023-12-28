@@ -307,54 +307,77 @@
 
 /* New Mayorista */
 
+.newMayoristaSection {
+  position: relative; 
+  overflow: hidden;
+}
 #fotoLimpiar {
   width: 100%;
-  height: 600px;
-  margin: 0px;
-  margin-bottom: -5px;
-  object-fit: cover; /* Hace que la imagen se ajuste y cubra el contenedor sin distorsionarse */
+  height: 800px;
+  margin: 0;
+  object-fit: cover;
+  background-size: cover;
+  background-position: right center;
+  
 }
-.newMayoristaContainer{
+
+
+.newMayoristaContainer {
   position: absolute;
-  height: 100%;
-  top: 170%;
-  left: 60%;
+  top: 40%;
+  left: 70%;
   transform: translate(-50%, -50%);
   text-align: center;
-  padding: 5px;
   margin: 0px;
-  background-color: rgba(255, 255, 255, 0); 
+  background-color: transparent;
+  width: 45%;
+  padding: 20px; 
+   
 }
+
+
+.newMayoristaQuestion {
+  background-color: transparent;
+  width: 100%;
+  padding: 10px;
+  margin: 0;
+  color: #111e4f;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Asegura que ocupe toda la altura del contenedor padre */
+}
+
 .newMayoristaButtonContainer {
   position: absolute;
+  bottom: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   margin: 5px;
-  background-color: rgba(255, 255, 255, 0); 
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 80%; /* Ajusta según sea necesario */
 }
-
-.newMayoristaQuestion {
-  background-color: white;
-  width: 100%;
-  padding: 50px;
-  margin: 0 ;
-  color: #111e4f;
-}
-
 
 .newMayoristaButton {
   border: none;
   background-color: transparent;
-  padding: 50px;
+  padding: 10px;
+  margin-top: 5px;
 }
 
 .newMayoristaButton a {
   white-space: nowrap;
-  margin-bottom: 10px;
   text-decoration: none;
   color: #111e4f;
   cursor: pointer;
+  display: block;
 }
 
 .hoverMayorista {
@@ -369,15 +392,24 @@
   padding-right: 7px;
 }
 
+
 /* benefits START */
 
 .benefitsSection {
-  background-color: #fff;
-  padding: 30px 20px;
-  border-bottom: 4px solid #6f6f6f;
+  background-color:transparent;
+  padding: 5px;
+  width: 100%; 
+  box-sizing: border-box; 
+  position: relative;
+}
+
+.benefitsContainer {
+  max-width: 100%; 
+  margin: 0 auto; 
 }
 
 .benefitsSection i {
+  padding: 10px;
   font-size: 30px;
   color: #111e4f;
 }
@@ -400,6 +432,46 @@
   margin-right: 10px;
   font-size: 12px;
 }
+
+
+/* Nos acompañan START */
+
+.allyBrands {
+  position: relative;
+  overflow: hidden;
+  margin-top: -5px;
+  
+}
+
+.allyBrands h3 {
+  color: white;
+  text-align: center;
+  padding: 10px 25px;
+  font-size: 25px;
+  background-color: #6f6f6f;
+}
+
+.carouselContainerBrands {
+  display: flex;
+  position: relative;
+  padding: 0px 20px;
+  justify-content: space-between;
+}
+
+.carouselContainerBrands img {
+  width: 50%;
+  height: 200px;
+}
+
+.carouselContainerBrands .rightArrow {
+  border-radius: 0px;
+}
+
+.carouselContainerBrands .leftArrow {
+  border-radius: 0px;
+}
+
+
 
 /*        inicio        */
 /*        categorias      */
