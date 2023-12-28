@@ -2,17 +2,21 @@
 const { Router } = require("express");
 const router = Router();
 
+/*************** Middlewares require ******************/
+const userCfCanNotPass = require("../middlewares/userCfMiddleware");
+const userMCanNotPass = require("../middlewares/userMMiddleware");
+
 /*************** CF Router *******************/
 const cfRouter = require("./cfRouter");
 router.use("/consumidorfinal", cfRouter);
 
 /*************** Mayorista Router *******************/
 const mayoristaRouter = require("./mayoristaRouter");
-router.use("/mayorista", mayoristaRouter);
+router.use("/mayorista",userCfCanNotPass, mayoristaRouter);
 
 /*************** Products Router ********************/
 const productsRouter = require("./productsRouter");
-router.use("/products", productsRouter);
+router.use("/products",userMCanNotPass, productsRouter);
 
 /*************** Users Router **********************/
 const userRouter = require("./userRouter");

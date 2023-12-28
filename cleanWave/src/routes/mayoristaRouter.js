@@ -5,11 +5,8 @@ const router = Router();
 /*************** Controller Require's ****************/
 const mainController = require("../controllers/mainController");
 
-/*************** Middlewares require ******************/
-const userCfCanNotPass = require("../middlewares/userCfMiddleware");
-
 /*************** Mayorista Router *******************/
-router.get("/", userCfCanNotPass, mainController.homeMayorista);
+router.get("/", mainController.homeMayorista);
 
 /*************** Products Router ********************/
 const productsMRouter = require("./productsMRouter");

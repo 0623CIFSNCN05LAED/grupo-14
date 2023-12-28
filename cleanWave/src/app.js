@@ -6,6 +6,7 @@ const session = require("express-session");
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
+const notFound = require("./middlewares/404Middleware")
 
 // ********** express() ******************
 const app = express();
@@ -28,17 +29,18 @@ app.use(cookieParser());
 app.use(userLoggedMiddleware);
 app.use(cors())
 
+
 // **************** Template Engine *********************
 app.set("view engine", "ejs");
 app.set("views", "./src/views");
 
 // ********** Route system require and use() **************
-const mainRouter = require("./routes/mainRouter"); //aca estoy requiriendo las funcionalidades del archivo,
-//hace falta porque con el module.exports=router solo exportaba la funcionalidad router de express!!!
+const mainRouter = require("./routes/mainRouter");  
 app.use(mainRouter);
 app.get("/", (req, res) => {
   res.redirect("/consumidorfinal");
 });
+app.use(notFound)
 
 // *************** Iniciar el servidor web *****************
 const PORT = 3333;
