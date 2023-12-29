@@ -40,7 +40,8 @@ module.exports = {
           id: productDB.id,
           shortName: productDB.shortName,
           price: productDB.wholesalePrice,
-          priceWithDiscount: productDB.wholesalePrice * (1 - productDB.discountM / 100),
+          priceWithDiscount:
+            productDB.wholesalePrice * (1 - productDB.discountM / 100),
           discount: productDB.discountM,
           image: productDB.image,
           category_id: productDB.category_id,
@@ -59,7 +60,8 @@ module.exports = {
           id: productDB.id,
           shortName: productDB.shortName,
           price: productDB.retailPrice,
-          priceWithDiscount: productDB.retailPrice * (1 - productDB.discountCf / 100),
+          priceWithDiscount:
+            productDB.retailPrice * (1 - productDB.discountCf / 100),
           discount: productDB.discountCf,
           image: productDB.image,
           category_id: productDB.category_id,
@@ -87,7 +89,8 @@ module.exports = {
         name: productDB.name,
         shortName: productDB.shortName,
         price: productDB.wholesalePrice,
-        priceWithDiscount: productDB.wholesalePrice * (1 - productDB.discountM / 100),
+        priceWithDiscount:
+          productDB.wholesalePrice * (1 - productDB.discountM / 100),
         discount: productDB.discountM,
         stock: productDB.stock,
         image: productDB.image,
@@ -108,7 +111,8 @@ module.exports = {
         name: productDB.name,
         shortName: productDB.shortName,
         price: productDB.retailPrice,
-        priceWithDiscount: productDB.retailPrice * (1 - productDB.discountCf / 100),
+        priceWithDiscount:
+          productDB.retailPrice * (1 - productDB.discountCf / 100),
         discount: productDB.discountCf,
         stock: productDB.stock,
         image: productDB.image,
@@ -135,7 +139,8 @@ module.exports = {
           id: productDB.id,
           shortName: productDB.shortName,
           price: productDB.wholesalePrice,
-          priceWithDiscount: productDB.wholesalePrice * (1 - productDB.discountM / 100),
+          priceWithDiscount:
+            productDB.wholesalePrice * (1 - productDB.discountM / 100),
           discount: productDB.discountM,
           image: productDB.image,
           href: "mayorista",
@@ -156,7 +161,8 @@ module.exports = {
           id: productDB.id,
           shortName: productDB.shortName,
           price: productDB.retailPrice,
-          priceWithDiscount: productDB.retailPrice * (1 - productDB.discountCf / 100),
+          priceWithDiscount:
+            productDB.retailPrice * (1 - productDB.discountCf / 100),
           discount: productDB.discountCf,
           image: productDB.image,
           href: "consumidorfinal",
@@ -170,45 +176,50 @@ module.exports = {
   /* START FIND BEST SELLER PRODUCTS */
   findBestSellerProductsM: async function () {
     try {
-      const bestSellerProductsDB = await Product.findAll({
-        where: {
-          bestSeller: 1,
-        },
+      const bestSellers = await Product.findAll({
+        order: [["sold", "DESC"]],
+        limit: 10,
       });
-      const bestSellerProductsM = bestSellerProductsDB.map(function (productDB) {
+
+      const bestSellerProductsM = bestSellers.map(function (productDB) {
         return {
           id: productDB.id,
           shortName: productDB.shortName,
           price: productDB.wholesalePrice,
-          priceWithDiscount: productDB.wholesalePrice * (1 - productDB.discountM / 100),
+          priceWithDiscount:
+            productDB.wholesalePrice * (1 - productDB.discountM / 100),
           discount: productDB.discountM,
           image: productDB.image,
           href: "mayorista",
         };
       });
       return bestSellerProductsM;
-    } catch {}
+    } catch (e) {
+      console.log(e);
+    }
   },
   findBestSellerProductsCf: async function () {
     try {
-      const bestSellerProductsDB = await Product.findAll({
-        where: {
-          bestSeller: 1,
-        },
+      const bestSellers = await Product.findAll({
+        order: [["sold", "DESC"]],
+        limit: 10,
       });
-      const bestSellerProductsCf = bestSellerProductsDB.map(function (productDB) {
+      const bestSellerProductsCf = bestSellers.map(function (productDB) {
         return {
           id: productDB.id,
           shortName: productDB.shortName,
           price: productDB.retailPrice,
-          priceWithDiscount: productDB.retailPrice * (1 - productDB.discountCf / 100),
+          priceWithDiscount:
+            productDB.retailPrice * (1 - productDB.discountCf / 100),
           discount: productDB.discountCf,
           image: productDB.image,
           href: "consumidorfinal",
         };
       });
       return bestSellerProductsCf;
-    } catch {}
+    } catch (e) {
+      console.log(e);
+    }
   },
   /* END FIND BEST SELLER PRODUCTS */
 
@@ -228,7 +239,8 @@ module.exports = {
             id: productDB.id,
             shortName: productDB.shortName,
             price: productDB.wholesalePrice,
-            priceWithDiscount: productDB.wholesalePrice * (1 - productDB.discountM / 100),
+            priceWithDiscount:
+              productDB.wholesalePrice * (1 - productDB.discountM / 100),
             discount: productDB.discountM,
             image: productDB.image,
             href: "mayorista",
@@ -252,7 +264,8 @@ module.exports = {
             id: productDB.id,
             shortName: productDB.shortName,
             price: productDB.retailPrice,
-            priceWithDiscount: productDB.retailPrice * (1 - productDB.discountCf / 100),
+            priceWithDiscount:
+              productDB.retailPrice * (1 - productDB.discountCf / 100),
             discount: productDB.discountCf,
             image: productDB.image,
             href: "consumidorfinal",

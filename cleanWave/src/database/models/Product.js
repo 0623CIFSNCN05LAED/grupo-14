@@ -17,7 +17,6 @@ module.exports = (sequelize, dataTypes)=>{
       description: dataTypes.TEXT,
       brand_id: dataTypes.INTEGER,
       sold: dataTypes.INTEGER,
-      bestSeller: dataTypes.BOOLEAN,
       offer: dataTypes.BOOLEAN
     };
     const config= {
