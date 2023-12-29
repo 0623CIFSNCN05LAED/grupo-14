@@ -74,10 +74,7 @@ module.exports = [
       "Por favor, ingrese un Correo Electrónico válido. Ejemplo: nombre@dominio.com"
     )
     .custom((value, { req }) => {
-      if (
-        req.body.category === "superAdmin" &&
-        !value.endsWith("@cleanwave.com")
-      ) {
+      if (req.body.category === "admin" && !value.endsWith("@cleanwave.com")) {
         throw new Error(
           "El correo ingresado debe contener el dominio @cleanwave.com"
         );
