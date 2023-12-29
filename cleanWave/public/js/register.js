@@ -156,6 +156,25 @@ window.addEventListener("DOMContentLoaded", function () {
         },
       ],
     },
+    {
+      field: "email",
+      checks: [
+        {
+          check: (input) => input.value !== "",
+          message: "Por favor, ingrese Correo Electrónico.",
+        },
+        {
+          check: (input) => validEmail(input.value),
+          message:
+            "Por favor, ingrese un correo electrónico válido. Ejemplo: nombre@dominio.com",
+        },
+        {
+          check: (input) => input.value.endsWith("@cleanwave.com"),
+          message:
+            "Por favor, el correo ingresado debe coincidir con el dominio empresarial.",
+        },
+      ],
+    },
   ];
 
   const mayoristaValidations = [
