@@ -72,7 +72,15 @@ module.exports = [
     .isEmail()
     .withMessage(
       "Por favor, ingrese un Correo Electrónico válido. Ejemplo: nombre@dominio.com"
-    ),
+    )
+    .custom((value, { req }) => {
+      if (req.body.category === "admin" && !value.endsWith("@cleanwave.com")) {
+        throw new Error(
+          "Por favor, el correo ingresado debe coincidir con el dominio empresarial."
+        );
+      }
+      return true;
+    }),
   body("password")
     .notEmpty()
     .withMessage("Por favor, ingrese una contraseña")

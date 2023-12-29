@@ -17,7 +17,9 @@
             <label class="p-newRegister">Categoria de usuario</label>
             <select name="category" id="category" class="inputGroupInput">
               <option value="" <%= locals.oldData && (oldData.category === "") ? "selected" : ""  %>>Elegi una categoría</option>
-              <option value="admin" <%= locals.oldData && (oldData.category === "admin") ? "selected" : ""  %>>admin</option>
+              <% if(locals.isLogged && locals.userLogged.superAdmin != null){ %>
+                <option value="admin" <%= locals.oldData && (oldData.category === "admin") ? "selected" : ""  %>>admin</option>
+              <% } %>
               <option value="cf" <%= locals.oldData && (oldData.category === "cf") ? "selected" : ""  %>>consumidor final</option>
               <option value="mayorista" <%= locals.oldData && (oldData.category === "mayorista") ? "selected" : ""  %>>mayorista</option>
             </select>
@@ -162,7 +164,7 @@
 
           <div class="inputGroup">
             <input
-              type="email"
+              type="text"
               name="email"
               id="email"
               class="inputGroupInput"
