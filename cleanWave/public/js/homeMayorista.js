@@ -1,4 +1,27 @@
-/* CARRUSEL */
+
+  /* EFECTO LETRAS */
+  document.addEventListener('DOMContentLoaded', function () {
+    const animatedItems = document.querySelectorAll('.benefitsList .animated-list-item');
+  
+    setTimeout(function () {
+      animatedItems.forEach(function (item) {
+        item.classList.add('initial-hidden');
+      });
+  });
+  
+    animatedItems.forEach(function (item) {
+      item.addEventListener('animationstart', function () {
+        item.classList.remove('initial-hidden');
+      });
+    });
+  });
+
+ 
+  
+  
+  
+  
+/* CARRUSELES */
 function initializeCarousel(containerClass) {
     const carouselContainer = document.querySelector(`.${containerClass}`);
     const carousel = carouselContainer.querySelector(".carousel");
@@ -130,4 +153,7 @@ function initializeCarousel(containerClass) {
   // Inicializar ambos carruseles
   initializeCarousel("carouselContainerOpportunities");
   initializeCarousel("carouselContainerBestSeller");
+
+
+
   

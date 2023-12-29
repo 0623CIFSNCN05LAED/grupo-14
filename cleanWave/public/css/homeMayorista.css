@@ -324,8 +324,8 @@
 
 .newMayoristaContainer {
   position: absolute;
-  top: 40%;
-  left: 70%;
+  top: 50%;
+  left: 65%;
   transform: translate(-50%, -50%);
   text-align: center;
   margin: 0px;
@@ -333,6 +333,18 @@
   width: 45%;
   padding: 20px; 
    
+}
+.newMayoristaQuestion h2 {
+  font-size: 24px;
+  padding: 5px; 
+}
+
+.newMayoristaQuestion p {
+  font-size: 20px;
+}
+
+.newMayoristaButton p {
+  font-size: 18px; 
 }
 
 
@@ -348,7 +360,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%; /* Asegura que ocupe toda la altura del contenedor padre */
+  height: 100%; 
+ 
 }
 
 .newMayoristaButtonContainer {
@@ -362,7 +375,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 80%; /* Ajusta según sea necesario */
+  max-width: 80%;
+  
 }
 
 .newMayoristaButton {
@@ -378,6 +392,7 @@
   color: #111e4f;
   cursor: pointer;
   display: block;
+ 
 }
 
 .hoverMayorista {
@@ -389,51 +404,71 @@
 }
 
 .newMayoristaButton i {
-  padding-right: 7px;
+  padding-right: 5px;
+
 }
 
 
 /* benefits START */
 
-.benefitsSection {
-  background-color:transparent;
-  padding: 5px;
-  width: 100%; 
-  box-sizing: border-box; 
-  position: relative;
-}
+/* benefits START */
 
-.benefitsContainer {
-  max-width: 100%; 
-  margin: 0 auto; 
-}
+/* benefits START */
 
-.benefitsSection i {
-  padding: 10px;
-  font-size: 30px;
+.benefitsSection h2{
+  padding-bottom: 10px;
+}
+.benefitsSection i.fa-id-card {
   color: #111e4f;
+  padding-bottom: 10px;
 }
 
-.benefitsSection h2 {
-  color: #111e4f;
-  margin: 9px 0;
-}
-
-.benefitsList {
-  list-style: none;
-  text-align: left;
+.benefitsList i.fa-check {
+  color: green;
+  padding-right: 8px;
 }
 
 .benefitsList li {
-  margin-bottom: 5px;
-}
-
-.benefitsList i {
-  margin-right: 10px;
-  font-size: 12px;
+  
+  padding: 10px; /* Agrega el padding deseado */
+  font-size: 100%;
 }
 
 
+.benefitsList .animated-list-item {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  line-height: 1.2;
+  opacity: 0;
+  animation: reveal-item 1s ease forwards;
+}
+
+@keyframes reveal-item {
+  to {
+    opacity: 1;
+  }
+}
+
+.benefitsList .animated-list-item:nth-child(1) {
+  animation-delay: 1s;
+}
+
+.benefitsList .animated-list-item:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.benefitsList .animated-list-item:nth-child(3) {
+  animation-delay: 3s;
+}
+
+.benefitsList .animated-list-item:nth-child(4) {
+  animation-delay: 4s;
+}
+
+.benefitsList .animated-list-item:nth-child(5) {
+  animation-delay: 5s;
+}
 /* Nos acompañan START */
 
 .allyBrands {
@@ -472,13 +507,6 @@
 }
 
 
-
-/*        inicio        */
-/*        categorias      */
-
-
-
-/*        inicio        */
 
 /* RESPONSIVE CARRUSEL */
 @media screen and (min-width: 600px) {
