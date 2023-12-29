@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./LastProductUser.css";
 export default function LastProduct() {
   const [user, setUser] = useState([]);
   useEffect(() => {
@@ -24,11 +25,11 @@ export default function LastProduct() {
     fetchData();
   }, []);
   return (
-    <section>
+    <section class="lastUser">
       <h2>Last User</h2>
-      <p>id: {user.id}</p>
-      <p>nombre: {user.name}</p>
-      <p>email: {user.email}</p>
+      <p>ID: {user.id}</p>
+      <p>Name: {user.name}</p>
+      <p>Email: {user.email}</p>
     </section>
   );
 }
