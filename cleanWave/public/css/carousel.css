@@ -1,0 +1,119 @@
+
+
+
+
+/* RESPONSIVE CARRUSEL */
+@media screen and (min-width: 600px) {
+    .carouselContainerOpportunities .carousel,
+    .carouselContainerBestSeller .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((120% / 2) );
+    
+    overflow-x:hidden;
+    scroll-snap-type: x mandatory;
+    gap: 5px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    }
+  }
+  @media screen and (min-width: 700px) {
+    .carouselContainerOpportunities .carousel,
+    .carouselContainerBestSeller .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 2) );
+    
+    overflow-x:hidden;
+    scroll-snap-type: x mandatory;
+    gap: 5px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    }
+  }
+    
+  
+  @media screen and (min-width: 900px) {
+    .carouselContainerOpportunities .carousel,
+    .carouselContainerBestSeller .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x:hidden;
+    scroll-snap-type: x mandatory;
+    gap: 5px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+      grid-auto-columns: calc((100% / 2) - 100px);
+    }
+  }
+  
+  
+  @media screen and (min-width: 1200px) {
+  
+    .carouselContainerOpportunities .carousel,
+    .carouselContainerBestSeller .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x:hidden;
+    scroll-snap-type: x mandatory;
+    gap: 5px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+      grid-auto-columns: calc((100% / 3) - 30px);
+      }
+    
+  }
+  
+  
+  @media screen and (min-width: 1250px) {
+    .carouselContainerOpportunities .carousel,
+    .carouselContainerBestSeller .carousel {
+      display: grid;
+      grid-auto-flow: column;
+      overflow-x:hidden;
+      scroll-snap-type: x mandatory;
+      gap: 5px;
+      border-radius: 8px;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+        grid-auto-columns: calc((100% / 3) - 80px);
+      }
+    }
+  
+  @media screen and (min-width: 1600px) {
+    .carouselContainerOpportunities .carousel,
+    .carouselContainerBestSeller .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x:hidden;
+    scroll-snap-type: x mandatory;
+    gap: 5px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    grid-auto-columns: calc((100% / 3) - 130px);
+    }
+  }
+  
+  
+  @media screen and (min-width: 1700px) {
+    .carouselContainerOpportunities .carousel, 
+    .carouselContainerBestSeller .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x:hidden;
+    scroll-snap-type: x mandatory;
+    gap: 5px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    grid-auto-columns: calc((100% / 4) - 100px);
+    }
+    
+  }
+  
+  /* FIN RESPONSIVE CARRUSEL */

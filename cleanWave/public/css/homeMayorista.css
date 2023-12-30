@@ -408,11 +408,6 @@
 
 }
 
-
-/* benefits START */
-
-/* benefits START */
-
 /* benefits START */
 
 .benefitsSection h2{
@@ -430,7 +425,7 @@
 
 .benefitsList li {
   
-  padding: 10px; /* Agrega el padding deseado */
+  padding: 10px; 
   font-size: 100%;
 }
 
@@ -469,6 +464,7 @@
 .benefitsList .animated-list-item:nth-child(5) {
   animation-delay: 5s;
 }
+
 /* Nos acompañan START */
 
 .allyBrands {

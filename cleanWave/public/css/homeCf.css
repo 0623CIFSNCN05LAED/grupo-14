@@ -105,7 +105,7 @@
   height: 600px;
   margin: 0px;
   margin-bottom: -5px;
-  object-fit: cover; /* Hace que la imagen se ajuste y cubra el contenedor sin distorsionarse */
+  object-fit: cover; 
 }
 
 .benefitsContainer {
@@ -242,12 +242,12 @@
   justify-content: center;
   align-items: center;
 }
-.card a {/* saca las lineas subrayadas del precio y titulo */
+/* .card a {
   text-decoration: none;
   color: inherit;
 }
-
-.carousel .card {
+ */
+/* .carousel .card {
   
   display: flex;
   flex-direction: column;
@@ -274,20 +274,21 @@
 }
 .carousel .cardBody img {
   width: 50%;
-  /* object-fit: cover; */
-}
+  
+} */
 /* efectos img */
-.carousel .card:hover img{
+/* .carousel .card:hover img{
 	scale:  1.1;
 }
 
 .carousel .card:hover {
 	box-shadow: 5px 10px 15px #98a0a5;
     
-}
+} */
 /* fin efectos */
 
-.carousel .cardFooter button {
+
+/* .carousel .cardFooter button {
   display: flex;
   justify-content: center;
   width: 101%;
@@ -309,7 +310,7 @@
   background-color: #505050; 
   color:#fff; 
 }
-
+ */
 
 /* beneficios START*/
 
@@ -381,7 +382,7 @@
 .alertContainer a {
   color: white;
   text-decoration: none;
-  transition: color 0.3s; /* Agregado para suavizar la transición del color */
+  transition: color 0.3s; /*suavizar la transición del color */
 }
 
 .alertContainer a:hover {
