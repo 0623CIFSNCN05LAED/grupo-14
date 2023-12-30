@@ -7,31 +7,36 @@
     <link rel="stylesheet" href="/css/card.css" />
     <link rel="stylesheet" href="/css/carousel.css" />
     <script src="/js/homeCf.js" defer></script>
+    <script src="/js/carousel.js" defer></script>
   </head>
   <body>
-    <%- include('../partials/header') %> 
+    <%- include('../partials/header') %>
 
     <main>
       <%- include('../partials/mainBanner') %>
-      <section class="opportunities">
 
-        <!-- Carrusel 1 -->
-        <h3>Mega Oportunidades</h3>      
-        <div class="carouselContainerOpportunities">
-          <!-- Wrapper -->
-          <% (function () { %>
-            <% if (inSaleProducts.length > 0) { %>
-              <i id="left" class="fa-solid fa-angle-left arrow"></i>
-              <ul class="carousel">
-                <% inSaleProducts.forEach(product => { %>
-                  <li class="card"><%- include("../partials/productCard", {product}) %></li>
-                <% }); %>
-              </ul>
-              <i id="right" class="fa-solid fa-angle-right arrow"></i>
-            <% } else { %>
-              <div class="no-products-message">Disculpe, no hay ofertas, vuelva intentar más tarde.</div>
-            <% } %>
-          <% })(); %>
+      <div class="titulosH3">
+        <h3>Mega Oportunidades</h3>
+      </div>
+
+      <!-- Carrusel 1 -->
+      <section class="sectionCarousel">
+        <div class="carouselDivContainer">
+          <% (function () { %> <% if (inSaleProducts.length > 0) { %>
+          <i id="left" class="fa-solid fa-angle-left arrow"></i>
+          <ul class="carousel">
+            <% inSaleProducts.forEach(product => { %>
+            <li class="card">
+              <%- include("../partials/productCard", {product}) %>
+            </li>
+            <% }); %>
+          </ul>
+          <i id="right" class="fa-solid fa-angle-right arrow"></i>
+          <% } else { %>
+          <div class="no-products-message">
+            Disculpe, no hay ofertas, vuelva intentar más tarde.
+          </div>
+          <% } %> <% })(); %>
         </div>
       </section>
       <!-- fin Carrusel 1 -->
@@ -68,35 +73,45 @@
           </ol>
         </div>
       </section>
+      
+      <div class="titulosH3">
+        <h3>Los más vendidos</h3>
+      </div>
+
       <!-- carrusel 2 -->
-            <section class="bestSellers"> 
-              <h3>Los más vendidos</h3>
-              <div class="carouselContainerBestSeller">
-                <% (function () { %>
-                  <% if (bestSellersProducts.length > 0) { %>
-                    <i id="left" class="fa-solid fa-angle-left arrow"></i>
-                    <ul class="carousel">
-                      <% bestSellersProducts.forEach(product => { %>
-                        <li class="card"><%- include("../partials/productCard", {product}) %></li>
-                      <% }); %>
-                    </ul>
-                    <i id="right" class="fa-solid fa-angle-right arrow"></i>
-                  <% } else { %>
-                    <div class="no-products-message">Disculpe, no hay productos más vendidos.</div>
-                  <% } %>
-                <% })(); %>
-              </div>
-            </section>
-        <!-- fin carrusel 2 -->
-            <div class="SiteAlert">
-              <p class="alertContainer">
-                <i class="fa-solid fa-triangle-exclamation"></i>Estás visualizando los
-                precios para consumidor final. Si sos mayorista, hacé
-                <a href="/mayorista">&nbsp;click Aquí</a>
-              </p>
-            </div>
+      <section class="sectionCarousel">
+        <div class="carouselDivContainer">
+          <% (function () { %> <% if (bestSellersProducts.length > 0) { %>
+          <i id="left" class="fa-solid fa-angle-left arrow"></i>
+          <ul class="carousel">
+            <% bestSellersProducts.forEach(product => { %>
+            <li class="card">
+              <%- include("../partials/productCard", {product}) %>
+            </li>
+            <% }); %>
+          </ul>
+          <i id="right" class="fa-solid fa-angle-right arrow"></i>
+          <% } else { %>
+          <div class="no-products-message">
+            Disculpe, no hay productos más vendidos.
+          </div>
+          <% } %> <% })(); %>
+        </div>
+      </section>
+      <!-- fin carrusel 2 -->
+
+      <div class="SiteAlert">
+        <p class="alertContainer">
+          <i class="fa-solid fa-triangle-exclamation"></i>Estás visualizando los
+          precios para consumidor final. Si sos mayorista, hacé
+          <a href="/mayorista">&nbsp;click Aquí</a>
+        </p>
+      </div>
+
       <section class="allyBrands">
-        <h3>Nos acompañan</h3>
+        <div class="titulosH3">
+          <h3>Nos acompañan</h3>
+        </div>
         <div class="carouselContainerBrands">
           <img src="/img/logoAyudin.png" alt="logoMarca 1" />
           <img src="/img/logoClorox.png" alt="logoMarca 2" />
