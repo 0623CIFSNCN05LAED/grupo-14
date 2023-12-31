@@ -25,7 +25,7 @@
       <div class="nav">
         <a href="/">Home</a>
         <span>/</span>
-        <a href="/products">Productos</a>
+          <a href="<%= product.href === 'consumidorfinal' ? '/consumidorfinal/products' : '/mayorista/products' %>">Productos</a>
         <span>/</span>
         <a href="#"><%= product.shortName %></a>
       </div>

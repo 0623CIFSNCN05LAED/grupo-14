@@ -1,13 +1,19 @@
 .nav {
-  padding: 5px;
+  font-size: 17px;
+  padding: 5px 10px;
   margin: 10px 5px;
   color: white;
-  background-color: #243a76;
+  background-color: #111e4f;
   display: inline-block;
+  border-radius: 3px;
 }
 
 .nav a {
   color: white;
+  padding: 5px 5px;
+}
+.nav a:hover {
+  color: #55a4da;
 }
 
 .product {
