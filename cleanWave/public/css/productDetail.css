@@ -2,18 +2,22 @@
   font-size: 17px;
   padding: 5px 10px;
   margin: 10px 5px;
-  color: white;
-  background-color: #111e4f;
+  color: #111e4f;
+  background-color: transparent;
   display: inline-block;
   border-radius: 3px;
 }
 
 .nav a {
-  color: white;
+  color: #111e4f;
   padding: 5px 5px;
-}
+  
 .nav a:hover {
   color: #55a4da;
+}
+
+p{
+  margin-top: 5px;
 }
 
 .product {
@@ -23,6 +27,7 @@
   width: 90%;
   text-align: center;
   align-items: center;
+  
 }
 
 .product img {
@@ -38,8 +43,8 @@
 }
 
 .name {
-  background-color: #213e60;
-  color: white;
+  background-color: transparent;
+  color: #111e4f;
   display: inline-block;
   padding: 5px;
   margin-bottom: 5px;
@@ -169,7 +174,7 @@
     text-align: center;
     padding: 10px 25px;
     font-size: 25px;
-    background-color: #6f6f6f;
+    background-color: #111e4f;
     margin-top: 20px;
   
 }

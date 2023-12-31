@@ -6,7 +6,7 @@
     justify-content: center;
     width: 320px;
     height: 250px;
-    box-shadow: 2px 2px 8px 4px #d3d3d3d1;
+    box-shadow: 2px 2px 8px 4px #e6e4e4d1;
     cursor: pointer;
     border-radius: 15px;
   }
@@ -18,7 +18,7 @@
   
   .cardTitle {
     text-align: center;
-    padding: 10px 10px 0 10px;
+    padding: 10px 10px 5px 10px;
   }
   
   .cardBody img {
@@ -30,7 +30,7 @@
   }
   
   .card:hover {
-    box-shadow: 5px 10px 15px #98a0a5;
+    box-shadow: 5px 10px 15px #b4b4b4;
   }
   
   .cardFooter button {
@@ -41,19 +41,23 @@
     max-width: 100%;
     padding: 12px 12px;
     box-sizing: border-box;
-    border: 2px solid #6f6f6f;
+    border-top: 1px solid lightgrey;
+    border-bottom: solid transparent;
+    border-right: solid transparent;
+    border-left: solid transparent;
     border-radius: 0 0 15px 15px;
-    background-color: #6f6f6f;
-    color: #fff;
+    background-color: white;
+    color: #111e4f;
     font-size: 17px;
     transition: all 400ms;
     cursor: pointer;
     margin: 0px;
-  }
+}
+
   
   .cardFooter button:hover {
-    border-color: #111e4f;
-    background-color: #505050;
+    border-color: lightgrey;
+    background-color: lightgrey;
     color: #fff;
   }
 
