@@ -67,57 +67,30 @@
   flex-wrap: wrap;
 }
 
-.card {
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  margin: 2rem;
-  justify-content: center;
-  width: 320px;
-  height: 250px;
-  border: 1px solid lightgray;
-  box-shadow: 2px 2px 8px 4px #d3d3d3d1;
-  border-radius: 15px;
-}
-
-/* Efectos cards */
-.card:hover img {
-  scale: 1.1;
-}
-
-.card:hover {
-  box-shadow: 5px 15px 25px #55a4da;
-}
-/*fin efectos cards  */
-.cardTitle {
-  text-align: center;
-  padding: 10px 10px 0 10px;
-}
-.cardBody {
-  text-align: center;
+#categorySelect {
   padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
-.cardBody img {
-  width: 50%;
+
+#categorySelect option {
+  font-size: 14px;
 }
-.cardFooter button {
-  width: 100%;
-  padding: 15px 0;
-  border: none;
-  border-radius: 0 0 15px 15px;
-  background-color: #243a76;
-  color: #fff;
-  font-size: 17px;
-  transition: all 400ms;
-  cursor: pointer;
+
+#categorySelect:hover,
+#categorySelect:focus {
+  border-color: #5e8cd3;
+  box-shadow: 0 0 5px rgba(94, 140, 211, 0.5);
 }
-.cardFooter button:hover {
-  background-color: #ffa54a;
+
+#categorySelect option:hover {
+  background-color: #dce8ff;
 }
-.cardFooter a {
-  text-decoration: none;
-  color: black;
-}
+
+/* Agrega cualquier estilo adicional según tus preferencias */
+
 
 @media (min-width: 860px) {
   .create {

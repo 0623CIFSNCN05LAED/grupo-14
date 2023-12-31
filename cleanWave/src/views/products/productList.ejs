@@ -5,6 +5,7 @@
 
     <link rel="stylesheet" href="\css\productList.css" />
     <link rel="stylesheet" href="/css/card.css" />
+    <script src="/js/productList.js" defer></script>
   </head>
   <body>
     <% if (products[0].href == "consumidorfinal") { %>
@@ -19,6 +20,22 @@
         <span>/</span>
         <a href="/products">Productos</a>
       </div>
+
+
+
+<select id="categorySelect" name="category">
+  <option value="all">Todas las categorías</option>
+  <option id="categoryOption1" value="1">Pisos</option>
+  <option id="categoryOption2" value="2">Muebles</option>
+  <option id="categoryOption3" value="3">Ropa</option>
+  <option id="categoryOption4" value="4">Papel Higiénico</option>
+  <option id="categoryOption5" value="5">Detergente</option>
+  <option id="categoryOption6" value="6">Lavandina</option>
+</select>
+
+
+
+
       <section class="product"></section>
       <section class="relatedProducts">
         <h3 class="nameList">Lista de productos</h3>
