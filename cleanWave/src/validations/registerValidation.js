@@ -4,18 +4,26 @@ const userDBservice = require("../services/userDBservice");
 module.exports = [
   body("category").notEmpty().withMessage("Debe seleccionar una categoria"),
   body("name").custom((value, { req }) => {
-    if ((req.body.category == "admin" || req.body.category == "cf") && value == "") {
+    if (
+      (req.body.category == "admin" || req.body.category == "cf") &&
+      value == ""
+    ) {
       throw new Error("Por favor, ingrese un Nombre.");
     } else if (
       (req.body.category == "admin" || req.body.category == "cf") &&
       value.length < 2
     ) {
-      throw new Error("El nombre debe tener al menos 2 caracteres. Intenta nuevamente.");
+      throw new Error(
+        "El nombre debe tener al menos 2 caracteres. Intenta nuevamente."
+      );
     }
     return true;
   }),
   body("lastName").custom((value, { req }) => {
-    if ((req.body.category == "admin" || req.body.category == "cf") && value == "") {
+    if (
+      (req.body.category == "admin" || req.body.category == "cf") &&
+      value == ""
+    ) {
       throw new Error("Por favor, ingrese su Apellido.");
     } else if (
       (req.body.category == "admin" || req.body.category == "cf") &&
@@ -86,7 +94,23 @@ module.exports = [
     .withMessage("Por favor, ingrese una contraseña")
     .bail()
     .isLength({ min: 8 })
-    .withMessage("La contraseña debe tener al menos 8 caracteres. Intenta nuevamente."),
+    .withMessage(
+      "La contraseña debe tener al menos 8 caracteres. Intenta nuevamente."
+    )
+    .matches(/[A-Z]/)
+    .withMessage(
+      "La contraseña debe contener al menos una letra mayúscula. Intenta nuevamente."
+    )
+    .bail()
+    .matches(/[a-z]/)
+    .withMessage(
+      "La contraseña debe contener al menos una letra minúscula. Intenta nuevamente."
+    )
+    .bail()
+    .matches(/[\d]/)
+    .withMessage(
+      "La contraseña debe contener al menos un número. Intenta nuevamente."
+    ),
   body("confirmPassword").custom((value, { req }) => {
     if (value !== req.body.password) {
       throw new Error(
@@ -103,7 +127,9 @@ module.exports = [
     let acceptedExtensions = [".jpg", ".png", ".jpeg"];
     let fileExtension = path.extname(file.originalname);
     if (!acceptedExtensions.includes(fileExtension)) {
-      throw new Error(`Debes subir un archivo tipo ${acceptedExtensions.join(", ")}`);
+      throw new Error(
+        `Debes subir un archivo tipo ${acceptedExtensions.join(", ")}`
+      );
     }
     return true;
   }),
