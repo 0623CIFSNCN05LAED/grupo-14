@@ -2,14 +2,14 @@
   font-size: 17px;
   padding: 5px 10px;
   margin: 10px 5px;
-  color: white;
-  background-color: #111e4f;
+  color: #111e4f;
+  background-color: transparent;
   display: inline-block;
   border-radius: 3px;
 }
 
 .nav a {
-  color: white;
+  color: #111e4f;
   padding: 5px 5px;
 }
 .nav a:hover {
@@ -55,7 +55,7 @@
   align-items: center;
   border-top: 3px solid #111e4f;
   border-bottom: 3px solid #111e4f;
-  background-color: #6f6f6f;
+  background-color: #111e4f;
   padding: 5px;
 }
 
@@ -70,13 +70,13 @@
 
 #categorySelect {
   color: white;
-  background-color: #6f6f6f;
+  background-color: #111e4f;
   margin-left: 20px;
   align-self: center;
   padding: 10px 20px;
   font-size: 16px;
   border: 2px solid #111e4f;
-  border-radius: 5px;
+  
   
 }
 
