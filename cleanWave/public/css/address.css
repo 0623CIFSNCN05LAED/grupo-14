@@ -1,18 +1,18 @@
 .div-newAddress {
-  padding: 10px;
-  background-image: linear-gradient(to right, #243a76, #55a4da);
+  padding: 30px;
+  background-color: whitesmoke;
 }
 .form-newAddress {
   display: flex;
   flex-direction: column;
   width: 400px;
-  background: #24303c;
+  background: white;
   padding: 30px;
   margin: auto;
   border-radius: 5px;
   font-family: "Arial";
   color: white;
-  box-shadow: 7px 13px 37px #000;
+  box-shadow: 7px 13px 37px #afadad;
   text-align: center;
   align-items: center;
 }
@@ -20,7 +20,7 @@
 .form-newAddress h2 {
   font-size: 30px;
   margin-bottom: 20px;
-  color: #fff;
+  color: #111e4f;
 }
 
 /* Div contenedor de input y label (con animaciones) START */
@@ -31,11 +31,11 @@
 
 .inputGroupInput {
   font: inherit;
-  color: #fff;
+  color: #111e4f;
   padding: 10px;
   border: none;
   border-radius: 4px;
-  outline: 2px solid #243a76;
+  outline: 2px solid #111e4f;
   background-color: transparent;
   transition: outline-color 500ms;
   width: 100%;
@@ -48,7 +48,7 @@
   top: 0;
   left: 0;
   translate: 10px 10px;
-  color: #fff;
+  color: #111e4f;
   transition: translate 500ms, scale 500ms;
 }
 
@@ -57,7 +57,7 @@
   padding-inline: 5px;
   translate: 10px -10px;
   scale: 0.8;
-  background-color: #24303c;
+  background-color: white;
 }
 /* Div contenedor de input y label (con animaciones) END */
 
@@ -68,7 +68,7 @@
   color: #fff;
   border: none;
   border-radius: 4px;
-  outline: 2px solid #243a76;
+  outline: 2px solid #111e4f;
   background-color: transparent;
   width: 100%;
   font-size: 14px;
@@ -90,17 +90,17 @@
   width: 100%;
   background-color: transparent;
   border-radius: 8px;
-  border: #243a76 2px solid;
+  border: #111e4f 2px solid;
   margin-top: 20px;
   padding: 10px;
   font-size: 17px;
-  color: #243a76;
+  color: #111e4f;
   cursor: pointer;
   transition: all 400ms;
 }
 
 .createAddressButton:hover {
-  background-color: #243a76;
+  background-color: #111e4f;
   color: #fff;
 }
 

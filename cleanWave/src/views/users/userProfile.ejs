@@ -5,28 +5,28 @@
     <link rel="stylesheet" href="/css/userprofile.css" />
     <script src="/js/register.js" defer></script>
   </head>
-<body>
-  <%- include('../partials/header') %>
+  <body>
+    <%- include('../partials/header') %>
 
-  <main class="container">
-    <img class="imageProfile" src="/img/users/<%= user.image %>" />
-    <div class="user-info">
-      <p>Nombre: <%= user.name %></p>
-      <p>Apellido: <%= user.lastname %></p>
-      <p>Email: <%= user.email %></p>
-      <p>Dirección: <%= user.Address %></p>
+    <main class="container">
+      <img class="imageProfile" src="/img/users/<%= user.image %>" />
+      <div class="user-info">
+        <p>Nombre: <%= user.name %></p>
+        <p>Apellido: <%= user.lastname %></p>
+        <p>Email: <%= user.email %></p>
+        <p>Dirección: <%= user.Address %></p>
+      </div>
+    </main>
+
+    <div class="buttons-container">
+      <a href="/users/address">
+        <button type="submit" class="buttons">Agregar dirección</button>
+      </a>
+      <a href="/users/logout">
+        <button type="submit" class="buttons">Cerrar sesión</button>
+      </a>
     </div>
-  </main>
 
-  <div class="buttons-container">
-    <a href="/users/address">
-      <button type="submit" class="buttons">Dirección</button>
-    </a>
-    <a href="/users/logout">
-      <button type="submit" class="buttons">Cerrar sesión</button>
-    </a>
-  </div>
-
-  <%- include("../partials/footer") %>
-</body>
+    <%- include("../partials/footer") %>
+  </body>
 </html>
