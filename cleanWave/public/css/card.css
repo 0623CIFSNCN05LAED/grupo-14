@@ -1,0 +1,63 @@
+
+.card {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+    justify-content: center;
+    width: 320px;
+    height: 250px;
+    box-shadow: 2px 2px 8px 4px #d3d3d3d1;
+    cursor: pointer;
+    border-radius: 15px;
+  }
+  
+  .cardBody {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .cardTitle {
+    text-align: center;
+    padding: 10px 10px 0 10px;
+  }
+  
+  .cardBody img {
+    width: 50%;
+  }
+  
+  .card:hover img {
+    scale: 1.1;
+  }
+  
+  .card:hover {
+    box-shadow: 5px 10px 15px #98a0a5;
+  }
+  
+  .cardFooter button {
+    display: flex;
+    justify-content: center;
+    width: 101%;
+    white-space: nowrap;
+    max-width: 100%;
+    padding: 12px 12px;
+    box-sizing: border-box;
+    border: 2px solid #6f6f6f;
+    border-radius: 0 0 15px 15px;
+    background-color: #6f6f6f;
+    color: #fff;
+    font-size: 17px;
+    transition: all 400ms;
+    cursor: pointer;
+    margin: 0px;
+  }
+  
+  .cardFooter button:hover {
+    border-color: #111e4f;
+    background-color: #505050;
+    color: #fff;
+  }
+
+  .card a {/* saca las lineas subrayadas del precio y titulo */
+    text-decoration: none;
+    color: inherit;
+  }

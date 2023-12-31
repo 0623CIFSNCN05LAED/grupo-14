@@ -1,0 +1,174 @@
+
+.carouselDivContainer {/* wrapper */
+    position: relative;
+    display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  /* Flechas comienzo */
+  .carouselDivContainer .arrow {
+    color: black;
+    top: 50%;
+    height: 50px;
+    width: 50px; 
+    cursor: pointer;
+    font-size: 1.25rem;
+    position: absolute;
+    text-align: center;
+    line-height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
+  }
+  .sectionCarousel i:active {
+    transform: translateY(-50%) scale(0.85);
+  }
+  .sectionCarousel i:first-child {
+    left: 0px;
+  }
+  .sectionCarousel i:last-child {
+    right: 0px;
+  }
+    /* flechas fin */
+    
+  .carouselDivContainer .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 1) - 100px);
+    overflow-x:hidden;
+    scroll-snap-type: x mandatory;
+    gap: 5px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+  .carousel.no-transition {
+    scroll-behavior: auto;
+  }
+  .carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+  .carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+  }
+  .carousel :where(.card, .img, .cardTitle, .cardBody, .cardFooter) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+/* RESPONSIVE CARRUSEL */
+@media screen and (min-width: 600px) {
+    .carouselDivContainer .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((120% / 2) );
+    
+    overflow-x:hidden;
+    scroll-snap-type: x mandatory;
+    gap: 5px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    }
+  }
+  @media screen and (min-width: 700px) {
+    .carouselDivContainer .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 2) );
+    
+    overflow-x:hidden;
+    scroll-snap-type: x mandatory;
+    gap: 5px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    }
+  }
+    
+  
+  @media screen and (min-width: 900px) {
+    .carouselDivContainer .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x:hidden;
+    scroll-snap-type: x mandatory;
+    gap: 5px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+      grid-auto-columns: calc((100% / 2) - 100px);
+    }
+  }
+  
+  
+  @media screen and (min-width: 1200px) {
+  
+    .carouselDivContainer .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x:hidden;
+    scroll-snap-type: x mandatory;
+    gap: 5px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+      grid-auto-columns: calc((100% / 3) - 30px);
+      }
+    
+  }
+  
+  
+  @media screen and (min-width: 1250px) {
+    .carouselDivContainer .carousel {
+      display: grid;
+      grid-auto-flow: column;
+      overflow-x:hidden;
+      scroll-snap-type: x mandatory;
+      gap: 5px;
+      border-radius: 8px;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+        grid-auto-columns: calc((100% / 3) - 80px);
+      }
+    }
+  
+  @media screen and (min-width: 1600px) {
+    .carouselDivContainer .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x:hidden;
+    scroll-snap-type: x mandatory;
+    gap: 5px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    grid-auto-columns: calc((100% / 3) - 130px);
+    }
+  }
+  
+  
+  @media screen and (min-width: 1700px) {
+    .carouselDivContainer .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x:hidden;
+    scroll-snap-type: x mandatory;
+    gap: 5px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    grid-auto-columns: calc((100% / 4) - 100px);
+    }
+    
+  }

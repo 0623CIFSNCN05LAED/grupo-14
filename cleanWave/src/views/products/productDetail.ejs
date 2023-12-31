@@ -3,7 +3,10 @@
   <head>
     <%- include("../partials/head", {title: 'Detalle de producto'}) %>
 
+    <link rel="stylesheet" href="/css/card.css" />
+    <link rel="stylesheet" href="/css/carousel.css" />
     <link rel="stylesheet" href="/css/productDetail.css" />
+    <script src="/js/carousel.js" defer></script>
     <script src="/js/productDetail.js" defer></script>
     
     <% if(locals.userLogged){ %> 
@@ -27,7 +30,7 @@
         <a href="#"><%= product.shortName %></a>
       </div>
       <section class="product">
-        <div class="card">
+        <div class="cardDetail">
           <div>
             <img src="/img/products/<%= product.image %>" alt="producto" />
           </div>
@@ -82,10 +85,10 @@
           </div>
         </div>
       </section>
-      <section class="relatedProducts">
+      <h3 class="titleRelatedProducts">Productos relacionados</h3>
+      <section class="sectionCarousel">
         <!-- Carrusel -->
-        <h3 class="titleRelatedProducts">Productos relacionados</h3>
-        <div class="wrapper">
+        <div class="carouselDivContainer">
           <% if (relatedProducts.length > 0) { %>            
           <i id="left" class="fa-solid fa-angle-left arrow"></i>
         <ul class="carousel">     

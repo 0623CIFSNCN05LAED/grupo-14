@@ -98,6 +98,16 @@
 }
 
 /* main banner END */
+.titulosH3 h3 {
+  /* Mega Oportunidades, Mas vendidos, Nos acompañan */
+  color: white;
+  border-top: 3px solid #111e4f;
+  border-bottom: 3px solid #111e4f;
+  text-align: center;
+  padding: 10px 25px;
+  font-size: 25px;
+  background-color: #6f6f6f;
+}
 
 /* foto con beneficios consumidor inicio*/
 #fotoLimpiar {
@@ -105,11 +115,10 @@
   height: 600px;
   margin: 0px;
   margin-bottom: -5px;
-  object-fit: cover; /* Hace que la imagen se ajuste y cubra el contenedor sin distorsionarse */
+  object-fit: cover;
 }
 
 .benefitsContainer {
-  
   position: absolute;
   height: 50%;
   top: 50%;
@@ -117,7 +126,7 @@
   transform: translate(-50%, -50%);
   text-align: center;
   margin: 0px;
-  background-color: rgba(255, 255, 255, 0); 
+  background-color: rgba(255, 255, 255, 0);
 }
 
 .benefitsTitle {
@@ -146,193 +155,21 @@
 
 .benefitsList i {
   font-size: 12px;
- 
 }
 
 /* fin beneficios consumidor final */
-
-/* Opportunities START */
-.opportunities h3,
-.bestSellers h3 {
-  color: white;
-  text-align: center;
-  padding: 10px 25px;
-  font-size: 25px;
-  background-color: #6f6f6f;
-}
-
-/* carrusel */
-
-
-.carouselContainerOpportunities, 
-.carouselContainerBestSeller {/* wrapper */
-  position: relative;
-  display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-/* Flechas comienzo */
-.carouselContainerOpportunities .arrow,
-.carouselContainerBestSeller .arrow {
-  color: black;
-  top: 50%;
-  height: 50px;
-  width: 50px; 
-  cursor: pointer;
-  font-size: 1.25rem;
-  position: absolute;
-  text-align: center;
-  line-height: 50px;
-  background: #fff;
-  border-radius: 50%;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.23);
-  transform: translateY(-50%);
-  transition: transform 0.1s linear;
-}
-.opportunities i:active,
-.bestSellers i:active{
-  transform: translateY(-50%) scale(0.85);
-}
-.opportunities i:first-child,
-.bestSellers i:first-child{
-  left: 0px;
-}
-.opportunities i:last-child,
-.bestSellers i:last-child{
-  right: 0px;
-}
-
-
-/* oculta flechas cuando solo hay un producto */
-.carouselContainerOpportunities:only-child .arrow,
-.carouselContainerBestSeller:only-child .arrow {
-  display: none;
-}
-
-
-.carouselContainerOpportunities .carousel,
-.carouselContainerBestSeller .carousel{
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: calc((100% / 1) - 100px);
-  overflow-x:hidden;
-  scroll-snap-type: x mandatory;
-  gap: 5px;
-  border-radius: 8px;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-}
-.carousel::-webkit-scrollbar {
-  display: none;
-}
-.carousel.no-transition {
-  scroll-behavior: auto;
-}
-.carousel.dragging {
-  scroll-snap-type: none;
-  scroll-behavior: auto;
-}
-.carousel.dragging .card {
-  cursor: grab;
-  user-select: none;
-}
-.carousel :where(.card, .img, .cardTitle, .cardBody, .cardFooter) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.card a {/* saca las lineas subrayadas del precio y titulo */
-  text-decoration: none;
-  color: inherit;
-}
-
-.carousel .card {
-  
-  display: flex;
-  flex-direction: column;
-  margin: 2rem;
-  justify-content: center;
-  width: 320px;
-  height: 250px;
-  
-  box-shadow: 2px 2px 8px 4px #d3d3d3d1;
-  cursor: pointer;
-  border-radius: 15px;
-  
-}
-
-.carousel .cardBody {
-  padding: 20px;
-  text-align: center;
-  
-}
-.carousel .cardTitle {
-  
-  text-align: center;
-  padding: 10px 10px 0 10px;
-}
-.carousel .cardBody img {
-  width: 50%;
-  /* object-fit: cover; */
-}
-/* efectos img */
-.carousel .card:hover img{
-	scale:  1.1;
-}
-
-.carousel .card:hover {
-	box-shadow: 5px 10px 15px #98a0a5;
-    
-}
-/* fin efectos */
-
-.carousel .cardFooter button {
-  display: flex;
-  justify-content: center;
-  width: 101%;
-  white-space: nowrap;
-  max-width: 100%;
-  padding: 12px 12px;
-  box-sizing: border-box;
-  border: 2px solid #6f6f6f; 
-  border-radius: 0 0 15px 15px;
-  background-color:#6f6f6f; 
-  color:  #fff; 
-  font-size: 17px;
-  transition: all 400ms;
-  cursor: pointer;
-  margin: 0px;
-}
-
-.carousel .cardFooter button:hover {
-  background-color: #505050; 
-  color:#fff; 
-}
-
 
 /* beneficios START*/
 
 .benefitsSection {
   position: relative;
-
 }
 
 /* Nos acompañan START */
-
 .allyBrands {
   position: relative;
   overflow: hidden;
   margin-top: -5px;
-  
-}
-
-.allyBrands h3 {
-  color: white;
-  text-align: center;
-  padding: 10px 25px;
-  font-size: 25px;
-  background-color: #6f6f6f;
 }
 
 .carouselContainerBrands {
@@ -354,7 +191,6 @@
 .carouselContainerBrands .leftArrow {
   border-radius: 0px;
 }
-
 
 /*Site Alert START */
 
@@ -381,126 +217,9 @@
 .alertContainer a {
   color: white;
   text-decoration: none;
-  transition: color 0.3s; /* Agregado para suavizar la transición del color */
+  transition: color 0.3s; /*suavizar la transición del color */
 }
 
 .alertContainer a:hover {
-  color:#55a4da; ;
+  color: #55a4da;
 }
-
-
-/* RESPONSIVE CARRUSEL */
-@media screen and (min-width: 600px) {
-  .carouselContainerOpportunities .carousel,
-  .carouselContainerBestSeller .carousel {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: calc((120% / 2) );
-  
-  overflow-x:hidden;
-  scroll-snap-type: x mandatory;
-  gap: 5px;
-  border-radius: 8px;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  }
-}
-@media screen and (min-width: 700px) {
-  .carouselContainerOpportunities .carousel,
-  .carouselContainerBestSeller .carousel {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: calc((100% / 2) );
-  
-  overflow-x:hidden;
-  scroll-snap-type: x mandatory;
-  gap: 5px;
-  border-radius: 8px;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  }
-}
-  
-
-@media screen and (min-width: 900px) {
-  .carouselContainerOpportunities .carousel,
-  .carouselContainerBestSeller .carousel {
-  display: grid;
-  grid-auto-flow: column;
-  overflow-x:hidden;
-  scroll-snap-type: x mandatory;
-  gap: 5px;
-  border-radius: 8px;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-    grid-auto-columns: calc((100% / 2) - 100px);
-  }
-}
-
-
-@media screen and (min-width: 1200px) {
-
-  .carouselContainerOpportunities .carousel,
-  .carouselContainerBestSeller .carousel {
-  display: grid;
-  grid-auto-flow: column;
-  overflow-x:hidden;
-  scroll-snap-type: x mandatory;
-  gap: 5px;
-  border-radius: 8px;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-    grid-auto-columns: calc((100% / 3) - 30px);
-    }
-  
-}
-
-
-@media screen and (min-width: 1250px) {
-  .carouselContainerOpportunities .carousel,
-  .carouselContainerBestSeller .carousel {
-    display: grid;
-    grid-auto-flow: column;
-    overflow-x:hidden;
-    scroll-snap-type: x mandatory;
-    gap: 5px;
-    border-radius: 8px;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-      grid-auto-columns: calc((100% / 3) - 80px);
-    }
-  }
-
-@media screen and (min-width: 1600px) {
-  .carouselContainerOpportunities .carousel,
-  .carouselContainerBestSeller .carousel {
-  display: grid;
-  grid-auto-flow: column;
-  overflow-x:hidden;
-  scroll-snap-type: x mandatory;
-  gap: 5px;
-  border-radius: 8px;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  grid-auto-columns: calc((100% / 3) - 130px);
-  }
-}
-
-
-@media screen and (min-width: 1700px) {
-  .carouselContainerOpportunities .carousel, 
-  .carouselContainerBestSeller .carousel {
-  display: grid;
-  grid-auto-flow: column;
-  overflow-x:hidden;
-  scroll-snap-type: x mandatory;
-  gap: 5px;
-  border-radius: 8px;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  grid-auto-columns: calc((100% / 4) - 100px);
-  }
-  
-}
-
-/* FIN RESPONSIVE CARRUSEL */
