@@ -1,21 +1,28 @@
 .nav {
-  padding: 5px;
+  font-size: 17px;
+  padding: 5px 10px;
   margin: 10px 5px;
   color: white;
-  background-color: #243a76;
+  background-color: #111e4f;
   display: inline-block;
+  border-radius: 3px;
 }
 
 .nav a {
   color: white;
+  padding: 5px 5px;
 }
+.nav a:hover {
+  color: #55a4da;
+}
+
 
 .button {
   margin-bottom: 10px;
 }
 
 .create {
-  margin: 0px 5px;
+  margin: 20px 5px;
   color: #fff;
   background-color: green;
   width: 20%;
@@ -42,15 +49,6 @@
   align-self: center;
 }
 
-
-
-#categorySelect {
-  background-color: #6f6f6f;
-  color: white;
-  border: none;
-  padding: 5px;
-}
-
 .nameList {
   display: flex;
   justify-content: space-between;
@@ -71,25 +69,20 @@
 }
 
 #categorySelect {
+  color: white;
+  background-color: #6f6f6f;
   margin-left: 20px;
   align-self: center;
   padding: 10px 20px;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: 2px solid #111e4f;
   border-radius: 5px;
   
 }
 
-
-#categorySelect option {
-  font-size: 14px;
-  padding: 10px
- 
-}
-
 #categorySelect:hover,
 #categorySelect:focus {
-  border-color: #111e4f;
+  border-color: #ccc;
   box-shadow: 0 0 5px rgba(94, 140, 211, 0.5);
 }
 

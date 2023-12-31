@@ -2,12 +2,43 @@
 <html lang="es">
   <head>
     <%- include("../partials/head", {title: 'Sobre nosotros'}) %>
+    <link rel="stylesheet" href="/css/nosotros.css" />
+   
+
   </head>
   <body>
     <%- include('../partials/header') %> 
 
-    <main>Soy la pagina nosotros!</main>
+    <main>
+      <div class="nosotros-container">
+        <h1 class="marcaTitulo">Bienvenidos a Clean Wave</h1>
+        <h1 class="titulos">Sobre Nosotros</h1>
+
+        <section class="descripcion">
+          <p>Somos Clean Wave, tu socio confiable en la provisión de productos de limpieza de la más alta calidad.</p>
+
+          <p>Nuestra dedicación a la excelencia nos lleva a superar la especativa de los clientes , sirviendo tanto  a consumidores finales como
+             a mercados minoristas. </p>
+             
+        </section>
+
+        <section class="segmento-objetivo">
+          <h2 class="titulos" >Segmento Objetivo</h2>
+          <p>Nuestro segmento objetivo está conformado por:</p>
+          <p>Líderes de hogar encargados de hacer las compras.</p>
+          <p>Mercados minoristas supermercados, mercados de barrio, etc.</p>
+          
+        </section>
+
+        <section class="precios">
+          <h2 class="titulos" >Precios Diferenciados</h2>
+          <p>Ofrecemos precios diferentes en base a la cantidad de productos adquiridos. 
+            Entendemos las necesidades de nuestros clientes y ajustamos nuestras ofertas para satisfacerlas.</p>
+        </section>
+      </div>
+    </main>
 
     <%- include("../partials/footer") %>
   </body>
 </html>
+
