@@ -1,25 +1,32 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
-    <%- include("../partials/head", {title: 'Inicio de sesión'}) %>
-
-    <link rel="stylesheet" href="/css/userProfile.css" />
+    <%- include("../partials/head", {title: 'Registro usuario'}) %>
+    <link rel="stylesheet" href="/css/register.css" />
+    <link rel="stylesheet" href="/css/userprofile.css" />
+    <script src="/js/register.js" defer></script>
   </head>
+<body>
+  <%- include('../partials/header') %>
 
-  <body>
-    <% if (userLogged.mayorista != null) { %> <%- include
-    ("../partials/headerMayorista") %> <% } else { %> <%-
-    include('../partials/header') %> <% } %>
-    <main>
-      <img class="imageProfile" src="/img/users/<%= user.image %>" />
+  <main class="container">
+    <img class="imageProfile" src="/img/users/<%= user.image %>" />
+    <div class="user-info">
+      <p>Nombre: <%= user.name %></p>
+      <p>Apellido: <%= user.lastname %></p>
+      <p>Email: <%= user.email %></p>
+      <p>Dirección: <%= user.Address %></p>
+    </div>
+  </main>
 
-      <a href="/users/address"
-        ><button type="submit" class="buttons">Dirección</button></a
-      >
-      <a href="/users/logout"
-        ><button type="submit" class="buttons">Cerrar sesión</button></a
-      >
-    </main>
-    <%- include('../partials/footer') %>
-  </body>
+  <div class="buttons-container">
+    <a href="/users/address">
+      <button type="submit" class="buttons">Dirección</button>
+    </a>
+    <a href="/users/logout">
+      <button type="submit" class="buttons">Cerrar sesión</button>
+    </a>
+  </div>
+
+  <%- include("../partials/footer") %>
+</body>
 </html>

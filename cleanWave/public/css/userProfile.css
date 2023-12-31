@@ -1,54 +1,67 @@
-main {
-  display: block;
-  flex-direction: row;
-  align-items: flex-start;
-  background-color: transparent;
+.container {
+  text-align: center;
+  padding: 20px;
 }
 
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.logo img {
-  width: 50%;
-  padding: 10px;
+.user-info {
+  margin-top: 20px;
 }
 
 .imageProfile {
-  display: block;
-  margin-bottom: 200px;
-  padding: 10px;
-  border-style: outset;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .buttons {
-  display: block;
-  width: 20%;
-  background-color: transparent;
-  border-radius: 8px;
-  border: #243a76 2px solid;
-  margin-top: 20px;
-  padding: 10px;
-  font-size: 17px;
-  color: #243a76;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  transition: all 400ms;
+  margin: 5px;
+  width: 100%;
 }
 
 .buttons:hover {
-  background-color: #243a76;
-  color: #fff;
+  background-color: #0056b3;
 }
 
-@media (min-width: 1290px) {
-  .buttons {
-    width: 10%;
+/* Estilos para pantallas más grandes (más de 1290px de ancho) */
+@media screen and (min-width: 1290px) {
+  .container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
   }
-  .logo img {
-    width: 100%;
-    padding: 10px;
+
+  .user-info {
+    margin-left: 20px;
+    text-align: left;
+  }
+
+  .imageProfile {
+    order: -1; /* Cambiar el orden para que la imagen esté al principio */
+    margin-right: 20px;
+  }
+
+  .buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .buttons {
+    width: auto; /* Ancho automático para adaptarse al contenido */
+    margin:  5px; /* Pequeño margen entre botones */
   }
 }
