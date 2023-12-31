@@ -40,12 +40,12 @@
 }
 
 .bottomCar button {
-  border: 1px green solid;
+  border: 1px lightgray solid;
   height: 15px;
   width: 15px;
   border-radius: 50%;
   cursor: pointer;
-  background-color: white;
+  background-color: lightgrey;
 }
 
 .leftArrow {
@@ -56,7 +56,7 @@
   cursor: pointer;
   width: 30px;
   height: 60px;
-  background-color: #6f6f6f;
+  background-color: transparent;
   border: none;
   border-bottom-right-radius: 50px;
   border-top-right-radius: 50px;
@@ -64,7 +64,7 @@
 }
 
 .leftArrow:hover {
-  background-color: #fff;
+  background-color: transparent;
 }
 
 .leftArrow i {
@@ -80,7 +80,7 @@
   cursor: pointer;
   width: 30px;
   height: 60px;
-  background-color: #6f6f6f;
+  background-color: transparent;
   border: none;
   border-bottom-right-radius: 50px;
   border-top-right-radius: 50px;
@@ -88,7 +88,7 @@
 }
 
 .rightArrow:hover {
-  background-color: #fff;
+  background-color: transparent;
 }
 
 .rightArrow i {
@@ -104,13 +104,13 @@
 .loginOutsideBox {
   height: min-content;
   padding: 5px 5%;
-  background-color: #111e4f;
-  border-top: 3px solid #6f6f6f;
+  background-color: whitesmoke;
+  border-top: 3px solid whitesmoke;
 }
 
 .loginBanner {
   color: #fff;
-  background-color: #111e4f;
+  background-color: whitesmoke;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -120,25 +120,26 @@
 }
 
 .loginBannerTitle {
-  color: #fff;
-  padding: 0 50px;
+  color: #111e4f;
+  padding: 30px;
   font-size: 30px;
   text-align: center;
 }
 
 .loginBannerLine {
-  color: #fff;
+  color: #111e4f;
   width: 70px;
   height: 3px;
-  background-color: white;
+  background-color: #111e4f;
   margin: 5px auto;
 }
 
 .loginBannerText,
 .loginBannerText a {
-  color: white;
+  color: #111e4f;
   text-decoration: none;
   transition: color 0.3s;
+  padding: 15px;
 }
 
 .loginBannerText a:hover {
@@ -148,12 +149,13 @@
 .titulosH3 h3 {
   /* Mega Oportunidades, Mas vendidos, Nos acompañan */
   color: white;
-  border-top: 3px solid #111e4f;
+  border-top: 1px solid lightgrey;
   border-bottom: 3px solid #111e4f;
   text-align: center;
   padding: 10px 25px;
+  
   font-size: 25px;
-  background-color: #6f6f6f;
+  background-color: #111e4f;
 }
 
 /* New Mayorista */
