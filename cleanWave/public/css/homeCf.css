@@ -98,10 +98,11 @@
 }
 
 /* main banner END */
-
 .titulosH3 h3 {
   /* Mega Oportunidades, Mas vendidos, Nos acompañan */
   color: white;
+  border-top: 3px solid #111e4f;
+  border-bottom: 3px solid #111e4f;
   text-align: center;
   padding: 10px 25px;
   font-size: 25px;

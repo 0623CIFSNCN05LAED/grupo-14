@@ -42,13 +42,61 @@
   align-self: center;
 }
 
-.nameList {
-  background-color: #213e60;
+
+
+#categorySelect {
+  background-color: #6f6f6f;
   color: white;
-  display: inline-block;
+  border: none;
   padding: 5px;
-  margin-bottom: 5px;
 }
+
+.nameList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 3px solid #111e4f;
+  border-bottom: 3px solid #111e4f;
+  background-color: #6f6f6f;
+  padding: 5px;
+}
+
+.nameList h3 {
+  color: white;
+  font-size: 25px;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#categorySelect {
+  margin-left: 20px;
+  align-self: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  
+}
+
+
+#categorySelect option {
+  font-size: 14px;
+  padding: 10px
+ 
+}
+
+#categorySelect:hover,
+#categorySelect:focus {
+  border-color: #111e4f;
+  box-shadow: 0 0 5px rgba(94, 140, 211, 0.5);
+}
+
+#categorySelect option:hover {
+  background-color: #243a76;
+}
+
 
 .cart:hover {
   background-color: #55a4da;
@@ -67,27 +115,6 @@
   flex-wrap: wrap;
 }
 
-#categorySelect {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-#categorySelect option {
-  font-size: 14px;
-}
-
-#categorySelect:hover,
-#categorySelect:focus {
-  border-color: #5e8cd3;
-  box-shadow: 0 0 5px rgba(94, 140, 211, 0.5);
-}
-
-#categorySelect option:hover {
-  background-color: #dce8ff;
-}
 
 /* Agrega cualquier estilo adicional según tus preferencias */
 

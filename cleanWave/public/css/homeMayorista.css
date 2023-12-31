@@ -103,9 +103,9 @@
 
 .loginOutsideBox {
   height: min-content;
-  padding: 10px 5%;
+  padding: 5px 5%;
   background-color: #111e4f;
-  border-top: 10px solid #6f6f6f;
+  border-top: 3px solid #6f6f6f;
 }
 
 .loginBanner {
@@ -116,7 +116,7 @@
   justify-content: center;
   align-items: center;
   color: #111e4f;
-  padding: 20px 10px;
+  padding: 5px 10px;
 }
 
 .loginBannerTitle {
@@ -131,7 +131,7 @@
   width: 70px;
   height: 3px;
   background-color: white;
-  margin: 15px auto;
+  margin: 5px auto;
 }
 
 .loginBannerText,
@@ -148,6 +148,8 @@
 .titulosH3 h3 {
   /* Mega Oportunidades, Mas vendidos, Nos acompañan */
   color: white;
+  border-top: 3px solid #111e4f;
+  border-bottom: 3px solid #111e4f;
   text-align: center;
   padding: 10px 25px;
   font-size: 25px;
@@ -309,7 +311,7 @@
 .allyBrands {
   position: relative;
   overflow: hidden;
-  margin-top: -5px;
+  margin-top: 5px;
 }
 
 .carouselContainerBrands {

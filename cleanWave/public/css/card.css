@@ -52,6 +52,7 @@
   }
   
   .cardFooter button:hover {
+    border-color: #111e4f;
     background-color: #505050;
     color: #fff;
   }

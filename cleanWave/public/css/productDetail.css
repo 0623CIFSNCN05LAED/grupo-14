@@ -157,12 +157,15 @@
 /* PRODUCTOS RELACIONADOS  */
 
 .titleRelatedProducts {
-  margin-top: 20px;
-  color: white;
-  text-align: center;
-  padding: 10px 25px;
-  font-size: 25px;
-  background-color: #6f6f6f;
+    color: white;
+    border-top: 3px solid #111e4f;
+    border-bottom: 3px solid #111e4f;
+    text-align: center;
+    padding: 10px 25px;
+    font-size: 25px;
+    background-color: #6f6f6f;
+    margin-top: 20px;
+  
 }
 
 @media screen and (min-width: 1200px) {

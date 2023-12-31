@@ -3,7 +3,7 @@ document.getElementById('categorySelect').addEventListener('change', function() 
   let foundProducts = false;
 
   document.querySelectorAll('.allProducts .card').forEach(function(productCard) {
-    var cardCategoryId = productCard.getAttribute('data-category-id');
+    let cardCategoryId = productCard.getAttribute('data-category-id');
 
     if (selectedCategoryId === 'all' || selectedCategoryId === cardCategoryId) {
       productCard.style.display = 'flex';
