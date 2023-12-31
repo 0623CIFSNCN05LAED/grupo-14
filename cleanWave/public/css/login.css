@@ -1,8 +1,12 @@
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: black;
+  background-color: whitesmoke;
 }
 
 .logo {
@@ -13,8 +17,10 @@ main {
 }
 
 .logo img {
-  width: 50%;
-  padding: 10px;
+width: 50%;
+filter: drop-shadow(16px 7px 8px #424246);
+margin-top: 30px;
+margin-bottom: 30px;
 }
 
 .div-newProduct {
@@ -25,7 +31,8 @@ main {
 .form-newProduct {
   display: flex;
   flex-direction: column;
-  background: #6f6f6f;
+  background: whitesmoke;
+  border: 2px solid #111e4f;
   padding: 30px;
   margin: auto;
   border-radius: 5px;
@@ -33,6 +40,9 @@ main {
   text-align: center;
 }
 
+.check{
+  color: #111e4f;
+}
 /* Div contenedor de input y label (con animaciones) START */
 .inputGroup {
   position: relative;
@@ -45,7 +55,7 @@ main {
   padding: 10px;
   border: none;
   border-radius: 4px;
-  outline: 2px solid #243a76;
+  outline: 2px solid #111e4f;
   background-color: transparent;
   transition: outline-color 500ms;
   width: 100%;
@@ -58,8 +68,9 @@ main {
   top: 0;
   left: 0;
   translate: 10px 10px;
-  color: #fff;
+  color:#111e4f;
   transition: translate 500ms, scale 500ms;
+
 }
 
 .inputGroupInput:focus + .inputGroupLabel,
@@ -67,7 +78,8 @@ main {
   padding-inline: 5px;
   translate: 10px -10px;
   scale: 0.8;
-  background-color: #6f6f6f;
+  background-color: whitesmoke;
+  
 }
 /* Div contenedor de input y label (con animaciones) END */
 
@@ -80,11 +92,11 @@ main {
   width: 100%;
   background-color: transparent;
   border-radius: 8px;
-  border: #243a76 2px solid;
+  border: #111e4f 2px solid;
   margin-top: 20px;
   padding: 10px;
   font-size: 17px;
-  color: #243a76;
+  color: #111e4f;
   cursor: pointer;
   transition: all 400ms;
 }

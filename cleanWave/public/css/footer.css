@@ -1,8 +1,12 @@
 /*        inicio        */
 /*        footer      */
+*{
+  font-family: Arial, Helvetica, sans-serif;
 
+}
 .txt-c {
   text-align: center;
+  padding: 5px;
 }
 .b-color {
   background-color: #111e4f;
@@ -21,20 +25,41 @@
   color: #eee;
 }
 
-.mail-m {
-  margin-left: 20%;
-  margin-right: 20%;
-  margin-bottom: 3%;
-}
-.button-p {
-  margin-left: 30%;
-  margin-right: 30%;
-  margin-bottom: 15px;
+.i-mail{
+  background-color: transparent;
+  border-radius: 8px;
+  border: solid 1px white;
+  padding: 2px;
+  width: 400px;
+  margin-top:10px ;
+  margin-bottom:10px ;
+  align-items: center ;
+  color: white;
+  
 }
 
+.button {
+  width: 100%;
+  background-color: transparent;
+  border-radius: 8px;
+  border: white 1px solid;
+  padding: 5px;
+  font-size: 17px;
+  color: white;
+  cursor: pointer;
+  transition: all 400ms;
+  width: 20%;
+  margin-bottom: 8px;
+}
+
+.button:hover {
+  background-color: #243a76;
+  color: #fff;
+}
 .box1-1 {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .box1-2 {
@@ -71,6 +96,7 @@
   width: 100%;
   text-align: center;
   margin-top: 10%;
+  margin-bottom: 5%;
 }
 .redes-m {
   margin-left: 5%;
@@ -81,8 +107,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: 3%;
   width: 100%;
+  background-color: whitesmoke;
 }
 
 /* Final Redes */
@@ -99,8 +125,9 @@
 }
 
 .icons-margin {
-  margin: 4%;
+  padding: 4%;
   color: #111e4f;
+  background-color: whitesmoke;
 }
 /* final envio full-gratis-atencion cliente */
 /* inicio afip img */
@@ -126,14 +153,15 @@
   /* Inicio Newsletter */
 
   .title-nl {
-    padding-top: 25px;
-    margin-top: 30px;
+    padding-top: 20px;
+    padding-bottom:15px ;
   }
 
   .mail-m {
+    margin-top: 15px;
     margin-left: 30%;
     margin-right: 30%;
-    margin-bottom: 1%;
+    margin-bottom: 15px;
     padding: 7px;
   }
 
@@ -191,5 +219,14 @@
     margin-right: 10px;
     padding-right: 20px;
     color: #eee;
+  }
+  .i-mail{
+    margin-top:10px ;
+    margin-bottom: 10px;
+    width:30% ;
+    padding: 5px;
+  }
+  .button{
+    width: 15%;
   }
 }
