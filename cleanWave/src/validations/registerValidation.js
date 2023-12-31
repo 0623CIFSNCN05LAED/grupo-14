@@ -1,4 +1,5 @@
 const { body } = require("express-validator");
+const userDBservice = require("../services/userDBservice");
 
 module.exports = [
   body("category").notEmpty().withMessage("Debe seleccionar una categoria"),
@@ -72,6 +73,14 @@ module.exports = [
         );
       }
       return true;
+    })
+    .custom(async (value) => {
+      console.log(await userDBservice.findByEmail(value));
+      if (await userDBservice.findByEmail(value)) {
+        throw new Error(
+          "El correo electrónico ya se encuentra registrado, por favor intente con otro."
+        );
+      }
     }),
   body("password")
     .notEmpty()
