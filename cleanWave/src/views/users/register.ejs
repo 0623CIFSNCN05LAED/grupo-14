@@ -139,6 +139,12 @@
           <div class="inputGroup">
             <label class="p-newRegister">Foto de perfil</label>
             <input class="inputGroupInput" type="file" id="image" name="image" accept="image/png, .jpeg, .jpg"/>
+            <div>
+              <p class="errorMessage" id="imageError"></p>
+              <% if(locals.errors && errors.image) { %>
+                <p><%= errors.image.msg %></p>
+              <% } %>
+            </div>
           </div>
 
           <div class="inputGroup">

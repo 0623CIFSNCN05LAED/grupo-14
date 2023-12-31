@@ -28,6 +28,14 @@ window.addEventListener("DOMContentLoaded", function () {
     return expresionRegular.test(correo);
   }
 
+  function validImage(image) {
+    const acceptedExtensions = /\.(jpg|jpeg|png)?$/;
+    if (image) {
+      return acceptedExtensions.test(image.toLowerCase());
+    }
+    return true;
+  }
+
   const commonValidations = [
     {
       field: "tel",
@@ -49,6 +57,15 @@ window.addEventListener("DOMContentLoaded", function () {
       ],
     },
     {
+      field: "image",
+      checks: [
+        {
+          check: (input) => validImage(input.value),
+          message: "Debes subir un archivo tipo .jpg, .png o .jpeg",
+        },
+      ],
+    },
+    {
       field: "password",
       checks: [
         {
@@ -57,8 +74,7 @@ window.addEventListener("DOMContentLoaded", function () {
         },
         {
           check: (input) => input.value.length >= 8,
-          message:
-            "La contraseña debe tener al menos 8 caracteres. Intenta nuevamente.",
+          message: "La contraseña debe tener al menos 8 caracteres. Intenta nuevamente.",
         },
       ],
     },
@@ -91,8 +107,7 @@ window.addEventListener("DOMContentLoaded", function () {
         },
         {
           check: (input) => input.value.length >= 2,
-          message:
-            "El nombre debe tener al menos 2 caracteres. Intenta nuevamente.",
+          message: "El nombre debe tener al menos 2 caracteres. Intenta nuevamente.",
         },
       ],
     },
@@ -105,8 +120,7 @@ window.addEventListener("DOMContentLoaded", function () {
         },
         {
           check: (input) => input.value.length >= 2,
-          message:
-            "El apellido debe tener al menos 2 caracteres. Intenta nuevamente.",
+          message: "El apellido debe tener al menos 2 caracteres. Intenta nuevamente.",
         },
       ],
     },
@@ -137,8 +151,7 @@ window.addEventListener("DOMContentLoaded", function () {
         },
         {
           check: (input) => input.value.length >= 2,
-          message:
-            "El nombre debe tener al menos 2 caracteres. Intenta nuevamente.",
+          message: "El nombre debe tener al menos 2 caracteres. Intenta nuevamente.",
         },
       ],
     },
@@ -151,8 +164,7 @@ window.addEventListener("DOMContentLoaded", function () {
         },
         {
           check: (input) => input.value.length >= 2,
-          message:
-            "El apellido debe tener al menos 2 caracteres. Intenta nuevamente.",
+          message: "El apellido debe tener al menos 2 caracteres. Intenta nuevamente.",
         },
       ],
     },
@@ -283,9 +295,7 @@ window.addEventListener("DOMContentLoaded", function () {
   function inputValidation(validation, input, inputErrorMessage) {
     if (validation.checks) {
       // Busca el primer check que no se cumple y muestra mensaje
-      const failedCheck = validation.checks.find(
-        (check) => !check.check(input)
-      );
+      const failedCheck = validation.checks.find((check) => !check.check(input));
       if (failedCheck) {
         inputErrorMessage.innerText = failedCheck.message;
         inputErrorMessage.classList.add("display");
