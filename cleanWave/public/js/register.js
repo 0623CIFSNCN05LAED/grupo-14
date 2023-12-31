@@ -2,11 +2,6 @@ window.addEventListener("DOMContentLoaded", function () {
   const formFieldElements = document.querySelectorAll(".inputGroup");
   const category = document.getElementById("category");
 
-  formFieldElements.forEach(function (field) {
-    field.style.display = "none";
-  });
-
-  /* limpia inputs y mensajes de error al cambiar opcion en el select */
   function clearInputsAndErrorMessages() {
     formFieldElements.forEach(function (inputGroup) {
       const inputField = inputGroup.querySelector("input");
@@ -222,7 +217,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   let validations = [];
 
-  category.addEventListener("change", function () {
+  function updateFieldsAndValidations() {
     clearInputsAndErrorMessages();
 
     const selectedOption = category.value;
@@ -257,7 +252,6 @@ window.addEventListener("DOMContentLoaded", function () {
       default:
     }
 
-    /* Agrega los event listeners y realiza las validaciones */
     validations.forEach((validation) => {
       const inputId = validation.field;
       const input = document.getElementById(inputId);
@@ -270,7 +264,11 @@ window.addEventListener("DOMContentLoaded", function () {
       input.addEventListener("blur", validate);
       input.addEventListener("input", validate);
     });
-  });
+  }
+
+  updateFieldsAndValidations();
+
+  category.addEventListener("change", updateFieldsAndValidations);
 
   const form = document.getElementById("form");
 
@@ -287,14 +285,13 @@ window.addEventListener("DOMContentLoaded", function () {
       validationsResult.push(result);
     });
 
-    if (validationsResult.every((val = (val) => val == true))) {
+    if (validationsResult.every((val) => val == true)) {
       form.submit();
     }
   });
 
   function inputValidation(validation, input, inputErrorMessage) {
     if (validation.checks) {
-      // Busca el primer check que no se cumple y muestra mensaje
       const failedCheck = validation.checks.find((check) => !check.check(input));
       if (failedCheck) {
         inputErrorMessage.innerText = failedCheck.message;

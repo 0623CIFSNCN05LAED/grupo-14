@@ -74,8 +74,7 @@ module.exports = [
       }
       return true;
     })
-    .custom(async (value) => {
-      console.log(await userDBservice.findByEmail(value));
+    .custom(async (value, { req }) => {
       if (await userDBservice.findByEmail(value)) {
         throw new Error(
           "El correo electrónico ya se encuentra registrado, por favor intente con otro."
