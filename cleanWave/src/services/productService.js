@@ -323,11 +323,8 @@ module.exports = {
     });
   },
   /* END CREATE, EDIT AND DELETE PRODUCT */
-  searchProductsM: async function (inputValue /* , url, userType */) {
+  searchProductsM: async function (inputValue) {
     try {
-      // console.log("usertypeServieceeeeeeeeeeeee", userType)
-      // console.log("urlSERVICEEE", url)
-      // console.log("inpuTSERVICEEEEEEEEE", inputValue)
       const products = await Product.findAll({
         where: {
           name: { [Op.like]: `%${inputValue}%` },
@@ -336,7 +333,6 @@ module.exports = {
       const mappedProducts = products.map((product) => {
         return (product = product.dataValues);
       });
-      //  if (url.includes("mayorista") || userType == "mayorista") {
       const productsM = mappedProducts.map(function (productDB) {
         return {
           id: productDB.id,
@@ -351,14 +347,12 @@ module.exports = {
           href: "mayorista",
         };
       });
-      console.log("productsMSERVICEEEE", productsM);
       return productsM;
-      // }
     } catch (e) {
       console.log(e);
     }
   },
-  searchProductsCf: async function (inputValue /* , url, userType */) {
+  searchProductsCf: async function (inputValue) {
     try {
       const products = await Product.findAll({
         where: {

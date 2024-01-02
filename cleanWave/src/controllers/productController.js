@@ -79,11 +79,6 @@ module.exports = {
   },
   searchProductsM: async (req, res) => {
     try {
-      const url = req.query.url;
-      const userType = req.query.userType;
-      console.log("userTypeCOntrolleeeeeeeeeeerrrrrrrrrr", userType);
-      console.log("INPUTcontrollerrrrrrrrrrrrrrrrrr", req.query.inputValue);
-      console.log("urlCONTROLLERRRRRRRRRRRRR", url);
       const products = await productService.searchProductsM(
         req.query.inputValue,
         url,
@@ -97,15 +92,8 @@ module.exports = {
   },
   searchProductsCf: async (req, res) => {
     try {
-      const url = req.query.url;
-      const userType = req.query.userType;
-      console.log("userTypeCOntrolleeeeeeeeeeerrrrrrrrrr", userType);
-      console.log("INPUTcontrollerrrrrrrrrrrrrrrrrr", req.query.inputValue);
-      console.log("urlCONTROLLERRRRRRRRRRRRR", url);
       const products = await productService.searchProductsCf(
         req.query.inputValue,
-        url,
-        userType
       );
       req.session.searchProductsCf = products;
       res.json(products);

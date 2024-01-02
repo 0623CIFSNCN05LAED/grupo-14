@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Contenido de tu script
   const searchInput = document.getElementById("search");
   const searchIcon = document.getElementById("searchIcon");
 
