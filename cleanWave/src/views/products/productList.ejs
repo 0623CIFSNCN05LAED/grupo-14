@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="\css\productList.css" />
   </head>
   <body>
-    <% if (products[0].href == "consumidorfinal") { %>
+    <% if (url.includes("consumidorfinal")) { %>
       <%- include('../partials/header') %> 
-    <% } else if (products[0].href == "mayorista") { %>
+    <% } else if (url.includes("mayorista")) { %>
       <%- include('../partials/headerMayorista') %> 
     <% } %>
 
@@ -18,13 +18,16 @@
         <span>/</span>
         <a href="/products">Productos</a>
       </div>
-      <section class="product"></section>
-      <section class="relatedProducts">
+      <% if (products == "") { %>
+        <h1>No tenemos el producto que buscas</h1>
+      <% } else { %>
+        <section class="product"></section>
+        <section class="relatedProducts">
         <h3 class="nameList">Lista de productos</h3>
         <% if (locals.isLogged && locals.userLogged.admin !== null) { %>
         <div class="button">
           <a href="/products/create"
-            ><button class="create">Crear producto</button></a
+          ><button class="create">Crear producto</button></a
           >
         </div>
         <% } %>
@@ -33,8 +36,9 @@
           include("../partials/productCard", {product}) %> <% }); %>
         </div>
       </section>
+      <% } %>
     </main>
-
+    
     <%- include("../partials/footer") %>
   </body>
 </html>

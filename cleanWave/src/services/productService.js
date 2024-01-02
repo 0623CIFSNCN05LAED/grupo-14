@@ -327,28 +327,37 @@ module.exports = {
     try {
       const products = await Product.findAll({
         where: {
-          name: { [Op.like]: `%${inputValue}%` },
+          [Op.or]: [
+            { name: { [Op.like]: `%${inputValue}%` } },
+            { shortName: { [Op.like]: `%${inputValue}%` } },
+            { description: { [Op.like]: `%${inputValue}%` } },
+          ],
         },
       });
-      const mappedProducts = products.map((product) => {
-        return (product = product.dataValues);
-      });
-      const productsM = mappedProducts.map(function (productDB) {
-        return {
-          id: productDB.id,
-          shortName: productDB.shortName,
-          price: productDB.wholesalePrice,
-          priceWithDiscount:
+      if(!products){
+        return null
+      } else {
+
+        const mappedProducts = products.map((product) => {
+          return (product = product.dataValues);
+        });
+        const productsM = mappedProducts.map(function (productDB) {
+          return {
+            id: productDB.id,
+            shortName: productDB.shortName,
+            price: productDB.wholesalePrice,
+            priceWithDiscount:
             productDB.wholesalePrice * (1 - productDB.discountM / 100),
-          discount: productDB.discountM,
-          image: productDB.image,
-          category_id: productDB.category_id,
-          brand_id: productDB.brand_id,
-          href: "mayorista",
-        };
-      });
-      return productsM;
-    } catch (e) {
+            discount: productDB.discountM,
+            image: productDB.image,
+            category_id: productDB.category_id,
+            brand_id: productDB.brand_id,
+            href: "mayorista",
+          };
+        });
+        return productsM;
+      }
+      } catch (e) {
       console.log(e);
     }
   },
@@ -359,25 +368,29 @@ module.exports = {
           name: { [Op.like]: `%${inputValue}%` },
         },
       });
-      const mappedProducts = products.map((product) => {
-        return (product = product.dataValues);
-      });
-      const productsCf = mappedProducts.map(function (productDB) {
-        return {
-          id: productDB.id,
-          shortName: productDB.shortName,
-          price: productDB.retailPrice,
-          priceWithDiscount:
+      if(!products){
+        return null
+      } else {
+        const mappedProducts = products.map((product) => {
+          return (product = product.dataValues);
+        });
+        const productsCf = mappedProducts.map(function (productDB) {
+          return {
+            id: productDB.id,
+            shortName: productDB.shortName,
+            price: productDB.retailPrice,
+            priceWithDiscount:
             productDB.retailPrice * (1 - productDB.discountCf / 100),
-          discount: productDB.discountCf,
-          image: productDB.image,
-          category_id: productDB.category_id,
-          brand_id: productDB.brand_id,
-          href: "consumidorfinal",
-        };
-      });
-      return productsCf;
-    } catch (e) {
+            discount: productDB.discountCf,
+            image: productDB.image,
+            category_id: productDB.category_id,
+            brand_id: productDB.brand_id,
+            href: "consumidorfinal",
+          };
+        });
+        return productsCf;
+      }
+      } catch (e) {
       console.log(e);
     }
   },

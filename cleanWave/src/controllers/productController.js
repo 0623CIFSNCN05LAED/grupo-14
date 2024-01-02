@@ -4,10 +4,12 @@ module.exports = {
   listM: async (req, res) => {
     try {
       const allProducts = await productService.findAllM();
-      const products = req.session.searchProductsCf
-        ? req.session.searchProductsCf
+      const url = req.originalUrl;
+      const products = req.session.searchProductsM
+        ? req.session.searchProductsM
         : allProducts;
-      res.render("products/productList", { products });
+      console.log("aaaa",products)
+      res.render("products/productList", { products, url });
     } catch {
       res.send("error");
     }
@@ -16,10 +18,11 @@ module.exports = {
   listCf: async (req, res) => {
     try {
       const allProducts = await productService.findAllCf();
+      const url = req.originalUrl
       const products = req.session.searchProductsCf
         ? req.session.searchProductsCf
         : allProducts;
-      res.render("products/productList", { products });
+      res.render("products/productList", { products, url });
     } catch {
       res.send("error");
     }
@@ -81,12 +84,15 @@ module.exports = {
     try {
       const products = await productService.searchProductsM(
         req.query.inputValue,
-        url,
-        userType
       );
-      req.session.searchProductsCf = products;
-      res.json(products);
-    } catch (e) {
+      if(!products){
+        return null
+      } else {
+
+        req.session.searchProductsM = products;
+        res.json(products);
+      }
+      } catch (e) {
       console.log(e);
     }
   },
