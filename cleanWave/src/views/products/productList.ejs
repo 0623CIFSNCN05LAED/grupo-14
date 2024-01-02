@@ -8,9 +8,9 @@
     <script src="/js/productList.js" defer></script>
   </head>
   <body>
-    <% if (products[0].href == "consumidorfinal") { %>
+    <% if (url.includes("consumidorfinal")) { %>
       <%- include('../partials/header') %> 
-    <% } else if (products[0].href == "mayorista") { %>
+    <% } else if (url.includes("mayorista")) { %>
       <%- include('../partials/headerMayorista') %> 
     <% } %>
 
@@ -18,27 +18,32 @@
       <div class="nav">
         <a href="/">Home</a>
         <span>/</span>
-        <a href="<%= products[0].href === 'consumidorfinal' ? '/consumidorfinal/products' : '/mayorista/products' %>">Productos</a>
+        <a href="<%= url.includes("consumidorfinal")? '/consumidorfinal/products' : '/mayorista/products' %>">Productos</a>
       </div>
-
-      <section class="product"></section>
-      <section class="relatedProducts">
+      <% if (products == "") { %>
+        <h1>No tenemos el producto que buscas</h1>
+      <% } else { %>
         <div class="nameList">
-          <select id="categorySelect" name="category">
-            <option value="all">Categorías</option>
-            <option id="categoryOption1" value="1">Pisos</option>
-            <option id="categoryOption2" value="2">Muebles</option>
-            <option id="categoryOption3" value="3">Ropa</option>
-            <option id="categoryOption4" value="4">Papel Higiénico</option>
-            <option id="categoryOption5" value="5">Detergente</option>
-            <option id="categoryOption6" value="6">Lavandina</option>
-          </select>
-        <h3>Lista de productos</h3>
+          <div class="categorySelectContainer">
+            <select id="categorySelect">
+              <option value="all">Categorías</option>
+              <option id="categoryOption1" value="1">Pisos</option>
+              <option id="categoryOption2" value="2">Muebles</option>
+              <option id="categoryOption3" value="3">Ropa</option>
+              <option id="categoryOption4" value="4">Papel Higiénico</option>
+              <option id="categoryOption5" value="5">Detergente</option>
+              <option id="categoryOption6" value="6">Lavandina</option>
+            </select>
+          </div>    
+        <div class="productListTittle" ><h3>Lista de productos</h3></div>
+  
+      <section class="product"></section>
+        <section class="relatedProducts">
       </div>
         <% if (locals.isLogged && locals.userLogged.admin !== null) { %>
         <div class="button">
           <a href="/products/create"
-            ><button class="create">Crear producto</button></a
+          ><button class="create">Crear producto</button></a
           >
         </div>
         <% } %>
@@ -47,8 +52,9 @@
           include("../partials/productCard", {product}) %> <% }); %>
         </div>
       </section>
+      <% } %>
     </main>
-
+    
     <%- include("../partials/footer") %>
   </body>
 </html>
