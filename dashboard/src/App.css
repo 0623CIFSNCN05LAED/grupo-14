@@ -23,6 +23,12 @@ body {
   height: 100vh;
 }
 
+.contentContainer {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+}
+
 /* Header */
 .header {
   grid-area: header;
@@ -171,6 +177,7 @@ body {
 
 .pie {
   padding-top: 10%;
+  height: 300px;
 }
 
 @media (max-width: 990px) {

@@ -25,7 +25,7 @@ export default function LastProduct() {
     fetchData();
   }, []);
   return (
-    <section class="lastUser">
+    <section className="lastUser">
       <h2>Last User</h2>
       <p>ID: {user.id}</p>
       <p>Name: {user.name}</p>

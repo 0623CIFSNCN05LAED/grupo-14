@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./LastProductUser.css";
 export default function LastProduct() {
   const [product, setProduct] = useState([]);
@@ -21,7 +21,7 @@ export default function LastProduct() {
     fetchData();
   }, []);
   return (
-    <section class="lastProduct">
+    <section className="lastProduct">
       <h2>Last Product</h2>
       <p>ID: {product.id}</p>
       <p>Name: {product.shortName}</p>
