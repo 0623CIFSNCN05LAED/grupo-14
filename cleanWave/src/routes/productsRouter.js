@@ -37,4 +37,7 @@ router.put(
 /*************** Delete one product ******************/
 router.delete("/:id", productController.delete);
 
+// /* ************ Search product ******************** */
+// router.get("/searchProducts", productController.searchProducts)
+
 module.exports = router;

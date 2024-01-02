@@ -1,5 +1,7 @@
 const { Product } = require("../database/models");
 const { v4: uuidv4 } = require("uuid");
+const db = require("../database/models");
+const Op = db.Sequelize.Op;
 
 /************* Funciones de uso local(este mismo archivo) ****************/
 
@@ -320,5 +322,69 @@ module.exports = {
       where: { id: id },
     });
   },
-  /* START CREATE, EDIT AND DELETE PRODUCT */
+  /* END CREATE, EDIT AND DELETE PRODUCT */
+  searchProductsM: async function (inputValue /* , url, userType */) {
+    try {
+      // console.log("usertypeServieceeeeeeeeeeeee", userType)
+      // console.log("urlSERVICEEE", url)
+      // console.log("inpuTSERVICEEEEEEEEE", inputValue)
+      const products = await Product.findAll({
+        where: {
+          name: { [Op.like]: `%${inputValue}%` },
+        },
+      });
+      const mappedProducts = products.map((product) => {
+        return (product = product.dataValues);
+      });
+      //  if (url.includes("mayorista") || userType == "mayorista") {
+      const productsM = mappedProducts.map(function (productDB) {
+        return {
+          id: productDB.id,
+          shortName: productDB.shortName,
+          price: productDB.wholesalePrice,
+          priceWithDiscount:
+            productDB.wholesalePrice * (1 - productDB.discountM / 100),
+          discount: productDB.discountM,
+          image: productDB.image,
+          category_id: productDB.category_id,
+          brand_id: productDB.brand_id,
+          href: "mayorista",
+        };
+      });
+      console.log("productsMSERVICEEEE", productsM);
+      return productsM;
+      // }
+    } catch (e) {
+      console.log(e);
+    }
+  },
+  searchProductsCf: async function (inputValue /* , url, userType */) {
+    try {
+      const products = await Product.findAll({
+        where: {
+          name: { [Op.like]: `%${inputValue}%` },
+        },
+      });
+      const mappedProducts = products.map((product) => {
+        return (product = product.dataValues);
+      });
+      const productsCf = mappedProducts.map(function (productDB) {
+        return {
+          id: productDB.id,
+          shortName: productDB.shortName,
+          price: productDB.retailPrice,
+          priceWithDiscount:
+            productDB.retailPrice * (1 - productDB.discountCf / 100),
+          discount: productDB.discountCf,
+          image: productDB.image,
+          category_id: productDB.category_id,
+          brand_id: productDB.brand_id,
+          href: "consumidorfinal",
+        };
+      });
+      return productsCf;
+    } catch (e) {
+      console.log(e);
+    }
+  },
 };

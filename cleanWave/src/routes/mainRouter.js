@@ -6,17 +6,17 @@ const router = Router();
 const userCfCanNotPass = require("../middlewares/userCfMiddleware");
 const userMCanNotPass = require("../middlewares/userMMiddleware");
 
-/*************** CF Router *******************/
-const cfRouter = require("./cfRouter");
-router.use("/consumidorfinal", cfRouter);
-
 /*************** Mayorista Router *******************/
 const mayoristaRouter = require("./mayoristaRouter");
 router.use("/mayorista",userCfCanNotPass, mayoristaRouter);
 
+/*************** CF Router *******************/
+const cfRouter = require("./cfRouter");
+router.use("/consumidorfinal",userMCanNotPass, cfRouter);
+
 /*************** Products Router ********************/
 const productsRouter = require("./productsRouter");
-router.use("/products",userMCanNotPass, productsRouter);
+router.use("/products", productsRouter);
 
 /*************** Users Router **********************/
 const userRouter = require("./userRouter");

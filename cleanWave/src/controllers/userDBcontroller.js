@@ -11,6 +11,11 @@ module.exports = {
     if (req.body.rememberUser) {
       res.cookie("email", req.body.email, { maxAge: 1000 * 60 * 2 });
     }
+    if(dataUser.mayorista != null){
+      res.cookie("userType", "mayorista", {maxAge: 1000 * 60 * 2})
+    } else if (dataUser.cf != null){
+      res.cookie("userType", "consumidorfinal", {maxAge: 1000 * 60 * 2})
+    }
     return res.redirect("/users/profile");
   },
   profile: (req, res) => {

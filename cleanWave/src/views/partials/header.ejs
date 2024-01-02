@@ -1,4 +1,5 @@
     <header>
+    <script src="/js/searchBarCf.js"></script>
       <div class="topLeftHeader">
         <% if (!locals.isLogged) { %>
           <div class="textoTienda">
@@ -35,7 +36,7 @@
         <div class="navRightMobile">
           <div class="box">
             <div class="container-1">
-             <span class="icon"><i class="fa fa-search"></i></span>
+             <span class="icon" id="searchIcon"><i class="fa fa-search"></i></span>
             <input type="search" id="search" placeholder="Buscar..." />
             </div>
           </div>
@@ -56,7 +57,7 @@
             <li>
               <a href="/users/profile">
                 <img src="/img/users/<%= locals.userLogged.image %>" class="avatar">  <!-- TOCAR EL CSS PARA LA IMAGEN -->
-                <%= locals.userLogged.lastName %>, <%= locals.userLogged.name %>
+                <%= locals.userLogged.lastName %><%= locals.userLogged.name %>
               </a>
             </li>
             <% } else { %>

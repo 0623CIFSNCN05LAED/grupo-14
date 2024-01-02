@@ -12,4 +12,5 @@ router.get("/", mainController.homeMayorista);
 const productsMRouter = require("./productsMRouter");
 router.use("/products", productsMRouter);
 
+
 module.exports = router;

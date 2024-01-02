@@ -29,6 +29,9 @@ app.use(cookieParser());
 app.use(userLoggedMiddleware);
 app.use(cors())
 
+const destroySearchProductSession = require("./middlewares/destroySearchProductsSession");
+app.use(destroySearchProductSession);
+
 
 // **************** Template Engine *********************
 app.set("view engine", "ejs");
