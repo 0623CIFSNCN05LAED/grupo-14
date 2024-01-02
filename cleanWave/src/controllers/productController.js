@@ -23,7 +23,9 @@ module.exports = {
     try {
       const id = req.params.id;
       const product = await productService.findProductCf(id);
-      const relatedProducts = await productService.findRelatedProductsCf(product);
+      const relatedProducts = await productService.findRelatedProductsCf(
+        product
+      );
       res.render("products/productDetail", { product, relatedProducts });
     } catch (error) {}
   },
@@ -32,7 +34,9 @@ module.exports = {
     try {
       const id = req.params.id;
       const product = await productService.findProductM(id);
-      const relatedProducts = await productService.findRelatedProductsM(product);
+      const relatedProducts = await productService.findRelatedProductsM(
+        product
+      );
       res.render("products/productDetail", { product, relatedProducts });
     } catch (error) {}
   },

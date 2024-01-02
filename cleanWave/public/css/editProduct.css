@@ -1,6 +1,6 @@
 .div-newProduct {
   padding: 10px;
-  background-image: linear-gradient(to right, #243a76, #55a4da);
+  background-color: whitesmoke;
 }
 .form-newProduct {
   display: flex;
