@@ -18,14 +18,11 @@
       <div class="nav">
         <a href="/">Home</a>
         <span>/</span>
-        <a href="<%= products[0].href === 'consumidorfinal' ? '/consumidorfinal/products' : '/mayorista/products' %>">Productos</a>
+        <a href="<%= url.includes("consumidorfinal")? '/consumidorfinal/products' : '/mayorista/products' %>">Productos</a>
       </div>
       <% if (products == "") { %>
         <h1>No tenemos el producto que buscas</h1>
       <% } else { %>
-  
-      <section class="product"></section>
-        <section class="relatedProducts">
         <div class="nameList">
           <div class="categorySelectContainer">
             <select id="categorySelect">
@@ -39,6 +36,9 @@
             </select>
           </div>    
         <div class="productListTittle" ><h3>Lista de productos</h3></div>
+  
+      <section class="product"></section>
+        <section class="relatedProducts">
       </div>
         <% if (locals.isLogged && locals.userLogged.admin !== null) { %>
         <div class="button">
