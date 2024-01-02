@@ -52,7 +52,7 @@
   font-size: 25px;
 }
 
-.categorySelect select{
+.categorySelectContainer select{
   color: white;
   background-color: #111e4f;
   margin-left: 20px;
@@ -63,13 +63,13 @@
    
 }
 
-.categorySelect select:hover,
-.categorySelect select:focus {
+.categorySelectContainer select:hover,
+.categorySelectContainer select:focus {
   border-color: #ccc;
   box-shadow: 0 0 5px rgba(94, 140, 211, 0.5);
 }
 
-.categorySelect select option:hover {
+.categorySelectContainer select option:hover {
   background-color: #243a76;
 }
 
@@ -121,7 +121,7 @@
   }
   
   
-  .categorySelect select {
+  .categorySelectContainer select {
     margin-top: 50px;
     }  
 
