@@ -16,26 +16,8 @@
   color: #55a4da;
 }
 
-
-.button {
-  margin-bottom: 10px;
-}
-
-.create {
-  margin: 20px 5px;
-  color: #fff;
-  background-color: green;
-  width: 20%;
-  border-radius: 8px;
-  border: none;
-  padding: 10px 10px;
-  margin-bottom: 15px;
-  cursor: pointer;
-}
-
 .product {
   display: flex;
-  flex-direction: column;
   margin: auto;
   width: 90%;
   text-align: center;
@@ -59,16 +41,18 @@
   padding: 5px;
 }
 
-.nameList h3 {
+.productListTittle {
   color: white;
-  font-size: 25px;
   margin: 0;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
+.productListTittle h3{
+  font-size: 25px;
+}
 
-#categorySelect {
+.categorySelect select{
   color: white;
   background-color: #111e4f;
   margin-left: 20px;
@@ -76,17 +60,16 @@
   padding: 10px 20px;
   font-size: 16px;
   border: 2px solid #111e4f;
-  
-  
+   
 }
 
-#categorySelect:hover,
-#categorySelect:focus {
+.categorySelect select:hover,
+.categorySelect select:focus {
   border-color: #ccc;
   box-shadow: 0 0 5px rgba(94, 140, 211, 0.5);
 }
 
-#categorySelect option:hover {
+.categorySelect select option:hover {
   background-color: #243a76;
 }
 
@@ -108,18 +91,38 @@
   flex-wrap: wrap;
 }
 
-
-/* Agrega cualquier estilo adicional según tus preferencias */
-
-
-@media (min-width: 860px) {
-  .create {
-    width: 15%;
-  }
+.button {
+  margin-top: 10px;
+  width: 150px;
+  box-sizing: border-box; 
+}
+.create {
+  color: #fff;
+  background-color: green;
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box; 
+  text-align: center; 
 }
 
-@media (min-width: 1200px) {
-  .create {
-    width: 10%;
+
+
+@media (max-width: 800px) {
+  .nameList {
+    display: flex;
+    flex-direction: column;  
   }
+  
+  .productListTittle {
+    white-space: nowrap;
+  }
+  
+  
+  .categorySelect select {
+    margin-top: 50px;
+    }  
+
 }

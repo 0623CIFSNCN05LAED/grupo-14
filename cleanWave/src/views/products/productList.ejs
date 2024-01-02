@@ -24,16 +24,18 @@
       <section class="product"></section>
       <section class="relatedProducts">
         <div class="nameList">
-          <select id="categorySelect" name="category">
-            <option value="all">Categorías</option>
-            <option id="categoryOption1" value="1">Pisos</option>
-            <option id="categoryOption2" value="2">Muebles</option>
-            <option id="categoryOption3" value="3">Ropa</option>
-            <option id="categoryOption4" value="4">Papel Higiénico</option>
-            <option id="categoryOption5" value="5">Detergente</option>
-            <option id="categoryOption6" value="6">Lavandina</option>
-          </select>
-        <h3>Lista de productos</h3>
+          <div class="categorySelect">
+            <select>
+              <option value="all">Categorías</option>
+              <option id="categoryOption1" value="1">Pisos</option>
+              <option id="categoryOption2" value="2">Muebles</option>
+              <option id="categoryOption3" value="3">Ropa</option>
+              <option id="categoryOption4" value="4">Papel Higiénico</option>
+              <option id="categoryOption5" value="5">Detergente</option>
+              <option id="categoryOption6" value="6">Lavandina</option>
+            </select>
+          </div>    
+        <div class="productListTittle" ><h3>Lista de productos</h3></div>
       </div>
         <% if (locals.isLogged && locals.userLogged.admin !== null) { %>
         <div class="button">
