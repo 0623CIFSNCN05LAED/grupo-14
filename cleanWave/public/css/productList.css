@@ -16,7 +16,6 @@
   color: #55a4da;
 }
 
-
 .button {
   margin-bottom: 10px;
 }
@@ -24,8 +23,8 @@
 .create {
   margin: 20px 5px;
   color: #fff;
-  background-color: green;
-  width: 20%;
+  background-color: #111e4f;
+  width: 200;
   border-radius: 8px;
   border: none;
   padding: 10px 10px;
@@ -76,8 +75,6 @@
   padding: 10px 20px;
   font-size: 16px;
   border: 2px solid #111e4f;
-  
-  
 }
 
 #categorySelect:hover,
@@ -89,7 +86,6 @@
 #categorySelect option:hover {
   background-color: #243a76;
 }
-
 
 .cart:hover {
   background-color: #55a4da;
@@ -108,9 +104,7 @@
   flex-wrap: wrap;
 }
 
-
 /* Agrega cualquier estilo adicional según tus preferencias */
-
 
 @media (min-width: 860px) {
   .create {
