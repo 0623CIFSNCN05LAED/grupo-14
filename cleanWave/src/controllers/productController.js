@@ -8,7 +8,6 @@ module.exports = {
       const products = req.session.searchProductsM
         ? req.session.searchProductsM
         : allProducts;
-      console.log("aaaa",products)
       res.render("products/productList", { products, url });
     } catch {
       res.send("error");

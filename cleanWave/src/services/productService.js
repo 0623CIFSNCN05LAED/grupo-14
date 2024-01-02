@@ -1,4 +1,4 @@
-const { Product } = require("../database/models");
+const { Product} = require("../database/models");
 const { v4: uuidv4 } = require("uuid");
 const db = require("../database/models");
 const Op = db.Sequelize.Op;
@@ -330,9 +330,9 @@ module.exports = {
           [Op.or]: [
             { name: { [Op.like]: `%${inputValue}%` } },
             { shortName: { [Op.like]: `%${inputValue}%` } },
-            { description: { [Op.like]: `%${inputValue}%` } },
           ],
         },
+        
       });
       if(!products){
         return null
@@ -365,7 +365,10 @@ module.exports = {
     try {
       const products = await Product.findAll({
         where: {
-          name: { [Op.like]: `%${inputValue}%` },
+          [Op.or]: [
+            { name: { [Op.like]: `%${inputValue}%` } },
+            { shortName: { [Op.like]: `%${inputValue}%` } },
+          ],
         },
       });
       if(!products){
