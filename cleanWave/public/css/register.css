@@ -2,6 +2,7 @@
   padding: 30px;
   background-color: whitesmoke;
 }
+
 .form-newRegister {
   display: flex;
   flex-direction: column;
