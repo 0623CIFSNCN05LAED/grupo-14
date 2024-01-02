@@ -14,4 +14,7 @@ router.get("/", userCfCanNotPass, productController.listM);
 /*************** Get one product ******************/
 router.get("/detail/:id", userCfCanNotPass, productController.detailM);
 
+/* ************ Search product ******************** */
+router.get("/searchProductsM", productController.searchProductsM);
+
 module.exports = router;
