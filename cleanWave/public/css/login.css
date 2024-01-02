@@ -1,4 +1,4 @@
-*{
+* {
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -17,10 +17,10 @@ main {
 }
 
 .logo img {
-width: 50%;
-filter: drop-shadow(16px 7px 8px #424246);
-margin-top: 30px;
-margin-bottom: 30px;
+  width: 50%;
+  filter: drop-shadow(16px 7px 8px #424246);
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .div-newProduct {
@@ -40,7 +40,7 @@ margin-bottom: 30px;
   text-align: center;
 }
 
-.check{
+.check {
   color: #111e4f;
 }
 /* Div contenedor de input y label (con animaciones) START */
@@ -51,7 +51,7 @@ margin-bottom: 30px;
 
 .inputGroupInput {
   font: inherit;
-  color: #fff;
+  color: #111e4f;
   padding: 10px;
   border: none;
   border-radius: 4px;
@@ -68,9 +68,8 @@ margin-bottom: 30px;
   top: 0;
   left: 0;
   translate: 10px 10px;
-  color:#111e4f;
+  color: #111e4f;
   transition: translate 500ms, scale 500ms;
-
 }
 
 .inputGroupInput:focus + .inputGroupLabel,
@@ -79,7 +78,6 @@ margin-bottom: 30px;
   translate: 10px -10px;
   scale: 0.8;
   background-color: whitesmoke;
-  
 }
 /* Div contenedor de input y label (con animaciones) END */
 
@@ -108,12 +106,12 @@ margin-bottom: 30px;
 
 /* Comienzo validaciones */
 
-.errorMsg{
+.errorMsg {
   display: none;
   color: red;
 }
 
-.display{
+.display {
   display: block;
 }
 /* Final validaciones */

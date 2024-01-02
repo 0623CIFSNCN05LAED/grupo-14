@@ -20,11 +20,11 @@
               <% if(locals.isLogged && locals.userLogged.superAdmin != null){ %>
                 <option value="admin" <%= locals.oldData && (oldData.category === "admin") ? "selected" : ""  %>>admin</option>
               <% } %>
-              <option value="cf" <%= locals.oldData && (oldData.category === "cf") ? "selected" : ""  %>>consumidor final</option>
-              <option value="mayorista" <%= locals.oldData && (oldData.category === "mayorista") ? "selected" : ""  %>>mayorista</option>
+              <option value="cf" <%= locals.oldData && (oldData.category === "cf") ? "selected" : ""  %>>Consumidor final</option>
+              <option value="mayorista" <%= locals.oldData && (oldData.category === "mayorista") ? "selected" : ""  %>>Mayorista</option>
             </select>
           
-          <div class="errorMessage">
+          <div class="errorMessage"> 
             <% if(locals.errors && errors.category) { %>
               <p><%= errors.category.msg %></p>
             <% } %>
@@ -229,7 +229,7 @@
           </div>
     
         <div class="inputGroup">
-          <div class="createAddressButton">
+          <div class="notify">
             <label for="notify">Mandar notificaciones</label>
             <input type="checkbox" name="notify" id="notify" value="notify" />
           </div>

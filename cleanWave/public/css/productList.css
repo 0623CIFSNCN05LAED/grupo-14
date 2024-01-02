@@ -48,11 +48,11 @@
   left: 50%;
   transform: translateX(-50%);
 }
-.productListTittle h3{
+.productListTittle h3 {
   font-size: 25px;
 }
 
-.categorySelectContainer select{
+.categorySelectContainer select {
   color: white;
   background-color: #111e4f;
   margin-left: 20px;
@@ -60,7 +60,6 @@
   padding: 10px 20px;
   font-size: 16px;
   border: 2px solid #111e4f;
-   
 }
 
 .categorySelectContainer select:hover,
@@ -72,7 +71,6 @@
 .categorySelectContainer select option:hover {
   background-color: #243a76;
 }
-
 
 .cart:hover {
   background-color: #55a4da;
@@ -94,7 +92,7 @@
 .button {
   margin-top: 10px;
   width: 150px;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 .create {
   color: #fff;
@@ -104,25 +102,21 @@
   border-radius: 8px;
   border: none;
   cursor: pointer;
-  box-sizing: border-box; 
-  text-align: center; 
+  box-sizing: border-box;
+  text-align: center;
 }
-
-
 
 @media (max-width: 800px) {
   .nameList {
     display: flex;
-    flex-direction: column;  
+    flex-direction: column;
   }
-  
+
   .productListTittle {
     white-space: nowrap;
   }
-  
-  
+
   .categorySelectContainer select {
     margin-top: 50px;
-    }  
-
+  }
 }
