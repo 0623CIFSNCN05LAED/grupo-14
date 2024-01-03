@@ -1,60 +1,82 @@
 <header>
   <script src="/js/searchBarM.js"></script>
-    <div class="topLeftHeader">
-      <% if (!locals.isLogged) { %>
-        <div class="textoTienda">
-          <p>TIENDA MAYORISTA</p>
-        </div>
-        <div class="tiendaMayoristaDiv">
-          <a href="/consumidorfinal"><button class="tiendaButton">Cambiar a TIENDA CONSUMIDOR FINAL</button></a>
-        </div>
-      <% } else if (locals.userLogged.admin !== null) { %>
-        <div class="textoTienda">
-          <p>Bienvenido administrador <%= locals.userLogged.admin.name %> <%= locals.userLogged.admin.lastName %> - TIENDA MAYORISTA</p>
-        </div>
-        <div class="tiendaMayoristaDiv">
-          <a href="/consumidorfinal"><button class="tiendaButton">Cambiar a TIENDA CONSUMIDOR FINAL</button></a>
-        </div>
-      <% } else if (locals.userLogged.cf !== null) { %>
-        <div class="textoTienda">
-          <p>TIENDA CONSUMIDOR FINAL</p>
-        </div>
-      <% } else if (locals.userLogged.mayorista !== null || locals.userLogged.superAdmin !== null){ %>
-        <div class="textoTienda">
-          <p>TIENDA MAYORISTA</p>
-        </div>
-      <% }; %>
-    </div>
-    <div class="navMobile">
-      <div class="navRightMobile">
-        <div class="box">
-            <div class="container-1">
-             <span class="icon" id="searchIcon"><i class="fa fa-search"></i></span>
-            <input type="search" id="search" placeholder="Buscar..." />
-            </div>
+  <script src="/js/header.js" defer></script>
+      <div class="topLeftHeader">
+        <% if (!locals.isLogged) { %>
+          <div class="textoTienda">
+            <p>TIENDA MAYORISTA</p>
           </div>
-        <a href="/cart" class="iconCart">
-          <i class="fa-solid fa-cart-shopping"></i>
-        </a>
+          <div class="tiendaMayoristaDiv">
+            <a href="/consumidorfinal"><button class="tiendaButton">Cambiar a TIENDA CONSUMIDOR FINAL</button></a>
+          </div>
+        <% } else if (locals.userLogged.admin !== null) { %>
+          <div class="textoTienda">
+            <p>Bienvenido administrador <%= locals.userLogged.admin.name %> <%= locals.userLogged.admin.lastName %> - TIENDA MAYORISTA</p>
+          </div>
+          <div class="tiendaMayoristaDiv">
+            <a href="/consumidorfinal"><button class="tiendaButton">Cambiar a TIENDA CONSUMIDOR FINAL</button></a>
+          </div>
+        <% } else if (locals.userLogged.cf !== null) { %>
+          <div class="textoTienda">
+            <p>TIENDA CONSUMIDOR FINAL</p>
+          </div>
+        <% } else if (locals.userLogged.mayorista !== null || locals.userLogged.superAdmin !== null){ %>
+          <div class="textoTienda">
+            <p>TIENDA MAYORISTA</p>
+          </div>
+        <% }; %>
       </div>
-      <div class="noDesk">
-        <i class="fa-solid fa-bars"></i>
-        <a href="/mayorista"><img src="\img\logo.png" alt="logo" id="logoDesk"/></a>
-        <a href="/mayorista"><img src="\img\logoOla.png" alt="logo" id="logoMobile"/></a>
+      <div class="navMobile">
+        <div class="navRightMobile">
+          <div class="box">
+              <div class="container-1">
+               <span class="icon" id="searchIcon"><i class="fa fa-search"></i></span>
+              <input type="search" id="search" placeholder="Buscar..." />
+              </div>
+            </div>
+          <a href="/cart" class="iconCart">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+        </div>
+        <div class="noDesk">
+          <!-- MENU BURGER -->
+          <a href="/mayorista"><img src="\img\logo.png" alt="logo" id="logoDesk"/></a>
+          <a href="/mayorista"><img src="\img\logoOla.png" alt="logo" id="logoMobile" /></a>
+          <div class="icono-boton-container">
+              <button class="icono-boton" onclick="toggleBotones()">
+                  <i class="fa-solid fa-bars"></i>
+              </button>
+              <div class="columna-botones">
+                  <!-- Botones adicionales aquí -->
+                  <% if (locals.isLogged){ %>
+                    <button class="boton-desplegable" onclick="location.href='/users/profile'">Perfil</button>
+                    <% } %>
+                  <% if (locals.isLogged &&(locals.userLogged.superAdmin != null || locals.userLogged.admin != null) ) { %>
+                    <button type="button" class="boton-desplegable" onclick="location.href='/users/register'">Crear una cuenta</button>
+                <% } else if (!locals.isLogged){ %>
+                  <button type="button" class="boton-desplegable" onclick="location.href='/users/register'">Crear una cuenta</button>
+                  <button class="boton-desplegable" onclick="location.href='/users/login'">Iniciar sesión</button>
+                  <% } %>
+                  <button class="boton-desplegable" onclick="location.href='/about/nosotros'">Nosotros</button>
+                  <button class="boton-desplegable" onclick="location.href='/consumidorfinal/products'">Productos</button>
+              </div>
+          </div>
       </div>
-    </div>
-    <div class="menuMobile">
-      <nav class="topRightHeader">
-        <ul class="bottomRightNav">
-          <% if (locals.isLogged) { %>
+      <!-- Fin Burger -->
+      </div>
+      <div class="menuMobile">
+        <nav class="topRightHeader">
+          <ul class="bottomRightNav">
+            <% if (locals.isLogged && (locals.userLogged.superAdmin != null || locals.userLogged.admin != null )) {%>
+             <li>
+              <a href="/users/register">Crear una cuenta</a>
+            </li>
+             <% } %>
+            <% if (locals.isLogged) { %>
             <li>
               <a href="/users/profile">
-                <img src="/img/users/<%= locals.userLogged.image %>" class="avatar"> <!-- TOCAR EL CSS PARA LA IMAGEN -->
-                <% if (locals.userLogged.category == 'admin') { %>
-                  <%= locals.userLogged.lastName %>, <%= locals.userLogged.name %>
-                <% } else { %>
-                  <%= locals.userLogged.businessName %>
-                <% } %>
+                <img src="/img/users/<%= locals.userLogged.image %>" class="avatar">  <!-- TOCAR EL CSS PARA LA IMAGEN -->
+                <%= locals.userLogged.lastName %><%= locals.userLogged.name %>
               </a>
             </li>
             <% } else { %>
@@ -65,46 +87,46 @@
               <a href="/users/register">Crear una cuenta</a>
             </li>
             <% } %>
-        </ul>
-      </nav>
-      <nav class="navList">
-        <ul class="bottomLeftNav">
-          <li>
-            <a href="/mayorista/products">Productos</a>
-            <ul>
-              <li>
-                <a href="#">Categoria 1</a>
-                <ul>
-                  <li><a href="#">Subcategoria 1</a></li>
-                  <li><a href="#">Subcategoria 2</a></li>
-                  <li><a href="#">Subcategoria 3</a></li>
-                </ul>
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <a href="#">Categoria 2</a>
-                <ul>
-                  <li><a href="#">Subcategoria 1</a></li>
-                  <li><a href="#">Subcategoria 2</a></li>
-                  <li><a href="#">Subcategoria 3</a></li>
-                </ul>
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <a href="#">Categoria 3</a>
-                <ul>
-                  <li><a href="#">Subcategoria 1</a></li>
-                  <li><a href="#">Subcategoria 2</a></li>
-                  <li><a href="#">Subcategoria 3</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          </li>
-          <li><a href="/about/nosotros">Nosotros</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+          </ul>
+        </nav>
+        <nav class="navList">
+          <ul class="bottomLeftNav">
+            <li>
+              <a href="/mayorista/products">Productos</a>
+              <ul>
+                <li>
+                  <a href="#">Categoria 1</a>
+                  <ul>
+                    <li><a href="#">Subcategoria 1</a></li>
+                    <li><a href="#">Subcategoria 2</a></li>
+                    <li><a href="#">Subcategoria 3</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <a href="#">Categoria 2</a>
+                  <ul>
+                    <li><a href="#">Subcategoria 1</a></li>
+                    <li><a href="#">Subcategoria 2</a></li>
+                    <li><a href="#">Subcategoria 3</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <a href="#">Categoria 3</a>
+                  <ul>
+                    <li><a href="#">Subcategoria 1</a></li>
+                    <li><a href="#">Subcategoria 2</a></li>
+                    <li><a href="#">Subcategoria 3</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            </li>
+            <li><a href="/about/nosotros">Nosotros</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
