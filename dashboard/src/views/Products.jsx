@@ -1,7 +1,8 @@
-/* import Header from "../components/Header"; */
+import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
-import Logo from "../components/HomeContent/Logo";
 import { useState } from "react";
+import LastProduct from "../components/ProductsContent/LastProduct";
+import ProductList from "../components/ProductsContent/ProductList";
 
 export default function Dashboard() {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
@@ -13,12 +14,16 @@ export default function Dashboard() {
   return (
     <>
       <div className="gridContainer">
-        {/* <Header OpenSidebar={OpenSidebar} /> */}
+        <Header OpenSidebar={OpenSidebar} />
         <Sidebar
           openSidebarToggle={openSidebarToggle}
           OpenSidebar={OpenSidebar}
         />
-        <Logo />
+
+        <div className="contentContainer">
+          <LastProduct />
+          <ProductList />
+        </div>
       </div>
     </>
   );

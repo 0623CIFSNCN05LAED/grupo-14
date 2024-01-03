@@ -3,10 +3,8 @@ import {
   BsFillArchiveFill,
   BsFillGrid3X3GapFill,
   BsPeopleFill,
-  BsListCheck,
-  BsMenuButtonWideFill,
-  BsFillGearFill,
 } from "react-icons/bs";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 export default function Sidebar({ openSidebarToggle, OpenSidebar }) {
@@ -16,7 +14,15 @@ export default function Sidebar({ openSidebarToggle, OpenSidebar }) {
       className={openSidebarToggle ? "sidebarResponsive" : ""}
     >
       <div className="sidebarTitle">
-        <div className="sidebarBrand">CLEAN WAVE</div>
+        <div className="sidebarBrand">
+          <Link
+            to="/"
+            exact="true"
+            className="home"
+          >
+            CLEAN WAVE
+          </Link>
+        </div>
         <span
           className="icon closeIcon"
           onClick={OpenSidebar}
@@ -27,39 +33,24 @@ export default function Sidebar({ openSidebarToggle, OpenSidebar }) {
 
       <ul className="sidebarList">
         <li className="sidebarListItem">
-          <a href="">
+          <Link to="/dashboard">
             <BsGrid1X2Fill className="icon" /> Dashboard
-          </a>
+          </Link>
         </li>
         <li className="sidebarListItem">
-          <a href="">
+          <Link to="/products">
             <BsFillArchiveFill className="icon" /> Products
-          </a>
+          </Link>
         </li>
         <li className="sidebarListItem">
-          <a href="">
+          <Link to="/categories">
             <BsFillGrid3X3GapFill className="icon" /> Categories
-          </a>
+          </Link>
         </li>
         <li className="sidebarListItem">
-          <a href="">
+          <Link to="/users">
             <BsPeopleFill className="icon" /> Users
-          </a>
-        </li>
-        <li className="sidebarListItem">
-          <a href="">
-            <BsListCheck className="icon" /> Inventory
-          </a>
-        </li>
-        <li className="sidebarListItem">
-          <a href="">
-            <BsMenuButtonWideFill className="icon" /> Reports
-          </a>
-        </li>
-        <li className="sidebarListItem">
-          <a href="">
-            <BsFillGearFill className="icon" /> Settings
-          </a>
+          </Link>
         </li>
       </ul>
     </aside>

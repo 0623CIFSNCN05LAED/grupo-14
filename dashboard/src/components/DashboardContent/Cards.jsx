@@ -1,17 +1,8 @@
-import React, { useState, useEffect } from "react";
-import {
-  BsFillArchiveFill,
-  BsFillGrid3X3GapFill,
-  BsPeopleFill,
-} from "react-icons/bs";
-import Card from "./HomeContent/Card";
-import LastProduct from "./HomeContent/LastProduct";
-import LastUser from "./HomeContent/LastUser";
-import ProductList from "./HomeContent/ProductList";
-import TableCategories from "./HomeContent/TableCategories";
-import PieCategories from "./HomeContent/PieCategories";
+import { useState, useEffect } from "react";
+import { BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill } from "react-icons/bs";
+import Card from "./Card";
 
-export default function Home() {
+export default function Cards() {
   const [products, setProducts] = useState([]);
   const [users, setUsers] = useState([]);
   const [categoriesCount, setCategoriesCount] = useState(0);
@@ -34,7 +25,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="mainContainer">
+    <>
       <div className="mainTitle">
         <h3>DASHBOARD</h3>
       </div>
@@ -49,18 +40,12 @@ export default function Home() {
           quantity={categoriesCount}
           icon={<BsFillGrid3X3GapFill />}
         />
-        <Card title="USERS" quantity={users.length} icon={<BsPeopleFill />} />
+        <Card
+          title="USERS"
+          quantity={users.length}
+          icon={<BsPeopleFill />}
+        />
       </div>
-
-      <LastProduct />
-
-      <LastUser />
-
-      <ProductList />
-      <div className="side">
-        <TableCategories />
-        <PieCategories />
-      </div>
-    </main>
+    </>
   );
 }

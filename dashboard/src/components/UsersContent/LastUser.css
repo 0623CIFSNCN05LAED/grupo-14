@@ -1,0 +1,45 @@
+.lastUser h2 {
+  width: auto;
+  text-align: center;
+  margin: auto;
+  color: #1d2634;
+  padding-bottom: 10px;
+}
+
+.lastUser p {
+  color: #1d2634;
+}
+
+.lastUser {
+  height: auto;
+  border: 2px solid #9e9ea4;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px;
+  background-color: #9e9ea4;
+  line-height: 15px;
+  width: auto;
+  margin: 25px 10px 25px 10px;
+}
+
+.column {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+}
+
+p {
+  margin: 10px;
+}
+
+.price {
+  width: 50%;
+}
+
+.column p {
+  margin-top: 0%;
+}
+
+.stock {
+  margin-top: 0%;
+}

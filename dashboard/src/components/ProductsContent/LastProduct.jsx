@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import "./LastProductUser.css";
+import { useState, useEffect } from "react";
+import "./LastProduct.css";
 export default function LastProduct() {
   const [product, setProduct] = useState([]);
   useEffect(() => {
@@ -21,7 +21,7 @@ export default function LastProduct() {
     fetchData();
   }, []);
   return (
-    <section class="lastProduct">
+    <section className="lastProduct">
       <h2>Last Product</h2>
       <p>ID: {product.id}</p>
       <p>Name: {product.shortName}</p>
@@ -34,7 +34,9 @@ export default function LastProduct() {
         <p>Discount: {product.discountM}%</p>
       </div>
       <p className="stock">Stock: {product.stock}</p>
-      <p>Image: {product.urlImage}</p>
+      <p>
+        Image: <a href={product.urlImage}>{product.urlImage}</a>
+      </p>
     </section>
   );
 }

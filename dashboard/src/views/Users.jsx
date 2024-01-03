@@ -1,7 +1,7 @@
-/* import Header from "../components/Header"; */
+import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
-import Logo from "../components/HomeContent/Logo";
 import { useState } from "react";
+import LastUser from "../components/UsersContent/LastUser";
 
 export default function Dashboard() {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
@@ -13,12 +13,14 @@ export default function Dashboard() {
   return (
     <>
       <div className="gridContainer">
-        {/* <Header OpenSidebar={OpenSidebar} /> */}
+        <Header OpenSidebar={OpenSidebar} />
         <Sidebar
           openSidebarToggle={openSidebarToggle}
           OpenSidebar={OpenSidebar}
         />
-        <Logo />
+        <div className="contentContainer">
+          <LastUser className="last" />
+        </div>
       </div>
     </>
   );

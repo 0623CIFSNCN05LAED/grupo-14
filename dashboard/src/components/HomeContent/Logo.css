@@ -1,0 +1,12 @@
+.logo {
+  width: 50%;
+  margin: auto;
+  filter: drop-shadow(16px 7px 8px #9e9ea4);
+}
+
+@media (min-width: 990px) {
+  .logo {
+    width: 200%;
+    margin: 50%;
+  }
+}

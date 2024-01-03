@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./Tables.css";
+import "./TableCategories.css";
 
 export default function TableCategories() {
   const [categories, setCategories] = useState([]);
