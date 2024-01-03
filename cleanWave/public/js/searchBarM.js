@@ -18,7 +18,6 @@ window.addEventListener("load", function(){
 
   searchInput.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
-      console.log("enterrrrrrrrrrrrrrrrrrrrrrrrrr",searchInput.value)
       searchProduct(searchInput.value);
     }
   });

@@ -6,7 +6,6 @@ module.exports = {
   },
   login: async (req, res) => {
     const dataUser = await userDBservice.findByEmail(req.body.email);
-    console.log(dataUser.address.street);
     delete dataUser.password;
     req.session.userLogged = dataUser;
     if (req.body.rememberUser) {

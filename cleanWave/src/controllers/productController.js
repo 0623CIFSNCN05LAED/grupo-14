@@ -5,7 +5,6 @@ module.exports = {
     try {
       const allProducts = await productService.findAllM();
       const url = req.originalUrl;
-      console.log("sessionList",req.session.searchProductsM)
       const products = !req.session.searchProductsM ? allProducts : req.session.searchProductsM;
       res.render("products/productList", { products, url });
     } catch {

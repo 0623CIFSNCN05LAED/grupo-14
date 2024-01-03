@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
   searchInput.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
       searchProduct(searchInput.value);
-      console.log("enterrrrrrrrrrrrrrrrrrrrrrrrrr", searchInput.value);
     }
   });
 });
