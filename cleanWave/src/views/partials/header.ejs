@@ -1,4 +1,5 @@
     <header>
+      <script src="/js/header.js" defer></script>
     <script src="/js/searchBarCf.js"></script>
       <div class="topLeftHeader">
         <% if (!locals.isLogged) { %>
@@ -45,10 +46,27 @@
           </a>
         </div>
         <div class="noDesk">
-          <i class="fa-solid fa-bars"></i>
+          <!-- MENU BURGER -->
           <a href="/consumidorfinal"><img src="\img\logo.png" alt="logo" id="logoDesk"/></a>
           <a href="/consumidorfinal"><img src="\img\logoOla.png" alt="logo" id="logoMobile" /></a>
-        </div>
+          <div class="icono-boton-container">
+              <button class="icono-boton" onclick="toggleBotones()">
+                  <i class="fa-solid fa-bars"></i>
+              </button>
+              <div class="columna-botones">
+                  <!-- Botones adicionales aquí -->
+                  <% if (locals.isLogged && (locals.userLogged.superAdmin != null || locals.userLogged.admin != null )) { %>
+                    <button type="button" class="boton-desplegable mostrar-si-autenticado">Crear una cuenta</button>
+                <% } %>
+                <% if (!locals.isLogged) { %>
+                  <button class="boton-desplegable" onclick="location.href='/users/login'">Iniciar sesión</button>
+              <% } %>
+                  <button class="boton-desplegable" onclick="location.href='/about/nosotros'">Nosotros</button>
+                  <button class="boton-desplegable" onclick="location.href='/consumidorfinal/products'">Productos</button>
+              </div>
+          </div>
+      </div>
+      <!-- Fin Burger -->
       </div>
       <div class="menuMobile">
         <nav class="topRightHeader">
