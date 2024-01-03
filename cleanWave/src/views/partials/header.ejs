@@ -53,6 +53,11 @@
       <div class="menuMobile">
         <nav class="topRightHeader">
           <ul class="bottomRightNav">
+            <% if (locals.isLogged && (locals.userLogged.superAdmin != null || locals.userLogged.admin != null )) {%>
+             <li>
+              <a href="/users/register">Crear una cuenta</a>
+            </li>
+             <% } %>
             <% if (locals.isLogged) { %>
             <li>
               <a href="/users/profile">
