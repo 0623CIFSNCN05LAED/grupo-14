@@ -19,6 +19,7 @@ module.exports = {
     }
     return res.redirect("/users/profile");
   },
+  
   profile: (req, res) => {
     res.render("users/userProfile", {
       user: req.session.userLogged,
