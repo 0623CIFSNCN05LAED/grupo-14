@@ -22,10 +22,7 @@ window.addEventListener("load", function () {
   ); /* decodifico la informacion que me paso la vista */
   const product =
     JSON.parse(productString); /* paso esa informacion a formato json */
-  console.log("addToCart.js", product);
 
-  /* CUANDO ESTEN LAS VALIDACIONES DEL FRONT HAGO local STORAGE */
-  /* on click, validar y si pasan. Guardar el id en local storage */
 
   const addToCartButton = document.getElementById("addToCart");
 
