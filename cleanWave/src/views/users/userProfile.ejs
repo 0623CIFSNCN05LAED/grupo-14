@@ -21,13 +21,17 @@
           <p>email: <%= user.email %></p>
           <p>Dirección: <%= user.address.street %></p>
         <% } else if (userLogged.mayorista != null) { %>
-          <p>Nombre: <%= user.mayorista.name %></p>
-          <p>Apellido: <%= user.mayorista.lastname %></p>
+          <p>Razón social: <%= user.mayorista.businessName %></p>
           <p>email: <%= user.email %></p>
           <p>Dirección: <%= user.address.street %></p>
-        <% } else if (userLogged.admin != null || userLogged) { %>
+        <% } else if (userLogged.admin != null) { %>
           <p>Nombre: <%= user.admin.name %></p>
-          <p>Apellido: <%= user.admin.lastname %></p>
+          <p>Apellido: <%= user.admin.lastName %></p>
+          <p>email: <%= user.email %></p>
+          <p>Dirección: <%= user.address.street %></p>
+        <% } else if (userLogged.superAdmin != null) { %>
+          <p>Nombre: <%= user.superAdmin.name %></p>
+          <p>Apellido: <%= user.superAdmin.lastName %></p>
           <p>email: <%= user.email %></p>
           <p>Dirección: <%= user.address.street %></p>
         <% } else { %>
@@ -38,7 +42,7 @@
 
     <div class="buttons-container">
       <a href="/users/address">
-        <button type="submit" class="buttons">Agregar dirección</button>
+        <button type="submit" class="buttons">Agregar/Editar dirección</button>
       </a>
       <a href="/users/logout">
         <button type="submit" class="buttons">Cerrar sesión</button>
