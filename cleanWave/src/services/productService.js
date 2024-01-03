@@ -332,12 +332,11 @@ module.exports = {
             { shortName: { [Op.like]: `%${inputValue}%` } },
           ],
         },
-        
       });
       if(!products){
         return null
       } else {
-
+        
         const mappedProducts = products.map((product) => {
           return (product = product.dataValues);
         });
@@ -355,6 +354,7 @@ module.exports = {
             href: "mayorista",
           };
         });
+        console.log("SERVIECEEEE", productsM)
         return productsM;
       }
       } catch (e) {

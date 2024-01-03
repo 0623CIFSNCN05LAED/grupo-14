@@ -5,8 +5,11 @@
     <link rel="stylesheet" href="/css/nosotros.css" />
   </head>
   <body>
+    <% if (locals.userLogged && userLogged.mayorista != null) { %>
+     <%- include("../partials/headerMayorista") %>
+    <% } else { %>
     <%- include('../partials/header') %>
-
+    <% } %>
     <main>
       <div class="nosotros-container">
         <h1 class="marcaTitulo">

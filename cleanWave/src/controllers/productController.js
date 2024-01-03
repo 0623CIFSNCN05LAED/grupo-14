@@ -5,9 +5,8 @@ module.exports = {
     try {
       const allProducts = await productService.findAllM();
       const url = req.originalUrl;
-      const products = req.session.searchProductsM
-        ? req.session.searchProductsM
-        : allProducts;
+      console.log("sessionList",req.session.searchProductsM)
+      const products = !req.session.searchProductsM ? allProducts : req.session.searchProductsM;
       res.render("products/productList", { products, url });
     } catch {
       res.send("error");
@@ -84,11 +83,13 @@ module.exports = {
       const products = await productService.searchProductsM(
         req.query.inputValue,
       );
+      console.log("CONTROLELRRRR", products)
       if(!products){
         return null
       } else {
 
         req.session.searchProductsM = products;
+        console.log("session",req.session.searchProductsM)
         res.json(products);
       }
       } catch (e) {

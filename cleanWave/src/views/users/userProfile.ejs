@@ -6,7 +6,11 @@
     <script src="/js/register.js" defer></script>
   </head>
   <body>
-    <%- include('../partials/header') %>
+    <% if (user.mayorista != null) { %>
+      <%- include("../partials/headerMayorista") %>
+    <% } else { %>
+      <%- include('../partials/header') %>
+      <% } %> 
 
     <main class="container">
       <img class="imageProfile" src="/img/users/<%= user.image %>" />
