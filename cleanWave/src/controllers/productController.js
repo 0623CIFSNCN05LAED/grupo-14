@@ -55,7 +55,7 @@ module.exports = {
   create: (req, res) => {
     const dataForm = req;
     productService.createProduct(dataForm);
-    res.redirect("/products");
+    res.redirect("/consumidorfinal/products");
   },
 
   viewEdit: async (req, res) => {
@@ -70,20 +70,19 @@ module.exports = {
     const id = req.params.id;
     const dataForm = req;
     productService.editProduct(dataForm, id);
-    res.redirect("/products");
+    res.redirect("/consumidorfinal/products");
   },
 
   delete: (req, res) => {
     const id = req.params.id;
     productService.deleteProduct(id);
-    res.redirect("/products");
+    res.redirect("/consumidorfinal/products");
   },
   searchProductsM: async (req, res) => {
     try {
       const products = await productService.searchProductsM(
         req.query.inputValue,
       );
-      console.log("CONTROLELRRRR", products)
       if(!products){
         return null
       } else {

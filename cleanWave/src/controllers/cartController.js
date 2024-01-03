@@ -5,11 +5,10 @@ module.exports = {
     viewCart: async (req, res) => {
       try{
         const userId = req.session.userLogged.id
-        // console.log("USUARIOOOOOOOOOOOOOOOOOO", req.session.userLogged)
-        const activeCart = await cartService.findActiveCartByUserId(userId); /* PUEDO CAMBIAR LAS FUNCIONES A GETCARTBYACTIVECART */
+        const activeCart = await cartService.findActiveCartByUserId(userId);
         const products = await cartService.getAllProductsInActiveCartByUserId(userId)
         const cartProduct = await cartService.getAllRowsInCartProductByUserId(userId)
-        res.render("products/productCart", {activeCart, products, cartProduct}); /* SON 3 ARRAYS DE OBJETOS */
+        res.render("products/productCart", {activeCart, products, cartProduct}); 
 
       } catch(error){
         console.log(error)
