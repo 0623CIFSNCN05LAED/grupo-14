@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import "./LastProductUser.css";
+import { useState, useEffect } from "react";
+import "./LastUser.css";
 export default function LastProduct() {
   const [user, setUser] = useState([]);
   useEffect(() => {
@@ -9,13 +9,15 @@ export default function LastProduct() {
         const result = await response.json();
         const users = result.users;
         const user = users[users.length - 1];
+        const idResponse = await fetch(`http://localhost:3333${user.detail}`);
+        const idResult = await idResponse.json();
         let lastUser = "";
-        if (user.name) {
-          lastUser = user;
+        if (idResult.user.name) {
+          lastUser = idResult.user;
         } else {
-          user.name = user.businessName;
-          delete user.businessName;
-          lastUser = user;
+          idResult.user.name = idResult.user.businessName;
+          delete idResult.user.businessName;
+          lastUser = idResult.user;
         }
         setUser(lastUser);
       } catch (error) {
@@ -28,8 +30,20 @@ export default function LastProduct() {
     <section className="lastUser">
       <h2>Last User</h2>
       <p>ID: {user.id}</p>
-      <p>Name: {user.name}</p>
+      {user.lastName ? (
+        <p>
+          Name: {user.name} {user.lastName}
+        </p>
+      ) : (
+        <p>Name: {user.name}</p>
+      )}
       <p>Email: {user.email}</p>
+      <p>
+        Image:{" "}
+        <a
+          href={`http://localhost:3333/img/users/${user.image}`}
+        >{`http://localhost:3333/img/users/${user.image}`}</a>
+      </p>
     </section>
   );
 }

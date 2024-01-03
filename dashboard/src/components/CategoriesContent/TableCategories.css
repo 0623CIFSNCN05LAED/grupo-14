@@ -3,10 +3,6 @@
   margin: auto;
 }
 
-.tableProducts {
-  width: 100%;
-}
-
 table {
   border-collapse: collapse;
   margin-top: 10px;
@@ -33,7 +29,6 @@ tbody th {
 tbody td {
   padding: 15px;
   text-align: center;
-  /* border-left: 1px solid #9e9ea4; */
 }
 
 tbody tr:hover {

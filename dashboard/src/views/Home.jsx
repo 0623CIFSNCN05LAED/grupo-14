@@ -1,5 +1,6 @@
-import Header from "../components/Header";
+/* import Header from "../components/Header"; */
 import Sidebar from "../components/Sidebar";
+import Logo from "../components/HomeContent/Logo";
 import { useState } from "react";
 
 export default function Dashboard() {
@@ -12,11 +13,12 @@ export default function Dashboard() {
   return (
     <>
       <div className="gridContainer">
-        <Header OpenSidebar={OpenSidebar} />
+        {/* <Header OpenSidebar={OpenSidebar} /> */}
         <Sidebar
           openSidebarToggle={openSidebarToggle}
           OpenSidebar={OpenSidebar}
         />
+        <Logo />
       </div>
     </>
   );

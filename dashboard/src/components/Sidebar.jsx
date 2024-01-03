@@ -3,9 +3,6 @@ import {
   BsFillArchiveFill,
   BsFillGrid3X3GapFill,
   BsPeopleFill,
-  BsListCheck,
-  BsMenuButtonWideFill,
-  BsFillGearFill,
 } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -21,6 +18,7 @@ export default function Sidebar({ openSidebarToggle, OpenSidebar }) {
           <Link
             to="/"
             exact="true"
+            className="home"
           >
             CLEAN WAVE
           </Link>
@@ -53,21 +51,6 @@ export default function Sidebar({ openSidebarToggle, OpenSidebar }) {
           <Link to="/users">
             <BsPeopleFill className="icon" /> Users
           </Link>
-        </li>
-        <li className="sidebarListItem">
-          <a href="">
-            <BsListCheck className="icon" /> Inventory
-          </a>
-        </li>
-        <li className="sidebarListItem">
-          <a href="">
-            <BsMenuButtonWideFill className="icon" /> Reports
-          </a>
-        </li>
-        <li className="sidebarListItem">
-          <a href="">
-            <BsFillGearFill className="icon" /> Settings
-          </a>
         </li>
       </ul>
     </aside>

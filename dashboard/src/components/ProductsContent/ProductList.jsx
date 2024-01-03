@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./Tables.css";
+import "./ProductList.css";
 
 export default function ProductList() {
   const [productsList, setProductsList] = useState([]);
