@@ -133,6 +133,10 @@ module.exports = {
         },
         include: [
           {
+            model: Address,
+            as: "address",
+          },
+          {
             model: UserAdmin,
             as: "admin",
           },

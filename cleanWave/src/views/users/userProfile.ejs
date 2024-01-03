@@ -15,10 +15,24 @@
     <main class="container">
       <img class="imageProfile" src="/img/users/<%= user.image %>" />
       <div class="user-info">
-        <p>Nombre: <%= user.name %></p>
-        <p>Apellido: <%= user.lastname %></p>
-        <p>Email: <%= user.email %></p>
-        <p>Dirección: <%= user.Address %></p>
+        <% if (userLogged.cf != null) { %>
+          <p>Nombre: <%= user.cf.name %></p>
+          <p>Apellido: <%= user.cf.lastName %></p>
+          <p>email: <%= user.email %></p>
+          <p>Dirección: <%= user.address.street %></p>
+        <% } else if (userLogged.mayorista != null) { %>
+          <p>Nombre: <%= user.mayorista.name %></p>
+          <p>Apellido: <%= user.mayorista.lastname %></p>
+          <p>email: <%= user.email %></p>
+          <p>Dirección: <%= user.address.street %></p>
+        <% } else if (userLogged.admin != null || userLogged) { %>
+          <p>Nombre: <%= user.admin.name %></p>
+          <p>Apellido: <%= user.admin.lastname %></p>
+          <p>email: <%= user.email %></p>
+          <p>Dirección: <%= user.address.street %></p>
+        <% } else { %>
+          <p>No se encontró información del usuario</p>
+        <% } %>
       </div>
     </main>
 
