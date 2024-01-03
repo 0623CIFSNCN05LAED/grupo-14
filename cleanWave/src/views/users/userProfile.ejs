@@ -6,36 +6,30 @@
     <script src="/js/register.js" defer></script>
   </head>
   <body>
-    <% if (user.mayorista != null) { %>
-      <%- include("../partials/headerMayorista") %>
-    <% } else { %>
-      <%- include('../partials/header') %>
-      <% } %> 
+    <% if (user.mayorista != null) { %> <%-
+    include("../partials/headerMayorista") %> <% } else { %> <%-
+    include('../partials/header') %> <% } %>
 
     <main class="container">
       <img class="imageProfile" src="/img/users/<%= user.image %>" />
       <div class="user-info">
         <% if (userLogged.cf != null) { %>
-          <p>Nombre: <%= user.cf.name %></p>
-          <p>Apellido: <%= user.cf.lastName %></p>
-          <p>email: <%= user.email %></p>
-          <p>Dirección: <%= user.address.street %></p>
+        <p>Nombre: <%= user.cf.name %></p>
+        <p>Apellido: <%= user.cf.lastName %></p>
+        <p>email: <%= user.email %></p>
         <% } else if (userLogged.mayorista != null) { %>
-          <p>Razón social: <%= user.mayorista.businessName %></p>
-          <p>email: <%= user.email %></p>
-          <p>Dirección: <%= user.address.street %></p>
+        <p>Razón social: <%= user.mayorista.businessName %></p>
+        <p>email: <%= user.email %></p>
         <% } else if (userLogged.admin != null) { %>
-          <p>Nombre: <%= user.admin.name %></p>
-          <p>Apellido: <%= user.admin.lastName %></p>
-          <p>email: <%= user.email %></p>
-          <p>Dirección: <%= user.address.street %></p>
+        <p>Nombre: <%= user.admin.name %></p>
+        <p>Apellido: <%= user.admin.lastName %></p>
+        <p>email: <%= user.email %></p>
         <% } else if (userLogged.superAdmin != null) { %>
-          <p>Nombre: <%= user.superAdmin.name %></p>
-          <p>Apellido: <%= user.superAdmin.lastName %></p>
-          <p>email: <%= user.email %></p>
-          <p>Dirección: <%= user.address.street %></p>
+        <p>Nombre: <%= user.superAdmin.name %></p>
+        <p>Apellido: <%= user.superAdmin.lastName %></p>
+        <p>email: <%= user.email %></p>
         <% } else { %>
-          <p>No se encontró información del usuario</p>
+        <p>No se encontró información del usuario</p>
         <% } %>
       </div>
     </main>
