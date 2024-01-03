@@ -7,10 +7,8 @@
     <link rel="stylesheet" href="/css/carousel.css" />
     <link rel="stylesheet" href="/css/productDetail.css" />
     <script src="/js/carousel.js" defer></script>
-    <script src="/js/productDetail.js" defer></script>
     
     <% if(locals.userLogged){ %> 
-
       <script id="addToCartScript" src="/js/addToCart.js"  data-product="<%- encodeURIComponent(JSON.stringify(product)) %>" ></script>
     <% } %>
   </head>

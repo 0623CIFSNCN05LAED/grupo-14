@@ -5,9 +5,8 @@ module.exports = {
     try {
       const allProducts = await productService.findAllM();
       const url = req.originalUrl;
-      const products = req.session.searchProductsM
-        ? req.session.searchProductsM
-        : allProducts;
+      console.log("sessionList",req.session.searchProductsM)
+      const products = !req.session.searchProductsM ? allProducts : req.session.searchProductsM;
       res.render("products/productList", { products, url });
     } catch {
       res.send("error");
@@ -56,7 +55,7 @@ module.exports = {
   create: (req, res) => {
     const dataForm = req;
     productService.createProduct(dataForm);
-    res.redirect("/products");
+    res.redirect("/consumidorfinal/products");
   },
 
   viewEdit: async (req, res) => {
@@ -71,13 +70,13 @@ module.exports = {
     const id = req.params.id;
     const dataForm = req;
     productService.editProduct(dataForm, id);
-    res.redirect("/products");
+    res.redirect("/consumidorfinal/products");
   },
 
   delete: (req, res) => {
     const id = req.params.id;
     productService.deleteProduct(id);
-    res.redirect("/products");
+    res.redirect("/consumidorfinal/products");
   },
   searchProductsM: async (req, res) => {
     try {
@@ -89,6 +88,7 @@ module.exports = {
       } else {
 
         req.session.searchProductsM = products;
+        console.log("session",req.session.searchProductsM)
         res.json(products);
       }
       } catch (e) {

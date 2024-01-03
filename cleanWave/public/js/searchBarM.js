@@ -1,4 +1,4 @@
-window.onload = function(){
+window.addEventListener("load", function(){
   const searchInput = document.getElementById("search");
   const searchIcon = document.getElementById("searchIcon");
 
@@ -27,4 +27,4 @@ window.onload = function(){
     searchProduct(searchInput.value);
   });
 
-}
+})
