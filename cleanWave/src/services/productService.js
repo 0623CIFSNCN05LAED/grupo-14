@@ -4,31 +4,21 @@ const db = require("../database/models");
 const Op = db.Sequelize.Op;
 
 /************* Funciones de uso local(este mismo archivo) ****************/
+const formatNumber = (number) => {
+  return number.toLocaleString("es", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+};
 
-// const formatProductPrices = function (product) {
-//   /* Da el formato a los precios de cada producto */
+const formatPrice = (price) => {
+  return formatNumber(price);
+};
 
-//   const priceWithDiscount = // Calcula el precio final con el descuento incluido
+const formatPriceWithDiscount = (price, discount) => {
+  return formatNumber(price * (1 - discount / 100));
+};
 
-//   product.priceWithDiscount = ` ${priceWithDiscount.toLocaleString("es", {
-//     // Crea dentro del producto el precio con el descuento incluido y le da el formato
-//     minimumFractionDigits: 2,
-//   })}`;
-
-//   product.retailPrice = ` ${product.retailPrice.toLocaleString("es", {
-//     // Le da el formato al precio
-//     minimumFractionDigits: 2,
-//   })}`;
-
-//   product.discount = product.discount.toLocaleString("es"); // Le da el formato al descuento
-
-//   return product;
-// };
-
-// const formatProductsPrices = function (products) {
-//   // Recibe los productos y a cada uno le otorga el formato
-//   return products.map((product) => formatProductPrices(product));
-// };
 
 /* Terminan funcion de uso local */
 
@@ -41,9 +31,8 @@ module.exports = {
         return {
           id: productDB.id,
           shortName: productDB.shortName,
-          price: productDB.wholesalePrice,
-          priceWithDiscount:
-            productDB.wholesalePrice * (1 - productDB.discountM / 100),
+          price: formatPrice(productDB.wholesalePrice),
+          priceWithDiscount: formatPriceWithDiscount(productDB.wholesalePrice, productDB.discountM),
           discount: productDB.discountM,
           image: productDB.image,
           category_id: productDB.category_id,
@@ -61,9 +50,9 @@ module.exports = {
         return {
           id: productDB.id,
           shortName: productDB.shortName,
-          price: productDB.retailPrice,
+          price: formatPrice(productDB.retailPrice),
           priceWithDiscount:
-            productDB.retailPrice * (1 - productDB.discountCf / 100),
+            formatPriceWithDiscount(productDB.retailPrice, productDB.discountCf),
           discount: productDB.discountCf,
           image: productDB.image,
           category_id: productDB.category_id,
@@ -90,9 +79,8 @@ module.exports = {
         id: productDB.id,
         name: productDB.name,
         shortName: productDB.shortName,
-        price: productDB.wholesalePrice,
-        priceWithDiscount:
-          productDB.wholesalePrice * (1 - productDB.discountM / 100),
+        price: formatPrice(productDB.wholesalePrice),
+          priceWithDiscount: formatPriceWithDiscount(productDB.wholesalePrice, productDB.discountM),
         discount: productDB.discountM,
         stock: productDB.stock,
         image: productDB.image,
@@ -140,9 +128,8 @@ module.exports = {
         return {
           id: productDB.id,
           shortName: productDB.shortName,
-          price: productDB.wholesalePrice,
-          priceWithDiscount:
-            productDB.wholesalePrice * (1 - productDB.discountM / 100),
+          price: formatPrice(productDB.wholesalePrice),
+          priceWithDiscount: formatPriceWithDiscount(productDB.wholesalePrice, productDB.discountM),
           discount: productDB.discountM,
           image: productDB.image,
           href: "mayorista",
@@ -187,9 +174,8 @@ module.exports = {
         return {
           id: productDB.id,
           shortName: productDB.shortName,
-          price: productDB.wholesalePrice,
-          priceWithDiscount:
-            productDB.wholesalePrice * (1 - productDB.discountM / 100),
+          price: formatPrice(productDB.wholesalePrice),
+          priceWithDiscount: formatPriceWithDiscount(productDB.wholesalePrice, productDB.discountM),
           discount: productDB.discountM,
           image: productDB.image,
           href: "mayorista",
@@ -240,9 +226,8 @@ module.exports = {
           return {
             id: productDB.id,
             shortName: productDB.shortName,
-            price: productDB.wholesalePrice,
-            priceWithDiscount:
-              productDB.wholesalePrice * (1 - productDB.discountM / 100),
+            price: formatPrice(productDB.wholesalePrice),
+          priceWithDiscount: formatPriceWithDiscount(productDB.wholesalePrice, productDB.discountM),
             discount: productDB.discountM,
             image: productDB.image,
             href: "mayorista",
@@ -345,8 +330,8 @@ module.exports = {
             id: productDB.id,
             shortName: productDB.shortName,
             price: productDB.wholesalePrice,
-            priceWithDiscount:
-            productDB.wholesalePrice * (1 - productDB.discountM / 100),
+            price: formatPrice(productDB.wholesalePrice),
+          priceWithDiscount: formatPriceWithDiscount(productDB.wholesalePrice, productDB.discountM),
             discount: productDB.discountM,
             image: productDB.image,
             category_id: productDB.category_id,

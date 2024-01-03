@@ -15,6 +15,7 @@ module.exports = {
   listCf: async (req, res) => {
     try {
       const allProducts = await productService.findAllCf();
+      console.log(allProducts)
       const url = req.originalUrl
       const products = req.session.searchProductsCf
         ? req.session.searchProductsCf
