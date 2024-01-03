@@ -6,20 +6,19 @@ module.exports = {
   },
   login: async (req, res) => {
     const dataUser = await userDBservice.findByEmail(req.body.email);
-    console.log(dataUser.address.street);
     delete dataUser.password;
     req.session.userLogged = dataUser;
     if (req.body.rememberUser) {
       res.cookie("email", req.body.email, { maxAge: 1000 * 60 * 2 });
     }
-    if(dataUser.mayorista != null){
-      res.cookie("userType", "mayorista", {maxAge: 1000 * 60 * 2})
-    } else if (dataUser.cf != null){
-      res.cookie("userType", "consumidorfinal", {maxAge: 1000 * 60 * 2})
+    if (dataUser.mayorista != null) {
+      res.cookie("userType", "mayorista", { maxAge: 1000 * 60 * 2 });
+    } else if (dataUser.cf != null) {
+      res.cookie("userType", "consumidorfinal", { maxAge: 1000 * 60 * 2 });
     }
     return res.redirect("/users/profile");
   },
-  
+
   profile: (req, res) => {
     res.render("users/userProfile", {
       user: req.session.userLogged,
@@ -52,13 +51,12 @@ module.exports = {
     userDBservice.delete(id);
     res.redirect("/");
   },
-  
+
   profile: (req, res) => {
-    
-    const userType = req.cookies.userType || 'defaultUserType';  
+    const userType = req.cookies.userType || "defaultUserType";
 
     res.render("users/userProfile", {
-      userType, 
+      userType,
       user: req.session.userLogged,
     });
   },

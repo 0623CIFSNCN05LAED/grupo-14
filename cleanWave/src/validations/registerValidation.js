@@ -119,7 +119,7 @@ module.exports = [
     }
     return true;
   }),
-  body("image").custom((value, { req }) => {
+  /* body("image").custom((value, { req }) => {
     let file = req.file;
     if (!file) {
       return true;
@@ -132,5 +132,5 @@ module.exports = [
       );
     }
     return true;
-  }),
+  }), */
 ];
