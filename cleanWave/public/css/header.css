@@ -258,18 +258,18 @@ header {
 
 
 .columna-botones {
-  display: none; /* Ocultar la columna de botones en pantallas mayores o iguales a 1280px */
+  display: none; /* Ocultar la columna de botones */
   position: absolute;
   top: 100%;
   left: 0;
   z-index: 1;
   background-color: transparent;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  flex-direction: column; /* Asegurar que los botones estén en una columna */
+  flex-direction: column; 
 }
 
 .columna-botones.mostrar {
-  display: flex; /* Mostrar la columna de botones si tiene la clase "mostrar" */
+  display: flex; 
 }
 
 .boton-desplegable {
@@ -280,7 +280,7 @@ header {
   padding: 15px 25px;
   font-size: 16px;
   border: 2px solid #111e4f;
-  display: none; /* Ocultar los botones inicialmente */
+  display: none; /* Ocultar inicialmente */
   width: 200px;
   border: solid 1px white;
   border-radius: 6px;

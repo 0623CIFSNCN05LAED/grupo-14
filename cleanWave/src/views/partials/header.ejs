@@ -54,16 +54,19 @@
                   <i class="fa-solid fa-bars"></i>
               </button>
               <div class="columna-botones">
-                  <!-- Botones adicionales aquí -->
-                  <% if (locals.isLogged && (locals.userLogged.superAdmin != null || locals.userLogged.admin != null )) { %>
-                    <button type="button" class="boton-desplegable mostrar-si-autenticado">Crear una cuenta</button>
+                <!-- Botones adicionales aquí -->
+                <% if (locals.isLogged){ %>
+                  <button class="boton-desplegable" onclick="location.href='/users/profile'">Perfil</button>
+                  <% } %>
+                <% if (locals.isLogged &&(locals.userLogged.superAdmin != null || locals.userLogged.admin != null) ) { %>
+                <button type="button" class="boton-desplegable" onclick="location.href='/users/register'">Crear una cuenta</button>
+              <% } else if (!locals.isLogged){ %>
+                <button type="button" class="boton-desplegable" onclick="location.href='/users/register'">Crear una cuenta</button>
+                <button class="boton-desplegable" onclick="location.href='/users/login'">Iniciar sesión</button>
                 <% } %>
-                <% if (!locals.isLogged) { %>
-                  <button class="boton-desplegable" onclick="location.href='/users/login'">Iniciar sesión</button>
-              <% } %>
-                  <button class="boton-desplegable" onclick="location.href='/about/nosotros'">Nosotros</button>
-                  <button class="boton-desplegable" onclick="location.href='/consumidorfinal/products'">Productos</button>
-              </div>
+                <button class="boton-desplegable" onclick="location.href='/about/nosotros'">Nosotros</button>
+                <button class="boton-desplegable" onclick="location.href='/consumidorfinal/products'">Productos</button>
+            </div>
           </div>
       </div>
       <!-- Fin Burger -->
