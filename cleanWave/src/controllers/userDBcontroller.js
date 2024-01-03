@@ -6,6 +6,7 @@ module.exports = {
   },
   login: async (req, res) => {
     const dataUser = await userDBservice.findByEmail(req.body.email);
+    console.log(dataUser.address.street);
     delete dataUser.password;
     req.session.userLogged = dataUser;
     if (req.body.rememberUser) {
@@ -49,5 +50,15 @@ module.exports = {
     const id = req.params.id;
     userDBservice.delete(id);
     res.redirect("/");
+  },
+  
+  profile: (req, res) => {
+    
+    const userType = req.cookies.userType || 'defaultUserType';  
+
+    res.render("users/userProfile", {
+      userType, 
+      user: req.session.userLogged,
+    });
   },
 };
